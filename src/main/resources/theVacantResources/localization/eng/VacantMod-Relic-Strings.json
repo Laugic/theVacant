@@ -1,0 +1,37 @@
+{
+  "theVacant:VacantBossEnergyRelic": {
+    "NAME": "Placeholder Energy Relic",
+    "FLAVOR": "Yeet.",
+    "DESCRIPTIONS": [
+      "Gain #b1 [E] ."
+    ]
+  },
+  "theVacant:VacantStarterRelic": {
+    "NAME": "Wretched Gem",
+    "FLAVOR": "A cursed trap that contains your soul.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, if you are #ythevacant:Healthy, lose #b2 Max HP. If you are #ythevacant:Wounded, gain #b4 Max HP. You can't go below #b50 Max HP this way."
+    ]
+  },
+  "theVacant:Deathbell": {
+    "NAME": "Deathbell",
+    "FLAVOR": "The scent invokes a feeling of dread.",
+    "DESCRIPTIONS": [
+      "If you are #ythevacant:Wounded, whenever you #ythevacant:Mill, #ythevacant:Mill an additional #b2."
+    ]
+  },
+  "theVacant:BrassGoblet": {
+    "NAME": "Brass Goblet",
+    "FLAVOR": "An ancient artifact with dark power.",
+    "DESCRIPTIONS": [
+      "You have #b1 additional #yDexterity while you are #ythevacant:Healthy, and #b2 additional #yStrength while you are #ythevacant:Wounded."
+    ]
+  },
+  "theVacant:BoundSoul": {
+    "NAME": "Bound Soul",
+    "FLAVOR": "Forever tied to an artifact.",
+    "DESCRIPTIONS": [
+      "Start each combat with #b1 #ythevacant:Will. Once per combat, if you are #ythevacant:Wounded, gain #b1 additional #ythevacant:Will."
+    ]
+  }
+}

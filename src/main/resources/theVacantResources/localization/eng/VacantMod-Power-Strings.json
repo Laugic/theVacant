@@ -1,0 +1,54 @@
+{
+ "theVacant:EmptyCardDrawPower": {
+        "NAME": "Empty Card Draw",
+        "DESCRIPTIONS": ["If your draw pile is empty, draw #b", " card.", " cards."]
+ },
+  "theVacant:EmptyEnergyGainPower": {
+    "NAME": "Empty Energy Gain",
+    "DESCRIPTIONS": ["If your draw pile is empty, gain #b", " [E]."]
+  },
+  "theVacant:GloomPower": {
+    "NAME": "Gloom",
+    "DESCRIPTIONS": ["At the beginning of your turn, #yMill #b"]
+  },
+  "theVacant:ImmaterializePower": {
+    "NAME": "Immaterialize",
+    "DESCRIPTIONS": ["The next ", " non-Status, non-Curse card played that would Exhaust discard instead.", " non-Status, non-Curse cards played that would Exhaust discard instead."]
+  },
+  "theVacant:ReleasePower": {
+    "NAME": "Release",
+    "DESCRIPTIONS": ["The amount of times you #yReleased this combat (", ")"]
+  },
+  "theVacant:WillPower": {
+    "NAME": "Will",
+    "DESCRIPTIONS": ["Your will to fight the influence of the artifact: #b"]
+  },
+  "theVacant:ExorcisePower": {
+    "NAME": "Exorcise",
+    "DESCRIPTIONS": ["The next #b", " card you play that #yExhausts plays twice.", " cards you play that #yExhaust plays twice."]
+  },
+  "theVacant:IronWillPower": {
+    "NAME": "Iron Will",
+    "DESCRIPTIONS": ["At the end of your turn, gain #b", " #yBlock."]
+  },
+  "theVacant:CompressionPower": {
+    "NAME": "Compression",
+    "DESCRIPTIONS": ["At the end of your turn, if you are #yHealthy, lose #b", " HP. If you are #yWounded, heal #b", " HP."]
+  },
+  "theVacant:EmptyFormPower": {
+    "NAME": "Empty Form",
+    "DESCRIPTIONS": ["At the start of your turn, set your HP to 1."]
+  },
+  "theVacant:EmpoweredPower": {
+    "NAME": "Empowered",
+    "DESCRIPTIONS": ["Whenever you lose HP from a card, gain #b", " energy"]
+  },
+  "theVacant:VoidEmbracePower": {
+    "NAME": "Void Embrace",
+    "DESCRIPTIONS": ["Whenever a card #yExhausts, #yMill #b"]
+  },
+  "theVacant:GreaterMindPower": {
+    "NAME": "Greater Mind",
+    "DESCRIPTIONS": ["Common cards have #yRebound, cost #b0, and #yExhaust when played."]
+  }
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "PROPER_NAME": "Healthy",
+    "NAMES": [
+      "healthy"
+    ],
+    "DESCRIPTION": "#yHealthy effects trigger if you are above #b50% of your max health."
+  },
+  {
+    "PROPER_NAME": "Wounded",
+    "NAMES": [
+      "wounded"
+    ],
+    "DESCRIPTION": "#yWounded  effects trigger if you are at or below #b50% of your max health."
+  },
+  {
+    "PROPER_NAME": "Unnate",
+    "NAMES": [
+      "unnate"
+    ],
+    "DESCRIPTION": "Starts at the bottom of your draw pile."
+  },
+  {
+    "PROPER_NAME": "Heavy",
+    "NAMES": [
+      "heavy"
+    ],
+    "DESCRIPTION": "When your deck is reshuffled, move to the bottom of the draw pile."
+  },
+  {
+    "PROPER_NAME": "Light",
+    "NAMES": [
+      "light"
+    ],
+    "DESCRIPTION": "When your deck is reshuffled, move to the top of the draw pile."
+  },
+  {
+    "PROPER_NAME": "Mill",
+    "NAMES": [
+      "mill",
+      "milled"
+    ],
+    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile."
+  },
+  {
+    "PROPER_NAME": "Rebound",
+    "NAMES": [
+      "rebound"
+    ],
+    "DESCRIPTION": "If this card would be #yMilled, add it to your hand instead of the discard pile."
+  },
+  {
+    "PROPER_NAME": "Release",
+    "NAMES": [
+      "release"
+    ],
+    "DESCRIPTION": "Do the following effect once for each #yWill you have."
+  },
+  {
+    "PROPER_NAME": "Will",
+    "NAMES": [
+      "will"
+    ],
+    "DESCRIPTION": "Your ability to fight the influence of the artifact."
+  },
+  {
+    "PROPER_NAME": "Fracture",
+    "NAMES": [
+      "fracture",
+      "fractured"
+    ],
+    "DESCRIPTION": "Fracture effects happen when you have #bX or more #yWill."
+  }
+]

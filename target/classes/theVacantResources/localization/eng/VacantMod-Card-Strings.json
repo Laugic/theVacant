@@ -1,0 +1,357 @@
+{
+  "theVacant:AbstractVacantCard": {
+    "NAME": "Abstract Vacant Card",
+    "DESCRIPTION": "Hi there",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You have ",
+      " Will)"
+    ]
+  },
+  "theVacant:VacantStarterStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "theVacant:LashOut": {
+    "NAME": "Lash Out",
+    "DESCRIPTION": "Deal damage equal to your missing HP. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals ",
+      " damage)"
+    ]
+  },
+  "theVacant:GraveDigger": {
+    "NAME": "Grave Digger",
+    "DESCRIPTION": "thevacant:Unnate. thevacant:Rebound. NL Deal !D! damage."
+  },
+  "theVacant:Vengeance": {
+    "NAME": "Vengeance",
+    "DESCRIPTION": "thevacant:Unnate. NL Deal !D! damage for each time you lost HP this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You were hit ",
+      " time)",
+      " times)"
+    ]
+  },
+  "theVacant:Frenzy": {
+    "NAME": "Frenzy",
+    "DESCRIPTION": "Deal !D! damage for each card in your discard pile.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Your discard has ",
+      " card)",
+      " cards)"
+    ]
+  },
+  "theVacant:Snowball": {
+    "NAME": "Snowball",
+    "DESCRIPTION": "Deal !D! damage. When this card is thevacant:Milled, double its damage this combat.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. When this card is thevacant:Milled, double its damage this combat."
+  },
+  "theVacant:EyePoke": {
+    "NAME": "Eye Poke",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply !M! Weak."
+  },
+  "theVacant:FranticBlow": {
+    "NAME": "Frantic Blow",
+    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Wounded, deal !D! damage again."
+  },
+  "theVacant:Fling": {
+    "NAME": "Fling",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mill !M!."
+  },
+  "theVacant:Jab": {
+    "NAME": "Jab",
+    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Wounded, deal !D! damage again.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. NL If you are thevacant:Wounded, deal !D! damage again."
+  },
+  "theVacant:SealBreak": {
+    "NAME": "Seal Break",
+    "DESCRIPTION": "thevacant:Release: Deal !D! damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Release: Deal !D! damage."
+  },
+  "theVacant:Crunch": {
+    "NAME": "Crunch",
+    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Healthy, apply !M! Weak. If you are thevacant:Wounded, apply !M! Vulnerable."
+  },
+  "theVacant:Slash": {
+    "NAME": "Slash",
+    "DESCRIPTION": "thevacant:Release: Deal !D! damage."
+  },
+  "theVacant:GraveWave": {
+    "NAME": "Grave Wave",
+    "DESCRIPTION": "Deal !D! damage. NL When this card is thevacant:Milled, gain !B! Block."
+  },
+  "theVacant:Whip": {
+    "NAME": "Whip",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mill !M!."
+  },
+  "theVacant:SurpriseAttack": {
+    "NAME": "Surprise Attack",
+    "DESCRIPTION": "thevacant:Unnate. NL Deal !D! damage. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Unnate. thevacant:Rebound. NL Deal !D! damage. NL Exhaust."
+  },
+  "theVacant:BellToll": {
+    "NAME": "Bell Toll",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Release: thevacant:Mill !M!."
+  },
+  "theVacant:ShriekingBlast": {
+    "NAME": "Shrieking Blast",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies !M! times."
+  },
+  "theVacant:Thoughtseize": {
+    "NAME": "Thoughtseize",
+    "DESCRIPTION": "Deal !D! damage. NL Return a random card from your hand to the top of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Return a card from your hand to the top of your draw pile."
+  },
+  "theVacant:Threat": {
+    "NAME": "Threaten",
+    "DESCRIPTION": "Deal !D! damage !M! times."
+  },
+  "theVacant:Reconnect": {
+    "NAME": "Reconnect",
+    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL If you are thevacant:Healthy, Exhaust."
+  },
+  "theVacant:Throttle": {
+    "NAME": "Throttle",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! :  Apply 3 Vulnerable."
+  },
+  "theVacant:BrassMagnet": {
+    "NAME": "BrassMagnet",
+    "DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. Whenever you draw this card, discard it.",
+    "UPGRADE_DESCRIPTION": "thevacant:Unnate. thevacant:Rebound. NL Deal !D! damage. Whenever you draw this card, discard it."
+  },
+  "theVacant:FiendFrost": {
+    "NAME": "Fiend Frost",
+    "DESCRIPTION": "Exhaust your discard pile. Deal !D! damage for each card Exhausted. Exhaust."
+  },
+  "theVacant:Yeet": {
+    "NAME": "Yeet",
+    "DESCRIPTION": "Deal !D! damage. NL Lose !M! Strength. NL Exhaust."
+  },
+  "theVacant:DimensionTear": {
+    "NAME": "Dimension Tear",
+    "DESCRIPTION": "Deal !D! damage. NL Draw your Exhaust pile. Exhaust your discard pile. NL Exhaust."
+  },
+  "theVacant:Splurge": {
+    "NAME": "Splurge",
+    "DESCRIPTION": "Deal !D! damage double X times. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage double (X + 1) times. Exhaust."
+  },
+  "theVacant:BurdenBreak": {
+    "NAME": "Burden Break",
+    "DESCRIPTION": "Deal !D! damage for each card thevacant:Milled this turn.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage for each card thevacant:Milled this turn. NL ",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You Milled ",
+      " card).",
+      " cards)."
+    ]
+  },
+  "theVacant:FinalCountdown": {
+    "NAME": "Final Countdown",
+    "DESCRIPTION": "Unplayable unless your draw pile is empty. NL Deal !D! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "thevacant:Unnate. NL Unplayable unless your draw pile is empty. NL Deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": ["My Draw Pile isn't #rempty!"]
+  },
+  "theVacant:Showdown": {
+    "NAME": "Showdown",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! : 8 times. NL Exhaust."
+  },
+  "theVacant:VacantStarterDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "theVacant:EmptyShield": {
+    "NAME": "Empty Shield",
+    "DESCRIPTION": "Gain Block equal to your missing HP.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to your missing HP + 6.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (You would gain ",
+      " Block)"
+    ]
+  },
+  "theVacant:HealingSalve": {
+    "NAME": "Healing Salve",
+    "DESCRIPTION": "Ethereal. NL When you draw this card, add a copy of it to your hand. When this card Exhausts, heal !M! HP."
+  },
+  "theVacant:Dig": {
+    "NAME": "Dig",
+    "DESCRIPTION": "Gain !B! Block. NL thevacant:Mill !M!."
+  },
+  "theVacant:Cower": {
+    "NAME": "Cower",
+    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Wounded, gain !B! Block again."
+  },
+  "theVacant:Return": {
+    "NAME": "Return",
+    "DESCRIPTION": "Put !M! card from your discard pile into your hand.",
+    "UPGRADE_DESCRIPTION": "Put !M! cards from your discard pile into your hand."
+  },
+  "theVacant:OnSecondThought": {
+    "NAME": "On Second Thought",
+    "DESCRIPTION": "thevacant:Rebound. NL Gain !B! block. NL Put a card from the discard pile into your hand."
+  },
+  "theVacant:Fortify": {
+    "NAME": "Fortify",
+    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Healthy, gain !M! Strength."
+  },
+  "theVacant:Sneeze": {
+    "NAME": "Sneeze",
+    "DESCRIPTION": "Retain. NL thevacant:Mill !M!. When Retained, increase its thevacant:Mill by 1. NL Exhaust."
+  },
+  "theVacant:DoubleTeam": {
+    "NAME": "Double Team",
+    "DESCRIPTION": "Gain !B! Block twice."
+  },
+  "theVacant:Ward": {
+    "NAME": "Ward",
+    "DESCRIPTION": "thevacant:Release: Gain !B! Block."
+  },
+  "theVacant:BattleScars": {
+    "NAME": "Battle Scars",
+    "DESCRIPTION": "Draw 1 card. NL If you are thevacant:Wounded, gain !M! Strength. NL Exhaust."
+  },
+  "theVacant:Hex": {
+    "NAME": "Hex",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. If you are thevacant:Wounded, apply !M! Vulnerable to ALL enemies. NL Exhaust."
+  },
+  "theVacant:Spinshield": {
+    "NAME": "Spinshield",
+    "DESCRIPTION": "Gain !B! Block !M! times. NL Gain !M! Thorns for this turn."
+  },
+  "theVacant:Prevent": {
+    "NAME": "Prevent",
+    "DESCRIPTION": "thevacant:Release: Gain 1 Dexterity. NL Exhaust."
+  },
+  "theVacant:ShutAway": {
+    "NAME": "Shut Away",
+    "DESCRIPTION": "Innate. NL thevacant:Mill !M!. NL Exhaust."
+  },
+  "theVacant:Accumulate": {
+    "NAME": "Accumulate",
+    "DESCRIPTION": "thevacant:Release: Draw 2 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Release: Draw 2 cards."
+  },
+  "theVacant:Revenge": {
+    "NAME": "Revenge",
+    "DESCRIPTION": "thevacant:Release: Gain 1 Thorns. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Release: Gain 1 Thorns. NL Exhaust."
+  },
+  "theVacant:Exorcise": {
+    "NAME": "Exorcise",
+    "DESCRIPTION": "The next time you play a card that Exhausts, play it twice.",
+    "UPGRADE_DESCRIPTION": "The next 2 times you play a card that Exhausts, play it twice."
+  },
+  "theVacant:Reseal": {
+    "NAME": "Reseal",
+    "DESCRIPTION": "Lose all thevacant:Will. NL Gain [E] and draw 1 card for each thevacant:Will lost. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose all thevacant:Will. NL Gain [E] , draw 1 card, gain 1 Strength, and gain 1 Dexterity for each thevacant:Will lost. NL Exhaust."
+  },
+  "theVacant:LastDitchEffort": {
+    "NAME": "Last Ditch Effort",
+    "DESCRIPTION": "Discard your hand. NL Return X cards from your discard pile to your hand. NL Gain [E] [E]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION":"Discard your hand. NL Return X + 1 cards from your discard pile to your hand. NL Gain [E] [E] [E]. NL Exhaust."
+  },
+  "theVacant:TheAnvil": {
+    "NAME": "The Anvil",
+    "DESCRIPTION": "Unplayable. thevacant:Unnate. thevacant:Heavy. NL When this card is thevacant:Milled, deal !M! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "It's too #rHeavy to play!"
+  },
+  "theVacant:Expand": {
+    "NAME": "Expand",
+    "DESCRIPTION": "Gain !M! Max HP. NL Lose 6 HP. NL Exhaust."
+  },
+  "theVacant:Release": {
+    "NAME": "Break Self",
+    "DESCRIPTION": "thevacant:Release: Lose !M! HP and gain !B! Block."
+  },
+  "theVacant:Enrage": {
+    "NAME": "Enrage",
+    "DESCRIPTION": "thevacant:Release: Gain !M! Strength. NL Exhaust."
+  },
+  "theVacant:Think": {
+    "NAME": "Think",
+    "DESCRIPTION": "Draw 1 card. NL thevacant:Release: thevacant:Mill !M!."
+  },
+  "theVacant:FromNothing": {
+    "NAME": "From Nothing",
+    "DESCRIPTION": "thevacant:Mill your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL thevacant:Mill your draw pile. NL Exhaust."
+  },
+  "theVacant:Freedom": {
+    "NAME": "Freedom",
+    "DESCRIPTION": "Double your thevacant:Will. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Double your thevacant:Will."
+  },
+  "theVacant:BreakFree": {
+    "NAME": "Break Free",
+    "DESCRIPTION": "Lose 3 HP. Gain !M! thevacant:Will. NL Exhaust."
+  },
+  "theVacant:Willful": {
+    "NAME": "Willful",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thevacant:Will. NL Exhaust."
+  },
+  "theVacant:Gloom": {
+    "NAME": "Gloom",
+    "DESCRIPTION": "At the start of your turn, thevacant:Mill !M!."
+  },
+  "theVacant:Immaterialize": {
+    "NAME": "Immaterialize",
+    "DESCRIPTION": "The next !M! non-Status, non-Curse cards played that would Exhaust discard instead."
+  },
+  "theVacant:CleanseSoul": {
+    "NAME": "Cleanse Soul",
+    "DESCRIPTION": "Whenever you thevacant:Mill a Status or Curse, Exhaust it.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Whenever you thevacant:Mill a Status or Curse, Exhaust it."
+  },
+  "theVacant:Willpower": {
+    "NAME": "Willpower",
+    "DESCRIPTION": "Gain !M! thevacant:Will."
+  },
+  "theVacant:Anguish": {
+    "NAME": "Anguish",
+    "DESCRIPTION": "If you are thevacant:Wounded, gain !M! Strength. If you are thevacant:Healthy, gain !M! Dexterity."
+  },
+  "theVacant:Recover": {
+    "NAME": "Recover",
+    "DESCRIPTION": "Gain !M! Regen."
+  },
+  "theVacant:IronWill": {
+    "NAME": "Iron Will",
+    "DESCRIPTION": "At the end of your turn, gain Block equal to the amount of times you've lost HP this combat."
+  },
+  "theVacant:Compression": {
+    "NAME": "Compression",
+    "DESCRIPTION": "At the end of your turn, if you are thevacant:Healthy, lose 2 HP. If you are thevacant:Wounded, heal 1 HP.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, if you are thevacant:Healthy, lose 2 HP. If you are thevacant:Wounded, heal 1 HP."
+  },
+  "theVacant:EmptyForm": {
+    "NAME": "Empty Form",
+    "DESCRIPTION": "Gain !M! Regen. NL At the start of your turn, set your HP to 1.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Regen. NL At the start of your turn, set your HP to 1."
+  },
+  "theVacant:Acceptance": {
+    "NAME": "Acceptance",
+    "DESCRIPTION": "Gain !M! Artifact."
+  },
+  "theVacant:Rejection": {
+    "NAME": "Rejection",
+    "DESCRIPTION": "Gain 2 Vulnerable, 2 Weak, and !M! Strength."
+  },
+  "theVacant:Empowered": {
+    "NAME": "Empowered",
+    "DESCRIPTION": "Whenever you lose HP from a card, gain [E].",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you lose HP from a card, gain [E]."
+  },
+  "theVacant:ShatterSoul": {
+    "NAME": "Shatter Soul",
+    "DESCRIPTION": "Gain 1 Intangible. NL Enter Wrath. NL Gain !M! thevacant:Will."
+  },
+  "theVacant:VoidEmbrace": {
+    "NAME": "Void Embrace",
+    "DESCRIPTION": "Whenever a card Exhausts, thevacant:Mill !M!."
+  },
+  "theVacant:GreaterMind": {
+    "NAME": "Greater Mind",
+    "DESCRIPTION": "Common cards act as though they have thevacant:Rebound, cost 0, and Exhaust when played."
+  }
+}
