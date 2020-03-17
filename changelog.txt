@@ -1,0 +1,18 @@
+0.1.1 Changes:
+Freedom+ no longer costs 0
+Return exhausts
+Shatter Soul no longer exhausts
+Willful costs 1 so it's not just better Break Free
+Strikes now are considered to contain "Strike"
+
+0.1.2 Changes:
+Refactored Lashed Out
+Changed Think to be exclusively Mill and exhaust when played
+Fixed & Buffed Fractures
+Revamped Bell Toll to gain Will instead of Mill
+Buffed Dig
+
+
+Future Changes:
+[Shrieking Blow not affected by vulnerable?]
+[Empty Form: At the end of combat, heal HP equal to your Regen]

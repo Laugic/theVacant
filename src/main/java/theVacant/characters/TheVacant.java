@@ -148,6 +148,9 @@ public class TheVacant extends CustomPlayer
         startDeck.add(VacantStarterDefend.ID);
         startDeck.add(Release.ID);
         startDeck.add(Crunch.ID);
+
+        //Testing
+        startDeck.add(EmptyForm.ID);
         return startDeck;
     }
 

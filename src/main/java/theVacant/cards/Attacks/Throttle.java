@@ -31,12 +31,12 @@ public class Throttle extends AbstractDynamicCard
     private static final int COST = 2;
     private static final int DAMAGE = 14;
     private static final int UPGRADE_PLUS_DMG = 4;
-    private static final int VULNERABLE_NUM = 3;
+    private static final int VULNERABLE_NUM = 4;
 
     public Throttle()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.damage = this.baseDamage = DAMAGE;
     }
 
@@ -45,7 +45,7 @@ public class Throttle extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        if(GetWill() > this.magicNumber)
+        if(GetWill() >= this.magicNumber)
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, VULNERABLE_NUM, false), VULNERABLE_NUM));
     }
 

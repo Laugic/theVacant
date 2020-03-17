@@ -37,7 +37,7 @@
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
-    "DESCRIPTIONS": ["At the start of your turn, set your HP to 1."]
+    "DESCRIPTIONS": ["At the start of your turn, set your HP to 1. #yRegen at the end of combat."]
   },
   "theVacant:EmpoweredPower": {
     "NAME": "Empowered",

@@ -30,15 +30,15 @@ public class Think extends AbstractDynamicCard
     public Think()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.getBonusMillToMagic = true;
         this.displayWill = true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
         for(int i = 0; i < GetWill(); i++)
             AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
     }
@@ -50,6 +50,7 @@ public class Think extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

@@ -15,8 +15,7 @@
     "NAME": "Lash Out",
     "DESCRIPTION": "Deal damage equal to your missing HP. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deals ",
-      " damage)"
+      " NL (Deals !D! damage)"
     ]
   },
   "theVacant:GraveDigger": {
@@ -91,7 +90,7 @@
   },
   "theVacant:BellToll": {
     "NAME": "Bell Toll",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Release: thevacant:Mill !M!."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thevacant:Will. NL Exhaust."
   },
   "theVacant:ShriekingBlast": {
     "NAME": "Shrieking Blast",
@@ -112,7 +111,7 @@
   },
   "theVacant:Throttle": {
     "NAME": "Throttle",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! :  Apply 3 Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! :  Apply 4 Vulnerable."
   },
   "theVacant:BrassMagnet": {
     "NAME": "BrassMagnet",
@@ -154,7 +153,7 @@
   },
   "theVacant:Showdown": {
     "NAME": "Showdown",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! : 8 times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! : 10 times. NL Exhaust."
   },
   "theVacant:VacantStarterDefend": {
     "NAME": "Defend",
@@ -270,7 +269,7 @@
   },
   "theVacant:Think": {
     "NAME": "Think",
-    "DESCRIPTION": "Draw 1 card. NL thevacant:Release: thevacant:Mill !M!."
+    "DESCRIPTION": "thevacant:Release: thevacant:Mill !M!. NL Exhaust."
   },
   "theVacant:FromNothing": {
     "NAME": "From Nothing",
@@ -326,8 +325,8 @@
   },
   "theVacant:EmptyForm": {
     "NAME": "Empty Form",
-    "DESCRIPTION": "Gain !M! Regen. NL At the start of your turn, set your HP to 1.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Regen. NL At the start of your turn, set your HP to 1."
+    "DESCRIPTION": "Gain !M! Regen. NL At the start of your turn, set your HP to 1. At the end of combat, heal HP equal to your Regen.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain !M! Regen. NL At the start of your turn, set your HP to 1. At the end of combat, heal HP equal to your Regen."
   },
   "theVacant:Acceptance": {
     "NAME": "Acceptance",

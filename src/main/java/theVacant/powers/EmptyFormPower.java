@@ -56,6 +56,23 @@ public class EmptyFormPower extends AbstractPower implements CloneablePowerInter
     }
 
     @Override
+    public void onVictory()
+    {
+        AbstractPlayer player = AbstractDungeon.player;
+        if(player != null)
+        {
+            if (player.currentHealth > 0)
+                player.heal(player.getPower("Regeneration").amount);
+        }
+    }
+
+    @Override
+    public void updateDescription()
+    {
+        description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public AbstractPower makeCopy()
     {
         return new EmptyFormPower(owner, source, amount);

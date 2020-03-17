@@ -87,9 +87,7 @@ public class LashOut extends AbstractDynamicCard
 
     private void getDesc()
     {
-        this.rawDescription = cardStrings.DESCRIPTION;
-        int amount = this.damage;
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + cardStrings.EXTENDED_DESCRIPTION[1];
+        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

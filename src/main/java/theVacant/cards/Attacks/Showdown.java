@@ -43,9 +43,9 @@ public class Showdown extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
-        if(GetWill() > this.magicNumber)
+        if(GetWill() >= this.magicNumber)
         {
-            for(int i = 0; i < 7; i++)
+            for(int i = 0; i < 9; i++)
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }

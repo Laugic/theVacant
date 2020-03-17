@@ -12,6 +12,7 @@ import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.WillPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -28,24 +29,22 @@ public class BellToll extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 7;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int DAMAGE = 8;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     public BellToll()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.getBonusMillToMagic = true;
-        this.displayWill = true;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        for(int i = 0; i < GetWill(); i++)
-            AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
+        AbstractDungeon.player.addPower(new WillPower(AbstractDungeon.player, AbstractDungeon.player, this.magicNumber));
     }
 
     @Override
@@ -55,8 +54,6 @@ public class BellToll extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }
