@@ -32,7 +32,6 @@ public class ShatterSoul extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
-        this.exhaust = true;
     }
 
     @Override

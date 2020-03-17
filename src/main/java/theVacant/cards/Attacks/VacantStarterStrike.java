@@ -36,6 +36,7 @@ public class VacantStarterStrike extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.tags.add(BaseModCardTags.BASIC_STRIKE);
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override

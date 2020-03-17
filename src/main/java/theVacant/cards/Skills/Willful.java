@@ -35,7 +35,7 @@ public class Willful extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int BLOCK = 4;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 

@@ -30,6 +30,7 @@ public class Return extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        this.exhaust = true;
     }
 
     @Override

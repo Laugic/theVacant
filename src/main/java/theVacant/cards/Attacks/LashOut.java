@@ -68,13 +68,13 @@ public class LashOut extends AbstractDynamicCard
         getDesc();
         super.atTurnStart();
     }
-    @Override
+    /*@Override
     public void calculateCardDamage(AbstractMonster monster)
     {
         getDamage();
         getDesc();
         super.calculateCardDamage(monster);
-    }
+    }*/
 
     private void getDamage()
     {

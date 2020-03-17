@@ -46,7 +46,6 @@ public class Freedom extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
             this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
