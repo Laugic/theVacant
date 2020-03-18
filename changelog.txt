@@ -11,8 +11,9 @@ Changed Think to be exclusively Mill and exhaust when played
 Fixed & Buffed Fractures
 Revamped Bell Toll to gain Will instead of Mill
 Buffed Dig
+Buffed Empty Form
 
-
-Future Changes:
-[Shrieking Blow not affected by vulnerable?]
-[Empty Form: At the end of combat, heal HP equal to your Regen]
+0.2 Changes:
+Added Void to Mill
+Nerfed Fortify
+Fixed Cleanse Soul's Power display

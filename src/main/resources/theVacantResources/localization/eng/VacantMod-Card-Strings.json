@@ -191,7 +191,7 @@
   },
   "theVacant:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Healthy, gain !M! Strength."
+    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Healthy, gain !M! Strength. NL Exhaust."
   },
   "theVacant:Sneeze": {
     "NAME": "Sneeze",

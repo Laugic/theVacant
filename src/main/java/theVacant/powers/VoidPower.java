@@ -4,6 +4,7 @@ import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -61,7 +62,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
             this.justEvoked = false;
             return;
         }
-        if (card.type != AbstractCard.CardType.POWER)
+        if (card.baseBlock >= 0 || card.baseDamage >= 0)
         {
             flash();
             addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));

@@ -53,6 +53,6 @@
   },
   "theVacant:VoidPower": {
     "NAME": "Void",
-    "DESCRIPTIONS": ["Increase the damage and block of the next card you play by #b", "."]
+    "DESCRIPTIONS": ["Increase the damage and block of the next card you play that attacks or blocks by #b", "."]
   }
 }

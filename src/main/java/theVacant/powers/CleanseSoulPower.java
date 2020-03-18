@@ -41,6 +41,12 @@ public class CleanseSoulPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
+    public void updateDescription()
+    {
+        description = DESCRIPTIONS[0];
+    }
+
+    @Override
     public AbstractPower makeCopy()
     {
         return new CleanseSoulPower(owner, source, amount);
