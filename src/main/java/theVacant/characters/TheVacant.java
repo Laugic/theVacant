@@ -150,7 +150,6 @@ public class TheVacant extends CustomPlayer
         startDeck.add(Crunch.ID);
 
         //Testing
-        startDeck.add(EmptyForm.ID);
         return startDeck;
     }
 

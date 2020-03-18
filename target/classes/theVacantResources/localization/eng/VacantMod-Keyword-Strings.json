@@ -40,7 +40,7 @@
       "mill",
       "milled"
     ],
-    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile."
+    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile. Gain #yVoid for each card moved."
   },
   {
     "PROPER_NAME": "Rebound",

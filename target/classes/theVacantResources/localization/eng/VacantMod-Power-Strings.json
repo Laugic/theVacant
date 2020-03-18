@@ -50,5 +50,9 @@
   "theVacant:GreaterMindPower": {
     "NAME": "Greater Mind",
     "DESCRIPTIONS": ["Common cards have #yRebound, cost #b0, and #yExhaust when played."]
+  },
+  "theVacant:VoidPower": {
+    "NAME": "Void",
+    "DESCRIPTIONS": ["Increase the damage and block of the next card you play by #b", "."]
   }
 }

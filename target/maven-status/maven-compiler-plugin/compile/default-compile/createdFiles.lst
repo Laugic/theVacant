@@ -42,6 +42,7 @@ theVacant\cards\Skills\Cower.class
 theVacant\cards\Attacks\Slash.class
 theVacant\cards\Attacks\Jab.class
 theVacant\cards\Skills\Enrage.class
+theVacant\powers\VoidPower.class
 theVacant\powers\EmptyCardDrawPower.class
 theVacant\cards\Powers\Willpower.class
 theVacant\cards\Attacks\Threat.class
