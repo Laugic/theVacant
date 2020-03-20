@@ -53,8 +53,9 @@ public class TheVacant extends CustomPlayer
     public static final int ORB_SLOTS = 0;
 
 
-    public int fractureThreshold = 4;
-    public int millsThisTurn = 0;
+    public int fractureThreshold;
+    public int millsThisTurn;
+    public int releasesThisCombat;
 
     private static final String ID = makeID("VacantCharacter");
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ID);
@@ -103,6 +104,7 @@ public class TheVacant extends CustomPlayer
         dialogY = (drawY + 220.0F * Settings.scale);
         this.fractureThreshold = 4;
         this.millsThisTurn = 0;
+        this.releasesThisCombat = 0;
     }
 
     @Override
@@ -176,6 +178,7 @@ public class TheVacant extends CustomPlayer
     public void applyStartOfCombatLogic()
     {
         this.millsThisTurn = 0;
+        this.releasesThisCombat = 0;
         super.applyStartOfCombatLogic();
     }
 

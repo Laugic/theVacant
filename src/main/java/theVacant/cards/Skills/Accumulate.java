@@ -37,8 +37,9 @@ public class Accumulate extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
+        PreRelease();
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, GetWill()));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, GetWill()));
+        PostRelease();
     }
 
     @Override

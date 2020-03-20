@@ -2,6 +2,7 @@ package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -27,8 +28,8 @@ public class Jab extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public Jab()
     {
@@ -37,11 +38,11 @@ public class Jab extends AbstractDynamicCard
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if(p.currentHealth <= p.maxHealth / 2)
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        if(player.currentHealth <= player.maxHealth / 2)
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
     }
 
     @Override
@@ -51,8 +52,6 @@ public class Jab extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.rebound = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

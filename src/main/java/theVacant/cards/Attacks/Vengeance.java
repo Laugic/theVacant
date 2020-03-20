@@ -26,23 +26,22 @@ public class Vengeance extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int COST = 2;
+    private static final int DAMAGE = 6;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public Vengeance()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = 0;
         this.isUnnate = true;
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
         for(int i = 0; i < player.damagedThisCombat; i++)
-            AbstractDungeon.actionManager.addToBottom( new DamageAction(m, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 
     @Override

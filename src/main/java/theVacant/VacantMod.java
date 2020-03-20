@@ -218,7 +218,6 @@ public class VacantMod implements
         BaseMod.addCard(new BrassMagnet());
         BaseMod.addCard(new FiendFrost());
         BaseMod.addCard(new Yeet());
-        BaseMod.addCard(new Splurge());
         BaseMod.addCard(new DimensionTear());
         BaseMod.addCard(new BurdenBreak());
         BaseMod.addCard(new FinalCountdown());
@@ -251,9 +250,10 @@ public class VacantMod implements
         BaseMod.addCard(new Revenge());
         BaseMod.addCard(new Exorcise());
         BaseMod.addCard(new Reseal());
-        BaseMod.addCard(new LastDitchEffort());
+        BaseMod.addCard(new HolyWater());
         BaseMod.addCard(new BreakFree());
         BaseMod.addCard(new Willful());
+        BaseMod.addCard(new Ascend());
         BaseMod.addCard(new TheAnvil());
 
         //Powers
@@ -301,7 +301,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(BrassMagnet.ID);
         UnlockTracker.unlockCard(FiendFrost.ID);
         UnlockTracker.unlockCard(Yeet.ID);
-        UnlockTracker.unlockCard(Splurge.ID);
         UnlockTracker.unlockCard(DimensionTear.ID);
         UnlockTracker.unlockCard(BurdenBreak.ID);
         UnlockTracker.unlockCard(FinalCountdown.ID);
@@ -334,9 +333,10 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Revenge.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
         UnlockTracker.unlockCard(Reseal.ID);
-        UnlockTracker.unlockCard(LastDitchEffort.ID);
+        UnlockTracker.unlockCard(HolyWater.ID);
         UnlockTracker.unlockCard(BreakFree.ID);
         UnlockTracker.unlockCard(Willful.ID);
+        UnlockTracker.unlockCard(Ascend.ID);
         UnlockTracker.unlockCard(TheAnvil.ID);
 
         //Powers

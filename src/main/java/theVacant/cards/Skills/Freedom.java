@@ -37,7 +37,7 @@ public class Freedom extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.player.addPower(new WillPower(AbstractDungeon.player, AbstractDungeon.player, GetWill()));
+        AbstractDungeon.player.addPower(new WillPower(AbstractDungeon.player, AbstractDungeon.player, (this.upgraded?2*GetWill():GetWill())));
     }
 
     @Override
@@ -46,7 +46,6 @@ public class Freedom extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

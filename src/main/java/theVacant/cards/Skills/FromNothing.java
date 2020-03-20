@@ -46,7 +46,7 @@ public class FromNothing extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.isInnate = true;
+            this.rebound = true;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

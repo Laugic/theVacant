@@ -111,11 +111,11 @@ public class VacantMillAction  extends AbstractGameAction
                     this.actionType = ActionType.EXHAUST;
                     if(player.discardPile.contains(card))
                         player.discardPile.moveToExhaustPile(card);
-                    if(player instanceof TheVacant)
-                        ((TheVacant)player).millsThisTurn++;
                 }
             }
         }
+        if(player instanceof TheVacant)
+            ((TheVacant)player).millsThisTurn++;
     }
 
     private void PostMillVoidGain()

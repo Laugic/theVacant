@@ -24,12 +24,12 @@ public class Willpower extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public Willpower()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
     }
 

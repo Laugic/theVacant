@@ -26,13 +26,13 @@ public class Dig extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int BLOCK = 8;
+    private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
     public Dig()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.block = this.baseBlock = BLOCK;
         this.getBonusMillToMagic = true;
     }

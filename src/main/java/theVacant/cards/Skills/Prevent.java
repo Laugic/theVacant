@@ -38,7 +38,9 @@ public class Prevent extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        PreRelease();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, GetWill()), GetWill()));
+        PostRelease();
     }
 
     @Override

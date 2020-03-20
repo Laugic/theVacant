@@ -3,6 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -42,7 +43,31 @@ public class WillPower extends AbstractPower implements CloneablePowerInterface
 
         updateDescription();
     }
+    @Override
+    public void stackPower(int stackAmount)
+    {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        if (this.amount == 0)
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (this.amount >= 999)
+            this.amount = 999;
+        if (this.amount <= -999)
+            this.amount = -999;
+    }
 
+    @Override
+    public void reducePower(int reduceAmount)
+    {
+        this.fontScale = 8.0F;
+        this.amount -= reduceAmount;
+        if (this.amount == 0)
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (this.amount >= 999)
+            this.amount = 999;
+        if (this.amount <= -999)
+            this.amount = -999;
+    }
     @Override
     public void updateDescription()
     {

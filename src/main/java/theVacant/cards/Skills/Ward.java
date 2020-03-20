@@ -41,8 +41,10 @@ public class Ward extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
+        PreRelease();
         for(int i = 0; i < GetWill(); i++)
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
+        PostRelease();
     }
 
     @Override

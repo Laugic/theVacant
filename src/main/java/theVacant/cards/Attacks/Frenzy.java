@@ -26,15 +26,15 @@ public class Frenzy extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 3;
     private static final int DAMAGE = 2;
-    private static final int UPGRADE_PLUS_DMG = 1;
 
     public Frenzy()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = 0;
+        this.exhaust = true;
     }
 
     @Override
@@ -50,26 +50,27 @@ public class Frenzy extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBaseCost(2);
             initializeDescription();
         }
     }
-
+/*
     @Override
     public void applyPowers()
     {
         this.rawDescription = this.cardStrings.DESCRIPTION;
         int amount = 0;
         if(AbstractDungeon.player != null)
-            amount = AbstractDungeon.player.discardPile.size();
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + ((amount==1)?cardStrings.EXTENDED_DESCRIPTION[1]:cardStrings.EXTENDED_DESCRIPTION[2]);
+            amount = AbstractDungeon.player.discardPile.size() * this.damage;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + cardStrings.EXTENDED_DESCRIPTION[1];
         initializeDescription();
         super.applyPowers();
     }
+
     @Override
     public void onMoveToDiscard()
     {
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
-    }
+    }*/
 }

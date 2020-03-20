@@ -31,7 +31,7 @@
     "NAME": "Bound Soul",
     "FLAVOR": "Forever tied to an artifact.",
     "DESCRIPTIONS": [
-      "Start each combat with #b1 #ythevacant:Will. Once per combat, if you are #ythevacant:Wounded, gain #b1 additional #ythevacant:Will."
+      "Start each combat with #b1 #ythevacant:Will. At the start of your turn, if you have no #ythevacant:Will, gain #b1 #ythevacant:Will."
     ]
   }
 }

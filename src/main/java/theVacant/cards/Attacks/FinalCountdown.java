@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -33,8 +34,9 @@ public class FinalCountdown extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
-    private static final int DAMAGE = 40;
+    private static final int COST = 6;
+    private static final int UPGRADED_COST = 5;
+    private static final int DAMAGE = 50;
     private static final int UPGRADE_PLUS_DMG = 10;
 
     public FinalCountdown()
@@ -46,7 +48,21 @@ public class FinalCountdown extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+    }
+
+    @Override
+    public void applyPowers()
+    {
+        this.costForTurn = Math.max(this.upgraded?UPGRADED_COST:COST - ((TheVacant)AbstractDungeon.player).releasesThisCombat, 0);
+    }
+
+    @Override
+    public void triggerWhenDrawn()
+    {
+        this.costForTurn = Math.max(this.upgraded?UPGRADED_COST:COST - ((TheVacant)AbstractDungeon.player).releasesThisCombat, 0);
     }
 
     @Override
@@ -55,30 +71,9 @@ public class FinalCountdown extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
+            upgradeBaseCost(UPGRADED_COST);
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.isUnnate = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
-    }
-    @Override
-    public void triggerOnGlowCheck()
-    {
-        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        if (AbstractDungeon.player.drawPile.isEmpty())
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-    }
-
-    public boolean canUse(AbstractPlayer player, AbstractMonster monster)
-    {
-        boolean canUse = super.canUse(player, monster);
-        if (!canUse)
-            return false;
-        if (player.drawPile.size() > 0)
-        {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            return false;
-        }
-        return canUse;
     }
 }

@@ -32,19 +32,14 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/void_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/void_power32.png");
 
-    public static int VoidIDOffset;
-    private boolean justEvoked;
-
     public VoidPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
         name = NAME;
-        ID = POWER_ID + VoidIDOffset;
-        VoidIDOffset++;
+        ID = POWER_ID;
 
         this.owner = owner;
         this.amount = amount;
         this.source = source;
-        this.justEvoked = true;
 
         type = PowerType.BUFF;
         isTurnBased = true;
@@ -54,18 +49,14 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
 
         updateDescription();
     }
+
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action)
+    public void onUseCard(AbstractCard card, UseCardAction action)
     {
-        if (this.justEvoked)
-        {
-            this.justEvoked = false;
-            return;
-        }
         if (card.baseBlock >= 0 || card.baseDamage >= 0)
         {
             flash();
-            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, this.amount));
         }
     }
 
@@ -90,6 +81,32 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     {
         if (isPlayer)
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+    }
+
+    @Override
+    public void stackPower(int stackAmount)
+    {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        if (this.amount == 0)
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (this.amount >= 999)
+            this.amount = 999;
+        if (this.amount <= -999)
+            this.amount = -999;
+    }
+
+    @Override
+    public void reducePower(int reduceAmount)
+    {
+        this.fontScale = 8.0F;
+        this.amount -= reduceAmount;
+        if (this.amount == 0)
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+        if (this.amount >= 999)
+            this.amount = 999;
+        if (this.amount <= -999)
+            this.amount = -999;
     }
 
     @Override

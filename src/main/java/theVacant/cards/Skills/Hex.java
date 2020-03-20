@@ -17,6 +17,7 @@ import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DoomPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -28,30 +29,22 @@ public class Hex extends AbstractDynamicCard
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public Hex()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.exhaust = true;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new SFXAction("INTIMIDATE"));
-        addToBot(new VFXAction(player, new IntimidateEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 0.5F));
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-        {
-            addToBot(new ApplyPowerAction(mo, player, new WeakPower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            if(player.isBloodied)
-                addToBot(new ApplyPowerAction(mo, player, new VulnerablePower(mo, this.magicNumber, false), this.magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-        }
+        addToBot(new ApplyPowerAction(monster, monster, new DoomPower(monster, player, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -60,7 +53,7 @@ public class Hex extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

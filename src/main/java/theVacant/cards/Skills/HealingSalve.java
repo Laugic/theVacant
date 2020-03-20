@@ -41,7 +41,7 @@ public class HealingSalve extends AbstractDynamicCard
     @Override
     public void triggerOnExhaust()
     {
-        AbstractDungeon.actionManager.addToBottom(new RegenAction(AbstractDungeon.player, magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new RegenAction(AbstractDungeon.player, this.magicNumber));
     }
 
     @Override

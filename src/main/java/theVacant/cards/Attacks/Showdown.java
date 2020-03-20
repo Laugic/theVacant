@@ -2,6 +2,7 @@ package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -27,27 +28,20 @@ public class Showdown extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 60;
+    private static final int UPGRADE_PLUS_DMG = 15;
 
     public Showdown()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 8;
         this.damage = this.baseDamage = DAMAGE;
-        this.exhaust = true;
+        this.isInnate = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-
-        if(GetWill() >= this.magicNumber)
-        {
-            for(int i = 0; i < 9; i++)
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        }
     }
 
     @Override
@@ -57,25 +51,29 @@ public class Showdown extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(-2);
-            upgradedMagicNumber = true;
             initializeDescription();
         }
     }
+
     @Override
-    public void applyPowers()
+    public void triggerOnGlowCheck()
     {
-        this.magicNumber = this.baseMagicNumber = 2 * GetFractureThreshold();
-        this.magicNumber -= (this.upgraded?2:0);
-        this.isMagicNumberModified = true;
-        super.applyPowers();
+        this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        if (AbstractDungeon.player.hand.size() >= 8)
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
     }
+
     @Override
-    public void atTurnStart()
+    public boolean canUse(AbstractPlayer player, AbstractMonster monster)
     {
-        this.magicNumber = this.baseMagicNumber = 2 * GetFractureThreshold();
-        this.magicNumber -= (this.upgraded?2:0);
-        this.isMagicNumberModified = true;
-        super.atTurnStart();
+        boolean canUse = super.canUse(player, monster);
+        if (!canUse)
+            return false;
+        if (player.hand.size() < 8)
+        {
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+        return canUse;
     }
 }

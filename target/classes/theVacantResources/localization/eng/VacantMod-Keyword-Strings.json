@@ -52,9 +52,10 @@
   {
     "PROPER_NAME": "Release",
     "NAMES": [
-      "release"
+      "release",
+      "released"
     ],
-    "DESCRIPTION": "Do the following effect once for each #yWill you have."
+    "DESCRIPTION": "Do the following effect once for each #yWill you have. Then, lose 1 #yWill."
   },
   {
     "PROPER_NAME": "Will",
@@ -70,5 +71,12 @@
       "fractured"
     ],
     "DESCRIPTION": "Fracture effects happen when you have #bX or more #yWill."
+  },
+  {
+    "PROPER_NAME": "Doom",
+    "NAMES": [
+      "doom"
+    ],
+    "DESCRIPTION": "Creatures take more damage for each Doom they have."
   }
 ]

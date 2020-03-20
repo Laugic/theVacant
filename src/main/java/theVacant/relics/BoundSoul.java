@@ -28,12 +28,9 @@ public class BoundSoul extends CustomRelic
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("bound_soul.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("bound_soul.png"));
 
-    private boolean activated;
-
     public BoundSoul()
     {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
-        this.activated = false;
     }
 
     @Override
@@ -41,16 +38,14 @@ public class BoundSoul extends CustomRelic
     {
         BoundSoul.this.flash();
         AbstractDungeon.player.addPower(new WillPower(AbstractDungeon.player, AbstractDungeon.player, 1));
-        this.activated = false;
     }
 
     @Override
     public void atTurnStart()
     {
-        if(AbstractDungeon.player.isBloodied && !this.activated)
+        if(!AbstractDungeon.player.hasPower(WillPower.POWER_ID))
         {
             BoundSoul.this.flash();
-            this.activated = true;
             AbstractDungeon.player.addPower(new WillPower(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
     }

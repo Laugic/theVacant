@@ -33,8 +33,7 @@ theVacant\cards\Skills\Spinshield.class
 theVacant\powers\EmpoweredPower.class
 theVacant\cards\Powers\Gloom.class
 theVacant\powers\IronWillPower.class
-theVacant\cards\Attacks\BurdenBreak.class
-theVacant\cards\Skills\LastDitchEffort.class
+theVacant\powers\DoomPower.class
 theVacant\cards\Skills\ShutAway.class
 theVacant\cards\Skills\Think.class
 theVacant\cards\Skills\OnSecondThought.class
@@ -60,6 +59,7 @@ theVacant\characters\TheVacant$Enums.class
 theVacant\cards\Attacks\Whip.class
 theVacant\cards\Skills\Sneeze.class
 theVacant\cards\Skills\Exorcise.class
+theVacant\cards\Powers\BurdenBreak.class
 theVacant\cards\Skills\BattleScars.class
 theVacant\cards\Attacks\Reconnect.class
 theVacant\cards\Attacks\VacantStarterStrike.class
@@ -79,6 +79,7 @@ theVacant\cards\Attacks\DimensionTear.class
 theVacant\powers\EmptyFormPower.class
 theVacant\cards\Powers\Recover.class
 theVacant\powers\GreaterMindPower.class
+theVacant\powers\BurdenBreakPower.class
 theVacant\cards\Powers\Acceptance.class
 theVacant\variables\VacantMissingHealthBlock.class
 theVacant\cards\Attacks\Crunch.class
@@ -98,10 +99,11 @@ theVacant\cards\Attacks\SurpriseAttack.class
 theVacant\cards\Skills\Accumulate.class
 theVacant\cards\VacantCardGroup.class
 theVacant\cards\Skills\HealingSalve.class
-theVacant\cards\Attacks\Splurge.class
 theVacant\relics\BrassGoblet$1.class
 theVacant\cards\Skills\Freedom.class
 theVacant\cards\Powers\Compression.class
+theVacant\cards\Skills\Ascend.class
 theVacant\cards\Skills\Release.class
 theVacant\cards\Skills\Willful.class
 theVacant\cards\Skills\Ward.class
+theVacant\cards\Skills\HolyWater.class

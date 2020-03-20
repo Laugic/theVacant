@@ -1,11 +1,55 @@
-0.1.1 Changes:
-Freedom+ no longer costs 0
-Return exhausts
-Shatter Soul no longer exhausts
-Willful costs 1 so it's not just better Break Free
-Strikes now are considered to contain "Strike"
+0.3.0
+Releasing now makes you lose Will.
 
-0.1.2 Changes:
+Removed Splurge
+Removed Last Ditch Effort
+
+Added Ascend
+Added Holy Water
+Added Doom [Power effect]
+
+Changed Showdown
+Changed Burden Break
+Changed Final Countdown
+Changed Hex
+
+Buffed Cleanse Soul [0 Cost unupgraded]
+Buffed Willpower
+Buffed Break Free
+
+Revamped Reconnect
+Revamped Double Team
+Revamped Vengeance
+Revamped Freedom's Upgrade
+Revamped Shatter Soul
+Revamped Willful
+Revamped Throttle
+Revamped Jab
+
+Nerfed Immaterialize
+Nerfed From Nothing- upgrades to Rebound instead of Innate
+Nerfed Dig
+Nerfed Accumulate
+Nerfed Think to not increase Mill amount on upgrade
+Nerfed Frenzy- 3 cost, Exhausts, no longer upgrades base damage
+
+Threaten Exhausts and is Uncommon
+Return is Uncommon
+Spinshield is Uncommon
+Double Team is now Common [Instead of Basic, whoops]
+
+Fixed Cards Milled Per Turn not counting correctly
+
+Changed wording of Void to include that it's only for this turn
+Added support for ModTheSpire Bot
+
+--
+0.2
+Added Void to Mill
+Nerfed Fortify
+Fixed Cleanse Soul's Power display
+
+0.1.2
 Refactored Lashed Out
 Changed Think to be exclusively Mill and exhaust when played
 Fixed & Buffed Fractures
@@ -13,7 +57,10 @@ Revamped Bell Toll to gain Will instead of Mill
 Buffed Dig
 Buffed Empty Form
 
-0.2 Changes:
-Added Void to Mill
-Nerfed Fortify
-Fixed Cleanse Soul's Power display
+0.1.1
+Freedom+ no longer costs 0
+Return exhausts
+Shatter Soul no longer exhausts
+Willful costs 1 so it's not just better Break Free
+Strikes now are considered to contain "Strike"
+

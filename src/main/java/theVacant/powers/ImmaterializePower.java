@@ -3,6 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -46,10 +47,11 @@ public class ImmaterializePower extends AbstractPower implements CloneablePowerI
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action)
     {
-        if(action.exhaustCard && card.type != AbstractCard.CardType.CURSE && card.type != AbstractCard.CardType.STATUS)
+        if(action.exhaustCard)
         {
             action.exhaustCard = false;
-            amount--;
+            this.amount--;
+            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
     }
 

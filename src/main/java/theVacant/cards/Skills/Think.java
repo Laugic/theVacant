@@ -39,8 +39,10 @@ public class Think extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
+        PreRelease();
         for(int i = 0; i < GetWill(); i++)
             AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
+        PostRelease();
     }
 
     @Override
@@ -49,7 +51,6 @@ public class Think extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
             upgradeBaseCost(0);
             initializeDescription();
         }

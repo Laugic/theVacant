@@ -17,13 +17,13 @@ public class DoubleTeam extends AbstractDynamicCard
     public static final String ID = VacantMod.makeID(DoubleTeam.class.getSimpleName());
     public static final String IMG = makeCardPath("Skill.png");
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
-    private static final int BLOCK = 4;
+    private static final int COST = 2;
+    private static final int BLOCK = 7;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
     public DoubleTeam()

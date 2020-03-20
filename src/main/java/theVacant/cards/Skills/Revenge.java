@@ -38,7 +38,9 @@ public class Revenge extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        PreRelease();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ThornsPower(player, GetWill()), GetWill()));
+        PostRelease();
     }
 
     @Override

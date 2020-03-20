@@ -13,7 +13,7 @@
   },
   "theVacant:ImmaterializePower": {
     "NAME": "Immaterialize",
-    "DESCRIPTIONS": ["The next ", " non-Status, non-Curse card played that would Exhaust discard instead.", " non-Status, non-Curse cards played that would Exhaust discard instead."]
+    "DESCRIPTIONS": ["The next ", " card played that would #yExhaust discard instead.", " cards played that would #yExhaust discard instead."]
   },
   "theVacant:ReleasePower": {
     "NAME": "Release",
@@ -53,6 +53,18 @@
   },
   "theVacant:VoidPower": {
     "NAME": "Void",
-    "DESCRIPTIONS": ["Increase the damage and block of the next card you play that attacks or blocks by #b", "."]
+    "DESCRIPTIONS": ["Increase the damage and #yBlock of the next card you play this turn that attacks or #yBlocks by #b", "."]
+  },
+  "theVacant:BurdenBreakPower": {
+    "NAME": "Burden Break",
+    "DESCRIPTIONS": ["When you #yRelease, gain ", " #yBlock."]
+  },
+  "theVacant:CleanseSoulPower": {
+    "NAME": "Cleanse Soul",
+    "DESCRIPTIONS": ["Whenever you #yMill a Status or Curse, #yExhaust it."]
+  },
+  "theVacant:DoomPower": {
+    "NAME": "Doom",
+    "DESCRIPTIONS": ["Take #b", " additional damage."]
   }
 }

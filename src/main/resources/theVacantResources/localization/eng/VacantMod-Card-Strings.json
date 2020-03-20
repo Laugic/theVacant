@@ -33,11 +33,10 @@
   },
   "theVacant:Frenzy": {
     "NAME": "Frenzy",
-    "DESCRIPTION": "Deal !D! damage for each card in your discard pile.",
+    "DESCRIPTION": "Deal !D! damage for each card in your discard pile. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Your discard has ",
-      " card)",
-      " cards)"
+      " NL (You would deal ",
+      " damage)"
     ]
   },
   "theVacant:Snowball": {
@@ -59,8 +58,7 @@
   },
   "theVacant:Jab": {
     "NAME": "Jab",
-    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Wounded, deal !D! damage again.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. NL If you are thevacant:Wounded, deal !D! damage again."
+    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Wounded, draw 1 card."
   },
   "theVacant:SealBreak": {
     "NAME": "Seal Break",
@@ -103,15 +101,15 @@
   },
   "theVacant:Threat": {
     "NAME": "Threaten",
-    "DESCRIPTION": "Deal !D! damage !M! times."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Exhaust."
   },
   "theVacant:Reconnect": {
     "NAME": "Reconnect",
-    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL If you are thevacant:Healthy, Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Heal HP equal to unblocked damage. NL If you are thevacant:Healthy, Exhaust."
   },
   "theVacant:Throttle": {
     "NAME": "Throttle",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! :  Apply 4 Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Weak."
   },
   "theVacant:BrassMagnet": {
     "NAME": "BrassMagnet",
@@ -130,30 +128,18 @@
     "NAME": "Dimension Tear",
     "DESCRIPTION": "Deal !D! damage. NL Draw your Exhaust pile. Exhaust your discard pile. NL Exhaust."
   },
-  "theVacant:Splurge": {
-    "NAME": "Splurge",
-    "DESCRIPTION": "Deal !D! damage double X times. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage double (X + 1) times. Exhaust."
-  },
   "theVacant:BurdenBreak": {
     "NAME": "Burden Break",
-    "DESCRIPTION": "Deal !D! damage for each card thevacant:Milled this turn.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage for each card thevacant:Milled this turn. NL ",
-    "EXTENDED_DESCRIPTION": [
-      " NL (You Milled ",
-      " card).",
-      " cards)."
-    ]
+    "DESCRIPTION": "Whenever you thevacant:Release, gain !M! Block."
   },
   "theVacant:FinalCountdown": {
     "NAME": "Final Countdown",
-    "DESCRIPTION": "Unplayable unless your draw pile is empty. NL Deal !D! damage to ALL enemies.",
-    "UPGRADE_DESCRIPTION": "thevacant:Unnate. NL Unplayable unless your draw pile is empty. NL Deal !D! damage to ALL enemies.",
-    "EXTENDED_DESCRIPTION": ["My Draw Pile isn't #rempty!"]
+    "DESCRIPTION": "Costs 1 [E] less for each time you thevacant:Released this combat. NL Deal !D! damage to ALL enemies."
   },
   "theVacant:Showdown": {
     "NAME": "Showdown",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Fracture !M! : 10 times. NL Exhaust."
+    "DESCRIPTION": "Unplayable unless you have 8 or more cards in your hand. NL Deal !D! damage.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough #rcards!"]
   },
   "theVacant:VacantStarterDefend": {
     "NAME": "Defend",
@@ -211,7 +197,7 @@
   },
   "theVacant:Hex": {
     "NAME": "Hex",
-    "DESCRIPTION": "Apply !M! Weak to ALL enemies. If you are thevacant:Wounded, apply !M! Vulnerable to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! thevacant:Doom to target enemy."
   },
   "theVacant:Spinshield": {
     "NAME": "Spinshield",
@@ -245,10 +231,9 @@
     "DESCRIPTION": "Lose all thevacant:Will. NL Gain [E] and draw 1 card for each thevacant:Will lost. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Lose all thevacant:Will. NL Gain [E] , draw 1 card, gain 1 Strength, and gain 1 Dexterity for each thevacant:Will lost. NL Exhaust."
   },
-  "theVacant:LastDitchEffort": {
-    "NAME": "Last Ditch Effort",
-    "DESCRIPTION": "Discard your hand. NL Return X cards from your discard pile to your hand. NL Gain [E] [E]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION":"Discard your hand. NL Return X + 1 cards from your discard pile to your hand. NL Gain [E] [E] [E]. NL Exhaust."
+  "theVacant:HolyWater": {
+    "NAME": "Holy Water",
+    "DESCRIPTION": "Take 10 attack damage. NL Heal !M! HP. NL Exhaust."
   },
   "theVacant:TheAnvil": {
     "NAME": "The Anvil",
@@ -274,12 +259,12 @@
   "theVacant:FromNothing": {
     "NAME": "From Nothing",
     "DESCRIPTION": "thevacant:Mill your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Innate. NL thevacant:Mill your draw pile. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL thevacant:Mill your draw pile. NL Exhaust."
   },
   "theVacant:Freedom": {
     "NAME": "Freedom",
     "DESCRIPTION": "Double your thevacant:Will. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double your thevacant:Will."
+    "UPGRADE_DESCRIPTION": "Triple your thevacant:Will. NL Exhaust."
   },
   "theVacant:BreakFree": {
     "NAME": "Break Free",
@@ -287,7 +272,11 @@
   },
   "theVacant:Willful": {
     "NAME": "Willful",
-    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thevacant:Will. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thevacant:Will."
+  },
+  "theVacant:Ascend": {
+    "NAME": "Ascend",
+    "DESCRIPTION": "thevacant:Release: Heal !M! HP. NL Exhaust."
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",
@@ -295,7 +284,7 @@
   },
   "theVacant:Immaterialize": {
     "NAME": "Immaterialize",
-    "DESCRIPTION": "The next !M! non-Status, non-Curse cards played that would Exhaust discard instead."
+    "DESCRIPTION": "The next !M! cards played that would Exhaust discard instead."
   },
   "theVacant:CleanseSoul": {
     "NAME": "Cleanse Soul",

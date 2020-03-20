@@ -44,10 +44,10 @@ public class SealBreak extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        PreRelease();
         for(int i = 0; i < GetWill(); i++)
-        {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        }
+        PostRelease();
     }
 
     @Override

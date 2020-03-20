@@ -1,17 +1,16 @@
 package theVacant.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.VacantMod;
-import theVacant.cards.Attacks.BurdenBreak;
+import theVacant.cards.Powers.BurdenBreak;
 import theVacant.characters.TheVacant;
+import theVacant.powers.BurdenBreakPower;
 import theVacant.powers.WillPower;
 import theVacant.relics.Deathbell;
 
@@ -87,11 +86,8 @@ public abstract class AbstractVacantCard extends CustomCard
     {
         this.bonusMillAmount = 0;
         AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
-        {
-            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
+        if(player != null && player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
                 this.bonusMillAmount += 2;
-        }
         if(this.getBonusMillToMagic)
         {
             this.magicNumber = this.baseMagicNumber;
@@ -104,12 +100,9 @@ public abstract class AbstractVacantCard extends CustomCard
     public int GetWill()
     {
         AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
-        {
-            if(player.hasPower(WillPower.POWER_ID))
+        if(player != null && player.hasPower(WillPower.POWER_ID))
                 return ((player.getPower(WillPower.POWER_ID)).amount);
-        }
-        return 1;
+        return 0;
     }
 
     private void GetWillTooltip()
@@ -137,5 +130,22 @@ public abstract class AbstractVacantCard extends CustomCard
                 return (((TheVacant) player).fractureThreshold);
         }
         return 4;
+    }
+
+    public void PreRelease()
+    {
+        if(AbstractDungeon.player instanceof TheVacant)
+            ((TheVacant)AbstractDungeon.player).releasesThisCombat++;
+    }
+
+    public void PostRelease()
+    {
+        if(GetWill() > 0)
+            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, WillPower.POWER_ID, 1));
+        if(AbstractDungeon.player.hasPower(BurdenBreakPower.POWER_ID))
+        {
+            ((BurdenBreakPower)AbstractDungeon.player.getPower(BurdenBreakPower.POWER_ID)).PostRelease();
+            AbstractDungeon.player.getPower(BurdenBreakPower.POWER_ID).flash();
+        }
     }
 }
