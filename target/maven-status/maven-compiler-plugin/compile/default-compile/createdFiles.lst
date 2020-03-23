@@ -20,6 +20,7 @@ theVacant\cards\Attacks\LashOut.class
 theVacant\cards\Powers\EmptyForm.class
 theVacant\cards\AbstractVacantCard.class
 theVacant\cards\Skills\TheAnvil.class
+theVacant\cards\Attacks\ReaperStrike.class
 theVacant\cards\Attacks\Throttle.class
 theVacant\cards\Attacks\Yeet.class
 theVacant\powers\VoidEmbracePower.class
@@ -30,7 +31,6 @@ theVacant\cards\Skills\BreakFree.class
 theVacant\cards\Powers\VoidEmbrace.class
 theVacant\cards\Attacks\ShriekingBlast.class
 theVacant\cards\Skills\Spinshield.class
-theVacant\powers\EmpoweredPower.class
 theVacant\cards\Powers\Gloom.class
 theVacant\powers\IronWillPower.class
 theVacant\powers\DoomPower.class
@@ -53,8 +53,6 @@ theVacant\cards\Attacks\SealBreak.class
 theVacant\cards\Skills\Fortify.class
 theVacant\cards\Powers\CleanseSoul.class
 theVacant\VacantMod.class
-theVacant\cards\Skills\Reseal.class
-theVacant\cards\Powers\Empowered.class
 theVacant\characters\TheVacant$Enums.class
 theVacant\cards\Attacks\Whip.class
 theVacant\cards\Skills\Sneeze.class
@@ -66,6 +64,7 @@ theVacant\cards\Attacks\VacantStarterStrike.class
 theVacant\cards\Skills\Hex.class
 theVacant\variables\VacantHealthDamage.class
 theVacant\cards\Skills\Revenge.class
+theVacant\cards\Powers\RunicThoughts.class
 theVacant\cards\Attacks\Showdown.class
 theVacant\cards\Skills\FromNothing.class
 theVacant\cards\Attacks\EyePoke.class
@@ -89,6 +88,7 @@ theVacant\cards\Attacks\Snowball.class
 theVacant\cards\Powers\Anguish.class
 theVacant\powers\EmptyEnergyGainPower.class
 theVacant\powers\ExorcisePower.class
+theVacant\powers\RunicThoughtsPower.class
 theVacant\variables\VacantMissingHealthDamage.class
 theVacant\relics\Deathbell.class
 theVacant\powers\GloomPower.class

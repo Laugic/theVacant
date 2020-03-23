@@ -18,7 +18,7 @@ public class IronWill extends AbstractDynamicCard
     public static final String ID = VacantMod.makeID(IronWill.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;

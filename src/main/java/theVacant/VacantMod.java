@@ -222,6 +222,7 @@ public class VacantMod implements
         BaseMod.addCard(new BurdenBreak());
         BaseMod.addCard(new FinalCountdown());
         BaseMod.addCard(new Showdown());
+        BaseMod.addCard(new ReaperStrike());
 
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
@@ -249,7 +250,6 @@ public class VacantMod implements
         BaseMod.addCard(new Accumulate());
         BaseMod.addCard(new Revenge());
         BaseMod.addCard(new Exorcise());
-        BaseMod.addCard(new Reseal());
         BaseMod.addCard(new HolyWater());
         BaseMod.addCard(new BreakFree());
         BaseMod.addCard(new Willful());
@@ -271,7 +271,7 @@ public class VacantMod implements
         BaseMod.addCard(new ShatterSoul());
         BaseMod.addCard(new VoidEmbrace());
         BaseMod.addCard(new GreaterMind());
-        BaseMod.addCard(new Empowered());
+        BaseMod.addCard(new RunicThoughts());
 
         logger.info("Making sure the cards are unlocked.");
 
@@ -305,6 +305,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(BurdenBreak.ID);
         UnlockTracker.unlockCard(FinalCountdown.ID);
         UnlockTracker.unlockCard(Showdown.ID);
+        UnlockTracker.unlockCard(ReaperStrike.ID);
 
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
@@ -332,7 +333,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Accumulate.ID);
         UnlockTracker.unlockCard(Revenge.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
-        UnlockTracker.unlockCard(Reseal.ID);
         UnlockTracker.unlockCard(HolyWater.ID);
         UnlockTracker.unlockCard(BreakFree.ID);
         UnlockTracker.unlockCard(Willful.ID);
@@ -354,7 +354,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(ShatterSoul.ID);
         UnlockTracker.unlockCard(VoidEmbrace.ID);
         UnlockTracker.unlockCard(GreaterMind.ID);
-        UnlockTracker.unlockCard(Empowered.ID);
+        UnlockTracker.unlockCard(RunicThoughts.ID);
 
         logger.info("Done adding cards!");
     }

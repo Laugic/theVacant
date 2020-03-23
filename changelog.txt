@@ -1,3 +1,19 @@
+0.3.1
+Break Self -> Mend Self
+
+Removed Reseal
+Removed Empowered
+
+Added Reaper Strike
+Added Runic Thoughts
+
+Nerfed Thoughtseize
+Nerfed Throttle's upgrade
+
+Iron Will is Uncommon
+
+Fixed wording on Accumulate to show it only draws 1 now
+-----
 0.3.0
 Releasing now makes you lose Will.
 

@@ -141,6 +141,11 @@
     "DESCRIPTION": "Unplayable unless you have 8 or more cards in your hand. NL Deal !D! damage.",
     "EXTENDED_DESCRIPTION": ["I don't have enough #rcards!"]
   },
+  "theVacant:ReaperStrike": {
+    "NAME": "Reaper Strike",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL thevacant:Mill !M!.",
+    "EXTENDED_DESCRIPTION": ["I don't have enough #rcards!"]
+  },
   "theVacant:VacantStarterDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
@@ -213,8 +218,8 @@
   },
   "theVacant:Accumulate": {
     "NAME": "Accumulate",
-    "DESCRIPTION": "thevacant:Release: Draw 2 cards. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Release: Draw 2 cards."
+    "DESCRIPTION": "thevacant:Release: Draw 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Release: Draw 1 card."
   },
   "theVacant:Revenge": {
     "NAME": "Revenge",
@@ -225,11 +230,6 @@
     "NAME": "Exorcise",
     "DESCRIPTION": "The next time you play a card that Exhausts, play it twice.",
     "UPGRADE_DESCRIPTION": "The next 2 times you play a card that Exhausts, play it twice."
-  },
-  "theVacant:Reseal": {
-    "NAME": "Reseal",
-    "DESCRIPTION": "Lose all thevacant:Will. NL Gain [E] and draw 1 card for each thevacant:Will lost. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose all thevacant:Will. NL Gain [E] , draw 1 card, gain 1 Strength, and gain 1 Dexterity for each thevacant:Will lost. NL Exhaust."
   },
   "theVacant:HolyWater": {
     "NAME": "Holy Water",
@@ -245,8 +245,8 @@
     "DESCRIPTION": "Gain !M! Max HP. NL Lose 6 HP. NL Exhaust."
   },
   "theVacant:Release": {
-    "NAME": "Break Self",
-    "DESCRIPTION": "thevacant:Release: Lose !M! HP and gain !B! Block."
+    "NAME": "Mend Self",
+    "DESCRIPTION": "thevacant:Release: Gain !M! HP and gain !B! Block."
   },
   "theVacant:Enrage": {
     "NAME": "Enrage",
@@ -325,10 +325,10 @@
     "NAME": "Rejection",
     "DESCRIPTION": "Gain 2 Vulnerable, 2 Weak, and !M! Strength."
   },
-  "theVacant:Empowered": {
-    "NAME": "Empowered",
-    "DESCRIPTION": "Whenever you lose HP from a card, gain [E].",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you lose HP from a card, gain [E]."
+  "theVacant:RunicThoughts": {
+    "NAME": "Runic Thoughts",
+    "DESCRIPTION": "Powers have thevacant:Rebound.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Powers have thevacant:Rebound."
   },
   "theVacant:ShatterSoul": {
     "NAME": "Shatter Soul",

@@ -39,9 +39,9 @@
     "NAME": "Empty Form",
     "DESCRIPTIONS": ["At the start of your turn, set your HP to 1. #yRegen at the end of combat."]
   },
-  "theVacant:EmpoweredPower": {
-    "NAME": "Empowered",
-    "DESCRIPTIONS": ["Whenever you lose HP from a card, gain #b", " energy"]
+  "theVacant:RunicThoughtsPower": {
+    "NAME": "Runic",
+    "DESCRIPTIONS": ["Powers have #yRebound."]
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",

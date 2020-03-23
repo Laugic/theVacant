@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="" />
+    <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/ReaperStrike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Thoughtseize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Thoughtseize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Throttle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Throttle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/Empowered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/RunicThoughts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/IronWill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/IronWill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Release.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Reseal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/EmpoweredPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/RunicThoughtsPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Thoughtseize.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Thoughtseize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Release.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Release.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/theVacant.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/theVacant.jar" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +52,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Minecraft/Mystica/forge-1.14.4-28.2.0-mdk/build.gradle" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -81,7 +99,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

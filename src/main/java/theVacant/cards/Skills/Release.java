@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -33,7 +34,7 @@ public class Release extends AbstractDynamicCard
     public Release()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.block = this.baseBlock = BLOCK;
         this.displayWill = true;
     }
@@ -44,7 +45,7 @@ public class Release extends AbstractDynamicCard
         PreRelease();
         for(int i = 0; i < GetWill(); i++)
         {
-            AbstractDungeon.actionManager.addToBottom(new LoseHPAction(player, player, this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new RegenAction(AbstractDungeon.player, this.magicNumber));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
         }
         PostRelease();
