@@ -202,7 +202,7 @@
   },
   "theVacant:Hex": {
     "NAME": "Hex",
-    "DESCRIPTION": "Apply !M! thevacant:Doom to target enemy."
+    "DESCRIPTION": "Apply !M! thevacant:Doom to target enemy. NL Exhaust."
   },
   "theVacant:Spinshield": {
     "NAME": "Spinshield",

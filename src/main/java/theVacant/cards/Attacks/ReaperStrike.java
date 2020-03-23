@@ -33,7 +33,7 @@ public class ReaperStrike extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 14;
+    private static final int DAMAGE = 16;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     public ReaperStrike()

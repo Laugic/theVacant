@@ -11,6 +11,7 @@ Nerfed Thoughtseize
 Nerfed Throttle's upgrade
 
 Iron Will is Uncommon
+Hex exhausts now.
 
 Fixed wording on Accumulate to show it only draws 1 now
 -----

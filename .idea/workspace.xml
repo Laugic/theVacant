@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/ReaperStrike.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Thoughtseize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Thoughtseize.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Throttle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Throttle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/Empowered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/RunicThoughts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/IronWill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/IronWill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Release.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Reseal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/EmpoweredPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/RunicThoughtsPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Hex.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Hex.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Thoughtseize.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Thoughtseize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Release.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Release.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/theVacant.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/theVacant.jar" afterDir="false" />
     </list>
