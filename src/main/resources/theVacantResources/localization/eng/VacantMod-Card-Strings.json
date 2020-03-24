@@ -112,7 +112,7 @@
     "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Weak."
   },
   "theVacant:BrassMagnet": {
-    "NAME": "BrassMagnet",
+    "NAME": "Brass Magnet",
     "DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. Whenever you draw this card, discard it.",
     "UPGRADE_DESCRIPTION": "thevacant:Unnate. thevacant:Rebound. NL Deal !D! damage. Whenever you draw this card, discard it."
   },

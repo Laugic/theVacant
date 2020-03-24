@@ -11,10 +11,7 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.powers.CleanseSoulPower;
-import theVacant.powers.GreaterMindPower;
-import theVacant.powers.VoidPower;
-import theVacant.powers.WillPower;
+import theVacant.powers.*;
 
 public class VacantMillAction  extends AbstractGameAction
 {
@@ -128,7 +125,8 @@ public class VacantMillAction  extends AbstractGameAction
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
-            if(player.hasPower(GreaterMindPower.POWER_ID) && (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC))
+            if((player.hasPower(GreaterMindPower.POWER_ID) && (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC)) ||
+                player.hasPower(RunicThoughtsPower.POWER_ID))
                 return true;
         }
         return false;
