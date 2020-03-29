@@ -122,11 +122,11 @@
   },
   "theVacant:Yeet": {
     "NAME": "Yeet",
-    "DESCRIPTION": "Deal !D! damage. NL Lose !M! Strength. NL Exhaust."
+    "DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. NL Whenever you thevacant:Mill this card, deal !D! damage to a random enemy."
   },
   "theVacant:DimensionTear": {
     "NAME": "Dimension Tear",
-    "DESCRIPTION": "Deal !D! damage. NL Draw your Exhaust pile. Exhaust your discard pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Add your Exhaust pile to your hand. Exhaust your discard pile. NL Exhaust."
   },
   "theVacant:BurdenBreak": {
     "NAME": "Burden Break",
@@ -245,8 +245,8 @@
     "DESCRIPTION": "Gain !M! Max HP. NL Lose 6 HP. NL Exhaust."
   },
   "theVacant:Release": {
-    "NAME": "Mend Self",
-    "DESCRIPTION": "thevacant:Release: Gain !M! HP and gain !B! Block."
+    "NAME": "Release",
+    "DESCRIPTION": "thevacant:Release: thevacant:Mill !M! and gain !B! Block."
   },
   "theVacant:Enrage": {
     "NAME": "Enrage",
@@ -289,7 +289,7 @@
   "theVacant:CleanseSoul": {
     "NAME": "Cleanse Soul",
     "DESCRIPTION": "Whenever you thevacant:Mill a Status or Curse, Exhaust it.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Whenever you thevacant:Mill a Status or Curse, Exhaust it."
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you thevacant:Mill a Status or Curse, Exhaust it."
   },
   "theVacant:Willpower": {
     "NAME": "Willpower",
@@ -307,10 +307,9 @@
     "NAME": "Iron Will",
     "DESCRIPTION": "At the end of your turn, gain Block equal to the amount of times you've lost HP this combat."
   },
-  "theVacant:Compression": {
-    "NAME": "Compression",
-    "DESCRIPTION": "At the end of your turn, if you are thevacant:Healthy, lose 2 HP. If you are thevacant:Wounded, heal 1 HP.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, if you are thevacant:Healthy, lose 2 HP. If you are thevacant:Wounded, heal 1 HP."
+  "theVacant:Husk": {
+    "NAME": "Husk",
+    "DESCRIPTION": "At the start of your turn, gain !M! thevacant:Void."
   },
   "theVacant:EmptyForm": {
     "NAME": "Empty Form",

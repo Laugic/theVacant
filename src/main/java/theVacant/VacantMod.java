@@ -264,7 +264,7 @@ public class VacantMod implements
         BaseMod.addCard(new Anguish());
         BaseMod.addCard(new Recover());
         BaseMod.addCard(new IronWill());
-        BaseMod.addCard(new Compression());
+        BaseMod.addCard(new Husk());
         BaseMod.addCard(new EmptyForm());
         BaseMod.addCard(new Acceptance());
         BaseMod.addCard(new Rejection());
@@ -347,7 +347,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Anguish.ID);
         UnlockTracker.unlockCard(Recover.ID);
         UnlockTracker.unlockCard(IronWill.ID);
-        UnlockTracker.unlockCard(Compression.ID);
+        UnlockTracker.unlockCard(Husk.ID);
         UnlockTracker.unlockCard(EmptyForm.ID);
         UnlockTracker.unlockCard(Acceptance.ID);
         UnlockTracker.unlockCard(Rejection.ID);

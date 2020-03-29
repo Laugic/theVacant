@@ -1,5 +1,4 @@
 theVacant\cards\Powers\GreaterMind.class
-theVacant\powers\CompressionPower.class
 theVacant\cards\Attacks\FinalCountdown.class
 theVacant\powers\WillPower.class
 theVacant\cards\Skills\EmptyShield.class
@@ -10,6 +9,7 @@ theVacant\cards\Attacks\BrassMagnet.class
 theVacant\cards\Attacks\FranticBlow.class
 theVacant\cards\Skills\Dig.class
 theVacant\cards\Attacks\GraveDigger.class
+theVacant\cards\Powers\Husk.class
 theVacant\relics\BrassGoblet.class
 theVacant\cards\Attacks\Thoughtseize.class
 theVacant\cards\Attacks\GraveWave.class
@@ -39,6 +39,7 @@ theVacant\cards\Skills\Think.class
 theVacant\cards\Skills\OnSecondThought.class
 theVacant\cards\Skills\Cower.class
 theVacant\cards\Attacks\Slash.class
+theVacant\actions\YeetAction.class
 theVacant\cards\Attacks\Jab.class
 theVacant\cards\Skills\Enrage.class
 theVacant\powers\VoidPower.class
@@ -86,6 +87,7 @@ theVacant\characters\TheVacant.class
 theVacant\variables\VacantGlassDamage.class
 theVacant\cards\Attacks\Snowball.class
 theVacant\cards\Powers\Anguish.class
+theVacant\actions\ExhaustDiscardAction.class
 theVacant\powers\EmptyEnergyGainPower.class
 theVacant\powers\ExorcisePower.class
 theVacant\powers\RunicThoughtsPower.class
@@ -99,9 +101,9 @@ theVacant\cards\Attacks\SurpriseAttack.class
 theVacant\cards\Skills\Accumulate.class
 theVacant\cards\VacantCardGroup.class
 theVacant\cards\Skills\HealingSalve.class
+theVacant\powers\HuskPower.class
 theVacant\relics\BrassGoblet$1.class
 theVacant\cards\Skills\Freedom.class
-theVacant\cards\Powers\Compression.class
 theVacant\cards\Skills\Ascend.class
 theVacant\cards\Skills\Release.class
 theVacant\cards\Skills\Willful.class

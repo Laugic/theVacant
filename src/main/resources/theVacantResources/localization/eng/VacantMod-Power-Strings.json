@@ -31,9 +31,9 @@
     "NAME": "Iron Will",
     "DESCRIPTIONS": ["At the end of your turn, gain #b", " #yBlock."]
   },
-  "theVacant:CompressionPower": {
-    "NAME": "Compression",
-    "DESCRIPTIONS": ["At the end of your turn, if you are #yHealthy, lose #b", " HP. If you are #yWounded, heal #b", " HP."]
+  "theVacant:HuskPower": {
+    "NAME": "Husk",
+    "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #yVoid."]
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",

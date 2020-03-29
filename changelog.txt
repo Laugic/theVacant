@@ -1,3 +1,44 @@
+0.4.0
+Arted Defend
+Arted Strike
+Arted Throttle
+Arted Shrieking Blast
+Arted Dimension Tear
+Arted Fiend Frost
+Arted The Anvil
+Arted Showdown
+Arted Recover
+Arted Reaper Strike
+Arted Enrage
+Arted Gloom
+Arted From Nothing
+Arted Freedom
+Arted Threaten
+Arted Cleanse Soul
+Arted Hex & Doom
+Arted Acceptance
+Arted Ward
+Arted Dig
+Arted Crunch
+Arted Release
+
+Removed Compression
+Removed Mend Self
+
+Added Husk
+Added Release
+
+Buffed Cleanse Soul+ from Rebound to Innate
+Buffed Anguish
+Buffed Cower
+
+Revamped Yeet
+
+Throttle is Uncommon
+
+Added ExhaustDiscardAction
+Added the Healing tag to all the healing cards
+-----
 0.3.1.1
 Fixed Runic Thoughts
 Fixed Brass Magnet typo

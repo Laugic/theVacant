@@ -17,7 +17,7 @@ import static theVacant.VacantMod.makeCardPath;
 public class Threat extends AbstractDynamicCard {
 
     public static final String ID = VacantMod.makeID(Threat.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Threaten.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

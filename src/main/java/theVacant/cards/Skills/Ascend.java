@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -34,6 +35,7 @@ public class Ascend extends AbstractDynamicCard
         this.exhaust = true;
         this.displayWill = true;
         this.magicNumber = this.baseMagicNumber = 1;
+        this.tags.add(AbstractCard.CardTags.HEALING);
     }
 
     @Override

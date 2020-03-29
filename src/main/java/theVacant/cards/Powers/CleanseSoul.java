@@ -49,7 +49,7 @@ public class CleanseSoul extends AbstractDynamicCard
             upgradeName();
             upgradeBaseCost(0);
             upgradedCost = true;
-            this.rebound = true;
+            this.isInnate = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

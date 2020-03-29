@@ -78,5 +78,12 @@
       "doom"
     ],
     "DESCRIPTION": "Creatures take more damage for each Doom they have."
+  },
+  {
+    "PROPER_NAME": "Void",
+    "NAMES": [
+      "void"
+    ],
+    "DESCRIPTION": "Increase the damage and #yBlock of the next card you play this turn that attacks or #yBlocks."
   }
 ]

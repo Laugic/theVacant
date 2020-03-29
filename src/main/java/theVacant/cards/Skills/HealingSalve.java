@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,6 +32,7 @@ public class HealingSalve extends AbstractDynamicCard
         baseBlock = 0;
         isEthereal = true;
         magicNumber = baseMagicNumber = 2;
+        this.tags.add(AbstractCard.CardTags.HEALING);
     }
     @Override
     public void triggerWhenDrawn()

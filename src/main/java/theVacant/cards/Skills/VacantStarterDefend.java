@@ -15,7 +15,7 @@ public class VacantStarterDefend extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(VacantStarterDefend.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Defend.png");
 
     private static final CardRarity RARITY = CardRarity.BASIC;
     private static final CardTarget TARGET = CardTarget.SELF;

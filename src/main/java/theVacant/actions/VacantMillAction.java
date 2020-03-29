@@ -126,7 +126,7 @@ public class VacantMillAction  extends AbstractGameAction
         if(player != null)
         {
             if((player.hasPower(GreaterMindPower.POWER_ID) && (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC)) ||
-                player.hasPower(RunicThoughtsPower.POWER_ID))
+                (player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER))
                 return true;
         }
         return false;

@@ -16,7 +16,7 @@ public class Acceptance extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Acceptance.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("Acceptance.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

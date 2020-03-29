@@ -30,7 +30,6 @@ public class Willpower extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.exhaust = true;
     }
 
     @Override

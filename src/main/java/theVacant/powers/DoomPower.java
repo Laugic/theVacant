@@ -29,8 +29,8 @@ public class DoomPower extends AbstractPower implements CloneablePowerInterface
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/doom_power84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/doom_power32.png");
 
     public DoomPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {

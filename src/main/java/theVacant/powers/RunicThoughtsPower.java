@@ -56,7 +56,7 @@ public class RunicThoughtsPower extends AbstractPower implements CloneablePowerI
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

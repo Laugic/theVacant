@@ -51,7 +51,8 @@ public class ImmaterializePower extends AbstractPower implements CloneablePowerI
         {
             action.exhaustCard = false;
             this.amount--;
-            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            if(this.amount == 0)
+                addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         }
     }
 

@@ -19,7 +19,7 @@ public class Showdown extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Showdown.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Showdown.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;

@@ -9,17 +9,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.powers.CleanseSoulPower;
-import theVacant.powers.CompressionPower;
-import theVacant.powers.GloomPower;
+import theVacant.powers.HuskPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
 
-public class Compression extends AbstractDynamicCard
+public class Husk extends AbstractDynamicCard
 {
 
-    public static final String ID = VacantMod.makeID(Compression.class.getSimpleName());
+    public static final String ID = VacantMod.makeID(Husk.class.getSimpleName());
     public static final String IMG = makeCardPath("Power.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -30,16 +28,18 @@ public class Compression extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
-    public Compression() {
+    public Husk()
+    {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CompressionPower(player, player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new HuskPower(player, player, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -48,8 +48,8 @@ public class Compression extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.isInnate = true;
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(2);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }
