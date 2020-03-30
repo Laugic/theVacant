@@ -1,3 +1,8 @@
+0.4.1
+Added Ora sfx
+Buffed Threaten's FX
+Fixed Cleanse Soul's art
+-----
 0.4.0
 Arted Defend
 Arted Strike

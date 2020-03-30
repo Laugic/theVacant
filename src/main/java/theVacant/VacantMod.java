@@ -40,7 +40,8 @@ public class VacantMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        PostInitializeSubscriber
+        PostInitializeSubscriber,
+        AddAudioSubscriber
 {
     public static final Logger logger = LogManager.getLogger(VacantMod.class.getName());
     private static String modID = "theVacant";
@@ -397,6 +398,12 @@ public class VacantMod implements
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    @Override
+    public void receiveAddAudio()
+    {
+        BaseMod.addAudio("theVacant:ora",  getModID() + "Resources/audio/ora.ogg");
     }
 
     public static String getModID()
