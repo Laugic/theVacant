@@ -41,11 +41,6 @@ public class BurdenBreakPower extends AbstractPower implements CloneablePowerInt
         updateDescription();
     }
 
-    public void PostRelease()
-    {
-        addToBot(new GainBlockAction(this.owner, this.owner, this.amount));
-    }
-
     @Override
     public void updateDescription()
     {

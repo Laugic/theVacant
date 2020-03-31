@@ -44,6 +44,7 @@ theVacant\cards\Attacks\Jab.class
 theVacant\cards\Skills\Enrage.class
 theVacant\powers\VoidPower.class
 theVacant\powers\EmptyCardDrawPower.class
+theVacant\variables\VacantMissingHealthGeneric.class
 theVacant\cards\Powers\Willpower.class
 theVacant\cards\Attacks\Threat.class
 theVacant\cards\Attacks\Vengeance.class
@@ -69,6 +70,7 @@ theVacant\cards\Powers\RunicThoughts.class
 theVacant\cards\Attacks\Showdown.class
 theVacant\cards\Skills\FromNothing.class
 theVacant\cards\Attacks\EyePoke.class
+theVacant\cards\Skills\Expand.class
 theVacant\cards\Skills\Prevent.class
 theVacant\cards\Powers\Immaterialize.class
 theVacant\cards\VacantCardGroup$HeavyReshuffle.class
@@ -91,6 +93,7 @@ theVacant\actions\ExhaustDiscardAction.class
 theVacant\powers\EmptyEnergyGainPower.class
 theVacant\powers\ExorcisePower.class
 theVacant\powers\RunicThoughtsPower.class
+theVacant\powers\ImmaterializePower.class
 theVacant\variables\VacantMissingHealthDamage.class
 theVacant\relics\Deathbell.class
 theVacant\powers\GloomPower.class

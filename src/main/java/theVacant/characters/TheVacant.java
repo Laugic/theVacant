@@ -1,6 +1,7 @@
 package theVacant.characters;
 
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -18,6 +19,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
+import com.megacrit.cardcrawl.relics.MummifiedHand;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -83,9 +85,12 @@ public class TheVacant extends CustomPlayer
     {
         super(name, setClass, orbTextures,
                 "theVacantResources/images/char/vacantCharacter/orb/vfx.png", null,
-                new SpriterAnimation(
-                        "theVacantResources/images/char/vacantCharacter/Spriter/theVacantAnimation.scml"));
-
+                new SpineAnimation(
+                        "theVacantResources/images/char/vacantCharacter/skeleton.atlas",
+                        "theVacantResources/images/char/vacantCharacter/skeleton.json",
+                        40F
+                )
+        );
 
         initializeClass(null,
 
@@ -99,7 +104,7 @@ public class TheVacant extends CustomPlayer
                 THE_VACANT_SKELETON_ATLAS,
                 THE_VACANT_SKELETON_JSON,
                 1.0f);
-        AnimationState.TrackEntry e = state.setAnimation(0, "animation", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
 
 

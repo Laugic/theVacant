@@ -57,7 +57,7 @@
   },
   "theVacant:BurdenBreakPower": {
     "NAME": "Burden Break",
-    "DESCRIPTIONS": ["When you #yRelease, gain ", " #yBlock."]
+    "DESCRIPTIONS": ["Whenever you #yMill, #yMill an additional #b", "."]
   },
   "theVacant:CleanseSoulPower": {
     "NAME": "Cleanse Soul",

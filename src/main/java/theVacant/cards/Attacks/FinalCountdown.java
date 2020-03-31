@@ -56,13 +56,13 @@ public class FinalCountdown extends AbstractDynamicCard
     @Override
     public void applyPowers()
     {
-        this.costForTurn = Math.max(this.upgraded?UPGRADED_COST:COST - ((TheVacant)AbstractDungeon.player).releasesThisCombat, 0);
+        this.costForTurn = Math.max(Math.min((this.upgraded?UPGRADED_COST:COST) - ((TheVacant)AbstractDungeon.player).releasesThisCombat, this.costForTurn), 0);
     }
 
     @Override
     public void triggerWhenDrawn()
     {
-        this.costForTurn = Math.max(this.upgraded?UPGRADED_COST:COST - ((TheVacant)AbstractDungeon.player).releasesThisCombat, 0);
+        this.costForTurn = Math.max(Math.min((this.upgraded?UPGRADED_COST:COST) - ((TheVacant)AbstractDungeon.player).releasesThisCombat, this.costForTurn), 0);
     }
 
     @Override

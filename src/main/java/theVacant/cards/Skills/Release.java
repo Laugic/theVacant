@@ -36,7 +36,7 @@ public class Release extends AbstractDynamicCard
     public Release()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.getBonusMillToMagic = true;
         this.block = this.baseBlock = BLOCK;
         this.displayWill = true;

@@ -1,3 +1,12 @@
+0.5.0
+Added Character Art! :D
+
+Nerfed Release
+
+Revamped Burden Break
+
+Fixed Final Countdown+ (and fixed it being affected by Mummified Hand)
+-----
 0.4.1
 Added Ora sfx
 Buffed Threaten's FX

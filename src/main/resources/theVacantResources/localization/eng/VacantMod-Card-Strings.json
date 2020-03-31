@@ -130,7 +130,7 @@
   },
   "theVacant:BurdenBreak": {
     "NAME": "Burden Break",
-    "DESCRIPTION": "Whenever you thevacant:Release, gain !M! Block."
+    "DESCRIPTION": "Whenever you thevacant:Mill, thevacant:Mill an additional !M!."
   },
   "theVacant:FinalCountdown": {
     "NAME": "Final Countdown",

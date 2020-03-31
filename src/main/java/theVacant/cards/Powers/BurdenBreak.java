@@ -33,7 +33,7 @@ public class BurdenBreak extends AbstractDynamicCard
     public BurdenBreak()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class BurdenBreak extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             this.upgradedMagicNumber = true;
             initializeDescription();
         }

@@ -86,8 +86,13 @@ public abstract class AbstractVacantCard extends CustomCard
     {
         this.bonusMillAmount = 0;
         AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
+        if(player != null)
+        {
+            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
                 this.bonusMillAmount += 2;
+            if(player.hasPower(BurdenBreakPower.POWER_ID))
+                this.bonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
+        }
         if(this.getBonusMillToMagic)
         {
             this.magicNumber = this.baseMagicNumber;
@@ -142,10 +147,5 @@ public abstract class AbstractVacantCard extends CustomCard
     {
         if(GetWill() > 0)
             addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, WillPower.POWER_ID, 1));
-        if(AbstractDungeon.player.hasPower(BurdenBreakPower.POWER_ID))
-        {
-            ((BurdenBreakPower)AbstractDungeon.player.getPower(BurdenBreakPower.POWER_ID)).PostRelease();
-            AbstractDungeon.player.getPower(BurdenBreakPower.POWER_ID).flash();
-        }
     }
 }
