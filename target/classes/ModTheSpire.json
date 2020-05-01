@@ -3,7 +3,7 @@
   "name": "TheVacant",
   "author_list": ["Laugic"],
   "description": "A cursed soul is bound to an artifact and doomed to climb the Spire.",
-  "version": "v0.3.0",
+  "version": "v0.6.0",
   "sts_version": "01-27-2020",
   "mts_version": "3.8.0",
   "dependencies": ["basemod", "stslib"],

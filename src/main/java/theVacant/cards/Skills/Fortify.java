@@ -44,7 +44,7 @@ public class Fortify extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
-        if(player.currentHealth > player.maxHealth / 2)
+        if(player.isBloodied)
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, this.magicNumber), this.magicNumber));
     }
 
@@ -56,6 +56,7 @@ public class Fortify extends AbstractDynamicCard
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeMagicNumber(1);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

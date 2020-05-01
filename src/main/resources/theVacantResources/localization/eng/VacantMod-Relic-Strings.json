@@ -24,7 +24,7 @@
     "NAME": "Brass Goblet",
     "FLAVOR": "An ancient artifact with dark power.",
     "DESCRIPTIONS": [
-      "You have #b1 additional #yDexterity while you are #ythevacant:Healthy, and #b2 additional #yStrength while you are #ythevacant:Wounded."
+      "At the start of combat, if you are #ythevacant:Healthy, gain #b1 #yDexterity. If you are #ythevacant:Wounded, gain #b2 #yStrength."
     ]
   },
   "theVacant:BoundSoul": {

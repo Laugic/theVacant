@@ -198,15 +198,12 @@ public class VacantMod implements
         BaseMod.addCard(new Crunch());
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new GraveDigger());
-        BaseMod.addCard(new Vengeance());
         BaseMod.addCard(new EyePoke());
         BaseMod.addCard(new FranticBlow());
         BaseMod.addCard(new Fling());
         BaseMod.addCard(new Jab());
         BaseMod.addCard(new Frenzy());
         BaseMod.addCard(new Snowball());
-        BaseMod.addCard(new SealBreak());
-        BaseMod.addCard(new Slash());
         BaseMod.addCard(new GraveWave());
         BaseMod.addCard(new Whip());
         BaseMod.addCard(new SurpriseAttack());
@@ -220,10 +217,13 @@ public class VacantMod implements
         BaseMod.addCard(new FiendFrost());
         BaseMod.addCard(new Yeet());
         BaseMod.addCard(new DimensionTear());
-        BaseMod.addCard(new BurdenBreak());
-        BaseMod.addCard(new FinalCountdown());
         BaseMod.addCard(new Showdown());
         BaseMod.addCard(new ReaperStrike());
+        BaseMod.addCard(new SkullBash());
+        BaseMod.addCard(new Carve());
+        BaseMod.addCard(new LichStrike());
+        BaseMod.addCard(new DarkStrike());
+        BaseMod.addCard(new DeathSpiral());
 
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
@@ -238,30 +238,30 @@ public class VacantMod implements
         BaseMod.addCard(new Expand());
         BaseMod.addCard(new Release());
         BaseMod.addCard(new Enrage());
-        BaseMod.addCard(new Think());
-        BaseMod.addCard(new Freedom());
         BaseMod.addCard(new FromNothing());
-        BaseMod.addCard(new DoubleTeam());
-        BaseMod.addCard(new Ward());
         BaseMod.addCard(new BattleScars());
         BaseMod.addCard(new Hex());
         BaseMod.addCard(new Spinshield());
         BaseMod.addCard(new Prevent());
         BaseMod.addCard(new ShutAway());
-        BaseMod.addCard(new Accumulate());
-        BaseMod.addCard(new Revenge());
         BaseMod.addCard(new Exorcise());
         BaseMod.addCard(new HolyWater());
-        BaseMod.addCard(new BreakFree());
-        BaseMod.addCard(new Willful());
-        BaseMod.addCard(new Ascend());
+        BaseMod.addCard(new Necromancy());
+        BaseMod.addCard(new SpiritOrb());
+        BaseMod.addCard(new Exhumation());
+        BaseMod.addCard(new Solace());
+        BaseMod.addCard(new TimeSkip());
+        BaseMod.addCard(new CallSpirits());
+        BaseMod.addCard(new Krispen());
+        BaseMod.addCard(new TwistFate());
+        BaseMod.addCard(new MindBreak());
         BaseMod.addCard(new TheAnvil());
 
         //Powers
         BaseMod.addCard(new Gloom());
+        BaseMod.addCard(new BurdenBreak());
         BaseMod.addCard(new Immaterialize());
         BaseMod.addCard(new CleanseSoul());
-        BaseMod.addCard(new Willpower());
         BaseMod.addCard(new Anguish());
         BaseMod.addCard(new Recover());
         BaseMod.addCard(new IronWill());
@@ -269,10 +269,15 @@ public class VacantMod implements
         BaseMod.addCard(new EmptyForm());
         BaseMod.addCard(new Acceptance());
         BaseMod.addCard(new Rejection());
-        BaseMod.addCard(new ShatterSoul());
         BaseMod.addCard(new VoidEmbrace());
         BaseMod.addCard(new GreaterMind());
         BaseMod.addCard(new RunicThoughts());
+        BaseMod.addCard(new IntoTheAbyss());
+
+        //Temp Cards
+        BaseMod.addCard(new Snap());
+        BaseMod.addCard(new Crackle());
+        BaseMod.addCard(new Pop());
 
         logger.info("Making sure the cards are unlocked.");
 
@@ -281,15 +286,12 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Crunch.ID);
         UnlockTracker.unlockCard(LashOut.ID);
         UnlockTracker.unlockCard(GraveDigger.ID);
-        UnlockTracker.unlockCard(Vengeance.ID);
         UnlockTracker.unlockCard(EyePoke.ID);
         UnlockTracker.unlockCard(FranticBlow.ID);
         UnlockTracker.unlockCard(Fling.ID);
         UnlockTracker.unlockCard(Jab.ID);
         UnlockTracker.unlockCard(Frenzy.ID);
         UnlockTracker.unlockCard(Snowball.ID);
-        UnlockTracker.unlockCard(SealBreak.ID);
-        UnlockTracker.unlockCard(Slash.ID);
         UnlockTracker.unlockCard(GraveWave.ID);
         UnlockTracker.unlockCard(Whip.ID);
         UnlockTracker.unlockCard(SurpriseAttack.ID);
@@ -303,10 +305,13 @@ public class VacantMod implements
         UnlockTracker.unlockCard(FiendFrost.ID);
         UnlockTracker.unlockCard(Yeet.ID);
         UnlockTracker.unlockCard(DimensionTear.ID);
-        UnlockTracker.unlockCard(BurdenBreak.ID);
-        UnlockTracker.unlockCard(FinalCountdown.ID);
         UnlockTracker.unlockCard(Showdown.ID);
         UnlockTracker.unlockCard(ReaperStrike.ID);
+        UnlockTracker.unlockCard(SkullBash.ID);
+        UnlockTracker.unlockCard(DeathSpiral.ID);
+        UnlockTracker.unlockCard(Carve.ID);
+        UnlockTracker.unlockCard(LichStrike.ID);
+        UnlockTracker.unlockCard(DarkStrike.ID);
 
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
@@ -321,30 +326,30 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Expand.ID);
         UnlockTracker.unlockCard(Release.ID);
         UnlockTracker.unlockCard(Enrage.ID);
-        UnlockTracker.unlockCard(Think.ID);
-        UnlockTracker.unlockCard(Freedom.ID);
         UnlockTracker.unlockCard(FromNothing.ID);
-        UnlockTracker.unlockCard(DoubleTeam.ID);
-        UnlockTracker.unlockCard(Ward.ID);
         UnlockTracker.unlockCard(BattleScars.ID);
         UnlockTracker.unlockCard(Hex.ID);
         UnlockTracker.unlockCard(Spinshield.ID);
         UnlockTracker.unlockCard(Prevent.ID);
         UnlockTracker.unlockCard(ShutAway.ID);
-        UnlockTracker.unlockCard(Accumulate.ID);
-        UnlockTracker.unlockCard(Revenge.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
         UnlockTracker.unlockCard(HolyWater.ID);
-        UnlockTracker.unlockCard(BreakFree.ID);
-        UnlockTracker.unlockCard(Willful.ID);
-        UnlockTracker.unlockCard(Ascend.ID);
+        UnlockTracker.unlockCard(Necromancy.ID);
+        UnlockTracker.unlockCard(SpiritOrb.ID);
+        UnlockTracker.unlockCard(Exhumation.ID);
+        UnlockTracker.unlockCard(Solace.ID);
+        UnlockTracker.unlockCard(CallSpirits.ID);
+        UnlockTracker.unlockCard(TimeSkip.ID);
+        UnlockTracker.unlockCard(Krispen.ID);
+        UnlockTracker.unlockCard(TwistFate.ID);
+        UnlockTracker.unlockCard(MindBreak.ID);
         UnlockTracker.unlockCard(TheAnvil.ID);
 
         //Powers
         UnlockTracker.unlockCard(Gloom.ID);
+        UnlockTracker.unlockCard(BurdenBreak.ID);
         UnlockTracker.unlockCard(Immaterialize.ID);
         UnlockTracker.unlockCard(CleanseSoul.ID);
-        UnlockTracker.unlockCard(Willpower.ID);
         UnlockTracker.unlockCard(Anguish.ID);
         UnlockTracker.unlockCard(Recover.ID);
         UnlockTracker.unlockCard(IronWill.ID);
@@ -352,10 +357,16 @@ public class VacantMod implements
         UnlockTracker.unlockCard(EmptyForm.ID);
         UnlockTracker.unlockCard(Acceptance.ID);
         UnlockTracker.unlockCard(Rejection.ID);
-        UnlockTracker.unlockCard(ShatterSoul.ID);
         UnlockTracker.unlockCard(VoidEmbrace.ID);
         UnlockTracker.unlockCard(GreaterMind.ID);
         UnlockTracker.unlockCard(RunicThoughts.ID);
+        UnlockTracker.unlockCard(IntoTheAbyss.ID);
+
+        //Temp Cards
+        UnlockTracker.unlockCard(Snap.ID);
+        UnlockTracker.unlockCard(Crackle.ID);
+        UnlockTracker.unlockCard(Pop.ID);
+
 
         logger.info("Done adding cards!");
     }

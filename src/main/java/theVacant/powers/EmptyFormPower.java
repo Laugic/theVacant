@@ -50,26 +50,41 @@ public class EmptyFormPower extends AbstractPower implements CloneablePowerInter
     }
 
     @Override
-    public void atStartOfTurn()
+    public void onUseCard(AbstractCard card, UseCardAction action)
     {
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, this.owner.currentHealth-1));
-    }
-
-    @Override
-    public void onVictory()
-    {
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
+        if(card.exhaust && !card.purgeOnUse && this.amount > 0)
         {
-            if (player.currentHealth > 0)
-                player.heal(player.getPower("Regeneration").amount);
+            flash();
+            for(int i = 0; i < this.amount; i++)
+            {
+                AbstractMonster monster = null;
+                if (action.target != null)
+                    monster = (AbstractMonster)action.target;
+                AbstractCard tmp = card.makeSameInstanceOf();
+                AbstractDungeon.player.limbo.addToBottom(tmp);
+                tmp.current_x = card.current_x;
+                tmp.current_y = card.current_y;
+                tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+                tmp.target_y = Settings.HEIGHT / 2.0F;
+                if (monster != null)
+                    tmp.calculateCardDamage(monster);
+                tmp.purgeOnUse = true;
+                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, monster, card.energyOnUse, true, true), true);
+            }
         }
     }
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0];
+        if (this.amount == 1)
+        {
+            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        }
+        else if (this.amount > 1)
+        {
+            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
+        }
     }
 
     @Override

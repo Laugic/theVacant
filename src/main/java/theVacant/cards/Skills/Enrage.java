@@ -7,9 +7,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.FerocityRune;
+import theVacant.powers.VoidPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -30,17 +33,13 @@ public class Enrage extends AbstractDynamicCard
     public Enrage()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.exhaust = true;
-        this.displayWill = true;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        PreRelease();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, GetWill()), GetWill()));
-        PostRelease();
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VigorPower(player, player.isBloodied?this.magicNumber*2:this.magicNumber),  player.isBloodied?this.magicNumber*2:this.magicNumber));
     }
 
     @Override
@@ -49,7 +48,8 @@ public class Enrage extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(2);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

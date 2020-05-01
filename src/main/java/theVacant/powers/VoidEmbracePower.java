@@ -3,6 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -47,7 +48,8 @@ public class VoidEmbracePower extends AbstractPower implements CloneablePowerInt
     @Override
     public void onExhaust(AbstractCard card)
     {
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
+        flash();
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new VoidPower(this.owner, this.owner, this.amount), this.amount));
     }
 
     @Override

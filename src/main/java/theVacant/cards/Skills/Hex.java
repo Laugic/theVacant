@@ -39,7 +39,6 @@ public class Hex extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.exhaust = true;
     }
 
     @Override

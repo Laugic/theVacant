@@ -79,7 +79,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atEndOfTurn(boolean isPlayer)
     {
-        if (isPlayer)
+        if (isPlayer && !(this.owner).hasPower(VoidEmbracePower.POWER_ID))
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
     }
 
@@ -101,7 +101,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     {
         this.fontScale = 8.0F;
         this.amount -= reduceAmount;
-        if (this.amount == 0)
+        if (this.amount <= 0)
             addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
         if (this.amount >= 999)
             this.amount = 999;

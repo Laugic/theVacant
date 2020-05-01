@@ -46,6 +46,7 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atStartOfTurn()
     {
+        flash();
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
     }
 

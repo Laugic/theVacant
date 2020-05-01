@@ -37,7 +37,7 @@
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
-    "DESCRIPTIONS": ["At the start of your turn, set your HP to 1. #yRegen at the end of combat."]
+    "DESCRIPTIONS": ["Cards that Exhaust are played #b", " additional time."," additional times."]
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
@@ -45,11 +45,11 @@
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
-    "DESCRIPTIONS": ["Whenever a card #yExhausts, #yMill #b"]
+    "DESCRIPTIONS": ["Whenever a card Exhausts, gain  #b", " #yVoid. NL Void is no longer removed at the end of your turn."]
   },
   "theVacant:GreaterMindPower": {
     "NAME": "Greater Mind",
-    "DESCRIPTIONS": ["Common cards have #yRebound, cost #b0, and #yExhaust when played."]
+    "DESCRIPTIONS": ["Whenever you play a Power that costs 1 or more, add a random Power to your hand."]
   },
   "theVacant:VoidPower": {
     "NAME": "Void",
@@ -66,5 +66,37 @@
   "theVacant:DoomPower": {
     "NAME": "Doom",
     "DESCRIPTIONS": ["Take #b", " additional damage."]
+  },
+  "theVacant:AbyssPower": {
+    "NAME": "The Abyss",
+    "DESCRIPTIONS": ["At the start of your turn, gain #b"," #yDoom and apply #b", " #yDoom to ALL enemies."]
+  },
+  "theVacant:DelayedExhumePower": {
+    "NAME": "Fluxume",
+    "DESCRIPTIONS": ["At the start of your next turn, return #b", " cards from your #yExhaust pile to your hand."]
+  },
+  "theVacant:DoomRune": {
+    "NAME": "Doom",
+    "DESCRIPTIONS": ["Take #b", " additional damage. NL #yRelease: Apply #b", " #yDoom to ALL enemies."]
+  },
+  "theVacant:FerocityRune": {
+    "NAME": "Ferocity",
+    "DESCRIPTIONS": ["At the start of your turn, gain #b", " Vigor. NL #yRelease: Gain #b", " temporary Strength."]
+  },
+  "theVacant:NecraRune": {
+    "NAME": "Necra",
+    "DESCRIPTIONS": ["At the end of combat, heal #b", " HP. NL #yRelease: Take #b", " damage."]
+  },
+  "theVacant:VacancyRune": {
+    "NAME": "Vacancy",
+    "DESCRIPTIONS": ["Whenever you #yMill, gain an additional #b", " #yVoid."]
+  },
+  "theVacant:HollowRune": {
+    "NAME": "Hollow",
+    "DESCRIPTIONS": ["#yRelease: If you are #yHealthy, gain #b"," #yDexterity. If you are #yWounded, gain #b", " #yStrength."]
+  },
+  "theVacant:WardRune": {
+    "NAME": "Ward",
+    "DESCRIPTIONS": ["Whenever you lose HP, gain #b"," #yBlock next turn. NL #yRelease: Gain #b", " #yBlock twice."]
   }
 }

@@ -13,6 +13,8 @@ import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.NecraRune;
+import theVacant.powers.WardRune;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -23,13 +25,13 @@ public class Spinshield extends AbstractDynamicCard
     public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int BLOCK = 2;
+    private static final int BLOCK = 3;
 
     public Spinshield()
     {
@@ -43,7 +45,6 @@ public class Spinshield extends AbstractDynamicCard
     {
         for(int i = 0; i < this.magicNumber; i++)
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
-        addToBot(new ApplyPowerAction(player, player, new FlameBarrierPower(player, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -53,6 +54,7 @@ public class Spinshield extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(1);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

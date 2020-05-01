@@ -3,10 +3,12 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
@@ -41,20 +43,14 @@ public class GreaterMindPower extends AbstractPower implements CloneablePowerInt
 
         updateDescription();
     }
-    @Override
-    public void onCardDraw(AbstractCard card)
-    {
-        if (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC)
-            card.setCostForTurn(-9);
-    }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action)
     {
-        if (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC )
+        if(card.type == AbstractCard.CardType.POWER && card.costForTurn > 0)
         {
-            flash();
-            action.exhaustCard = true;
+            AbstractCard newPower = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.POWER).makeCopy();
+            addToBot(new MakeTempCardInHandAction(newPower, true));
         }
     }
 

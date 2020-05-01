@@ -2,6 +2,7 @@ package theVacant.cards.Attacks;
 
 import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -11,6 +12,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ReleaseAction;
+import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -27,21 +30,24 @@ public class Thoughtseize extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int COST = 2;
+    private static final int DAMAGE = 14;
+    private static final int UPGRADE_PLUS_DMG = 6;
 
     public Thoughtseize()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
+        this.magicNumber = this.baseMagicNumber = 4;
+        this.getBonusMillToMagic = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new PutOnDeckAction(player, player, 1, !this.upgraded));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new BetterDiscardPileToHandAction(1));
     }
 
     @Override
@@ -51,7 +57,8 @@ public class Thoughtseize extends AbstractDynamicCard {
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

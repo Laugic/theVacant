@@ -9,6 +9,8 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.BootSequence;
+import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
 import com.megacrit.cardcrawl.cards.colorless.MasterOfStrategy;
 import com.megacrit.cardcrawl.cards.red.FireBreathing;
 import com.megacrit.cardcrawl.cards.status.Slimed;
@@ -19,6 +21,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
+import com.megacrit.cardcrawl.orbs.Dark;
 import com.megacrit.cardcrawl.relics.MummifiedHand;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -51,8 +54,8 @@ public class TheVacant extends CustomPlayer
     }
 
     public static final int ENERGY_PER_TURN = 3;
-    public static final int STARTING_HP = 72;
-    public static final int MAX_HP = 72;
+    public static final int STARTING_HP = 80;
+    public static final int MAX_HP = 80;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -168,7 +171,7 @@ public class TheVacant extends CustomPlayer
         ArrayList<String> startRel = new ArrayList<>();
 
         startRel.add(BrassGoblet.ID);
-        startRel.add(BoundSoul.ID);
+        //startRel.add(BoundSoul.ID);
 
         UnlockTracker.markRelicAsSeen(BrassGoblet.ID);
         return startRel;
@@ -229,7 +232,7 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Crunch();
+        return new Release();
     }
 
     @Override

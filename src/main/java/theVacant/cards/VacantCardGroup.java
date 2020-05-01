@@ -23,7 +23,8 @@ public class VacantCardGroup
                 rloc = 6,
                 localvars = {"copy"}
         )
-        public static void initializeDeckPatch(CardGroup combatDeck, @ByRef CardGroup[] copy) {
+        public static void initializeDeckPatch(CardGroup combatDeck, @ByRef CardGroup[] copy)
+        {
             ArrayList<AbstractCard> placeOnBot = new ArrayList();
             Iterator vacantIterator = copy[0].group.iterator();
 
@@ -57,9 +58,9 @@ public class VacantCardGroup
             while (vacantIterator.hasNext())
             {
                 AbstractCard newCard = (AbstractCard) vacantIterator.next();
-                if(newCard instanceof AbstractDynamicCard)
+                if(newCard instanceof AbstractVacantCard)
                 {
-                    if (((AbstractDynamicCard) newCard).isHeavy)
+                    if (((AbstractVacantCard) newCard).isHeavy)
                         placeOnBot.add(newCard);
                 }
             }

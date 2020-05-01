@@ -48,8 +48,8 @@ public class Whip extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(1);
+            //upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(2);
             this.upgradedMagicNumber = true;
             initializeDescription();
         }

@@ -35,16 +35,13 @@ public class EmptyForm extends AbstractDynamicCard
     public EmptyForm()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 20;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+        this.isEthereal = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegenPower(player, this.magicNumber), this.magicNumber));
-        if(!player.hasPower(EmptyFormPower.POWER_ID))
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new EmptyFormPower(player, player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new EmptyFormPower(player, player, 1), 1));
     }
 
     @Override
@@ -53,9 +50,7 @@ public class EmptyForm extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(5);
-            this.upgradedMagicNumber = true;
-            this.isInnate = true;
+            this.isEthereal = false;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

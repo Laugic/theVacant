@@ -1,3 +1,44 @@
+0.6.0
+Reworked Brass Goblet Relic
+Removed Bound Soul Relic
+
+Added Carve
+Added Death Spiral
+Added Lich Strike
+Added Skull Bash
+Added Into the Abyss
+Added Snap
+Added Crackle
+Added Pop
+Added Exhumation
+Added Necromancy
+Added Solace
+Added Spirit Orb
+Added Time Skip
+Added Mind Break
+
+Revamped Bell Toll
+Revamped Enrage
+Revamped Release
+Revamped Prevent
+Removed all other Will related Cards
+Removed Double Team
+
+Revamped Jab
+Revamped Spinshield
+Revamped Empty Shield+
+Revamped Void Embrace
+Revamped Greater Mind
+Revamped Empty Form
+Revamped Void Embrace
+Revamped Greater Mind
+Revamped a bunch of upgrades to only affect 1 stat of the card
+
+Battle Scars is now Uncommon
+Fortify changed to buff Strength when Wounded
+
+Updated pom version
+-----
 0.5.0
 Added Character Art! :D
 

@@ -37,10 +37,10 @@ public class LashOut extends AbstractDynamicCard
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(m, new DamageInfo(player, this.damage, damageTypeForTurn),
+                new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn),
                         AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 

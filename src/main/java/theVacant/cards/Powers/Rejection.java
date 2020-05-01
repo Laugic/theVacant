@@ -47,7 +47,8 @@ public class Rejection extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

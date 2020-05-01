@@ -1,6 +1,7 @@
 package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,6 +12,9 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.HollowRune;
+import theVacant.powers.VoidPower;
+import theVacant.powers.WardRune;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -26,21 +30,22 @@ public class Prevent extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
+    private static final int BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 6;
 
     public Prevent()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
-        this.displayWill = true;
+        this.block = this.baseBlock = BLOCK;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        PreRelease();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, GetWill()), GetWill()));
-        PostRelease();
+        if(player.hasPower(VoidPower.POWER_ID))
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, player.getPower(VoidPower.POWER_ID).amount), player.getPower(VoidPower.POWER_ID).amount));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
     }
 
     @Override
@@ -49,7 +54,7 @@ public class Prevent extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

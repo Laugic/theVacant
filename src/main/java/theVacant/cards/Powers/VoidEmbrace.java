@@ -51,6 +51,7 @@ public class VoidEmbrace extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(2);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

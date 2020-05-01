@@ -55,7 +55,7 @@
       "release",
       "released"
     ],
-    "DESCRIPTION": "Do the following effect once for each #yWill you have. Then, lose 1 #yWill."
+    "DESCRIPTION": "Release all #yRunes you have #yEtched."
   },
   {
     "PROPER_NAME": "Will",
@@ -77,7 +77,7 @@
     "NAMES": [
       "doom"
     ],
-    "DESCRIPTION": "Creatures take more damage for each Doom they have."
+    "DESCRIPTION": "Creatures take more damage for each #yDoom they have."
   },
   {
     "PROPER_NAME": "Void",
@@ -85,5 +85,63 @@
       "void"
     ],
     "DESCRIPTION": "Increase the damage and #yBlock of the next card you play this turn that attacks or #yBlocks."
+  },
+  {
+    "PROPER_NAME": "Prime",
+    "NAMES": [
+      "prime"
+    ],
+    "DESCRIPTION": "Do the following effect the first time this card is played each combat."
+  },
+  {
+    "PROPER_NAME": "Etch",
+    "NAMES": [
+      "etch",
+      "etched"
+    ],
+    "DESCRIPTION": "Gain a #yRune which can be #yReleased to trigger special effects."
+  },
+  {
+    "PROPER_NAME": "Rune",
+    "NAMES": [
+      "rune",
+      "runes"
+    ],
+    "DESCRIPTION": "#yRunes can have Passive effects and effects when they are #yReleased."
+  },
+  {
+    "PROPER_NAME": "Ferocity",
+    "NAMES": [
+      "ferocity"
+    ],
+    "DESCRIPTION": "Each turn, increase the damage of the next attack you play. NL #yRelease: Gain temporary #yStrength."
+  },
+  {
+    "PROPER_NAME": "Ward",
+    "NAMES": [
+      "ward"
+    ],
+    "DESCRIPTION": "Whenever you lose HP, gain #yBlock next turn. #yRelease: Gain #yBlock twice."
+  },
+  {
+    "PROPER_NAME": "Necra",
+    "NAMES": [
+      "necra"
+    ],
+    "DESCRIPTION": "Heal HP at the end of combat. NL #yRelease: Take damage."
+  },
+  {
+    "PROPER_NAME": "Hollow",
+    "NAMES": [
+      "hollow"
+    ],
+    "DESCRIPTION": "#yRelease: If you are #yHealthy, gain #yDexterity. If you are #yWounded, gain #yStrength."
+  },
+  {
+    "PROPER_NAME": "Everyone",
+    "NAMES": [
+      "everyone"
+    ],
+    "DESCRIPTION": "ALL enemies and you."
   }
 ]

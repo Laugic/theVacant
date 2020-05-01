@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
@@ -10,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ReleaseAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -29,29 +31,20 @@ public class Release extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
-    public static final int BLOCK = 10;
-    private static final int UPGRADE_PLUS_BLOCK = 4;
+    private static final int COST = 1;
 
     public Release()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.getBonusMillToMagic = true;
-        this.block = this.baseBlock = BLOCK;
-        this.displayWill = true;
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        PreRelease();
-        for(int i = 0; i < GetWill(); i++)
-        {
-            AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
-        }
-        PostRelease();
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
     }
 
     @Override
@@ -60,7 +53,7 @@ public class Release extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

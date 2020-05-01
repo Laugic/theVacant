@@ -7,10 +7,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.cards.Powers.BurdenBreak;
 import theVacant.characters.TheVacant;
 import theVacant.powers.BurdenBreakPower;
+import theVacant.powers.EtchPower;
 import theVacant.powers.WillPower;
 import theVacant.relics.Deathbell;
 
@@ -25,6 +27,7 @@ public abstract class AbstractVacantCard extends CustomCard
     public int bonusMillAmount;
     public boolean displayWill;
     public boolean hasUpgradeDesc;
+    public boolean prime;
     private CardStrings cardStrings = null;
     private static final CardStrings cardStringsAbstract = CardCrawlGame.languagePack.getCardStrings(VacantMod.makeID(AbstractVacantCard.class.getSimpleName()));
 
@@ -53,6 +56,7 @@ public abstract class AbstractVacantCard extends CustomCard
         bonusMillAmount = 0;
         displayWill = false;
         hasUpgradeDesc = false;
+        prime = true;
         cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     }
 
@@ -62,11 +66,23 @@ public abstract class AbstractVacantCard extends CustomCard
     }
 
     @Override
+    public void use(AbstractPlayer player, AbstractMonster monster)
+    {
+        if(this.prime)
+            Prime();
+    }
+
+    public void Prime()
+    {
+        this.prime = false;
+    }
+
+    @Override
     public void applyPowers()
     {
         GetBonusMill();
-        if(this.displayWill)
-            GetWillTooltip();
+        /*if(this.displayWill)
+            GetWillTooltip();*/
         super.applyPowers();
     }
     @Override
@@ -104,48 +120,39 @@ public abstract class AbstractVacantCard extends CustomCard
 
     public int GetWill()
     {
-        AbstractPlayer player = AbstractDungeon.player;
+        /*AbstractPlayer player = AbstractDungeon.player;
         if(player != null && player.hasPower(WillPower.POWER_ID))
-                return ((player.getPower(WillPower.POWER_ID)).amount);
+                return ((player.getPower(WillPower.POWER_ID)).amount);*/
         return 0;
     }
 
     private void GetWillTooltip()
     {
+        /*
         int count = GetWill();
         this.rawDescription = (this.upgraded && this.hasUpgradeDesc)?this.cardStrings.UPGRADE_DESCRIPTION:this.cardStrings.DESCRIPTION;
         this.rawDescription += cardStringsAbstract.EXTENDED_DESCRIPTION[0] + count + cardStringsAbstract.EXTENDED_DESCRIPTION[1];
-        initializeDescription();
+        initializeDescription();*/
     }
 
     @Override
     public void onMoveToDiscard()
     {
+        /*
         if(this.displayWill)
             this.rawDescription = (this.upgraded && this.hasUpgradeDesc)?this.cardStrings.UPGRADE_DESCRIPTION:this.cardStrings.DESCRIPTION;
-        initializeDescription();
-    }
-
-    public int GetFractureThreshold()
-    {
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
-        {
-            if(player instanceof TheVacant)
-                return (((TheVacant) player).fractureThreshold);
-        }
-        return 4;
+        initializeDescription();*/
     }
 
     public void PreRelease()
     {
-        if(AbstractDungeon.player instanceof TheVacant)
-            ((TheVacant)AbstractDungeon.player).releasesThisCombat++;
+        /*if(AbstractDungeon.player instanceof TheVacant)
+            ((TheVacant)AbstractDungeon.player).releasesThisCombat++;*/
     }
 
     public void PostRelease()
     {
-        if(GetWill() > 0)
-            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, WillPower.POWER_ID, 1));
+        /*if(GetWill() > 0)
+            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, WillPower.POWER_ID, 1));*/
     }
 }

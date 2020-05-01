@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
+import com.megacrit.cardcrawl.vfx.combat.ReaperEffect;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -34,7 +35,7 @@ public class ReaperStrike extends AbstractDynamicCard
 
     private static final int COST = 2;
     private static final int DAMAGE = 16;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int UPGRADE_PLUS_DMG = 8;
 
     public ReaperStrike()
     {
@@ -42,6 +43,7 @@ public class ReaperStrike extends AbstractDynamicCard
         this.damage = this.baseDamage = DAMAGE;
         this.magicNumber = this.baseMagicNumber = 3;
         this.getBonusMillToMagic = true;
+        this.tags.add(CardTags.STRIKE);
     }
 
     @Override
@@ -49,6 +51,7 @@ public class ReaperStrike extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ReaperEffect()));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
     }
@@ -60,8 +63,6 @@ public class ReaperStrike extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

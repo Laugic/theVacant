@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Powers.GreaterMind;
 import theVacant.characters.TheVacant;
 import theVacant.powers.*;
 
@@ -55,29 +56,52 @@ public class VacantMillAction  extends AbstractGameAction
         {
             if(card instanceof AbstractDynamicCard)
             {
-                if(((AbstractDynamicCard)card).rebound || GetSpecialRebound(card))
-                {
-                    AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
-                    if(((AbstractDynamicCard) card).postMillAction)
-                        ((AbstractDynamicCard) card).PostMillAction();
-                    ProcessPostMill(card);
-                    return;
-                }
-                AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
-                if(((AbstractDynamicCard) card).postMillAction)
-                    ((AbstractDynamicCard) card).PostMillAction();
-                ProcessPostMill(card);
+                CheckRebound((AbstractDynamicCard)card);
                 return;
             }
-            AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
-            ProcessPostMill(card);
+            MoveToDiscard(card);
             return;
         }
     }
 
+    private void CheckRebound(AbstractDynamicCard card)
+    {
+        if((card).rebound || GetSpecialRebound(card))
+            Rebound(card);
+        else
+        {
+            if(card.postMillAction)
+                card.PostMillAction();
+            MoveToDiscard(card);
+        }
+    }
+
+    private void Rebound(AbstractDynamicCard card)
+    {
+        AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
+        PostRebound(card);
+        if(card.postMillAction)
+            card.PostMillAction();
+        ProcessPostMill(card, true);
+    }
+
+    private void MoveToDiscard(AbstractCard card)
+    {
+        AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
+        ProcessPostMill(card, false);
+    }
+
     private void PostMill()
     {
+        GetBonusVoid();
         GainVoid();
+    }
+
+    private void GetBonusVoid()
+    {
+        AbstractPlayer player = AbstractDungeon.player;
+        if(player != null && player.hasPower(VacancyRune.POWER_ID))
+            this.voidAmount += player.getPower(VacancyRune.POWER_ID).amount;
     }
 
     private void GainVoid()
@@ -90,7 +114,7 @@ public class VacantMillAction  extends AbstractGameAction
         }
     }
 
-    private void ProcessPostMill(AbstractCard card)
+    private void ProcessPostMill(AbstractCard card, boolean rebounded)
     {
         PostMillCard(card);
         PostMillVoidGain();
@@ -110,9 +134,9 @@ public class VacantMillAction  extends AbstractGameAction
                         player.discardPile.moveToExhaustPile(card);
                 }
             }
+            if(player instanceof TheVacant)
+                ((TheVacant)player).millsThisTurn++;
         }
-        if(player instanceof TheVacant)
-            ((TheVacant)player).millsThisTurn++;
     }
 
     private void PostMillVoidGain()
@@ -120,13 +144,22 @@ public class VacantMillAction  extends AbstractGameAction
         this.voidAmount++;
     }
 
+    private void PostRebound(AbstractCard card)
+    {
+        AbstractPlayer player = AbstractDungeon.player;
+        /*if(player != null && player.hasPower(GreaterMindPower.POWER_ID))
+        {
+            player.getPower(GreaterMindPower.POWER_ID).flash();
+            card.setCostForTurn(-9);
+        }*/
+    }
+
     private boolean GetSpecialRebound(AbstractCard card)
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
-            if((player.hasPower(GreaterMindPower.POWER_ID) && (card.rarity == AbstractCard.CardRarity.COMMON || card.rarity == AbstractCard.CardRarity.BASIC)) ||
-                (player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER))
+            if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
                 return true;
         }
         return false;

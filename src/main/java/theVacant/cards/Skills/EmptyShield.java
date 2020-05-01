@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ReleaseAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -26,12 +27,12 @@ public class EmptyShield extends AbstractDynamicCard
 
     private static final int COST = 2;
     private static final int BLOCK = 0;
-    private static final int UPGRADE_PLUS_BLOCK = 6;
 
     public EmptyShield()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseBlock = BLOCK;
+        this.exhaust = true;
     }
 
     @Override
@@ -46,7 +47,7 @@ public class EmptyShield extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
@@ -77,9 +78,9 @@ public class EmptyShield extends AbstractDynamicCard
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
-            this.baseBlock = player.maxHealth - player.currentHealth + (this.upgraded?6:0);
+            this.baseBlock = player.maxHealth - player.currentHealth;
         else
-            this.baseBlock = this.upgraded?6:0;
+            this.baseBlock = 0;
     }
 
     private void getDesc()

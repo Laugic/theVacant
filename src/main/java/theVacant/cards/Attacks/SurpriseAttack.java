@@ -26,14 +26,15 @@ public class SurpriseAttack extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 16;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 17;
+    private static final int UPGRADE_PLUS_DMG = 5;
 
     public SurpriseAttack()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
         this.isUnnate = true;
+        this.rebound = true;
         this.exhaust = true;
     }
 
@@ -50,8 +51,6 @@ public class SurpriseAttack extends AbstractDynamicCard {
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.rebound = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

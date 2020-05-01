@@ -31,7 +31,7 @@ public class Crunch extends AbstractDynamicCard {
 
     private static final int COST = 0;
     private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int UPGRADE_PLUS_DMG = 4;
 
     public Crunch()
     {
@@ -56,8 +56,8 @@ public class Crunch extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
+            //upgradeMagicNumber(1);
+            //this.upgradedMagicNumber = true;
             upgradeDamage(UPGRADE_PLUS_DMG);
             initializeDescription();
         }

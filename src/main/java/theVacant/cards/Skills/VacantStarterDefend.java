@@ -36,7 +36,7 @@ public class VacantStarterDefend extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
     }
 
     @Override
