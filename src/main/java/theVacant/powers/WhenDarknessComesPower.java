@@ -52,7 +52,8 @@ public class WhenDarknessComesPower extends AbstractPower implements CloneablePo
     @Override
     public void atStartOfTurnPostDraw()
     {
-        flash();
+        if(AbstractDungeon.player.exhaustPile.size() > 0)
+            flash();
         AbstractDungeon.actionManager.addToBottom(new RandomExhumeAction(this.amount));
     }
 

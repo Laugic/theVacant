@@ -41,7 +41,8 @@ public class Husk extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new PlayHuskAction(this.freeToPlayOnce, this.energyOnUse, this.upgraded?1:0));
-        player.energy.use(this.costForTurn);
+        if(!this.freeToPlayOnce && !this.freeToPlay())
+            player.energy.use(this.costForTurn);
     }
 
     @Override

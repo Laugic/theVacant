@@ -11,6 +11,7 @@ import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.ForgeSoulPower;
 import theVacant.powers.GloomPower;
+import theVacant.powers.VoidFormPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -41,7 +42,7 @@ public class VoidForm extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ForgeSoulPower(player, player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidFormPower(player, player, this.magicNumber), this.magicNumber));
     }
 
     @Override

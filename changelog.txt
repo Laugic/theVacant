@@ -1,6 +1,12 @@
+0.7.1
+Showdown now properly says "to ALL enemies" in card description
+When Darkness Comes only flashes if it Exhumes
+Void Form actually gives Void Form as a power when played now
+--
 0.7.0
 Added the Enhance mechanic
 Added the Voidbound mechanic
+Added the Soulforged mechanic
 
 Revamped several cards to focus on Card Positioning (i.e. Unnate)
 Revamped several cards to focus on Exhaust, Enhancing, and Voidbound

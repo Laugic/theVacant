@@ -136,7 +136,7 @@
   },
   "theVacant:Showdown": {
     "NAME": "Showdown",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 2 thevacant:Doom to NL thevacant:Everyone."
+    "DESCRIPTION": "Deal !D! damage !M! times to ALL enemies. NL Apply 2 thevacant:Doom to NL thevacant:Everyone."
   },
   "theVacant:ReaperStrike": {
     "NAME": "Reaper Strike",
@@ -460,7 +460,7 @@
   },
   "theVacant:WhenDarknessComes": {
     "NAME": "When Darkness Comes",
-    "DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random card.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random cards."
+    "DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random non-healing card.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random non-healing cards."
   }
 }
