@@ -143,5 +143,40 @@
       "everyone"
     ],
     "DESCRIPTION": "ALL enemies and you."
+  },
+  {
+    "PROPER_NAME": "Voidbound",
+    "NAMES": [
+      "voidbound"
+    ],
+    "DESCRIPTION": "This card is played an additional number of times equal to its #pVoidbound."
+  },
+  {
+    "PROPER_NAME": "Enhance",
+    "NAMES": [
+      "enhance"
+    ],
+    "DESCRIPTION": "Grant an effect to a card for the rest of combat."
+  },
+  {
+    "PROPER_NAME": "Exhume",
+    "NAMES": [
+      "exhume"
+    ],
+    "DESCRIPTION": "Return a card from your #yExhaust pile to your hand."
+  },
+  {
+    "PROPER_NAME": "Soulforged",
+    "NAMES": [
+      "soulforged"
+    ],
+    "DESCRIPTION": "AFTER this card is played, draw this many cards and gain this much energy."
+  },
+  {
+    "PROPER_NAME": "Temperance",
+    "NAMES": [
+      "temperance"
+    ],
+    "DESCRIPTION": "The next time you #yBlock, gain this much additional #yBlock."
   }
 ]

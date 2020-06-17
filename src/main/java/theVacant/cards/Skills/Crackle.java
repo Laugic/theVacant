@@ -29,17 +29,18 @@ public class Crackle extends AbstractDynamicCard
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 0;
-    private static final int BLOCK = 1;
+    private static final int BLOCK = 2;
 
     public Crackle()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = BLOCK;
+        this.exhaust = true;
     }
 
     @Override
@@ -56,7 +57,7 @@ public class Crackle extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.rebound = true;
+            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

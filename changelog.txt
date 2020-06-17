@@ -1,3 +1,18 @@
+0.7.0
+Added the Enhance mechanic
+Added the Voidbound mechanic
+
+Revamped several cards to focus on Card Positioning (i.e. Unnate)
+Revamped several cards to focus on Exhaust, Enhancing, and Voidbound
+Changed Brass Goblet back to how it worked previously (able to trigger multiple times each combat)
+Time Skip now has appropriate Sound Effect
+-----
+0.6.1
+Fixed Fortify still saying Healthy instead of Wounded
+
+Exhumation gives 1 energy when unupgraded?
+Void Embrace Power description
+-----
 0.6.0
 Reworked Brass Goblet Relic
 Removed Bound Soul Relic

@@ -26,7 +26,7 @@ public class LashOut extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int DAMAGE = 0;
 
     public LashOut()
@@ -50,7 +50,7 @@ public class LashOut extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }

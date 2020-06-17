@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.actions.AddAttacksToHandAction;
+import theVacant.actions.DeathSpiralAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -37,14 +38,14 @@ public class DeathSpiral extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new AddAttacksToHandAction(this.magicNumber, !this.upgraded));
+        AbstractDungeon.actionManager.addToBottom(new DeathSpiralAction(this.magicNumber, this.upgraded));
     }
 
     @Override

@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,10 +50,10 @@ public class TimeSkip extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:kingCrimson"));
         addToBot(new VFXAction(player, new VerticalAuraEffect(Color.BLACK, player.hb.cX, player.hb.cY), 0.33F));
         addToBot(new VFXAction(player, new BorderLongFlashEffect(Color.BLACK), 0.0F, true));
-        addToBot(new VFXAction(player, new BorderLongFlashEffect(Color.CYAN), 0.0F, true));
-        addToBot(new VFXAction(player, new BorderLongFlashEffect(Color.WHITE), 0.0F, true));
+        addToBot(new VFXAction(player, new BorderLongFlashEffect(Color.RED), 0.2F, true));
         if(this.upgraded)
         {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, this.magicNumber));

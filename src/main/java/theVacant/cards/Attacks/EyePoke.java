@@ -40,7 +40,7 @@ public class EyePoke extends AbstractDynamicCard {
     {
         for(int i = 0; i < this.magicNumber; i++)
             AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakPower(monster, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakPower(monster, 2, false), 2));
     }
 
     @Override

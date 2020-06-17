@@ -8,8 +8,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import theVacant.powers.DelayedExhumePower;
+import theVacant.powers.HuskPower;
 
-public class ExhumationAction extends AbstractGameAction
+public class PlayHuskAction extends AbstractGameAction
 {
     private boolean freeToPlayOnce = false;
 
@@ -17,7 +18,7 @@ public class ExhumationAction extends AbstractGameAction
     private int energyOnUse = -1;
     private int bonusEnergy = 0;
 
-    public ExhumationAction(boolean freeToPlayOnce, int energyOnUse, int bonusEnergy)
+    public PlayHuskAction(boolean freeToPlayOnce, int energyOnUse, int bonusEnergy)
     {
         this.freeToPlayOnce = freeToPlayOnce;
         this.bonusEnergy = bonusEnergy;
@@ -38,12 +39,12 @@ public class ExhumationAction extends AbstractGameAction
             player.getRelic("Chemical X").flash();
         }
         energyUsed += this.bonusEnergy;
+        energyUsed *= 2;
         if (energyUsed > 0)
         {
-            AbstractDungeon.actionManager.addToBottom(new ExhaustAction(energyUsed, false, false, true));
             if (!this.freeToPlayOnce)
                 player.energy.use(EnergyPanel.totalCount);
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DelayedExhumePower(player, player, energyUsed)));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new HuskPower(player, player, energyUsed), energyUsed));
         }
         this.isDone = true;
     }

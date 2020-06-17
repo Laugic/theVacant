@@ -38,7 +38,7 @@ public class DarkStrike extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
     private static final int DAMAGE = 6;
 
     public DarkStrike()

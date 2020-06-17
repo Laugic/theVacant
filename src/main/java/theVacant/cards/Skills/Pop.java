@@ -38,6 +38,7 @@ public class Pop extends AbstractDynamicCard
     public Pop()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.exhaust = true;
     }
 
     @Override
@@ -52,7 +53,7 @@ public class Pop extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.rebound = true;
+            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

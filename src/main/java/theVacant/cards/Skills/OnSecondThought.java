@@ -27,20 +27,16 @@ public class OnSecondThought extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int BLOCK = 5;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public OnSecondThought()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.block = this.baseBlock = BLOCK;
         this.rebound = true;
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         AbstractDungeon.actionManager.addToBottom(new BetterDiscardPileToHandAction(1));
     }
 
@@ -50,7 +46,7 @@ public class OnSecondThought extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

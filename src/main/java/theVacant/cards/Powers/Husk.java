@@ -7,6 +7,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.PlayExhumationAction;
+import theVacant.actions.PlayHuskAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.HuskPower;
@@ -28,18 +30,18 @@ public class Husk extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = -1;
 
     public Husk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new HuskPower(player, player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new PlayHuskAction(this.freeToPlayOnce, this.energyOnUse, this.upgraded?1:0));
+        player.energy.use(this.costForTurn);
     }
 
     @Override
@@ -48,8 +50,7 @@ public class Husk extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
-            this.upgradedMagicNumber = true;
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

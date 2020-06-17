@@ -37,7 +37,7 @@
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
-    "DESCRIPTIONS": ["Cards that Exhaust are played #b", " additional time."," additional times."]
+    "DESCRIPTIONS": ["The first #b", " card you play each turn costs 0."," cards you play each turn cost 0."]
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
@@ -98,5 +98,25 @@
   "theVacant:WardRune": {
     "NAME": "Ward",
     "DESCRIPTIONS": ["Whenever you lose HP, gain #b"," #yBlock next turn. NL #yRelease: Gain #b", " #yBlock twice."]
+  },
+  "theVacant:ForgeSoulPower": {
+    "NAME": "Forge Soul",
+    "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #ySoulforged.", " random cards with #ySoulforged."]
+  },
+  "theVacant:VoidFormPower": {
+    "NAME": "Void Form",
+    "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #yVoidbound.", " random cards with #yVoidbound."]
+  },
+  "theVacant:TemperancePower": {
+    "NAME": "Temperance",
+    "DESCRIPTIONS": ["The next time you #yBlock, #yBlock an additional amount."]
+  },
+  "theVacant:WaitInWrathPower": {
+    "NAME": "Wait in Wrath",
+    "DESCRIPTIONS": ["At the start of your turn, if you are #yWounded, gain "," #yVigor. If you are #yHealthy, gain "," #yTemperance."]
+  },
+  "theVacant:WhenDarknessComesPower": {
+    "NAME": "When Darkness Comes",
+    "DESCRIPTIONS": ["At the start of your turn, #yExhume "," random card."," random cards."]
   }
 }

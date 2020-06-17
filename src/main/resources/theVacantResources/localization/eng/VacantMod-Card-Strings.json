@@ -46,7 +46,7 @@
   },
   "theVacant:EyePoke": {
     "NAME": "Eye Poke",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply !M! Weak."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Apply 2 Weak."
   },
   "theVacant:FranticBlow": {
     "NAME": "Frantic Blow",
@@ -67,7 +67,8 @@
   },
   "theVacant:Crunch": {
     "NAME": "Crunch",
-    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Healthy, apply !M! Weak. If you are thevacant:Wounded, apply !M! Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL If you are thevacant:Healthy, apply !M! Weak. If you are thevacant:Wounded, apply !M! Vulnerable.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. NL If you are thevacant:Healthy, apply !M! Weak. If you are thevacant:Wounded, apply !M! Vulnerable."
   },
   "theVacant:Slash": {
     "NAME": "Slash",
@@ -95,7 +96,7 @@
   },
   "theVacant:Thoughtseize": {
     "NAME": "Thoughtseize",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mill !M!. NL Return 1 card from your discard pile to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card from the bottom of your draw pile."
   },
   "theVacant:Threat": {
     "NAME": "Threaten",
@@ -115,7 +116,7 @@
   },
   "theVacant:FiendFrost": {
     "NAME": "Fiend Frost",
-    "DESCRIPTION": "Exhaust your discard pile. Deal !D! damage for each card Exhausted. Exhaust."
+    "DESCRIPTION": "Deal !D! damage for each card in your Exhaust pile. NL Exhaust."
   },
   "theVacant:Yeet": {
     "NAME": "Yeet",
@@ -147,8 +148,8 @@
   },
   "theVacant:DeathSpiral": {
     "NAME": "Death Spiral",
-    "DESCRIPTION": "Deal !D! damage. NL Add 3 random attacks from your draw pile to your hand. They cost 0 this turn.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add 3 attacks from your draw pile to your hand. They cost 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with thevacant:Voidbound.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with thevacant:Voidbound. NL It costs 0 this turn."
   },
   "theVacant:Carve": {
     "NAME": "Carve",
@@ -161,6 +162,14 @@
   "theVacant:DarkStrike": {
     "NAME": "Dark Strike",
     "DESCRIPTION": "Shuffle !M! *Snaps into your draw pile. NL Deal !D! damage for each Colorless and Curse card in your deck."
+  },
+  "theVacant:CursedBlast": {
+    "NAME": "Cursed Blast",
+    "DESCRIPTION": "thevacant:Unnate. NL Deal !D! damage to ALL enemies."
+  },
+  "theVacant:PitOfDespair": {
+    "NAME": "Pit of Despair",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Enhance this card with thevacant:Voidbound."
   },
   "theVacant:VacantStarterDefend": {
     "NAME": "Defend",
@@ -194,11 +203,11 @@
   },
   "theVacant:OnSecondThought": {
     "NAME": "On Second Thought",
-    "DESCRIPTION": "thevacant:Rebound. NL Gain !B! Block. NL Put a card from the discard pile into your hand."
+    "DESCRIPTION": "thevacant:Rebound. NL Put a card from the discard pile into your hand."
   },
   "theVacant:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Healthy, gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Wounded, gain !M! Strength. NL Exhaust."
   },
   "theVacant:Sneeze": {
     "NAME": "Sneeze",
@@ -226,7 +235,7 @@
   },
   "theVacant:Prevent": {
     "NAME": "Prevent",
-    "DESCRIPTION": "Gain Dexterity equal to your current thevacant:Void. NL Gain !B! Block."
+    "DESCRIPTION": "Gain 1 Buffer for every 2 cards in your Exhaust pile, rounded down. NL Exhaust."
   },
   "theVacant:ShutAway": {
     "NAME": "Shut Away",
@@ -250,6 +259,16 @@
   "theVacant:HolyWater": {
     "NAME": "Holy Water",
     "DESCRIPTION": "Take !D! damage. NL Heal !M! HP. NL Exhaust."
+  },
+  "theVacant:EmbraceDarkness": {
+    "NAME": "Embrace Darkness",
+    "DESCRIPTION": "thevacant:Exhume a card and thevacant:Enhance it with thevacant:Voidbound. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Exhume a card and thevacant:Enhance it with thevacant:Voidbound."
+  },
+  "theVacant:Unearth": {
+    "NAME": "Unearth",
+    "DESCRIPTION": "Draw !M! card from the bottom of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards from the bottom of your draw pile."
   },
   "theVacant:TheAnvil": {
     "NAME": "The Anvil",
@@ -300,8 +319,7 @@
   },
   "theVacant:SpiritOrb": {
     "NAME": "Spirit Orb",
-    "DESCRIPTION": "Draw 1 card. NL Exhaust. NL Whenever you thevacant:Mill this card, gain [E] [E].",
-    "UPGRADE_DESCRIPTION": "Draw 1 card. NL Whenever you thevacant:Mill this card, gain [E] [E]."
+    "DESCRIPTION": "thevacant:Enhance a card with thevacant:Soulforged. NL Exhaust."
   },
   "theVacant:Solace": {
     "NAME": "Solace",
@@ -309,18 +327,18 @@
   },
   "theVacant:Snap": {
     "NAME": "Snap",
-    "DESCRIPTION": "Deal !D! damage twice. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage twice. NL Draw 1 card."
+    "DESCRIPTION": "Deal !D! damage twice. NL Draw 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Draw 1 card."
   },
   "theVacant:Crackle": {
     "NAME": "Crackle",
-    "DESCRIPTION": "Gain !B! Block twice. NL Draw 1 card.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Gain !B! Block twice. NL Draw 1 card."
+    "DESCRIPTION": "Gain !B! Block twice. NL Draw 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block twice. NL Draw 1 card."
   },
   "theVacant:Pop": {
     "NAME": "Pop",
-    "DESCRIPTION": "Draw 2 cards.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Draw 2 cards."
+    "DESCRIPTION": "Draw 2 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw 2 cards."
   },
   "theVacant:Exhumation": {
     "NAME": "Exhumation",
@@ -329,8 +347,8 @@
   },
   "theVacant:TimeSkip": {
     "NAME": "Time Skip",
-    "DESCRIPTION": "All cards in your hand cost 0 and Exhaust. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL All cards in your hand cost 0 and Exhaust. NL Exhaust."
+    "DESCRIPTION": "thevacant:Enhance all cards in your hand to cost 0 and Exhaust. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL thevacant:Enhance all cards in your hand cost 0 and Exhaust. NL Exhaust."
   },
   "theVacant:CallSpirits": {
     "NAME": "Call Spirits",
@@ -350,6 +368,11 @@
     "NAME": "Mind Break",
     "DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap to your hand and Mill !M!.",
     "UPGRADE_DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap+ to your hand and Mill !M!."
+  },
+  "theVacant:Voidstone": {
+    "NAME": "Voidstone",
+    "DESCRIPTION": "thevacant:Enhance a card with thevacant:Voidbound. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Enhance a card with thevacant:Voidbound."
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",
@@ -382,7 +405,8 @@
   },
   "theVacant:Husk": {
     "NAME": "Husk",
-    "DESCRIPTION": "At the start of your turn, gain !M! thevacant:Void."
+    "DESCRIPTION": "At the start of your turn, gain 2*X thevacant:Void.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 2*(X+1) thevacant:Void."
   },
   "theVacant:EmptyForm": {
     "NAME": "Empty Form",
@@ -418,5 +442,25 @@
   "theVacant:IntoTheAbyss": {
     "NAME": "Into the Abyss",
     "DESCRIPTION": "At the start of your turn, gain 1 thevacant:Doom and apply 2 thevacant:Doom to ALL enemies."
+  },
+  "theVacant:ForgeSoul": {
+    "NAME": "Forge Soul",
+    "DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with thevacant:Soulforged.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, thevacant:Enhance a random card with thevacant:Soulforged."
+  },
+  "theVacant:VoidForm": {
+    "NAME": "Void Form",
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, thevacant:Enhance a random card with thevacant:Voidbound.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with thevacant:Voidbound."
+  },
+  "theVacant:WaitInWrath": {
+    "NAME": "Wait in Wrath",
+    "DESCRIPTION": "At the start of your turn, if you are thevacant:Wounded, gain !M! Vigor. If you are thevacant:Healthy, gain !M! thevacant:Temperance.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with thevacant:Voidbound."
+  },
+  "theVacant:WhenDarknessComes": {
+    "NAME": "When Darkness Comes",
+    "DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random card.",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random cards."
   }
 }

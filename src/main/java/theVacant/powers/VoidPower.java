@@ -118,6 +118,6 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public AbstractPower makeCopy()
     {
-        return new WillPower(owner, source, amount);
+        return new VoidPower(owner, source, amount);
     }
 }

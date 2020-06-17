@@ -42,8 +42,8 @@ public class FiendFrost extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        int num = player.discardPile.size();
-        AbstractDungeon.actionManager.addToBottom(new ExhaustDiscardAction(-1));
+        int num = player.exhaustPile.size();
+        //AbstractDungeon.actionManager.addToBottom(new ExhaustDiscardAction(-1));
         for(int i = 0; i < num; i++)
             AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }

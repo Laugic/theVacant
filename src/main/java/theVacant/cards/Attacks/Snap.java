@@ -39,6 +39,7 @@ public class Snap extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
+        this.exhaust = true;
     }
 
     @Override
@@ -55,7 +56,7 @@ public class Snap extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.rebound = true;
+            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

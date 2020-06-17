@@ -31,7 +31,7 @@ public class Crunch extends AbstractDynamicCard {
 
     private static final int COST = 0;
     private static final int DAMAGE = 4;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public Crunch()
     {
@@ -43,7 +43,7 @@ public class Crunch extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
+        AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
         if(player.isBloodied)
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new VulnerablePower(monster, this.magicNumber, false), this.magicNumber));
         else
@@ -56,9 +56,9 @@ public class Crunch extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            //upgradeMagicNumber(1);
-            //this.upgradedMagicNumber = true;
+            this.rebound = true;
             upgradeDamage(UPGRADE_PLUS_DMG);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
