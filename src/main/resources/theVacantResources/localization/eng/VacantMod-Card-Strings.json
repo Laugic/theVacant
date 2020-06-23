@@ -460,7 +460,6 @@
   },
   "theVacant:WhenDarknessComes": {
     "NAME": "When Darkness Comes",
-    "DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random non-healing card.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Exhume !M! random non-healing cards."
+    "DESCRIPTION": "Apply 2 thevacant:Doom to thevacant:Everyone. NL Each thevacant:Doom increases damage taken on enemies by !M! more."
   }
 }

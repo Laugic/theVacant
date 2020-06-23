@@ -3,10 +3,10 @@
 
     <groupId>theVacant</groupId>
     <artifactId>theVacant</artifactId>
-    <version>v0.7.0</version>
+    <version>v0.8.0</version>
     <packaging>jar</packaging>
     <name>TheVacant</name>
-    <description>A cursed soul is bound to an artifact and doomed to climb the Spire.</description>
+    <description>A lost soul, bound to an artifact, is doomed to climb the Spire.</description>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>

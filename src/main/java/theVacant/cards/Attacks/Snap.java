@@ -33,7 +33,7 @@ public class Snap extends AbstractDynamicCard
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 1;
+    private static final int DAMAGE = 3;
 
     public Snap()
     {

@@ -24,7 +24,8 @@
     "NAME": "Brass Goblet",
     "FLAVOR": "An ancient artifact with dark power.",
     "DESCRIPTIONS": [
-      "Whenever you become #ythevacant:Healthy, gain #b1 #yDexterity. Whenever you become #ythevacant:Wounded, gain #b2 #yStrength."
+      "At the start of your turn, gain #b",
+      " #pthevacant:Void."
     ]
   },
   "theVacant:BoundSoul": {

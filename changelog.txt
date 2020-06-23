@@ -1,6 +1,16 @@
+0.8.0
+Added Vacant Character Portrait
+
+Revamped Brass Goblet
+When Darkness Comes revamped to buff Doom instead of Exhume
+
+Buffed Snap base damage
+
+Reworded some descriptions
+--
 0.7.1
 Showdown now properly says "to ALL enemies" in card description
-When Darkness Comes only flashes if it Exhumes
+When Darkness Comes only flashes when it Exhumes.
 Void Form actually gives Void Form as a power when played now
 --
 0.7.0

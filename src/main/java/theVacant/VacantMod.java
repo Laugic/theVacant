@@ -52,7 +52,7 @@ public class VacantMod implements
 
     private static final String MODNAME = "The Vacant";
     private static final String AUTHOR = "Laugic";
-    private static final String DESCRIPTION = "A broken soul is doomed to climb the Spire.";
+    private static final String DESCRIPTION = "A lost soul, bound to an artifact, is doomed to climb the Spire.";
 
 
     public static final Color VACANT_COLOR = CardHelper.getColor(64.0f, 70.0f, 70.0f);
@@ -74,7 +74,7 @@ public class VacantMod implements
     private static final String ENERGY_ORB_VACANT_PORTRAIT = "theVacantResources/images/1024/card_default_gray_orb.png";
 
     private static final String THE_VACANT_BUTTON = "theVacantResources/images/charSelect/TheVacantButton.png";
-    private static final String THE_VACANT_PORTRAIT = "theVacantResources/images/charSelect/DefaultCharacterPortraitBG.png";
+    private static final String THE_VACANT_PORTRAIT = "theVacantResources/images/charSelect/VacantPortraitBG.png";
     public static final String THE_VACANT_SHOULDER_1 = "theVacantResources/images/char/vacantCharacter/shoulder.png";
     public static final String THE_VACANT_SHOULDER_2 = "theVacantResources/images/char/vacantCharacter/shoulder2.png";
     public static final String THE_VACANT_CORPSE = "theVacantResources/images/char/vacantCharacter/corpse.png";

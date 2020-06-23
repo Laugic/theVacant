@@ -1,4 +1,5 @@
 theVacant\cards\Powers\GreaterMind.class
+theVacant\relics\OldRevampedBrassGoblet.class
 theVacant\cards\Attacks\FinalCountdown.class
 theVacant\powers\WillPower.class
 theVacant\cards\Skills\EmptyShield.class
@@ -85,6 +86,7 @@ theVacant\cards\Skills\Crackle.class
 theVacant\cards\Attacks\Whip.class
 theVacant\relics\OldBrassGoblet.class
 theVacant\cards\Skills\Sneeze.class
+theVacant\relics\OldRevampedBrassGoblet$1.class
 theVacant\cards\Skills\Exorcise.class
 theVacant\cards\Powers\BurdenBreak.class
 theVacant\actions\DarkStrikeAction.class
@@ -166,7 +168,6 @@ theVacant\cards\Skills\HealingSalve.class
 theVacant\actions\TimeSkipAction.class
 theVacant\cards\Skills\Necromancy.class
 theVacant\powers\HuskPower.class
-theVacant\relics\BrassGoblet$1.class
 theVacant\cards\Skills\Freedom.class
 theVacant\cards\Skills\Ascend.class
 theVacant\cards\Skills\Release.class

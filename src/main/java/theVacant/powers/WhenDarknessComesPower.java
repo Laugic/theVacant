@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.unique.ExhumeAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -50,17 +51,9 @@ public class WhenDarknessComesPower extends AbstractPower implements CloneablePo
     }
 
     @Override
-    public void atStartOfTurnPostDraw()
-    {
-        if(AbstractDungeon.player.exhaustPile.size() > 0)
-            flash();
-        AbstractDungeon.actionManager.addToBottom(new RandomExhumeAction(this.amount));
-    }
-
-    @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + this.amount + (this.amount==1?DESCRIPTIONS[1]:DESCRIPTIONS[2]);
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
     }
 
     @Override

@@ -2,18 +2,13 @@ package theVacant.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.BootSequence;
 import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
-import com.megacrit.cardcrawl.cards.colorless.MasterOfStrategy;
-import com.megacrit.cardcrawl.cards.red.FireBreathing;
-import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -21,8 +16,6 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
-import com.megacrit.cardcrawl.orbs.Dark;
-import com.megacrit.cardcrawl.relics.MummifiedHand;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -34,7 +27,6 @@ import theVacant.cards.Skills.*;
 
 import java.util.ArrayList;
 import com.badlogic.gdx.graphics.Color;
-import theVacant.relics.BoundSoul;
 import theVacant.relics.BrassGoblet;
 
 import static theVacant.VacantMod.*;

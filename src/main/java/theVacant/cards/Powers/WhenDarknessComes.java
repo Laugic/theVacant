@@ -1,5 +1,6 @@
 package theVacant.cards.Powers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DoomPower;
 import theVacant.powers.ForgeSoulPower;
 import theVacant.powers.GloomPower;
 import theVacant.powers.WhenDarknessComesPower;
@@ -31,6 +33,7 @@ public class WhenDarknessComes extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
+    private static final int DOOM_AMOUNT = 2;
 
     public WhenDarknessComes()
     {
@@ -41,6 +44,10 @@ public class WhenDarknessComes extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
+
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WhenDarknessComesPower(player, player, this.magicNumber), this.magicNumber));
     }
 
@@ -52,7 +59,6 @@ public class WhenDarknessComes extends AbstractDynamicCard
             upgradeName();
             upgradeMagicNumber(1);
             this.upgradedMagicNumber = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

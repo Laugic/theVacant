@@ -2,14 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/relics/OldRevampedBrassGoblet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/charSelect/VacantPortrait.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/charSelect/VacantPortraitBG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/charSelect/VacantPortraitBG_bkup.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/Husk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/Husk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Snap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/WhenDarknessComes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/WhenDarknessComes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/characters/TheVacant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/characters/TheVacant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/DoomPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/DoomPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/HollowRune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/HollowRune.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/WhenDarknessComesPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/WhenDarknessComesPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/relics/BrassGoblet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/relics/BrassGoblet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/relics/OldBrassGoblet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/relics/OldBrassGoblet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/Husk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/Husk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Character-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Character-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/VacantMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/VacantMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Snap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Snap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/VoidForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/VoidForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/WhenDarknessComes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/WhenDarknessComes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/DoomPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/DoomPower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/WhenDarknessComesPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/WhenDarknessComesPower.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Character-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Character-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/theVacant.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/theVacant.jar" afterDir="false" />
     </list>
