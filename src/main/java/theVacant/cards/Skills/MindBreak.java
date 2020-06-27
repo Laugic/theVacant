@@ -60,6 +60,7 @@ public class MindBreak extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             AbstractCard upgCard = new Snap();
             upgCard.upgrade();
             this.cardsToPreview = upgCard;

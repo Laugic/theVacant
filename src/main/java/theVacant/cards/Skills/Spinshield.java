@@ -31,7 +31,8 @@ public class Spinshield extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int BLOCK = 3;
+    private static final int BLOCK = 2;
+    private static final int UPGRADE_PLUS_BLOCK = 1;
 
     public Spinshield()
     {
@@ -53,8 +54,8 @@ public class Spinshield extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            this.upgradedBlock = true;
             initializeDescription();
         }
     }

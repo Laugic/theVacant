@@ -1,5 +1,7 @@
 package theVacant.cards.Powers;
 
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +14,10 @@ import theVacant.actions.PlayHuskAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.HuskPower;
+import theVacant.util.KeywordManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -32,6 +38,8 @@ public class Husk extends AbstractDynamicCard
 
     private static final int COST = -1;
 
+    private static ArrayList<TooltipInfo> VoidTooltip;
+
     public Husk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
@@ -43,6 +51,17 @@ public class Husk extends AbstractDynamicCard
         AbstractDungeon.actionManager.addToBottom(new PlayHuskAction(this.freeToPlayOnce, this.energyOnUse, this.upgraded?1:0));
         if(!this.freeToPlayOnce && !this.freeToPlay())
             player.energy.use(this.costForTurn);
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips()
+    {
+        if(VoidTooltip == null)
+        {
+            VoidTooltip = new ArrayList<>();
+            VoidTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_ID)));
+        }
+        return VoidTooltip;
     }
 
     @Override

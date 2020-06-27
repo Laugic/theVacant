@@ -62,6 +62,7 @@ theVacant\cards\Attacks\Slash.class
 theVacant\actions\YeetAction.class
 theVacant\cards\Attacks\Jab.class
 theVacant\cards\Attacks\DarkStrike.class
+theVacant\Enums\VacantTags.class
 theVacant\cards\Powers\MarkOfDeath.class
 theVacant\powers\VoidFormPower.class
 theVacant\cards\Skills\Enrage.class
@@ -72,6 +73,7 @@ theVacant\cards\Powers\Willpower.class
 theVacant\cards\Attacks\Threat.class
 theVacant\cards\Attacks\Vengeance.class
 theVacant\powers\CleanseSoulPower.class
+theVacant\util\KeywordManager.class
 theVacant\actions\DrawFromBottom.class
 theVacant\cards\Attacks\BellToll.class
 theVacant\cards\Attacks\Frenzy.class

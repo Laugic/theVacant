@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -172,7 +173,7 @@ public class TheVacant extends CustomPlayer
     @Override
     public void doCharSelectScreenSelectEffect()
     {
-        CardCrawlGame.sound.playA("ATTACK_DAGGER_1", 1.25f);
+        CardCrawlGame.sound.playA("theVacant:skeleton", 1f);
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.LOW, ScreenShake.ShakeDur.SHORT,
                 false);
     }

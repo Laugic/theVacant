@@ -1,5 +1,7 @@
 package theVacant.cards.Attacks;
 
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -12,6 +14,10 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.characters.TheVacant;
+import theVacant.util.KeywordManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -31,6 +37,8 @@ public class PitOfDespair extends AbstractDynamicCard
     private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 4;
 
+    private static ArrayList<TooltipInfo> VoidboundTooltip;
+
     private boolean played = false;
 
     public PitOfDespair()
@@ -46,6 +54,17 @@ public class PitOfDespair extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.played = true;
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips()
+    {
+        if(VoidboundTooltip == null)
+        {
+            VoidboundTooltip = new ArrayList<>();
+            VoidboundTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOIDBOUND_ID), BaseMod.getKeywordDescription(KeywordManager.VOIDBOUND_ID)));
+        }
+        return VoidboundTooltip;
     }
 
     @Override

@@ -1,3 +1,22 @@
+0.8.1
+Voidbound reworked to repeat card effects instead of playing copies of cards
+(This means it now works with things like Void and Vigor)
+
+Carve changed from 6x3(4) to 4x4(5)
+Carve changed to Uncommon
+Frantic Blow changed to Common
+Spinshield nerfed from 3x3(4) to 2(3)x3
+Embrace Darkness+ changed to 0 cost instead of removing Exhaust
+Empty Shield is now Uncommon
+Lash Out is now Uncommon
+Wait in Wrath is now Uncommon
+
+Added new sound for clicking on Vacant
+
+Everyone is no longer a keyword
+Void and Voidbound are now Purple in descriptions
+Fixed Mind Break's upgrade description
+--
 0.8.0
 Added Vacant Character Portrait
 
@@ -7,7 +26,7 @@ When Darkness Comes revamped to buff Doom instead of Exhume
 Buffed Snap base damage
 
 Reworded some descriptions
---
+-----
 0.7.1
 Showdown now properly says "to ALL enemies" in card description
 When Darkness Comes only flashes when it Exhumes.

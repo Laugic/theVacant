@@ -1,5 +1,7 @@
 package theVacant.cards.Powers;
 
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,6 +14,10 @@ import theVacant.characters.TheVacant;
 import theVacant.powers.ForgeSoulPower;
 import theVacant.powers.GloomPower;
 import theVacant.powers.VoidFormPower;
+import theVacant.util.KeywordManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -30,6 +36,8 @@ public class VoidForm extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
+    private static ArrayList<TooltipInfo> VoidboundTooltip;
+
     private static final int COST = 3;
 
     public VoidForm()
@@ -43,6 +51,17 @@ public class VoidForm extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidFormPower(player, player, this.magicNumber), this.magicNumber));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips()
+    {
+        if(VoidboundTooltip == null)
+        {
+            VoidboundTooltip = new ArrayList<>();
+            VoidboundTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOIDBOUND_ID), BaseMod.getKeywordDescription(KeywordManager.VOIDBOUND_ID)));
+        }
+        return VoidboundTooltip;
     }
 
     @Override

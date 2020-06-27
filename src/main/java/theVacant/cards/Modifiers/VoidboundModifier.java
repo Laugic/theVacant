@@ -1,15 +1,18 @@
 package theVacant.cards.Modifiers;
 
+import basemod.BaseMod;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
 
@@ -19,11 +22,15 @@ import static basemod.helpers.CardModifierManager.getModifiers;
 public class VoidboundModifier extends AbstractCardModifier
 {
     private int amount;
+    private boolean initialPlay;
+    private int counter;
     public static String ID = "VacantVoidboundModifier";
 
     public VoidboundModifier(int amount)
     {
         this.amount = amount;
+        this.initialPlay = false;
+        this.counter = 0;
     }
 
     public void Increase(int num)
@@ -35,40 +42,30 @@ public class VoidboundModifier extends AbstractCardModifier
     public void onInitialApplication(AbstractCard card)
     {
         card.glowColor = Color.PURPLE;
+        if(!card.keywords.toString().contains(KeywordManager.VOIDBOUND_ID))
+            card.keywords.add(KeywordManager.VOIDBOUND_ID);
     }
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action)
     {
-        if (this.amount > 0)
+        AbstractPlayer player = AbstractDungeon.player;
+        for(int i = 0; i < this.amount; i++)
         {
-            for(int i = 0; i < this.amount; i++)
-            {
-                AbstractMonster m = null;
-                if (action.target != null)
-                    m = (AbstractMonster)action.target;
-                AbstractCard tmp = card.makeSameInstanceOf();
-                AbstractDungeon.player.limbo.addToBottom(tmp);
-                tmp.current_x = card.current_x;
-                tmp.current_y = card.current_y;
-                tmp.target_x = Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
-                tmp.target_y = Settings.HEIGHT / 2.0F;
-                if (m != null)
-                    tmp.calculateCardDamage(m);
-                tmp.purgeOnUse = true;
-                CardModifierManager.removeModifiersById(tmp, ID, true);
-                AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, m, card.energyOnUse, true, true), true);
-            }
+            card.use(player, (target instanceof AbstractMonster)?((AbstractMonster) target):(null));
         }
     }
+
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card)
     {
         if(this.amount > 0)
         {
-            rawDescription += " NL thevacant:Voidbound " + this.amount + ".";
+            rawDescription += " NL [#ee82ee]Voidbound[] " + this.amount + ".";
             card.glowColor = Color.PURPLE;
+            if(!card.rawDescription.toLowerCase().contains(BaseMod.getKeywordProper(KeywordManager.VOIDBOUND_ID).toLowerCase()))
+                card.keywords.add(0, KeywordManager.VOIDBOUND_ID);
         }
         return rawDescription;
     }

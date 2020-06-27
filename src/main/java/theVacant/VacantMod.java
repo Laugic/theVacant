@@ -12,6 +12,8 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import com.google.gson.Gson;
@@ -83,6 +85,12 @@ public class VacantMod implements
 
     public static final String THE_VACANT_SKELETON_ATLAS = "theVacantResources/images/char/vacantCharacter/skeleton.atlas";
     public static final String THE_VACANT_SKELETON_JSON = "theVacantResources/images/char/vacantCharacter/skeleton.json";
+
+
+    //Keywords
+    public static Map<String, Keyword> keywords = new HashMap<>();
+    public static final String VOIDBOUND = "thevacant:Voidbound";
+
 
     public static void initialize()
     {
@@ -404,9 +412,12 @@ public class VacantMod implements
         String json = Gdx.files.internal(getModID() + "Resources/localization/eng/VacantMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
-        if (keywords != null) {
-            for (Keyword keyword : keywords) {
+        if (keywords != null)
+        {
+            for (Keyword keyword : keywords)
+            {
                 BaseMod.addKeyword(getModID().toLowerCase(), keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
+                logger.info("Keyword added: " + keyword.PROPER_NAME);
             }
         }
     }
@@ -416,6 +427,7 @@ public class VacantMod implements
     {
         BaseMod.addAudio("theVacant:ora",  getModID() + "Resources/audio/ora.ogg");
         BaseMod.addAudio("theVacant:kingCrimson",  getModID() + "Resources/audio/kingCrimson.ogg");
+        BaseMod.addAudio("theVacant:skeleton",  getModID() + "Resources/audio/mc_skeleton.ogg");
     }
 
     public static String getModID()

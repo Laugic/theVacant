@@ -136,7 +136,7 @@
   },
   "theVacant:Showdown": {
     "NAME": "Showdown",
-    "DESCRIPTION": "Deal !D! damage !M! times to ALL enemies. NL Apply 2 thevacant:Doom to NL thevacant:Everyone."
+    "DESCRIPTION": "Deal !D! damage !M! times to ALL enemies. NL Apply 2 thevacant:Doom to NL EVERYONE."
   },
   "theVacant:ReaperStrike": {
     "NAME": "Reaper Strike",
@@ -148,8 +148,8 @@
   },
   "theVacant:DeathSpiral": {
     "NAME": "Death Spiral",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with thevacant:Voidbound.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with thevacant:Voidbound. NL It costs 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with [#ee82ee]Voidbound[].",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with [#ee82ee]Voidbound[]. NL It costs 0 this turn."
   },
   "theVacant:Carve": {
     "NAME": "Carve",
@@ -169,7 +169,7 @@
   },
   "theVacant:PitOfDespair": {
     "NAME": "Pit of Despair",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Enhance this card with thevacant:Voidbound."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Enhance this card with [#ee82ee]Voidbound[]."
   },
   "theVacant:VacantStarterDefend": {
     "NAME": "Defend",
@@ -262,8 +262,8 @@
   },
   "theVacant:EmbraceDarkness": {
     "NAME": "Embrace Darkness",
-    "DESCRIPTION": "thevacant:Exhume a card and thevacant:Enhance it with thevacant:Voidbound. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Exhume a card and thevacant:Enhance it with thevacant:Voidbound."
+    "DESCRIPTION": "thevacant:Exhume a card and thevacant:Enhance it with [#ee82ee]Voidbound[]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Exhume a card and thevacant:Enhance it with [#ee82ee]Voidbound[]."
   },
   "theVacant:Unearth": {
     "NAME": "Unearth",
@@ -371,8 +371,8 @@
   },
   "theVacant:Voidstone": {
     "NAME": "Voidstone",
-    "DESCRIPTION": "thevacant:Enhance a card with thevacant:Voidbound. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Enhance a card with thevacant:Voidbound."
+    "DESCRIPTION": "thevacant:Enhance a card with [#ee82ee]Voidbound[]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Enhance a card with [#ee82ee]Voidbound[]."
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",
@@ -405,8 +405,8 @@
   },
   "theVacant:Husk": {
     "NAME": "Husk",
-    "DESCRIPTION": "At the start of your turn, gain 2*X thevacant:Void.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 2*(X+1) thevacant:Void."
+    "DESCRIPTION": "At the start of your turn, gain 2*X [#ee82ee]Void[].",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, gain 2*(X+1) [#ee82ee]Void[]."
   },
   "theVacant:EmptyForm": {
     "NAME": "Empty Form",
@@ -432,7 +432,7 @@
   },
   "theVacant:VoidEmbrace": {
     "NAME": "Void Embrace",
-    "DESCRIPTION": "Whenever a card Exhausts, gain !M! thevacant:Void. NL Void is no longer removed at the end of your turn."
+    "DESCRIPTION": "Whenever a card Exhausts, gain !M! [#ee82ee]Void[]. NL [#ee82ee]Void[] is no longer removed at the end of your turn."
   },
   "theVacant:GreaterMind": {
     "NAME": "Greater Mind",
@@ -450,16 +450,15 @@
   },
   "theVacant:VoidForm": {
     "NAME": "Void Form",
-    "DESCRIPTION": "Ethereal. NL At the start of your turn, thevacant:Enhance a random card with thevacant:Voidbound.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with thevacant:Voidbound."
+    "DESCRIPTION": "Ethereal. NL At the start of your turn, thevacant:Enhance a random card with [#ee82ee]Voidbound[].",
+    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with [#ee82ee]Voidbound[]."
   },
   "theVacant:WaitInWrath": {
     "NAME": "Wait in Wrath",
-    "DESCRIPTION": "At the start of your turn, if you are thevacant:Wounded, gain !M! Vigor. If you are thevacant:Healthy, gain !M! thevacant:Temperance.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with thevacant:Voidbound."
+    "DESCRIPTION": "At the start of your turn, if you are thevacant:Wounded, gain !M! Vigor. If you are thevacant:Healthy, gain !M! thevacant:Temperance."
   },
   "theVacant:WhenDarknessComes": {
     "NAME": "When Darkness Comes",
-    "DESCRIPTION": "Apply 2 thevacant:Doom to thevacant:Everyone. NL Each thevacant:Doom increases damage taken on enemies by !M! more."
+    "DESCRIPTION": "Apply 2 thevacant:Doom to EVERYONE. NL Each thevacant:Doom increases damage taken on enemies by !M! more."
   }
 }

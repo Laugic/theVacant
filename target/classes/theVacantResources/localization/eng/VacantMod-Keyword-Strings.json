@@ -40,7 +40,7 @@
       "mill",
       "milled"
     ],
-    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile. Gain #yVoid for each card moved."
+    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile. Gain #pVoid for each card moved."
   },
   {
     "PROPER_NAME": "Rebound",
@@ -80,7 +80,7 @@
     "DESCRIPTION": "Creatures take more damage for each #yDoom they have."
   },
   {
-    "PROPER_NAME": "Void",
+    "PROPER_NAME": "[#ee82ee]Void[]",
     "NAMES": [
       "void"
     ],
@@ -145,11 +145,11 @@
     "DESCRIPTION": "ALL enemies and you."
   },
   {
-    "PROPER_NAME": "Voidbound",
+    "PROPER_NAME": "[#ee82ee]Voidbound[]",
     "NAMES": [
       "voidbound"
     ],
-    "DESCRIPTION": "This card is played an additional number of times equal to its #pVoidbound."
+    "DESCRIPTION": "Repeat this card's effects an additional number of times equal to its #pVoidbound."
   },
   {
     "PROPER_NAME": "Enhance",

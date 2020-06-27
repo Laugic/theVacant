@@ -56,7 +56,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
         if (card.baseBlock >= 0 || card.baseDamage >= 0)
         {
             flash();
-            addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, this.amount));
+            addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, this.amount));
         }
     }
 
