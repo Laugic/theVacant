@@ -27,8 +27,8 @@ public class ExorcisePower extends AbstractPower implements CloneablePowerInterf
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/exorcise_power84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/exorcise_power32.png");
 
     public ExorcisePower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {

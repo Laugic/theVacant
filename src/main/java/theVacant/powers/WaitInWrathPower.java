@@ -24,8 +24,8 @@ public class WaitInWrathPower extends AbstractPower implements CloneablePowerInt
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/will_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/will_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/wait_wrath_power84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/wait_wrath_power32.png");
 
     public WaitInWrathPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {

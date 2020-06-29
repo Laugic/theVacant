@@ -39,7 +39,7 @@ public class TwistFate extends AbstractDynamicCard
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster m)
+    public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegenPower(player, this.magicNumber), this.magicNumber));

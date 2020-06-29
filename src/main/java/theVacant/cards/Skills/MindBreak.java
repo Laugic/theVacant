@@ -37,9 +37,6 @@ public class MindBreak extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new Snap();
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.exhaust = true;
-        this.getBonusMillToMagic = true;
     }
 
     @Override
@@ -50,7 +47,6 @@ public class MindBreak extends AbstractDynamicCard
         {
             AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(this.cardsToPreview, numCards));
             AbstractDungeon.actionManager.addToTop(new DiscardAction(player, player, numCards, false));
-            AbstractDungeon.actionManager.addToBottom(new VacantMillAction(numCards*this.magicNumber));
         }
     }
 

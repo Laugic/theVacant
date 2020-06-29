@@ -1,3 +1,11 @@
+0.9.0
+All Powers now have unique icons
+
+Mind Break no longer Exhausts
+Mind Break no longer Mills
+Void Embrace Power description fixed
+Fixed Embrace Darkness when there was only 1 card in your exhaust pile
+-----
 0.8.1
 Voidbound reworked to repeat card effects instead of playing copies of cards
 (This means it now works with things like Void and Vigor)

@@ -33,7 +33,7 @@
   },
   "theVacant:HuskPower": {
     "NAME": "Husk",
-    "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #yVoid."]
+    "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #pVoid."]
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
@@ -45,7 +45,7 @@
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
-    "DESCRIPTIONS": ["Whenever a card Exhausts, gain  #b", " #yVoid. NL Void is no longer removed at the end of your turn."]
+    "DESCRIPTIONS": ["Whenever a card Exhausts, gain #b", " #pVoid. #pVoid is no longer removed at the end of your turn."]
   },
   "theVacant:GreaterMindPower": {
     "NAME": "Greater Mind",
@@ -89,7 +89,7 @@
   },
   "theVacant:VacancyRune": {
     "NAME": "Vacancy",
-    "DESCRIPTIONS": ["Whenever you #yMill, gain an additional #b", " #yVoid."]
+    "DESCRIPTIONS": ["Whenever you #yMill, gain an additional #b", " #pVoid."]
   },
   "theVacant:HollowRune": {
     "NAME": "Hollow",
@@ -105,7 +105,7 @@
   },
   "theVacant:VoidFormPower": {
     "NAME": "Void Form",
-    "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #yVoidbound.", " random cards with #yVoidbound."]
+    "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #pVoidbound.", " random cards with #pVoidbound."]
   },
   "theVacant:TemperancePower": {
     "NAME": "Temperance",

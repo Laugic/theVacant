@@ -366,8 +366,8 @@
   },
   "theVacant:MindBreak": {
     "NAME": "Mind Break",
-    "DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap to your hand and Mill !M!.",
-    "UPGRADE_DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap+ to your hand and Mill !M!."
+    "DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap to your hand.",
+    "UPGRADE_DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap+ to your hand."
   },
   "theVacant:Voidstone": {
     "NAME": "Voidstone",

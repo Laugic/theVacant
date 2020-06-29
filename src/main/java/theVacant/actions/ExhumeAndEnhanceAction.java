@@ -82,6 +82,7 @@ public class ExhumeAndEnhanceAction extends AbstractGameAction
                         {
                             card.unhover();
                             card.lighten(true);
+                            card.unfadeOut();
                             card.setAngle(0.0F);
                             card.drawScale = 0.12F;
                             card.targetDrawScale = 0.75F;
@@ -122,6 +123,7 @@ public class ExhumeAndEnhanceAction extends AbstractGameAction
             for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards)
             {
                 card.unhover();
+                card.unfadeOut();
                 Enhance(card);
                 card.initializeDescription();
 
