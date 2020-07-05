@@ -37,7 +37,7 @@ public class EmbraceDarkness extends AbstractDynamicCard {
 
     private static ArrayList<TooltipInfo> VoidboundTooltip;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public EmbraceDarkness()
     {
@@ -69,7 +69,7 @@ public class EmbraceDarkness extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBaseCost(1);
             initializeDescription();
         }
     }

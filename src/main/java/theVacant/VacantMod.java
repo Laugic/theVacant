@@ -179,12 +179,7 @@ public class VacantMod implements
     public void receiveEditRelics()
     {
         logger.info("Adding relics");
-        //BaseMod.addRelicToCustomPool(new VacantBossEnergyRelic(), TheVacant.Enums.COLOR_GOLD);
-        BaseMod.addRelic(new VacantBossEnergyRelic(), RelicType.SHARED);
-        BaseMod.addRelic(new VacantStarterRelic(), RelicType.SHARED);
-        BaseMod.addRelic(new Deathbell(), RelicType.SHARED);
-        BaseMod.addRelic(new BrassGoblet(), RelicType.SHARED);
-        BaseMod.addRelic(new BoundSoul(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new BrassGoblet(), TheVacant.Enums.COLOR_GOLD);
         logger.info("Done adding relics!");
     }
 

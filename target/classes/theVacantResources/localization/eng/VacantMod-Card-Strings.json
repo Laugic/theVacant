@@ -108,7 +108,7 @@
   },
   "theVacant:Throttle": {
     "NAME": "Throttle",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Weak."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Frail."
   },
   "theVacant:BrassMagnet": {
     "NAME": "Brass Magnet",

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
+import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
@@ -27,7 +28,7 @@ public class CursedBlast extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(CursedBlast.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("CursedBlast.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.COMMON;
@@ -53,7 +54,7 @@ public class CursedBlast extends AbstractDynamicCard
         addToBot(new VFXAction(player, new VerticalAuraEffect(Color.BLACK, player.hb.cX, player.hb.cY), 0.33F));
         addToBot(new VFXAction(player, new BorderLongFlashEffect(Color.PURPLE), 0.3F, true));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal), 0.1F));
         AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
 

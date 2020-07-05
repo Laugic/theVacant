@@ -17,7 +17,7 @@ public class Cower extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Cower.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Cower.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;

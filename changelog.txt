@@ -1,3 +1,20 @@
+0.10.0
+Card Art Changes:
+Redid Strike
+Redid Defend
+Redid Release
+Redid Crunch
+Added Eye Poke
+Added Cursed Blast
+Added Cower
+
+Buffed Frantic Blow+
+Throttle changed from giving Weak to giving Frail
+Nerfed Eye Poke+ to not buff damage
+Nerfed Embrace Darkness to cost 2(1) instead of 1(0)
+
+Temporarily removed all relics besides Brass Goblet so they didn't show up on other characters
+-----
 0.9.0
 All Powers now have unique icons
 

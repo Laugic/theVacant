@@ -17,7 +17,7 @@ import static theVacant.VacantMod.makeCardPath;
 public class EyePoke extends AbstractDynamicCard {
 
     public static final String ID = VacantMod.makeID(EyePoke.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("EyePoke.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
@@ -49,8 +49,8 @@ public class EyePoke extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeMagicNumber(1);
+            this.upgradedMagicNumber = true;
             initializeDescription();
         }
     }

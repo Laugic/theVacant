@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import theVacant.VacantMod;
@@ -49,7 +50,7 @@ public class Throttle extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, this.magicNumber, false), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new FrailPower(player, this.magicNumber, false), this.magicNumber));
     }
 
     @Override
