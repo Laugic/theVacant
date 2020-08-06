@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ExhaustDiscardAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -25,7 +26,7 @@ public class FromNothing extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public FromNothing()
     {
@@ -38,6 +39,7 @@ public class FromNothing extends AbstractDynamicCard
     {
         if(player.drawPile.size() > 0)
             AbstractDungeon.actionManager.addToBottom(new VacantMillAction(player.drawPile.size()));
+        AbstractDungeon.actionManager.addToBottom(new ExhaustDiscardAction(-1));
     }
 
     @Override
@@ -46,7 +48,7 @@ public class FromNothing extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.rebound = true;
+            this.isInnate = true;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

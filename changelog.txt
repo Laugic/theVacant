@@ -1,3 +1,35 @@
+0.11.0
+Overall summary: Removed all Snap, Crackle, Pop related cards, and reduced the power level of a bunch of cards.
+
+Removed Exhumation
+Removed Krispen
+Removed Snap, Crackle, and Pop
+Added Soothe [1 C Gain 3(5) Temperance. If you are Healthy, gan an additional 3(5).]
+Added Barrage [0 C Rebound. Deal 3(5) damage twice. Exhaust.]
+
+Lich Strike now Exhausts
+Revamped Battle [0 C If you are Wounded, gain 2(3) Strength. Exhaust.]
+Revamped Reconnect [2 U Deal 6(10) damage. Gain 6(10) Block. Gain 1 Artifact. Exhaust.]
+Revamped Thoughtseize
+Revamped Holy Water [0 U Gain 8(12) Temperance. Exhaust.]
+Revamped Twist Fate [1 U Gain 4(6) Vigor and 4(6) Temperance.]
+Revamped Mind Break [2 R Discard your hand. Mill your draw pile. Draw 1(2) card(s). Exhaust.]
+Revamped Dark Strike [3(2) R Deal 6 damage 6 times. Apply 6 Doom to EVERYONE. Exhaust.]
+Revamped Prevent [2 R Gain 14(20) Block. If you are Wounded, gain 2 Buffer. Exhaust.]
+Revamped Pit of Despair [1(0) U Deal 4 damage. Apply 2 Doom.]
+Revamped From Nothing [1 R (Innate.) Mill your draw pile. Exhaust your discard pile. Exhaust.]
+
+Battle Scars is now Common
+Enrage is now Common
+Shut Away is now Common
+Thoughtseize is now Common
+On Second Thought is now Common
+
+-Necromancy now uses the Exhume keyword
+Reformatted Fortify's description
+Fixed typo in Time Skip+
+Fixed On Second Thought wording
+-----
 0.10.0
 Card Art Changes:
 Redid Strike

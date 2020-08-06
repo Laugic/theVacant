@@ -106,12 +106,14 @@ theVacant\cards\Powers\RunicThoughts.class
 theVacant\cards\Attacks\Showdown.class
 theVacant\cards\Skills\FromNothing.class
 theVacant\cards\Skills\Krispen.class
+theVacant\cards\Attacks\Barrage.class
 theVacant\powers\TemperancePower.class
 theVacant\cards\Attacks\Carve.class
 theVacant\cards\Skills\TimeSkip.class
 theVacant\cards\Attacks\EyePoke.class
 theVacant\cards\Skills\Expand.class
 theVacant\cards\Skills\Prevent.class
+theVacant\cards\Skills\Soothe.class
 theVacant\actions\ReleaseAction.class
 theVacant\cards\Modifiers\VoidboundModifier.class
 theVacant\cards\Powers\Immaterialize.class
@@ -152,6 +154,7 @@ theVacant\powers\FerocityRune.class
 theVacant\variables\VacantMissingHealthDamage.class
 theVacant\relics\Deathbell.class
 theVacant\powers\GloomPower.class
+theVacant\actions\CardToBottomAction.class
 theVacant\powers\WardRune.class
 theVacant\relics\VacantBossEnergyRelic.class
 theVacant\cards\Powers\VoidForm.class

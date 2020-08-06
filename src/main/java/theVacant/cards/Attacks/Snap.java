@@ -47,7 +47,8 @@ public class Snap extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
+        if(this.upgraded)
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
     }
 
     @Override
@@ -56,7 +57,6 @@ public class Snap extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

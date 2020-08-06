@@ -4,6 +4,7 @@ import basemod.helpers.BaseModCardTags;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.PutOnDeckAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,10 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
-import theVacant.actions.DrawFromBottom;
-import theVacant.actions.ReleaseAction;
-import theVacant.actions.ShuffleDiscardToBottomOfDrawAction;
-import theVacant.actions.VacantMillAction;
+import theVacant.actions.*;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -27,7 +25,7 @@ public class Thoughtseize extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("Attack.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
@@ -45,9 +43,8 @@ public class Thoughtseize extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if(player.drawPile.size() == 0)
-            AbstractDungeon.actionManager.addToBottom(new ShuffleDiscardToBottomOfDrawAction());
-        AbstractDungeon.actionManager.addToBottom(new DrawFromBottom(1));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
+        AbstractDungeon.actionManager.addToBottom(new CardToBottomAction(player.hand, 1));
     }
 
     @Override

@@ -46,6 +46,7 @@ public class LichStrike extends AbstractDynamicCard
         this.damage = this.baseDamage = DAMAGE;
         this.tags.add(CardTags.STRIKE);
         this.tags.add(CardTags.HEALING);
+        this.exhaust = true;
     }
 
     @Override

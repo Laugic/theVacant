@@ -1,8 +1,10 @@
 package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +12,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -29,24 +32,25 @@ public class Reconnect extends AbstractDynamicCard {
 
     private static final int COST = 2;
     private static final int DAMAGE = 6;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int BLOCK = 6;
+    private static final int UPGRADE_PLUS_BLOCK = 4;
 
     public Reconnect()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = 3;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+        this.block = this.baseBlock = BLOCK;
+        this.magicNumber = this.baseMagicNumber = 1;
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new VampireDamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if(player.currentHealth > player.maxHealth / 2)
-            this.exhaust = true;
-        else
-            this.exhaust = false;
+        AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ArtifactPower(player, this.magicNumber), this.magicNumber));
     }
 
     @Override
@@ -56,6 +60,7 @@ public class Reconnect extends AbstractDynamicCard {
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

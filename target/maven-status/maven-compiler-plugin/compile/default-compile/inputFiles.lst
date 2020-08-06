@@ -1,4 +1,5 @@
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Modifiers\SoulforgedModifier.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\Barrage.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\variables\VacantMissingHealthDamage.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\GloomPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\variables\VacantGlassDamage.java
@@ -124,6 +125,7 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Powers\Acceptance.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\EnhanceInHandAction.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\Think.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\CardToBottomAction.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\FromNothing.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\FiendFrost.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\BurdenBreakPower.java
@@ -164,6 +166,7 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\Prevent.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\Return.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\FinalCountdown.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\Soothe.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\OldRevampedBrassGoblet.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\Snowball.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\VacantStarterDefend.java

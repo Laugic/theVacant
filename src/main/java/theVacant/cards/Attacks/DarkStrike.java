@@ -20,6 +20,7 @@ import theVacant.VacantMod;
 import theVacant.actions.DarkStrikeAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DoomPower;
 import theVacant.powers.DoomRune;
 import theVacant.powers.FerocityRune;
 import theVacant.powers.WardRune;
@@ -38,23 +39,29 @@ public class DarkStrike extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 3;
     private static final int DAMAGE = 6;
+    private static final int DOOM_AMOUNT = 6;
 
     public DarkStrike()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
-        this.cardsToPreview = new Snap();
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 6;
         this.tags.add(CardTags.STRIKE);
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(this.cardsToPreview, this.magicNumber, true, true));
-        AbstractDungeon.actionManager.addToBottom(new DarkStrikeAction(monster, this.damage, this.damageTypeForTurn));
+
+        for(int i = 0; i < this.magicNumber; i++)
+            AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
@@ -63,8 +70,7 @@ public class DarkStrike extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
+            upgradeBaseCost(2);
             initializeDescription();
         }
     }

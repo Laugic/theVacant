@@ -96,7 +96,7 @@
   },
   "theVacant:Thoughtseize": {
     "NAME": "Thoughtseize",
-    "DESCRIPTION": "Deal !D! damage. NL Draw a card from the bottom of your draw pile."
+    "DESCRIPTION": "Deal !D! damage. NL Draw a card. NL Return a card to the bottom of your draw pile."
   },
   "theVacant:Threat": {
     "NAME": "Threaten",
@@ -104,7 +104,7 @@
   },
   "theVacant:Reconnect": {
     "NAME": "Reconnect",
-    "DESCRIPTION": "Deal !D! damage. NL Heal HP equal to unblocked damage. NL If you are thevacant:Healthy, Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain 1 Artifact. NL Exhaust."
   },
   "theVacant:Throttle": {
     "NAME": "Throttle",
@@ -157,11 +157,11 @@
   },
   "theVacant:LichStrike": {
     "NAME": "Lich Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Take that much damage, then heal that much HP."
+    "DESCRIPTION": "Deal !D! damage. NL Take that much damage, then heal that much HP. NL Exhaust."
   },
   "theVacant:DarkStrike": {
     "NAME": "Dark Strike",
-    "DESCRIPTION": "Shuffle !M! *Snaps into your draw pile. NL Deal !D! damage for each Colorless and Curse card in your deck."
+    "DESCRIPTION": "Deal !D! damage NL !M! times. NL Apply 6 thevacant:Doom to EVERYONE. NL Exhaust."
   },
   "theVacant:CursedBlast": {
     "NAME": "Cursed Blast",
@@ -169,7 +169,11 @@
   },
   "theVacant:PitOfDespair": {
     "NAME": "Pit of Despair",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Enhance this card with [#ee82ee]Voidbound[]."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! thevacant:Doom."
+  },
+  "theVacant:Barrage": {
+    "NAME": "Barrage",
+    "DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage NL !M! times. NL Exhaust."
   },
   "theVacant:VacantStarterDefend": {
     "NAME": "Defend",
@@ -203,11 +207,11 @@
   },
   "theVacant:OnSecondThought": {
     "NAME": "On Second Thought",
-    "DESCRIPTION": "thevacant:Rebound. NL Put a card from the discard pile into your hand."
+    "DESCRIPTION": "thevacant:Rebound. NL Put a card from your discard pile into your hand."
   },
   "theVacant:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. If you are thevacant:Wounded, gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL If you are thevacant:Wounded, gain !M! Strength. NL Exhaust."
   },
   "theVacant:Sneeze": {
     "NAME": "Sneeze",
@@ -223,7 +227,7 @@
   },
   "theVacant:BattleScars": {
     "NAME": "Battle Scars",
-    "DESCRIPTION": "Draw 1 card. NL If you are thevacant:Wounded, gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "If you are thevacant:Wounded, gain !M! Strength. NL Exhaust."
   },
   "theVacant:Hex": {
     "NAME": "Hex",
@@ -235,7 +239,7 @@
   },
   "theVacant:Prevent": {
     "NAME": "Prevent",
-    "DESCRIPTION": "Gain 1 Buffer for every 2 cards in your Exhaust pile, rounded down. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL If you are thevacant:Wounded, gain !M! Buffer. NL Exhaust."
   },
   "theVacant:ShutAway": {
     "NAME": "Shut Away",
@@ -258,7 +262,7 @@
   },
   "theVacant:HolyWater": {
     "NAME": "Holy Water",
-    "DESCRIPTION": "Take !D! damage. NL Heal !M! HP. NL Exhaust."
+    "DESCRIPTION": "Gain !M! thevacant:Temperance. NL Exhaust."
   },
   "theVacant:EmbraceDarkness": {
     "NAME": "Embrace Darkness",
@@ -287,9 +291,13 @@
     "NAME": "Enrage",
     "DESCRIPTION": "Gain !M! Vigor. If you are thevacant:Wounded, gain an additional !M!."
   },
+  "theVacant:Soothe": {
+    "NAME": "Soothe",
+    "DESCRIPTION": "Gain !M! thevacant:Temperance. If you are thevacant:Healthy, gain an additional !M!."
+  },
   "theVacant:Necromancy": {
     "NAME": "Necromancy",
-    "DESCRIPTION": "Exhaust 2 cards. Return 1 card from your Exhaust pile to your hand. NL Exhaust."
+    "DESCRIPTION": "Exhaust 2 cards. NL thevacant:Exhume 1 card. NL Exhaust."
   },
   "theVacant:Think": {
     "NAME": "Think",
@@ -297,8 +305,8 @@
   },
   "theVacant:FromNothing": {
     "NAME": "From Nothing",
-    "DESCRIPTION": "thevacant:Mill your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL thevacant:Mill your draw pile. NL Exhaust."
+    "DESCRIPTION": "thevacant:Mill your draw pile. NL Exhaust your NL discard pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL thevacant:Mill your draw pile. NL Exhaust your NL discard pile. NL Exhaust."
   },
   "theVacant:Freedom": {
     "NAME": "Freedom",
@@ -327,47 +335,41 @@
   },
   "theVacant:Snap": {
     "NAME": "Snap",
-    "DESCRIPTION": "Deal !D! damage twice. NL Draw 1 card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Draw 1 card."
+    "DESCRIPTION": "Deal !D! damage twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. NL Draw 1 card. NL Exhaust."
   },
   "theVacant:Crackle": {
     "NAME": "Crackle",
-    "DESCRIPTION": "Gain !B! Block twice. NL Draw 1 card. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !B! Block twice. NL Draw 1 card."
+    "DESCRIPTION": "Gain !B! Block twice. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !B! Block twice. NL Draw 1 card. NL Exhaust."
   },
   "theVacant:Pop": {
     "NAME": "Pop",
-    "DESCRIPTION": "Draw 2 cards. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw 2 cards."
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
   },
   "theVacant:Exhumation": {
     "NAME": "Exhumation",
-    "DESCRIPTION": "Exhaust X cards. Next turn, return X cards from your Exhaust pile to your hand. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Exhaust X+1 cards. Next turn, return X+1 cards from your Exhaust pile to your hand. Exhaust."
+    "DESCRIPTION": "Exhaust X cards. Next turn, Exhume X cards. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust X+1 cards. Next turn, Exhume X+1 cards. Exhaust."
   },
   "theVacant:TimeSkip": {
     "NAME": "Time Skip",
     "DESCRIPTION": "thevacant:Enhance all cards in your hand to cost 0 and Exhaust. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL thevacant:Enhance all cards in your hand cost 0 and Exhaust. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL thevacant:Enhance all cards in your hand to cost 0 and Exhaust. NL Exhaust."
   },
   "theVacant:CallSpirits": {
     "NAME": "Call Spirits",
     "DESCRIPTION": "Shuffle !M! *Pops into your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Shuffle !M! *Pop+'s into your draw pile. NL Exhaust."
   },
-  "theVacant:Krispen": {
-    "NAME": "Krispen",
-    "DESCRIPTION": "Shuffle a *Snap, *Crackle, and *Pop into your draw pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shuffle a *Snap+, *Crackle+, and *Pop+ into your draw pile. NL Exhaust."
-  },
   "theVacant:TwistFate": {
     "NAME": "Twist Fate",
-    "DESCRIPTION": "Gain 2 thevacant:Doom and !M! Regen. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Vigor and !M! thevacant:Temperance."
   },
   "theVacant:MindBreak": {
     "NAME": "Mind Break",
-    "DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap to your hand.",
-    "UPGRADE_DESCRIPTION": "Discard your hand. For each card discarded, add a *Snap+ to your hand."
+    "DESCRIPTION": "Discard your hand. NL thevacant:Mill your draw pile. NL Draw 1 card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Discard your hand. NL thevacant:Mill your draw pile. NL Draw 2 cards. NL Exhaust."
   },
   "theVacant:Voidstone": {
     "NAME": "Voidstone",

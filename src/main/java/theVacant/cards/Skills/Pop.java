@@ -38,13 +38,14 @@ public class Pop extends AbstractDynamicCard
     public Pop()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        this.magicNumber = this.baseMagicNumber = 2;
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 2));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, this.magicNumber));
     }
 
     @Override
@@ -53,8 +54,8 @@ public class Pop extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.exhaust = false;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

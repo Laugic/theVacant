@@ -234,6 +234,7 @@ public class VacantMod implements
         BaseMod.addCard(new Cower());
         BaseMod.addCard(new Dig());
         BaseMod.addCard(new Spinshield());
+        BaseMod.addCard(new Soothe());
         BaseMod.addCard(new BattleScars());
         BaseMod.addCard(new EmbraceDarkness());
         BaseMod.addCard(new Enrage());
@@ -241,7 +242,7 @@ public class VacantMod implements
         BaseMod.addCard(new Fortify());
         BaseMod.addCard(new Hex());
         BaseMod.addCard(new HolyWater());
-        BaseMod.addCard(new Krispen());
+        BaseMod.addCard(new Barrage());
         BaseMod.addCard(new Necromancy());
         BaseMod.addCard(new OnSecondThought());
         BaseMod.addCard(new Return());
@@ -251,7 +252,6 @@ public class VacantMod implements
         BaseMod.addCard(new TwistFate());
         BaseMod.addCard(new Unearth());
         BaseMod.addCard(new EmptyShield());
-        BaseMod.addCard(new Exhumation());
         BaseMod.addCard(new Exorcise());
         BaseMod.addCard(new FromNothing());
         BaseMod.addCard(new MindBreak());
@@ -278,9 +278,10 @@ public class VacantMod implements
         BaseMod.addCard(new WhenDarknessComes());
 
         //Temp Cards
+        /*
         BaseMod.addCard(new Snap());
         BaseMod.addCard(new Crackle());
-        BaseMod.addCard(new Pop());
+        BaseMod.addCard(new Pop());*/
 
         logger.info("Making sure the cards are unlocked.");
 
@@ -322,6 +323,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Cower.ID);
         UnlockTracker.unlockCard(Dig.ID);
         UnlockTracker.unlockCard(Spinshield.ID);
+        UnlockTracker.unlockCard(Soothe.ID);
         UnlockTracker.unlockCard(BattleScars.ID);
         UnlockTracker.unlockCard(EmbraceDarkness.ID);
         UnlockTracker.unlockCard(Enrage.ID);
@@ -329,7 +331,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Fortify.ID);
         UnlockTracker.unlockCard(Hex.ID);
         UnlockTracker.unlockCard(HolyWater.ID);
-        UnlockTracker.unlockCard(Krispen.ID);
+        UnlockTracker.unlockCard(Barrage.ID);
         UnlockTracker.unlockCard(Necromancy.ID);
         UnlockTracker.unlockCard(OnSecondThought.ID);
         UnlockTracker.unlockCard(Return.ID);
@@ -339,7 +341,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(TwistFate.ID);
         UnlockTracker.unlockCard(Unearth.ID);
         UnlockTracker.unlockCard(EmptyShield.ID);
-        UnlockTracker.unlockCard(Exhumation.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
         UnlockTracker.unlockCard(FromNothing.ID);
         UnlockTracker.unlockCard(MindBreak.ID);
@@ -366,10 +367,11 @@ public class VacantMod implements
         UnlockTracker.unlockCard(WhenDarknessComes.ID);
 
         //Temp Cards
+        /*
         UnlockTracker.unlockCard(Snap.ID);
         UnlockTracker.unlockCard(Crackle.ID);
         UnlockTracker.unlockCard(Pop.ID);
-
+        */
 
         logger.info("Done adding cards!");
     }

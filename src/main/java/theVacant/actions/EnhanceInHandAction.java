@@ -40,38 +40,44 @@ public class EnhanceInHandAction extends AbstractGameAction
         this.p = AbstractDungeon.player;
         this.canPickZero = false;
         this.isRandom = false;
-        this.anyNumber = false;
     }
 
     public void update()
     {
-        if (this.duration == this.startDuration) {
-            if (this.p.hand.size() == 0) {
+        if (this.duration == this.startDuration)
+        {
+            if (this.p.hand.size() == 0)
+            {
                 this.isDone = true;
                 return;
             }
-            if (!this.anyNumber &&
-                    this.p.hand.size() <= this.amount) {
+            if (this.p.hand.size() <= this.amount)
+            {
                 this.amount = this.p.hand.size();
                 int tmp = this.p.hand.size();
-                for (int i = 0; i < tmp; i++) {
+                for (int i = 0; i < tmp; i++)
+                {
                     AbstractCard c = this.p.hand.getTopCard();
                     this.p.hand.moveToExhaustPile(c);
                 }
                 CardCrawlGame.dungeon.checkForPactAchievement();
                 return;
             }
-            if (this.isRandom) {
+            if (this.isRandom)
+            {
                 for (int i = 0; i < this.amount; i++)
                     this.p.hand.moveToExhaustPile(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng));
                 CardCrawlGame.dungeon.checkForPactAchievement();
-            } else {
+            }
+            else
+            {
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, this.anyNumber, this.canPickZero);
                 tickDuration();
                 return;
             }
         }
-        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
+        if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved)
+        {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group)
                 this.p.hand.moveToExhaustPile(c);
             CardCrawlGame.dungeon.checkForPactAchievement();

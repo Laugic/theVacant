@@ -8,11 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.RegenPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.DoomPower;
+import theVacant.powers.TemperancePower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -29,20 +31,18 @@ public class TwistFate extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DOOM_AMOUNT = 2;
 
     public TwistFate()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
-        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegenPower(player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VigorPower(player, this.magicNumber),  this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new TemperancePower(player, player, this.magicNumber),  this.magicNumber));
     }
 
     @Override

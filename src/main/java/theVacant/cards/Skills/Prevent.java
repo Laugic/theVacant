@@ -32,23 +32,24 @@ public class Prevent extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 3;
+    private static final int COST = 2;
+    private static final int BLOCK = 14;
+    private static final int UPGRADE_BLOCK = 6;
 
     public Prevent()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = 2;
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        int numBuffer = player.exhaustPile.size();
-        if(numBuffer % 2 == 1)
-            numBuffer--;
-        numBuffer /= 2;
-        if(numBuffer > 0)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BufferPower(player, numBuffer),  numBuffer));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
+        if(player.isBloodied)
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BufferPower(player, magicNumber),  magicNumber));
     }
 
     @Override
@@ -57,7 +58,8 @@ public class Prevent extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(2);
+            upgradeBlock(UPGRADE_BLOCK);
+            upgradedBlock = true;
             initializeDescription();
         }
     }

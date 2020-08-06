@@ -2,45 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Cower.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Cower_p.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/CursedBlast.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/CursedBlast_p.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/EyePoke.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/EyePoke_p.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/strike.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/CardToBottomAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Barrage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Soothe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/CursedBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/CursedBlast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/EyePoke.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/EyePoke.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/FranticBlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/FranticBlow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Throttle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Throttle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Cower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Cower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/EmbraceDarkness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/EmbraceDarkness.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Crunch.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Crunch.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Crunch_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Crunch_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Defend.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Defend.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Defend_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Defend_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Release.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Release.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Release_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Release_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Strike.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Strike.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Strike_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Strike_p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/actions/EnhanceInHandAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/EnhanceInHandAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/DarkStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/DarkStrike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/LichStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/LichStrike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/PitOfDespair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/PitOfDespair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Reconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Reconnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Snap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Thoughtseize.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Thoughtseize.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/BattleScars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/BattleScars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Crackle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Crackle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Enrage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Enrage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/FromNothing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/FromNothing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/HolyWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/HolyWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/MindBreak.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/MindBreak.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/OnSecondThought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/OnSecondThought.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Pop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Pop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Prevent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Prevent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/ShutAway.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/ShutAway.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/TwistFate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/TwistFate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacant/VacantMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/VacantMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/actions/EnhanceInHandAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/actions/EnhanceInHandAction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/CursedBlast.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/CursedBlast.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/EyePoke.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/EyePoke.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/FranticBlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/FranticBlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Defend.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Defend.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Defend_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Defend_p.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Strike.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Strike.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Strike_p.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/Strike_p.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/LichStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/LichStrike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/PitOfDespair.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/PitOfDespair.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Reconnect.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Reconnect.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Snap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Snap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Thoughtseize.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/Thoughtseize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/BattleScars.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/BattleScars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Crackle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Crackle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/EmbraceDarkness.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/EmbraceDarkness.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Enrage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Enrage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/HolyWater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/HolyWater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/OnSecondThought.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/OnSecondThought.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Pop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Pop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/ShutAway.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/ShutAway.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/TwistFate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/TwistFate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/strike.psd" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/cards/strike.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/theVacant.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/theVacant.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,7 +87,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Minecraft/Mystica/forge-1.14.4-28.2.0-mdk/build.gradle" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Minecraft/Nylia" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

@@ -1,9 +1,7 @@
 package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.TemperancePower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -36,18 +35,15 @@ public class HolyWater extends AbstractDynamicCard
     public HolyWater()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 10;
-        this.damage = this.baseDamage = 10;
+        this.magicNumber = this.baseMagicNumber = 8;
         this.exhaust = true;
-        this.tags.add(AbstractCard.CardTags.HEALING);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.effectsQueue.add(new LightningEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY));
-        addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.NONE));
-        addToBot(new RegenAction(AbstractDungeon.player, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new TemperancePower(player, player, this.magicNumber),  this.magicNumber));
     }
 
     @Override
@@ -56,7 +52,7 @@ public class HolyWater extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(4);
             this.upgradedMagicNumber = true;
             initializeDescription();
         }

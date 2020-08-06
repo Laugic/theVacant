@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,18 +37,19 @@ public class MindBreak extends AbstractDynamicCard
     public MindBreak()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.cardsToPreview = new Snap();
+        this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        int numCards = Math.max(player.hand.size() - 1, 0);
+        int numCards = player.hand.size() - 1;
         if(numCards > 0)
-        {
-            AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(this.cardsToPreview, numCards));
             AbstractDungeon.actionManager.addToTop(new DiscardAction(player, player, numCards, false));
-        }
+
+        if(player.drawPile.size() > 0)
+            AbstractDungeon.actionManager.addToBottom(new VacantMillAction(player.drawPile.size()));
+        AbstractDungeon.actionManager.addToTop(new DrawCardAction(player, magicNumber));
     }
 
     @Override
@@ -56,10 +58,9 @@ public class MindBreak extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            AbstractCard upgCard = new Snap();
-            upgCard.upgrade();
-            this.cardsToPreview = upgCard;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

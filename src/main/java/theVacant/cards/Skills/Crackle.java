@@ -48,7 +48,8 @@ public class Crackle extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
+        if(this.upgraded)
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
     }
 
     @Override
@@ -57,7 +58,6 @@ public class Crackle extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.exhaust = false;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
