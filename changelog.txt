@@ -1,3 +1,42 @@
+0.14.0
+Art Changes:
+Saturated card background art
+Arted all commons
+Redid character art
+Added over-the-shoulder art
+Added corpse sprite
+
+Balance Changes:
+Void no longer innately buffs damage and block when your draw pile is empty
+'Void Form' gives less Void, but now makes Void buff damage and block when draw pile is empty
+Revamped/Rebalanced a lot of cards
+
+Bug Fixes:
+Thoughtseize no longer softlocks with empty discard pile
+
+Misc Changes:
+Added Gem keyword
+-----
+0.13.0
+Added art from Valonide and Nemhain [Thank you!]
+Added a bunch of new cards
+Removed a bunch of old cards
+
+Reworked Void
+Added new Enhancements (Echo, Materialize)
+Added Gem cards
+
+Enhancements are all uniquely colored now
+-----
+0.12.0
+Arted Fling
+Arted Soothe
+Arted Whip
+
+--Voidstone Bug where it gets stuck if only 1 card in hand
+--Spirit Orb breaks with 1 card in hand
+Mind Break now properly draws 1 card as a baseline (upgrades to 2)
+-----
 0.11.0
 Overall summary: Removed all Snap, Crackle, Pop related cards, and reduced the power level of a bunch of cards.
 
@@ -25,7 +64,7 @@ Shut Away is now Common
 Thoughtseize is now Common
 On Second Thought is now Common
 
--Necromancy now uses the Exhume keyword
+Necromancy now uses the Exhume keyword
 Reformatted Fortify's description
 Fixed typo in Time Skip+
 Fixed On Second Thought wording

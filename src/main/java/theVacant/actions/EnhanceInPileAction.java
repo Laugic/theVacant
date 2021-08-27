@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theVacant.cards.Modifiers.EchoModifier;
+import theVacant.cards.Modifiers.MaterializeModifier;
 import theVacant.cards.Modifiers.SoulforgedModifier;
 import theVacant.cards.Modifiers.VoidboundModifier;
 
@@ -59,41 +61,28 @@ public class EnhanceInPileAction extends AbstractGameAction
                 this.isDone = true;
             else
             {
-                if(tempGroup.size() <= this.amount)
+                if(tempGroup.size() <= this.numCards)
                 {
-                    for(int i = 0; i < this.amount; i++)
+                    for(int i = 0; i < this.numCards; i++)
                     {
                         AbstractCard card = tempGroup.getTopCard();
-                        if(AbstractDungeon.player.hand.size() < BaseMod.MAX_HAND_SIZE)
+                        card.unhover();
+                        card.lighten(true);
+                        Enhance(card);
+                        card.initializeDescription();
+                        cardGroup.applyPowers();
+                        tempGroup.removeCard(card);
+                        if(tempGroup.size() == 0)
                         {
-                            card.unhover();
-                            card.lighten(true);
-                            card.setAngle(0.0F);
-                            card.drawScale = 0.12F;
-                            card.targetDrawScale = 0.75F;
-                            card.current_x = CardGroup.DRAW_PILE_X;
-                            card.current_y = CardGroup.DRAW_PILE_Y;
-                            Enhance(card);
-                            card.initializeDescription();
-                            cardGroup.removeCard(card);
-                            AbstractDungeon.player.hand.addToTop(card);
-                            AbstractDungeon.player.hand.refreshHandLayout();
-                            AbstractDungeon.player.hand.applyPowers();
-                            tempGroup.removeCard(card);
-                            if(tempGroup.size() == 0)
-                                return;
-                        }
-                        else
-                        {
-                            cardGroup.moveToDiscardPile(card);
-                            AbstractDungeon.player.createHandIsFullDialog();
+                            this.isDone = true;
+                            return;
                         }
                     }
                     this.isDone = true;
                 }
                 else
                 {
-                    AbstractDungeon.gridSelectScreen.open(tempGroup, this.amount, TEXT[0], false);
+                    AbstractDungeon.gridSelectScreen.open(tempGroup, this.numCards, TEXT[0], false);
                     tickDuration();
                 }
             }
@@ -110,18 +99,17 @@ public class EnhanceInPileAction extends AbstractGameAction
                 card.unhover();
                 Enhance(card);
                 card.initializeDescription();
-
-                if (player.hand.size() == BaseMod.MAX_HAND_SIZE)
-                {
-                    cardGroup.moveToDiscardPile(card);
-                    player.createHandIsFullDialog();
-                } else
-                {
-                    cardGroup.removeCard(card);
-                    player.hand.addToTop(card);
-                }
-                player.hand.refreshHandLayout();
-                player.hand.applyPowers();
+//                if (player.hand.size() == BaseMod.MAX_HAND_SIZE)
+//                {
+//                    cardGroup.moveToDiscardPile(card);
+//                    player.createHandIsFullDialog();
+//                } else
+//                {
+//                    cardGroup.removeCard(card);
+//                    player.hand.addToTop(card);
+//                }
+//                player.hand.refreshHandLayout();
+//                player.hand.applyPowers();
             }
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
             player.hand.refreshHandLayout();
@@ -135,6 +123,10 @@ public class EnhanceInPileAction extends AbstractGameAction
             VoidboundModifier.Enhance(card, this.amount);
         if(this.modifierID == SoulforgedModifier.ID)
             SoulforgedModifier.Enhance(card, this.amount);
+        if(this.modifierID == EchoModifier.ID)
+            EchoModifier.Enhance(card, this.amount);
+        if(this.modifierID == MaterializeModifier.ID)
+            MaterializeModifier.Enhance(card, this.amount);
         card.initializeDescription();
     }
 }

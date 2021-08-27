@@ -3,11 +3,14 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.util.TextureLoader;
 
@@ -42,9 +45,20 @@ public class BurdenBreakPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
+    public int onAttacked(DamageInfo info, int damageAmount)
+    {
+        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount > 0)
+        {
+            flash();
+            addToTop(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount), amount));
+        }
+        return damageAmount;
+    }
+
+    @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

@@ -1,16 +1,14 @@
 package theVacant.actions;
 
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.cards.AbstractDynamicCard;
-import theVacant.cards.Powers.GreaterMind;
 import theVacant.characters.TheVacant;
 import theVacant.powers.*;
 
@@ -19,28 +17,31 @@ public class VacantMillAction  extends AbstractGameAction
     private float startingDuration;
     private int startAmount = 0;
     private int voidAmount;
+    private int millNum;
     public VacantMillAction(int numCards)
     {
-        this.amount = numCards;
-        this.voidAmount = 0;
-        this.startAmount = this.amount;
-        this.actionType = ActionType.CARD_MANIPULATION;
-        this.startingDuration = Settings.ACTION_DUR_FAST;
-        this.duration = this.startingDuration;
+        amount = numCards;
+        voidAmount = 0;
+        millNum = 0;
+        startAmount = amount;
+        actionType = ActionType.CARD_MANIPULATION;
+        startingDuration = Settings.ACTION_DUR_FAST;
+        duration = startingDuration;
     }
+
     public void update()
     {
-        if(this.amount > 0)
+        if(amount > 0)
         {
             PreMill();
-            while (this.amount > 0)
+            while (amount > 0)
             {
                 if (AbstractDungeon.player.drawPile.size() > 0)
                     ProcessMill();
-                this.amount--;
+                amount--;
             }
             PostMill();
-            this.isDone = true;
+            isDone = true;
         }
     }
 
@@ -52,6 +53,7 @@ public class VacantMillAction  extends AbstractGameAction
     private void ProcessMill()
     {
         AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
+        millNum++;
         if(card != null)
         {
             if(card instanceof AbstractDynamicCard)
@@ -93,24 +95,23 @@ public class VacantMillAction  extends AbstractGameAction
 
     private void PostMill()
     {
-        GetBonusVoid();
-        GainVoid();
+        AbstractDungeon.player.hand.applyPowers();
     }
 
     private void GetBonusVoid()
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null && player.hasPower(VacancyRune.POWER_ID))
-            this.voidAmount += player.getPower(VacancyRune.POWER_ID).amount;
+            voidAmount += player.getPower(VacancyRune.POWER_ID).amount;
     }
 
     private void GainVoid()
     {
         AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && this.voidAmount > 0)
+        if(player != null && voidAmount > 0)
         {
             addToTop(new VFXAction(player, new InflameEffect(player), .1F));
-            player.addPower(new VoidPower(player, player, this.voidAmount));
+            player.addPower(new VoidPower(player, player, voidAmount));
         }
     }
 
@@ -129,11 +130,13 @@ public class VacantMillAction  extends AbstractGameAction
             {
                 if(card.type == AbstractCard.CardType.STATUS || card.type == AbstractCard.CardType.CURSE)
                 {
-                    this.actionType = ActionType.EXHAUST;
+                    actionType = ActionType.EXHAUST;
                     if(player.discardPile.contains(card))
                         player.discardPile.moveToExhaustPile(card);
                 }
             }
+            if(player.hasPower(AquamarinePower.POWER_ID) && player.getPower(AquamarinePower.POWER_ID).amount > 0)
+                addToBot(new GainBlockAction(player, player.getPower(AquamarinePower.POWER_ID).amount));
             if(player instanceof TheVacant)
                 ((TheVacant)player).millsThisTurn++;
         }
@@ -141,7 +144,7 @@ public class VacantMillAction  extends AbstractGameAction
 
     private void PostMillVoidGain()
     {
-        this.voidAmount++;
+        voidAmount++;
     }
 
     private void PostRebound(AbstractCard card)
@@ -160,6 +163,8 @@ public class VacantMillAction  extends AbstractGameAction
         if(player != null)
         {
             if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
+                return true;
+            if(player.hasPower(DarkReflexPower.POWER_ID) && millNum <= player.getPower(DarkReflexPower.POWER_ID).amount)
                 return true;
         }
         return false;

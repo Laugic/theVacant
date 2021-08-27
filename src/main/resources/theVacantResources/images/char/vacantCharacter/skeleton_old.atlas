@@ -1,0 +1,20 @@
+
+skeleton.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TheVacantBones/Layer_1
+  rotate: false
+  xy: 85, 1
+  size: 54, 96
+  orig: 54, 96
+  offset: 0, 0
+  index: -1
+TheVacantBones/Layer_2
+  rotate: false
+  xy: 1, 1
+  size: 82, 92
+  orig: 82, 92
+  offset: 0, 0
+  index: -1

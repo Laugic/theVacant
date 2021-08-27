@@ -24,7 +24,7 @@
     "NAME": "Brass Goblet",
     "FLAVOR": "An ancient artifact with dark power.",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b",
+      "At the start of combat, gain #b",
       " #pthevacant:Void."
     ]
   },
@@ -32,7 +32,7 @@
     "NAME": "Bound Soul",
     "FLAVOR": "Forever tied to an artifact.",
     "DESCRIPTIONS": [
-      "Start each combat with #b1 #ythevacant:Will. At the start of your turn, if you have no #ythevacant:Will, gain #b1 #ythevacant:Will."
+      "Enter [#66eeee]Solemn[] [#66eeee]Form[] at the start of a turn if you are above half HP. NL Enter [#ee4200]Fury[] [#ee4200]Form[] when you take damage. NL Enter [#ee82ee]Void[] [#ee82ee]Form[] when your draw pile contains 0 cards."
     ]
   }
 }

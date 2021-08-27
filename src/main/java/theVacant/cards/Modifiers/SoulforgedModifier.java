@@ -1,14 +1,19 @@
 package theVacant.cards.Modifiers;
 
+import basemod.BaseMod;
 import basemod.abstracts.AbstractCardModifier;
+import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static basemod.helpers.CardModifierManager.addModifier;
 import static basemod.helpers.CardModifierManager.getModifiers;
@@ -29,6 +34,14 @@ public class SoulforgedModifier extends AbstractCardModifier
     }
 
     @Override
+    public void onInitialApplication(AbstractCard card)
+    {
+        card.glowColor = Color.CYAN;
+        if(!card.keywords.toString().contains(KeywordManager.SOULFORGED_ID))
+            card.keywords.add(KeywordManager.SOULFORGED_ID);
+    }
+
+    @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action)
     {
         AbstractPlayer player = AbstractDungeon.player;
@@ -43,7 +56,12 @@ public class SoulforgedModifier extends AbstractCardModifier
     public String modifyDescription(String rawDescription, AbstractCard card)
     {
         if(this.amount > 0)
-            rawDescription = "thevacant:Soulforged " + this.amount + ". NL " + rawDescription;
+        {
+            rawDescription = "[#82eeee]Soulforged[] " + this.amount + ". NL " + rawDescription;
+            card.glowColor = Color.CYAN;
+            if(!card.rawDescription.toLowerCase().contains(BaseMod.getKeywordProper(KeywordManager.SOULFORGED_ID).toLowerCase()))
+                card.keywords.add(0, KeywordManager.SOULFORGED_ID);
+        }
         return rawDescription;
     }
 

@@ -63,9 +63,9 @@ public class TemperancePower extends AbstractPower implements CloneablePowerInte
     @Override
     public float modifyBlock(float blockAmount)
     {
-        if ((blockAmount += this.amount) < 0.0F)
-            return 0.0F;
-        return blockAmount;
+        if(blockAmount < 1)
+            return blockAmount;
+        return blockAmount + amount;
     }
 
     @Override

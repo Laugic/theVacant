@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.util.TextureLoader;
 
@@ -47,10 +48,11 @@ public class HuskPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void atStartOfTurn()
     {
-        if(this.amount > 0)
+        if(amount > 0)
         {
             flash();
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new VoidPower(this.owner, this.owner, this.amount), this.amount));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount), amount));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new TemperancePower(owner, owner, amount), amount));
         }
     }
 

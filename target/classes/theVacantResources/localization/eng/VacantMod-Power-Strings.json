@@ -9,11 +9,11 @@
   },
   "theVacant:GloomPower": {
     "NAME": "Gloom",
-    "DESCRIPTIONS": ["At the beginning of your turn, #yMill #b"]
+    "DESCRIPTIONS": ["Deal #b", " damage to ALL enemies when you lose a stack of #yShroud."]
   },
   "theVacant:ImmaterializePower": {
     "NAME": "Immaterialize",
-    "DESCRIPTIONS": ["The next ", " card played that would #yExhaust discard instead.", " cards played that would #yExhaust discard instead."]
+    "DESCRIPTIONS": ["When a card #yExhausts, #yEnhance it with [#C687EE]Materialize[] #b"]
   },
   "theVacant:ReleasePower": {
     "NAME": "Release",
@@ -33,7 +33,7 @@
   },
   "theVacant:HuskPower": {
     "NAME": "Husk",
-    "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #pVoid."]
+    "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #yVigor and #yTemperance."]
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
@@ -45,19 +45,41 @@
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
-    "DESCRIPTIONS": ["Whenever a card Exhausts, gain #b", " #pVoid. #pVoid is no longer removed at the end of your turn."]
+    "DESCRIPTIONS": ["Cards that [#6A97E2]Echo[] do so #b", " additional time.", " additional times."]
+  },
+  "theVacant:PickaxePower": {
+    "NAME": "Got Our Pickaxe",
+    "DESCRIPTIONS": ["At the start of your turn, add #b", " random Gem card to your hand.", " random Gem cards to your hand."]
+  },
+  "theVacant:AquamarinePower": {
+    "NAME": "Aquamarine",
+    "DESCRIPTIONS": ["Gain #b", " #yBlock each time you #yMill a card."]
+  },
+  "theVacant:StandoPower": {
+    "NAME": "Stando Powah",
+    "DESCRIPTIONS": ["The next time you would die, return to #b", "% HP instead."]
   },
   "theVacant:GreaterMindPower": {
     "NAME": "Greater Mind",
     "DESCRIPTIONS": ["Whenever you play a Power that costs 1 or more, add a random Power to your hand."]
   },
+  "theVacant:DarkReflexPower": {
+    "NAME": "Dark Reflex",
+    "DESCRIPTIONS": ["Whenever you #yMill, add the first #b", " card to your hand instead of the discard pile.", " cards to your hand instead of the discard pile."]
+  },
   "theVacant:VoidPower": {
     "NAME": "Void",
-    "DESCRIPTIONS": ["Increase the damage and #yBlock of the next card you play this turn that attacks or #yBlocks by #b", "."]
+    "DESCRIPTIONS": [
+      "After you draw at the beginning of your turn, #yMill #b", "."
+    ]
   },
   "theVacant:BurdenBreakPower": {
     "NAME": "Burden Break",
-    "DESCRIPTIONS": ["Whenever you #yMill, #yMill an additional #b", "."]
+    "DESCRIPTIONS": ["Whenever you take damage, gain #b", " #yVigor."]
+  },
+  "theVacant:ShroudPower": {
+    "NAME": "Shroud",
+    "DESCRIPTIONS": ["Halve incoming damage. Reduces by 1 at the start of your turn, and when you play an attack."]
   },
   "theVacant:CleanseSoulPower": {
     "NAME": "Cleanse Soul",
@@ -103,17 +125,45 @@
     "NAME": "Forge Soul",
     "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #ySoulforged.", " random cards with #ySoulforged."]
   },
+  "theVacant:SolidSoulPower": {
+    "NAME": "Solid Soul",
+    "DESCRIPTIONS": ["Prevent the next #b "," time you would change #yForms.", " times you would change #yForms."]
+  },
   "theVacant:VoidFormPower": {
     "NAME": "Void Form",
-    "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #pVoidbound.", " random cards with #pVoidbound."]
+    "DESCRIPTIONS": ["When your draw pile is empty, gain #b"," more #yBlock and deal #b", " more damage for each [#ee82ee]Void[] you have."]
   },
   "theVacant:TemperancePower": {
     "NAME": "Temperance",
-    "DESCRIPTIONS": ["The next time you #yBlock, #yBlock an additional amount."]
+    "DESCRIPTIONS": ["The next time you #yBlock, gain additional #yBlock."]
   },
   "theVacant:WaitInWrathPower": {
     "NAME": "Wait in Wrath",
     "DESCRIPTIONS": ["At the start of your turn, if you are #yWounded, gain "," #yVigor. If you are #yHealthy, gain "," #yTemperance."]
+  },
+  "theVacant:VacantForm": {
+    "NAME": "[#ee82ee]Vacant[] [#ee82ee]Form[]",
+    "DESCRIPTIONS": ["#ySyphon: Lose #b", " HP. NL -------- NL You cannot die or enter [#ee4200]Fury[] [#ee4200]Form[]. NL As you leave this #yForm, #ySyphon."]
+  },
+  "theVacant:FuryForm": {
+    "NAME": "[#ee4200]Fury[] [#ee4200]Form[]",
+    "DESCRIPTIONS": ["#ySyphon: Gain #b", " #yVigor. NL -------- NL At the start of your turn, #ySyphon."]
+  },
+  "theVacant:SolemnForm": {
+    "NAME": "[#66eeee]Solemn[] [#66eeee]Form[]",
+    "DESCRIPTIONS": ["#ySyphon: Gain #b", " #yTemperance. NL -------- NL When you enter this #yForm, #ySyphon."]
+  },
+  "theVacant:VoidForm": {
+    "NAME": "[#ee82ee]Void[] [#ee82ee]Form[]",
+    "DESCRIPTIONS": ["#ySyphon: Gain #b", " [#ee82ee]Void[]. NL -------- NL When you enter this #yForm, #ySyphon. NL Gain additional #yBlock and deal additional damage for each [#ee82ee]Void[] you have."]
+  },
+  "theVacant:SoulPower": {
+    "NAME": "[#66eeee]Soul[]",
+    "DESCRIPTIONS": ["At the end of combat, heal #b", "."]
+  },
+  "theVacant:ReapPower": {
+    "NAME": "Reap",
+    "DESCRIPTIONS": ["When this target is attacked, heal #b", " HP. Reduces by 1 at the end of the turn."]
   },
   "theVacant:WhenDarknessComesPower": {
     "NAME": "When Darkness Comes",

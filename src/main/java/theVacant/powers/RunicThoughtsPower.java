@@ -36,21 +36,11 @@ public class RunicThoughtsPower extends AbstractPower implements CloneablePowerI
         type = PowerType.BUFF;
         isTurnBased = false;
 
+
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
-    }
-
-    @Override
-    public void wasHPLost(DamageInfo info, int damageAmount)
-    {
-        if (damageAmount > 0 && info.owner == this.owner)
-        {
-            flash();
-            if(this.owner instanceof AbstractPlayer)
-                ((AbstractPlayer)this.owner).gainEnergy(this.amount);
-        }
     }
 
     @Override

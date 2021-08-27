@@ -29,8 +29,6 @@ public class AbyssPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/abyss_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/abyss_power32.png");
 
-    private static int DOOM_AMOUNT = 2;
-
     public AbyssPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
         name = NAME;
@@ -55,13 +53,13 @@ public class AbyssPower extends AbstractPower implements CloneablePowerInterface
         flash();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DoomPower(this.owner, this.owner, this.amount), this.amount));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.owner, new DoomPower(mo, mo, this.amount*DOOM_AMOUNT), this.amount*DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.owner, new DoomPower(mo, mo, this.amount), this.amount, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount*DOOM_AMOUNT + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2];
     }
 
     @Override

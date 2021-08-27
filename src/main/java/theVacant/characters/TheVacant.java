@@ -8,7 +8,6 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -16,18 +15,25 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theVacant.VacantMod;
 import theVacant.cards.Attacks.*;
-import theVacant.cards.Powers.*;
+import theVacant.cards.Powers.Aquamarine;
+import theVacant.cards.Powers.StandoPowah;
 import theVacant.cards.Skills.*;
+import theVacant.cards.archive.Attacks.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import com.badlogic.gdx.graphics.Color;
+import theVacant.cards.archive.Powers.*;
+import theVacant.cards.archive.Skills.*;
+import theVacant.relics.BoundSoul;
 import theVacant.relics.BrassGoblet;
 
 import static theVacant.VacantMod.*;
@@ -63,6 +69,7 @@ public class TheVacant extends CustomPlayer
     private static final KeywordStrings keyStrings = CardCrawlGame.languagePack.getKeywordString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
+    public static List<String> crystalCards = Arrays.asList(ShatterAmethyst.ID, FireCrystal.ID, FireCrystal.ID);
 
     public static final String[] orbTextures = {
             "theVacantResources/images/char/vacantCharacter/orb/layer1.png",
@@ -106,9 +113,9 @@ public class TheVacant extends CustomPlayer
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 220.0F * Settings.scale);
-        this.fractureThreshold = 4;
-        this.millsThisTurn = 0;
-        this.releasesThisCombat = 0;
+        fractureThreshold = 4;
+        millsThisTurn = 0;
+        releasesThisCombat = 0;
     }
 
     @Override
@@ -143,19 +150,29 @@ public class TheVacant extends CustomPlayer
         ArrayList<String> startDeck = new ArrayList<>();
 
         logger.info("Begin loading starter Deck Strings");
+        startDeck.add(VacantStarterStrike.ID);
+        startDeck.add(VacantStarterStrike.ID);
+        startDeck.add(VacantStarterStrike.ID);
+        startDeck.add(VacantStarterStrike.ID);
+        startDeck.add(VacantStarterDefend.ID);
+        startDeck.add(VacantStarterDefend.ID);
+        startDeck.add(VacantStarterDefend.ID);
+        startDeck.add(VacantStarterDefend.ID);
 
-        startDeck.add(VacantStarterStrike.ID);
-        startDeck.add(VacantStarterStrike.ID);
-        startDeck.add(VacantStarterStrike.ID);
-        startDeck.add(VacantStarterStrike.ID);
-        startDeck.add(VacantStarterDefend.ID);
-        startDeck.add(VacantStarterDefend.ID);
-        startDeck.add(VacantStarterDefend.ID);
-        startDeck.add(VacantStarterDefend.ID);
-        startDeck.add(Release.ID);
-        startDeck.add(Crunch.ID);
+        startDeck.add(SoulBash.ID);
+        startDeck.add(ShatterAmethyst.ID);
 
         //Testing
+//        startDeck.add(Gloom.ID);
+//        startDeck.add(VoidEmbrace.ID);
+//        startDeck.add(HolyWater.ID);
+//        startDeck.add(BurdenBreak.ID);
+        //startDeck.add(ReaperBlast.ID);
+        //startDeck.add(Snowball.ID);
+        //startDeck.add(OpalFracture.ID);
+        //startDeck.add(ReaperStrike.ID);
+        //startDeck.add(Banish.ID);
+        //startDeck.add(DimensionTear.ID);
         return startDeck;
     }
 
@@ -164,7 +181,6 @@ public class TheVacant extends CustomPlayer
         ArrayList<String> startRel = new ArrayList<>();
 
         startRel.add(BrassGoblet.ID);
-        //startRel.add(BoundSoul.ID);
 
         UnlockTracker.markRelicAsSeen(BrassGoblet.ID);
         return startRel;
@@ -181,8 +197,8 @@ public class TheVacant extends CustomPlayer
     @Override
     public void applyStartOfCombatLogic()
     {
-        this.millsThisTurn = 0;
-        this.releasesThisCombat = 0;
+        millsThisTurn = 0;
+        releasesThisCombat = 0;
         super.applyStartOfCombatLogic();
     }
 
@@ -190,7 +206,7 @@ public class TheVacant extends CustomPlayer
     public void applyStartOfTurnRelics()
     {
         super.applyStartOfTurnRelics();
-        this.millsThisTurn = 0;
+        millsThisTurn = 0;
     }
 
     @Override
@@ -225,7 +241,7 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Release();
+        return new ShatterAmethyst();
     }
 
     @Override

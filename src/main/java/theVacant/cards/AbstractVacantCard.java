@@ -1,19 +1,13 @@
 package theVacant.cards;
 
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
-import theVacant.cards.Powers.BurdenBreak;
-import theVacant.characters.TheVacant;
 import theVacant.powers.BurdenBreakPower;
-import theVacant.powers.EtchPower;
-import theVacant.powers.WillPower;
 import theVacant.relics.Deathbell;
 
 public abstract class AbstractVacantCard extends CustomCard
@@ -89,33 +83,52 @@ public abstract class AbstractVacantCard extends CustomCard
     public void atTurnStart()
     {
         GetBonusMill();
+        applyPowers();
+        initializeDescription();
         super.atTurnStart();
     }
+
     @Override
     public void calculateCardDamage(AbstractMonster monster)
     {
         GetBonusMill();
+        applyPowers();
+        initializeDescription();
         super.calculateCardDamage(monster);
     }
 
-    private void GetBonusMill()
+    public void GetBonusMill()
     {
-        this.bonusMillAmount = 0;
+        bonusMillAmount = 0;
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
             if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
-                this.bonusMillAmount += 2;
-            if(player.hasPower(BurdenBreakPower.POWER_ID))
-                this.bonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
+                bonusMillAmount += 2;
+            //if(player.hasPower(BurdenBreakPower.POWER_ID))
+            //    bonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
         }
-        if(this.getBonusMillToMagic)
+        if(getBonusMillToMagic)
         {
-            this.magicNumber = this.baseMagicNumber;
-            this.magicNumber += this.bonusMillAmount;
-            if(this.magicNumber != this.baseMagicNumber)
-                this.isMagicNumberModified = true;
+            magicNumber = baseMagicNumber;
+            magicNumber += bonusMillAmount;
+            if(magicNumber != baseMagicNumber)
+                isMagicNumberModified = true;
         }
+    }
+
+    public static int GetBonusMillAmount()
+    {
+        int getBonusMillAmount = 0;
+        AbstractPlayer player = AbstractDungeon.player;
+        if(player != null)
+        {
+            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
+                getBonusMillAmount += 2;
+            if(player.hasPower(BurdenBreakPower.POWER_ID))
+                getBonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
+        }
+        return getBonusMillAmount;
     }
 
     public int GetWill()

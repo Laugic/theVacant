@@ -6,6 +6,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import theVacant.cards.Modifiers.EchoModifier;
+import theVacant.cards.Modifiers.MaterializeModifier;
 import theVacant.cards.Modifiers.SoulforgedModifier;
 import theVacant.cards.Modifiers.VoidboundModifier;
 
@@ -183,6 +185,10 @@ public class EnhanceInHandAction extends AbstractGameAction
             VoidboundModifier.Enhance(card, this.amount);
         if(this.modifierID == SoulforgedModifier.ID)
             SoulforgedModifier.Enhance(card, this.amount);
+        if(this.modifierID == EchoModifier.ID)
+            EchoModifier.Enhance(card, this.amount);
+        if(this.modifierID == MaterializeModifier.ID)
+            MaterializeModifier.Enhance(card, this.amount);
         card.initializeDescription();
     }
 }

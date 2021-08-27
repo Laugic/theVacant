@@ -45,18 +45,18 @@ public class VoidFormPower extends AbstractPower implements CloneablePowerInterf
 
         updateDescription();
     }
-
+/*
     @Override
     public void atStartOfTurnPostDraw()
     {
         flash();
         AbstractDungeon.actionManager.addToBottom(new EnhanceRandomInHandAction(this.amount, VoidboundModifier.ID, 1));
     }
-
+*/
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + this.amount + (this.amount==1?DESCRIPTIONS[1]:DESCRIPTIONS[2]);
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
     @Override

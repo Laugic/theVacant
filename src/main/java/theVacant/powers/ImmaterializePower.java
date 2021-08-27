@@ -13,7 +13,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
+import theVacant.cards.Modifiers.MaterializeModifier;
 import theVacant.util.TextureLoader;
+
+import static basemod.helpers.CardModifierManager.addModifier;
 
 public class ImmaterializePower extends AbstractPower implements CloneablePowerInterface
 {
@@ -49,24 +52,18 @@ public class ImmaterializePower extends AbstractPower implements CloneablePowerI
     {
         if(action.exhaustCard)
         {
-            action.exhaustCard = false;
-            this.amount--;
-            if(this.amount == 0)
-                addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
+            MaterializeModifier.Enhance(card, amount);
+            amount--;
+            updateDescription();
+            if(amount <= 0)
+                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
         }
     }
 
     @Override
     public void updateDescription()
     {
-        if (this.amount == 1)
-        {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        }
-        else if (this.amount > 1)
-        {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
-        }
+        description = DESCRIPTIONS[0] + this.amount + ".";
     }
 
     @Override

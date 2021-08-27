@@ -3,7 +3,7 @@
 
     <groupId>theVacant</groupId>
     <artifactId>theVacant</artifactId>
-    <version>v0.11.0</version>
+    <version>v0.14.0</version>
     <packaging>jar</packaging>
     <name>TheVacant</name>
     <description>A lost soul, bound to an artifact, is doomed to climb the Spire.</description>
@@ -11,8 +11,8 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <SlayTheSpire.version>01-27-2020</SlayTheSpire.version>
-        <ModTheSpire.version>3.8.0</ModTheSpire.version>
+        <SlayTheSpire.version>12-22-2020</SlayTheSpire.version>
+        <ModTheSpire.version>3.18.2</ModTheSpire.version>
         <Steam.path>C:/Program Files (x86)/Steam/steamapps/</Steam.path>
     </properties>
 

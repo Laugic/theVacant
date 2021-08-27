@@ -40,7 +40,7 @@
       "mill",
       "milled"
     ],
-    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile. Gain #pVoid for each card moved."
+    "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile."
   },
   {
     "PROPER_NAME": "Rebound",
@@ -84,7 +84,7 @@
     "NAMES": [
       "void"
     ],
-    "DESCRIPTION": "Increase the damage and #yBlock of the next card you play this turn that attacks or #yBlocks."
+    "DESCRIPTION": "After you draw cards at the beginning of your turn, #yMill a number of cards."
   },
   {
     "PROPER_NAME": "Prime",
@@ -92,6 +92,13 @@
       "prime"
     ],
     "DESCRIPTION": "Do the following effect the first time this card is played each combat."
+  },
+  {
+    "PROPER_NAME": "Shroud",
+    "NAMES": [
+      "shroud"
+    ],
+    "DESCRIPTION": "Halve incoming damage. Reduced by 1 at the start of your turn, and when you play an attack."
   },
   {
     "PROPER_NAME": "Etch",
@@ -124,6 +131,13 @@
     "DESCRIPTION": "Whenever you lose HP, gain #yBlock next turn. #yRelease: Gain #yBlock twice."
   },
   {
+    "PROPER_NAME": "Gem",
+    "NAMES": [
+      "gem"
+    ],
+    "DESCRIPTION": "Gem cards are cards which #yExhaust and have strong one-time effects."
+  },
+  {
     "PROPER_NAME": "Necra",
     "NAMES": [
       "necra"
@@ -152,6 +166,13 @@
     "DESCRIPTION": "Repeat this card's effects an additional number of times equal to its #pVoidbound."
   },
   {
+    "PROPER_NAME": "[#ee82ee]Vacant[] [#ee82ee]Form[]",
+    "NAMES": [
+      "vacantform"
+    ],
+    "DESCRIPTION": "You cannot die. NL Lose 1 HP upon leaving this Form."
+  },
+  {
     "PROPER_NAME": "Enhance",
     "NAMES": [
       "enhance"
@@ -163,20 +184,132 @@
     "NAMES": [
       "exhume"
     ],
-    "DESCRIPTION": "Return a card from your #yExhaust pile to your hand."
+    "DESCRIPTION": "Move a number of cards from your #yExhaust pile to your hand."
   },
   {
-    "PROPER_NAME": "Soulforged",
+    "PROPER_NAME": "Return",
+    "NAMES": [
+      "return"
+    ],
+    "DESCRIPTION": "Move a number of cards from your discard pile to your hand."
+  },
+  {
+    "PROPER_NAME": "[#82eeee]Soulforged[]",
     "NAMES": [
       "soulforged"
     ],
     "DESCRIPTION": "AFTER this card is played, draw this many cards and gain this much energy."
   },
   {
+    "PROPER_NAME": "[#6A97E2]Echo[]",
+    "NAMES": [
+      "echo"
+    ],
+    "DESCRIPTION": "Gain #yVigor, #yTemperance, or #yArtifact based on the card type it is on."
+  },
+  {
+    "PROPER_NAME": "[#6A97E2]Echo[]",
+    "NAMES": [
+      "echoattack"
+    ],
+    "DESCRIPTION": "Gain #yVigor equal to your [#ee82ee]Void[]."
+  },
+  {
+    "PROPER_NAME": "[#6A97E2]Echo[]",
+    "NAMES": [
+      "echoskill"
+    ],
+    "DESCRIPTION": "Gain #yTemperance equal to your [#ee82ee]Void[]."
+  },
+  {
+    "PROPER_NAME": "[#6A97E2]Echo[]",
+    "NAMES": [
+      "echopower"
+    ],
+    "DESCRIPTION": "Gain 1 #yArtifact."
+  },
+  {
+    "PROPER_NAME": "[#C687EE]Materialize[]",
+    "NAMES": [
+      "materialize"
+    ],
+    "DESCRIPTION": "If this card is #yExhausted, it loses 1 [#C687EE]Materialize[] at the end of your turn. Once all [#C687EE]Materialize[] is lost, this card is moved to the top of your draw pile."
+  },
+  {
+    "PROPER_NAME": "Syphon",
+    "NAMES": [
+      "syphon"
+    ],
+    "DESCRIPTION": "Trigger the #ySyphon ability of your current #yForm."
+  },
+  {
+    "PROPER_NAME": "Immaterialize",
+    "NAMES": [
+      "immaterialize"
+    ],
+    "DESCRIPTION": "When you #yExhaust a card, #yEnhance it with this much [#C687EE]Materialize[], then reduce the #yImmaterialize amount by 1."
+  },
+  {
+    "PROPER_NAME": "Reap",
+    "NAMES": [
+      "reap"
+    ],
+    "DESCRIPTION": "Heal this much HP when you attack this target."
+  },
+  {
+    "PROPER_NAME": "[#82eeee]Soul[]",
+    "NAMES": [
+      "soul"
+    ],
+    "DESCRIPTION": "At the end of combat, heal half this much HP."
+  },
+  {
+    "PROPER_NAME": "Form",
+    "NAMES": [
+      "form"
+    ],
+    "DESCRIPTION": "The trait your [#82eeee]Soul[] takes on. Grants different active and passive abilities."
+  },
+  {
+    "PROPER_NAME": "[#ee4200]Fury[] [#ee4200]Form[]",
+    "NAMES": [
+      "furyform"
+    ],
+    "DESCRIPTION": "#ySyphon: Gain #yVigor. NL -------- NL At the start of your turn, #ySyphon."
+  },
+  {
+    "PROPER_NAME": "[#ee4200]Furious[]",
+    "NAMES": [
+      "furious"
+    ],
+    "DESCRIPTION": "You are [#ee4200]Furious[] if you are in [#ee4200]Fury[] [#ee4200]Form[]."
+  },
+  {
+    "PROPER_NAME": "[#66eeee]Solemn[] [#66eeee]Form[]",
+    "NAMES": [
+      "solemnform"
+    ],
+    "DESCRIPTION": "#ySyphon: Gain #yTemperance. NL -------- NL When you enter this #yForm, #ySyphon."
+  },
+  {
+    "PROPER_NAME": "[#ee82ee]Void[] [#ee82ee]Form[]",
+    "NAMES": [
+      "voidform"
+    ],
+    "DESCRIPTION": "#ySyphon: Gain [#ee82ee]Void[]. NL -------- NL When you enter this #yForm, #ySyphon. NL Gain additional #yBlock and deal additional damage for each [#ee82ee]Void[] you have."
+  },
+  {
+    "PROPER_NAME": "[#ee82ee]Vacant[] [#ee82ee]Form[]",
+    "NAMES": [
+      "vacantform"
+    ],
+    "DESCRIPTION": "#ySyphon: Lose HP. NL -------- NL You cannot die or enter [#ee4200]Fury[] [#ee4200]Form[]. NL As you leave this #yForm, #ySyphon."
+  },
+  {
     "PROPER_NAME": "Temperance",
     "NAMES": [
       "temperance"
     ],
-    "DESCRIPTION": "The next time you #yBlock, gain this much additional #yBlock."
+    "DESCRIPTION": "The next time you #yBlock, gain additional #yBlock."
   }
 ]

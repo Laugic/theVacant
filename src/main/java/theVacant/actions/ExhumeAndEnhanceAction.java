@@ -48,6 +48,11 @@ public class ExhumeAndEnhanceAction extends AbstractGameAction
         this(numCards, id, amountToEnhance, false);
     }
 
+    public ExhumeAndEnhanceAction(int numCards)
+    {
+        this(numCards, "", 0, false);
+    }
+
     public void update()
     {
         CreateSelection();

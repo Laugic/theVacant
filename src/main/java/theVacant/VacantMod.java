@@ -3,7 +3,6 @@ package theVacant;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
-import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -12,27 +11,32 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
 import java.nio.charset.StandardCharsets;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.powers.FadingPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theVacant.cards.Attacks.*;
-import theVacant.cards.Powers.*;
+import theVacant.cards.Powers.Aquamarine;
+import theVacant.cards.Powers.StandoPowah;
 import theVacant.cards.Skills.*;
+import theVacant.cards.archive.Attacks.*;
+import theVacant.cards.archive.Powers.*;
+import theVacant.cards.archive.Skills.*;
 import theVacant.characters.TheVacant;
 
 import com.badlogic.gdx.graphics.Color;
 import theVacant.relics.*;
 import theVacant.util.TextureLoader;
 import theVacant.variables.*;
+
+import static theVacant.Enums.VacantTags.GEMS;
 
 
 @SpireInitializer
@@ -57,7 +61,7 @@ public class VacantMod implements
     private static final String DESCRIPTION = "A lost soul, bound to an artifact, is doomed to climb the Spire.";
 
 
-    public static final Color VACANT_COLOR = CardHelper.getColor(64.0f, 70.0f, 70.0f);
+    public static final Color VACANT_COLOR = CardHelper.getColor(175, 125, 60);
 
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f);
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f);
@@ -87,15 +91,19 @@ public class VacantMod implements
     public static final String THE_VACANT_SKELETON_JSON = "theVacantResources/images/char/vacantCharacter/skeleton.json";
 
 
+
     //Keywords
     public static Map<String, Keyword> keywords = new HashMap<>();
     public static final String VOIDBOUND = "thevacant:Voidbound";
+    public static List<String> IMMUNE_POWERS = new ArrayList<String>();
+
 
 
     public static void initialize()
     {
         logger.info("========================= Vacanting the Mod =========================");
         VacantMod vacantMod = new VacantMod();
+        IMMUNE_POWERS.add(FadingPower.POWER_ID);
         logger.info("========================= /Mod Successfully Vacanted (The Vacant Initialized)/ =========================");
     }
 
@@ -180,6 +188,7 @@ public class VacantMod implements
     {
         logger.info("Adding relics");
         BaseMod.addRelicToCustomPool(new BrassGoblet(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new Deathbell(), TheVacant.Enums.COLOR_GOLD);
         logger.info("Done adding relics!");
     }
 
@@ -197,9 +206,28 @@ public class VacantMod implements
         logger.info("Adding cards");
 
         //Attacks
+        //BaseMod.addCard(new VacantStarterStrike());
+        //BaseMod.addCard(new Barrage());
+        //BaseMod.addCard(new Crunch());
+
+        //Skills
+        //BaseMod.addCard(new VacantStarterDefend());
+        //BaseMod.addCard(new Dig());
+        //BaseMod.addCard(new Spinshield());
+        BaseMod.addCard(new ShatterAmethyst());
+        BaseMod.addCard(new TopazFrenzy());
+        BaseMod.addCard(new DiamondIsUnbreakable());
+        BaseMod.addCard(new EssenceOfBismuth());
+        BaseMod.addCard(new Banish());
+        BaseMod.addCard(new StealSoul());
+        BaseMod.addCard(new EmeraldSplash());
+        BaseMod.addCard(new BackInTheMine());
+        BaseMod.addCard(new SapphireStrike());
+        BaseMod.addCard(new SoulBash());
+        BaseMod.addCard(new OpalFracture());
+        //Attacks
+
         BaseMod.addCard(new VacantStarterStrike());
-        BaseMod.addCard(new Crunch());
-        BaseMod.addCard(new Carve());
         BaseMod.addCard(new CursedBlast());
         BaseMod.addCard(new EyePoke());
         BaseMod.addCard(new Fling());
@@ -207,75 +235,66 @@ public class VacantMod implements
         BaseMod.addCard(new GraveWave());
         BaseMod.addCard(new Jab());
         BaseMod.addCard(new ShriekingBlast());
-        BaseMod.addCard(new Whip());
-        BaseMod.addCard(new BellToll());
+        BaseMod.addCard(new OnyxBlaster());
         BaseMod.addCard(new BrassMagnet());
         BaseMod.addCard(new FranticBlow());
-        BaseMod.addCard(new LichStrike());
         BaseMod.addCard(new ReaperStrike());
-        BaseMod.addCard(new Reconnect());
         BaseMod.addCard(new Snowball());
         BaseMod.addCard(new SurpriseAttack());
         BaseMod.addCard(new Thoughtseize());
         BaseMod.addCard(new Threat());
-        BaseMod.addCard(new Throttle());
-        BaseMod.addCard(new Yeet());
         BaseMod.addCard(new DarkStrike());
-        BaseMod.addCard(new DeathSpiral());
         BaseMod.addCard(new DimensionTear());
         BaseMod.addCard(new FiendFrost());
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new Showdown());
-        BaseMod.addCard(new PitOfDespair());
 
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
-        BaseMod.addCard(new Release());
         BaseMod.addCard(new Cower());
         BaseMod.addCard(new Dig());
         BaseMod.addCard(new Spinshield());
         BaseMod.addCard(new Soothe());
+        BaseMod.addCard(new Corporeate());
         BaseMod.addCard(new BattleScars());
         BaseMod.addCard(new EmbraceDarkness());
-        BaseMod.addCard(new Enrage());
+        BaseMod.addCard(new RubyRage());
         BaseMod.addCard(new Expand());
         BaseMod.addCard(new Fortify());
         BaseMod.addCard(new Hex());
         BaseMod.addCard(new HolyWater());
         BaseMod.addCard(new Barrage());
-        BaseMod.addCard(new Necromancy());
         BaseMod.addCard(new OnSecondThought());
-        BaseMod.addCard(new Return());
-        BaseMod.addCard(new ShutAway());
         BaseMod.addCard(new Sneeze());
-        BaseMod.addCard(new SpiritOrb());
+        BaseMod.addCard(new OpalShine());
         BaseMod.addCard(new TwistFate());
         BaseMod.addCard(new Unearth());
         BaseMod.addCard(new EmptyShield());
         BaseMod.addCard(new Exorcise());
         BaseMod.addCard(new FromNothing());
-        BaseMod.addCard(new MindBreak());
-        BaseMod.addCard(new Prevent());
         BaseMod.addCard(new TheAnvil());
         BaseMod.addCard(new TimeSkip());
-        BaseMod.addCard(new Voidstone());
+        BaseMod.addCard(new Partake());
+        BaseMod.addCard(new StoreSoul());
+        BaseMod.addCard(new AwMan());
+        BaseMod.addCard(new ReaperBlast());
 
         //Powers
         BaseMod.addCard(new Acceptance());
-        BaseMod.addCard(new Anguish());
         BaseMod.addCard(new BurdenBreak());
         BaseMod.addCard(new CleanseSoul());
         BaseMod.addCard(new Gloom());
-        BaseMod.addCard(new Husk());
+        BaseMod.addCard(new GotOurPickaxe());
         BaseMod.addCard(new Immaterialize());
         BaseMod.addCard(new IntoTheAbyss());
+        BaseMod.addCard(new StandoPowah());
         BaseMod.addCard(new Recover());
-        BaseMod.addCard(new WaitInWrath());
         BaseMod.addCard(new VoidEmbrace());
         BaseMod.addCard(new ForgeSoul());
         BaseMod.addCard(new Rejection());
         BaseMod.addCard(new VoidForm());
-        BaseMod.addCard(new WhenDarknessComes());
+        BaseMod.addCard(new RunicThoughts());
+        BaseMod.addCard(new Aquamarine());
 
         //Temp Cards
         /*
@@ -285,10 +304,20 @@ public class VacantMod implements
 
         logger.info("Making sure the cards are unlocked.");
 
+        UnlockTracker.unlockCard(ShatterAmethyst.ID);
+        UnlockTracker.unlockCard(TopazFrenzy.ID);
+        UnlockTracker.unlockCard(DiamondIsUnbreakable.ID);
+        UnlockTracker.unlockCard(EssenceOfBismuth.ID);
+        UnlockTracker.unlockCard(Banish.ID);
+        UnlockTracker.unlockCard(StealSoul.ID);
+        UnlockTracker.unlockCard(EmeraldSplash.ID);
+        UnlockTracker.unlockCard(BackInTheMine.ID);
+        UnlockTracker.unlockCard(SapphireStrike.ID);
+        UnlockTracker.unlockCard(SoulBash.ID);
+        UnlockTracker.unlockCard(OpalFracture.ID);
+
         //Attacks
         UnlockTracker.unlockCard(VacantStarterStrike.ID);
-        UnlockTracker.unlockCard(Crunch.ID);
-        UnlockTracker.unlockCard(Carve.ID);
         UnlockTracker.unlockCard(CursedBlast.ID);
         UnlockTracker.unlockCard(EyePoke.ID);
         UnlockTracker.unlockCard(Fling.ID);
@@ -296,82 +325,97 @@ public class VacantMod implements
         UnlockTracker.unlockCard(GraveWave.ID);
         UnlockTracker.unlockCard(Jab.ID);
         UnlockTracker.unlockCard(ShriekingBlast.ID);
-        UnlockTracker.unlockCard(Whip.ID);
-        UnlockTracker.unlockCard(BellToll.ID);
+        UnlockTracker.unlockCard(OnyxBlaster.ID);
         UnlockTracker.unlockCard(BrassMagnet.ID);
         UnlockTracker.unlockCard(FranticBlow.ID);
-        UnlockTracker.unlockCard(LichStrike.ID);
         UnlockTracker.unlockCard(ReaperStrike.ID);
-        UnlockTracker.unlockCard(Reconnect.ID);
         UnlockTracker.unlockCard(Snowball.ID);
         UnlockTracker.unlockCard(SurpriseAttack.ID);
         UnlockTracker.unlockCard(Thoughtseize.ID);
         UnlockTracker.unlockCard(Threat.ID);
-        UnlockTracker.unlockCard(Throttle.ID);
-        UnlockTracker.unlockCard(Yeet.ID);
         UnlockTracker.unlockCard(DarkStrike.ID);
-        UnlockTracker.unlockCard(DeathSpiral.ID);
         UnlockTracker.unlockCard(DimensionTear.ID);
         UnlockTracker.unlockCard(FiendFrost.ID);
         UnlockTracker.unlockCard(LashOut.ID);
         UnlockTracker.unlockCard(Showdown.ID);
-        UnlockTracker.unlockCard(PitOfDespair.ID);
+        UnlockTracker.unlockCard(SoulBash.ID);
 
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
-        UnlockTracker.unlockCard(Release.ID);
         UnlockTracker.unlockCard(Cower.ID);
+        UnlockTracker.unlockCard(Corporeate.ID);
         UnlockTracker.unlockCard(Dig.ID);
         UnlockTracker.unlockCard(Spinshield.ID);
         UnlockTracker.unlockCard(Soothe.ID);
         UnlockTracker.unlockCard(BattleScars.ID);
         UnlockTracker.unlockCard(EmbraceDarkness.ID);
-        UnlockTracker.unlockCard(Enrage.ID);
+        UnlockTracker.unlockCard(RubyRage.ID);
         UnlockTracker.unlockCard(Expand.ID);
         UnlockTracker.unlockCard(Fortify.ID);
         UnlockTracker.unlockCard(Hex.ID);
         UnlockTracker.unlockCard(HolyWater.ID);
         UnlockTracker.unlockCard(Barrage.ID);
-        UnlockTracker.unlockCard(Necromancy.ID);
         UnlockTracker.unlockCard(OnSecondThought.ID);
-        UnlockTracker.unlockCard(Return.ID);
-        UnlockTracker.unlockCard(ShutAway.ID);
         UnlockTracker.unlockCard(Sneeze.ID);
-        UnlockTracker.unlockCard(SpiritOrb.ID);
+        UnlockTracker.unlockCard(OpalShine.ID);
         UnlockTracker.unlockCard(TwistFate.ID);
         UnlockTracker.unlockCard(Unearth.ID);
         UnlockTracker.unlockCard(EmptyShield.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
         UnlockTracker.unlockCard(FromNothing.ID);
-        UnlockTracker.unlockCard(MindBreak.ID);
-        UnlockTracker.unlockCard(Prevent.ID);
         UnlockTracker.unlockCard(TheAnvil.ID);
         UnlockTracker.unlockCard(TimeSkip.ID);
-        UnlockTracker.unlockCard(Voidstone.ID);
+        UnlockTracker.unlockCard(Partake.ID);
+        UnlockTracker.unlockCard(StoreSoul.ID);
+        UnlockTracker.unlockCard(AwMan.ID);
+        UnlockTracker.unlockCard(ReaperBlast.ID);
 
         //Powers
         UnlockTracker.unlockCard(Acceptance.ID);
-        UnlockTracker.unlockCard(Anguish.ID);
         UnlockTracker.unlockCard(BurdenBreak.ID);
         UnlockTracker.unlockCard(CleanseSoul.ID);
         UnlockTracker.unlockCard(Gloom.ID);
-        UnlockTracker.unlockCard(Husk.ID);
+        UnlockTracker.unlockCard(GotOurPickaxe.ID);
+        UnlockTracker.unlockCard(StandoPowah.ID);
         UnlockTracker.unlockCard(Immaterialize.ID);
         UnlockTracker.unlockCard(IntoTheAbyss.ID);
         UnlockTracker.unlockCard(Recover.ID);
-        UnlockTracker.unlockCard(WaitInWrath.ID);
         UnlockTracker.unlockCard(VoidEmbrace.ID);
         UnlockTracker.unlockCard(ForgeSoul.ID);
         UnlockTracker.unlockCard(Rejection.ID);
         UnlockTracker.unlockCard(VoidForm.ID);
-        UnlockTracker.unlockCard(WhenDarknessComes.ID);
+        UnlockTracker.unlockCard(RunicThoughts.ID);
+        UnlockTracker.unlockCard(Aquamarine.ID);
+        //Powers
 
-        //Temp Cards
-        /*
-        UnlockTracker.unlockCard(Snap.ID);
-        UnlockTracker.unlockCard(Crackle.ID);
-        UnlockTracker.unlockCard(Pop.ID);
-        */
+        logger.info("Making sure the cards are unlocked.");
+/*
+        //Attacks
+        UnlockTracker.unlockCard(VacantStarterStrike.ID);
+        UnlockTracker.unlockCard(Crunch.ID);
+        UnlockTracker.unlockCard(Barrage.ID);
+
+        //NEW
+        UnlockTracker.unlockCard(FireCrystal.ID);
+
+        //Skills
+        UnlockTracker.unlockCard(VacantStarterDefend.ID);
+        UnlockTracker.unlockCard(Dig.ID);
+        UnlockTracker.unlockCard(Spinshield.ID);
+*/
+        //Powers
+
+        GEMS.add(new Aquamarine());
+        GEMS.add(new OnyxBlaster());
+        GEMS.add(new RubyRage());
+        GEMS.add(new ShatterAmethyst());
+        GEMS.add(new OpalShine());
+        GEMS.add(new EssenceOfBismuth());
+        GEMS.add(new DiamondIsUnbreakable());
+        GEMS.add(new EmeraldSplash());
+        GEMS.add(new OpalFracture());
+        GEMS.add(new SapphireStrike());
+        GEMS.add(new TopazFrenzy());
 
         logger.info("Done adding cards!");
     }

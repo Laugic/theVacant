@@ -3,6 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +12,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
+import theVacant.cards.AbstractVacantCard;
 import theVacant.util.TextureLoader;
 
 public class GloomPower extends AbstractPower implements CloneablePowerInterface
@@ -42,18 +44,18 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
 
         updateDescription();
     }
-
+/*
     @Override
-    public void atStartOfTurn()
+    public void atStartOfTurnPostDraw()
     {
         flash();
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
-    }
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount + AbstractVacantCard.GetBonusMillAmount()));
+    }*/
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount;
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
