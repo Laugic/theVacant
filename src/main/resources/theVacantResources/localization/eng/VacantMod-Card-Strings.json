@@ -275,7 +275,7 @@
   },
   "theVacant:ShatterAmethyst": {
     "NAME": "Shatter Amethyst",
-    "DESCRIPTION": "thevacant:Gem. NL Gain 1 [#ee82ee]Void[]. NL Mill !M!. NL Exhaust."
+    "DESCRIPTION": "thevacant:Gem. NL Gain 1 [#ee82ee]Void[]. NL thevacant:Mill !M!. NL Exhaust."
   },
   "theVacant:EmptyShield": {
     "NAME": "Empty Shield",
@@ -370,8 +370,8 @@
   },
   "theVacant:Unearth": {
     "NAME": "Unearth",
-    "DESCRIPTION": "Draw !M! card from the bottom of your draw pile.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards from the bottom of your draw pile."
+    "DESCRIPTION": "Draw !M! card from the bottom of your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards from the bottom of your draw pile. NL Exhaust."
   },
   "theVacant:TheAnvil": {
     "NAME": "The Anvil",

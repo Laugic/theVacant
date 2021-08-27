@@ -30,6 +30,7 @@ public class Unearth extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 1;
+        exhaust = true;
     }
 
     @Override
