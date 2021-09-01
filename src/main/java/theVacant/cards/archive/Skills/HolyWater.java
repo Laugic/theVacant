@@ -50,7 +50,7 @@ public class HolyWater extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(8);
+            upgradeMagicNumber(4);
             this.upgradedMagicNumber = true;
             initializeDescription();
         }

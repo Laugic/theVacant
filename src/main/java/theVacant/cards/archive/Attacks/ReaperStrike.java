@@ -45,6 +45,7 @@ public class ReaperStrike extends AbstractDynamicCard
         magicNumber = baseMagicNumber = 1;
         exhaust = true;
         tags.add(CardTags.STRIKE);
+        tags.add(CardTags.HEALING);
     }
 
     @Override

@@ -13,6 +13,8 @@ Revamped/Rebalanced a lot of cards
 
 Bug Fixes:
 Thoughtseize no longer softlocks with empty discard pile
+Marked more cards as Healing so they cannot be acquired during combat
+Rebound cards no longer go above max hand size when milled
 
 Misc Changes:
 Added Gem keyword

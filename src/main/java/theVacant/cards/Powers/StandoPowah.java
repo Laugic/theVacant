@@ -35,6 +35,7 @@ public class StandoPowah extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 30;
+        tags.add(CardTags.HEALING);
     }
 
     @Override

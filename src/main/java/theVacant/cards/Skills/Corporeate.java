@@ -11,10 +11,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.FlyingOrbEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.actions.SyphonAction;
@@ -55,6 +57,21 @@ public class Corporeate extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        ArrayList<AbstractPower> PowersToRemove = new ArrayList<AbstractPower>();
+        for (AbstractPower power: player.powers)
+        {
+            if(power.type == AbstractPower.PowerType.DEBUFF)
+                PowersToRemove.add(power);
+        }
+        if(PowersToRemove != null && PowersToRemove.size() > 0)
+        {
+            for(AbstractPower power: PowersToRemove)
+            {
+                addToBot(new RemoveSpecificPowerAction(player, player, power));
+                addToBot(new VFXAction(new FlyingOrbEffect(player.hb.cX, player.hb.cY)));
+            }
+        }
+        /*
         if(player.hasPower(VigorPower.POWER_ID) && player.getPower(VigorPower.POWER_ID).amount > 0)
         {
             int vigorAmount = player.getPower(VigorPower.POWER_ID).amount;
@@ -66,7 +83,7 @@ public class Corporeate extends AbstractDynamicCard
             int temperanceAmount = player.getPower(TemperancePower.POWER_ID).amount;
             addToBot(new RemoveSpecificPowerAction(player, player, TemperancePower.POWER_ID));
             addToBot(new ApplyPowerAction(player, player, new DexterityPower(player, temperanceAmount), temperanceAmount));
-        }
+        }*/
     }
 
     @Override

@@ -482,8 +482,8 @@
   },
   "theVacant:Corporeate": {
     "NAME": "Corporeate",
-    "DESCRIPTION": "Turn Vigor into Strength. Turn thevacant:Temperance into Dexterity. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Turn Vigor into Strength. Turn thevacant:Temperance into Dexterity."
+    "DESCRIPTION": "Remove all Debuffs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove all Debuffs."
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",

@@ -119,7 +119,7 @@ public abstract class AbstractVacantCard extends CustomCard
 
     public static int GetBonusMillAmount()
     {
-        int getBonusMillAmount = 0;
+        /*int getBonusMillAmount = 0;
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
@@ -127,8 +127,8 @@ public abstract class AbstractVacantCard extends CustomCard
                 getBonusMillAmount += 2;
             if(player.hasPower(BurdenBreakPower.POWER_ID))
                 getBonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
-        }
-        return getBonusMillAmount;
+        }*/
+        return 0;
     }
 
     public int GetWill()

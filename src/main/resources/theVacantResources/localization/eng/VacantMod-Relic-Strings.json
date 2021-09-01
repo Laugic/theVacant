@@ -17,7 +17,7 @@
     "NAME": "Deathbell",
     "FLAVOR": "The scent invokes a feeling of dread.",
     "DESCRIPTIONS": [
-      "If you are #ythevacant:Wounded, whenever you #ythevacant:Mill, #ythevacant:Mill an additional #b2."
+      "At the start of each combat, if you are #ythevacant:Wounded, gain 10 #yTemporary_HP."
     ]
   },
   "theVacant:BrassGoblet": {

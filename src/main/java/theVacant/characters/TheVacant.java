@@ -162,17 +162,16 @@ public class TheVacant extends CustomPlayer
         startDeck.add(SoulBash.ID);
         startDeck.add(ShatterAmethyst.ID);
 
-        //Testing
-//        startDeck.add(Gloom.ID);
-//        startDeck.add(VoidEmbrace.ID);
+//        Testing
+//        startDeck.add(Corporeate.ID);
+//        startDeck.add(EmbraceDarkness.ID);
 //        startDeck.add(HolyWater.ID);
-//        startDeck.add(BurdenBreak.ID);
-        //startDeck.add(ReaperBlast.ID);
-        //startDeck.add(Snowball.ID);
-        //startDeck.add(OpalFracture.ID);
-        //startDeck.add(ReaperStrike.ID);
-        //startDeck.add(Banish.ID);
-        //startDeck.add(DimensionTear.ID);
+//        startDeck.add(ReaperBlast.ID);
+//        startDeck.add(Snowball.ID);
+//        startDeck.add(OpalFracture.ID);
+//        startDeck.add(ReaperStrike.ID);
+//        startDeck.add(Banish.ID);
+//        startDeck.add(DimensionTear.ID);
         return startDeck;
     }
 

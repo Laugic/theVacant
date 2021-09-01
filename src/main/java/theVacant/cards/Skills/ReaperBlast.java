@@ -49,6 +49,7 @@ public class ReaperBlast extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
         exhaust = true;
+        tags.add(CardTags.HEALING);
     }
 
     @Override

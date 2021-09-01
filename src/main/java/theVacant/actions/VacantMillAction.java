@@ -1,5 +1,6 @@
 package theVacant.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -80,6 +81,13 @@ public class VacantMillAction  extends AbstractGameAction
 
     private void Rebound(AbstractDynamicCard card)
     {
+        if(AbstractDungeon.player.drawPile.size() >= BaseMod.MAX_HAND_SIZE)
+        {
+            if(card.postMillAction)
+                card.PostMillAction();
+            MoveToDiscard(card);
+            return;
+        }
         AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
         PostRebound(card);
         if(card.postMillAction)

@@ -35,6 +35,7 @@ public class StoreSoul extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 6;
         exhaust = true;
+        tags.add(CardTags.HEALING);
     }
 
     @Override
