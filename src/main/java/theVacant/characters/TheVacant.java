@@ -8,6 +8,7 @@ import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.blue.Defragment;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -160,12 +161,13 @@ public class TheVacant extends CustomPlayer
         startDeck.add(VacantStarterDefend.ID);
 
         startDeck.add(SoulBash.ID);
-        startDeck.add(ShatterAmethyst.ID);
+        startDeck.add(Release.ID);
 
 //        Testing
-//        startDeck.add(Corporeate.ID);
-//        startDeck.add(EmbraceDarkness.ID);
-//        startDeck.add(HolyWater.ID);
+//        startDeck.add(DiamondIsUnbreakable.ID);
+//        startDeck.add(ForgeSoul.ID);
+//        startDeck.add(VoidForm.ID);
+//        startDeck.add(OpalFracture.ID);
 //        startDeck.add(ReaperBlast.ID);
 //        startDeck.add(Snowball.ID);
 //        startDeck.add(OpalFracture.ID);

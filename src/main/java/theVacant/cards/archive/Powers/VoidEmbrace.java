@@ -48,7 +48,7 @@ public class VoidEmbrace extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
+        //addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
         addToBot(new ApplyPowerAction(player, player, new VoidEmbracePower(player, player, 1), 1));
     }
 
@@ -59,7 +59,6 @@ public class VoidEmbrace extends AbstractDynamicCard
         {
             VoidTooltip = new ArrayList<>();
             VoidTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_ID)));
-            VoidTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.ECHO_ID), BaseMod.getKeywordDescription(KeywordManager.ECHO_ID)));
         }
         return VoidTooltip;
     }
@@ -70,8 +69,7 @@ public class VoidEmbrace extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }

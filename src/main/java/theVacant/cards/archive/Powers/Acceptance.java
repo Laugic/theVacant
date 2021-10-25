@@ -27,13 +27,13 @@ public class Acceptance extends AbstractDynamicCard
     public Acceptance()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ArtifactPower(player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ArtifactPower(player, magicNumber), magicNumber));
     }
 
     @Override
@@ -43,6 +43,7 @@ public class Acceptance extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

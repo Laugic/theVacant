@@ -12,11 +12,13 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.OnyxOrb;
+import theVacant.orbs.OpalOrb;
 import theVacant.powers.DoomPower;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class OnyxBlaster extends AbstractDynamicCard
@@ -47,7 +49,7 @@ public class OnyxBlaster extends AbstractDynamicCard
     {
         addToBot(new VFXAction(new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, monster, new DoomPower(monster, player, magicNumber), magicNumber));
+        addToBot(new MineGemAction(new OnyxOrb(magicNumber)));
     }
 
     @Override

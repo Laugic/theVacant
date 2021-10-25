@@ -2,6 +2,7 @@ package theVacant.cards.archive.Skills;
 
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,6 +15,7 @@ import theVacant.actions.SyphonAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.EchoModifier;
 import theVacant.characters.TheVacant;
+import theVacant.powers.TemperancePower;
 import theVacant.relics.BoundSoul;
 import theVacant.util.KeywordManager;
 
@@ -40,14 +42,15 @@ public class Soothe extends AbstractDynamicCard
     public Soothe()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.block = this.baseBlock = BLOCK;
-        EchoModifier.Enhance(this, 2);
+        block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = BLOCK;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
+        addToBot(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -56,7 +59,10 @@ public class Soothe extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            EchoModifier.Enhance(this, 1);
+            upgradeBlock(2);
+            upgradedBlock = true;
+            upgradeMagicNumber(2);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

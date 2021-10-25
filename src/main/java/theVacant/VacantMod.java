@@ -36,8 +36,6 @@ import theVacant.relics.*;
 import theVacant.util.TextureLoader;
 import theVacant.variables.*;
 
-import static theVacant.Enums.VacantTags.GEMS;
-
 
 @SpireInitializer
 public class VacantMod implements
@@ -225,6 +223,7 @@ public class VacantMod implements
         BaseMod.addCard(new SapphireStrike());
         BaseMod.addCard(new SoulBash());
         BaseMod.addCard(new OpalFracture());
+        BaseMod.addCard(new Release());
         //Attacks
 
         BaseMod.addCard(new VacantStarterStrike());
@@ -267,7 +266,6 @@ public class VacantMod implements
         BaseMod.addCard(new OnSecondThought());
         BaseMod.addCard(new Sneeze());
         BaseMod.addCard(new OpalShine());
-        BaseMod.addCard(new TwistFate());
         BaseMod.addCard(new Unearth());
         BaseMod.addCard(new EmptyShield());
         BaseMod.addCard(new Exorcise());
@@ -315,6 +313,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(SapphireStrike.ID);
         UnlockTracker.unlockCard(SoulBash.ID);
         UnlockTracker.unlockCard(OpalFracture.ID);
+        UnlockTracker.unlockCard(Release.ID);
 
         //Attacks
         UnlockTracker.unlockCard(VacantStarterStrike.ID);
@@ -358,7 +357,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(OnSecondThought.ID);
         UnlockTracker.unlockCard(Sneeze.ID);
         UnlockTracker.unlockCard(OpalShine.ID);
-        UnlockTracker.unlockCard(TwistFate.ID);
         UnlockTracker.unlockCard(Unearth.ID);
         UnlockTracker.unlockCard(EmptyShield.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
@@ -405,18 +403,6 @@ public class VacantMod implements
 */
         //Powers
 
-        GEMS.add(new Aquamarine());
-        GEMS.add(new OnyxBlaster());
-        GEMS.add(new RubyRage());
-        GEMS.add(new ShatterAmethyst());
-        GEMS.add(new OpalShine());
-        GEMS.add(new EssenceOfBismuth());
-        GEMS.add(new DiamondIsUnbreakable());
-        GEMS.add(new EmeraldSplash());
-        GEMS.add(new OpalFracture());
-        GEMS.add(new SapphireStrike());
-        GEMS.add(new TopazFrenzy());
-
         logger.info("Done adding cards!");
     }
 
@@ -432,6 +418,8 @@ public class VacantMod implements
                 getModID() + "Resources/localization/eng/VacantMod-Character-Strings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 getModID() + "Resources/localization/eng/VacantMod-Power-Strings.json");
+        BaseMod.loadCustomStringsFile(OrbStrings.class,
+                getModID() + "Resources/localization/eng/VacantMod-Orb-Strings.json");
 /*
 
         BaseMod.loadCustomStringsFile(EventStrings.class,
@@ -440,8 +428,6 @@ public class VacantMod implements
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 getModID() + "Resources/localization/eng/VacantMod-Potion-Strings.json");
 
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Orb-Strings.json");
 */
         logger.info("Done editing strings");
     }
@@ -483,6 +469,11 @@ public class VacantMod implements
     {
         return getModID() + "Resources/images/relics/" + resourcePath;
     }
+
+    public static String makeOrbPath(String resourcePath)
+    {
+    return getModID() + "Resources/images/orbs/" + resourcePath;
+}
     public static String makeRelicOutlinePath(String resourcePath)
     {
         return getModID() + "Resources/images/relics/outline/" + resourcePath;

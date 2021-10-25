@@ -1,5 +1,6 @@
 package theVacant.cards.archive.Skills;
 
+import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -17,7 +18,7 @@ public class Release extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Release.class.getSimpleName());
-    public static final String IMG = makeCardPath("Release.png");
+    public static final String IMG = makeCardPath("Corporeate.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
@@ -31,15 +32,15 @@ public class Release extends AbstractDynamicCard
     public Release()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 5;
         this.getBonusMillToMagic = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new BetterDiscardPileToHandAction(1));
     }
 
     @Override

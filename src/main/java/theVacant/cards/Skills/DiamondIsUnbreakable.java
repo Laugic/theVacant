@@ -15,9 +15,11 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.DiamondOrb;
 import theVacant.powers.TemperancePower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
@@ -25,7 +27,6 @@ import theVacant.util.KeywordManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class DiamondIsUnbreakable extends AbstractDynamicCard
@@ -41,14 +42,13 @@ public class DiamondIsUnbreakable extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 4;
+    private static final int COST = 3;
 
     public DiamondIsUnbreakable()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 20;
+        magicNumber = baseMagicNumber = 3;
         exhaust = true;
-        isEthereal = true;
     }
 
     @Override
@@ -60,11 +60,13 @@ public class DiamondIsUnbreakable extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new VFXAction(player, new VerticalAuraEffect(Color.CYAN, player.hb.cX, player.hb.cY), 0.33F));
+//        addToBot(new VFXAction(player, new VerticalAuraEffect(Color.CYAN, player.hb.cX, player.hb.cY), 0.33F));
         addToBot(new VFXAction(player, new BorderFlashEffect(Color.WHITE), 0.3F, true));
 
-        addToBot(new ApplyPowerAction(player, player, new IntangiblePlayerPower(player, 2), 2));
-        addToBot(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber), magicNumber));
+        addToBot(new MineGemAction(new DiamondOrb(magicNumber)));
+
+//        addToBot(new ApplyPowerAction(player, player, new IntangiblePlayerPower(player, 2), 2));
+//        addToBot(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -73,8 +75,7 @@ public class DiamondIsUnbreakable extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isEthereal = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(2);
             initializeDescription();
         }
     }

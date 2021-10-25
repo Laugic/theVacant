@@ -97,7 +97,7 @@
   },
   "theVacant:OnyxBlaster": {
     "NAME": "Onyx Blaster",
-    "DESCRIPTION": "thevacant:Gem. NL Deal !D! damage. NL Apply !M! thevacant:Doom. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mine a size !M! thevacant:Onyx. NL Exhaust."
   },
   "theVacant:ShriekingBlast": {
     "NAME": "Shrieking Blast",
@@ -114,7 +114,7 @@
   },
   "theVacant:EmeraldSplash": {
     "NAME": "Emerald Splash",
-    "DESCRIPTION": "thevacant:Gem. NL Remove all Block and deal !D! damage to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Remove all Block and deal !D! damage to ALL enemies. NL Exhaust."
   },
   "theVacant:Threat": {
     "NAME": "Threaten",
@@ -130,8 +130,7 @@
   },
   "theVacant:BackInTheMine": {
     "NAME": "Back in the Mine",
-    "DESCRIPTION": "Deal !D! damage. NL Add a random thevacant:Gem to your hand.",
-    "UPGRADE_DESCRIPTION":  "Deal !D! damage. NL Add a random thevacant:Gem to your hand. It costs 0 this turn."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mine a random size !M! thevacant:Gem."
   },
   "theVacant:Throttle": {
     "NAME": "Throttle",
@@ -163,7 +162,7 @@
   },
   "theVacant:AwMan": {
     "NAME": "Aw Man",
-    "DESCRIPTION": "Gain !B! Block. NL Add a random thevacant:Gem card to your hand."
+    "DESCRIPTION": "thevacant:Mine a random size !M! thevacant:Gem."
   },
   "theVacant:StandoPowah": {
     "NAME": "Stando Powah",
@@ -175,7 +174,7 @@
   },
   "theVacant:SoulBash": {
     "NAME": "Soul Bash",
-    "DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage."
+    "DESCRIPTION": "thevacant:Rebound. NL Deal !D! damage. NL Gain !M! Vigor."
   },
   "theVacant:SoulBashOld": {
     "NAME": "Soul Bash",
@@ -201,6 +200,11 @@
     "DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with [#ee82ee]Voidbound[].",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with [#ee82ee]Voidbound[]. NL It costs 0 this turn."
   },
+  "theVacant:Pickaxe": {
+    "NAME": "Pickaxe",
+    "DESCRIPTION": "Deal !D! damage. NL Evoke your next Orb. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Exhume an Attack. NL thevacant:Enhance it with [#ee82ee]Voidbound[]. NL It costs 0 this turn."
+  },
   "theVacant:Carve": {
     "NAME": "Carve",
     "DESCRIPTION": "Deal !D! damage !M! times."
@@ -211,7 +215,7 @@
   },
   "theVacant:OpalFracture": {
     "NAME": "Opal Fracture",
-    "DESCRIPTION": "thevacant:Gem. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mine a size !M! thevacant:Opal. NL Exhaust."
   },
   "theVacant:DarkStrike": {
     "NAME": "Dark Strike",
@@ -232,7 +236,7 @@
   },
   "theVacant:TopazFrenzy": {
     "NAME": "Topaz Frenzy",
-    "DESCRIPTION": "thevacant:Gem. NL Deal !D! damage !M! times. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage 3 times. NL thevacant:Mine a size !M! thevacant:Ruby. NL Exhaust."
   },
   "theVacant:StealSoul": {
     "NAME": "Reap Soul",
@@ -244,7 +248,7 @@
   },
   "theVacant:SapphireStrike": {
     "NAME": "Sapphire Strike",
-    "DESCRIPTION": "thevacant:Gem. NL Deal !D! damage. thevacant:Enhance a card with [#6A97E2]Echo[]. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. thevacant:Mine a size !M! thevacant:Sapphire. NL Exhaust."
   },
   "theVacant:TearFate": {
     "NAME": "Tear Fate",
@@ -270,12 +274,11 @@
   },
   "theVacant:DiamondIsUnbreakable": {
     "NAME": "Diamond Is Unbreakable",
-    "DESCRIPTION": "thevacant:Gem. Ethereal. NL Gain 2 Intangible. NL Gain !M! thevacant:Temperance. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Gem. NL Gain 2 Intangible. NL Gain !M! thevacant:Temperance. NL Exhaust."
+    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Diamond. NL Exhaust."
   },
   "theVacant:ShatterAmethyst": {
     "NAME": "Shatter Amethyst",
-    "DESCRIPTION": "thevacant:Gem. NL Gain 1 [#ee82ee]Void[]. NL thevacant:Mill !M!. NL Exhaust."
+    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Amethyst. NL Exhaust."
   },
   "theVacant:EmptyShield": {
     "NAME": "Empty Shield",
@@ -327,7 +330,8 @@
   },
   "theVacant:BattleScars": {
     "NAME": "Battle Scars",
-    "DESCRIPTION": "thevacant:Wounded: Gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Gain 4 Vigor. NL thevacant:Wounded: Gain !M! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [#00FF33]6[] Vigor. NL thevacant:Wounded: Gain !M! Strength. NL Exhaust."
   },
   "theVacant:Hex": {
     "NAME": "Hex",
@@ -383,17 +387,17 @@
     "DESCRIPTION": "Gain !M! Max HP. NL Lose 6 HP. NL Exhaust."
   },
   "theVacant:Release": {
-    "NAME": "Release",
-    "DESCRIPTION": "Draw 1 card. NL thevacant:Mill !M!."
+    "NAME": "Corporeate",
+    "DESCRIPTION": "thevacant:Mill !M!. NL thevacant:Return 1."
   },
   "theVacant:RubyRage": {
     "NAME": "Ruby Rage",
-    "DESCRIPTION": "thevacant:Gem. NL Gain Vigor equal to the number of cards in your discard pile. Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Gem. NL Gain Vigor equal to the number of cards in your discard pile."
+    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Ruby. Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Mine a size !M! thevacant:Ruby."
   },
   "theVacant:Soothe": {
     "NAME": "Soothe",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! thevacant:Temperance."
   },
   "theVacant:Necromancy": {
     "NAME": "Necromancy",
@@ -427,7 +431,7 @@
   },
   "theVacant:OpalShine": {
     "NAME": "Opal Shine",
-    "DESCRIPTION": "thevacant:Gem. NL thevacant:Enhance a card with [#82eeee]Soulforged[]. NL Exhaust."
+    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Opal. NL Exhaust."
   },
   "theVacant:Partake": {
     "NAME": "Partake",
@@ -481,14 +485,13 @@
     "UPGRADE_DESCRIPTION": "thevacant:Enhance a card with [#ee82ee]Voidbound[]."
   },
   "theVacant:Corporeate": {
-    "NAME": "Corporeate",
-    "DESCRIPTION": "Remove all Debuffs. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Remove all Debuffs."
+    "NAME": "Shatter",
+    "DESCRIPTION": "Evoke all your Orbs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Evoke all your Orbs."
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",
-    "DESCRIPTION": "Gain 3 thevacant:Shroud. NL Deal !M! damage to ALL enemies when you lose a stack of thevacant:Shroud.",
-    "UPGRADE_DESCRIPTION": "Gain 4 thevacant:Shroud. NL Deal !M! damage to ALL enemies when you lose a stack of thevacant:Shroud."
+    "DESCRIPTION": "thevacant:Mill !M! at the start of your turn."
   },
   "theVacant:DarkReflex": {
     "NAME": "Dark Reflex",
@@ -500,8 +503,8 @@
   },
   "theVacant:GotOurPickaxe": {
     "NAME": "Got Our Pickaxe",
-    "DESCRIPTION": "At the start of your turn, add a random thevacant:Gem card to your hand.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a random thevacant:Gem card to your hand."
+    "DESCRIPTION": "At the start of your turn, Evoke your next Orb.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, Evoke your next Orb."
   },
   "theVacant:CleanseSoul": {
     "NAME": "Cleanse Soul",
@@ -553,7 +556,7 @@
   },
   "theVacant:VoidEmbrace": {
     "NAME": "Void Embrace",
-    "DESCRIPTION": "Gain !M! [#ee82ee]Void[]. NL Cards that [#6A97E2]Echo[] do so 1 additional time."
+    "DESCRIPTION": "Whenever a card Exhausts, gain 1 [#ee82ee]Void[]."
   },
   "theVacant:GreaterMind": {
     "NAME": "Greater Mind",
@@ -570,16 +573,16 @@
     "UPGRADE_DESCRIPTION": "If you have the Goblet, permanently increase its power by 1. Exhaust."
   },
   "theVacant:Aquamarine": {
-    "NAME": "Aquamarine",
-    "DESCRIPTION": "thevacant:Gem. NL Gain !M! Block each time you thevacant:Mill a card."
+    "NAME": "Reflection",
+    "DESCRIPTION": "Gain !M! Block each time you thevacant:Mill a card."
   },
   "theVacant:ForgeSoul": {
     "NAME": "Forge Soul",
-    "DESCRIPTION": "At the start of your turn, thevacant:Enhance a random card with [#82eeee]Soulforged[]."
+    "DESCRIPTION": "At the start of your turn, gain !M! Temporary_HP."
   },
   "theVacant:VoidForm": {
     "NAME": "Void Form",
-    "DESCRIPTION": "Gain !M! [#ee82ee]Void[]. NL When your draw pile is empty, [#ee82ee]Void[] increases damage and Block."
+    "DESCRIPTION": "Gain !M! [#ee82ee]Void[]."
   },
   "theVacant:WaitInWrath": {
     "NAME": "Wait in Wrath",

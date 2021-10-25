@@ -58,7 +58,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
 
         updateDescription();
     }
-
+/*
     @Override
     public void atStartOfTurnPostDraw()
     {
@@ -67,20 +67,20 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
         AbstractDungeon.player.hand.applyPowers();
         updateDescription();
     }
-
+*/
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type)
     {
-        if (CheckDrawEmpty() && type == DamageInfo.DamageType.NORMAL && AbstractDungeon.player.hasPower(VoidFormPower.POWER_ID))
-            return damage + amount * AbstractDungeon.player.getPower(VoidFormPower.POWER_ID).amount;
+        if (CheckDrawEmpty() && type == DamageInfo.DamageType.NORMAL)
+            return damage + amount * (1 + (AbstractDungeon.player.hasPower(VoidFormPower.POWER_ID)?AbstractDungeon.player.getPower(VoidFormPower.POWER_ID).amount:0));
         return damage;
     }
 
     @Override
     public float modifyBlock(float blockAmount)
     {
-        if (CheckDrawEmpty() && blockAmount > 0.0F && AbstractDungeon.player.hasPower(VoidFormPower.POWER_ID))
-            return blockAmount + amount * AbstractDungeon.player.getPower(VoidFormPower.POWER_ID).amount;
+        if (CheckDrawEmpty() && blockAmount > 0.0F)
+            return blockAmount + amount * (1 + (AbstractDungeon.player.hasPower(VoidFormPower.POWER_ID)?AbstractDungeon.player.getPower(VoidFormPower.POWER_ID).amount:0));
         return blockAmount;
     }
 
@@ -95,7 +95,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount +  DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + amount +  DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
     @Override

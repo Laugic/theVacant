@@ -28,6 +28,13 @@
     "DESCRIPTION": "When your deck is reshuffled, move to the bottom of the draw pile."
   },
   {
+    "PROPER_NAME": "Mine",
+    "NAMES": [
+      "mine"
+    ],
+    "DESCRIPTION": "Create an orb slot and fill it with an orb."
+  },
+  {
     "PROPER_NAME": "Light",
     "NAMES": [
       "light"
@@ -84,7 +91,7 @@
     "NAMES": [
       "void"
     ],
-    "DESCRIPTION": "After you draw cards at the beginning of your turn, #yMill a number of cards."
+    "DESCRIPTION": "When your draw pile is empty, deal more damage and gain more block."
   },
   {
     "PROPER_NAME": "Prime",
@@ -135,7 +142,7 @@
     "NAMES": [
       "gem"
     ],
-    "DESCRIPTION": "Gem cards are cards which #yExhaust and have strong one-time effects."
+    "DESCRIPTION": "#yGems are #yOrbs that reduce in size when their passive effect triggers."
   },
   {
     "PROPER_NAME": "Necra",
@@ -304,6 +311,48 @@
       "vacantform"
     ],
     "DESCRIPTION": "#ySyphon: Lose HP. NL -------- NL You cannot die or enter [#ee4200]Fury[] [#ee4200]Form[]. NL As you leave this #yForm, #ySyphon."
+  },
+  {
+    "PROPER_NAME": "Ruby",
+    "NAMES": [
+      "ruby"
+    ],
+    "DESCRIPTION": "#yOrb: Gain #yVigor and #yStrength. NL Loses size over time."
+  },
+  {
+    "PROPER_NAME": "Amethyst",
+    "NAMES": [
+      "amethyst"
+    ],
+    "DESCRIPTION": "#yOrb: #yMill and gain #pVoid. NL Loses size over time."
+  },
+  {
+    "PROPER_NAME": "Opal",
+    "NAMES": [
+      "opal"
+    ],
+    "DESCRIPTION": "#yOrb: Gain [E]"
+  },
+  {
+    "PROPER_NAME": "Sapphire",
+    "NAMES": [
+      "sapphire"
+    ],
+    "DESCRIPTION": "#yOrb: Gain #yTemperance and #yMetallicize. NL Loses size over time."
+  },
+  {
+    "PROPER_NAME": "Diamond",
+    "NAMES": [
+      "diamond"
+    ],
+    "DESCRIPTION": "#yOrb: Gain #yIntangible and #yBuffer. NL Loses size over time."
+  },
+  {
+    "PROPER_NAME": "Onyx",
+    "NAMES": [
+      "onyx"
+    ],
+    "DESCRIPTION": "#yOrb: Apply #yDoom. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Temperance",

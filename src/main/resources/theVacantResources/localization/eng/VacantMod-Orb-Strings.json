@@ -1,11 +1,44 @@
 {
-  "theDefault:DefaultOrb": {
-    "NAME": "Default Orb",
+  "theVacant:RubyOrb": {
+    "NAME": "Ruby",
     "DESCRIPTION": [
-      "#yPassive: At the start of your turn, draw #b",
-      " card.",
-      " cards.",
-      "NL #yEvoke: Deal #b damage to all enemies."
+      "#yPassive: Gain #b", " #yVigor and lose 1 size. NL #yEvoke: Gain #b",
+      " #yStrength. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
+  "theVacant:AmethystOrb": {
+    "NAME": "Amethyst",
+    "DESCRIPTION": [
+      "#yPassive: #yMill #b", " cards and lose 1 size. NL #yEvoke: Gain #b",
+      " #pVoid. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
+  "theVacant:SapphireOrb": {
+    "NAME": "Sapphire",
+    "DESCRIPTION": [
+      "#yPassive: Gain #b", " #yTemperance and lose 1 size. NL #yEvoke: Gain #b",
+      " #yMetallicize. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
+  "theVacant:OnyxOrb": {
+    "NAME": "Onyx",
+    "DESCRIPTION": [
+      "#yPassive: Apply #b", " #yDoom to EVERYONE and lose 1 size. NL #yEvoke: Apply #b",
+      " #yDoom to ALL enemies. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
+  "theVacant:DiamondOrb": {
+    "NAME": "Diamond",
+    "DESCRIPTION": [
+      "#yPassive: Gain 1 #yIntangible. NL #yEvoke: Prevent the next #b",
+      " times you would lose HP. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
+  "theVacant:OpalOrb": {
+    "NAME": "Opal",
+    "DESCRIPTION": [
+      "#yPassive: Gain #b", " [E] NL #yEvoke: Gain #b",
+      " [E] NL Once size reaches 0, remove this orb and its slot."
     ]
   }
 }

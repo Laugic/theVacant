@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -25,7 +26,7 @@ public class BattleScars extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     public BattleScars()
     {
@@ -37,9 +38,9 @@ public class BattleScars extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        //AbstractDungeon.actionManager.addToBottom(new DrawCardAction(player, 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VigorPower(player, magicNumber * 2), magicNumber * 2));
         if(player.isBloodied)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, this.magicNumber), this.magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, magicNumber), magicNumber));
     }
 
     @Override
@@ -49,7 +50,9 @@ public class BattleScars extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
+            upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
 }

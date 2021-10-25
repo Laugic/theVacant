@@ -13,16 +13,18 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.AmethystOrb;
+import theVacant.orbs.RubyOrb;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class ShatterAmethyst extends AbstractDynamicCard
@@ -33,7 +35,7 @@ public class ShatterAmethyst extends AbstractDynamicCard
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
@@ -45,7 +47,7 @@ public class ShatterAmethyst extends AbstractDynamicCard
     public ShatterAmethyst()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 5;
+        magicNumber = baseMagicNumber = 4;
         getBonusMillToMagic = true;
         exhaust = true;
     }
@@ -53,12 +55,14 @@ public class ShatterAmethyst extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new VFXAction(player, new VerticalAuraEffect(Color.BLACK, player.hb.cX, player.hb.cY), 0.33F));
-        addToBot(new VFXAction(player, new BorderFlashEffect(Color.PURPLE), 0.3F, true));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidPower(player, player, 1), 1));
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber));
-    }
+//        addToBot(new VFXAction(player, new VerticalAuraEffect(Color.BLACK, player.hb.cX, player.hb.cY), 0.33F));
+//        addToBot(new VFXAction(player, new BorderFlashEffect(Color.PURPLE), 0.3F, true));
 
+        addToBot(new MineGemAction(new AmethystOrb(magicNumber)));
+//        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidPower(player, player, 1), 1));
+//        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber));
+    }
+/*
     @Override
     public List<TooltipInfo> getCustomTooltips()
     {
@@ -69,14 +73,15 @@ public class ShatterAmethyst extends AbstractDynamicCard
         }
         return VoidTooltip;
     }
-
+*/
     @Override
     public void upgrade()
     {
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(2);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

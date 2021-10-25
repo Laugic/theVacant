@@ -21,9 +21,12 @@ import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import theVacant.VacantMod;
 import theVacant.actions.EnhanceInHandAction;
 import theVacant.actions.EnhanceInPileAction;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.EchoModifier;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.OpalOrb;
+import theVacant.orbs.SapphireOrb;
 import theVacant.powers.TemperancePower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
@@ -31,7 +34,6 @@ import theVacant.util.KeywordManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class SapphireStrike extends AbstractDynamicCard {
@@ -45,42 +47,22 @@ public class SapphireStrike extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
-    private static ArrayList<TooltipInfo> Tooltip;
-
+    private static final int DAMAGE = 8;
 
     public SapphireStrike()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 3;
         exhaust = true;
         tags.add(CardTags.STRIKE);
     }
-/*
-    @Override
-    public List<String> getCardDescriptors()
-    {
-        ArrayList<String> retVal = new ArrayList<>();
-        retVal.add("foo");
-        return retVal;
-    }*/
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new EnhanceInPileAction(player.hand, 1, EchoModifier.ID, 1));
-    }
-
-    @Override
-    public List<TooltipInfo> getCustomTooltips()
-    {
-        if(Tooltip == null)
-        {
-            Tooltip = new ArrayList<>();
-            Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.ECHO_ID), BaseMod.getKeywordDescription(KeywordManager.ECHO_ID)));
-        }
-        return Tooltip;
+        addToBot(new MineGemAction(new SapphireOrb(magicNumber)));
     }
 
     @Override
@@ -89,8 +71,10 @@ public class SapphireStrike extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(2);
             upgradedDamage = true;
+            upgradeMagicNumber(2);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

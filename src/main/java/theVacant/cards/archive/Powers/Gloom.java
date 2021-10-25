@@ -29,28 +29,24 @@ public class Gloom extends AbstractDynamicCard
     public static final String IMG = makeCardPath("Gloom.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    //public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Gloom()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 6;
+        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        int amount = 3;
-        if(upgraded)
-            amount = 4;
-        addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, amount), amount));
         addToBot(new ApplyPowerAction(player, player, new GloomPower(player, player, magicNumber), magicNumber));
     }
 
@@ -62,7 +58,6 @@ public class Gloom extends AbstractDynamicCard
             upgradeName();
             upgradeMagicNumber(2);
             upgradedMagicNumber = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

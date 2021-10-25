@@ -43,14 +43,14 @@ public class VoidForm extends AbstractDynamicCard
     public VoidForm()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, 1), 1));
+//        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, 1), 1));
         //addToBot(new SwitchFormAction(BoundSoul.VOID_FORM));
     }
 
@@ -71,7 +71,7 @@ public class VoidForm extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
             upgradedMagicNumber = true;
             initializeDescription();
         }

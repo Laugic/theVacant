@@ -11,16 +11,18 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.EchoModifier;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.OpalOrb;
+import theVacant.orbs.RubyOrb;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class TopazFrenzy extends AbstractDynamicCard {
@@ -41,16 +43,16 @@ public class TopazFrenzy extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 6;
         exhaust = true;
-        EchoModifier.Enhance(this, 3);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        for (int i = 0; i < magicNumber; i++)
+        for (int i = 0; i < 3; i++)
             addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot(new MineGemAction(new RubyOrb(magicNumber)));
     }
 
     @Override
@@ -59,7 +61,9 @@ public class TopazFrenzy extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeDamage(2);
+            upgradedDamage = true;
+            upgradeMagicNumber(2);
             upgradedMagicNumber = true;
             initializeDescription();
         }

@@ -44,13 +44,15 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
 
         updateDescription();
     }
-/*
+
     @Override
     public void atStartOfTurnPostDraw()
     {
         flash();
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount + AbstractVacantCard.GetBonusMillAmount()));
-    }*/
+        AbstractDungeon.player.hand.applyPowers();
+        updateDescription();
+    }
 
     @Override
     public void updateDescription()

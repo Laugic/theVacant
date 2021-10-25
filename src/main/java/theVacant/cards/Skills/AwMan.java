@@ -1,24 +1,14 @@
 package theVacant.cards.Skills;
 
-import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.RegenAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
-import theVacant.actions.GemDiscoveryAction;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
-import theVacant.cards.Modifiers.EchoModifier;
-import theVacant.cards.Modifiers.SoulforgedModifier;
 import theVacant.characters.TheVacant;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class AwMan extends AbstractDynamicCard
@@ -33,28 +23,18 @@ public class AwMan extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public AwMan()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 5;
+        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        //addToBot(new GemDiscoveryAction());
-        //addToBot(new DamageAction(player, new DamageInfo(player, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        //AbstractDungeon.actionManager.addToBottom(new BetterDiscardPileToHandAction(magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
-        if(GEMS.size() > 0)
-        {
-            AbstractCard c = GEMS.get(AbstractDungeon.cardRandomRng.random(GEMS.size() - 1)).makeCopy();
-            /*if(upgraded)
-                c.setCostForTurn(0);*/
-            addToBot(new MakeTempCardInHandAction(c, true));
-        }
+        addToBot(new MineGemAction(null, magicNumber));
     }
 
     @Override
@@ -63,8 +43,8 @@ public class AwMan extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
-            upgradedCost = true;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

@@ -28,7 +28,6 @@ import theVacant.util.KeywordManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class EmeraldSplash extends AbstractDynamicCard {
@@ -42,7 +41,7 @@ public class EmeraldSplash extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 8;
 
 
     public EmeraldSplash()

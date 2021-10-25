@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.defect.EvokeAllOrbsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -36,17 +37,17 @@ public class Corporeate extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Corporeate.class.getSimpleName());
-    public static final String IMG = makeCardPath("Corporeate.png");
+    public static final String IMG = makeCardPath("Skill.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
 
-    private static final int COST = 1;
+    private static final int COST = 3;
 
     public Corporeate()
     {
@@ -57,6 +58,8 @@ public class Corporeate extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new EvokeAllOrbsAction());
+        /*
         ArrayList<AbstractPower> PowersToRemove = new ArrayList<AbstractPower>();
         for (AbstractPower power: player.powers)
         {
@@ -70,7 +73,7 @@ public class Corporeate extends AbstractDynamicCard
                 addToBot(new RemoveSpecificPowerAction(player, player, power));
                 addToBot(new VFXAction(new FlyingOrbEffect(player.hb.cX, player.hb.cY)));
             }
-        }
+        }*/
         /*
         if(player.hasPower(VigorPower.POWER_ID) && player.getPower(VigorPower.POWER_ID).amount > 0)
         {

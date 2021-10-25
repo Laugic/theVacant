@@ -1,0 +1,20 @@
+
+TheVacant.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TheVacantBones/Layer_1
+  rotate: false
+  xy: 147, 1
+  size: 100, 175
+  orig: 100, 175
+  offset: 0, 0
+  index: -1
+TheVacantBones/Layer_2
+  rotate: false
+  xy: 1, 1
+  size: 144, 177
+  orig: 200, 200
+  offset: 24, 16
+  index: -1

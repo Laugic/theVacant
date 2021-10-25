@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.actions.ExhumeAndEnhanceAction;
 import theVacant.actions.IncreaseMagicNumberAction;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -22,7 +23,6 @@ import java.util.ArrayList;
 import java.util.Random;
 
 import static theVacant.VacantMod.makeCardPath;
-import static theVacant.Enums.VacantTags.GEMS;
 
 public class BackInTheMine extends AbstractDynamicCard {
 
@@ -35,13 +35,14 @@ public class BackInTheMine extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 16;
+    private static final int COST = 1;
+    private static final int DAMAGE = 9;
 
     public BackInTheMine()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 3;
     }
 
 
@@ -50,14 +51,7 @@ public class BackInTheMine extends AbstractDynamicCard {
     {
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         //addToBot(new ExhumeAndEnhanceAction(1));
-
-        if(GEMS.size() > 0)
-        {
-            AbstractCard c = GEMS.get(AbstractDungeon.cardRandomRng.random(GEMS.size() - 1)).makeCopy();
-            /*if(upgraded)
-                c.setCostForTurn(0);*/
-            addToBot(new MakeTempCardInHandAction(c, true));
-        }
+        addToBot(new MineGemAction(null, magicNumber));
     }
 
     @Override
@@ -66,9 +60,10 @@ public class BackInTheMine extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(6);
+            upgradeDamage(3);
             upgradedDamage = true;
-            //rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

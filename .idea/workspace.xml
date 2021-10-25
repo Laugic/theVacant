@@ -2,37 +2,134 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/MineGemAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/ReduceOrbSizeAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/Pickaxe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/gems/RubyGem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/AbstractGemOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/AmethystOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/DiamondOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/OnyxOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/OpalOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/RubyOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/SapphireOrb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/InvisibleGemOrbPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/RubyPower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Release.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Release_p.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/Ruby.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/Ruby.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/Ruby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/TheVacant.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/TheVacant.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/monsters/gems/Ruby.atlas" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/monsters/gems/Ruby.dbproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/monsters/gems/Ruby.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/monsters/gems/Ruby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/monsters/gems/library/Ruby.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/AmethystOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/DiamondOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/EmeraldOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/OnyxOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/OpalOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/RubyOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/orbs/SapphireOrb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/powers/ruby32.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/powers/ruby84.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/actions/VacantMillAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/VacantMillAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/AbstractVacantCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/AbstractVacantCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/StandoPowah.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Powers/StandoPowah.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/Enums/VacantTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/Enums/VacantTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/actions/GemDiscoveryAction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/BackInTheMine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/BackInTheMine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/EmeraldSplash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/EmeraldSplash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/OnyxShatter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/OnyxShatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/OpalFracture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/OpalFracture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/SapphireStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/SapphireStrike.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/SoulBash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/SoulBash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/TopazFrenzy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/TopazFrenzy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Modifiers/EchoModifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Modifiers/EchoModifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/AwMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/AwMan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Corporeate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Corporeate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/ReaperBlast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/ReaperBlast.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/StoreSoul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/StoreSoul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/Jab.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/Jab.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/ReaperStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/ReaperStrike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/HolyWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/HolyWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/DiamondIsUnbreakable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/DiamondIsUnbreakable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/EssenceOfBismuth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/EssenceOfBismuth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/ShatterAmethyst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/ShatterAmethyst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/OnyxBlaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/OnyxBlaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/Acceptance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/Acceptance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/ForgeSoul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/ForgeSoul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/Gloom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/Gloom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/GotOurPickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/GotOurPickaxe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/VoidEmbrace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/VoidEmbrace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/VoidForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/VoidForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/BattleScars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/BattleScars.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/OnSecondThought.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/OnSecondThought.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/OpalShine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/OpalShine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/Release.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/Release.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/RubyRage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/RubyRage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/Soothe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/Soothe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/characters/TheVacant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/characters/TheVacant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/relics/Deathbell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/relics/Deathbell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/ForgeSoulPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/ForgeSoulPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/GloomPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/GloomPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/PickaxePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/PickaxePower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/VoidEmbracePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/VoidEmbracePower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/VoidPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/VoidPower.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/relics/BrassGoblet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/relics/BrassGoblet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Corporeate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/cards/Corporeate_p.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/skeleton.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/skeleton.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/theVacant.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/char/vacantCharacter/theVacant.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/actions/VacantMillAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/actions/VacantMillAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/AbstractVacantCard.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/AbstractVacantCard.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/StandoPowah.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/StandoPowah.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Orb-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Orb-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/Enums/VacantTags.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/Enums/VacantTags.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/VacantMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/VacantMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/actions/GemDiscoveryAction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/BackInTheMine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/BackInTheMine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/EmeraldSplash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/EmeraldSplash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/OnyxShatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/OnyxShatter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/OpalFracture.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/OpalFracture.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/SapphireStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/SapphireStrike.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/SoulBash.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/SoulBash.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/TopazFrenzy.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Attacks/TopazFrenzy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Modifiers/EchoModifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Modifiers/EchoModifier.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/AwMan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/AwMan.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Corporeate.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Corporeate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/ReaperBlast.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/ReaperBlast.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/StoreSoul.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/StoreSoul.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Attacks/Jab.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Attacks/Jab.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Attacks/ReaperStrike.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Attacks/ReaperStrike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/HolyWater.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/HolyWater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/DiamondIsUnbreakable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/DiamondIsUnbreakable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/EssenceOfBismuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/EssenceOfBismuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/ShatterAmethyst.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/ShatterAmethyst.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Attacks/OnyxBlaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Attacks/OnyxBlaster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/Acceptance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/Acceptance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/ForgeSoul.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/ForgeSoul.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/Gloom.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/Gloom.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/GotOurPickaxe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/GotOurPickaxe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/VoidEmbrace.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/VoidEmbrace.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/VoidForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/VoidForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/BattleScars.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/BattleScars.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/OnSecondThought.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/OnSecondThought.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/OpalShine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/OpalShine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/Release.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/Release.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/RubyRage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/RubyRage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/Soothe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Skills/Soothe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant$Enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant$Enums.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/relics/Deathbell.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/relics/Deathbell.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/shoulder.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/shoulder.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/shoulder2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/shoulder2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/ForgeSoulPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/ForgeSoulPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/GloomPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/GloomPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/PickaxePower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/PickaxePower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/VoidEmbracePower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/VoidEmbracePower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/VoidPower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/VoidPower.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/relics/BrassGoblet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/relics/BrassGoblet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/TheVacant.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/TheVacant.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/skeleton.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/images/char/vacantCharacter/skeleton.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Orb-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Orb-Strings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/theVacant.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/theVacant.jar" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,7 +166,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Minecraft/Nylia" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Minecraft/Myrth" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -77,6 +174,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="theVacant.orbs" />
       <recent name="theVacant.cards.Skills" />
       <recent name="theVacant.powers" />
     </key>

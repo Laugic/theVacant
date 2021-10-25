@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,12 +14,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.actions.VacantMillAction;
+import theVacant.cards.Attacks.Pickaxe;
 import theVacant.util.TextureLoader;
 
 import java.util.Random;
 
-import static theVacant.Enums.VacantTags.GEMS;
 
 public class PickaxePower extends AbstractPower implements CloneablePowerInterface
 {
@@ -51,23 +53,21 @@ public class PickaxePower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public void atStartOfTurn()
+    public void atEndOfTurn(boolean isPlayer)
     {
+        if(!isPlayer)
+            return;
+        flash();
         for (int i = 0; i < amount; i++)
-        {
-            if(GEMS.size() > 0)
-            {
-                Random random = new Random();
-                AbstractCard c = GEMS.get(AbstractDungeon.cardRandomRng.random(GEMS.size() - 1)).makeCopy();
-                addToBot(new MakeTempCardInHandAction(c, true));
-            }
-        }
+            addToTop(new EvokeOrbAction(1));
+        //addToBot(new MakeTempCardInHandAction(new Pickaxe()));
+        //addToBot(new MineGemAction(null, amount));
     }
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + (amount>1?DESCRIPTIONS[2]:DESCRIPTIONS[1]);
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

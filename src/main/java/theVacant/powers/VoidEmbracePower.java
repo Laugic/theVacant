@@ -44,18 +44,18 @@ public class VoidEmbracePower extends AbstractPower implements CloneablePowerInt
 
         updateDescription();
     }
-/*
+
     @Override
     public void onExhaust(AbstractCard card)
     {
         flash();
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(this.owner, this.owner, new VoidPower(this.owner, this.owner, this.amount), this.amount));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(owner, owner, new VoidPower(owner, owner, amount), amount));
     }
-*/
+
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + (amount>1?DESCRIPTIONS[2]:DESCRIPTIONS[1]);
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

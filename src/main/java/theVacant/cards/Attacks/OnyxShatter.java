@@ -29,7 +29,6 @@ import theVacant.util.KeywordManager;
 import java.util.ArrayList;
 import java.util.List;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class OnyxShatter extends AbstractDynamicCard {

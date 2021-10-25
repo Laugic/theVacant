@@ -9,7 +9,7 @@
   },
   "theVacant:GloomPower": {
     "NAME": "Gloom",
-    "DESCRIPTIONS": ["Deal #b", " damage to ALL enemies when you lose a stack of #yShroud."]
+    "DESCRIPTIONS": ["At the start of your turn after you draw, #yMill #b", " cards."]
   },
   "theVacant:ImmaterializePower": {
     "NAME": "Immaterialize",
@@ -35,6 +35,10 @@
     "NAME": "Husk",
     "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #yVigor and #yTemperance."]
   },
+  "theVacant:RubyPower": {
+    "NAME": "Ruby",
+    "DESCRIPTIONS": ["At the beginning of the turn, gain #b", " #yVigor. When this is destroyed, transfer all #yVigor to you."]
+  },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
     "DESCRIPTIONS": ["The first #b", " card you play each turn costs 0."," cards you play each turn cost 0."]
@@ -45,14 +49,14 @@
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
-    "DESCRIPTIONS": ["Cards that [#6A97E2]Echo[] do so #b", " additional time.", " additional times."]
+    "DESCRIPTIONS": ["Whenever a card #yExhausts, gain #b", " #pVoid."]
   },
   "theVacant:PickaxePower": {
     "NAME": "Got Our Pickaxe",
-    "DESCRIPTIONS": ["At the start of your turn, add #b", " random Gem card to your hand.", " random Gem cards to your hand."]
+    "DESCRIPTIONS": ["At the start of your turn, #yEvoke your next #b", " #yOrbs."]
   },
   "theVacant:AquamarinePower": {
-    "NAME": "Aquamarine",
+    "NAME": "Reflection",
     "DESCRIPTIONS": ["Gain #b", " #yBlock each time you #yMill a card."]
   },
   "theVacant:StandoPower": {
@@ -70,7 +74,7 @@
   "theVacant:VoidPower": {
     "NAME": "Void",
     "DESCRIPTIONS": [
-      "After you draw at the beginning of your turn, #yMill #b", "."
+      "When your draw pile is empty, deal #b", " more damage and gain #b", " more #yBlock."
     ]
   },
   "theVacant:BurdenBreakPower": {
@@ -123,7 +127,7 @@
   },
   "theVacant:ForgeSoulPower": {
     "NAME": "Forge Soul",
-    "DESCRIPTIONS": ["At the start of your turn, #yEnhance "," random card with #ySoulforged.", " random cards with #ySoulforged."]
+    "DESCRIPTIONS": ["At the start of your turn, gain #b"," #yTemporary #yHP."]
   },
   "theVacant:SolidSoulPower": {
     "NAME": "Solid Soul",

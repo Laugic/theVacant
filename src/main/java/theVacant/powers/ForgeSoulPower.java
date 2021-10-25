@@ -3,6 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -49,14 +50,15 @@ public class ForgeSoulPower extends AbstractPower implements CloneablePowerInter
     public void atStartOfTurnPostDraw()
     {
         flash();
-        AbstractDungeon.actionManager.addToBottom(new EnhanceRandomInHandAction(this.amount, SoulforgedModifier.ID, 1));
+        addToBot(new AddTemporaryHPAction(owner, owner, amount));
+//        AbstractDungeon.actionManager.addToBottom(new EnhanceRandomInHandAction(this.amount, SoulforgedModifier.ID, 1));
     }
 
     @Override
     public void updateDescription()
     {
 
-        description = DESCRIPTIONS[0] + this.amount + (this.amount==1?DESCRIPTIONS[1]:DESCRIPTIONS[2]);
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

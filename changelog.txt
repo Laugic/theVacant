@@ -1,3 +1,11 @@
+0.15
+Completely changed Gems- they now create self-reducing Orbs instead of applying buffs to the player.
+Void no longer innately Mills, it instead increases your strength and block when your draw pile is empty
+Removed Echo and Soulforged
+-----
+0.14.1
+Fixed Compendium crash if you looked at it before starting a run (hopefully)
+-
 0.14.0
 Art Changes:
 Saturated card background art

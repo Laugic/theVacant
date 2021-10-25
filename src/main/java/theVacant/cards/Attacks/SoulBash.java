@@ -49,7 +49,6 @@ public class SoulBash extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 3;
-        EchoModifier.Enhance(this, 1);
         rebound = true;
     }
 
@@ -58,7 +57,7 @@ public class SoulBash extends AbstractDynamicCard
     {
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SMASH));
 
-        //addToBot(new ApplyPowerAction(player, player, new VigorPower(player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new VigorPower(player, magicNumber), magicNumber));
 
         /*switch(GetForm())
         {
@@ -117,7 +116,6 @@ public class SoulBash extends AbstractDynamicCard
             upgradedDamage = true;
             upgradeMagicNumber(2);
             upgradedMagicNumber = true;
-            EchoModifier.Enhance(this, 1);
             initializeDescription();
         }
     }

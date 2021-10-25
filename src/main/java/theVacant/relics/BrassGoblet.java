@@ -34,7 +34,7 @@ public class BrassGoblet extends CustomRelic
     public BrassGoblet()
     {
         super(ID, IMG, OUTLINE, RelicTier.STARTER, LandingSound.CLINK);
-        counter = 1;
+        counter = 2;
         setDescriptionWithCard();
     }
 
@@ -52,7 +52,7 @@ public class BrassGoblet extends CustomRelic
         setDescriptionWithCard();
         AbstractPlayer player = AbstractDungeon.player;
         player.addPower(new VoidPower(player, player, counter));
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(counter + AbstractVacantCard.GetBonusMillAmount()));
+        //AbstractDungeon.actionManager.addToBottom(new VacantMillAction(counter + AbstractVacantCard.GetBonusMillAmount()));
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidPower(player, player, VOID_AMOUNT), VOID_AMOUNT));
     }
 

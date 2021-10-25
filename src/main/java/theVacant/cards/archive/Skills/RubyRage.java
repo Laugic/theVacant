@@ -1,19 +1,18 @@
 package theVacant.cards.archive.Skills;
 
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.RubyOrb;
 
 import java.util.ArrayList;
 
-import static theVacant.Enums.VacantTags.GEMS;
 import static theVacant.VacantMod.makeCardPath;
 
 public class RubyRage extends AbstractDynamicCard
@@ -35,15 +34,17 @@ public class RubyRage extends AbstractDynamicCard
     public RubyRage()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = 4;
         exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        int vigorAmount = player.discardPile.size();
-        if(vigorAmount > 0)
-            addToBot(new ApplyPowerAction(player, player, new VigorPower(player, vigorAmount), vigorAmount));
+        addToBot(new MineGemAction(new RubyOrb(magicNumber)));
+//        int vigorAmount = player.discardPile.size();
+//        if(vigorAmount > 0)
+//            addToBot(new ApplyPowerAction(player, player, new VigorPower(player, vigorAmount), vigorAmount));
 //        addToBot(new SwitchFormAction(BoundSoul.FURY_FORM));
 //        if(upgraded)
 //            addToBot(new SyphonAction(magicNumber));
@@ -66,8 +67,8 @@ public class RubyRage extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

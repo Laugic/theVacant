@@ -99,7 +99,7 @@ public class EchoModifier extends AbstractCardModifier
     private int GetEchoAmount()
     {
         int plusAmount = 0;
-        if(AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player.hasPower(VoidEmbracePower.POWER_ID) && AbstractDungeon.player.getPower(VoidEmbracePower.POWER_ID).amount > 0)
+        if(AbstractDungeon.isPlayerInDungeon() && AbstractDungeon.player != null && AbstractDungeon.player.hasPower(VoidEmbracePower.POWER_ID) && AbstractDungeon.player.getPower(VoidEmbracePower.POWER_ID).amount > 0)
             plusAmount = AbstractDungeon.player.getPower(VoidEmbracePower.POWER_ID).amount;
         return amount + plusAmount;
     }
