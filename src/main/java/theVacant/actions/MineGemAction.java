@@ -50,19 +50,19 @@ public class MineGemAction extends AbstractGameAction
 
     private AbstractOrb GetRandomGem()
     {
-        int RandOrb = AbstractDungeon.cardRandomRng.random(5);
-        switch (RandOrb)
-        {
-            case 1:
-                return new AmethystOrb(size);
-            case 2:
-                return new SapphireOrb(size);
-            case 3:
-                return new OpalOrb(size);
-            case 4:
-                return new OnyxOrb(size);
-            default:
-                return new RubyOrb(size);
-        }
+        int rand = AbstractDungeon.cardRandomRng.random(19);
+        if(rand == 0)
+            return new DiamondOrb(size);
+        if(rand == 1 || rand == 18)
+            return new EmeraldOrb(size);
+        if(rand == 2 || rand == 3)
+            return new OpalOrb(size);
+        if(rand == 4 || rand == 5)
+            return new OnyxOrb(size);
+        if(rand <= 9)
+            return new SapphireOrb(size);
+        if(rand <= 13)
+            return new AmethystOrb(size);
+        return new RubyOrb(size);
     }
 }

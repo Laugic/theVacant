@@ -40,7 +40,6 @@ public class OpalFracture extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 2;
-        exhaust = true;
     }
 
     @Override

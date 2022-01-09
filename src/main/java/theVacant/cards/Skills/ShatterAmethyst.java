@@ -48,8 +48,6 @@ public class ShatterAmethyst extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 4;
-        getBonusMillToMagic = true;
-        exhaust = true;
     }
 
     @Override

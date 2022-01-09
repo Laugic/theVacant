@@ -13,6 +13,7 @@ import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.relics.BrassGoblet;
+import theVacant.relics.OverflowingGobletRelic;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -20,7 +21,7 @@ public class StoreSoul extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(StoreSoul.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("StoreSoul.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
@@ -47,6 +48,11 @@ public class StoreSoul extends AbstractDynamicCard
         {
             if(relic instanceof  BrassGoblet)
                 ((BrassGoblet)relic).IncreaseVoid(1);
+            if(relic instanceof OverflowingGobletRelic)
+            {
+                relic.counter++;
+                ((OverflowingGobletRelic)relic).updateDescription();
+            }
         }
     }
 

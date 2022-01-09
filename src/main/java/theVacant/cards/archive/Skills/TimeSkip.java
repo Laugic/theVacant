@@ -22,7 +22,7 @@ public class TimeSkip extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(TimeSkip.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("TimeSkip.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;

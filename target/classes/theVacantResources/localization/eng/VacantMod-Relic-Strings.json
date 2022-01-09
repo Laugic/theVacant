@@ -28,6 +28,14 @@
       " #pthevacant:Void."
     ]
   },
+  "theVacant:OverflowingGobletRelic": {
+    "NAME": "Overflowing Goblet",
+    "FLAVOR": "An ancient artifact, now overflowing with dark power.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b",
+      " #yArtifact."
+    ]
+  },
   "theVacant:BoundSoul": {
     "NAME": "Bound Soul",
     "FLAVOR": "Forever tied to an artifact.",

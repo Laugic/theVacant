@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
+import theVacant.powers.GloomPower;
 import theVacant.powers.VoidPower;
 
 import static theVacant.VacantMod.makeOrbPath;
@@ -41,7 +42,7 @@ public class AmethystOrb extends AbstractGemOrb
     public void EvokeGem()
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new VoidPower(AbstractDungeon.player, AbstractDungeon.player, evokeAmount), evokeAmount));
+                new GloomPower(AbstractDungeon.player, AbstractDungeon.player, evokeAmount), evokeAmount));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
     }
 

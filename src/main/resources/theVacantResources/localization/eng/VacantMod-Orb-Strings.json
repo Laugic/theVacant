@@ -17,7 +17,7 @@
     "NAME": "Sapphire",
     "DESCRIPTION": [
       "#yPassive: Gain #b", " #yTemperance and lose 1 size. NL #yEvoke: Gain #b",
-      " #yMetallicize. NL Once size reaches 0, remove this orb and its slot."
+      " #yDexterity. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:OnyxOrb": {
@@ -32,6 +32,13 @@
     "DESCRIPTION": [
       "#yPassive: Gain 1 #yIntangible. NL #yEvoke: Prevent the next #b",
       " times you would lose HP. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
+  "theVacant:EmeraldOrb": {
+    "NAME": "Emerald",
+    "DESCRIPTION": [
+      "#yPassive: Draw 1 card. NL #yBreak: Draw #b",
+      " card.", " cards."
     ]
   },
   "theVacant:OpalOrb": {

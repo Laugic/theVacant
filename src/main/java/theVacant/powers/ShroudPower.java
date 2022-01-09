@@ -53,7 +53,7 @@ public class ShroudPower extends AbstractPower implements CloneablePowerInterfac
     public void atStartOfTurn()
     {
         flash();
-        CheckGloom();
+        //CheckGloom();
         addToBot(new ReducePowerAction(owner, owner, this, 1));
     }
 
@@ -63,11 +63,11 @@ public class ShroudPower extends AbstractPower implements CloneablePowerInterfac
         if (card.type == AbstractCard.CardType.ATTACK)
         {
             flash();
-            CheckGloom();
+            //CheckGloom();
             addToBot(new ReducePowerAction(owner, owner, this, 1));
         }
     }
-
+/*
     private void CheckGloom()
     {
         if(owner.hasPower(GloomPower.POWER_ID) && owner.getPower(GloomPower.POWER_ID).amount > 0)
@@ -79,7 +79,7 @@ public class ShroudPower extends AbstractPower implements CloneablePowerInterfac
                         DamageInfo.createDamageMatrix(owner.getPower(GloomPower.POWER_ID).amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.LIGHTNING));
             }
         }
-    }
+    }*/
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType type)
     {

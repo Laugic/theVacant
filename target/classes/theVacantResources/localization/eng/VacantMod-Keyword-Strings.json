@@ -35,6 +35,13 @@
     "DESCRIPTION": "Create an orb slot and fill it with an orb."
   },
   {
+    "PROPER_NAME": "Break",
+    "NAMES": [
+      "break"
+    ],
+    "DESCRIPTION": "Evoke a #yGem Orb."
+  },
+  {
     "PROPER_NAME": "Light",
     "NAMES": [
       "light"
@@ -91,7 +98,7 @@
     "NAMES": [
       "void"
     ],
-    "DESCRIPTION": "When your draw pile is empty, deal more damage and gain more block."
+    "DESCRIPTION": "When your draw pile is empty, deal more damage and gain more #yBlock."
   },
   {
     "PROPER_NAME": "Prime",
@@ -140,7 +147,8 @@
   {
     "PROPER_NAME": "Gem",
     "NAMES": [
-      "gem"
+      "gem",
+      "gems"
     ],
     "DESCRIPTION": "#yGems are #yOrbs that reduce in size when their passive effect triggers."
   },
@@ -317,42 +325,49 @@
     "NAMES": [
       "ruby"
     ],
-    "DESCRIPTION": "#yOrb: Gain #yVigor and #yStrength. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yVigor and #yStrength. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Amethyst",
     "NAMES": [
       "amethyst"
     ],
-    "DESCRIPTION": "#yOrb: #yMill and gain #pVoid. NL Loses size over time."
+    "DESCRIPTION": "#yGem: #yMill and gain #pGloom. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Opal",
     "NAMES": [
       "opal"
     ],
-    "DESCRIPTION": "#yOrb: Gain [E]"
+    "DESCRIPTION": "#yGem: Gains Energy"
   },
   {
     "PROPER_NAME": "Sapphire",
     "NAMES": [
       "sapphire"
     ],
-    "DESCRIPTION": "#yOrb: Gain #yTemperance and #yMetallicize. NL Loses size over time."
+    "DESCRIPTION": "#yOrb: Gain #yTemperance and #yDexterity. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Diamond",
     "NAMES": [
       "diamond"
     ],
-    "DESCRIPTION": "#yOrb: Gain #yIntangible and #yBuffer. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yIntangible and #yBuffer. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Onyx",
     "NAMES": [
       "onyx"
     ],
-    "DESCRIPTION": "#yOrb: Apply #yDoom. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Apply #yDoom. NL Loses size over time."
+  },
+  {
+    "PROPER_NAME": "Emerald",
+    "NAMES": [
+      "emerald"
+    ],
+    "DESCRIPTION": "#yGem: Draw cards. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Temperance",

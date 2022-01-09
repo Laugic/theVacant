@@ -36,7 +36,7 @@ public class Barrage extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
         //this.timesUpgraded = upgrades;
     }
 
@@ -44,9 +44,9 @@ public class Barrage extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        for(int i = 0; i < GetTotalBuffs(player); i++)
+        for(int i = 0; i < magicNumber; i++)
             addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        //addToBot(new IncreaseMagicNumberAction(this, 1));
+        addToBot(new IncreaseMagicNumberAction(this, 1));
     }
 
     private int GetTotalBuffs(AbstractPlayer player)
@@ -70,9 +70,34 @@ public class Barrage extends AbstractDynamicCard {
     public void upgrade()
     {
         upgradeName();
-        upgradeDamage(1);
+        upgradeDamage(2);
         upgradedDamage = true;
-        rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
+    }
+
+    @Override
+    public void applyPowers()
+    {
+        getDesc();
+        super.applyPowers();
+    }
+    @Override
+    public void atTurnStart()
+    {
+        getDesc();
+        super.atTurnStart();
+    }
+
+    private void getDesc()
+    {
+        rawDescription = cardStrings.DESCRIPTION + (magicNumber==1?cardStrings.EXTENDED_DESCRIPTION[0]:cardStrings.EXTENDED_DESCRIPTION[1]);
+        initializeDescription();
+    }
+
+    @Override
+    public void onMoveToDiscard()
+    {
+        rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
 

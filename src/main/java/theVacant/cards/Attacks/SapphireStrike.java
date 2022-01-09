@@ -54,7 +54,6 @@ public class SapphireStrike extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 3;
-        exhaust = true;
         tags.add(CardTags.STRIKE);
     }
 

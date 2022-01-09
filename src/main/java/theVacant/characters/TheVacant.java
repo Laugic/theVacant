@@ -32,6 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
+import theVacant.cards.archive.Attacks.GildedPickaxe;
 import theVacant.cards.archive.Powers.*;
 import theVacant.cards.archive.Skills.*;
 import theVacant.relics.BoundSoul;
@@ -164,16 +165,6 @@ public class TheVacant extends CustomPlayer
         startDeck.add(Release.ID);
 
 //        Testing
-//        startDeck.add(DiamondIsUnbreakable.ID);
-//        startDeck.add(ForgeSoul.ID);
-//        startDeck.add(VoidForm.ID);
-//        startDeck.add(OpalFracture.ID);
-//        startDeck.add(ReaperBlast.ID);
-//        startDeck.add(Snowball.ID);
-//        startDeck.add(OpalFracture.ID);
-//        startDeck.add(ReaperStrike.ID);
-//        startDeck.add(Banish.ID);
-//        startDeck.add(DimensionTear.ID);
         return startDeck;
     }
 

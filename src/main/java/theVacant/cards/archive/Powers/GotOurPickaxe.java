@@ -18,7 +18,7 @@ public class GotOurPickaxe extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(GotOurPickaxe.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("GotOurPickaxe.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;

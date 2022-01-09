@@ -35,6 +35,7 @@ public class GraveDigger extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        rebound = true;
     }
 
     @Override
@@ -82,7 +83,7 @@ public class GraveDigger extends AbstractDynamicCard {
 
     private void getDesc()
     {
-        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        rawDescription = (upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

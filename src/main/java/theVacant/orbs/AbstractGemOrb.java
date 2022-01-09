@@ -5,24 +5,20 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
-import com.megacrit.cardcrawl.actions.defect.RemoveNextOrbAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
-import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theVacant.actions.ReduceOrbSizeAction;
 import theVacant.powers.InvisibleGemOrbPower;
 
-import static theVacant.VacantMod.makeOrbPath;
+import java.util.Collections;
 
 public abstract class AbstractGemOrb extends CustomOrb
 {
@@ -58,7 +54,9 @@ public abstract class AbstractGemOrb extends CustomOrb
     public void onEvoke()
     {
         EvokeGem();
-        AbstractDungeon.actionManager.addToTop(new DecreaseMaxOrbAction(1));
+        //ReduceSize(baseEvokeAmount);
+        AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
+        //RemoveSpecificGem(player.orbs.indexOf(this));
     }
 
     public void onStartOfTurnPostDraw()
@@ -75,9 +73,46 @@ public abstract class AbstractGemOrb extends CustomOrb
 
     public void ReduceSize()
     {
-        passiveAmount = basePassiveAmount--;
-        evokeAmount = baseEvokeAmount--;
+        ReduceSize(1);
+    }
+
+    public void ReduceSize(int amount)
+    {
+        passiveAmount = basePassiveAmount -= amount;
+        evokeAmount = baseEvokeAmount -= amount;
+        if(passiveAmount == 0 || evokeAmount == 0)
+            RemoveSpecificGem(AbstractDungeon.player.orbs.indexOf(this));
         updateDescription();
+    }
+
+    public void RemoveSpecificGem(int slot)
+    {
+        AbstractPlayer player = AbstractDungeon.player;
+        if (!player.orbs.isEmpty() && !(player.orbs.get(slot) instanceof EmptyOrbSlot))
+        {
+            if(player.orbs.size() > 1 && slot != player.orbs.size() - 1)
+            {
+                for (int i = slot; i < player.orbs.size() - 1; i++)
+                    Collections.swap(player.orbs, i, i + 1);
+            }
+
+            AbstractOrb orbSlot = new EmptyOrbSlot((player.orbs.get(player.orbs.size() - 1)).cX, (player.orbs.get(player.orbs.size() - 1)).cY);
+
+            if(player.orbs.size() > 1)
+                player.orbs.set(player.orbs.size() - 1, orbSlot);
+            else
+                player.orbs.set(0, orbSlot);
+
+            for(int i = 0; i < player.orbs.size(); ++i)
+                (player.orbs.get(i)).setSlot(i, player.maxOrbs);
+
+            onRemove();
+            AbstractDungeon.player.decreaseMaxOrbSlots(1);
+//            Collections.swap(player.orbs, slot, player.orbs.size() - 1);
+//
+//            for(int i = 0; i < player.orbs.size(); ++i)
+//                (player.orbs.get(i)).setSlot(i, player.maxOrbs);
+        }
     }
 
     public void onRemove()
@@ -86,8 +121,8 @@ public abstract class AbstractGemOrb extends CustomOrb
     }
 
     @Override
-    public void updateAnimation() {// You can totally leave this as is.
-        // If you want to create a whole new orb effect - take a look at conspire's Water Orb. It includes a custom sound, too!
+    public void updateAnimation()
+    {
         super.updateAnimation();
         angle += Gdx.graphics.getDeltaTime() * 45.0f;
         vfxTimer -= Gdx.graphics.getDeltaTime();

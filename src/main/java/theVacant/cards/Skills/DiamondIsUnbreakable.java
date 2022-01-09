@@ -16,6 +16,8 @@ import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.actions.MineGemAction;
+import theVacant.actions.PlayDiamondIsUnbreakableAction;
+import theVacant.actions.PlayExhumationAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -42,12 +44,11 @@ public class DiamondIsUnbreakable extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 3;
+    private static final int COST = -1;
 
     public DiamondIsUnbreakable()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
         exhaust = true;
     }
 
@@ -62,8 +63,8 @@ public class DiamondIsUnbreakable extends AbstractDynamicCard
     {
 //        addToBot(new VFXAction(player, new VerticalAuraEffect(Color.CYAN, player.hb.cX, player.hb.cY), 0.33F));
         addToBot(new VFXAction(player, new BorderFlashEffect(Color.WHITE), 0.3F, true));
-
-        addToBot(new MineGemAction(new DiamondOrb(magicNumber)));
+        addToBot(new PlayDiamondIsUnbreakableAction(freeToPlayOnce, energyOnUse, upgraded?1:0));
+        //addToBot(new MineGemAction(new DiamondOrb(magicNumber)));
 
 //        addToBot(new ApplyPowerAction(player, player, new IntangiblePlayerPower(player, 2), 2));
 //        addToBot(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber), magicNumber));
@@ -75,7 +76,7 @@ public class DiamondIsUnbreakable extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(2);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

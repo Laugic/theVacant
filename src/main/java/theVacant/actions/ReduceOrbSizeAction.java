@@ -1,8 +1,7 @@
 package theVacant.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
-import com.megacrit.cardcrawl.actions.defect.RemoveNextOrbAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
@@ -13,11 +12,19 @@ public class ReduceOrbSizeAction extends AbstractGameAction
     private AbstractOrb orb;
     public ReduceOrbSizeAction(AbstractOrb orbToReduce)
     {
+        amount = 1;
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         orb = orbToReduce;
     }
 
+    public ReduceOrbSizeAction(AbstractOrb orbToReduce, int amount)
+    {
+        this.amount = amount;
+        actionType = ActionType.SPECIAL;
+        duration = Settings.ACTION_DUR_FAST;
+        orb = orbToReduce;
+    }
 
     public void update()
     {
@@ -27,14 +34,8 @@ public class ReduceOrbSizeAction extends AbstractGameAction
             return;
         }
         AbstractGemOrb gem = (AbstractGemOrb)orb;
-        gem.ReduceSize();
         gem.applyFocus();
-        if(orb.passiveAmount == 0 || orb.evokeAmount == 0)
-        {
-            gem.onRemove();
-            AbstractDungeon.player.removeNextOrb();
-            AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
-        }
+        gem.ReduceSize(amount);
         isDone = true;
     }
 }

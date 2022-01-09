@@ -67,11 +67,13 @@ public class Snowball extends AbstractDynamicCard {
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.isUnnate = true;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            isUnnate = true;
+            isHeavy = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
+
     @Override
     public void applyPowers()
     {

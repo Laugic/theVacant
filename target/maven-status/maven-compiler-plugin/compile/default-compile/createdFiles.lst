@@ -2,6 +2,7 @@ theVacant\relics\OldRevampedBrassGoblet.class
 theVacant\actions\UpdateFormAction.class
 theVacant\cards\Modifiers\EchoModifier.class
 theVacant\cards\Skills\DiamondIsUnbreakable.class
+theVacant\actions\PlayDiamondIsUnbreakableAction.class
 theVacant\cards\archive\Attacks\BrassMagnet.class
 theVacant\orbs\AmethystOrb.class
 theVacant\cards\archive\Attacks\ShriekingBlast.class
@@ -18,6 +19,7 @@ theVacant\powers\ReapPower.class
 theVacant\cards\AbstractVacantCard.class
 theVacant\actions\ReduceOrbSizeAction.class
 theVacant\cards\archive\Powers\IronWill.class
+theVacant\cards\Skills\Spelunk.class
 theVacant\actions\DeathSpiralAction.class
 theVacant\cards\archive\Powers\DarkReflex.class
 theVacant\cards\archive\Powers\Acceptance.class
@@ -70,6 +72,7 @@ theVacant\cards\archive\Skills\Soothe.class
 theVacant\cards\Skills\Corporeate.class
 theVacant\variables\VacantHealthDamage.class
 theVacant\powers\RubyPower.class
+theVacant\cards\archive\Attacks\GildedPickaxe.class
 theVacant\cards\Attacks\OpalFracture.class
 theVacant\cards\archive\Skills\DoubleTeam.class
 theVacant\cards\archive\Powers\CleanseSoul.class
@@ -218,6 +221,7 @@ theVacant\cards\archive\Attacks\Whip.class
 theVacant\powers\ImmaterializePower.class
 theVacant\cards\archive\Skills\FromNothing.class
 theVacant\powers\FerocityRune.class
+theVacant\orbs\EmeraldOrb.class
 theVacant\cards\archive\Attacks\GraveWave.class
 theVacant\actions\MineGemAction.class
 theVacant\cards\archive\Skills\Expand.class
@@ -226,6 +230,7 @@ theVacant\powers\GloomPower.class
 theVacant\powers\WardRune.class
 theVacant\relics\VacantBossEnergyRelic.class
 theVacant\orbs\SapphireOrb.class
+theVacant\relics\OverflowingGobletRelic.class
 theVacant\cards\archive\Attacks\DeathSpiral.class
 theVacant\cards\archive\Skills\OpalShine.class
 theVacant\cards\archive\Skills\RubyRage.class

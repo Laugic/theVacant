@@ -32,16 +32,16 @@ public class SurpriseAttack extends AbstractDynamicCard {
     public SurpriseAttack()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = DAMAGE;
-        this.isUnnate = true;
-        this.rebound = true;
-        this.exhaust = true;
+        baseDamage = DAMAGE;
+        isUnnate = true;
+        rebound = true;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
     }
 
     @Override

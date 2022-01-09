@@ -35,7 +35,6 @@ public class RubyRage extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 4;
-        exhaust = true;
     }
 
     @Override
@@ -67,7 +66,7 @@ public class RubyRage extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
             upgradedMagicNumber = true;
             initializeDescription();
         }

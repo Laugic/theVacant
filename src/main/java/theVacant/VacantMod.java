@@ -27,6 +27,7 @@ import theVacant.cards.Powers.Aquamarine;
 import theVacant.cards.Powers.StandoPowah;
 import theVacant.cards.Skills.*;
 import theVacant.cards.archive.Attacks.*;
+import theVacant.cards.archive.Attacks.GildedPickaxe;
 import theVacant.cards.archive.Powers.*;
 import theVacant.cards.archive.Skills.*;
 import theVacant.characters.TheVacant;
@@ -65,16 +66,16 @@ public class VacantMod implements
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f);
     public static final Color PLACEHOLDER_POTION_SPOTS = CardHelper.getColor(100.0f, 25.0f, 10.0f);
 
-    private static final String ATTACK_VACANT = "theVacantResources/images/512/bg_attack_default_gray.png";
-    private static final String SKILL_VACANT = "theVacantResources/images/512/bg_skill_default_gray.png";
-    private static final String POWER_VACANT = "theVacantResources/images/512/bg_power_default_gray.png";
+    private static final String ATTACK_VACANT = "theVacantResources/images/512/bg_attack.png";
+    private static final String SKILL_VACANT = "theVacantResources/images/512/bg_skill.png";
+    private static final String POWER_VACANT = "theVacantResources/images/512/bg_power.png";
 
     private static final String ENERGY_ORB_VACANT = "theVacantResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "theVacantResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_attack_default_gray.png";
-    private static final String SKILL_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_skill_default_gray.png";
-    private static final String POWER_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_power_default_gray.png";
+    private static final String ATTACK_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_attack.png";
+    private static final String SKILL_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_skill.png";
+    private static final String POWER_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_power.png";
     private static final String ENERGY_ORB_VACANT_PORTRAIT = "theVacantResources/images/1024/card_default_gray_orb.png";
 
     private static final String THE_VACANT_BUTTON = "theVacantResources/images/charSelect/TheVacantButton.png";
@@ -186,6 +187,7 @@ public class VacantMod implements
     {
         logger.info("Adding relics");
         BaseMod.addRelicToCustomPool(new BrassGoblet(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new OverflowingGobletRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new Deathbell(), TheVacant.Enums.COLOR_GOLD);
         logger.info("Done adding relics!");
     }
@@ -216,7 +218,6 @@ public class VacantMod implements
         BaseMod.addCard(new TopazFrenzy());
         BaseMod.addCard(new DiamondIsUnbreakable());
         BaseMod.addCard(new EssenceOfBismuth());
-        BaseMod.addCard(new Banish());
         BaseMod.addCard(new StealSoul());
         BaseMod.addCard(new EmeraldSplash());
         BaseMod.addCard(new BackInTheMine());
@@ -247,13 +248,13 @@ public class VacantMod implements
         BaseMod.addCard(new FiendFrost());
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new Showdown());
+        BaseMod.addCard(new GildedPickaxe());
 
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
         BaseMod.addCard(new Cower());
         BaseMod.addCard(new Dig());
         BaseMod.addCard(new Spinshield());
-        BaseMod.addCard(new Soothe());
         BaseMod.addCard(new Corporeate());
         BaseMod.addCard(new BattleScars());
         BaseMod.addCard(new EmbraceDarkness());
@@ -276,6 +277,7 @@ public class VacantMod implements
         BaseMod.addCard(new StoreSoul());
         BaseMod.addCard(new AwMan());
         BaseMod.addCard(new ReaperBlast());
+        BaseMod.addCard(new Spelunk());
 
         //Powers
         BaseMod.addCard(new Acceptance());
@@ -306,7 +308,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(TopazFrenzy.ID);
         UnlockTracker.unlockCard(DiamondIsUnbreakable.ID);
         UnlockTracker.unlockCard(EssenceOfBismuth.ID);
-        UnlockTracker.unlockCard(Banish.ID);
         UnlockTracker.unlockCard(StealSoul.ID);
         UnlockTracker.unlockCard(EmeraldSplash.ID);
         UnlockTracker.unlockCard(BackInTheMine.ID);
@@ -338,6 +339,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(LashOut.ID);
         UnlockTracker.unlockCard(Showdown.ID);
         UnlockTracker.unlockCard(SoulBash.ID);
+        UnlockTracker.unlockCard(GildedPickaxe.ID);
 
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
@@ -345,7 +347,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Corporeate.ID);
         UnlockTracker.unlockCard(Dig.ID);
         UnlockTracker.unlockCard(Spinshield.ID);
-        UnlockTracker.unlockCard(Soothe.ID);
         UnlockTracker.unlockCard(BattleScars.ID);
         UnlockTracker.unlockCard(EmbraceDarkness.ID);
         UnlockTracker.unlockCard(RubyRage.ID);
@@ -367,6 +368,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(StoreSoul.ID);
         UnlockTracker.unlockCard(AwMan.ID);
         UnlockTracker.unlockCard(ReaperBlast.ID);
+        UnlockTracker.unlockCard(Spelunk.ID);
 
         //Powers
         UnlockTracker.unlockCard(Acceptance.ID);

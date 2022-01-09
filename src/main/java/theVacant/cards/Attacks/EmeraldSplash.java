@@ -19,8 +19,11 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.DieDieDieEffect;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.EmeraldOrb;
+import theVacant.orbs.OnyxOrb;
 import theVacant.powers.DoomPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
@@ -49,7 +52,6 @@ public class EmeraldSplash extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 2;
-        exhaust = true;
     }
 
     @Override
@@ -61,6 +63,7 @@ public class EmeraldSplash extends AbstractDynamicCard {
             AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(mo, player));
 
         addToBot(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new MineGemAction(new EmeraldOrb(magicNumber)));
         //addToBot(new ApplyPowerAction(player, player, new DexterityPower(player, magicNumber), magicNumber));
     }
 
@@ -72,6 +75,8 @@ public class EmeraldSplash extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(4);
             upgradedDamage = true;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

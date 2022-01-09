@@ -40,7 +40,6 @@ public class OpalShine extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 3;
-        exhaust = true;
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
@@ -42,7 +43,7 @@ public class SapphireOrb extends AbstractGemOrb
     public void EvokeGem()
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new MetallicizePower(AbstractDungeon.player, evokeAmount), evokeAmount));
+                new DexterityPower(AbstractDungeon.player, evokeAmount), evokeAmount));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA"));
     }
 

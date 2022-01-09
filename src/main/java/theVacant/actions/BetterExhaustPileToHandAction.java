@@ -1,5 +1,6 @@
 package theVacant.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -50,6 +51,10 @@ public class BetterExhaustPileToHandAction extends AbstractGameAction //COPIED F
                     while (counter.hasNext())
                     {
                         card = (AbstractCard) counter.next();
+                        card.unhover();
+                        card.unfadeOut();
+                        card.lighten(true);
+                        card.setAngle(0.0F);
                         cardsToMove.add(card);
                     }
 
@@ -58,12 +63,21 @@ public class BetterExhaustPileToHandAction extends AbstractGameAction //COPIED F
                     while (counter.hasNext())
                     {
                         card = (AbstractCard) counter.next();
-                        if (this.player.hand.size() == 10)
+                        if (this.player.hand.size() == BaseMod.MAX_HAND_SIZE)
                         {
+                            card.unhover();
+                            card.unfadeOut();
+                            card.lighten(true);
+                            card.setAngle(0.0F);
                             this.player.exhaustPile.moveToDiscardPile(card);
                             this.player.createHandIsFullDialog();
-                        } else
+                        }
+                        else
                         {
+                            card.unhover();
+                            card.unfadeOut();
+                            card.lighten(true);
+                            card.setAngle(0.0F);
                             this.player.exhaustPile.moveToHand(card, this.player.exhaustPile);
                         }
                     }

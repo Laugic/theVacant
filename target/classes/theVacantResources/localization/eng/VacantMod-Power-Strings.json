@@ -53,14 +53,14 @@
   },
   "theVacant:PickaxePower": {
     "NAME": "Got Our Pickaxe",
-    "DESCRIPTIONS": ["At the start of your turn, #yEvoke your next #b", " #yOrbs."]
+    "DESCRIPTIONS": ["At the end of your turn, #yBreak your next #b", " #yGem.", " #yGems."]
   },
   "theVacant:AquamarinePower": {
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Gain #b", " #yBlock each time you #yMill a card."]
   },
   "theVacant:StandoPower": {
-    "NAME": "Stando Powah",
+    "NAME": "Requiem",
     "DESCRIPTIONS": ["The next time you would die, return to #b", "% HP instead."]
   },
   "theVacant:GreaterMindPower": {

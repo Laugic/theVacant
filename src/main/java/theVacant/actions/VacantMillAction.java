@@ -81,7 +81,7 @@ public class VacantMillAction  extends AbstractGameAction
 
     private void Rebound(AbstractDynamicCard card)
     {
-        if(AbstractDungeon.player.drawPile.size() >= BaseMod.MAX_HAND_SIZE)
+        if(AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE)
         {
             if(card.postMillAction)
                 card.PostMillAction();
@@ -171,7 +171,10 @@ public class VacantMillAction  extends AbstractGameAction
         if(player != null)
         {
             if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
+            {
+                card.setCostForTurn(0);
                 return true;
+            }
             if(player.hasPower(DarkReflexPower.POWER_ID) && millNum <= player.getPower(DarkReflexPower.POWER_ID).amount)
                 return true;
         }

@@ -1,3 +1,11 @@
+0.16
+Updated Card Backgrounds
+Arted all rares
+Rebalanced Gem cards- they no longer Exhaust
+Reworked some Exhaust-synergy cards since many of the powerful Exhaust cards no longer exhaust
+Added Overflowing Goblet
+Misc balance changes
+-----
 0.15
 Completely changed Gems- they now create self-reducing Orbs instead of applying buffs to the player.
 Void no longer innately Mills, it instead increases your strength and block when your draw pile is empty

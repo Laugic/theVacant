@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.BetterExhaustPileToHandAction;
 import theVacant.actions.EnhanceInPileAction;
 import theVacant.actions.ExhaustDiscardAction;
 import theVacant.actions.ExhumeAndEnhanceAction;
@@ -53,22 +54,24 @@ public class DimensionTear extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot( new EnhanceInPileAction(player.exhaustPile, 9999, MaterializeModifier.ID, magicNumber));
+        //addToBot( new EnhanceInPileAction(player.exhaustPile, 9999, MaterializeModifier.ID, magicNumber));
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new BetterExhaustPileToHandAction(player.exhaustPile.size()+1,false));
         //addToBot(new ExhumeAndEnhanceAction(player.exhaustPile.size() + 2));
         //addToBot(new ExhaustDiscardAction(-1));
     }
 
-    @Override
-    public List<TooltipInfo> getCustomTooltips()
-    {
-        if(Tooltip == null)
-        {
-            Tooltip = new ArrayList<>();
-            Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.MATERIALIZE_ID), BaseMod.getKeywordDescription(KeywordManager.MATERIALIZE_ID)));
-        }
-        return Tooltip;
-    }
+//    @Override
+//    public List<TooltipInfo> getCustomTooltips()
+//    {
+//        if(Tooltip == null)
+//        {
+//            Tooltip = new ArrayList<>();
+//            Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.MATERIALIZE_ID), BaseMod.getKeywordDescription(KeywordManager.MATERIALIZE_ID)));
+//        }
+//        return Tooltip;
+//    }
+
     @Override
     public void upgrade()
     {

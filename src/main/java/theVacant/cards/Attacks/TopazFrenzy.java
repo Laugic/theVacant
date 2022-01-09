@@ -44,7 +44,6 @@ public class TopazFrenzy extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 6;
-        exhaust = true;
     }
 
     @Override
