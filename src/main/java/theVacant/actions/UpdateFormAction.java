@@ -1,16 +1,10 @@
 package theVacant.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import theVacant.cards.AbstractDynamicCard;
-import theVacant.characters.TheVacant;
-import theVacant.powers.*;
-import theVacant.relics.BoundSoul;
+import theVacant.relics.BoundSoulOld;
 
 public class UpdateFormAction extends AbstractGameAction
 {
@@ -34,13 +28,13 @@ public class UpdateFormAction extends AbstractGameAction
         }
         if(player.drawPile.size() == 0)
         {
-            addToBot(new SwitchFormAction(BoundSoul.VACANT_FORM));
+            addToBot(new SwitchFormAction(BoundSoulOld.VACANT_FORM));
             isDone = true;
             return;
         }
         if(turnStart && !player.isBloodied)
         {
-            addToBot(new SwitchFormAction(BoundSoul.SOLEMN_FORM));
+            addToBot(new SwitchFormAction(BoundSoulOld.SOLEMN_FORM));
             isDone = true;
             return;
         }

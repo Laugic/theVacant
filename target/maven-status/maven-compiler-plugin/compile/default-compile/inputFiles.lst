@@ -69,12 +69,15 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\BetterExhaustPileToHandAction.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\ForgeSoul.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\OnSecondThought.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\MemoriaPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\Anguish.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\ShroudPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\Frenzy.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\Think.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\OnyxShatter.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\orbs\RubyOrb.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\TombstoneRelic.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\Memoria.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\GraveWave.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\VacantCardGroup.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\Ascend.java
@@ -99,7 +102,6 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\Pickaxe.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\BoundSoul.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\IronWill.java
-C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\Exorcise.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\SoulBash.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\GreaterMind.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\AddAttacksToHandAction.java
@@ -121,6 +123,7 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Modifiers\SoulforgedModifier.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\ShutAway.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\AwMan.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\RagRelic.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\variables\VacantGlassDamage.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\HuskPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\CleanseSoul.java
@@ -132,7 +135,6 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\StoreSoul.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\Willful.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\Dig.java
-C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\ExorcisePower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\Slash.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\EmbraceDarkness.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\IronWillPower.java
@@ -147,6 +149,7 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\VacantMod.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\SkullBash.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\WaitInWrath.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Skills\Exorcise.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\Carve.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\EmptyFormPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\VacantBossEnergyRelic.java
@@ -155,6 +158,7 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\ForgeSoulPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\VoidForm.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\EnhanceRandomInHandAction.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\events\GobletEvent.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\GildedPickaxe.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\DelayedExhumePower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\OldBrassGoblet.java
@@ -181,9 +185,12 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Powers\Recover.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\PickaxePower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\FromNothing.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\CrystalBallRelic.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\BoundSoulOld.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\StandoPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Skills\Expand.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\EnhanceInPileAction.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\PlayDiamondIsUnbreakableAction.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\CursedBlast.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\Threat.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\actions\PlayHuskAction.java
@@ -222,6 +229,7 @@ C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\ma
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\EyePoke.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\characters\TheVacant.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\gems\RubyGem.java
+C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\relics\LocketRelic.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\archive\Attacks\BrassMagnet.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\powers\ReapPower.java
 C:\Users\Laugic\Desktop\Creation\Modding\Slay the Spire\my_mods\theVacant\src\main\java\theVacant\cards\Attacks\Banish.java

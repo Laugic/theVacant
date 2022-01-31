@@ -25,7 +25,7 @@ public class OnyxBlaster extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(OnyxBlaster.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("OnyxBlaster.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

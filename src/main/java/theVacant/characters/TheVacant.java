@@ -2,17 +2,18 @@ package theVacant.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defragment;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
@@ -22,8 +23,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import theVacant.VacantMod;
 import theVacant.cards.Attacks.*;
-import theVacant.cards.Powers.Aquamarine;
-import theVacant.cards.Powers.StandoPowah;
 import theVacant.cards.Skills.*;
 import theVacant.cards.archive.Attacks.*;
 
@@ -32,11 +31,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
-import theVacant.cards.archive.Attacks.GildedPickaxe;
-import theVacant.cards.archive.Powers.*;
+import theVacant.cards.archive.Powers.IntoTheAbyss;
+import theVacant.cards.archive.Powers.Rejection;
 import theVacant.cards.archive.Skills.*;
-import theVacant.relics.BoundSoul;
-import theVacant.relics.BrassGoblet;
+import theVacant.relics.*;
 
 import static theVacant.VacantMod.*;
 
@@ -263,6 +261,20 @@ public class TheVacant extends CustomPlayer
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY,
                 AbstractGameAction.AttackEffect.BLUNT_HEAVY};
+    }
+
+    @Override
+    public Texture getCutsceneBg() {
+        return ImageMaster.loadImage("theVacantResources/images/scenes/goldBG.png");// 307
+    }
+
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList();// 312
+        panels.add(new CutscenePanel("theVacantResources/images/scenes/vacant1.png", "ATTACK_HEAVY"));// 313
+        panels.add(new CutscenePanel("theVacantResources/images/scenes/vacant2.png"));// 314
+        panels.add(new CutscenePanel("theVacantResources/images/scenes/vacant3.png"));// 315
+        return panels;// 316
     }
 
     @Override

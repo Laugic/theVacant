@@ -17,5 +17,20 @@
       "[Leave]",
       "Select card to remove."
     ]
+  },
+  "theVacant:GobletEvent": {
+    "NAME": "The Goblet",
+    "DESCRIPTIONS": [
+      "The strength of the Goblet overwhelms you for a moment. Its pull stronger than ever, you feel as though you could maybe... NL #p~store~ #p~yourself~ #p~within~ #p~it.~",
+      "",
+      "#p~Maybe~ #p~a~ #p~bit~ #p~more...~",
+      "You snap back to your senses, still with part of your #pSoul left. You have a #y~Spire~ to climb"
+    ],
+    "OPTIONS": [
+      "[Store Soul] Lose #b",
+      " #yHP. Increase the power of the #yGoblet by #b1.",
+      "[Leave]",
+      "[Climb on]"
+    ]
   }
 }

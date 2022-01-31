@@ -59,7 +59,8 @@
   {
     "PROPER_NAME": "Rebound",
     "NAMES": [
-      "rebound"
+      "rebound",
+      "rebounds"
     ],
     "DESCRIPTION": "If this card would be #yMilled, add it to your hand instead of the discard pile."
   },
@@ -85,6 +86,14 @@
       "fractured"
     ],
     "DESCRIPTION": "Fracture effects happen when you have #bX or more #yWill."
+  },
+  {
+    "PROPER_NAME": "Goblet",
+    "NAMES": [
+      "goblet",
+      "goblet's"
+    ],
+    "DESCRIPTION": "The #yBrass #yGoblet or #yOverflowing #yGoblet relic."
   },
   {
     "PROPER_NAME": "Doom",
@@ -339,7 +348,7 @@
     "NAMES": [
       "opal"
     ],
-    "DESCRIPTION": "#yGem: Gains Energy"
+    "DESCRIPTION": "#yGem: Gains Energy. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Sapphire",

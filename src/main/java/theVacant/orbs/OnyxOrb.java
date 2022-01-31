@@ -55,7 +55,7 @@ public class OnyxOrb extends AbstractGemOrb
     public void updateDescription()
     {
         applyFocus();
-        description = DESCRIPTIONS[0] + 1 + DESCRIPTIONS[1] + evokeAmount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1] + evokeAmount + DESCRIPTIONS[2];
     }
 
     @Override

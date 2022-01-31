@@ -316,7 +316,7 @@
   },
   "theVacant:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. NL thevacant:Wounded: Prevent the next time you would lose HP. NL Exhaust.",
+    "DESCRIPTION": "Gain !B! Block. NL thevacant:Wounded: Prevent the next time you would lose HP.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL thevacant:Wounded: Prevent the next time you would lose HP."
   },
   "theVacant:Sneeze": {
@@ -364,10 +364,15 @@
     "DESCRIPTION": "thevacant:Release: Gain 1 Thorns. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "thevacant:Release: Gain 1 Thorns. NL Exhaust."
   },
-  "theVacant:Exorcise": {
-    "NAME": "Exorcise",
+  "theVacant:Memoria": {
+    "NAME": "Memoria",
     "DESCRIPTION": "The next time you play a card that Exhausts, play it twice.",
     "UPGRADE_DESCRIPTION": "The next 2 times you play a card that Exhausts, play it twice."
+  },
+  "theVacant:Exorcise": {
+    "NAME": "Exorcise",
+    "DESCRIPTION": "Cleanse all your Debuffs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Cleanse all your Debuffs and apply them to ALL enemies. NL Exhaust."
   },
   "theVacant:HolyWater": {
     "NAME": "Holy Water",
@@ -444,7 +449,12 @@
   },
   "theVacant:Partake": {
     "NAME": "Partake",
-    "DESCRIPTION": "Heal !M! HP. NL Gain 1 Artifact. NL Exhaust."
+    "DESCRIPTION": "Lose 6 HP. NL Gain [#ee82ee]Void[] and Artifact equal to your thevacant:Goblet's power. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose 6 HP. NL Gain [#ee82ee]Void[] and Artifact equal to your thevacant:Goblet's power.",
+    "EXTENDED_DESCRIPTION": [
+      "Lose 6 HP. NL Gain !M! [#ee82ee]Void[] and NL !M! Artifact. NL Exhaust.",
+      "Lose 6 HP. NL Gain !M! [#ee82ee]Void[] and NL !M! Artifact."
+    ]
   },
   "theVacant:Solace": {
     "NAME": "Solace",
@@ -583,8 +593,8 @@
   },
   "theVacant:StoreSoul": {
     "NAME": "Store Soul",
-    "DESCRIPTION": "Lose !M! HP. NL If you have the Goblet, permanently increase its power by 1. Exhaust.",
-    "UPGRADE_DESCRIPTION": "If you have the Goblet, permanently increase its power by 1. Exhaust."
+    "DESCRIPTION": "Lose !M! HP. NL If you have the Goblet, permanently increase its power by 1. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "If you have the Goblet, permanently increase its power by 1. NL Exhaust."
   },
   "theVacant:Aquamarine": {
     "NAME": "Reflection",

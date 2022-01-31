@@ -8,12 +8,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
-import theVacant.actions.SwitchFormAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.powers.VoidFormPower;
 import theVacant.powers.VoidPower;
-import theVacant.relics.BoundSoul;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;

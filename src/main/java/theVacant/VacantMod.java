@@ -3,6 +3,8 @@ package theVacant;
 import basemod.BaseMod;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
+import basemod.eventUtil.AddEventParams;
+import basemod.eventUtil.EventUtils;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -15,10 +17,14 @@ import java.util.*;
 
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.powers.FadingPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.HexPower;
+import com.megacrit.cardcrawl.powers.WraithFormPower;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,6 +39,7 @@ import theVacant.cards.archive.Skills.*;
 import theVacant.characters.TheVacant;
 
 import com.badlogic.gdx.graphics.Color;
+import theVacant.events.GobletEvent;
 import theVacant.relics.*;
 import theVacant.util.TextureLoader;
 import theVacant.variables.*;
@@ -60,7 +67,7 @@ public class VacantMod implements
     private static final String DESCRIPTION = "A lost soul, bound to an artifact, is doomed to climb the Spire.";
 
 
-    public static final Color VACANT_COLOR = CardHelper.getColor(175, 125, 60);
+    public static final Color VACANT_COLOR = CardHelper.getColor(229, 209, 105);
 
     public static final Color PLACEHOLDER_POTION_LIQUID = CardHelper.getColor(209.0f, 53.0f, 18.0f);
     public static final Color PLACEHOLDER_POTION_HYBRID = CardHelper.getColor(255.0f, 230.0f, 230.0f);
@@ -103,6 +110,9 @@ public class VacantMod implements
         logger.info("========================= Vacanting the Mod =========================");
         VacantMod vacantMod = new VacantMod();
         IMMUNE_POWERS.add(FadingPower.POWER_ID);
+        IMMUNE_POWERS.add(WraithFormPower.POWER_ID);
+        IMMUNE_POWERS.add(HexPower.POWER_ID);
+        IMMUNE_POWERS.add(GainStrengthPower.POWER_ID);
         logger.info("========================= /Mod Successfully Vacanted (The Vacant Initialized)/ =========================");
     }
 
@@ -172,6 +182,9 @@ public class VacantMod implements
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
         //BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
+        BaseMod.addEvent(new AddEventParams.Builder(GobletEvent.ID, GobletEvent.class).eventType(EventUtils.EventType.NORMAL).spawnCondition(() ->
+                (AbstractDungeon.player.hasRelic(BrassGoblet.ID) || AbstractDungeon.player.hasRelic((OverflowingGobletRelic.ID))) &&
+                        AbstractDungeon.player instanceof TheVacant).create());
         logger.info("Done loading badge Image and mod options");
     }
 
@@ -189,6 +202,17 @@ public class VacantMod implements
         BaseMod.addRelicToCustomPool(new BrassGoblet(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new OverflowingGobletRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new Deathbell(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new BoundSoul(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new LocketRelic(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new CrystalBallRelic(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new RagRelic(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new TombstoneRelic(), TheVacant.Enums.COLOR_GOLD);
+
+        UnlockTracker.markRelicAsSeen(CrystalBallRelic.ID);
+        UnlockTracker.markRelicAsSeen(RagRelic.ID);
+        UnlockTracker.markRelicAsSeen(TombstoneRelic.ID);
+        UnlockTracker.markRelicAsSeen(LocketRelic.ID);
+        UnlockTracker.markRelicAsSeen(Deathbell.ID);
         logger.info("Done adding relics!");
     }
 
@@ -269,15 +293,15 @@ public class VacantMod implements
         BaseMod.addCard(new OpalShine());
         BaseMod.addCard(new Unearth());
         BaseMod.addCard(new EmptyShield());
-        BaseMod.addCard(new Exorcise());
+        BaseMod.addCard(new Memoria());
         BaseMod.addCard(new FromNothing());
         BaseMod.addCard(new TheAnvil());
         BaseMod.addCard(new TimeSkip());
         BaseMod.addCard(new Partake());
-        BaseMod.addCard(new StoreSoul());
         BaseMod.addCard(new AwMan());
         BaseMod.addCard(new ReaperBlast());
         BaseMod.addCard(new Spelunk());
+        BaseMod.addCard(new Exorcise());
 
         //Powers
         BaseMod.addCard(new Acceptance());
@@ -360,15 +384,15 @@ public class VacantMod implements
         UnlockTracker.unlockCard(OpalShine.ID);
         UnlockTracker.unlockCard(Unearth.ID);
         UnlockTracker.unlockCard(EmptyShield.ID);
-        UnlockTracker.unlockCard(Exorcise.ID);
+        UnlockTracker.unlockCard(Memoria.ID);
         UnlockTracker.unlockCard(FromNothing.ID);
         UnlockTracker.unlockCard(TheAnvil.ID);
         UnlockTracker.unlockCard(TimeSkip.ID);
         UnlockTracker.unlockCard(Partake.ID);
-        UnlockTracker.unlockCard(StoreSoul.ID);
         UnlockTracker.unlockCard(AwMan.ID);
         UnlockTracker.unlockCard(ReaperBlast.ID);
         UnlockTracker.unlockCard(Spelunk.ID);
+        UnlockTracker.unlockCard(Exorcise.ID);
 
         //Powers
         UnlockTracker.unlockCard(Acceptance.ID);
@@ -422,11 +446,11 @@ public class VacantMod implements
                 getModID() + "Resources/localization/eng/VacantMod-Power-Strings.json");
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + "Resources/localization/eng/VacantMod-Orb-Strings.json");
-/*
+
 
         BaseMod.loadCustomStringsFile(EventStrings.class,
                 getModID() + "Resources/localization/eng/VacantMod-Event-Strings.json");
-
+/*
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 getModID() + "Resources/localization/eng/VacantMod-Potion-Strings.json");
 
@@ -470,6 +494,11 @@ public class VacantMod implements
     public static String makeRelicPath(String resourcePath)
     {
         return getModID() + "Resources/images/relics/" + resourcePath;
+    }
+
+    public static String makeEventPath(String resourcePath)
+    {
+        return getModID() + "Resources/images/events/" + resourcePath;
     }
 
     public static String makeOrbPath(String resourcePath)

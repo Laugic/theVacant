@@ -6,17 +6,17 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import theVacant.powers.*;
-import theVacant.relics.BoundSoul;
+import theVacant.relics.BoundSoulOld;
 
 public class SwitchFormAction extends AbstractGameAction
 {
     public int FORM_ID;
-    public BoundSoul soul;
+    public BoundSoulOld soul;
     public SwitchFormAction(int FORM_ID)
     {
         this.FORM_ID = FORM_ID;
-        if(AbstractDungeon.player.hasRelic(BoundSoul.ID));
-            soul = (BoundSoul) AbstractDungeon.player.getRelic(BoundSoul.ID);
+        if(AbstractDungeon.player.hasRelic(BoundSoulOld.ID));
+            soul = (BoundSoulOld) AbstractDungeon.player.getRelic(BoundSoulOld.ID);
     }
 
     @Override
@@ -45,7 +45,7 @@ public class SwitchFormAction extends AbstractGameAction
                 addToBot(new RemoveSpecificPowerAction(player, player, SolidSoulPower.POWER_ID));
             return;
         }
-        if(swapToForm == BoundSoul.FURY_FORM && player.hasPower(VacantForm.POWER_ID))
+        if(swapToForm == BoundSoulOld.FURY_FORM && player.hasPower(VacantForm.POWER_ID))
             return;
         MakePowersMatchForm(swapToForm);
     }
@@ -57,7 +57,7 @@ public class SwitchFormAction extends AbstractGameAction
             return;
         switch (swapToForm)
         {
-            case BoundSoul.FURY_FORM:
+            case BoundSoulOld.FURY_FORM:
                 if(!player.hasPower(FuryForm.POWER_ID))
                 {
                     addToTop(new RemoveSpecificPowerAction(player, player, SolemnForm.POWER_ID));
@@ -67,7 +67,7 @@ public class SwitchFormAction extends AbstractGameAction
                     soul.flash();
                 }
                 break;
-            case BoundSoul.VOID_FORM:
+            case BoundSoulOld.VOID_FORM:
                 if(!player.hasPower(VoidForm.POWER_ID))
                 {
                     addToTop(new RemoveSpecificPowerAction(player, player, SolemnForm.POWER_ID));
@@ -77,7 +77,7 @@ public class SwitchFormAction extends AbstractGameAction
                     soul.flash();
                 }
                 break;
-            case BoundSoul.VACANT_FORM:
+            case BoundSoulOld.VACANT_FORM:
                 if(!player.hasPower(VacantForm.POWER_ID))
                 {
                     addToTop(new RemoveSpecificPowerAction(player, player, SolemnForm.POWER_ID));
@@ -104,11 +104,11 @@ public class SwitchFormAction extends AbstractGameAction
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player.hasPower(VacantForm.POWER_ID))
-            return BoundSoul.VACANT_FORM;
+            return BoundSoulOld.VACANT_FORM;
         if(player.hasPower(FuryForm.POWER_ID))
-            return BoundSoul.FURY_FORM;
+            return BoundSoulOld.FURY_FORM;
         if(player.hasPower(VoidForm.POWER_ID))
-            return BoundSoul.VOID_FORM;
-        return BoundSoul.SOLEMN_FORM;
+            return BoundSoulOld.VOID_FORM;
+        return BoundSoulOld.SOLEMN_FORM;
     }
 }

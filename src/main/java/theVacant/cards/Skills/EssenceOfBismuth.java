@@ -64,11 +64,9 @@ public class EssenceOfBismuth extends AbstractDynamicCard
         {
             for(AbstractPower power: mo.powers)
             {
-                if(power.amount > 0 && power.type == AbstractPower.PowerType.DEBUFF)// && !VacantMod.IMMUNE_POWERS.contains(power.ID))
+                if(power.amount > 0 && power.type == AbstractPower.PowerType.DEBUFF && !VacantMod.IMMUNE_POWERS.contains(power.ID))
                 {
-                    power.amount *= 2;
-                    power.updateDescription();
-                    power.flash();
+                    addToBot(new ApplyPowerAction(mo, player, power));
                 }
             }
         }

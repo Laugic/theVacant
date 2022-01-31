@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theVacant.actions.ReduceOrbSizeAction;
 import theVacant.powers.InvisibleGemOrbPower;
+import theVacant.relics.RagRelic;
 
 import java.util.Collections;
 
@@ -78,6 +79,8 @@ public abstract class AbstractGemOrb extends CustomOrb
 
     public void ReduceSize(int amount)
     {
+        if(AbstractDungeon.player.hasRelic(RagRelic.ID) && !(this instanceof DiamondOrb))
+            return;
         passiveAmount = basePassiveAmount -= amount;
         evokeAmount = baseEvokeAmount -= amount;
         if(passiveAmount == 0 || evokeAmount == 0)

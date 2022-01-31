@@ -39,7 +39,7 @@ import static theVacant.VacantMod.makeCardPath;
 public class SapphireStrike extends AbstractDynamicCard {
 
     public static final String ID = VacantMod.makeID(SapphireStrike.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("SapphireStrike.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;

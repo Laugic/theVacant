@@ -30,11 +30,13 @@ theVacant\relics\VacantStarterRelic.class
 theVacant\cards\archive\Attacks\FireCrystal.class
 theVacant\cards\archive\Powers\ShatterSoul.class
 theVacant\cards\archive\Attacks\Throttle.class
+theVacant\powers\MemoriaPower.class
 theVacant\cards\archive\Attacks\Frenzy.class
 theVacant\cards\archive\Skills\EmptyShield.class
 theVacant\actions\PlayExhumationAction.class
 theVacant\cards\archive\Attacks\Slash.class
 theVacant\cards\Modifiers\MaterializeModifier.class
+theVacant\relics\CrystalBallRelic.class
 theVacant\cards\archive\Skills\TimeSkip.class
 theVacant\actions\EnhanceInHandAction.class
 theVacant\cards\Attacks\TopazFrenzy.class
@@ -102,10 +104,10 @@ theVacant\variables\VacantGlassDamage.class
 theVacant\orbs\OnyxOrb.class
 theVacant\cards\archive\Skills\Freedom.class
 theVacant\powers\EmptyEnergyGainPower.class
-theVacant\powers\ExorcisePower.class
 theVacant\powers\RunicThoughtsPower.class
 theVacant\cards\archive\Attacks\SealBreak.class
 theVacant\powers\DoomRune.class
+theVacant\relics\TombstoneRelic.class
 theVacant\variables\VacantMissingHealthDamage.class
 theVacant\cards\Attacks\EmeraldSplash.class
 theVacant\relics\Deathbell.class
@@ -128,7 +130,9 @@ theVacant\cards\archive\Powers\VoidEmbrace.class
 theVacant\cards\archive\Attacks\GraveDigger.class
 theVacant\cards\Skills\Dig.class
 theVacant\cards\archive\Skills\Accumulate.class
+theVacant\cards\archive\Skills\Memoria.class
 theVacant\relics\BrassGoblet.class
+theVacant\relics\BoundSoulOld.class
 theVacant\cards\archive\Attacks\FranticBlow.class
 theVacant\orbs\AbstractGemOrb.class
 theVacant\cards\Skills\StoreSoul.class
@@ -140,7 +144,6 @@ theVacant\powers\VacantForm.class
 theVacant\cards\archive\Skills\OnSecondThought.class
 theVacant\cards\archive\Skills\TheAnvil.class
 theVacant\cards\Attacks\SoulBash.class
-theVacant\cards\archive\Skills\Exorcise.class
 theVacant\cards\archive\Powers\Rejection.class
 theVacant\powers\GreaterMindUpgradedPower.class
 theVacant\cards\archive\Skills\Partake.class
@@ -179,6 +182,7 @@ theVacant\powers\VacancyRune.class
 theVacant\relics\OldBrassGoblet.class
 theVacant\actions\TempHPGainFromDamageAction.class
 theVacant\cards\archive\Powers\IntoTheAbyss.class
+theVacant\cards\Skills\Exorcise.class
 theVacant\cards\archive\Skills\HealingSalve.class
 theVacant\cards\archive\Skills\HolyWater.class
 theVacant\actions\DarkStrikeAction.class
@@ -187,6 +191,7 @@ theVacant\cards\Attacks\VacantStarterStrike.class
 theVacant\orbs\DiamondOrb.class
 theVacant\actions\RandomExhumeAction.class
 theVacant\cards\archive\Attacks\Carve.class
+theVacant\events\GobletEvent.class
 theVacant\powers\InvisibleGemOrbPower.class
 theVacant\cards\archive\Powers\VoidForm.class
 theVacant\cards\archive\Powers\Anguish.class
@@ -221,6 +226,7 @@ theVacant\cards\archive\Attacks\Whip.class
 theVacant\powers\ImmaterializePower.class
 theVacant\cards\archive\Skills\FromNothing.class
 theVacant\powers\FerocityRune.class
+theVacant\relics\LocketRelic.class
 theVacant\orbs\EmeraldOrb.class
 theVacant\cards\archive\Attacks\GraveWave.class
 theVacant\actions\MineGemAction.class
@@ -237,6 +243,7 @@ theVacant\cards\archive\Skills\RubyRage.class
 theVacant\cards\archive\Powers\EmptyForm.class
 theVacant\cards\archive\Skills\Ascend.class
 theVacant\cards\archive\Attacks\DimensionTear.class
+theVacant\relics\RagRelic.class
 theVacant\cards\archive\Skills\Return.class
 theVacant\powers\HollowRune.class
 theVacant\powers\WaitInWrathPower.class

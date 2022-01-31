@@ -19,7 +19,7 @@ public class Fortify extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Fortify.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Fortify.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
@@ -28,7 +28,7 @@ public class Fortify extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 10;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
     public Fortify()
@@ -36,7 +36,6 @@ public class Fortify extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
         block = baseBlock = BLOCK;
-        exhaust = true;
     }
 
     @Override
@@ -55,8 +54,6 @@ public class Fortify extends AbstractDynamicCard
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradedBlock = true;
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

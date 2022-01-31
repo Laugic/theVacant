@@ -18,7 +18,7 @@ public class Spelunk extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Spelunk.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Spelunk.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.COMMON;

@@ -30,7 +30,7 @@ public class ReaperBlast extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(ReaperBlast.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("ReaperBlast.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.UNCOMMON;

@@ -1,3 +1,11 @@
+0.17
+Added Relics: Locket Piece, Cracked Crystal Ball, Polishing Rag, Tombstone, 
+Arted ALL CARDS
+Added final cutscene
+Added event to power up Goblet (and removed Store Soul card)
+Onyx no longer is in the Random gem pool
+Fixed some typos and wording errors
+-----
 0.16
 Updated Card Backgrounds
 Arted all rares

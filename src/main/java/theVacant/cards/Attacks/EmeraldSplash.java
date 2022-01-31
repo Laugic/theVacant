@@ -36,7 +36,7 @@ import static theVacant.VacantMod.makeCardPath;
 public class EmeraldSplash extends AbstractDynamicCard {
 
     public static final String ID = VacantMod.makeID(EmeraldSplash.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("EmeraldSplash.png");
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;

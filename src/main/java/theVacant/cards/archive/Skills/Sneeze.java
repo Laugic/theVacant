@@ -16,7 +16,7 @@ public class Sneeze extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Sneeze.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Sneeze.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.*;
+import theVacant.relics.LocketRelic;
 
 public class VacantMillAction  extends AbstractGameAction
 {
@@ -158,11 +159,11 @@ public class VacantMillAction  extends AbstractGameAction
     private void PostRebound(AbstractCard card)
     {
         AbstractPlayer player = AbstractDungeon.player;
-        /*if(player != null && player.hasPower(GreaterMindPower.POWER_ID))
+        if(player != null && player.hasRelic(LocketRelic.ID))
         {
-            player.getPower(GreaterMindPower.POWER_ID).flash();
-            card.setCostForTurn(-9);
-        }*/
+            player.getRelic(LocketRelic.ID).flash();
+            addToBot(new GainBlockAction(player, LocketRelic.BLOCK_AMOUNT));
+        }
     }
 
     private boolean GetSpecialRebound(AbstractCard card)

@@ -10,7 +10,7 @@
     "NAME": "Amethyst",
     "DESCRIPTION": [
       "#yPassive: #yMill #b", " cards and lose 1 size. NL #yEvoke: Gain #b",
-      " #pVoid. NL Once size reaches 0, remove this orb and its slot."
+      " #yGloom. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:SapphireOrb": {
@@ -38,7 +38,7 @@
     "NAME": "Emerald",
     "DESCRIPTION": [
       "#yPassive: Draw 1 card. NL #yBreak: Draw #b",
-      " card.", " cards."
+      " card.", " cards. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:OpalOrb": {

@@ -27,7 +27,7 @@ import static theVacant.VacantMod.makeCardPath;
 public class BackInTheMine extends AbstractDynamicCard {
 
     public static final String ID = VacantMod.makeID(BackInTheMine.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("BackintheMine.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.COMMON;

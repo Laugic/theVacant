@@ -2,19 +2,16 @@ package theVacant.cards.Skills;
 
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theVacant.VacantMod;
 import theVacant.actions.SwitchFormAction;
 import theVacant.actions.SyphonAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.powers.VacantForm;
-import theVacant.relics.BoundSoul;
+import theVacant.relics.BoundSoulOld;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
@@ -48,7 +45,7 @@ public class BecomeEmpty extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        addToBot(new SwitchFormAction(BoundSoul.VACANT_FORM));
+        addToBot(new SwitchFormAction(BoundSoulOld.VACANT_FORM));
         addToBot(new SyphonAction(magicNumber));
     }
 

@@ -23,8 +23,8 @@
     "NAME": "Will",
     "DESCRIPTIONS": ["Your will to fight the influence of the artifact: #b"]
   },
-  "theVacant:ExorcisePower": {
-    "NAME": "Exorcise",
+  "theVacant:MemoriaPower": {
+    "NAME": "Memoria",
     "DESCRIPTIONS": ["The next #b", " card you play that #yExhausts plays twice.", " cards you play that #yExhaust plays twice."]
   },
   "theVacant:IronWillPower": {
@@ -45,7 +45,7 @@
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
-    "DESCRIPTIONS": ["Powers have #yRebound."]
+    "DESCRIPTIONS": ["Powers have #yRebound, and cost 0 until the end of the turn after being Milled."]
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",

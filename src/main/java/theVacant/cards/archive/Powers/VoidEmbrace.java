@@ -25,7 +25,7 @@ public class VoidEmbrace extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(VoidEmbrace.class.getSimpleName());
-    public static final String IMG = makeCardPath("Power.png");
+    public static final String IMG = makeCardPath("VoidEmbrace.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

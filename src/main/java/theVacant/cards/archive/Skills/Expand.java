@@ -17,7 +17,7 @@ public class Expand extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Expand.class.getSimpleName());
-    public static final String IMG = makeCardPath("Skill.png");
+    public static final String IMG = makeCardPath("Expand.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;

@@ -3,9 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnPlayerDeathPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,11 +13,6 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.FocusPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
-import theVacant.actions.EnhanceRandomInHandAction;
-import theVacant.actions.VacantMillAction;
-import theVacant.cards.Modifiers.SoulforgedModifier;
-import theVacant.cards.Modifiers.VoidboundModifier;
-import theVacant.relics.BoundSoul;
 import theVacant.util.TextureLoader;
 
 public class FuryForm extends FormPower implements CloneablePowerInterface

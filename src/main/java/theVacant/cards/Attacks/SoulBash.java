@@ -1,31 +1,17 @@
 package theVacant.cards.Attacks;
 
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
-import theVacant.cards.Modifiers.EchoModifier;
 import theVacant.characters.TheVacant;
-import theVacant.powers.DoomPower;
-import theVacant.powers.ReapPower;
-import theVacant.powers.VoidPower;
-import theVacant.relics.BoundSoul;
-import theVacant.util.KeywordManager;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
