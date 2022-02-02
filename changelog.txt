@@ -5,6 +5,17 @@ Added final cutscene
 Added event to power up Goblet (and removed Store Soul card)
 Onyx no longer is in the Random gem pool
 Fixed some typos and wording errors
+-
+0.17.1
+Balance Summary:
+Sapphire upgrades are less strong, Breaking Gems is harder, and reduced sustain options.
+
+Cracked Crystal Ball no longer exhausts the discard pile, and no longer affects Statuses.
+Removed Diamond from Random Gem pool and fixed bug where Rubies didn't show up
+Got Our Pickaxe now only works for 3(4) turns and does not break multiple gems when stacked
+Gilded Pickaxe now Exhausts
+Nerfed Sapphire upgrades
+Tweaked Orb wording
 -----
 0.16
 Updated Card Backgrounds

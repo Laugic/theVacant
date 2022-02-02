@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -44,7 +45,7 @@ public class PickaxePower extends AbstractPower implements CloneablePowerInterfa
         this.source = source;
 
         type = PowerType.BUFF;
-        isTurnBased = false;
+        isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -58,8 +59,9 @@ public class PickaxePower extends AbstractPower implements CloneablePowerInterfa
         if(!isPlayer)
             return;
         flash();
-        for (int i = 0; i < amount; i++)
-            addToTop(new EvokeOrbAction(1));
+        //for (int i = 0; i < amount; i++)
+        addToTop(new EvokeOrbAction(1));
+        addToBot(new ReducePowerAction(owner, owner, this, 1));
         //addToBot(new MakeTempCardInHandAction(new Pickaxe()));
         //addToBot(new MineGemAction(null, amount));
     }
@@ -67,7 +69,7 @@ public class PickaxePower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

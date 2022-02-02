@@ -47,7 +47,7 @@ public class Spelunk extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             upgradedMagicNumber = true;
             initializeDescription();
         }

@@ -45,7 +45,7 @@
     "NAME": "Cracked Crystal Ball",
     "FLAVOR": "Sometimes magic leaking into the world is more powerful than when it is contained.",
     "DESCRIPTIONS": [
-      "#yExhausted cards return to your draw pile after 2 turns. When a card would enter your discard pile, it #yExhausts instead."
+      "#yExhausted cards that aren't #yStatuses return to your draw pile after 2 turns."
     ]
   },
   "theVacant:RagRelic": {

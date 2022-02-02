@@ -47,7 +47,7 @@ public class SapphireStrike extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 6;
 
     public SapphireStrike()
     {
@@ -72,7 +72,7 @@ public class SapphireStrike extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(2);
             upgradedDamage = true;
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             upgradedMagicNumber = true;
             initializeDescription();
         }

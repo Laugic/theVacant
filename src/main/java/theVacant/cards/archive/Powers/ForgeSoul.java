@@ -35,20 +35,20 @@ public class ForgeSoul extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static ArrayList<TooltipInfo> SoulforgedTooltip;
 
     public ForgeSoul()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 4;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ForgeSoulPower(player, player, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ForgeSoulPower(player, player, magicNumber), 0));
     }
 
     @Override
@@ -57,8 +57,8 @@ public class ForgeSoul extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
-            upgradedMagicNumber = true;
+            isInnate = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

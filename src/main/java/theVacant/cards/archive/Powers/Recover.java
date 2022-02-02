@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.powers.RegenPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.RecoverPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -28,14 +29,14 @@ public class Recover extends AbstractDynamicCard
     public Recover()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+        magicNumber = baseMagicNumber = 10;
+        tags.add(AbstractCard.CardTags.HEALING);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegenPower(player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RecoverPower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -44,7 +45,7 @@ public class Recover extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(4);
             initializeDescription();
         }
     }

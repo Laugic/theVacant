@@ -17,6 +17,7 @@ theVacant\actions\VacantMillAction.class
 theVacant\cards\AbstractDynamicCard.class
 theVacant\powers\ReapPower.class
 theVacant\cards\AbstractVacantCard.class
+theVacant\powers\RecoverPower.class
 theVacant\actions\ReduceOrbSizeAction.class
 theVacant\cards\archive\Powers\IronWill.class
 theVacant\cards\Skills\Spelunk.class

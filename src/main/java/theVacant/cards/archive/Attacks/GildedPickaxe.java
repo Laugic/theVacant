@@ -35,6 +35,7 @@ public class GildedPickaxe extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        exhaust = true;
     }
 
     @Override

@@ -334,42 +334,42 @@
     "NAMES": [
       "ruby"
     ],
-    "DESCRIPTION": "#yGem: Gain #yVigor and #yStrength. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yVigor. NL #yBreak: Gain #yStrength. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Amethyst",
     "NAMES": [
       "amethyst"
     ],
-    "DESCRIPTION": "#yGem: #yMill and gain #pGloom. NL Loses size over time."
+    "DESCRIPTION": "#yGem: #yMill. NL #yBreak: Gain #pGloom. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Opal",
     "NAMES": [
       "opal"
     ],
-    "DESCRIPTION": "#yGem: Gains Energy. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain Energy. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Sapphire",
     "NAMES": [
       "sapphire"
     ],
-    "DESCRIPTION": "#yOrb: Gain #yTemperance and #yDexterity. NL Loses size over time."
+    "DESCRIPTION": "#yOrb: Gain #yTemperance. NL #yBreak: Gain #yDexterity. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Diamond",
     "NAMES": [
       "diamond"
     ],
-    "DESCRIPTION": "#yGem: Gain #yIntangible and #yBuffer. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yIntangible. NL #yBreak: Gain #yBuffer. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Onyx",
     "NAMES": [
       "onyx"
     ],
-    "DESCRIPTION": "#yGem: Apply #yDoom. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Apply #yDoom to EVERYONE. NL #yBreak: Apply #yDoom to enemies.  NL Loses size over time."
   },
   {
     "PROPER_NAME": "Emerald",

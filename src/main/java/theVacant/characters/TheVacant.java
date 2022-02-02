@@ -31,6 +31,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
+import theVacant.cards.archive.Powers.GotOurPickaxe;
 import theVacant.cards.archive.Powers.IntoTheAbyss;
 import theVacant.cards.archive.Powers.Rejection;
 import theVacant.cards.archive.Skills.*;

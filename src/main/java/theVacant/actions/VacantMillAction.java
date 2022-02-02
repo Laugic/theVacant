@@ -148,6 +148,8 @@ public class VacantMillAction  extends AbstractGameAction
                 addToBot(new GainBlockAction(player, player.getPower(AquamarinePower.POWER_ID).amount));
             if(player instanceof TheVacant)
                 ((TheVacant)player).millsThisTurn++;
+            if(player.hasPower(ForgeSoulPower.POWER_ID) && card.canUpgrade())
+                card.upgrade();
         }
     }
 

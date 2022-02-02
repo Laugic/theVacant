@@ -316,7 +316,7 @@
   },
   "theVacant:Fortify": {
     "NAME": "Fortify",
-    "DESCRIPTION": "Gain !B! Block. NL thevacant:Wounded: Prevent the next time you would lose HP.",
+    "DESCRIPTION": "Gain !B! Block. NL thevacant:Wounded: Prevent the next time you would lose HP. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain !B! Block. NL thevacant:Wounded: Prevent the next time you would lose HP."
   },
   "theVacant:Sneeze": {
@@ -462,8 +462,8 @@
   },
   "theVacant:GildedPickaxe": {
     "NAME": "Gilded Pickaxe",
-    "DESCRIPTION": "Deal !D! damage twice. thevacant:Break your next thevacant:Gem.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. thevacant:Break your next 2 thevacant:Gems."
+    "DESCRIPTION": "Deal !D! damage twice. thevacant:Break your next thevacant:Gem. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage twice. thevacant:Break your next 2 thevacant:Gems. NL Exhaust."
   },
   "theVacant:Snap": {
     "NAME": "Snap",
@@ -527,8 +527,7 @@
   },
   "theVacant:GotOurPickaxe": {
     "NAME": "Got Our Pickaxe",
-    "DESCRIPTION": "At the end of your turn, thevacant:Break your next thevacant:Gem.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, thevacant:Break your next thevacant:Gem."
+    "DESCRIPTION": "At the end of your next !M! turns, thevacant:Break your next thevacant:Gem."
   },
   "theVacant:CleanseSoul": {
     "NAME": "Cleanse Soul",
@@ -545,7 +544,7 @@
   },
   "theVacant:Recover": {
     "NAME": "Recover",
-    "DESCRIPTION": "Gain !M! Regen."
+    "DESCRIPTION": "At the end of battle, if you are thevacant:Wounded, heal !M! HP."
   },
   "theVacant:IronWill": {
     "NAME": "Iron Will",
@@ -580,7 +579,8 @@
   },
   "theVacant:VoidEmbrace": {
     "NAME": "Void Embrace",
-    "DESCRIPTION": "Whenever a card Exhausts, gain 1 [#ee82ee]Void[]."
+    "DESCRIPTION": "Whenever a card Exhausts, gain !M! [#ee82ee]Void[].",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever a card Exhausts, gain !M! [#ee82ee]Void[]."
   },
   "theVacant:GreaterMind": {
     "NAME": "Greater Mind",
@@ -602,7 +602,8 @@
   },
   "theVacant:ForgeSoul": {
     "NAME": "Forge Soul",
-    "DESCRIPTION": "At the start of your turn, gain !M! Temporary_HP."
+    "DESCRIPTION": "Whenever you thevacant:Mill a card, upgrade it for the rest of combat.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you thevacant:Mill a card, upgrade it for the rest of combat."
   },
   "theVacant:VoidForm": {
     "NAME": "Void Form",

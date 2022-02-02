@@ -34,7 +34,7 @@ public class ForgeSoulPower extends AbstractPower implements CloneablePowerInter
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = amount;
+        this.amount = -1;
         this.source = source;
 
         type = PowerType.BUFF;
@@ -45,7 +45,7 @@ public class ForgeSoulPower extends AbstractPower implements CloneablePowerInter
 
         updateDescription();
     }
-
+/*
     @Override
     public void atStartOfTurnPostDraw()
     {
@@ -53,12 +53,11 @@ public class ForgeSoulPower extends AbstractPower implements CloneablePowerInter
         addToBot(new AddTemporaryHPAction(owner, owner, amount));
 //        AbstractDungeon.actionManager.addToBottom(new EnhanceRandomInHandAction(this.amount, SoulforgedModifier.ID, 1));
     }
-
+*/
     @Override
     public void updateDescription()
     {
-
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

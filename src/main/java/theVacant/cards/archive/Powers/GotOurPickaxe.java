@@ -31,12 +31,13 @@ public class GotOurPickaxe extends AbstractDynamicCard
     public GotOurPickaxe()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PickaxePower(player, player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PickaxePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -45,8 +46,8 @@ public class GotOurPickaxe extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isInnate = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

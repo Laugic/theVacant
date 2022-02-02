@@ -53,7 +53,7 @@
   },
   "theVacant:PickaxePower": {
     "NAME": "Got Our Pickaxe",
-    "DESCRIPTIONS": ["At the end of your turn, #yBreak your next #b", " #yGem.", " #yGems."]
+    "DESCRIPTIONS": ["At the end of your turn, #yBreak your next #yGem."]
   },
   "theVacant:AquamarinePower": {
     "NAME": "Reflection",
@@ -66,6 +66,10 @@
   "theVacant:GreaterMindPower": {
     "NAME": "Greater Mind",
     "DESCRIPTIONS": ["Whenever you play a Power that costs 1 or more, add a random Power to your hand."]
+  },
+  "theVacant:RecoverPower": {
+    "NAME": "Recover",
+    "DESCRIPTIONS": ["At the end of battle, if you are #yWounded, heal #b", " HP."]
   },
   "theVacant:DarkReflexPower": {
     "NAME": "Dark Reflex",
@@ -127,7 +131,7 @@
   },
   "theVacant:ForgeSoulPower": {
     "NAME": "Forge Soul",
-    "DESCRIPTIONS": ["At the start of your turn, gain #b"," #yTemporary #yHP."]
+    "DESCRIPTIONS": ["Whenever you #yMill a card, upgrade it for the rest of combat."]
   },
   "theVacant:SolidSoulPower": {
     "NAME": "Solid Soul",

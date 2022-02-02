@@ -35,21 +35,21 @@ public class VoidEmbrace extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     private static ArrayList<TooltipInfo> VoidTooltip;
 
     public VoidEmbrace()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         //addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(player, player, new VoidEmbracePower(player, player, 1), 1));
+        addToBot(new ApplyPowerAction(player, player, new VoidEmbracePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -69,7 +69,8 @@ public class VoidEmbrace extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(1);
+            isInnate = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

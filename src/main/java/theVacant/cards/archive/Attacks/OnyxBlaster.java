@@ -34,7 +34,7 @@ public class OnyxBlaster extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 12;
 
     public OnyxBlaster()
     {
