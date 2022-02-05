@@ -19,7 +19,6 @@ public class ChipVFX extends AbstractGameEffect {
     private final float ax, ay, tx, ty; //Actual xy (for sparks vfx), Target xy (for pickaxe aiming)
     private final AtlasRegion img;
     private float x, y;
-    private boolean playedSFX;
 
     public ChipVFX(float x, float y) {
         super();
@@ -40,10 +39,6 @@ public class ChipVFX extends AbstractGameEffect {
         duration -= Gdx.graphics.getDeltaTime();
         if (duration < startingDuration / 4.0F) {
             color.a = duration / (startingDuration / 2.0F);
-            if (!playedSFX) {
-                playedSFX = true;
-                //CardCrawlGame.sound.playA("RELIC_DROP_ROCKY", MathUtils.random(0.7F, 0.8F));
-            }
         }
         rotation = Interpolation.swing.apply(90, -25, (startingDuration - duration) * 2);
         x = Interpolation.swing.apply(tx-30*Settings.scale, tx, (startingDuration - duration) * 2);
