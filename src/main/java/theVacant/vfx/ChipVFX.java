@@ -9,12 +9,14 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 import theVacant.util.TextureLoader;
 
 public class ChipVFX extends AbstractGameEffect {
     private static final Texture t = TextureLoader.getTexture("theVacantResources/images/vfx/Pickaxe.png");
-    private final float tx, ty;
+    private final float ax, ay, tx, ty; //Actual xy (for sparks vfx), Target xy (for pickaxe aiming)
     private final AtlasRegion img;
     private float x, y;
     private boolean playedSFX;
@@ -22,6 +24,8 @@ public class ChipVFX extends AbstractGameEffect {
     public ChipVFX(float x, float y) {
         super();
         img = new AtlasRegion(t, 0, 0, t.getWidth(), t.getHeight());
+        ax = x;
+        ay = y;
         tx = x - img.getRegionWidth()/2F;
         ty = y + img.getRegionHeight()/2F;
         duration = startingDuration = Settings.ACTION_DUR_MED;
@@ -50,6 +54,9 @@ public class ChipVFX extends AbstractGameEffect {
             isDone = true;
             color.a = 0.0F;
             CardCrawlGame.sound.playA("RELIC_DROP_ROCKY", MathUtils.random(0.7F, 0.8F));
+            for(int i = 0; i < 3; ++i) {
+                AbstractDungeon.effectsQueue.add(new DamageImpactLineEffect(ax, ay));
+            }
         }
     }
 
