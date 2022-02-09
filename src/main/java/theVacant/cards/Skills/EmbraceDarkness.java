@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -13,8 +14,11 @@ import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.DoomPower;
 import theVacant.powers.ShroudPower;
+import theVacant.powers.VoidPower;
+import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -29,29 +33,39 @@ public class EmbraceDarkness extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static ArrayList<TooltipInfo> VoidboundTooltip;
+    private static ArrayList<TooltipInfo> Tooltip;
 
     private static final int COST = 2;
     private static final int UPGRADE_MAGIC_NUM = 3;
-    private static final int DOOM_AMOUNT = 2;
+    private static final int DOOM_AMOUNT = 2, VOID_AMOUNT = 2, UPGRADED_VOID_AMOUNT = 3;
 
     public EmbraceDarkness()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 6;
         exhaust = true;
-
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
+        addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT), upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT));
+       /* addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));*/
     }
-
+    @Override
+    public List<TooltipInfo> getCustomTooltips()
+    {
+        if(Tooltip == null)
+        {
+            Tooltip = new ArrayList<>();
+            Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_ID)));
+            //Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_FORM_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_FORM_ID)));
+        }
+        return Tooltip;
+    }
     @Override
     public void upgrade()
     {
@@ -60,6 +74,7 @@ public class EmbraceDarkness extends AbstractDynamicCard {
             upgradeName();
             upgradeMagicNumber(UPGRADE_MAGIC_NUM);
             upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

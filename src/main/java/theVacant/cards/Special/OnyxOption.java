@@ -50,11 +50,10 @@ public class OnyxOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
-    public OnyxOption()
+    public OnyxOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        Random random = new Random();
-        magicNumber = baseMagicNumber = random.random(2,3);
+        magicNumber = baseMagicNumber = size;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)

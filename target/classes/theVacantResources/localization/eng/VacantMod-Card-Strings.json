@@ -373,8 +373,8 @@
   },
   "theVacant:Exorcise": {
     "NAME": "Exorcise",
-    "DESCRIPTION": "Cleanse all your Debuffs. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Cleanse all your Debuffs and apply them to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Remove all your Debuffs. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Remove all your Debuffs and apply them to ALL enemies. NL Exhaust."
   },
   "theVacant:HolyWater": {
     "NAME": "Holy Water",
@@ -382,7 +382,8 @@
   },
   "theVacant:EmbraceDarkness": {
     "NAME": "Embrace Darkness",
-    "DESCRIPTION": "Gain !M! thevacant:Shroud. NL Apply 2 thevacant:Doom to EVERYONE. NL Exhaust."
+    "DESCRIPTION": "Gain !M! thevacant:Shroud NL and 2 [#ee82ee]Void[]. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thevacant:Shroud NL and 3 [#ee82ee]Void[]. NL Exhaust."
   },
   "theVacant:Unearth": {
     "NAME": "Unearth",
@@ -400,7 +401,7 @@
   },
   "theVacant:Corporeate": {
     "NAME": "Corporeate",
-    "DESCRIPTION": "thevacant:Mill !M!. NL thevacant:Return 1."
+    "DESCRIPTION": "thevacant:Mill !M!. NL thevacant:Return 1 card."
   },
   "theVacant:RubyRage": {
     "NAME": "Ruby Rage",

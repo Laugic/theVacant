@@ -48,15 +48,14 @@ public class AmethystOption  extends AbstractDynamicCard
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.SPECIAL;
     private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.NONE;
     private static final AbstractCard.CardType TYPE = CardType.SKILL;
-    public static final AbstractCard.CardColor COLOR = AbstractCard.CardColor.COLORLESS;
+    public static final AbstractCard.CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = -2;
 
-    public AmethystOption()
+    public AmethystOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        Random random = new Random();
-        magicNumber = baseMagicNumber = random.random(2,5);
+        magicNumber = baseMagicNumber = size;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)

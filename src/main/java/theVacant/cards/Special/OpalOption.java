@@ -51,11 +51,10 @@ public class OpalOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
-    public OpalOption()
+    public OpalOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        Random random = new Random();
-        magicNumber = baseMagicNumber = random.random(2,3);
+        magicNumber = baseMagicNumber = size;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)

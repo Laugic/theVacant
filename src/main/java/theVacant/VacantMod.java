@@ -32,6 +32,7 @@ import theVacant.cards.Attacks.*;
 import theVacant.cards.Powers.*;
 import theVacant.cards.Skills.*;
 import theVacant.cards.Attacks.GildedPickaxe;
+import theVacant.cards.Special.*;
 import theVacant.characters.TheVacant;
 
 import com.badlogic.gdx.graphics.Color;
@@ -248,6 +249,19 @@ public class VacantMod implements
         //BaseMod.addCard(new VacantStarterDefend());
         //BaseMod.addCard(new Dig());
         //BaseMod.addCard(new Spinshield());
+
+        //Options
+        int gemSize = 3;
+        BaseMod.addCard(new AmethystOption(gemSize));
+        BaseMod.addCard(new DiamondOption(gemSize));
+        BaseMod.addCard(new EmeraldOption(gemSize));
+        BaseMod.addCard(new OnyxOption(gemSize));
+        BaseMod.addCard(new OpalOption(gemSize));
+        BaseMod.addCard(new RubyOption(gemSize));
+        BaseMod.addCard(new SapphireOption(gemSize));
+
+
+
         BaseMod.addCard(new AbsorbAmethyst());
         BaseMod.addCard(new TopazFrenzy());
         BaseMod.addCard(new DiamondIsUnbreakable());
@@ -421,6 +435,17 @@ public class VacantMod implements
         UnlockTracker.unlockCard(RunicThoughts.ID);
         UnlockTracker.unlockCard(Reflection.ID);
         //Powers
+
+
+
+        //Options
+        UnlockTracker.unlockCard(AmethystOption.ID);
+        UnlockTracker.unlockCard(DiamondOption.ID);
+        UnlockTracker.unlockCard(EmeraldOption.ID);
+        UnlockTracker.unlockCard(OnyxOption.ID);
+        UnlockTracker.unlockCard(OpalOption.ID);
+        UnlockTracker.unlockCard(RubyOption.ID);
+        UnlockTracker.unlockCard(SapphireOption.ID);
 
         logger.info("Making sure the cards are unlocked.");
 /*

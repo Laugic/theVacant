@@ -139,8 +139,6 @@ public abstract class AbstractGemOrb extends CustomOrb
         }
 
         AbstractPlayer player = AbstractDungeon.player;
-        if(!player.hasPower(InvisibleGemOrbPower.POWER_ID))
-            player.powers.add(new InvisibleGemOrbPower(player, player, 1));
     }
 
     // Render the orb.

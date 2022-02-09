@@ -52,11 +52,10 @@ public class DiamondOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
-    public DiamondOption()
+    public DiamondOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        Random random = new Random();
-        magicNumber = baseMagicNumber = random.random(1,3);
+        magicNumber = baseMagicNumber = size;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)

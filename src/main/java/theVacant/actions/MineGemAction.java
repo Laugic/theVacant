@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import theVacant.orbs.*;
+import theVacant.powers.InvisibleGemOrbPower;
 
 public class MineGemAction extends AbstractGameAction
 {
@@ -46,6 +47,10 @@ public class MineGemAction extends AbstractGameAction
             gem = GetRandomGem();
 
         addToTop(new ChannelAction(gem, false));
+
+        if(!AbstractDungeon.player.hasPower(InvisibleGemOrbPower.POWER_ID))
+            AbstractDungeon.player.powers.add(new InvisibleGemOrbPower(AbstractDungeon.player, AbstractDungeon.player, 1));
+
         AbstractDungeon.player.increaseMaxOrbSlots(1, false);
         Random rand = new Random();
         if(rand.randomBoolean())

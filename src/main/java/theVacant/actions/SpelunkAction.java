@@ -34,17 +34,17 @@ public class SpelunkAction extends AbstractGameAction
     {
         int rand = AbstractDungeon.cardRandomRng.random(41);
         if(rand < 10)
-            return new RubyOption();
+            return new RubyOption(AbstractDungeon.miscRng.random(3,6));
         if(rand < 20)
-            return new SapphireOption();
+            return new SapphireOption(AbstractDungeon.miscRng.random(3,6));
         if(rand < 25)
-            return new OpalOption();
+            return new OpalOption(AbstractDungeon.miscRng.random(2,3));
         if(rand < 30)
-            return new EmeraldOption();
+            return new EmeraldOption(AbstractDungeon.miscRng.random(2,3));
         if(rand < 35)
-            return new OnyxOption();
+            return new OnyxOption(AbstractDungeon.miscRng.random(2,3));
         if(rand < 40)
-            return new AmethystOption();
-        return new DiamondOption();
+            return new AmethystOption(AbstractDungeon.miscRng.random(2, 5));
+        return new DiamondOption(AbstractDungeon.miscRng.random(1,3));
     }
 }

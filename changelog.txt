@@ -12,6 +12,14 @@ Many other minor balance tweaks and changes
 
 Reap no longer triggers on thorns and is removed entirely at the end of the turn.
 Evoking a Gem no longer decreases max orb slots.
+
+--
+0.18.0.1 & 2
+Fixed wording and changed cost of Exorcise
+Changed Embrace Darkness to grant Void instead of Doom
+Return keyword now says "card(s)" after it
+Gem Option Cards now appear in the compendium & are randomized based on the seed
+Misc backend changes
 -----
 0.17
 Added Relics: Locket Piece, Cracked Crystal Ball, Polishing Rag, Tombstone, 
