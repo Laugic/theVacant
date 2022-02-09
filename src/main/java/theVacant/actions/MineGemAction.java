@@ -1,31 +1,34 @@
 package theVacant.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
-import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.random.Random;
 import theVacant.orbs.*;
-import theVacant.powers.EtchPower;
-import theVacant.powers.VoidEmbracePower;
-import theVacant.powers.VoidPower;
 
 public class MineGemAction extends AbstractGameAction
 {
-    private AbstractOrb orbType;
+    private AbstractOrb gem;
     int size = 0;
+    boolean chipOrb = false;
+
+    public MineGemAction(AbstractOrb newOrbType, boolean chip)
+    {
+        actionType = ActionType.SPECIAL;
+        duration = Settings.ACTION_DUR_FAST;
+        gem = newOrbType;
+        size = gem.passiveAmount;
+        chipOrb = chip;
+    }
 
     public MineGemAction(AbstractOrb gemOrb, int size)
     {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
-        orbType = gemOrb;
+        gem = gemOrb;
         this.size = size;
     }
 
@@ -33,18 +36,24 @@ public class MineGemAction extends AbstractGameAction
     {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
-        orbType = newOrbType;
-        size = orbType.passiveAmount;
+        gem = newOrbType;
+        size = gem.passiveAmount;
     }
 
     public void update()
     {
-        if(orbType == null)
-            orbType = GetRandomGem();
+        if(gem == null)
+            gem = GetRandomGem();
 
-        addToTop(new ChannelAction(orbType, false));
-        addToTop(new IncreaseMaxOrbAction(1));
-
+        addToTop(new ChannelAction(gem, false));
+        AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+        Random rand = new Random();
+        if(rand.randomBoolean())
+            addToTop(new SFXAction("theVacant:gemSpawn"));
+        else
+            addToTop(new SFXAction("theVacant:gemSpawn2"));
+        if(chipOrb)
+            addToBot(new ChipOrbAction(gem, 1));
         isDone = true;
     }
 

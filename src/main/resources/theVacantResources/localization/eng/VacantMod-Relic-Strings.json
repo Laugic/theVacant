@@ -52,7 +52,7 @@
     "NAME": "Polishing Rag",
     "FLAVOR": "Shiny gems are more powerful, everyone knows this.",
     "DESCRIPTIONS": [
-      "All #ythevacant:Gems other than Diamonds do not decrease in size."
+      "#ythevacant:Gems no longer decrease in size at the start of your turn."
     ]
   },
   "theVacant:BrassGoblet": {
@@ -67,7 +67,7 @@
     "NAME": "Overflowing Goblet",
     "FLAVOR": "An ancient artifact, now overflowing with dark power.",
     "DESCRIPTIONS": [
-      "At the start of combat, gain #b",
+      "Replaces #yBrass #yGoblet. At the start of combat, gain #b",
       " #yArtifact."
     ]
   },

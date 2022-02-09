@@ -53,9 +53,9 @@ public class DoomPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public float atDamageReceive(float damage, DamageInfo.DamageType damageType)
     {
-        return damage + amount;// + ((player.hasPower(WhenDarknessComesPower.POWER_ID) && this.owner != player)?this.amount*(player.getPower(WhenDarknessComesPower.POWER_ID).amount + 1):this.amount);
+        return damage + amount;
     }
-
+    // + ((player.hasPower(WhenDarknessComesPower.POWER_ID) && this.owner != player)?this.amount*(player.getPower(WhenDarknessComesPower.POWER_ID).amount + 1):this.amount);
     @Override
     public void updateDescription()
     {

@@ -4,6 +4,7 @@ import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
@@ -20,6 +21,9 @@ public class VacantMillAction  extends AbstractGameAction
     private int startAmount = 0;
     private int voidAmount;
     private int millNum;
+
+    private SFXAction waka = new SFXAction("theVacant:waka");
+
     public VacantMillAction(int numCards)
     {
         amount = numCards;
@@ -141,7 +145,12 @@ public class VacantMillAction  extends AbstractGameAction
                 {
                     actionType = ActionType.EXHAUST;
                     if(player.discardPile.contains(card))
+                    {
                         player.discardPile.moveToExhaustPile(card);
+                        if(!AbstractDungeon.actionManager.actions.contains(waka))
+                            AbstractDungeon.actionManager.addToBottom(waka);
+                        player.getPower(CleanseSoulPower.POWER_ID).flash();
+                    }
                 }
             }
             if(player.hasPower(AquamarinePower.POWER_ID) && player.getPower(AquamarinePower.POWER_ID).amount > 0)

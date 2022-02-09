@@ -5,14 +5,14 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.defect.DecreaseMaxOrbAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
+import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theVacant.actions.ReduceOrbSizeAction;
@@ -30,13 +30,14 @@ public abstract class AbstractGemOrb extends CustomOrb
     private static final float ORB_WAVY_DIST = 0.04f;
     private static final float PI_4 = 12.566371f;
 
-    public boolean turnStartOrb;
+    public boolean turnStartOrb, oneSizeEffect;
 
-    public AbstractGemOrb(String ID, String name, int size, boolean turnStart, String path)
+    public AbstractGemOrb(String ID, String name, int size, boolean turnStart, boolean oneSize, String path)
     {
         super(ID, name, size, size, "", "", path);
 
         turnStartOrb = turnStart;
+        oneSizeEffect = oneSize;
         updateDescription();
 
         angle = MathUtils.random(360.0f); // More Animation-related Numbers
@@ -54,73 +55,75 @@ public abstract class AbstractGemOrb extends CustomOrb
     @Override
     public void onEvoke()
     {
-        EvokeGem();
+        onChip(passiveAmount);
+        //evokeGem();
         //ReduceSize(baseEvokeAmount);
-        AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
+        //AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
         //RemoveSpecificGem(player.orbs.indexOf(this));
     }
 
     public void onStartOfTurnPostDraw()
     {
         if(turnStartOrb)
-        {
-            TriggerPassive();
+            triggerPassive(oneSizeEffect ? 1 : passiveAmount);
+        if(!AbstractDungeon.player.hasRelic(RagRelic.ID))
             AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this));
-            updateDescription();
-        }
-    }
-
-    public abstract void TriggerPassive();
-
-    public void ReduceSize()
-    {
-        ReduceSize(1);
-    }
-
-    public void ReduceSize(int amount)
-    {
-        if(AbstractDungeon.player.hasRelic(RagRelic.ID) && !(this instanceof DiamondOrb))
-            return;
-        passiveAmount = basePassiveAmount -= amount;
-        evokeAmount = baseEvokeAmount -= amount;
-        if(passiveAmount == 0 || evokeAmount == 0)
-            RemoveSpecificGem(AbstractDungeon.player.orbs.indexOf(this));
         updateDescription();
     }
 
-    public void RemoveSpecificGem(int slot)
+    public void onChip(int chips)
     {
-        AbstractPlayer player = AbstractDungeon.player;
-        if (!player.orbs.isEmpty() && !(player.orbs.get(slot) instanceof EmptyOrbSlot))
-        {
-            if(player.orbs.size() > 1 && slot != player.orbs.size() - 1)
-            {
-                for (int i = slot; i < player.orbs.size() - 1; i++)
-                    Collections.swap(player.orbs, i, i + 1);
-            }
+        triggerPassive(getAmountFromChip(chips));
 
-            AbstractOrb orbSlot = new EmptyOrbSlot((player.orbs.get(player.orbs.size() - 1)).cX, (player.orbs.get(player.orbs.size() - 1)).cY);
+        //ADD CHIP VFX HERE
 
-            if(player.orbs.size() > 1)
-                player.orbs.set(player.orbs.size() - 1, orbSlot);
-            else
-                player.orbs.set(0, orbSlot);
-
-            for(int i = 0; i < player.orbs.size(); ++i)
-                (player.orbs.get(i)).setSlot(i, player.maxOrbs);
-
-            onRemove();
-            AbstractDungeon.player.decreaseMaxOrbSlots(1);
-//            Collections.swap(player.orbs, slot, player.orbs.size() - 1);
-//
-//            for(int i = 0; i < player.orbs.size(); ++i)
-//                (player.orbs.get(i)).setSlot(i, player.maxOrbs);
-        }
+        AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this, chips));
     }
 
-    public void onRemove()
+    public int getAmountFromChip(int amount)
     {
+        int tempSize = passiveAmount;
+        int chipTotal = 0;
+        for(int i = 0; i < amount; ++i)
+        {
+            if(tempSize > 0)
+            {
+                chipTotal += oneSizeEffect ? 1 : tempSize;
+                tempSize--;
+            }
+        }
+        return chipTotal;
+    }
 
+    public abstract void triggerPassive(int amount);
+
+    public void reduceSize()
+    {
+        reduceSize(1);
+    }
+
+    public void reduceSize(int amount)
+    {
+        passiveAmount = basePassiveAmount -= Math.min(amount, basePassiveAmount);
+        evokeAmount = baseEvokeAmount -= Math.min(amount, baseEvokeAmount);
+        if(passiveAmount <= 0 || evokeAmount <= 0)
+            removeSpecificGem(this);
+        updateDescription();
+    }
+
+    public void removeSpecificGem(AbstractOrb orb)
+    {
+        AbstractPlayer player = AbstractDungeon.player;
+        if(player.orbs.contains(orb))
+        {
+            AbstractDungeon.player.orbs.remove(orb);
+            if (player.maxOrbs > 0)
+                player.maxOrbs--;
+            if (player.maxOrbs < 0)
+                player.maxOrbs = 0;
+            for(int i = 0; i < player.orbs.size(); ++i)
+                (player.orbs.get(i)).setSlot(i, player.maxOrbs);
+        }
     }
 
     @Override
@@ -153,6 +156,26 @@ public abstract class AbstractGemOrb extends CustomOrb
         hb.render(sb);
     }
 
+    protected static void chipSound()
+    {
+        Random rand = new Random();
+        int chip = rand.random(4);
+        switch (chip)
+        {
+            case 0:
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:gem1"));
+                break;
+            case 1:
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:gem2"));
+                break;
+            case 2:
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:gem3"));
+                break;
+            default:
+                AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:gem4"));
+        }
+    }
+
     @Override
     public void triggerEvokeAnimation()
     {
@@ -162,8 +185,6 @@ public abstract class AbstractGemOrb extends CustomOrb
     @Override
     public void playChannelSFX()
     {
-        CardCrawlGame.sound.play("ATTACK_FIRE", 0.1f);
+        CardCrawlGame.sound.play("theVacant:gemSpawn", 0.1f);
     }
-
-    public abstract void EvokeGem();
 }

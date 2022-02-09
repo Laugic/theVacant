@@ -22,15 +22,15 @@ public class OnyxOrb extends AbstractGemOrb
     public static final String ORB_ID = VacantMod.makeID(OnyxOrb.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static boolean TURN_START_ORB = true;
+    private static boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = true;
 
     public OnyxOrb(int size)
     {
-        super(ORB_ID, orbString.NAME, size, TURN_START_ORB, makeOrbPath("OnyxOrb.png"));
+        super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("OnyxOrb.png"));
     }
 
     @Override
-    public void TriggerPassive()
+    public void triggerPassive(int amount)
     {
         AbstractDungeon.actionManager.addToBottom(// 2.This orb will have a flare effect
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
@@ -38,24 +38,16 @@ public class OnyxOrb extends AbstractGemOrb
 
         AbstractPlayer player = AbstractDungeon.player;
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, passiveAmount), passiveAmount));
+        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, passiveAmount), passiveAmount));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, passiveAmount), passiveAmount, true, AbstractGameAction.AttackEffect.NONE));
-    }
-
-    @Override
-    public void EvokeGem()
-    {
-        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, AbstractDungeon.player, new DoomPower(mo, mo, evokeAmount), evokeAmount, true, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("ORB_LIGHTNING_CHANNEL"));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
     public void updateDescription()
     {
         applyFocus();
-        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1] + evokeAmount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

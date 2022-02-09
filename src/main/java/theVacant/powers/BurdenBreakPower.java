@@ -45,9 +45,10 @@ public class BurdenBreakPower extends AbstractPower implements CloneablePowerInt
     }
 
     @Override
-    public int onAttacked(DamageInfo info, int damageAmount)
+    public int onLoseHp(int damageAmount)
     {
-        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount > 0)
+        //if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount > 0)
+        if(damageAmount > 0)
         {
             flash();
             addToTop(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount), amount));

@@ -2,50 +2,43 @@
   "theVacant:RubyOrb": {
     "NAME": "Ruby",
     "DESCRIPTION": [
-      "#yPassive: Gain #b", " #yVigor and lose 1 size. NL #yEvoke: Gain #b",
-      " #yStrength. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain #b", " #yVigor and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:AmethystOrb": {
     "NAME": "Amethyst",
     "DESCRIPTION": [
-      "#yPassive: #yMill #b", " cards and lose 1 size. NL #yEvoke: Gain #b",
-      " #yGloom. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, #yMill ", " and lose 1 size. NL If your draw pile is empty, increase damage and #yBlock by #b", ". Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:SapphireOrb": {
     "NAME": "Sapphire",
     "DESCRIPTION": [
-      "#yPassive: Gain #b", " #yTemperance and lose 1 size. NL #yEvoke: Gain #b",
-      " #yDexterity. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain #b", " #yTemperance and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:OnyxOrb": {
     "NAME": "Onyx",
     "DESCRIPTION": [
-      "#yPassive: Apply #b", " #yDoom to EVERYONE and lose 1 size. NL #yEvoke: Apply #b",
-      " #yDoom to ALL enemies. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, apply 1 #yDoom to ALL enemies and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:DiamondOrb": {
     "NAME": "Diamond",
     "DESCRIPTION": [
-      "#yPassive: Gain 1 #yIntangible. NL #yEvoke: Prevent the next #b",
-      " times you would lose HP. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, lose 1 size. Whenever you would take damage, lose 1 size and prevent it. Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:EmeraldOrb": {
     "NAME": "Emerald",
     "DESCRIPTION": [
-      "#yPassive: Draw 1 card. NL #yBreak: Draw #b",
-      " card.", " cards. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, draw a card and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:OpalOrb": {
     "NAME": "Opal",
     "DESCRIPTION": [
-      "#yPassive: Gain #b", " [E] NL #yEvoke: Gain #b",
-      " [E] NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain [E] and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
     ]
   }
 }

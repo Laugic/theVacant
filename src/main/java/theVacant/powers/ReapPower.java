@@ -53,14 +53,15 @@ public class ReapPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public int onAttacked(DamageInfo info, int damageAmount)
     {
-        AbstractDungeon.player.heal(amount);
+        if(info.type == DamageInfo.DamageType.NORMAL)
+            AbstractDungeon.player.heal(amount);
         return damageAmount;
     }
 
     @Override
     public void atEndOfTurn(boolean isPlayer)
     {
-        reducePower(1);
+        reducePower(amount);
         if(amount <= 0)
             addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
     }
