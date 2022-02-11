@@ -11,12 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-import com.megacrit.cardcrawl.vfx.combat.ReaperEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.ReapPower;
+import theVacant.vfx.ReapVFX;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -50,9 +49,8 @@ public class ReaperStrike extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new VFXAction(new ReapVFX(), ReapVFX.DURATION*3/4F));
         addToBot(new SFXAction("ATTACK_HEAVY"));
-        addToBot(new VFXAction(player, new CleaveEffect(), 0.1F));
-        addToBot(new VFXAction(new ReaperEffect()));
         addToBot(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
             addToBot(new ApplyPowerAction(mo, player, new ReapPower(mo, mo, magicNumber),magicNumber));
