@@ -27,10 +27,10 @@ public class ReapVFX extends AbstractGameEffect {
         super();
         this.renderBehind = false; //Render over the card
         img = new TextureAtlas.AtlasRegion(TEXTURE, 0, 0, TEXTURE.getWidth(), TEXTURE.getHeight()); //Load the image
-        sx = Settings.WIDTH/3F - img.getRegionWidth()/2F; // x coord scythe spawns at and swings back to
-        sy = Settings.HEIGHT/2F - img.getRegionHeight()/2F; // y coord scythe spawns at and swings back to
-        tx = Settings.WIDTH*3/5F - img.getRegionWidth()/2F; // x coord scythe pauses at
-        ty = Settings.HEIGHT*3/5F - img.getRegionHeight()/2F; // y coord scythe pauses at
+        sx = Settings.WIDTH/3F - img.getRegionWidth()/2F * Settings.scale; // x coord scythe spawns at and swings back to
+        sy = Settings.HEIGHT/2F - img.getRegionHeight()/2F * Settings.scale; // y coord scythe spawns at and swings back to
+        tx = Settings.WIDTH*3/5F - img.getRegionWidth()/2F * Settings.scale; // x coord scythe pauses at
+        ty = Settings.HEIGHT*3/5F - img.getRegionHeight()/2F * Settings.scale; // y coord scythe pauses at
         sa = -20; //Angle scythe spawns at
         ta = 60; //Angle scythe pauses at
         ea = -150; //Angle scythe swings to
