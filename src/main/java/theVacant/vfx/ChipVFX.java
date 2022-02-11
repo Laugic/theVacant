@@ -19,15 +19,16 @@ public class ChipVFX extends AbstractGameEffect {
     private final float ax, ay, tx, ty; //Actual xy (for sparks vfx), Target xy (for pickaxe aiming)
     private final AtlasRegion img;
     private float x, y;
+    public static final float DURATION = 0.4F;
 
     public ChipVFX(float x, float y) {
         super();
         img = new AtlasRegion(t, 0, 0, t.getWidth(), t.getHeight());
         ax = x;
         ay = y;
-        tx = x - img.getRegionWidth()/2F;
-        ty = y + img.getRegionHeight()/2F;
-        duration = startingDuration = Settings.ACTION_DUR_MED;
+        tx = x - img.getRegionWidth()/2F * Settings.scale;
+        ty = y + img.getRegionHeight()/2F * Settings.scale;
+        duration = startingDuration = DURATION;
         color = new Color(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
@@ -40,10 +41,10 @@ public class ChipVFX extends AbstractGameEffect {
         if (duration < startingDuration / 4.0F) {
             color.a = duration / (startingDuration / 2.0F);
         }
-        rotation = Interpolation.swing.apply(90, -25, (startingDuration - duration) * 2);
-        x = Interpolation.swing.apply(tx-30*Settings.scale, tx, (startingDuration - duration) * 2);
-        y = Interpolation.swing.apply(ty+30*Settings.scale, ty, (startingDuration - duration) * 2);
-        scale = Interpolation.swingOut.apply(Settings.scale*1.3F, Settings.scale*1.5F, (startingDuration - duration) * 2);
+        rotation = Interpolation.swing.apply(90, -25, (startingDuration - duration) / DURATION);
+        x = Interpolation.swing.apply(tx-30*Settings.scale, tx, (startingDuration - duration) / DURATION);
+        y = Interpolation.swing.apply(ty+30*Settings.scale, ty, (startingDuration - duration) / DURATION);
+        scale = Interpolation.swingOut.apply(Settings.scale*1.3F, Settings.scale*1.5F, (startingDuration - duration) / DURATION);
 
         if (duration < 0.0F) {
             isDone = true;
