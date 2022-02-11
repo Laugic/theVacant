@@ -1,7 +1,6 @@
 package theVacant.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theVacant.orbs.AbstractGemOrb;
@@ -29,33 +28,27 @@ public class ChipOrbAction extends AbstractGameAction
         }
         this.amount = chips;
         this.limited = limited;
-        duration = startDuration = Settings.ACTION_DUR_FAST;
     }
 
     @Override
     public void update()
     {
-        if (duration == startDuration)
+        if (gem == null || amount == 0)
         {
-            if (gem == null || amount == 0)
-            {
-                this.isDone = true;
-                return;
-            }
-            int hits = Math.min(amount, gem.passiveAmount);
-            //The proposed solution
-            gem.onChip(hits);
-            amount -= hits;
-            if (amount > 0 && hasAnotherGem() && !limited)
-            {
-                AbstractGemOrb nextGem = getNextGem();
-                if(nextGem != null)
-                    addToBot(new ChipOrbAction(nextGem, amount, false));
-                isDone = true;
-                return;
-            }
+            this.isDone = true;
+            return;
         }
-        tickDuration();
+        int hits = Math.min(amount, gem.passiveAmount);
+        //The proposed solution
+        gem.onChip(hits);
+        amount -= hits;
+        if (amount > 0 && hasAnotherGem() && !limited)
+        {
+            AbstractGemOrb nextGem = getNextGem();
+            if(nextGem != null)
+                addToBot(new ChipOrbAction(nextGem, amount, false));
+        }
+        this.isDone = true;
     }
 
     private AbstractGemOrb getNextGem()

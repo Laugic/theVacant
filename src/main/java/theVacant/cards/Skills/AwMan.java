@@ -40,6 +40,7 @@ public class AwMan extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
         addToBot(new LoseHPAction(player, player, magicNumber));
         if(player.orbs.size() > 0)
         {
@@ -49,7 +50,6 @@ public class AwMan extends AbstractDynamicCard
                     addToBot(new ChipOrbAction(gem, 1));
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
     }
 
     @Override
