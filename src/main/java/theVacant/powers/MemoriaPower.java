@@ -69,6 +69,7 @@ public class MemoriaPower extends AbstractPower implements CloneablePowerInterfa
         }
         if (this.amount == 0)
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.POWER_ID));
+        updateDescription();
     }
 
     @Override

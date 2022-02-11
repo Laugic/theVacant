@@ -1,16 +1,20 @@
 package theVacant.cards.Skills;
 
-import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
-import theVacant.actions.MineGemAction;
+import theVacant.actions.SpelunkAction;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Special.*;
 import theVacant.characters.TheVacant;
-import theVacant.orbs.RubyOrb;
-import theVacant.orbs.SapphireOrb;
+
+import java.util.ArrayList;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -21,7 +25,7 @@ public class Spelunk extends AbstractDynamicCard
     public static final String IMG = makeCardPath("Spelunk.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
@@ -31,14 +35,15 @@ public class Spelunk extends AbstractDynamicCard
     public Spelunk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        block = baseBlock = 5;
         magicNumber = baseMagicNumber = 3;
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster monster)
+    public void use(AbstractPlayer player, AbstractMonster m)
     {
-        addToBot(new MineGemAction(new SapphireOrb(magicNumber)));
-        addToBot(new DiscardPileToTopOfDeckAction(player));
+        addToBot(new GainBlockAction(player, block));
+        addToBot(new SpelunkAction(magicNumber));
     }
 
     @Override
@@ -47,6 +52,8 @@ public class Spelunk extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
+            upgradeBlock(3);
+            upgradedBlock = true;
             upgradeMagicNumber(1);
             upgradedMagicNumber = true;
             initializeDescription();

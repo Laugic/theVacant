@@ -98,9 +98,9 @@ public class SoulBash extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(1);
             upgradedDamage = true;
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             upgradedMagicNumber = true;
             initializeDescription();
         }

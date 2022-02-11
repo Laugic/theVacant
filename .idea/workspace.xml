@@ -5,41 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11a578c6-2964-46b6-91f7-a45ff2afde59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/RecoverPower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/powers/recover_power32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/images/powers/recover_power84.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/changelog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/changelog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/VacantMod.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/actions/MineGemAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/MineGemAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/actions/VacantMillAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/VacantMillAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/SapphireStrike.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Attacks/SapphireStrike.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Spelunk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Spelunk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/GildedPickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/GildedPickaxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/OnyxBlaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Attacks/OnyxBlaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/ForgeSoul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/ForgeSoul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/GotOurPickaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/GotOurPickaxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/Recover.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/Recover.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/VoidEmbrace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Powers/VoidEmbrace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/Fortify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/archive/Skills/Fortify.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/characters/TheVacant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/characters/TheVacant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/ForgeSoulPower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/ForgeSoulPower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/powers/PickaxePower.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/powers/PickaxePower.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/relics/CrystalBallRelic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/relics/CrystalBallRelic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/actions/SpelunkAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/actions/SpelunkAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/EmbraceDarkness.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/EmbraceDarkness.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Exorcise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Skills/Exorcise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/AmethystOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/AmethystOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/DiamondOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/DiamondOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/EmeraldOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/EmeraldOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/OnyxOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/OnyxOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/OpalOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/OpalOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/RubyOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/RubyOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/SapphireOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/cards/Special/SapphireOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/theVacant/orbs/AbstractGemOrb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/theVacant/orbs/AbstractGemOrb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Keyword-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ModTheSpire.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ModTheSpire.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/actions/MineGemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/actions/MineGemAction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/GotOurPickaxe.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/archive/Powers/GotOurPickaxe.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant$Enums.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant$Enums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/characters/TheVacant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/powers/PickaxePower.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/powers/PickaxePower.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/relics/CrystalBallRelic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/relics/CrystalBallRelic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/IntoTheAbyss.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Powers/IntoTheAbyss.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Exorcise.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacant/cards/Skills/Exorcise.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Card-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Power-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Power-Strings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/theVacantResources/localization/eng/VacantMod-Relic-Strings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/theVacant.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/theVacant.jar" afterDir="false" />
     </list>
@@ -60,8 +46,19 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="1XxbmsrhA3Q4wH4ugB3aeODls4S" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

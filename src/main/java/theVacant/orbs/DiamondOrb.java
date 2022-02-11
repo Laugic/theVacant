@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theVacant.VacantMod;
+import theVacant.actions.ReduceOrbSizeAction;
 import theVacant.powers.TemperancePower;
 
 import static theVacant.VacantMod.makeOrbPath;
@@ -21,36 +22,40 @@ public class DiamondOrb extends AbstractGemOrb
     public static final String ORB_ID = VacantMod.makeID(DiamondOrb.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static boolean TURN_START_ORB = true;
+    private static boolean TURN_START_ORB = false, ONE_SIZE_EFFECT = true;
 
     public DiamondOrb(int size)
     {
-        super(ORB_ID, orbString.NAME, size, TURN_START_ORB, makeOrbPath("DiamondOrb.png"));
+        super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("DiamondOrb.png"));
     }
 
     @Override
-    public void TriggerPassive()
+    public void triggerPassive(int amount)
     {
+        chipSound();
         AbstractDungeon.actionManager.addToBottom(
-                new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA"));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new IntangiblePlayerPower(AbstractDungeon.player, 1), 1));
+            new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), 0.1f));
     }
 
     @Override
-    public void EvokeGem()
+    public void onChip(int chips)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new BufferPower(AbstractDungeon.player, evokeAmount), evokeAmount));
-        AbstractDungeon.actionManager.addToBottom(new SFXAction("TINGSHA"));
+                new BufferPower(AbstractDungeon.player, chips)));
+        AbstractDungeon.actionManager.addToBottom(
+                new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), 0.1f));
+        chipSound();
+
+        //ADD CHIP VFX HERE
+
+        AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this, chips));
     }
 
     @Override
     public void updateDescription()
     {
         applyFocus();
-        description = DESCRIPTIONS[0] + evokeAmount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

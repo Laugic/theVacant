@@ -78,8 +78,8 @@ public class EssenceOfBismuth extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
+            upgradedCost = true;
             initializeDescription();
         }
     }

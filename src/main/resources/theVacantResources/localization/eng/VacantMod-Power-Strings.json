@@ -1,43 +1,15 @@
 {
- "theVacant:EmptyCardDrawPower": {
-        "NAME": "Empty Card Draw",
-        "DESCRIPTIONS": ["If your draw pile is empty, draw #b", " card.", " cards."]
- },
-  "theVacant:EmptyEnergyGainPower": {
-    "NAME": "Empty Energy Gain",
-    "DESCRIPTIONS": ["If your draw pile is empty, gain #b", " [E]."]
-  },
   "theVacant:GloomPower": {
     "NAME": "Gloom",
     "DESCRIPTIONS": ["At the start of your turn after you draw, #yMill #b", " cards."]
   },
   "theVacant:ImmaterializePower": {
     "NAME": "Immaterialize",
-    "DESCRIPTIONS": ["When a card #yExhausts, #yEnhance it with [#C687EE]Materialize[] #b"]
-  },
-  "theVacant:ReleasePower": {
-    "NAME": "Release",
-    "DESCRIPTIONS": ["The amount of times you #yReleased this combat (", ")"]
-  },
-  "theVacant:WillPower": {
-    "NAME": "Will",
-    "DESCRIPTIONS": ["Your will to fight the influence of the artifact: #b"]
+    "DESCRIPTIONS": ["When you play a card that #yExhausts, reduce this by 1 and have that card return to your draw pile in 2 turns."]
   },
   "theVacant:MemoriaPower": {
     "NAME": "Memoria",
     "DESCRIPTIONS": ["The next #b", " card you play that #yExhausts plays twice.", " cards you play that #yExhaust plays twice."]
-  },
-  "theVacant:IronWillPower": {
-    "NAME": "Iron Will",
-    "DESCRIPTIONS": ["At the end of your turn, gain #b", " #yBlock."]
-  },
-  "theVacant:HuskPower": {
-    "NAME": "Husk",
-    "DESCRIPTIONS": ["At the beginning of your turn, gain #b", " #yVigor and #yTemperance."]
-  },
-  "theVacant:RubyPower": {
-    "NAME": "Ruby",
-    "DESCRIPTIONS": ["At the beginning of the turn, gain #b", " #yVigor. When this is destroyed, transfer all #yVigor to you."]
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
@@ -53,27 +25,19 @@
   },
   "theVacant:PickaxePower": {
     "NAME": "Got Our Pickaxe",
-    "DESCRIPTIONS": ["At the end of your turn, #yBreak your next #yGem."]
+    "DESCRIPTIONS": ["At the start of your turn, #yChip your next #yGem ", " time.", " times."]
   },
   "theVacant:AquamarinePower": {
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Gain #b", " #yBlock each time you #yMill a card."]
   },
-  "theVacant:StandoPower": {
+  "theVacant:Requiem": {
     "NAME": "Requiem",
-    "DESCRIPTIONS": ["The next time you would die, return to #b", "% HP instead."]
-  },
-  "theVacant:GreaterMindPower": {
-    "NAME": "Greater Mind",
-    "DESCRIPTIONS": ["Whenever you play a Power that costs 1 or more, add a random Power to your hand."]
+    "DESCRIPTIONS": ["Whenever you gain HP, a buff, or a debuff, double it."]
   },
   "theVacant:RecoverPower": {
     "NAME": "Recover",
     "DESCRIPTIONS": ["At the end of battle, if you are #yWounded, heal #b", " HP."]
-  },
-  "theVacant:DarkReflexPower": {
-    "NAME": "Dark Reflex",
-    "DESCRIPTIONS": ["Whenever you #yMill, add the first #b", " card to your hand instead of the discard pile.", " cards to your hand instead of the discard pile."]
   },
   "theVacant:VoidPower": {
     "NAME": "Void",
@@ -171,7 +135,7 @@
   },
   "theVacant:ReapPower": {
     "NAME": "Reap",
-    "DESCRIPTIONS": ["When this target is attacked, heal #b", " HP. Reduces by 1 at the end of the turn."]
+    "DESCRIPTIONS": ["When this target is attacked, heal #b", " HP. Reduces by #b1 at the end of the turn."]
   },
   "theVacant:WhenDarknessComesPower": {
     "NAME": "When Darkness Comes",

@@ -63,17 +63,6 @@ public class OnyxShatter extends AbstractDynamicCard {
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips()
-    {
-        if(Tooltip == null)
-        {
-            Tooltip = new ArrayList<>();
-            Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VACANT_FORM_ID), BaseMod.getKeywordDescription(KeywordManager.VACANT_FORM_ID)));
-        }
-        return Tooltip;
-    }
-
-    @Override
     public void upgrade()
     {
         if (!upgraded)

@@ -1,6 +1,5 @@
 package theVacant.cards.Skills;
 
-import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -14,15 +13,10 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
-import theVacant.cards.archive.Skills.EmbraceDarkness;
 import theVacant.characters.TheVacant;
-import theVacant.powers.DoomPower;
 import theVacant.powers.ReapPower;
-import theVacant.powers.VoidPower;
-import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -63,7 +57,7 @@ public class ReaperBlast extends AbstractDynamicCard
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
-
+/*
     @Override
     public List<TooltipInfo> getCustomTooltips()
     {
@@ -74,13 +68,15 @@ public class ReaperBlast extends AbstractDynamicCard
         }
         return VoidboundTooltip;
     }
-
+*/
     @Override
     public void upgrade()
     {
         if (!upgraded)
         {
             upgradeName();
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -1,3 +1,26 @@
+0.18
+Added potions!
+There is no longer an inherent way to Evoke/Break Gems.
+
+Added the ability to Chip Gems, which triggers their passive effect and makes them lose 1 size.
+Buffed Onyx to now only affect enemies, but only gives 1 doom per turn.
+Diamond prevents the next time you would take damage instead of granting Intangible.
+Removed Partake and Holy Water
+Added Treasure and Enchant
+Entirely changed Spelunk and Aw Man
+Many other minor balance tweaks and changes
+
+Reap no longer triggers on thorns and is removed entirely at the end of the turn.
+Evoking a Gem no longer decreases max orb slots.
+
+--
+0.18.0.1 & 2
+Fixed wording and changed cost of Exorcise
+Changed Embrace Darkness to grant Void instead of Doom
+Return keyword now says "card(s)" after it
+Gem Option Cards now appear in the compendium & are randomized based on the seed
+Misc backend changes
+-----
 0.17
 Added Relics: Locket Piece, Cracked Crystal Ball, Polishing Rag, Tombstone, 
 Arted ALL CARDS
@@ -13,7 +36,9 @@ Sapphire upgrades are less strong, Breaking Gems is harder, and reduced sustain 
 Cracked Crystal Ball no longer exhausts the discard pile, and no longer affects Statuses.
 Removed Diamond from Random Gem pool and fixed bug where Rubies didn't show up
 Got Our Pickaxe now only works for 3(4) turns and does not break multiple gems when stacked
-Gilded Pickaxe now Exhausts
+Gilded Pickaxe and Fortify now Exhaust
+Forge Soul now upgrades Milled cards instead of giving Temp HP
+Recover heals you at the end of combat instead of giving Regen
 Nerfed Sapphire upgrades
 Tweaked Orb wording
 -----

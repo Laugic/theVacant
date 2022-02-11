@@ -47,12 +47,13 @@ public class ImmaterializePower extends AbstractPower implements CloneablePowerI
 
         updateDescription();
     }
+
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action)
     {
         if(action.exhaustCard)
         {
-            MaterializeModifier.Enhance(card, amount);
+            MaterializeModifier.Enhance(card, 2);
             amount--;
             updateDescription();
             if(amount <= 0)
@@ -63,7 +64,7 @@ public class ImmaterializePower extends AbstractPower implements CloneablePowerI
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + this.amount + ".";
+        description = DESCRIPTIONS[0];
     }
 
     @Override

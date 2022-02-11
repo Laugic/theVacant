@@ -3,7 +3,7 @@
   "name": "The Vacant",
   "author_list": ["Laugic"],
   "description": "A lost soul, bound to an artifact, is doomed to climb the Spire.",
-  "version": "v0.17.1",
+  "version": "v0.18.0.2",
   "sts_version": "12-22-2020",
   "mts_version": "3.18.2",
   "dependencies": ["basemod", "stslib"],

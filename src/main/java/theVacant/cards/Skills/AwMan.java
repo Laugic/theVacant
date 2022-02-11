@@ -1,13 +1,18 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theVacant.VacantMod;
-import theVacant.actions.MineGemAction;
+import theVacant.actions.ChipOrbAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.AbstractGemOrb;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -28,13 +33,23 @@ public class AwMan extends AbstractDynamicCard
     public AwMan()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 4;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new MineGemAction(null, magicNumber));
+        addToBot(new LoseHPAction(player, player, magicNumber));
+        if(player.orbs.size() > 0)
+        {
+            for (AbstractOrb gem : player.orbs)
+            {
+                if(gem instanceof AbstractGemOrb)
+                    addToBot(new ChipOrbAction(gem, 1));
+            }
+        }
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
     }
 
     @Override
@@ -43,7 +58,7 @@ public class AwMan extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(-2);
             upgradedMagicNumber = true;
             initializeDescription();
         }

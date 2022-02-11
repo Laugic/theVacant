@@ -24,17 +24,12 @@ import org.apache.logging.log4j.Logger;
 import theVacant.VacantMod;
 import theVacant.cards.Attacks.*;
 import theVacant.cards.Skills.*;
-import theVacant.cards.archive.Attacks.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
-import theVacant.cards.archive.Powers.GotOurPickaxe;
-import theVacant.cards.archive.Powers.IntoTheAbyss;
-import theVacant.cards.archive.Powers.Rejection;
-import theVacant.cards.archive.Skills.*;
 import theVacant.relics.*;
 
 import static theVacant.VacantMod.*;
@@ -70,7 +65,7 @@ public class TheVacant extends CustomPlayer
     private static final KeywordStrings keyStrings = CardCrawlGame.languagePack.getKeywordString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
-    public static List<String> crystalCards = Arrays.asList(ShatterAmethyst.ID, FireCrystal.ID, FireCrystal.ID);
+    public static List<String> crystalCards = Arrays.asList(AbsorbAmethyst.ID, FireCrystal.ID, FireCrystal.ID);
 
     public static final String[] orbTextures = {
             "theVacantResources/images/char/vacantCharacter/orb/layer1.png",
@@ -161,7 +156,7 @@ public class TheVacant extends CustomPlayer
         startDeck.add(VacantStarterDefend.ID);
 
         startDeck.add(SoulBash.ID);
-        startDeck.add(Release.ID);
+        startDeck.add(Corporeate.ID);
 
 //        Testing
         return startDeck;
@@ -217,7 +212,7 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public Color getCardTrailColor() {
-        return VACANT_COLOR;
+        return VACANT_COLOR.cpy();
     }
 
     @Override
@@ -232,7 +227,7 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new ShatterAmethyst();
+        return new AbsorbAmethyst();
     }
 
     @Override
@@ -247,12 +242,12 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public Color getCardRenderColor() {
-        return VACANT_COLOR;
+        return VACANT_COLOR.cpy();
     }
 
     @Override
     public Color getSlashAttackColor() {
-        return VACANT_COLOR;
+        return VACANT_COLOR.cpy();
     }
 
     @Override
