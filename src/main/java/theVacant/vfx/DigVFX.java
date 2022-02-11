@@ -26,18 +26,18 @@ public class DigVFX extends AbstractGameEffect {
     private float t;
     private boolean playedSFX;
     private boolean spawnedSparks;
-    private boolean bounce;
+    private final boolean bounce;
 
     public DigVFX() {
         super();
         this.renderBehind = false; //Render over the card
         img = new TextureAtlas.AtlasRegion(TEXTURE, 0, 0, TEXTURE.getWidth(), TEXTURE.getHeight()); //Load the image
-        sx = 200 * Settings.scale - img.getRegionWidth()/2F;
-        sy = Settings.HEIGHT/3F - img.getRegionHeight()/2F;
-        tx = 200 * Settings.scale - img.getRegionWidth()/2F;
-        ty = 250 * Settings.scale - img.getRegionHeight()/2F;
-        ex = 250 * Settings.scale - img.getRegionWidth()/2F;
-        ey = 300 * Settings.scale - img.getRegionHeight()/2F;
+        sx = (200 - img.getRegionWidth()/2F) * Settings.scale;
+        sy = Settings.HEIGHT/3F - (img.getRegionHeight()/2F * Settings.scale);
+        tx = (200 - img.getRegionWidth()/2F) * Settings.scale;
+        ty = (250 - img.getRegionHeight()/2F) * Settings.scale;
+        ex = (250 - img.getRegionWidth()/2F) * Settings.scale;
+        ey = (300 - img.getRegionHeight()/2F) * Settings.scale;
         sa = -50;
         ta = -45;
         ea = 15;
