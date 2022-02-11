@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theVacant.VacantMod;
 import theVacant.actions.ReduceOrbSizeAction;
 import theVacant.powers.TemperancePower;
+import theVacant.vfx.ChipVFX;
 
 import static theVacant.VacantMod.makeOrbPath;
 
@@ -40,14 +41,12 @@ public class DiamondOrb extends AbstractGemOrb
     @Override
     public void onChip(int chips)
     {
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ChipVFX(this.hb.cX, this.hb.cY), ChipVFX.DURATION));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
                 new BufferPower(AbstractDungeon.player, chips)));
         AbstractDungeon.actionManager.addToBottom(
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), 0.1f));
         chipSound();
-
-        //ADD CHIP VFX HERE
-
         AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this, chips));
     }
 
