@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,7 @@ import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.vfx.DigVFX;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -40,6 +42,7 @@ public class Dig extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
+        addToBot(new VFXAction(new DigVFX(), DigVFX.DURATION*3/4F));
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
     }
