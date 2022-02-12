@@ -1,4 +1,4 @@
-0.18
+0.18b
 Added potions!
 There is no longer an inherent way to Evoke/Break Gems.
 
