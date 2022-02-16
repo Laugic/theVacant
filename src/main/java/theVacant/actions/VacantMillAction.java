@@ -14,6 +14,7 @@ import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.*;
 import theVacant.relics.LocketRelic;
+import theVacant.vfx.ShowCardAndMillEffect;
 
 public class VacantMillAction  extends AbstractGameAction
 {
@@ -102,7 +103,10 @@ public class VacantMillAction  extends AbstractGameAction
 
     private void MoveToDiscard(AbstractCard card)
     {
-        AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
+        AbstractDungeon.player.drawPile.removeCard(card);
+        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card), Settings.ACTION_DUR_XFAST, true));
+        AbstractDungeon.player.discardPile.addToTop(card);
+//        AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
         ProcessPostMill(card, false);
     }
 
