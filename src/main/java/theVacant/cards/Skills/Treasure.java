@@ -1,6 +1,7 @@
 package theVacant.cards.Skills;
 
 import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -29,7 +30,7 @@ public class Treasure extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
 
     private static ArrayList<TooltipInfo> ExtraTooltip;
 
@@ -37,14 +38,15 @@ public class Treasure extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
-        exhaust = true;
+        block = baseBlock = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new GainBlockAction(player, block));
         addToBot(new MineGemAction(new EmeraldOrb(magicNumber)));
-        addToBot(new MineGemAction(new OpalOrb(1)));
+        addToBot(new MineGemAction(new OpalOrb(magicNumber)));
 //        int vigorAmount = player.discardPile.size();
 //        if(vigorAmount > 0)
 //            addToBot(new ApplyPowerAction(player, player, new VigorPower(player, vigorAmount), vigorAmount));

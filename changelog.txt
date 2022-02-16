@@ -1,3 +1,7 @@
+0.19.0
+Gems are no longer affected by Focus
+
+-----
 0.18
 Added potions!
 There is no longer an inherent way to Evoke/Break Gems.
@@ -12,7 +16,6 @@ Many other minor balance tweaks and changes
 
 Reap no longer triggers on thorns and is removed entirely at the end of the turn.
 Evoking a Gem no longer decreases max orb slots.
-
 --
 0.18.0.1 & 2
 Fixed wording and changed cost of Exorcise

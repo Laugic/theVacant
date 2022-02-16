@@ -47,13 +47,13 @@ public abstract class AbstractGemOrb extends CustomOrb
         channelAnimTimer = 0.5f;
     }
 
-    /*
+
     @Override //if you want to ignore Focus
     public void applyFocus()
     {
         passiveAmount = basePassiveAmount;
         evokeAmount = baseEvokeAmount;
-    }*/
+    }
 
     @Override
     public void onEvoke()

@@ -163,7 +163,8 @@
   },
   "theVacant:AwMan": {
     "NAME": "Aw Man",
-    "DESCRIPTION": "Lose !M! HP. NL thevacant:Chip ALL your thevacant:Gems. Exhaust."
+    "DESCRIPTION": "Lose !M! HP. NL thevacant:Chip ALL your thevacant:Gems. Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose !M! HP. NL Draw a card. NL thevacant:Chip ALL your thevacant:Gems. Exhaust."
   },
   "theVacant:Requiem": {
     "NAME": "Requiem",
@@ -410,7 +411,7 @@
   },
   "theVacant:Treasure": {
     "NAME": "Treasure",
-    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Emerald and a size 1 thevacant:Opal. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL thevacant:Mine a size !M! thevacant:Emerald and a size !M! thevacant:Opal."
   },
   "theVacant:Soothe": {
     "NAME": "Soothe",

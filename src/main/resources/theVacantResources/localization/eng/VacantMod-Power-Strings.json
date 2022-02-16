@@ -31,7 +31,7 @@
     "NAME": "Reflection",
     "DESCRIPTIONS": ["Gain #b", " #yBlock each time you #yMill a card."]
   },
-  "theVacant:Requiem": {
+  "theVacant:RequiemPower": {
     "NAME": "Requiem",
     "DESCRIPTIONS": ["Whenever you gain HP, a buff, or a debuff, double it."]
   },
