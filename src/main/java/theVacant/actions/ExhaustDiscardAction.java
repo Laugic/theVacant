@@ -28,6 +28,7 @@ public class ExhaustDiscardAction  extends AbstractGameAction
             {
                 AbstractCard card = player.discardPile.getTopCard();
                 player.exhaustPile.addToTop(card);
+                card.triggerOnExhaust();
                 player.discardPile.removeCard(card);
                 if(this.amount > 0)
                     this.amount--;

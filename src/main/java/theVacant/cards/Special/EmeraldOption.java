@@ -51,6 +51,11 @@ public class EmeraldOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
+    public EmeraldOption()
+    {
+        this(3);
+    }
+
     public EmeraldOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

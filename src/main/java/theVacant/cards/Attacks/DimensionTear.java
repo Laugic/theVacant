@@ -30,13 +30,13 @@ public class DimensionTear extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 12;
+    private static final int DAMAGE = 6;
     private static ArrayList<TooltipInfo> Tooltip;
 
     public DimensionTear()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 3;
         damage = baseDamage = DAMAGE;
         exhaust = true;
     }
@@ -45,6 +45,8 @@ public class DimensionTear extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         //addToBot( new EnhanceInPileAction(player.exhaustPile, 9999, MaterializeModifier.ID, magicNumber));
+        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot(new BetterExhaustPileToHandAction(player.exhaustPile.size()+1,false));
         //addToBot(new ExhumeAndEnhanceAction(player.exhaustPile.size() + 2));
@@ -68,7 +70,7 @@ public class DimensionTear extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(6);
+            upgradeDamage(2);
             upgradedDamage = true;
             initializeDescription();
         }

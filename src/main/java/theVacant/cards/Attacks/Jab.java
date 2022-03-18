@@ -33,16 +33,15 @@ public class Jab extends AbstractDynamicCard
     public Jab()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = DAMAGE;
-        this.rebound = true;
+        damage = baseDamage = DAMAGE;
+        rebound = true;
         shuffleBackIntoDrawPile = true;
-        //this.postMillAction = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 /*
     @Override

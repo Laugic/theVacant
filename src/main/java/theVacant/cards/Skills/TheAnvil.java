@@ -24,7 +24,7 @@ public class TheAnvil extends AbstractDynamicCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
@@ -35,10 +35,11 @@ public class TheAnvil extends AbstractDynamicCard {
     public TheAnvil()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = DAMAGE;
-        this.isUnnate = true;
-        this.isHeavy = true;
-        this.postMillAction = true;
+        magicNumber = baseMagicNumber = DAMAGE;
+        isUnnate = true;
+        isHeavy = true;
+        postMillAction = true;
+        isMultiDamage = true;
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m)
@@ -57,7 +58,7 @@ public class TheAnvil extends AbstractDynamicCard {
         AbstractPlayer player = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.magicNumber, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(magicNumber, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
     }
     @Override
     public void upgrade()

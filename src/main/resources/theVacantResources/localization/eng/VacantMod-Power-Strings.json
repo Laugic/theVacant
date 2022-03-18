@@ -137,6 +137,10 @@
     "NAME": "Reap",
     "DESCRIPTIONS": ["When this target is attacked, heal #b", " HP. Reduces by #b1 at the end of the turn."]
   },
+  "theVacant:DoubleNextAttackPower": {
+    "NAME": "Double Next Attack",
+    "DESCRIPTIONS": ["Play your next attack twice.", "Play your next #b", " attacks twice."]
+  },
   "theVacant:WhenDarknessComesPower": {
     "NAME": "When Darkness Comes",
     "DESCRIPTIONS": ["Each #yDoom increases damage taken by "," more."]

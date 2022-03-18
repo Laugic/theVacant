@@ -29,11 +29,11 @@ public class Sneeze extends AbstractDynamicCard
     public Sneeze()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = STARTMILL;
-        this.selfRetain = true;
-        this.exhaust = true;
-        this.getBonusMillToMagic = true;
-        this.retainBonus = 0;
+        magicNumber = baseMagicNumber = STARTMILL;
+        selfRetain = true;
+        exhaust = true;
+        getBonusMillToMagic = true;
+        retainBonus = 0;
     }
 
     @Override
@@ -71,6 +71,8 @@ public class Sneeze extends AbstractDynamicCard
         {
             upgradeName();
             isInnate = true;
+            upgradeMagicNumber(2);
+            upgradedMagicNumber = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

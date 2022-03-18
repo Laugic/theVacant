@@ -33,7 +33,7 @@ public class RagRelic extends CustomRelic
     public static int BLOCK_AMOUNT = 4;
 
     public RagRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
     @Override

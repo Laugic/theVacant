@@ -38,7 +38,7 @@ public class AmethystModifier extends AbstractCardModifier
     {
         AbstractPlayer player = AbstractDungeon.player;
         if (this.amount > 0 && player != null)
-            AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
+            AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount, card));
     }
 
     @Override

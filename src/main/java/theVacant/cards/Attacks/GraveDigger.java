@@ -27,12 +27,13 @@ public class GraveDigger extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 1;
-    private static final int UPGRADE_PLUS_DMG = 3;
 
     public GraveDigger()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 2;
+        exhaust = true;
         rebound = true;
     }
 
@@ -48,9 +49,8 @@ public class GraveDigger extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradedDamage = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }
@@ -70,25 +70,32 @@ public class GraveDigger extends AbstractDynamicCard {
         super.atTurnStart();
     }
 
+    @Override
+    public void calculateCardDamage(AbstractMonster monster)
+    {
+        getDamage();
+        super.calculateCardDamage(monster);
+    }
+
     private void getDamage()
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
-            baseDamage = player.discardPile.size() + (upgraded?3:0);
+            baseDamage = player.discardPile.size() * magicNumber;
         else
-            baseDamage = (upgraded?3:0);
+            baseDamage = 1;
     }
 
     private void getDesc()
     {
-        rawDescription = (upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[0];
+        rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard()
     {
-        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
+        rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
 }

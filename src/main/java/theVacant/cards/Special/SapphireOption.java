@@ -50,6 +50,11 @@ public class SapphireOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
+    public SapphireOption()
+    {
+        this(3);
+    }
+
     public SapphireOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

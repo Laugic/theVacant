@@ -12,17 +12,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
-import com.megacrit.cardcrawl.orbs.EmptyOrbSlot;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
-import theVacant.actions.ChipOrbAction;
 import theVacant.actions.ReduceOrbSizeAction;
-import theVacant.powers.InvisibleGemOrbPower;
 import theVacant.relics.RagRelic;
 import theVacant.vfx.ChipVFX;
-
-import java.util.Collections;
 
 public abstract class AbstractGemOrb extends CustomOrb
 {
@@ -76,7 +71,7 @@ public abstract class AbstractGemOrb extends CustomOrb
 
     public void onChip(int chips)
     {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ChipVFX(this.hb.cX, this.hb.cY), ChipVFX.DURATION/2F));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ChipVFX(this, this.hb.cX, this.hb.cY), ChipVFX.DURATION/2F));
         triggerPassive(getAmountFromChip(chips));
         AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this, chips));
     }

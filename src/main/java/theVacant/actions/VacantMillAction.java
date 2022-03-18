@@ -22,8 +22,9 @@ public class VacantMillAction  extends AbstractGameAction
     private int startAmount = 0;
     private int voidAmount;
     private int millNum;
+    private AbstractCard ignoredCard;
 
-    private SFXAction waka = new SFXAction("theVacant:waka");
+    private final SFXAction waka = new SFXAction("theVacant:waka");
 
     public VacantMillAction(int numCards)
     {
@@ -34,6 +35,18 @@ public class VacantMillAction  extends AbstractGameAction
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
+    }
+
+    public VacantMillAction(int numCards, AbstractCard cardToIgnore)
+    {
+        amount = numCards;
+        voidAmount = 0;
+        millNum = 0;
+        startAmount = amount;
+        actionType = ActionType.CARD_MANIPULATION;
+        startingDuration = Settings.ACTION_DUR_FAST;
+        duration = startingDuration;
+        ignoredCard = cardToIgnore;
     }
 
     public void update()
@@ -61,7 +74,7 @@ public class VacantMillAction  extends AbstractGameAction
     {
         AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
         millNum++;
-        if(card != null)
+        if(card != null && (ignoredCard == null || (!card.equals(ignoredCard))))
         {
             if(card instanceof AbstractDynamicCard)
             {
@@ -94,7 +107,10 @@ public class VacantMillAction  extends AbstractGameAction
             MoveToDiscard(card);
             return;
         }
-        AbstractDungeon.player.drawPile.moveToHand(card, AbstractDungeon.player.drawPile);
+
+        AbstractDungeon.player.drawPile.removeCard(card);
+        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand), Settings.ACTION_DUR_XFAST, true));
+
         PostRebound(card);
         if(card.postMillAction)
             card.PostMillAction();
@@ -104,7 +120,7 @@ public class VacantMillAction  extends AbstractGameAction
     private void MoveToDiscard(AbstractCard card)
     {
         AbstractDungeon.player.drawPile.removeCard(card);
-        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card), Settings.ACTION_DUR_XFAST, true));
+        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.discardPile), Settings.ACTION_DUR_XFAST, true));
         AbstractDungeon.player.discardPile.addToTop(card);
 //        AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
         ProcessPostMill(card, false);

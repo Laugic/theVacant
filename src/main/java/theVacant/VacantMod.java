@@ -266,7 +266,7 @@ public class VacantMod implements
         BaseMod.addCard(new TopazFrenzy());
         BaseMod.addCard(new DiamondIsUnbreakable());
         BaseMod.addCard(new EssenceOfBismuth());
-        BaseMod.addCard(new StealSoul());
+        BaseMod.addCard(new ReapSoul());
         BaseMod.addCard(new EmeraldSplash());
         BaseMod.addCard(new BackInTheMine());
         BaseMod.addCard(new SapphireStrike());
@@ -290,7 +290,7 @@ public class VacantMod implements
         BaseMod.addCard(new Snowball());
         BaseMod.addCard(new SurpriseAttack());
         BaseMod.addCard(new Thoughtseize());
-        BaseMod.addCard(new Threat());
+        BaseMod.addCard(new Threaten());
         BaseMod.addCard(new DarkStrike());
         BaseMod.addCard(new DimensionTear());
         BaseMod.addCard(new FiendFrost());
@@ -356,7 +356,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(TopazFrenzy.ID);
         UnlockTracker.unlockCard(DiamondIsUnbreakable.ID);
         UnlockTracker.unlockCard(EssenceOfBismuth.ID);
-        UnlockTracker.unlockCard(StealSoul.ID);
+        UnlockTracker.unlockCard(ReapSoul.ID);
         UnlockTracker.unlockCard(EmeraldSplash.ID);
         UnlockTracker.unlockCard(BackInTheMine.ID);
         UnlockTracker.unlockCard(SapphireStrike.ID);
@@ -380,7 +380,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Snowball.ID);
         UnlockTracker.unlockCard(SurpriseAttack.ID);
         UnlockTracker.unlockCard(Thoughtseize.ID);
-        UnlockTracker.unlockCard(Threat.ID);
+        UnlockTracker.unlockCard(Threaten.ID);
         UnlockTracker.unlockCard(DarkStrike.ID);
         UnlockTracker.unlockCard(DimensionTear.ID);
         UnlockTracker.unlockCard(FiendFrost.ID);
@@ -515,6 +515,7 @@ public class VacantMod implements
     {
         BaseMod.addAudio("theVacant:awman",  getModID() + "Resources/audio/awman.ogg");
         BaseMod.addAudio("theVacant:ora",  getModID() + "Resources/audio/ora.ogg");
+        BaseMod.addAudio("theVacant:ora2",  getModID() + "Resources/audio/ora2.ogg");
         BaseMod.addAudio("theVacant:kingCrimson",  getModID() + "Resources/audio/kingCrimson.ogg");
         BaseMod.addAudio("theVacant:skeleton",  getModID() + "Resources/audio/mc_skeleton.ogg");
         BaseMod.addAudio("theVacant:waka",  getModID() + "Resources/audio/waka.ogg");

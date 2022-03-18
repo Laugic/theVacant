@@ -10,19 +10,22 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.DamageImpactLineEffect;
 import theVacant.util.TextureLoader;
 
 public class ChipVFX extends AbstractGameEffect {
     private static final Texture t = TextureLoader.getTexture("theVacantResources/images/vfx/Pickaxe.png");
+    private final AbstractOrb orb;
     private final float ax, ay, tx, ty; //Actual xy (for sparks vfx), Target xy (for pickaxe aiming)
     private final AtlasRegion img;
     private float x, y;
     public static final float DURATION = 0.4F;
 
-    public ChipVFX(float x, float y) {
-        super();
+    public ChipVFX(AbstractOrb orb, float x, float y)
+    {
+        this.orb = orb;
         img = new AtlasRegion(t, 0, 0, t.getWidth(), t.getHeight());
         ax = x;
         ay = y;
@@ -42,8 +45,7 @@ public class ChipVFX extends AbstractGameEffect {
             color.a = duration / (startingDuration / 2.0F);
         }
         rotation = Interpolation.swing.apply(90, -25, (startingDuration - duration) / DURATION);
-        x = Interpolation.swing.apply(tx-30*Settings.scale, tx, (startingDuration - duration) / DURATION);
-        y = Interpolation.swing.apply(ty+30*Settings.scale, ty, (startingDuration - duration) / DURATION);
+        getOrbPos();
         scale = Interpolation.swingOut.apply(Settings.scale*1.3F, Settings.scale*1.5F, (startingDuration - duration) / DURATION);
 
         if (duration < 0.0F) {
@@ -51,9 +53,17 @@ public class ChipVFX extends AbstractGameEffect {
             color.a = 0.0F;
             CardCrawlGame.sound.playA("RELIC_DROP_ROCKY", MathUtils.random(0.7F, 0.8F));
             for(int i = 0; i < 3; ++i) {
-                AbstractDungeon.effectsQueue.add(new DamageImpactLineEffect(ax, ay));
+                AbstractDungeon.effectsQueue.add(new DamageImpactLineEffect(orb.hb.cX, orb.hb.cY));
             }
         }
+    }
+
+    private void getOrbPos()
+    {
+        x = Interpolation.swing.apply(orb.hb.cX- img.getRegionWidth()/2F * Settings.scale-30*Settings.scale, orb.hb.cX- img.getRegionWidth()/2F * Settings.scale, (startingDuration - duration) / DURATION);
+        y = Interpolation.swing.apply(orb.hb.cY + img.getRegionWidth()/2F * Settings.scale+30*Settings.scale, orb.hb.cY + img.getRegionWidth()/2F * Settings.scale, (startingDuration - duration) / DURATION);
+//        x = Interpolation.swing.apply(tx-30*Settings.scale, tx, (startingDuration - duration) / DURATION);
+//        y = Interpolation.swing.apply(ty+30*Settings.scale, ty, (startingDuration - duration) / DURATION);
     }
 
     @Override

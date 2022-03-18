@@ -51,15 +51,6 @@ public class EssenceOfBismuth extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        /*for(AbstractPower power: player.powers)
-        {
-            if(power.amount > 0 && !VacantMod.IMMUNE_POWERS.contains(power.ID))
-            {
-                power.amount *= 2;
-                power.updateDescription();
-                power.flash();
-            }
-        }*/
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
         {
             for(AbstractPower power: mo.powers)
@@ -78,8 +69,8 @@ public class EssenceOfBismuth extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
-            upgradedCost = true;
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

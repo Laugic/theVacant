@@ -17,6 +17,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.DoomPower;
+import theVacant.powers.DoubleNextAttackPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -33,14 +34,14 @@ public class Showdown extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 10;
-    private static final int DOOM_AMOUNT = 2;
+    private static final int DAMAGE = 20;
+    private static final int DOOM_AMOUNT = 4;
 
     public Showdown()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = DOOM_AMOUNT;
         isMultiDamage = true;
     }
 
@@ -48,16 +49,15 @@ public class Showdown extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new VFXAction(new AdrenalineEffect(), 0.15F));
-        for(int i = 0; i < this.magicNumber; i++)
-        {
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        }
+        AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoubleNextAttackPower(player, player, 1), 1));
+
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, magicNumber), magicNumber));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
@@ -66,7 +66,7 @@ public class Showdown extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(8);
             upgradedDamage = true;
             initializeDescription();
         }

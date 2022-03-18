@@ -52,6 +52,11 @@ public class DiamondOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
+    public DiamondOption()
+    {
+        this(3);
+    }
+
     public DiamondOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

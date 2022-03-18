@@ -36,27 +36,18 @@ public class CrystalBallRelic extends CustomRelic
     public static int MATERIALIZE_AMOUNT = 2;
 
     public CrystalBallRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 
     @Override
     public void onExhaust(AbstractCard card)
     {
-        if(card.type == AbstractCard.CardType.STATUS)
-            return;
         flash();
         MaterializeModifier.Enhance(card, MATERIALIZE_AMOUNT);
         card.initializeDescription();
         card.applyPowers();
     }
-/*
-    @Override
-    public void onDrawOrDiscard()
-    {
-        while(AbstractDungeon.player.discardPile.size() > 0)
-            AbstractDungeon.player.discardPile.moveToExhaustPile(AbstractDungeon.player.discardPile.getTopCard());
-    }
-*/
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

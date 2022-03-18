@@ -49,6 +49,7 @@ public class RunicThoughts extends AbstractDynamicCard
         {
             upgradeName();
             rebound = true;
+            upgradeBaseCost(0);
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

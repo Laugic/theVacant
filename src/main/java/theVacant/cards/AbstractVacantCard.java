@@ -103,8 +103,8 @@ public abstract class AbstractVacantCard extends CustomCard
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
-            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
-                bonusMillAmount += 2;
+//            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
+//                bonusMillAmount += 2;
             //if(player.hasPower(BurdenBreakPower.POWER_ID))
             //    bonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
         }

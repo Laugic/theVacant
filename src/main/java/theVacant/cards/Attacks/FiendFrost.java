@@ -2,6 +2,7 @@ package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -26,14 +27,13 @@ public class FiendFrost extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 3;
-    private static final int UPGRADE_PLUS_DMG = 1;
+    private static final int COST = 2, DAMAGE = 15, UPGRADE_PLUS_DMG = 5, BLOCK = 3, UPGRADE_BLOCK = 2;
 
     public FiendFrost()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        block = baseBlock = BLOCK;
         exhaust = true;
     }
 
@@ -43,7 +43,8 @@ public class FiendFrost extends AbstractDynamicCard {
         int num = player.discardPile.size();
         AbstractDungeon.actionManager.addToBottom(new ExhaustDiscardAction(-1));
         for(int i = 0; i < num; i++)
-            AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            addToBot(new GainBlockAction(player, block));
+        AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override
@@ -54,6 +55,8 @@ public class FiendFrost extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradedDamage = true;
+            upgradeBlock(UPGRADE_BLOCK);
+            upgradedBlock = true;
             initializeDescription();
         }
     }

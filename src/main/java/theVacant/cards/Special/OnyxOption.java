@@ -50,6 +50,11 @@ public class OnyxOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
+    public OnyxOption()
+    {
+        this(3);
+    }
+
     public OnyxOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

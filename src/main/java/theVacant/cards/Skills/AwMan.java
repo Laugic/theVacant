@@ -1,7 +1,11 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -24,7 +28,7 @@ public class AwMan extends AbstractDynamicCard
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardTarget TARGET = CardTarget.NONE;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
@@ -33,15 +37,19 @@ public class AwMan extends AbstractDynamicCard
     public AwMan()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 4;
-        exhaust = true;
+        damage = baseDamage = magicNumber = baseMagicNumber = 5;
+        isMultiDamage = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
-        addToBot(new LoseHPAction(player, player, magicNumber));
+
+        addToBot(new DamageAction(player, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
+        if(upgraded)
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(magicNumber, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE));
+
         if(player.orbs.size() > 0)
         {
             for (AbstractOrb gem : player.orbs)
@@ -58,8 +66,7 @@ public class AwMan extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(-2);
-            upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

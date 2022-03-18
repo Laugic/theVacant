@@ -50,6 +50,11 @@ public class RubyOption  extends AbstractDynamicCard
 
     private static final int COST = -2;
 
+    public RubyOption()
+    {
+        this(3);
+    }
+
     public RubyOption(int size)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

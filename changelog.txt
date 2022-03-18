@@ -1,6 +1,14 @@
+0.19.1
+Deathbell no longer erroniously has its old effect of giving 2 bonus mill
+Removed exploit with enchanting Jab with Mill being a 2-card infinite
+---
 0.19.0
+Added lots of VFX- Thanks @AlisonMoons and @wavewhyse!
 Gems are no longer affected by Focus
+Tweaked spacing on lots of cards to be more aesthetically pleasing
+Reworked many cards to boost mitigation options, and revamped many of the Rare Attacks.
 
+Added default constructors for Gem Option cards
 -----
 0.18
 Added potions!
