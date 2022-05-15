@@ -37,6 +37,7 @@ public class DarkStrike extends AbstractDynamicCard
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 6;
         tags.add(CardTags.STRIKE);
+        exhaust = true;
     }
 
     @Override
@@ -53,8 +54,8 @@ public class DarkStrike extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(3);
-            upgradedCost = true;
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -9,7 +9,7 @@
   },
   "theVacant:MemoriaPower": {
     "NAME": "Memoria",
-    "DESCRIPTIONS": ["The next #b", " card you play that #yExhausts plays twice.", " cards you play that #yExhaust plays twice."]
+    "DESCRIPTIONS": ["The next #b", " card you play that #yExhausts plays twice. Removed at the end of your turn.", " cards you play that #yExhaust plays twice. Removed at the end of your turn."]
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
@@ -17,7 +17,7 @@
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
-    "DESCRIPTIONS": ["Powers have #yRebound, and cost 0 until the end of the turn after being Milled."]
+    "DESCRIPTIONS": ["Powers #yRebound. Whenever a card #yRebounds, it costs 0 that turn until played."]
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
@@ -28,8 +28,12 @@
     "DESCRIPTIONS": ["At the start of your turn, #yChip your next #yGem ", " time.", " times."]
   },
   "theVacant:AquamarinePower": {
-    "NAME": "Reflection",
+    "NAME": "Aquamarine",
     "DESCRIPTIONS": ["Gain #b", " #yBlock each time you #yMill a card."]
+  },
+  "theVacant:ReflectionPower": {
+    "NAME": "Reflection",
+    "DESCRIPTIONS": ["#yChipping a #yGem gives ", " times its effect."]
   },
   "theVacant:RequiemPower": {
     "NAME": "Requiem",
@@ -51,7 +55,7 @@
   },
   "theVacant:ShroudPower": {
     "NAME": "Shroud",
-    "DESCRIPTIONS": ["Halve incoming damage. Reduces by 1 at the start of your turn, and when you play an attack."]
+    "DESCRIPTIONS": ["Halve incoming damage. Reduces by 1 at the start of your turn, and whenever you play an attack."]
   },
   "theVacant:CleanseSoulPower": {
     "NAME": "Cleanse Soul",
@@ -63,7 +67,7 @@
   },
   "theVacant:AbyssPower": {
     "NAME": "The Abyss",
-    "DESCRIPTIONS": ["At the start of your turn, gain #b"," #yDoom and apply #b", " #yDoom to ALL enemies."]
+    "DESCRIPTIONS": ["At the start of your turn, apply #b", " #yDoom to ALL enemies."]
   },
   "theVacant:DelayedExhumePower": {
     "NAME": "Fluxume",
@@ -135,7 +139,7 @@
   },
   "theVacant:ReapPower": {
     "NAME": "Reap",
-    "DESCRIPTIONS": ["When this target is attacked, heal #b", " HP. Reduces by #b1 at the end of the turn."]
+    "DESCRIPTIONS": ["When this target is attacked, heal #b", " HP. Removed at the start of your next turn."]
   },
   "theVacant:DoubleNextAttackPower": {
     "NAME": "Double Next Attack",

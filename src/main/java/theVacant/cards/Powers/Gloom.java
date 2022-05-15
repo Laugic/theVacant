@@ -9,6 +9,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.GloomPower;
+import theVacant.powers.ShroudPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -27,18 +28,18 @@ public class Gloom extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Gloom()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 6;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new ApplyPowerAction(player, player, new GloomPower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -47,7 +48,7 @@ public class Gloom extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(3);
             upgradedMagicNumber = true;
             initializeDescription();
         }

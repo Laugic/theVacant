@@ -60,7 +60,10 @@ public class Exorcise extends AbstractDynamicCard
                 if(upgraded && !VacantMod.IMMUNE_POWERS.contains(power.ID))
                 {
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+                    {
+                        power.owner = mo;
                         addToBot(new ApplyPowerAction(mo, player, power));
+                    }
                 }
             }
         }

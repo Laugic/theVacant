@@ -50,11 +50,12 @@ public class EmbraceDarkness extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT), upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT));
-       /* addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
+        //addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT), upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT));
+        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT), upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));*/
+            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT), upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
     }
+/*
     @Override
     public List<TooltipInfo> getCustomTooltips()
     {
@@ -65,7 +66,8 @@ public class EmbraceDarkness extends AbstractDynamicCard {
             //Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_FORM_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_FORM_ID)));
         }
         return Tooltip;
-    }
+    }*/
+    
     @Override
     public void upgrade()
     {

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.actions.BetterExhaustPileToHandAction;
+import theVacant.actions.UnfadePilesAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -48,7 +49,8 @@ public class DimensionTear extends AbstractDynamicCard
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot(new BetterExhaustPileToHandAction(player.exhaustPile.size()+1,false));
+        addToBot(new BetterExhaustPileToHandAction(99999,false));
+        //addToBot(new UnfadePilesAction());
         //addToBot(new ExhumeAndEnhanceAction(player.exhaustPile.size() + 2));
         //addToBot(new ExhaustDiscardAction(-1));
     }

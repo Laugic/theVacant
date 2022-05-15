@@ -15,10 +15,10 @@ import java.util.ArrayList;
 
 import static theVacant.VacantMod.makeCardPath;
 
-public class AbsorbAmethyst extends AbstractDynamicCard
+public class ShatterAmethyst extends AbstractDynamicCard
 {
 
-    public static final String ID = VacantMod.makeID(AbsorbAmethyst.class.getSimpleName());
+    public static final String ID = VacantMod.makeID(ShatterAmethyst.class.getSimpleName());
     public static final String IMG = makeCardPath("ShatterAmethyst.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
@@ -32,10 +32,11 @@ public class AbsorbAmethyst extends AbstractDynamicCard
 
     private static final int COST = 1;
 
-    public AbsorbAmethyst()
+    public ShatterAmethyst()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 4;
+        rebound = true;
     }
 
     @Override

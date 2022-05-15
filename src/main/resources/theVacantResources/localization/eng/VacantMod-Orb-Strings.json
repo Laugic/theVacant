@@ -23,6 +23,12 @@
       "At the start of your turn, apply 1 #yDoom to ALL enemies and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
     ]
   },
+  "theVacant:TopazOrb": {
+    "NAME": "Topaz",
+    "DESCRIPTION": [
+      "At the start of your turn, gain 1 Artifact and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+    ]
+  },
   "theVacant:DiamondOrb": {
     "NAME": "Diamond",
     "DESCRIPTION": [

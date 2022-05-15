@@ -34,7 +34,7 @@ public class Showdown extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 20;
+    private static final int DAMAGE = 16;
     private static final int DOOM_AMOUNT = 4;
 
     public Showdown()
@@ -51,7 +51,7 @@ public class Showdown extends AbstractDynamicCard
         addToBot(new VFXAction(new AdrenalineEffect(), 0.15F));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(this.damage, true), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoubleNextAttackPower(player, player, 1), 1));
 
@@ -66,7 +66,7 @@ public class Showdown extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(8);
+            upgradeDamage(6);
             upgradedDamage = true;
             initializeDescription();
         }

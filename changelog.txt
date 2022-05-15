@@ -1,3 +1,34 @@
+0.20.0
+Big Reworks/Changes:
+Reflection changed to boost the power of Chipping Gems instead of gain Block from Mill.
+Gloom now gives Shroud instead of Milling at the start of your turn.
+Into the Abyss only gives Doom to you once instead of every turn, making it much more viable as a scaling option.
+Runic Thoughts now makes *any* card that rebounds cost 0 until played, not just powers.
+Topaz Frenzy now creates Topaz, a new Gem type. It gives Artifact over time.
+Topaz can now be found when you Mine for random Gems.
+Corporeate now gives Block for each card Milled.
+Corporeate+ no longer costs 0 (Too many infinites used the 0 cost Mill + return, so this nerf was very needed)
+Reaper Blast now costs 0, applies vulnerable when unupgraded, but applies debuffs to EVERYONE instead.
+Embrace Darkness no longer gains Void, and applies Doom to EVERYONE.
+Unearth costs 1, doesn't exhaust, and also lets you pick a random Gem to Mine.
+Fiend Frost is now a Skill, and doens't deal damage anymore.
+
+Added the Sound of Silence (new Rare attack that gives Shroud)
+Removed On Second Thought
+
+Minor/Overarching Changes:
+Added Rebound to more cards
+Many Gem cards now Exhaust
+Nerfed damage on a few cards
+Nerfed or tweaked a few upgrades
+
+Fixed Rebounding cards ignoring max hand size
+Fixed AoE attacks having damage modifiers apply twice
+Fixed Requiem not doubling stacking powers
+Fixed Aw Man damage display
+Void Embrace now triggers when a copy of an exhausted card is played (e.g.: a copy from Memoria)
+Immaterialize no longer triggers when a copy of an exhausted card is played.
+-----
 0.19.1
 Deathbell no longer erroniously has its old effect of giving 2 bonus mill
 Removed exploit with enchanting Jab with Mill being a 2-card infinite

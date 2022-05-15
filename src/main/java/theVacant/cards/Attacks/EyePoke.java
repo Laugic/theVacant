@@ -31,7 +31,7 @@ public class EyePoke extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
@@ -48,8 +48,8 @@ public class EyePoke extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeBaseCost(0);
+            upgradedCost = true;
             initializeDescription();
         }
     }

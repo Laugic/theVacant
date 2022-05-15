@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theVacant.actions.ReduceOrbSizeAction;
+import theVacant.powers.ReflectionPower;
 import theVacant.relics.RagRelic;
 import theVacant.vfx.ChipVFX;
 
@@ -84,7 +85,13 @@ public abstract class AbstractGemOrb extends CustomOrb
         {
             if(tempSize > 0)
             {
-                chipTotal += oneSizeEffect ? 1 : tempSize;
+                int multiplier = 1;
+                if(AbstractDungeon.player.hasPower(ReflectionPower.POWER_ID))
+                    multiplier = (AbstractDungeon.player.getPower(ReflectionPower.POWER_ID).amount);
+
+                for (int j = 0; j < multiplier; j++)
+                    chipTotal += oneSizeEffect ? 1 : tempSize;
+
                 tempSize--;
             }
         }

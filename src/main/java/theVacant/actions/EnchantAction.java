@@ -90,6 +90,8 @@ public class EnchantAction extends AbstractGameAction
             AmethystModifier.Enhance(card, gem.passiveAmount);
         if(gem instanceof DiamondOrb)
             DiamondModifier.Enhance(card, 1);
+        if(gem instanceof TopazOrb)
+            TopazModifier.Enhance(card, 1);
         card.initializeDescription();
     }
 }

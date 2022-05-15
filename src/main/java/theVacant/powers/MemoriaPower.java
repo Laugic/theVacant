@@ -39,7 +39,7 @@ public class MemoriaPower extends AbstractPower implements CloneablePowerInterfa
         this.source = source;
 
         type = PowerType.BUFF;
-        isTurnBased = false;
+        isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
@@ -70,6 +70,15 @@ public class MemoriaPower extends AbstractPower implements CloneablePowerInterfa
         if (this.amount == 0)
             addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.POWER_ID));
         updateDescription();
+    }
+
+
+    @Override
+    public void atStartOfTurn()
+    {
+        reducePower(amount);
+        if(amount <= 0)
+            addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
     }
 
     @Override

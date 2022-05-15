@@ -24,7 +24,7 @@
   },
   "theVacant:GraveDigger": {
     "NAME": "Grave Digger",
-    "DESCRIPTION": "thevacant:Rebound. Deal damage equal to !M! times the number of cards in your discard pile. Exhaust.",
+    "DESCRIPTION": "thevacant:Rebound. NL Deal damage equal to !M! times the number of cards in your discard pile.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !D! damage)"
     ]
@@ -104,17 +104,17 @@
   },
   "theVacant:Thoughtseize": {
     "NAME": "Thoughtseize",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Return !M! card.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Return !M! cards."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Return !M! card. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL thevacant:Return !M! cards. NL Exhaust."
   },
   "theVacant:ReaperBlast": {
     "NAME": "Reaper Blast",
-    "DESCRIPTION": "Apply !M! thevacant:Reap and !M! Weak to ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Apply !M! thevacant:Reap, !M! Vulnerable, and !M! Weak to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Apply !M! thevacant:Reap, !M! Vulnerable, and !M! Weak to EVERYONE. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! thevacant:Reap, !M! Vulnerable, and !M! Weak to EVERYONE. NL Exhaust."
   },
   "theVacant:EmeraldSplash": {
     "NAME": "Emerald Splash",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. thevacant:Mine a size !M! thevacant:Emerald."
+    "DESCRIPTION": "Deal !D! damage NL to ALL enemies. NL thevacant:Mine a size !M! thevacant:Emerald. NL Exhaust."
   },
   "theVacant:Threaten": {
     "NAME": "Threaten",
@@ -142,7 +142,7 @@
   },
   "theVacant:FiendFrost": {
     "NAME": "Fiend Frost",
-    "DESCRIPTION": "Deal !D! damage. Exhaust your discard pile. Gain !B! Block for each card Exhausted. Exhaust."
+    "DESCRIPTION": "thevacant:Rebound. NL Exhaust your discard pile. Gain !B! Block for each card Exhausted. Exhaust."
   },
   "theVacant:Yeet": {
     "NAME": "Yeet",
@@ -162,7 +162,7 @@
   },
   "theVacant:AwMan": {
     "NAME": "Aw Man",
-    "DESCRIPTION": "Take !D! damage. NL thevacant:Chip ALL your thevacant:Gems.",
+    "DESCRIPTION": "Take !M! damage. NL thevacant:Chip ALL your thevacant:Gems.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage to EVERYONE.  NL thevacant:Chip ALL your thevacant:Gems."
   },
   "theVacant:Requiem": {
@@ -190,7 +190,7 @@
   },
   "theVacant:ReaperStrike": {
     "NAME": "Reaper Strike",
-    "DESCRIPTION": "Deal !D! damage and apply !M! thevacant:Reap to ALL enemies. Exhaust."
+    "DESCRIPTION": "Deal !D! damage NL and apply !M! thevacant:Reap NL to ALL enemies. NL Exhaust."
   },
   "theVacant:SkullBash": {
     "NAME": "Skull Bash",
@@ -216,11 +216,12 @@
   },
   "theVacant:OpalFracture": {
     "NAME": "Opal Fracture",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mine a size !M! thevacant:Opal."
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Mine a size !M! thevacant:Opal. NL Exhaust."
   },
   "theVacant:DarkStrike": {
     "NAME": "Dark Strike",
-    "DESCRIPTION": "Deal !D! damage NL !M! times. NL Apply !M! thevacant:Doom."
+    "DESCRIPTION": "Deal !D! damage NL !M! times. NL Apply !M! thevacant:Doom. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage NL !M! times. NL Apply !M! thevacant:Doom."
   },
   "theVacant:CursedBlast": {
     "NAME": "Cursed Blast",
@@ -234,13 +235,17 @@
     "NAME": "Soul Barrage",
     "DESCRIPTION": "Deal !D! damage !M! times. Can be upgraded any number of times."
   },
+  "theVacant:SoundOfSilence": {
+    "NAME": "Sound of Silence",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! thevacant:Shroud. NL Exhaust."
+  },
   "theVacant:TopazFrenzy": {
     "NAME": "Topaz Frenzy",
-    "DESCRIPTION": "Deal !D! damage 3 times. NL thevacant:Mine a size !M! thevacant:Ruby. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage 3 times. NL thevacant:Mine a size !M! thevacant:Topaz. NL Exhaust."
   },
-  "theVacant:ReapSoul": {
-    "NAME": "Reap Soul",
-    "DESCRIPTION": "Deal !D! damage. NL thevacant:Wounded: Gain Temporary_HP equal to unblocked damage."
+  "theVacant:StealSoul": {
+    "NAME": "Steal Soul",
+    "DESCRIPTION": "Deal !D! damage. NL thevacant:Wounded: Gain Temporary_HP equal to unblocked damage. NL Exhaust."
   },
   "theVacant:Banish": {
     "NAME": "Banish",
@@ -260,8 +265,7 @@
   },
   "theVacant:EssenceOfBismuth": {
     "NAME": "Essence Of Bismuth",
-    "DESCRIPTION": "Double debuffs NL on ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Double debuffs NL on ALL enemies."
+    "DESCRIPTION": "thevacant:Unnate. NL Double debuffs NL on ALL enemies. NL Exhaust."
   },
   "theVacant:Enchant": {
     "NAME": "Enchant",
@@ -281,14 +285,14 @@
     "DESCRIPTION": "thevacant:Mine a size X thevacant:Diamond. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "thevacant:Mine a size X+1 thevacant:Diamond. NL Exhaust."
   },
-  "theVacant:AbsorbAmethyst": {
-    "NAME": "Absorb Amethyst",
-    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Amethyst and thevacant:Chip it."
+  "theVacant:ShatterAmethyst": {
+    "NAME": "Shatter Amethyst",
+    "DESCRIPTION": "thevacant:Rebound. NL thevacant:Mine a size !M! thevacant:Amethyst and thevacant:Chip it."
   },
   "theVacant:EmptyShield": {
     "NAME": "Empty Shield",
     "DESCRIPTION": "Gain Block equal to your missing HP. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to your missing HP.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL Gain Block equal to your missing HP. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL (Gain ",
       " Block)"
@@ -368,8 +372,8 @@
   },
   "theVacant:Memoria": {
     "NAME": "Memoria",
-    "DESCRIPTION": "The next time you play a card that Exhausts, play it twice.",
-    "UPGRADE_DESCRIPTION": "The next 2 times you play a card that Exhausts, play it twice."
+    "DESCRIPTION": "thevacant:Rebound. NL The next time you play a card that Exhausts this turn, play it twice.",
+    "UPGRADE_DESCRIPTION": "thevacant:Rebound. NL The next 2 times you play a card that Exhausts this turn, play it twice."
   },
   "theVacant:Exorcise": {
     "NAME": "Exorcise",
@@ -382,13 +386,13 @@
   },
   "theVacant:EmbraceDarkness": {
     "NAME": "Embrace Darkness",
-    "DESCRIPTION": "Gain !M! thevacant:Shroud NL and 2 [#ee82ee]Void[]. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! thevacant:Shroud NL and 3 [#ee82ee]Void[]. NL Exhaust."
+    "DESCRIPTION": "Gain !M! thevacant:Shroud. NL Apply 2 thevacant:Doom to EVERYONE. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! thevacant:Shroud. NL Apply [#00FF33]3[] thevacant:Doom to EVERYONE. NL Exhaust."
   },
   "theVacant:Unearth": {
     "NAME": "Unearth",
-    "DESCRIPTION": "Draw !M! card from the bottom of your draw pile. Exhaust.",
-    "UPGRADE_DESCRIPTION": "Draw !M! cards from the bottom of your draw pile. Exhaust."
+    "DESCRIPTION": "Draw !M! cards from the bottom of your draw pile. Choose a thevacant:Gem to thevacant:Mine out of 3.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards from the bottom of your draw pile. Choose a thevacant:Gem to thevacant:Mine out of [#00FF33]4[]."
   },
   "theVacant:TheAnvil": {
     "NAME": "The Anvil",
@@ -397,11 +401,11 @@
   },
   "theVacant:Expand": {
     "NAME": "Expand",
-    "DESCRIPTION": "Gain !M! Max HP. NL Lose 6 HP. NL Exhaust."
+    "DESCRIPTION": "Gain !M! Max HP. NL Lose 8 HP. NL Purge."
   },
   "theVacant:Corporeate": {
     "NAME": "Corporeate",
-    "DESCRIPTION": "thevacant:Mill !M!. NL thevacant:Return 1 card."
+    "DESCRIPTION": "thevacant:Mill !M!. NL Gain Block for NL each card thevacant:Milled. NL thevacant:Return 1 card."
   },
   "theVacant:RubyRage": {
     "NAME": "Ruby Rage",
@@ -426,7 +430,7 @@
   },
   "theVacant:FromNothing": {
     "NAME": "From Nothing",
-    "DESCRIPTION": "thevacant:Mill your draw pile. NL Exhaust.",
+    "DESCRIPTION": "Innate. NL thevacant:Mill your draw pile. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Innate. NL thevacant:Mill your draw pile. NL Exhaust."
   },
   "theVacant:Freedom": {
@@ -448,11 +452,11 @@
   },
   "theVacant:Spelunk": {
     "NAME": "Spelunk",
-    "DESCRIPTION": "Gain !B! Block. NL Choose a random thevacant:Gem to thevacant:Mine out of !M!."
+    "DESCRIPTION": "Gain !B! Block. NL Choose a thevacant:Gem to thevacant:Mine out of !M!."
   },
   "theVacant:OpalShine": {
     "NAME": "Opal Shine",
-    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Opal."
+    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Opal. NL Exhaust."
   },
   "theVacant:Partake": {
     "NAME": "Partake",
@@ -520,7 +524,7 @@
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",
-    "DESCRIPTION": "thevacant:Mill !M! at the start of your turn."
+    "DESCRIPTION": "Gain !M! thevacant:Shroud."
   },
   "theVacant:DarkReflex": {
     "NAME": "Dark Reflex",
@@ -550,7 +554,7 @@
   },
   "theVacant:Recover": {
     "NAME": "Recover",
-    "DESCRIPTION": "At the end of battle, if you are thevacant:Wounded, heal !M! HP."
+    "DESCRIPTION": "At the end of battle, NL if you are thevacant:Wounded, NL heal !M! HP."
   },
   "theVacant:IronWill": {
     "NAME": "Iron Will",
@@ -576,8 +580,8 @@
   },
   "theVacant:RunicThoughts": {
     "NAME": "Runic Thoughts",
-    "DESCRIPTION": "Powers thevacant:Rebound. NL Whenever you thevacant:Mill a Power, it costs 0 NL that turn.",
-    "UPGRADE_DESCRIPTION":"thevacant:Rebound. NL Powers thevacant:Rebound. NL Whenever you thevacant:Mill a Power, it costs 0 NL that turn."
+    "DESCRIPTION": "Powers thevacant:Rebound. NL Whenever a card thevacant:Rebounds, it costs 0 that turn.",
+    "UPGRADE_DESCRIPTION":"thevacant:Rebound. NL Powers thevacant:Rebound. NL Whenever a card thevacant:Rebounds, it costs 0 that turn."
   },
   "theVacant:ShatterSoul": {
     "NAME": "Shatter Soul",
@@ -585,7 +589,7 @@
   },
   "theVacant:VoidEmbrace": {
     "NAME": "Void Embrace",
-    "DESCRIPTION": "Whenever a card you play Exhausts, gain !M! [#ee82ee]Void[].",
+    "DESCRIPTION": "thevacant:Unnate. NL Whenever a card you play Exhausts, gain !M! [#ee82ee]Void[].",
     "UPGRADE_DESCRIPTION": "Innate. NL Whenever a card you play Exhausts, gain !M! [#ee82ee]Void[]."
   },
   "theVacant:GreaterMind": {
@@ -595,7 +599,7 @@
   },
   "theVacant:IntoTheAbyss": {
     "NAME": "Into the Abyss",
-    "DESCRIPTION": "Gain !M! thevacant:Shroud. NL At the start of your turn, apply 2 thevacant:Doom to EVERYONE."
+    "DESCRIPTION": "Gain !M! thevacant:Doom. NL At the start of your turn, apply !M! thevacant:Doom to ALL enemies."
   },
   "theVacant:StoreSoul": {
     "NAME": "Store Soul",
@@ -604,12 +608,12 @@
   },
   "theVacant:Reflection": {
     "NAME": "Reflection",
-    "DESCRIPTION": "Gain !M! Block each time you thevacant:Mill a card."
+    "DESCRIPTION": "thevacant:Chipping a thevacant:Gem gives !M! times its effect."
   },
   "theVacant:ForgeSoul": {
     "NAME": "Forge Soul",
-    "DESCRIPTION": "Whenever you thevacant:Mill a card, upgrade it for the rest of combat.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you thevacant:Mill a card, upgrade it for the rest of combat."
+    "DESCRIPTION": "Innate. NL Whenever you thevacant:Mill a card, Upgrade it for the rest of combat.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you thevacant:Mill a card, Upgrade it for the rest of combat."
   },
   "theVacant:VoidForm": {
     "NAME": "Void Form",
@@ -637,7 +641,7 @@
   },
   "theVacant:OnyxOption": {
     "NAME": "Onyx",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, apply !M! thevacant:Doom to ALL enemies and lose 1 size."
+    "DESCRIPTION": "Size !M!. NL At the start of your turn, apply 1 thevacant:Doom to ALL enemies and lose 1 size."
   },
   "theVacant:DiamondOption": {
     "NAME": "Diamond",
@@ -646,6 +650,10 @@
   "theVacant:AmethystOption": {
     "NAME": "Amethyst",
     "DESCRIPTION": "Size !M!. At the start of your turn, thevacant:Mill !M! and lose 1 size. If your draw pile is empty, increase damage and Block by !M!."
+  },
+  "theVacant:TopazOption": {
+    "NAME": "Topaz",
+    "DESCRIPTION": "Size !M!. NL At the start of your turn, gain 1 Artifact and lose 1 size."
   },
   "theVacant:WhenDarknessComes": {
     "NAME": "When Darkness Comes",

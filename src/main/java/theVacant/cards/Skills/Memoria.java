@@ -30,7 +30,8 @@ public class Memoria extends AbstractDynamicCard
     public Memoria()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 1;
+        rebound = true;
     }
 
     @Override
@@ -46,8 +47,8 @@ public class Memoria extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(1);
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

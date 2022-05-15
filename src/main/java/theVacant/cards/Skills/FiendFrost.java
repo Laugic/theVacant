@@ -1,49 +1,50 @@
-package theVacant.cards.Attacks;
+package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theVacant.VacantMod;
-import theVacant.actions.TempHPGainFromDamageAction;
+import theVacant.actions.ExhaustDiscardAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
 import static theVacant.VacantMod.makeCardPath;
 
-public class ReapSoul extends AbstractDynamicCard
-{
-    public static final String ID = VacantMod.makeID(ReapSoul.class.getSimpleName());
-    public static final String IMG = makeCardPath("ReapSoul.png");
+public class FiendFrost extends AbstractDynamicCard {
+
+    public static final String ID = VacantMod.makeID(FiendFrost.class.getSimpleName());
+    public static final String IMG = makeCardPath("FiendFrost.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
-    private static final CardType TYPE = CardType.ATTACK;
+    private static final CardTarget TARGET = CardTarget.SELF;
+    private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 14;
+    private static final int COST = 2, BLOCK = 3, UPGRADE_BLOCK = 2;
 
-    public ReapSoul()
+    public FiendFrost()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
+        block = baseBlock = BLOCK;
+        exhaust = true;
+        rebound = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.effectsQueue.add(new LightningEffect(monster.hb.cX, monster.hb.cY));
-        if(player.isBloodied)
-            addToBot( new TempHPGainFromDamageAction(player, monster, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        else
-            addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        int num = player.discardPile.size();
+        AbstractDungeon.actionManager.addToBottom(new ExhaustDiscardAction(-1));
+        for(int i = 0; i < num; i++)
+            addToBot(new GainBlockAction(player, block));
+        //AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
     }
 
     @Override
@@ -52,8 +53,8 @@ public class ReapSoul extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
-            upgradedDamage = true;
+            upgradeBlock(UPGRADE_BLOCK);
+            upgradedBlock = true;
             initializeDescription();
         }
     }

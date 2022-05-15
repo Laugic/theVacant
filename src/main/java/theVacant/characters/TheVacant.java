@@ -65,7 +65,7 @@ public class TheVacant extends CustomPlayer
     private static final KeywordStrings keyStrings = CardCrawlGame.languagePack.getKeywordString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
-    public static List<String> crystalCards = Arrays.asList(AbsorbAmethyst.ID, FireCrystal.ID, FireCrystal.ID);
+    public static List<String> crystalCards = Arrays.asList(ShatterAmethyst.ID, FireCrystal.ID, FireCrystal.ID);
 
     public static final String[] orbTextures = {
             "theVacantResources/images/char/vacantCharacter/orb/layer1.png",
@@ -227,7 +227,7 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new AbsorbAmethyst();
+        return new ShatterAmethyst();
     }
 
     @Override

@@ -1,49 +1,50 @@
 package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DiscardSpecificCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.FlickCoinEffect;
+import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theVacant.VacantMod;
+import theVacant.actions.TempHPGainFromDamageAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
 import static theVacant.VacantMod.makeCardPath;
 
-public class BrassMagnet extends AbstractDynamicCard {
-
-    public static final String ID = VacantMod.makeID(BrassMagnet.class.getSimpleName());
-    public static final String IMG = makeCardPath("BrassMagnet.png");
+public class StealSoul extends AbstractDynamicCard
+{
+    public static final String ID = VacantMod.makeID(StealSoul.class.getSimpleName());
+    public static final String IMG = makeCardPath("ReapSoul.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int DAMAGE = 14;
-    private static final int UPGRADE_PLUS_DMG = 4;
 
-    public BrassMagnet()
+    public StealSoul()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = DAMAGE;
-        this.rebound = true;
+        damage = baseDamage = DAMAGE;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new VFXAction(new FlickCoinEffect(player.hb.cX, player.hb.cY, monster.hb.cX, monster.hb.cY), 0.3F));
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.effectsQueue.add(new LightningEffect(monster.hb.cX, monster.hb.cY));
+        if(player.isBloodied)
+            addToBot( new TempHPGainFromDamageAction(player, monster, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        else
+            addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
@@ -52,13 +53,9 @@ public class BrassMagnet extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeDamage(4);
+            upgradedDamage = true;
             initializeDescription();
         }
-    }
-    @Override
-    public void triggerWhenDrawn()
-    {
-        AbstractDungeon.actionManager.addToTop(new DiscardSpecificCardAction(this));
     }
 }

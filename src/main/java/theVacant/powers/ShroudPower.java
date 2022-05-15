@@ -84,6 +84,18 @@ public class ShroudPower extends AbstractPower implements CloneablePowerInterfac
     }
 
     @Override
+    public int onAttacked(DamageInfo info, int damageAmount)
+    {
+        if(info.type != DamageInfo.DamageType.NORMAL)
+        {
+            if(damageAmount % 2 == 1)
+                damageAmount--;
+            return damageAmount / 2;
+        }
+        return damageAmount;
+    }
+
+    @Override
     public void updateDescription()
     {
         description = DESCRIPTIONS[0];

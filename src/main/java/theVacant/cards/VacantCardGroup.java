@@ -1,12 +1,17 @@
 package theVacant.cards;
 
+import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import theVacant.powers.RequiemPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -68,6 +73,30 @@ public class VacantCardGroup
                     deck.removeCard(abstractCard);
                     deck.addToBottom(abstractCard);
                 }
+            }
+        }
+    }
+
+    @SpirePatch(clz = ApplyPowerAction.class, method = "update")
+    public static class RequiemDouble
+    {
+        @SpireInsertPatch(
+                rloc=9
+        )
+        public static void update(ApplyPowerAction _instance)
+        {
+            if(_instance.target.hasPower(RequiemPower.POWER_ID))
+            {
+                AbstractPower power = ReflectionHacks.getPrivate(_instance, ApplyPowerAction.class, "powerToApply");
+                if(_instance.amount > 0 && (power.type == AbstractPower.PowerType.BUFF || power.type == AbstractPower.PowerType.DEBUFF))
+                    _instance.amount *= 2;
+
+                power.updateDescription();
+
+                _instance.target.getPower(RequiemPower.POWER_ID).flash();
+
+                for (AbstractCard card: AbstractDungeon.player.hand.group)
+                    card.applyPowers();
             }
         }
     }

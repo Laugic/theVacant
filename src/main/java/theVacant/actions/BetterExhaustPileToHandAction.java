@@ -1,6 +1,7 @@
 package theVacant.actions;
 
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,6 +11,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -63,14 +66,47 @@ public class BetterExhaustPileToHandAction extends AbstractGameAction //COPIED F
                     while (counter.hasNext())
                     {
                         card = (AbstractCard) counter.next();
-                        if (this.player.hand.size() == BaseMod.MAX_HAND_SIZE)
+
+                        if (this.player.hand.size() >= BaseMod.MAX_HAND_SIZE)
                         {
+                            if(player.exhaustPile.contains(card))
+                            {
+                                player.exhaustPile.moveToDiscardPile(card);
+                                player.exhaustPile.group.remove(card);
+                                AbstractGameEffect e = null;
+                                for (AbstractGameEffect effect: AbstractDungeon.effectList)
+                                {
+                                    if(effect instanceof ExhaustCardEffect)
+                                    {
+                                        AbstractCard c = ReflectionHacks.getPrivate(effect, ExhaustCardEffect.class, "c");
+                                        if(c == card)
+                                            e = effect;
+                                    }
+                                }
+                                AbstractDungeon.effectList.remove(e);
+                            }
+                            if(player.limbo.contains(card))
+                            {
+                                player.limbo.moveToDiscardPile(card);
+                                player.limbo.removeCard(card);
+                                AbstractGameEffect e = null;
+                                for (AbstractGameEffect effect: AbstractDungeon.effectList)
+                                {
+                                    if(effect instanceof ExhaustCardEffect)
+                                    {
+                                        AbstractCard c = ReflectionHacks.getPrivate(effect, ExhaustCardEffect.class, "c");
+                                        if(c == card)
+                                            e = effect;
+                                    }
+                                }
+                                AbstractDungeon.effectList.remove(e);
+                            }
+                            player.createHandIsFullDialog();
                             card.unhover();
                             card.unfadeOut();
                             card.lighten(true);
                             card.setAngle(0.0F);
-                            this.player.exhaustPile.moveToDiscardPile(card);
-                            this.player.createHandIsFullDialog();
+                            card.fadingOut = false;
                         }
                         else
                         {
@@ -78,6 +114,7 @@ public class BetterExhaustPileToHandAction extends AbstractGameAction //COPIED F
                             card.unfadeOut();
                             card.lighten(true);
                             card.setAngle(0.0F);
+                            card.fadingOut = false;
                             this.player.exhaustPile.moveToHand(card, this.player.exhaustPile);
                         }
                     }
@@ -93,6 +130,7 @@ public class BetterExhaustPileToHandAction extends AbstractGameAction //COPIED F
                         card = (AbstractCard) counter.next();
                         temp.addToTop(card);
                         card.unhover();
+                        card.unfadeOut();
                         card.lighten(true);
                         card.setAngle(0.0F);
                     }
@@ -135,6 +173,7 @@ public class BetterExhaustPileToHandAction extends AbstractGameAction //COPIED F
                     AbstractCard card = (AbstractCard) iterator.next();
                     card.unhover();
                     card.lighten(true);
+                    card.unfadeOut();
                     card.setAngle(0.0F);
                     if (this.player.hand.size() == 10)
                     {

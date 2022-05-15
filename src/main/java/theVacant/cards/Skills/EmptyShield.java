@@ -30,8 +30,8 @@ public class EmptyShield extends AbstractDynamicCard
     public EmptyShield()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.baseBlock = BLOCK;
-        this.exhaust = true;
+        block = baseBlock = BLOCK;
+        exhaust = true;
     }
 
     @Override
@@ -46,11 +46,14 @@ public class EmptyShield extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.exhaust = false;
-            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            upgradeBaseCost(1);
+            upgradedCost = true;
+            rebound = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            initializeDescription();
         }
     }
+
     @Override
     public void atTurnStart()
     {
@@ -69,7 +72,7 @@ public class EmptyShield extends AbstractDynamicCard
     @Override
     public void onMoveToDiscard()
     {
-        this.rawDescription = this.upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
+        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
         initializeDescription();
     }
 
@@ -77,16 +80,16 @@ public class EmptyShield extends AbstractDynamicCard
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
-            this.baseBlock = player.maxHealth - player.currentHealth;
+            baseBlock = player.maxHealth - player.currentHealth;
         else
-            this.baseBlock = 0;
+            baseBlock = 0;
     }
 
     private void getDesc()
     {
-        this.rawDescription = this.upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
-        int amount = this.block;
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + cardStrings.EXTENDED_DESCRIPTION[1];
+        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
+        int amount = block;
+        rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + cardStrings.EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 }

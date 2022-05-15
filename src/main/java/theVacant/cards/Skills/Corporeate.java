@@ -31,14 +31,14 @@ public class Corporeate extends AbstractDynamicCard
     public Corporeate()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 5;
-        this.getBonusMillToMagic = true;
+        magicNumber = baseMagicNumber = 5;
+        getBonusMillToMagic = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, true));
         AbstractDungeon.actionManager.addToBottom(new BetterDiscardPileToHandAction(1));
     }
 
@@ -48,7 +48,8 @@ public class Corporeate extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(3);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

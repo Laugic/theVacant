@@ -11,7 +11,7 @@
     "NAMES": [
       "unnate"
     ],
-    "DESCRIPTION": "Starts at the bottom of your draw pile."
+    "DESCRIPTION": "Starts each combat at the bottom of your draw pile."
   },
   {
     "PROPER_NAME": "Heavy",
@@ -30,7 +30,8 @@
   {
     "PROPER_NAME": "Chip",
     "NAMES": [
-      "chip"
+      "chip",
+      "chipping"
     ],
     "DESCRIPTION": "Trigger the effect and reduce the size of a #yGem."
   },
@@ -69,7 +70,7 @@
     "NAMES": [
       "shroud"
     ],
-    "DESCRIPTION": "Halve incoming damage. Reduced by 1 at the start of your turn, and when you play an attack."
+    "DESCRIPTION": "Halve incoming damage. Reduced by 1 at the start of your turn, and whenever you play an attack."
   },
   {
     "PROPER_NAME": "Gem",
@@ -106,7 +107,7 @@
     "NAMES": [
       "reap"
     ],
-    "DESCRIPTION": "Heal this much HP when you attack this target. Removes at the end of the turn."
+    "DESCRIPTION": "Heal this much HP when you attack this target. Removed at the start of your next turn."
   },
   {
     "PROPER_NAME": "Ruby",
@@ -115,6 +116,13 @@
       "rubies"
     ],
     "DESCRIPTION": "#yGem: Gain #yVigor. NL Loses size over time."
+  },
+  {
+    "PROPER_NAME": "Topaz",
+    "NAMES": [
+      "topaz"
+    ],
+    "DESCRIPTION": "#yGem: Gain #yArtifact. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Amethyst",

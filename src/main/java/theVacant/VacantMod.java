@@ -259,14 +259,15 @@ public class VacantMod implements
         BaseMod.addCard(new OpalOption(gemSize));
         BaseMod.addCard(new RubyOption(gemSize));
         BaseMod.addCard(new SapphireOption(gemSize));
+        BaseMod.addCard(new TopazOption(gemSize));
 
 
 
-        BaseMod.addCard(new AbsorbAmethyst());
+        BaseMod.addCard(new ShatterAmethyst());
         BaseMod.addCard(new TopazFrenzy());
         BaseMod.addCard(new DiamondIsUnbreakable());
         BaseMod.addCard(new EssenceOfBismuth());
-        BaseMod.addCard(new ReapSoul());
+        BaseMod.addCard(new StealSoul());
         BaseMod.addCard(new EmeraldSplash());
         BaseMod.addCard(new BackInTheMine());
         BaseMod.addCard(new SapphireStrike());
@@ -297,6 +298,7 @@ public class VacantMod implements
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new Showdown());
         BaseMod.addCard(new GildedPickaxe());
+        BaseMod.addCard(new SoundOfSilence());
 
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
@@ -313,7 +315,6 @@ public class VacantMod implements
         BaseMod.addCard(new Fortify());
         BaseMod.addCard(new Hex());
         BaseMod.addCard(new SoulBarrage());
-        BaseMod.addCard(new OnSecondThought());
         BaseMod.addCard(new Sneeze());
         BaseMod.addCard(new OpalShine());
         BaseMod.addCard(new Unearth());
@@ -352,11 +353,11 @@ public class VacantMod implements
 
         logger.info("Making sure the cards are unlocked.");
 
-        UnlockTracker.unlockCard(AbsorbAmethyst.ID);
+        UnlockTracker.unlockCard(ShatterAmethyst.ID);
         UnlockTracker.unlockCard(TopazFrenzy.ID);
         UnlockTracker.unlockCard(DiamondIsUnbreakable.ID);
         UnlockTracker.unlockCard(EssenceOfBismuth.ID);
-        UnlockTracker.unlockCard(ReapSoul.ID);
+        UnlockTracker.unlockCard(StealSoul.ID);
         UnlockTracker.unlockCard(EmeraldSplash.ID);
         UnlockTracker.unlockCard(BackInTheMine.ID);
         UnlockTracker.unlockCard(SapphireStrike.ID);
@@ -388,6 +389,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Showdown.ID);
         UnlockTracker.unlockCard(SoulBash.ID);
         UnlockTracker.unlockCard(GildedPickaxe.ID);
+        UnlockTracker.unlockCard(SoundOfSilence.ID);
 
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
@@ -404,7 +406,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Fortify.ID);
         UnlockTracker.unlockCard(Hex.ID);
         UnlockTracker.unlockCard(SoulBarrage.ID);
-        UnlockTracker.unlockCard(OnSecondThought.ID);
         UnlockTracker.unlockCard(Sneeze.ID);
         UnlockTracker.unlockCard(OpalShine.ID);
         UnlockTracker.unlockCard(Unearth.ID);
@@ -446,6 +447,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(OpalOption.ID);
         UnlockTracker.unlockCard(RubyOption.ID);
         UnlockTracker.unlockCard(SapphireOption.ID);
+        UnlockTracker.unlockCard(TopazOption.ID);
 
         logger.info("Making sure the cards are unlocked.");
 /*

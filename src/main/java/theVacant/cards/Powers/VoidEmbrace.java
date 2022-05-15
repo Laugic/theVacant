@@ -41,6 +41,7 @@ public class VoidEmbrace extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
+        isUnnate = true;
     }
 
     @Override
@@ -67,6 +68,7 @@ public class VoidEmbrace extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
+            isUnnate = false;
             isInnate = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();

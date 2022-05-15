@@ -54,7 +54,9 @@ public class Dig extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(2);
+            upgradedMagicNumber = true;
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradedBlock = true;
             initializeDescription();
         }
     }

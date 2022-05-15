@@ -14,9 +14,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
+import theVacant.actions.EnhanceInHandAction;
 import theVacant.actions.SyphonAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Modifiers.MaterializeModifier;
 import theVacant.characters.TheVacant;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
@@ -46,6 +48,7 @@ public class EssenceOfBismuth extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
+        isUnnate = true;
     }
 
     @Override
@@ -69,8 +72,7 @@ public class EssenceOfBismuth extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            MaterializeModifier.Enhance(this, 2);
             initializeDescription();
         }
     }

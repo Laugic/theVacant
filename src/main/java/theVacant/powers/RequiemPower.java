@@ -3,7 +3,9 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnPlayerDeathPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,7 +18,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.util.TextureLoader;
 
-public class RequiemPower extends AbstractPower implements CloneablePowerInterface
+public class RequiemPower extends AbstractPower implements CloneablePowerInterface, BetterOnApplyPowerPower
 {
     public AbstractCreature source;
 
@@ -67,10 +69,16 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
             power.updateDescription();
         }
         for (AbstractCard card: AbstractDungeon.player.hand.group)
-        {
             card.applyPowers();
-        }
     }
+/*
+    @Override
+    public int betterOnApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount)
+    {
+        if(owner == target)
+            return stackAmount * 2;
+        return stackAmount;
+    }*/
 
     @Override
     public void updateDescription()
@@ -82,6 +90,12 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
     public AbstractPower makeCopy()
     {
         return new RequiemPower(owner, source, amount);
+    }
+
+    @Override
+    public boolean betterOnApplyPower(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1)
+    {
+        return true;
     }
 /*
     @Override

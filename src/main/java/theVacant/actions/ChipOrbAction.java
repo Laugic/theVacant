@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theVacant.orbs.AbstractGemOrb;
+import theVacant.powers.ReflectionPower;
 
 public class ChipOrbAction extends AbstractGameAction
 {
@@ -28,6 +29,7 @@ public class ChipOrbAction extends AbstractGameAction
         }
         this.amount = chips;
         this.limited = limited;
+        source = AbstractDungeon.player;
     }
 
     @Override
@@ -39,7 +41,8 @@ public class ChipOrbAction extends AbstractGameAction
             return;
         }
         int hits = Math.min(amount, gem.passiveAmount);
-        //The proposed solution
+/*        if(source.hasPower(ReflectionPower.POWER_ID))
+            hits *= (1 + source.getPower(ReflectionPower.POWER_ID).amount);*/
         gem.onChip(hits);
         amount -= hits;
         if (amount > 0 && hasAnotherGem() && !limited)

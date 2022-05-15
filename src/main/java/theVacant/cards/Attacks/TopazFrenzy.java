@@ -17,6 +17,7 @@ import theVacant.cards.Modifiers.EchoModifier;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.OpalOrb;
 import theVacant.orbs.RubyOrb;
+import theVacant.orbs.TopazOrb;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
@@ -43,7 +44,7 @@ public class TopazFrenzy extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 6;
+        magicNumber = baseMagicNumber = 2;
         exhaust = true;
     }
 
@@ -52,7 +53,7 @@ public class TopazFrenzy extends AbstractDynamicCard {
     {
         for (int i = 0; i < 3; i++)
             addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new MineGemAction(new RubyOrb(magicNumber)));
+        addToBot(new MineGemAction(new TopazOrb(magicNumber)));
     }
 
     @Override
@@ -63,7 +64,7 @@ public class TopazFrenzy extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(2);
             upgradedDamage = true;
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             upgradedMagicNumber = true;
             initializeDescription();
         }

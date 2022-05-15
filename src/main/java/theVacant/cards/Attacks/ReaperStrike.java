@@ -32,7 +32,7 @@ public class ReaperStrike extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 14;
+    private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 4;
 
     public ReaperStrike()
@@ -51,7 +51,7 @@ public class ReaperStrike extends AbstractDynamicCard
     {
         addToBot(new VFXAction(new ReapVFX(), ReapVFX.DURATION*3/4F));
         addToBot(new SFXAction("ATTACK_HEAVY"));
-        addToBot(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
             addToBot(new ApplyPowerAction(mo, player, new ReapPower(mo, mo, magicNumber),magicNumber));
     }

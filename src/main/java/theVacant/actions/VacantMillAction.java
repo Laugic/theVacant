@@ -23,6 +23,7 @@ public class VacantMillAction  extends AbstractGameAction
     private int voidAmount;
     private int millNum;
     private AbstractCard ignoredCard;
+    private boolean gainBlockForMill = false;
 
     private final SFXAction waka = new SFXAction("theVacant:waka");
 
@@ -47,6 +48,18 @@ public class VacantMillAction  extends AbstractGameAction
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
         ignoredCard = cardToIgnore;
+    }
+
+    public VacantMillAction(int numCards, boolean block)
+    {
+        amount = numCards;
+        voidAmount = 0;
+        millNum = 0;
+        startAmount = amount;
+        actionType = ActionType.CARD_MANIPULATION;
+        startingDuration = Settings.ACTION_DUR_FAST;
+        duration = startingDuration;
+        gainBlockForMill = block;
     }
 
     public void update()
@@ -76,34 +89,29 @@ public class VacantMillAction  extends AbstractGameAction
         millNum++;
         if(card != null && (ignoredCard == null || (!card.equals(ignoredCard))))
         {
-            if(card instanceof AbstractDynamicCard)
-            {
-                CheckRebound((AbstractDynamicCard)card);
-                return;
-            }
-            MoveToDiscard(card);
+            CheckRebound(card);
             return;
         }
     }
 
-    private void CheckRebound(AbstractDynamicCard card)
+    private void CheckRebound(AbstractCard card)
     {
-        if((card).rebound || GetSpecialRebound(card))
+        if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).rebound) || GetSpecialRebound(card))
             Rebound(card);
         else
         {
-            if(card.postMillAction)
-                card.PostMillAction();
+            if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).postMillAction))
+                ((AbstractDynamicCard)card).PostMillAction();
             MoveToDiscard(card);
         }
     }
 
-    private void Rebound(AbstractDynamicCard card)
+    private void Rebound(AbstractCard card)
     {
         if(AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE)
         {
-            if(card.postMillAction)
-                card.PostMillAction();
+            if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).postMillAction))
+                ((AbstractDynamicCard)card).PostMillAction();
             MoveToDiscard(card);
             return;
         }
@@ -111,9 +119,8 @@ public class VacantMillAction  extends AbstractGameAction
         AbstractDungeon.player.drawPile.removeCard(card);
         addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand), Settings.ACTION_DUR_XFAST, true));
 
-        PostRebound(card);
-        if(card.postMillAction)
-            card.PostMillAction();
+        if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).postMillAction))
+            ((AbstractDynamicCard)card).PostMillAction();
         ProcessPostMill(card, true);
     }
 
@@ -129,6 +136,8 @@ public class VacantMillAction  extends AbstractGameAction
     private void PostMill()
     {
         AbstractDungeon.player.hand.applyPowers();
+        if(gainBlockForMill && millNum > 0)
+            addToBot(new GainBlockAction(AbstractDungeon.player, millNum));
     }
 
     private void GetBonusVoid()
@@ -187,15 +196,7 @@ public class VacantMillAction  extends AbstractGameAction
         voidAmount++;
     }
 
-    private void PostRebound(AbstractCard card)
-    {
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && player.hasRelic(LocketRelic.ID))
-        {
-            player.getRelic(LocketRelic.ID).flash();
-            addToBot(new GainBlockAction(player, LocketRelic.BLOCK_AMOUNT));
-        }
-    }
+
 
     private boolean GetSpecialRebound(AbstractCard card)
     {
@@ -203,10 +204,8 @@ public class VacantMillAction  extends AbstractGameAction
         if(player != null)
         {
             if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
-            {
-                card.setCostForTurn(0);
                 return true;
-            }
+
             if(player.hasPower(DarkReflexPower.POWER_ID) && millNum <= player.getPower(DarkReflexPower.POWER_ID).amount)
                 return true;
         }

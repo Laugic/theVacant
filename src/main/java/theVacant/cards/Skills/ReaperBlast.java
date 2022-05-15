@@ -34,7 +34,7 @@ public class ReaperBlast extends AbstractDynamicCard
 
     private static ArrayList<TooltipInfo> VoidboundTooltip;
 
-    private static final int COST = 2;
+    private static final int COST = 0;
     private static final int UPGRADE_MAGIC_NUM = 2;
     private static final int DOOM_AMOUNT = 2;
 
@@ -49,11 +49,13 @@ public class ReaperBlast extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new ApplyPowerAction(player, player, new ReapPower(player, player, magicNumber), magicNumber, true));
+        addToBot(new ApplyPowerAction(player, player, new VulnerablePower(player, magicNumber, false), magicNumber, true));
+        addToBot(new ApplyPowerAction(player, player, new WeakPower(player, magicNumber, false), magicNumber, true));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
         {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new ReapPower(mo, mo, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            if(upgraded)
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
         }
     }

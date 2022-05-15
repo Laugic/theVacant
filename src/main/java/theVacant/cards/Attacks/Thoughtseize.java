@@ -27,7 +27,7 @@ public class Thoughtseize extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 8;
+    private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DMG = 2;
 
     public Thoughtseize()
@@ -35,6 +35,7 @@ public class Thoughtseize extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
         damage = baseDamage = DAMAGE;
+        exhaust = true;
     }
 
     @Override

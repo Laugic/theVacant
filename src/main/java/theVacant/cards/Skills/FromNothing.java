@@ -30,6 +30,7 @@ public class FromNothing extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         exhaust = true;
+        isInnate = true;
     }
 
     @Override
@@ -45,7 +46,8 @@ public class FromNothing extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isInnate = true;
+            upgradeBaseCost(1);
+            upgradedCost = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

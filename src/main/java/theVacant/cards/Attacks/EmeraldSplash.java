@@ -44,7 +44,7 @@ public class EmeraldSplash extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 10;
 
 
     public EmeraldSplash()
@@ -53,6 +53,7 @@ public class EmeraldSplash extends AbstractDynamicCard {
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 2;
         isMultiDamage = true;
+        exhaust = true;
     }
 
     @Override
@@ -63,7 +64,8 @@ public class EmeraldSplash extends AbstractDynamicCard {
         /*for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
             AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(mo, player));
 */
-        addToBot(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(damage, true), damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+
+        addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         addToBot(new MineGemAction(new EmeraldOrb(magicNumber)));
         //addToBot(new ApplyPowerAction(player, player, new DexterityPower(player, magicNumber), magicNumber));
     }
@@ -76,8 +78,6 @@ public class EmeraldSplash extends AbstractDynamicCard {
             upgradeName();
             upgradeDamage(4);
             upgradedDamage = true;
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

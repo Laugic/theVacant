@@ -50,7 +50,7 @@ public class ShriekingBlast extends AbstractDynamicCard
         {
             AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(damage, false), this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         }
     }
 
@@ -61,6 +61,7 @@ public class ShriekingBlast extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(1);
+            upgradedDamage = true;
             initializeDescription();
         }
     }

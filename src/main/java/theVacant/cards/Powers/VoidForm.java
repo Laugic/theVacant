@@ -40,7 +40,7 @@ public class VoidForm extends AbstractDynamicCard
     public VoidForm()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 5;
+        magicNumber = baseMagicNumber = 6;
     }
 
     @Override
@@ -68,7 +68,7 @@ public class VoidForm extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(4);
             upgradedMagicNumber = true;
             initializeDescription();
         }

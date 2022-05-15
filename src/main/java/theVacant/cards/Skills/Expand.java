@@ -30,16 +30,16 @@ public class Expand extends AbstractDynamicCard
     public Expand()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
-        this.exhaust = true;
-        this.tags.add(AbstractCard.CardTags.HEALING);
+        magicNumber = baseMagicNumber = 2;
+        purgeOnUse = true;
+        tags.add(AbstractCard.CardTags.HEALING);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        player.increaseMaxHp(this.magicNumber, true);
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(player, player, 6));
+        player.increaseMaxHp(magicNumber, true);
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(player, player, 8));
     }
 
     @Override

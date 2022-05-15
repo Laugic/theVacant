@@ -32,7 +32,7 @@ public class SpelunkAction extends AbstractGameAction
 
     private AbstractDynamicCard MineNewGem()
     {
-        int rand = AbstractDungeon.cardRandomRng.random(41);
+        int rand = AbstractDungeon.cardRandomRng.random(46);
         if(rand < 10)
             return new RubyOption(AbstractDungeon.miscRng.random(3,6));
         if(rand < 20)
@@ -45,6 +45,8 @@ public class SpelunkAction extends AbstractGameAction
             return new OnyxOption(AbstractDungeon.miscRng.random(2,3));
         if(rand < 40)
             return new AmethystOption(AbstractDungeon.miscRng.random(2, 5));
+        if(rand < 45)
+            return new TopazOption(AbstractDungeon.miscRng.random(2, 3));
         return new DiamondOption(AbstractDungeon.miscRng.random(1,3));
     }
 }

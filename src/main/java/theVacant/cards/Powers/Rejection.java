@@ -24,12 +24,12 @@ public class Rejection extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Rejection()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 4;
+        magicNumber = baseMagicNumber = 6;
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Rejection extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VulnerablePower(player, 2, false), 2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, 2, false), 2));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, magicNumber), magicNumber));
     }
 
     @Override
@@ -46,8 +46,8 @@ public class Rejection extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
-            this.upgradedMagicNumber = true;
+            upgradeMagicNumber(3);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

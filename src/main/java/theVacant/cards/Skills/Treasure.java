@@ -72,8 +72,8 @@ public class Treasure extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeBlock(3);
+            upgradedBlock = true;
             initializeDescription();
         }
     }
