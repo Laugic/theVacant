@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ChipOrbAction;
 import theVacant.actions.ExhumeAndEnhanceAction;
 import theVacant.actions.IncreaseMagicNumberAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -27,31 +28,30 @@ import static theVacant.VacantMod.makeCardPath;
 public class Pickaxe extends AbstractDynamicCard {
 
     public static final String ID = VacantMod.makeID(Pickaxe.class.getSimpleName());
-    public static final String IMG = makeCardPath("Attack.png");
+    public static final String IMG = makeCardPath("Pickaxe.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.BASIC;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
-    public static final CardColor COLOR = CardColor.COLORLESS;
+    public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
-    private static final int DAMAGE = 3;
+    private static final int COST = 1;
+    private static final int DAMAGE = 4;
 
     public Pickaxe()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 2;
     }
-
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         for(int i = 0; i < magicNumber; i++)
             addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new EvokeOrbAction(1));
+        addToBot(new ChipOrbAction(1));
     }
 
     @Override
@@ -60,9 +60,8 @@ public class Pickaxe extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeDamage(2);
+            upgradedDamage = true;
             initializeDescription();
         }
     }

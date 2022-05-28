@@ -48,16 +48,16 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         updateDescription();
     }
 
-    @Override
-    public int onHeal(int healAmount)
-    {
-        if(healAmount > 0)
-        {
-            flash();
-            return healAmount * 2;
-        }
-        return healAmount;
-    }
+//    @Override
+//    public int onHeal(int healAmount)
+//    {
+//        if(healAmount > 0)
+//        {
+//            flash();
+//            return healAmount * 2;
+//        }
+//        return healAmount;
+//    }
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)

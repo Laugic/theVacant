@@ -8,7 +8,7 @@
   "theVacant:AmethystOrb": {
     "NAME": "Amethyst",
     "DESCRIPTION": [
-      "At the start of your turn, #yMill ", " and lose 1 size. NL If your draw pile is empty, increase damage and #yBlock by #b", ". Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, #yMill ", " and lose 1 size. Once size reaches 0, remove this orb and its slot."
     ]
   },
   "theVacant:SapphireOrb": {

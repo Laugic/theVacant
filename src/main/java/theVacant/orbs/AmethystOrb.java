@@ -42,7 +42,7 @@ public class AmethystOrb extends AbstractGemOrb
     public void updateDescription()
     {
         applyFocus();
-        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1] + passiveAmount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1];
     }
 
     @Override

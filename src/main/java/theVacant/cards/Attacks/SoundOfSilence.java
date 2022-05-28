@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DarknessPower;
+import theVacant.powers.DoomPower;
 import theVacant.powers.ShroudPower;
 
 import static theVacant.VacantMod.makeCardPath;
@@ -25,19 +27,20 @@ public class SoundOfSilence extends AbstractDynamicCard
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 18;
+    private static final int COST = 1;
+    private static final int DAMAGE = 13;
 
     public SoundOfSilence()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 4;
+        magicNumber = baseMagicNumber = 2;
+        isUnnate = true;
         exhaust = true;
     }
 
@@ -45,7 +48,7 @@ public class SoundOfSilence extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.LIGHTNING));
-        addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(monster, player, new DarknessPower(monster, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -54,8 +57,10 @@ public class SoundOfSilence extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(6);
-            upgradeMagicNumber(2);
+            upgradeDamage(3);
+            upgradedDamage = true;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

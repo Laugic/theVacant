@@ -53,7 +53,7 @@ public class AbyssPower extends AbstractPower implements CloneablePowerInterface
         flash();
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this.owner, this.owner, new DoomPower(this.owner, this.owner, this.amount), this.amount));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.owner, new DoomPower(mo, mo, this.amount), this.amount, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, this.owner, new DoomPower(mo, owner, this.amount), this.amount, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

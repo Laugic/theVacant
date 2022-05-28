@@ -43,6 +43,6 @@ public class OpalOrb extends AbstractGemOrb
     @Override
     public AbstractOrb makeCopy()
     {
-        return new AmethystOrb(passiveAmount);
+        return new OpalOrb(passiveAmount);
     }
 }

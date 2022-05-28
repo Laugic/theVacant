@@ -43,7 +43,7 @@ public class WhenDarknessComes extends AbstractDynamicCard
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, DOOM_AMOUNT), DOOM_AMOUNT));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, player, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WhenDarknessComesPower(player, player, this.magicNumber), this.magicNumber));
     }
 

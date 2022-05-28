@@ -52,9 +52,10 @@ public class AwMan extends AbstractDynamicCard
         AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
         if(upgraded)
         {
-            addToBot(new DamageAction(player, new DamageInfo(player, damage, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            addToBot(new DamageAction(player, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 
-            addToBot(new DamageAllEnemiesAction(player, multiDamage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            //addToBot(new DamageAllEnemiesAction(player, multiDamage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
         }
         else
             addToBot(new DamageAction(player, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
@@ -68,7 +69,7 @@ public class AwMan extends AbstractDynamicCard
             }
         }
     }
-
+/*
     @Override
     public void calculateDamageDisplay(AbstractMonster mo)
     {
@@ -82,7 +83,7 @@ public class AwMan extends AbstractDynamicCard
         magicNumber = GetCardDamage();
         initializeDescription();
     }
-
+*/
     @Override
     public void upgrade()
     {

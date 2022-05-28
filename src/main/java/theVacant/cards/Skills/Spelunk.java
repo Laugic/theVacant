@@ -30,12 +30,12 @@ public class Spelunk extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Spelunk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 5;
+        block = baseBlock = 10;
         magicNumber = baseMagicNumber = 3;
     }
 
@@ -52,7 +52,7 @@ public class Spelunk extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(3);
+            upgradeBlock(4);
             upgradedBlock = true;
             upgradeMagicNumber(1);
             upgradedMagicNumber = true;

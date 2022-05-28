@@ -39,7 +39,7 @@ public class OnyxModifier extends AbstractCardModifier
         if (this.amount > 0 && player != null)
         {
             for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, player, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 

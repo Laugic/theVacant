@@ -40,7 +40,7 @@ public class OnyxOrb extends AbstractGemOrb
 
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, passiveAmount), passiveAmount));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, player, amount), amount, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
@@ -53,6 +53,6 @@ public class OnyxOrb extends AbstractGemOrb
     @Override
     public AbstractOrb makeCopy()
     {
-        return new AmethystOrb(passiveAmount);
+        return new OnyxOrb(passiveAmount);
     }
 }

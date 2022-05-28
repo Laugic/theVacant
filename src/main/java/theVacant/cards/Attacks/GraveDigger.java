@@ -20,19 +20,18 @@ public class GraveDigger extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("GraveDigger.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int DAMAGE = 1;
 
     public GraveDigger()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 2;
         rebound = true;
     }
 
@@ -48,8 +47,10 @@ public class GraveDigger extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeBaseCost(0);
+            upgradedCost = true;
+            isUnnate = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
@@ -80,21 +81,21 @@ public class GraveDigger extends AbstractDynamicCard {
     {
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
-            baseDamage = player.discardPile.size() * magicNumber;
+            baseDamage = player.discardPile.size();
         else
             baseDamage = 1;
     }
 
     private void getDesc()
     {
-        rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard()
     {
-        rawDescription = cardStrings.DESCRIPTION;
+        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
         initializeDescription();
     }
 }

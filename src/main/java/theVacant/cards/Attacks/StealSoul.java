@@ -27,14 +27,13 @@ public class StealSoul extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 14;
+    private static final int COST = 2;
+    private static final int DAMAGE = 15;
 
     public StealSoul()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        exhaust = true;
     }
 
     @Override
@@ -53,7 +52,7 @@ public class StealSoul extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(5);
             upgradedDamage = true;
             initializeDescription();
         }

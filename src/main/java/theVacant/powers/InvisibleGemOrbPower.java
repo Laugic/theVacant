@@ -68,7 +68,7 @@ public class InvisibleGemOrbPower extends AbstractPower implements InvisiblePowe
             }
         }
     }
-
+/*
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type)
     {
@@ -85,7 +85,7 @@ public class InvisibleGemOrbPower extends AbstractPower implements InvisiblePowe
             return blockAmount + GetAllAmethysts();
         return blockAmount;
     }
-
+*/
     @Override
     public int onAttackedToChangeDamage(DamageInfo info, int damageAmount)
     {

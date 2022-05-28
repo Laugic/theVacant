@@ -14,6 +14,13 @@
     "DESCRIPTION": "Starts each combat at the bottom of your draw pile."
   },
   {
+    "PROPER_NAME": "Antifact",
+    "NAMES": [
+      "antifact"
+    ],
+    "DESCRIPTION": "Negates the next buff."
+  },
+  {
     "PROPER_NAME": "Heavy",
     "NAMES": [
       "heavy"
@@ -26,6 +33,13 @@
       "mine"
     ],
     "DESCRIPTION": "Create an orb slot and fill it with a #yGem."
+  },
+  {
+    "PROPER_NAME": "Darkness",
+    "NAMES": [
+      "darkness"
+    ],
+    "DESCRIPTION": "Whenever a debuff is applied to this target, increase its amount."
   },
   {
     "PROPER_NAME": "Chip",
@@ -129,7 +143,7 @@
     "NAMES": [
       "amethyst"
     ],
-    "DESCRIPTION": "#yGem: #yMill. NL If your draw pile is empty, increase damage and #yBlock. NL Loses size over time."
+    "DESCRIPTION": "#yGem: #yMill. NL Loses size over time."
   },
   {
     "PROPER_NAME": "Opal",

@@ -49,7 +49,7 @@ public class PitOfDespair extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, monster, new DoomPower(monster, player, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new DoomPower(monster, player, this.magicNumber), this.magicNumber));
     }
 /*
     @Override

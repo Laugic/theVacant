@@ -37,7 +37,7 @@
   },
   "theVacant:RequiemPower": {
     "NAME": "Requiem",
-    "DESCRIPTIONS": ["Whenever you gain HP, a buff, or a debuff, double it."]
+    "DESCRIPTIONS": ["Whenever you gain a buff or a debuff, double it."]
   },
   "theVacant:RecoverPower": {
     "NAME": "Recover",
@@ -47,6 +47,18 @@
     "NAME": "Void",
     "DESCRIPTIONS": [
       "When your draw pile is empty, deal #b", " more damage and gain #b", " more #yBlock."
+    ]
+  },
+  "theVacant:DarknessPower": {
+    "NAME": "Darkness",
+    "DESCRIPTIONS": [
+      "Whenever you gain a debuff, increase its amount by #b", "."
+    ]
+  },
+  "theVacant:AntifactPower": {
+    "NAME": "Antifact",
+    "DESCRIPTIONS": [
+      "Negate the next #b", " buff you obtain.", " buffs you obtain."
     ]
   },
   "theVacant:BurdenBreakPower": {

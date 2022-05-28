@@ -1,8 +1,11 @@
 package theVacant.cards.Attacks;
 
+import basemod.BaseMod;
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -17,6 +20,11 @@ import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.VoidPower;
+import theVacant.util.KeywordManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -27,10 +35,12 @@ public class CursedBlast extends AbstractDynamicCard
     public static final String IMG = makeCardPath("CursedBlast.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
+
+    private static ArrayList<TooltipInfo> Tooltip;
 
     private static final int COST = 1;
     private static final int DAMAGE = 10;
@@ -40,6 +50,7 @@ public class CursedBlast extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 2;
         isUnnate = true;
         isMultiDamage = true;
     }
@@ -52,6 +63,19 @@ public class CursedBlast extends AbstractDynamicCard
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal), 0.1F));
         addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
+    }
+
+    @Override
+    public List<TooltipInfo> getCustomTooltips()
+    {
+        if(Tooltip == null)
+        {
+            Tooltip = new ArrayList<>();
+            Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_ID)));
+            //Tooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOID_FORM_ID), BaseMod.getKeywordDescription(KeywordManager.VOID_FORM_ID)));
+        }
+        return Tooltip;
     }
 
     @Override
@@ -61,6 +85,7 @@ public class CursedBlast extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradedDamage = true;
             initializeDescription();
         }
     }

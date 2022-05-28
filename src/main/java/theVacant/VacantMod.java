@@ -21,10 +21,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.localization.*;
-import com.megacrit.cardcrawl.powers.FadingPower;
-import com.megacrit.cardcrawl.powers.GainStrengthPower;
-import com.megacrit.cardcrawl.powers.HexPower;
-import com.megacrit.cardcrawl.powers.WraithFormPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -121,6 +118,7 @@ public class VacantMod implements
         IMMUNE_POWERS.add(WraithFormPower.POWER_ID);
         IMMUNE_POWERS.add(HexPower.POWER_ID);
         IMMUNE_POWERS.add(GainStrengthPower.POWER_ID);
+        IMMUNE_POWERS.add(ConfusionPower.POWER_ID);
         logger.info("========================= /Mod Successfully Vacanted (The Vacant Initialized)/ =========================");
     }
 
@@ -288,7 +286,7 @@ public class VacantMod implements
         BaseMod.addCard(new BrassMagnet());
         BaseMod.addCard(new FranticBlow());
         BaseMod.addCard(new ReaperStrike());
-        BaseMod.addCard(new Snowball());
+        BaseMod.addCard(new Pickaxe());
         BaseMod.addCard(new SurpriseAttack());
         BaseMod.addCard(new Thoughtseize());
         BaseMod.addCard(new Threaten());
@@ -378,7 +376,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(BrassMagnet.ID);
         UnlockTracker.unlockCard(FranticBlow.ID);
         UnlockTracker.unlockCard(ReaperStrike.ID);
-        UnlockTracker.unlockCard(Snowball.ID);
+        UnlockTracker.unlockCard(Pickaxe.ID);
         UnlockTracker.unlockCard(SurpriseAttack.ID);
         UnlockTracker.unlockCard(Thoughtseize.ID);
         UnlockTracker.unlockCard(Threaten.ID);

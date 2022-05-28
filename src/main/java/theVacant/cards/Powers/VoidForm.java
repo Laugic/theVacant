@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.AmethystOrb;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
@@ -47,6 +49,7 @@ public class VoidForm extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
+        addToBot(new MineGemAction(new AmethystOrb(magicNumber)));
 //        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, 1), 1));
         //addToBot(new SwitchFormAction(BoundSoul.VOID_FORM));
     }
@@ -68,7 +71,7 @@ public class VoidForm extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(4);
+            upgradeMagicNumber(3);
             upgradedMagicNumber = true;
             initializeDescription();
         }

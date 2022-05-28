@@ -36,7 +36,7 @@ public class Hex extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new ApplyPowerAction(monster, monster, new DoomPower(monster, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(monster, player, new DoomPower(monster, player, magicNumber), magicNumber));
     }
 
     @Override

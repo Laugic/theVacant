@@ -28,7 +28,7 @@ public class CleanseSoul extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     public CleanseSoul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);

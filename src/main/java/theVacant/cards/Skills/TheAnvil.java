@@ -58,7 +58,8 @@ public class TheAnvil extends AbstractDynamicCard {
         AbstractPlayer player = AbstractDungeon.player;
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new CleaveEffect(), 0.1F));
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(magicNumber, false), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.NONE));
+        //addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.NONE));
     }
     @Override
     public void upgrade()

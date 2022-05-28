@@ -57,7 +57,7 @@ public class Showdown extends AbstractDynamicCard
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, magicNumber), magicNumber));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new DoomPower(mo, player, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override

@@ -1,3 +1,27 @@
+0.21.0
+Amethyst no longer buffs damage and block when draw pile is empty, and just Mills every turn
+Buffed the size of Amethysts
+Removed Snowball
+Added Pickaxe
+
+Reworked Expand- 1 (Rebound.) Lose 4(2) HP. Gain Temp HP equal to the number of cards in your discard pile. Exhaust.
+Reap power icon now has new art
+Requiem no longer doubles healing
+Rejection now gives Frail and Antifact instead of Vulnerable and Weak
+Tweaked Spelunk
+Added Darkness
+Sound of Silence and Embrace Darkness now inflict Darkness
+Cursed Blast is now Uncommon and gives Void
+Buffed Sneeze and fixed bug with its upgrade
+Void Form now mines an Amethyst
+Cleanse Soul now costs 0
+Grave Digger tweaked and made Common
+Jab slightly nerfed
+Grave Wave slightly buffed
+
+Aw Man and Anvil are no longer affected by damage modifiers
+Confusion is now not applied to enemies via Exorcise
+-----
 0.20.0
 Big Reworks/Changes:
 Reflection changed to boost the power of Chipping Gems instead of gain Block from Mill.
@@ -28,7 +52,7 @@ Fixed Requiem not doubling stacking powers
 Fixed Aw Man damage display
 Void Embrace now triggers when a copy of an exhausted card is played (e.g.: a copy from Memoria)
 Immaterialize no longer triggers when a copy of an exhausted card is played.
------
+-------
 0.19.1
 Deathbell no longer erroniously has its old effect of giving 2 bonus mill
 Removed exploit with enchanting Jab with Mill being a 2-card infinite

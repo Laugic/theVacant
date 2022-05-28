@@ -24,7 +24,7 @@ public class Sneeze extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0, STARTMILL = 4;
+    private static final int COST = 0, STARTMILL = 5, UPGRADE = 3;
     private int retainBonus = 0;
     public Sneeze()
     {
@@ -52,7 +52,7 @@ public class Sneeze extends AbstractDynamicCard
     @Override
     public void applyPowers()
     {
-        magicNumber = baseMagicNumber = STARTMILL + retainBonus;
+        magicNumber = baseMagicNumber = STARTMILL + retainBonus + (upgraded?UPGRADE:0);
         isMagicNumberModified = (retainBonus > 0);
         super.applyPowers();
     }
@@ -60,7 +60,7 @@ public class Sneeze extends AbstractDynamicCard
     @Override
     public void atTurnStart()
     {
-        magicNumber = baseMagicNumber = STARTMILL + retainBonus;
+        magicNumber = baseMagicNumber = STARTMILL + retainBonus + (upgraded?UPGRADE:0);
         isMagicNumberModified = (retainBonus > 0);
         super.atTurnStart();
     }
@@ -71,7 +71,7 @@ public class Sneeze extends AbstractDynamicCard
         {
             upgradeName();
             isInnate = true;
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(UPGRADE);
             upgradedMagicNumber = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();

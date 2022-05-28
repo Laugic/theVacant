@@ -7,13 +7,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
+import theVacant.cards.Special.*;
 import theVacant.orbs.*;
 import theVacant.powers.InvisibleGemOrbPower;
 
 public class MineGemAction extends AbstractGameAction
 {
     private AbstractOrb gem;
-    int size = 0;
     boolean chipOrb = false;
 
     public MineGemAction(AbstractOrb newOrbType, boolean chip)
@@ -21,7 +21,6 @@ public class MineGemAction extends AbstractGameAction
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         gem = newOrbType;
-        size = gem.passiveAmount;
         chipOrb = chip;
     }
 
@@ -30,7 +29,6 @@ public class MineGemAction extends AbstractGameAction
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         gem = gemOrb;
-        this.size = size;
     }
 
     public MineGemAction(AbstractOrb newOrbType)
@@ -38,7 +36,6 @@ public class MineGemAction extends AbstractGameAction
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         gem = newOrbType;
-        size = gem.passiveAmount;
     }
 
     public void update()
@@ -64,15 +61,21 @@ public class MineGemAction extends AbstractGameAction
 
     private AbstractOrb GetRandomGem()
     {
-        int rand = AbstractDungeon.cardRandomRng.random(15);
-        if(rand == 0 || rand == 1)
-            return new EmeraldOrb(size);
-        if(rand == 2 || rand == 3)
-            return new OpalOrb(size);
-        if(rand <= 7)
-            return new SapphireOrb(size);
-        if(rand <= 11)
-            return new AmethystOrb(size);
-        return new RubyOrb(size);
+        int rand = AbstractDungeon.cardRandomRng.random(46);
+        if(rand < 10)
+            return new RubyOrb(AbstractDungeon.miscRng.random(3,6));
+        if(rand < 20)
+            return new SapphireOrb(AbstractDungeon.miscRng.random(3,6));
+        if(rand < 25)
+            return new OpalOrb(AbstractDungeon.miscRng.random(2,3));
+        if(rand < 30)
+            return new EmeraldOrb(AbstractDungeon.miscRng.random(2,3));
+        if(rand < 35)
+            return new OnyxOrb(AbstractDungeon.miscRng.random(2,3));
+        if(rand < 40)
+            return new AmethystOrb(AbstractDungeon.miscRng.random(3, 6));
+        if(rand < 45)
+            return new TopazOrb(AbstractDungeon.miscRng.random(2, 3));
+        return new DiamondOrb(AbstractDungeon.miscRng.random(1,3));
     }
 }

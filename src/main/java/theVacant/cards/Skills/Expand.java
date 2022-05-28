@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -30,16 +31,19 @@ public class Expand extends AbstractDynamicCard
     public Expand()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
-        purgeOnUse = true;
-        tags.add(AbstractCard.CardTags.HEALING);
+        magicNumber = baseMagicNumber = 4;
+        exhaust = true;
+        //purgeOnUse = true;
+        //tags.add(AbstractCard.CardTags.HEALING);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
-        player.increaseMaxHp(magicNumber, true);
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(player, player, 8));
+        //player.increaseMaxHp(magicNumber, true);
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(player, player, magicNumber));
+        if(player.discardPile.size() > 0)
+            addToBot(new AddTemporaryHPAction(player, player, player.discardPile.size()));
     }
 
     @Override
@@ -48,8 +52,10 @@ public class Expand extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            this.upgradedMagicNumber = true;
+            rebound = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(-2);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }
