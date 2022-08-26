@@ -30,7 +30,8 @@
   {
     "PROPER_NAME": "Mine",
     "NAMES": [
-      "mine"
+      "mine",
+      "mined"
     ],
     "DESCRIPTION": "Create an orb slot and fill it with a #yGem."
   },
@@ -129,56 +130,56 @@
       "ruby",
       "rubies"
     ],
-    "DESCRIPTION": "#yGem: Gain #yVigor. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yVigor. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Topaz",
     "NAMES": [
       "topaz"
     ],
-    "DESCRIPTION": "#yGem: Gain #yArtifact. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yArtifact. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Amethyst",
     "NAMES": [
       "amethyst"
     ],
-    "DESCRIPTION": "#yGem: #yMill. NL Loses size over time."
+    "DESCRIPTION": "#yGem: #yMill. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Opal",
     "NAMES": [
       "opal"
     ],
-    "DESCRIPTION": "#yGem: Gain [E] NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain [E] NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Sapphire",
     "NAMES": [
       "sapphire"
     ],
-    "DESCRIPTION": "#yGem: Gain #yTemperance. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Gain #yTemperance. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Diamond",
     "NAMES": [
       "diamond"
     ],
-    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose 1 size. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose 1 size. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Onyx",
     "NAMES": [
       "onyx"
     ],
-    "DESCRIPTION": "#yGem: Apply #yDoom to ALL enemies. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Apply #yDoom to ALL enemies. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Emerald",
     "NAMES": [
       "emerald"
     ],
-    "DESCRIPTION": "#yGem: Draw a card. NL Loses size over time."
+    "DESCRIPTION": "#yGem: Draw a card. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Temperance",

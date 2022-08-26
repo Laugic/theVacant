@@ -71,7 +71,7 @@ public class VoidForm extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(2);
             upgradedMagicNumber = true;
             initializeDescription();
         }

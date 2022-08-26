@@ -29,13 +29,14 @@ public class SoulBarrage extends AbstractDynamicCard {
 
     public SoulBarrage()
     {
-        this(STARTING_MAGIC);
+        this(0);
     }
     public SoulBarrage(int upgrades)
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = upgrades;
+        magicNumber = baseMagicNumber = STARTING_MAGIC;
+        timesUpgraded = upgrades;
     }
 
     @Override
@@ -57,13 +58,14 @@ public class SoulBarrage extends AbstractDynamicCard {
         upgradeName();
         upgradeMagicNumber(1);
         upgradedMagicNumber = true;
-        name = cardStrings.NAME + "+" + (magicNumber - STARTING_MAGIC);
+        upgraded = true;
+        name = cardStrings.NAME + "+" + (timesUpgraded);
         initializeDescription();
     }
 
     @Override
     public AbstractCard makeCopy()
     {
-        return new SoulBarrage(magicNumber);
+        return new SoulBarrage(timesUpgraded);
     }
 }

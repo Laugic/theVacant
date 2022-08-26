@@ -1,3 +1,23 @@
+0.22.0
+Polishing Rag changed to increase Gem size by 1 when Mined
+Polishing Rag moved to Boss Relic
+Tombstone moved to Rare Relic
+
+Void Form nerfed to 6(8) from 6(9)
+Shrieking Blast nerfed to 3 damage 2 times, but now upgrades to 3 damage 3 times.
+
+Requiem's power now specifies that it doesn't stack
+Gem keyword wording tweaked
+Fiend Frost now properly triggers On Exhaust effects for each card in the discard
+
+Arted Reflection
+Arted Hex
+Resized Relic Art
+----
+0.21.1
+Fixed bug with Soul Barrage
+Slightly buffed Spinshield
+---
 0.21.0
 Amethyst no longer buffs damage and block when draw pile is empty, and just Mills every turn
 Buffed the size of Amethysts

@@ -37,7 +37,7 @@
   },
   "theVacant:RequiemPower": {
     "NAME": "Requiem",
-    "DESCRIPTIONS": ["Whenever you gain a buff or a debuff, double it."]
+    "DESCRIPTIONS": ["Whenever you gain a buff or a debuff, double it. NL (Does not stack.)"]
   },
   "theVacant:RecoverPower": {
     "NAME": "Recover",

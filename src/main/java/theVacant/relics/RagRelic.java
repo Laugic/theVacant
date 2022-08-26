@@ -30,10 +30,8 @@ public class RagRelic extends CustomRelic
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("rag_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("rag_relic.png"));
 
-    public static int BLOCK_AMOUNT = 4;
-
     public RagRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
     @Override

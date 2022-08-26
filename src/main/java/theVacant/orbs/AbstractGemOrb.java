@@ -33,7 +33,7 @@ public abstract class AbstractGemOrb extends CustomOrb
 
     public AbstractGemOrb(String ID, String name, int size, boolean turnStart, boolean oneSize, String path)
     {
-        super(ID, name, size, size, "", "", path);
+        super(ID, name, size + getBonusSize(), size + getBonusSize(), "", "", path);
 
         turnStartOrb = turnStart;
         oneSizeEffect = oneSize;
@@ -41,6 +41,14 @@ public abstract class AbstractGemOrb extends CustomOrb
 
         angle = MathUtils.random(360.0f); // More Animation-related Numbers
         channelAnimTimer = 0.5f;
+    }
+
+    private static int getBonusSize() {
+        if(AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(RagRelic.ID)) {
+            AbstractDungeon.player.getRelic(RagRelic.ID).flash();
+            return 1;
+        }
+        return 0;
     }
 
 

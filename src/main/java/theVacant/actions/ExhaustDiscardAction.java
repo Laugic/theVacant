@@ -24,14 +24,15 @@ public class ExhaustDiscardAction  extends AbstractGameAction
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
-            while((this.amount > 0 || this.amount == -1) && player.discardPile.size() > 0)
+            while((amount > 0 || amount == -1) && player.discardPile.size() > 0)
             {
                 AbstractCard card = player.discardPile.getTopCard();
-                player.exhaustPile.addToTop(card);
-                card.triggerOnExhaust();
-                player.discardPile.removeCard(card);
-                if(this.amount > 0)
-                    this.amount--;
+                player.discardPile.moveToExhaustPile(card);
+//                player.exhaustPile.addToTop(card);
+//                card.triggerOnExhaust();
+//                player.discardPile.removeCard(card);
+                if(amount > 0)
+                    amount--;
             }
             this.isDone = true;
         }

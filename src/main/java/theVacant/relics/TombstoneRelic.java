@@ -33,7 +33,7 @@ public class TombstoneRelic extends CustomRelic
 
     public TombstoneRelic()
     {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
     }
 
     @Override

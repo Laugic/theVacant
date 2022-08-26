@@ -18,7 +18,7 @@ public class Reflection extends AbstractDynamicCard
 {
 
     public static final String ID = VacantMod.makeID(Reflection.class.getSimpleName());
-    public static final String IMG = makeCardPath("Aquamarine.png");
+    public static final String IMG = makeCardPath("Reflection.png");
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;

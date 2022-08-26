@@ -24,7 +24,7 @@
     "NAME": "Bound Soul",
     "FLAVOR": "As death closes in, the artifact's hold on you weakens, and you feel your power grow.",
     "DESCRIPTIONS": [
-      "At the start of your turn, if you are #ythevacant:Wounded, gain [E] ."
+      "Gain [E] at the start of your turn if you are #ythevacant:Wounded."
     ]
   },
   "theVacant:LocketRelic": {
@@ -52,7 +52,7 @@
     "NAME": "Polishing Rag",
     "FLAVOR": "Shiny gems are more powerful, everyone knows this.",
     "DESCRIPTIONS": [
-      "#ythevacant:Gems no longer decrease in size at the start of your turn."
+      "#ythevacant:Gems gain #b1 size when #ythevacant:Mined."
     ]
   },
   "theVacant:BrassGoblet": {

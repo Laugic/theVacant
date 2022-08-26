@@ -31,13 +31,13 @@ public class ShriekingBlast extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 2;
+    private static final int DAMAGE = 3;
 
     public ShriekingBlast()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         isMultiDamage = true;
     }
 
@@ -60,8 +60,8 @@ public class ShriekingBlast extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(1);
-            upgradedDamage = true;
+            upgradeMagicNumber(1);
+            upgradedMagicNumber = true;
             initializeDescription();
         }
     }
