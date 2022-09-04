@@ -282,4 +282,9 @@ public class TheVacant extends CustomPlayer
     public String getVampireText() {
         return TEXT[2];
     }
+
+    @Override
+    public String getSensoryStoneText() {
+        return TEXT[3];
+    }
 }

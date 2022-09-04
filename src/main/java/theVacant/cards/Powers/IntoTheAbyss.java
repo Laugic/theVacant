@@ -10,6 +10,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.AbyssPower;
+import theVacant.powers.DoomNextTurnPower;
 import theVacant.powers.DoomPower;
 import theVacant.powers.ShroudPower;
 
@@ -42,7 +43,7 @@ public class IntoTheAbyss extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomPower(player, player, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomNextTurnPower(player, player, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new AbyssPower(player, player, magicNumber), magicNumber));
     }
 

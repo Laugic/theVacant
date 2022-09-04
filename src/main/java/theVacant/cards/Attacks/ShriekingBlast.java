@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import com.megacrit.cardcrawl.vfx.combat.IntimidateEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.characters.TheVacant;
 
 import static theVacant.VacantMod.makeCardPath;
@@ -60,8 +61,7 @@ public class ShriekingBlast extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            VoidboundModifier.Enhance(this, 1);
             initializeDescription();
         }
     }

@@ -2,9 +2,11 @@ package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
@@ -23,26 +25,29 @@ public class BackInTheMine extends AbstractDynamicCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 13;
+    private static final int DAMAGE = 12;
 
     public BackInTheMine()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 3;
+        isMultiDamage = true;
     }
 
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new SpelunkAction(magicNumber));
+        addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
+        for (AbstractMonster mon : (AbstractDungeon.getMonsters()).monsters) {
+            if (!mon.isDeadOrEscaped())
+                addToBot(new MineGemAction(null, 1));
+        }
     }
 
     @Override
@@ -51,10 +56,7 @@ public class BackInTheMine extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
-            upgradedDamage = true;
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeDamage(5);
             initializeDescription();
         }
     }

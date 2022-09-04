@@ -42,7 +42,7 @@ import theVacant.orbs.OpalOrb;
 public class DiamondOption  extends AbstractDynamicCard
 {
     public static final String ID = VacantMod.makeID(DiamondOption.class.getSimpleName());
-    public static final String IMG = makeCardPath("DiamondIsUnbreakable.png");
+    public static final String IMG = makeCardPath("DiamondOption.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.SPECIAL;

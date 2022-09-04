@@ -22,7 +22,9 @@ public class VacantMillAction  extends AbstractGameAction
     private int startAmount = 0;
     private int voidAmount;
     private int millNum;
+    private int postReturnAmount = 0;
     private AbstractCard ignoredCard;
+    private AbstractCard returnIgnoredCard;
     private boolean gainBlockForMill = false;
 
     private final SFXAction waka = new SFXAction("theVacant:waka");
@@ -50,7 +52,7 @@ public class VacantMillAction  extends AbstractGameAction
         ignoredCard = cardToIgnore;
     }
 
-    public VacantMillAction(int numCards, boolean block)
+    public VacantMillAction(int numCards, boolean block, int postReturnAmount, AbstractCard returnToIgnore)
     {
         amount = numCards;
         voidAmount = 0;
@@ -60,6 +62,8 @@ public class VacantMillAction  extends AbstractGameAction
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
         gainBlockForMill = block;
+        this.postReturnAmount = postReturnAmount;
+        returnIgnoredCard = returnToIgnore;
     }
 
     public void update()
@@ -100,9 +104,9 @@ public class VacantMillAction  extends AbstractGameAction
             Rebound(card);
         else
         {
+            MoveToDiscard(card);
             if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).postMillAction))
                 ((AbstractDynamicCard)card).PostMillAction();
-            MoveToDiscard(card);
         }
     }
 
@@ -110,14 +114,14 @@ public class VacantMillAction  extends AbstractGameAction
     {
         if(AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE)
         {
+            MoveToDiscard(card);
             if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).postMillAction))
                 ((AbstractDynamicCard)card).PostMillAction();
-            MoveToDiscard(card);
             return;
         }
 
         AbstractDungeon.player.drawPile.removeCard(card);
-        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand), Settings.ACTION_DUR_XFAST, true));
+        addToBot(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand), Settings.ACTION_DUR_XFAST, true));
 
         if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).postMillAction))
             ((AbstractDynamicCard)card).PostMillAction();
@@ -127,7 +131,7 @@ public class VacantMillAction  extends AbstractGameAction
     private void MoveToDiscard(AbstractCard card)
     {
         AbstractDungeon.player.drawPile.removeCard(card);
-        addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.discardPile), Settings.ACTION_DUR_XFAST, true));
+        addToBot(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.discardPile), Settings.ACTION_DUR_XFAST, true));
         AbstractDungeon.player.discardPile.addToTop(card);
 //        AbstractDungeon.player.drawPile.moveToDiscardPile(AbstractDungeon.player.drawPile.getTopCard());
         ProcessPostMill(card, false);
@@ -138,6 +142,8 @@ public class VacantMillAction  extends AbstractGameAction
         AbstractDungeon.player.hand.applyPowers();
         if(gainBlockForMill && millNum > 0)
             addToBot(new GainBlockAction(AbstractDungeon.player, millNum));
+        if(postReturnAmount > 0)
+            addToBot(new ReturnAction(postReturnAmount, returnIgnoredCard));
     }
 
     private void GetBonusVoid()
@@ -187,7 +193,10 @@ public class VacantMillAction  extends AbstractGameAction
             if(player instanceof TheVacant)
                 ((TheVacant)player).millsThisTurn++;
             if(player.hasPower(ForgeSoulPower.POWER_ID) && card.canUpgrade())
-                card.upgrade();
+            {
+                for(int i = 0; i < player.getPower(ForgeSoulPower.POWER_ID).amount && card.canUpgrade(); i++)
+                    card.upgrade();
+            }
         }
     }
 
@@ -203,10 +212,11 @@ public class VacantMillAction  extends AbstractGameAction
         AbstractPlayer player = AbstractDungeon.player;
         if(player != null)
         {
+            /*
             if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
                 return true;
-
-            if(player.hasPower(DarkReflexPower.POWER_ID) && millNum <= player.getPower(DarkReflexPower.POWER_ID).amount)
+*/
+            if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.cost < player.getPower(RunicThoughtsPower.POWER_ID).amount && card.cost != -2)
                 return true;
         }
         return false;

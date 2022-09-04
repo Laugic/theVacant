@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ReturnAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -38,8 +39,8 @@ public class Corporeate extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, true));
-        AbstractDungeon.actionManager.addToBottom(new BetterDiscardPileToHandAction(1));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, true, 1, this));
+        //AbstractDungeon.actionManager.addToBottom(new ReturnAction(1));
     }
 
     @Override

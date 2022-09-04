@@ -1,0 +1,17 @@
+{
+        "theVacant:SwipePotion":{
+                "NAME": "쓸어넘기기 포션",
+                "DESCRIPTIONS": ["카드를 ", " 장 #y제분 합니다."]
+        },
+        "theVacant:InvisibilityPotion":{
+                "NAME": "투명 포션",
+                "DESCRIPTIONS": ["#y장막 을 ", " 얻습니다."]
+        },
+        "theVacant:MiningPotion":{
+                "NAME": "채굴 포션",
+                "DESCRIPTIONS": [
+                        "무작위 3 개의 #y보석 중 하나를 선택하여 #y채광 합니다.",
+                        "무작위 3 개의 #y보석 중 하나를 선택하여 2 번 #y채광 합니다."
+                ]
+        }
+}

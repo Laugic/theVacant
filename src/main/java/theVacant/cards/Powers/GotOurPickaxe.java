@@ -26,12 +26,10 @@ public class GotOurPickaxe extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 6;
 
     public GotOurPickaxe()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 1;
     }
 

@@ -32,14 +32,14 @@ public class SoulforgedModifier extends AbstractCardModifier
     {
         this.amount += num;
     }
-
+/*
     @Override
     public void onInitialApplication(AbstractCard card)
     {
         card.glowColor = Color.CYAN;
         if(!card.keywords.toString().contains(KeywordManager.SOULFORGED_ID))
             card.keywords.add(KeywordManager.SOULFORGED_ID);
-    }
+    }*/
 
     @Override
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action)
@@ -51,7 +51,7 @@ public class SoulforgedModifier extends AbstractCardModifier
             player.gainEnergy(this.amount);
         }
     }
-
+/*
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card)
     {
@@ -63,7 +63,7 @@ public class SoulforgedModifier extends AbstractCardModifier
                 card.keywords.add(0, KeywordManager.SOULFORGED_ID);
         }
         return rawDescription;
-    }
+    }*/
 
     public static void Enhance(AbstractCard card, int amount)
     {

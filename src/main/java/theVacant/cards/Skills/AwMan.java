@@ -2,11 +2,13 @@ package theVacant.cards.Skills;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.status.Dazed;
+import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +16,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import theVacant.VacantMod;
 import theVacant.actions.ChipOrbAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -42,14 +47,14 @@ public class AwMan extends AbstractDynamicCard
     public AwMan()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = magicNumber = baseMagicNumber = 5;
-        isMultiDamage = true;
+        damage = baseDamage = magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
+        /*
         if(upgraded)
         {
             addToBot(new DamageAction(player, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
@@ -60,6 +65,15 @@ public class AwMan extends AbstractDynamicCard
         else
             addToBot(new DamageAction(player, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 
+        if(upgraded)
+        {
+            for (AbstractMonster m: AbstractDungeon.getMonsters().monsters) {
+                addToBot(new ApplyPowerAction(m, player, new VulnerablePower(m, magicNumber, false), 1));
+            }
+        }*/
+        addToBot(new VFXAction(new ExplosionSmallEffect(player.hb.cX, player.hb.cY), 0.1F));
+        addToBot(new ApplyPowerAction(player, player, new FrailPower(player, magicNumber, false), magicNumber));
+
         if(player.orbs.size() > 0)
         {
             for (AbstractOrb gem : player.orbs)
@@ -69,29 +83,14 @@ public class AwMan extends AbstractDynamicCard
             }
         }
     }
-/*
-    @Override
-    public void calculateDamageDisplay(AbstractMonster mo)
-    {
-        applyPowers();
-        this.calculateCardDamage(mo);
-    }
 
-    @Override
-    public void applyPowers()
-    {
-        magicNumber = GetCardDamage();
-        initializeDescription();
-    }
-*/
     @Override
     public void upgrade()
     {
         if (!upgraded)
         {
             upgradeName();
-            target = CardTarget.ALL;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(-1);
             initializeDescription();
         }
     }

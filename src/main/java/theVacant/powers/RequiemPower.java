@@ -3,6 +3,8 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.StSLib;
+import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnPlayerDeathPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -39,7 +41,7 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         this.amount = amount;
         this.source = source;
 
-        type = PowerType.BUFF;
+        type = NeutralPowertypePatch.NEUTRAL;
         isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -48,16 +50,6 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         updateDescription();
     }
 
-//    @Override
-//    public int onHeal(int healAmount)
-//    {
-//        if(healAmount > 0)
-//        {
-//            flash();
-//            return healAmount * 2;
-//        }
-//        return healAmount;
-//    }
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
@@ -65,25 +57,17 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         if(power.amount > 0 && target == owner && (power.type == PowerType.BUFF || power.type == PowerType.DEBUFF))
         {
             flash();
-            power.amount *= 2;
+            power.amount *= amount;
             power.updateDescription();
         }
         for (AbstractCard card: AbstractDungeon.player.hand.group)
             card.applyPowers();
     }
-/*
-    @Override
-    public int betterOnApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount)
-    {
-        if(owner == target)
-            return stackAmount * 2;
-        return stackAmount;
-    }*/
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override
@@ -97,12 +81,5 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
     {
         return true;
     }
-/*
-    @Override
-    public boolean onPlayerDeath(AbstractPlayer abstractPlayer, DamageInfo damageInfo)
-    {
-        abstractPlayer.heal(abstractPlayer.maxHealth * Math.min(amount, 100) / 100);
-        addToTop(new RemoveSpecificPowerAction(abstractPlayer, abstractPlayer, this));
-        return false;
-    }*/
+
 }

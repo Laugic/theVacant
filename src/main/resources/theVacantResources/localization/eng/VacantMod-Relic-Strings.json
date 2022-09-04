@@ -10,28 +10,28 @@
     "NAME": "Wretched Gem",
     "FLAVOR": "A cursed trap that contains your soul.",
     "DESCRIPTIONS": [
-      "At the start of each combat, if you are #ythevacant:Healthy, lose #b2 Max HP. If you are #ythevacant:Wounded, gain #b4 Max HP. You can't go below #b50 Max HP this way."
+      "At the start of each combat, if you are #ythevacant:Healthy, lose #b2 Max HP. If you are #ythevacant:Hollow, gain #b4 Max HP. You can't go below #b50 Max HP this way."
     ]
   },
   "theVacant:Deathbell": {
     "NAME": "Deathbell",
     "FLAVOR": "The scent invokes a feeling of dread.",
     "DESCRIPTIONS": [
-      "At the start of each combat, if you are #ythevacant:Wounded, gain 10 #yTemporary_HP."
+      "At the start of each combat, if you are #ythevacant:Hollow, gain 10 #yTemporary_HP."
     ]
   },
   "theVacant:BoundSoul": {
     "NAME": "Bound Soul",
     "FLAVOR": "As death closes in, the artifact's hold on you weakens, and you feel your power grow.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn if you are #ythevacant:Wounded."
+      "Gain [E] at the start of your turn if you are #ythevacant:Hollow."
     ]
   },
   "theVacant:LocketRelic": {
     "NAME": "Locket Piece",
     "FLAVOR": "A reminder of a life lost. Or at least, a piece of one.",
     "DESCRIPTIONS": [
-      "After a card #ythevacant:Rebounds, gain #b4 #yBlock."
+      "After a card #ythevacant:Ricochets, gain #b4 #yBlock."
     ]
   },
   "theVacant:TombstoneRelic": {

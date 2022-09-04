@@ -50,7 +50,10 @@ public class MaterializeModifier extends AbstractCardModifier
         {
             amount--;
             if(amount == 0)
+            {
                 AbstractDungeon.actionManager.addToBottom(new MoveFromExhaustToDrawAction(card));
+                card.initializeDescription();
+            }
         }
     }
 

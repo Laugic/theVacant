@@ -38,33 +38,14 @@ public class Treasure extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
-        block = baseBlock = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new GainBlockAction(player, block));
         addToBot(new MineGemAction(new EmeraldOrb(magicNumber)));
         addToBot(new MineGemAction(new OpalOrb(magicNumber)));
-//        int vigorAmount = player.discardPile.size();
-//        if(vigorAmount > 0)
-//            addToBot(new ApplyPowerAction(player, player, new VigorPower(player, vigorAmount), vigorAmount));
-//        addToBot(new SwitchFormAction(BoundSoul.FURY_FORM));
-//        if(upgraded)
-//            addToBot(new SyphonAction(magicNumber));
     }
-
-//    @Override
-//    public List<TooltipInfo> getCustomTooltips()
-//    {
-//        if(ExtraTooltip == null)
-//        {
-//            ExtraTooltip = new ArrayList<>();
-//            ExtraTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.FURY_FORM_ID), BaseMod.getKeywordDescription(KeywordManager.FURY_FORM_ID)));
-//        }
-//        return ExtraTooltip;
-//    }
 
     @Override
     public void upgrade()
@@ -72,8 +53,7 @@ public class Treasure extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(3);
-            upgradedBlock = true;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

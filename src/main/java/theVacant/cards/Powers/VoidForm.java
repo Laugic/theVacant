@@ -1,6 +1,8 @@
 package theVacant.cards.Powers;
 
 import basemod.BaseMod;
+import basemod.helpers.BaseModCardTags;
+import basemod.helpers.CardTags;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +14,7 @@ import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.AmethystOrb;
+import theVacant.powers.GloomPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
@@ -43,13 +46,14 @@ public class VoidForm extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 6;
+        tags.add(BaseModCardTags.FORM);
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
-        addToBot(new MineGemAction(new AmethystOrb(magicNumber)));
+        addToBot(new ApplyPowerAction(player, player, new GloomPower(player, player, magicNumber), magicNumber));
 //        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, 1), 1));
         //addToBot(new SwitchFormAction(BoundSoul.VOID_FORM));
     }

@@ -48,7 +48,8 @@ public class EnchantAction extends AbstractGameAction
                 this.isDone = true;
                 return;
             }
-            AbstractDungeon.handCardSelectScreen.open(cardStrings.NAME, 1, false, false, false, false, true);
+            String displayString = cardStrings.NAME + cardStrings.EXTENDED_DESCRIPTION[0] + nextOrb.name;
+            AbstractDungeon.handCardSelectScreen.open(displayString, 1, false, false, false, false, true);
             tickDuration();
             return;
         }
@@ -81,13 +82,13 @@ public class EnchantAction extends AbstractGameAction
         if(gem instanceof EmeraldOrb)
             EmeraldModifier.Enhance(card, 1);
         if(gem instanceof RubyOrb)
-            RubyModifier.Enhance(card, gem.passiveAmount);
+            RubyModifier.Enhance(card, 3);
         if(gem instanceof SapphireOrb)
-            SapphireModifier.Enhance(card, gem.passiveAmount);
+            SapphireModifier.Enhance(card, 3);
         if(gem instanceof OnyxOrb)
-            OnyxModifier.Enhance(card, gem.passiveAmount);
+            OnyxModifier.Enhance(card, 1);
         if(gem instanceof AmethystOrb)
-            AmethystModifier.Enhance(card, gem.passiveAmount);
+            AmethystModifier.Enhance(card, 3);
         if(gem instanceof DiamondOrb)
             DiamondModifier.Enhance(card, 1);
         if(gem instanceof TopazOrb)

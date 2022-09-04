@@ -41,7 +41,8 @@ public class PlayDiamondIsUnbreakableAction extends AbstractGameAction
         energyUsed += this.bonusEnergy;
         if (energyUsed > 0)
         {
-            addToBot(new MineGemAction(new DiamondOrb(energyUsed)));
+            for(int i = 0; i < energyUsed && i < 11; i++)
+                addToBot(new MineGemAction(new DiamondOrb(1)));
             if (!this.freeToPlayOnce)
                 player.energy.use(EnergyPanel.totalCount);
         }

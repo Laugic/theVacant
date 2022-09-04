@@ -20,7 +20,7 @@ public class AmethystOrb extends AbstractGemOrb
     public static final String ORB_ID = VacantMod.makeID(AmethystOrb.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = false;
+    private static boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = true;
 
     public AmethystOrb(int size)
     {
@@ -34,7 +34,7 @@ public class AmethystOrb extends AbstractGemOrb
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
         chipSound();
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount * 3));
         AbstractDungeon.actionManager.addToBottom(new UpdateCardsInHandAction());
     }
 
@@ -42,7 +42,7 @@ public class AmethystOrb extends AbstractGemOrb
     public void updateDescription()
     {
         applyFocus();
-        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

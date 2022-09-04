@@ -1,0 +1,50 @@
+{
+  "theVacant:RubyOrb": {
+    "NAME": "루비",
+    "DESCRIPTION": [
+      "내 턴 시작시, #y활력 을 #b", " 얻고 루비 스택이 1 감소합니다. NL 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:AmethystOrb": {
+    "NAME": "자수정",
+    "DESCRIPTION": [
+      "내 턴 시작시, #y제분 을 ", " 하고 자수정 스택이 1 감소합니다. 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:SapphireOrb": {
+    "NAME": "사파이어",
+    "DESCRIPTION": [
+      "내 턴 시작시, #y절제 를 #b", " 얻고 사파이어 스택이 1 감소합니다. NL 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:OnyxOrb": {
+    "NAME": "오닉스",
+    "DESCRIPTION": [
+      "내 턴 시작시, 적 전체에게 #y파멸 을 1 부여하고 오닉스 스택이 1 감소합니다. NL 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:TopazOrb": {
+    "NAME": "토파즈",
+    "DESCRIPTION": [
+      "내 턴 시작시, 인공물 을 1 얻고 토파즈 스택이 1 감소합니다. NL 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:DiamondOrb": {
+    "NAME": "다이아몬드",
+    "DESCRIPTION": [
+      "내 턴 시작시, 다이아몬드 스택이 1 감소합니다. 피해를 받을 때마다, 그 피해를 무효화하고 스택이 1 감소합니다. 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:EmeraldOrb": {
+    "NAME": "에메랄드",
+    "DESCRIPTION": [
+      "내 턴 시작시, 카드를 1 장 뽑고 에메랄드 스택이 1 감소합니다. NL 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  },
+  "theVacant:OpalOrb": {
+    "NAME": "오팔",
+    "DESCRIPTION": [
+      "내 턴 시작시, [E] 를 얻고 오팔 스택이 1 감소합니다. NL 스택이 0 이 되면, 이 구체를 제거합니다."
+    ]
+  }
+}

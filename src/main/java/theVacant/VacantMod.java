@@ -8,7 +8,9 @@ import basemod.eventUtil.EventUtils;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
@@ -91,7 +93,7 @@ public class VacantMod implements
     private static final String ENERGY_ORB_VACANT_PORTRAIT = "theVacantResources/images/1024/card_default_gray_orb.png";
 
     private static final String THE_VACANT_BUTTON = "theVacantResources/images/charSelect/TheVacantButton.png";
-    private static final String THE_VACANT_PORTRAIT = "theVacantResources/images/charSelect/VacantPortraitBG.png";
+    private static final String THE_VACANT_PORTRAIT = "theVacantResources/images/charSelect/VacantPortraitBG_New.png";
     public static final String THE_VACANT_SHOULDER_1 = "theVacantResources/images/char/vacantCharacter/shoulder.png";
     public static final String THE_VACANT_SHOULDER_2 = "theVacantResources/images/char/vacantCharacter/shoulder2.png";
     public static final String THE_VACANT_CORPSE = "theVacantResources/images/char/vacantCharacter/corpse.png";
@@ -103,9 +105,6 @@ public class VacantMod implements
 
 
 
-    //Keywords
-    public static Map<String, Keyword> keywords = new HashMap<>();
-    public static final String VOIDBOUND = "thevacant:Voidbound";
     public static List<String> IMMUNE_POWERS = new ArrayList<String>();
 
 
@@ -278,7 +277,6 @@ public class VacantMod implements
         BaseMod.addCard(new CursedBlast());
         BaseMod.addCard(new EyePoke());
         BaseMod.addCard(new Fling());
-        BaseMod.addCard(new GraveDigger());
         BaseMod.addCard(new GraveWave());
         BaseMod.addCard(new Jab());
         BaseMod.addCard(new ShriekingBlast());
@@ -292,29 +290,26 @@ public class VacantMod implements
         BaseMod.addCard(new Threaten());
         BaseMod.addCard(new DarkStrike());
         BaseMod.addCard(new DimensionTear());
-        BaseMod.addCard(new FiendFrost());
         BaseMod.addCard(new LashOut());
         BaseMod.addCard(new Showdown());
         BaseMod.addCard(new GildedPickaxe());
-        BaseMod.addCard(new SoundOfSilence());
+        BaseMod.addCard(new Doomed());
+        BaseMod.addCard(new Vlaze());
 
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
         BaseMod.addCard(new Cower());
         BaseMod.addCard(new Dig());
         BaseMod.addCard(new Spinshield());
-        BaseMod.addCard(new Shatter());
         BaseMod.addCard(new BattleScars());
         BaseMod.addCard(new EmbraceDarkness());
         BaseMod.addCard(new RubyRage());
         BaseMod.addCard(new Treasure());
         BaseMod.addCard(new Enchant());
         BaseMod.addCard(new Expand());
-        BaseMod.addCard(new Fortify());
         BaseMod.addCard(new Hex());
         BaseMod.addCard(new SoulBarrage());
         BaseMod.addCard(new Sneeze());
-        BaseMod.addCard(new OpalShine());
         BaseMod.addCard(new Unearth());
         BaseMod.addCard(new EmptyShield());
         BaseMod.addCard(new Memoria());
@@ -325,13 +320,16 @@ public class VacantMod implements
         BaseMod.addCard(new ReaperBlast());
         BaseMod.addCard(new Spelunk());
         BaseMod.addCard(new Exorcise());
+        BaseMod.addCard(new Polish());
+        BaseMod.addCard(new Partake());
+        BaseMod.addCard(new Desperation());
+        BaseMod.addCard(new Voidstone());
 
         //Powers
         BaseMod.addCard(new Acceptance());
         BaseMod.addCard(new BurdenBreak());
         BaseMod.addCard(new CleanseSoul());
         BaseMod.addCard(new Gloom());
-        BaseMod.addCard(new GotOurPickaxe());
         BaseMod.addCard(new Immaterialize());
         BaseMod.addCard(new IntoTheAbyss());
         BaseMod.addCard(new Requiem());
@@ -342,6 +340,7 @@ public class VacantMod implements
         BaseMod.addCard(new VoidForm());
         BaseMod.addCard(new RunicThoughts());
         BaseMod.addCard(new Reflection());
+        BaseMod.addCard(new ReachThrough());
 
         //Temp Cards
         /*
@@ -368,7 +367,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(CursedBlast.ID);
         UnlockTracker.unlockCard(EyePoke.ID);
         UnlockTracker.unlockCard(Fling.ID);
-        UnlockTracker.unlockCard(GraveDigger.ID);
         UnlockTracker.unlockCard(GraveWave.ID);
         UnlockTracker.unlockCard(Jab.ID);
         UnlockTracker.unlockCard(ShriekingBlast.ID);
@@ -382,17 +380,16 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Threaten.ID);
         UnlockTracker.unlockCard(DarkStrike.ID);
         UnlockTracker.unlockCard(DimensionTear.ID);
-        UnlockTracker.unlockCard(FiendFrost.ID);
         UnlockTracker.unlockCard(LashOut.ID);
         UnlockTracker.unlockCard(Showdown.ID);
         UnlockTracker.unlockCard(SoulBash.ID);
         UnlockTracker.unlockCard(GildedPickaxe.ID);
-        UnlockTracker.unlockCard(SoundOfSilence.ID);
+        UnlockTracker.unlockCard(Doomed.ID);
+        UnlockTracker.unlockCard(Vlaze.ID);
 
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
         UnlockTracker.unlockCard(Cower.ID);
-        UnlockTracker.unlockCard(Shatter.ID);
         UnlockTracker.unlockCard(Dig.ID);
         UnlockTracker.unlockCard(Spinshield.ID);
         UnlockTracker.unlockCard(BattleScars.ID);
@@ -401,11 +398,9 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Treasure.ID);
         UnlockTracker.unlockCard(Enchant.ID);
         UnlockTracker.unlockCard(Expand.ID);
-        UnlockTracker.unlockCard(Fortify.ID);
         UnlockTracker.unlockCard(Hex.ID);
         UnlockTracker.unlockCard(SoulBarrage.ID);
         UnlockTracker.unlockCard(Sneeze.ID);
-        UnlockTracker.unlockCard(OpalShine.ID);
         UnlockTracker.unlockCard(Unearth.ID);
         UnlockTracker.unlockCard(EmptyShield.ID);
         UnlockTracker.unlockCard(Memoria.ID);
@@ -416,13 +411,16 @@ public class VacantMod implements
         UnlockTracker.unlockCard(ReaperBlast.ID);
         UnlockTracker.unlockCard(Spelunk.ID);
         UnlockTracker.unlockCard(Exorcise.ID);
+        UnlockTracker.unlockCard(Polish.ID);
+        UnlockTracker.unlockCard(Partake.ID);
+        UnlockTracker.unlockCard(Desperation.ID);
+        UnlockTracker.unlockCard(Voidstone.ID);
 
         //Powers
         UnlockTracker.unlockCard(Acceptance.ID);
         UnlockTracker.unlockCard(BurdenBreak.ID);
         UnlockTracker.unlockCard(CleanseSoul.ID);
         UnlockTracker.unlockCard(Gloom.ID);
-        UnlockTracker.unlockCard(GotOurPickaxe.ID);
         UnlockTracker.unlockCard(Requiem.ID);
         UnlockTracker.unlockCard(Immaterialize.ID);
         UnlockTracker.unlockCard(IntoTheAbyss.ID);
@@ -433,6 +431,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(VoidForm.ID);
         UnlockTracker.unlockCard(RunicThoughts.ID);
         UnlockTracker.unlockCard(Reflection.ID);
+        UnlockTracker.unlockCard(ReachThrough.ID);
         //Powers
 
 
@@ -471,33 +470,71 @@ public class VacantMod implements
     public void receiveEditStrings() {
         logger.info("Beginning to edit strings for mod with ID: " + getModID());
 
-        BaseMod.loadCustomStringsFile(CardStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Card-Strings.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Relic-Strings.json");
-        BaseMod.loadCustomStringsFile(CharacterStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Character-Strings.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Power-Strings.json");
-        BaseMod.loadCustomStringsFile(OrbStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Orb-Strings.json");
 
+        loadStrings("eng");
 
-        BaseMod.loadCustomStringsFile(EventStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Event-Strings.json");
-
-        BaseMod.loadCustomStringsFile(PotionStrings.class,
-                getModID() + "Resources/localization/eng/VacantMod-Potion-Strings.json");
+        if (Settings.language != Settings.GameLanguage.ENG)
+        {
+            try
+            {
+                loadStrings(Settings.language.toString().toLowerCase());
+            }
+            catch (GdxRuntimeException er)
+            {
+                System.out.println("Vacant: Adding keywords error: Language not found, defaulted to eng.");
+            }
+        }
 
 
         logger.info("Done editing strings");
     }
 
+    private void loadStrings(String langKey)
+    {
+
+        BaseMod.loadCustomStringsFile(CardStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Card-Strings.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Relic-Strings.json");
+        BaseMod.loadCustomStringsFile(CharacterStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Character-Strings.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Power-Strings.json");
+        BaseMod.loadCustomStringsFile(OrbStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Orb-Strings.json");
+
+
+        BaseMod.loadCustomStringsFile(EventStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Event-Strings.json");
+
+        BaseMod.loadCustomStringsFile(PotionStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-Potion-Strings.json");
+    }
+
     @Override
     public void receiveEditKeywords()
     {
+        loadKeywords("eng");
+        if (Settings.language != Settings.GameLanguage.ENG)
+        {
+            try
+            {
+                loadKeywords(Settings.language.toString().toLowerCase());
+            }
+            catch (GdxRuntimeException er)
+            {
+                System.out.println("Vacant: Adding keywords error: Language not found, defaulted to eng.");
+            }
+        }
+    }
+
+    private void loadKeywords(String langKey)
+    {
+        if (!Gdx.files.internal(getModID() + "Resources/localization/" + langKey + "/").exists())
+            return;
         Gson gson = new Gson();
-        String json = Gdx.files.internal(getModID() + "Resources/localization/eng/VacantMod-Keyword-Strings.json").readString(String.valueOf(StandardCharsets.UTF_8));
+
+        String json = GetLocString(langKey, "VacantMod-Keyword-Strings.json");
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null)
@@ -509,6 +546,14 @@ public class VacantMod implements
             }
         }
     }
+
+
+    public String GetLocString(String langKey, String jsonPath)
+    {
+        String json = Gdx.files.internal(getModID() + "Resources/localization/" + langKey + "/" + jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
+        return json;
+    }
+
 
     @Override
     public void receiveAddAudio()

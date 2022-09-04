@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
+import theVacant.cards.AbstractVacantCard;
 import theVacant.util.TextureLoader;
 
 public class RecoverPower extends AbstractPower implements CloneablePowerInterface
@@ -49,7 +50,7 @@ public class RecoverPower extends AbstractPower implements CloneablePowerInterfa
     public void onVictory()
     {
         AbstractPlayer p = AbstractDungeon.player;
-        if (p.currentHealth > 0 && p.isBloodied)
+        if (AbstractVacantCard.getWounded())
         {
             p.heal(this.amount);
             flash();

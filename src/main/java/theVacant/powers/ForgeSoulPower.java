@@ -34,7 +34,7 @@ public class ForgeSoulPower extends AbstractPower implements CloneablePowerInter
         ID = POWER_ID;
 
         this.owner = owner;
-        this.amount = -1;
+        this.amount = amount;
         this.source = source;
 
         type = PowerType.BUFF;
@@ -57,7 +57,11 @@ public class ForgeSoulPower extends AbstractPower implements CloneablePowerInter
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0];
+
+        if(amount == 1)
+            description = DESCRIPTIONS[0];
+        else
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
     @Override

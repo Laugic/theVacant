@@ -5,7 +5,6 @@ import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import theVacant.cards.Special.*;
 import theVacant.orbs.*;
@@ -13,10 +12,11 @@ import theVacant.powers.InvisibleGemOrbPower;
 
 public class MineGemAction extends AbstractGameAction
 {
-    private AbstractOrb gem;
+    private AbstractGemOrb gem;
     boolean chipOrb = false;
+    int maxSize = -1;
 
-    public MineGemAction(AbstractOrb newOrbType, boolean chip)
+    public MineGemAction(AbstractGemOrb newOrbType, boolean chip)
     {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
@@ -24,14 +24,15 @@ public class MineGemAction extends AbstractGameAction
         chipOrb = chip;
     }
 
-    public MineGemAction(AbstractOrb gemOrb, int size)
+    public MineGemAction(AbstractGemOrb gemOrb, int maxSize)
     {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
         gem = gemOrb;
+        this.maxSize = maxSize;
     }
 
-    public MineGemAction(AbstractOrb newOrbType)
+    public MineGemAction(AbstractGemOrb newOrbType)
     {
         actionType = ActionType.SPECIAL;
         duration = Settings.ACTION_DUR_FAST;
@@ -42,6 +43,9 @@ public class MineGemAction extends AbstractGameAction
     {
         if(gem == null)
             gem = GetRandomGem();
+        
+        if(maxSize > -1 && gem.passiveAmount > maxSize)
+            gem.reduceSize(gem.passiveAmount - maxSize);
 
         addToTop(new ChannelAction(gem, false));
 
@@ -59,7 +63,7 @@ public class MineGemAction extends AbstractGameAction
         isDone = true;
     }
 
-    private AbstractOrb GetRandomGem()
+    private AbstractGemOrb GetRandomGem()
     {
         int rand = AbstractDungeon.cardRandomRng.random(46);
         if(rand < 10)

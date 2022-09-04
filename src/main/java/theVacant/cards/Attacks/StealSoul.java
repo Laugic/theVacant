@@ -1,18 +1,23 @@
 package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theVacant.VacantMod;
 import theVacant.actions.TempHPGainFromDamageAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.AntifactPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -28,22 +33,44 @@ public class StealSoul extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 15;
+    private static final int DAMAGE = 20;
 
     public StealSoul()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.effectsQueue.add(new LightningEffect(monster.hb.cX, monster.hb.cY));
-        if(player.isBloodied)
+        CardCrawlGame.sound.playA("ORB_LIGHTNING_EVOKE", 0.9F);
+        addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        if(monster.hasPower(ArtifactPower.POWER_ID))
+        {
+            int artNum = monster.getPower(ArtifactPower.POWER_ID).amount;
+            addToBot(new RemoveSpecificPowerAction(monster, player, monster.getPower(ArtifactPower.POWER_ID)));
+            if(upgraded)
+                addToBot(new ApplyPowerAction(player, player, new ArtifactPower(player, artNum)));
+        }
+        if(monster.hasPower(StrengthPower.POWER_ID))
+        {
+            int strNum = monster.getPower(StrengthPower.POWER_ID).amount;
+            if(strNum > 0)
+            {
+                addToBot(new RemoveSpecificPowerAction(monster, player, monster.getPower(StrengthPower.POWER_ID)));
+                if(upgraded)
+                    addToBot(new ApplyPowerAction(player, player, new StrengthPower(player, strNum)));
+            }
+        }
+//        addToBot(new ApplyPowerAction(monster, player, new AntifactPower(monster, player, magicNumber), magicNumber));
+        /*
+        if(getWounded())
             addToBot( new TempHPGainFromDamageAction(player, monster, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         else
-            addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+            addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));*/
     }
 
     @Override
@@ -53,7 +80,7 @@ public class StealSoul extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(5);
-            upgradedDamage = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

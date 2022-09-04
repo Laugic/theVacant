@@ -1,0 +1,164 @@
+{
+  "theVacant:GloomPower": {
+    "NAME": "우울",
+    "DESCRIPTIONS": ["내 턴 시작시, 카드를 뽑은 후, 카드를 #b", " 장 #y제분 합니다."]
+  },
+  "theVacant:ImmaterializePower": {
+    "NAME": "비물질화",
+    "DESCRIPTIONS": ["#y소멸 효과가 있는 카드를 사용할 때마다, 이 효과가 1 감소하고 사용했던 소멸 카드가 2턴 후 뽑을 카드 더미로 다시 돌아옵니다."]
+  },
+  "theVacant:MemoriaPower": {
+    "NAME": "기억",
+    "DESCRIPTIONS": ["다음에 사용하는 #y소멸 효과가 있는 카드가 #b", " 번 사용됩니다. 턴 종료시 이 효과가 제거됩니다.", " 번 사용됩니다. 턴 종료시 이 효과가 제거됩니다."]
+  },
+  "theVacant:EmptyFormPower": {
+    "NAME": "허무의 형상",
+    "DESCRIPTIONS": ["매 턴 처음으로 사용하는 카드 #b", " 장의 비용이 0이 됩니다."," 장의 비용이 0이 됩니다."]
+  },
+  "theVacant:RunicThoughtsPower": {
+    "NAME": "사고의 룬",
+    "DESCRIPTIONS": ["모든 파워 카드에 #y리바운드 효과를 부여합니다. 카드가 #y리바운드 되면, 사용하기 전까지 그 카드의 비용이 0 이 됩니다."]
+  },
+  "theVacant:VoidEmbracePower": {
+    "NAME": "공허의 포옹",
+    "DESCRIPTIONS": ["카드가 #y소멸 될 때마다, #p공허 를 #b", " 얻습니다."]
+  },
+  "theVacant:PickaxePower": {
+    "NAME": "곡괭이를 들어올리며",
+    "DESCRIPTIONS": ["내 턴 시작시, 가장 오른쪽에 있는 #y보석 을 ", " 번 #y연공 합니다.", " 번 #y연공 합니다."]
+  },
+  "theVacant:AquamarinePower": {
+    "NAME": "아쿠아마린",
+    "DESCRIPTIONS": ["#y제분 한 카드 1장당 #y방어도를 #b", " 얻습니다."]
+  },
+  "theVacant:ReflectionPower": {
+    "NAME": "반향",
+    "DESCRIPTIONS": ["#y보석 을 #y연공 할때마다, 연공한 보석의 효과를 ", " 번 발동합니다."]
+  },
+  "theVacant:RequiemPower": {
+    "NAME": "레퀴엠",
+    "DESCRIPTIONS": ["이로운 효과 또는 해로운 효과를 받을 때마다, 그 효과를 2배로 늘려 받습니다."]
+  },
+  "theVacant:RecoverPower": {
+    "NAME": "재복구",
+    "DESCRIPTIONS": ["전투 종료시, #y부상 상태라면, 체력을 #b", " 회복합니다."]
+  },
+  "theVacant:VoidPower": {
+    "NAME": "공허",
+    "DESCRIPTIONS": [
+      "뽑을 카드 더미가 비어있다면, 공격의 피해량이 #b", " 증가하고 획득 #y방어도가 #b", " 증가합니다."
+    ]
+  },
+  "theVacant:DarknessPower": {
+    "NAME": "그림자",
+    "DESCRIPTIONS": [
+      "해로운 효과를 받을 때마다, 그 효과의 스택을 #b", " 만큼 더 받습니다."
+    ]
+  },
+  "theVacant:AntifactPower": {
+    "NAME": "독공물",
+    "DESCRIPTIONS": [
+      "다음에 받는 #b", " 번의 이로운 효과를 무효화합니다.", " 번의 이로운 효과를 무효화합니다."
+    ]
+  },
+  "theVacant:BurdenBreakPower": {
+    "NAME": "눈에는 눈",
+    "DESCRIPTIONS": ["적에게 체력을 잃을때마다, #y활력 을 #b", " 얻습니다."]
+  },
+  "theVacant:ShroudPower": {
+    "NAME": "장막",
+    "DESCRIPTIONS": ["받는 피해량이 50% 감소합니다. 내 턴 시작시 또는 공격할 때마다, 이 효과가 1 감소합니다."]
+  },
+  "theVacant:CleanseSoulPower": {
+    "NAME": "영혼 정화",
+    "DESCRIPTIONS": ["상태이상 이나 저주 카드를 #y제분 할 때마다, 그 카드를 #y소멸 시킵니다."]
+  },
+  "theVacant:DoomPower": {
+    "NAME": "파멸",
+    "DESCRIPTIONS": ["받는 피해량이 #b", " 증가합니다."]
+  },
+  "theVacant:AbyssPower": {
+    "NAME": "심연",
+    "DESCRIPTIONS": ["내 턴 시작시, 적 전체에게 #y파멸 을 #b", " 부여합니다."]
+  },
+  "theVacant:DelayedExhumePower": {
+    "NAME": "발굴의 영혼",
+    "DESCRIPTIONS": ["내 턴 시작시, #y소멸 카드 더미에 있는 카드 #b", " 장이 2 턴 후 손으로 돌아옵니다."]
+  },
+  "theVacant:DoomRune": {
+    "NAME": "파멸의 룬",
+    "DESCRIPTIONS": ["받는 피해가 #b", " 증가합니다. NL #y해방 : 적 전체에게 #y파멸 을 #b", " 부여합니다."]
+  },
+  "theVacant:FerocityRune": {
+    "NAME": "흉포의 룬",
+    "DESCRIPTIONS": ["내 턴 시작시, 활력 을 #b", " 얻습니다. NL #y해방 : 임시 힘을 #b", " 얻습니다."]
+  },
+  "theVacant:NecraRune": {
+    "NAME": "강령 룬",
+    "DESCRIPTIONS": ["전투 종료시, 체력을 #b", " 회복합니다. NL #y해방 : 피해를 #b", " 받습니다."]
+  },
+  "theVacant:VacancyRune": {
+    "NAME": "결원의 룬",
+    "DESCRIPTIONS": ["카드를 #y제분 할 때마다, 추가로 #p공허 를 #b", " 얻습니다."]
+  },
+  "theVacant:HollowRune": {
+    "NAME": "성역의 룬",
+    "DESCRIPTIONS": ["#y해방 : #y건강 상태라면, #y민첩을 #b"," 얻습니다. #y부상 상태라면, #y힘을 #b", " 얻습니다."]
+  },
+  "theVacant:WardRune": {
+    "NAME": "와드의 룬",
+    "DESCRIPTIONS": ["체력을 잃을 때마다, 다음 턴에 #y방어도를 #b"," 얻습니다. NL #y해방: #b", " #y방어도를 2 번 얻습니다."]
+  },
+  "theVacant:ForgeSoulPower": {
+    "NAME": "대장장이 영혼",
+    "DESCRIPTIONS": ["카드를 #y제분 할 때마다, 이번 전투 동안 제분한 카드를 강화합니다."]
+  },
+  "theVacant:SolidSoulPower": {
+    "NAME": "철벽의 영혼",
+    "DESCRIPTIONS": ["다음에 #y형상 이 변화하는 것을 #b "," 번 막아줍니다.", " 번 막아줍니다."]
+  },
+  "theVacant:VoidFormPower": {
+    "NAME": "공허의 형상",
+    "DESCRIPTIONS": ["뽑을 카드 더미가 비어있다면, 보유한 [#ee82ee]공허[] 1당, 획득 #y방어도가 #b"," 증가하고 공격의 피해량이 #b", " 증가합니다."]
+  },
+  "theVacant:TemperancePower": {
+    "NAME": "절제",
+    "DESCRIPTIONS": ["다음에 #y방어도를 얻을때, 보유한 절제 스택만큼 추가 #y방어도 를 얻습니다."]
+  },
+  "theVacant:WaitInWrathPower": {
+    "NAME": "참아야 하느니라",
+    "DESCRIPTIONS": ["내 턴 시작시, #y부상 상태라면, #y활력 을 "," 얻습니다. #y건강 상태라면, #y절제 를 "," 얻습니다."]
+  },
+  "theVacant:VacantForm": {
+    "NAME": "[#ee82ee]허무의[] [#ee82ee]형상[]",
+    "DESCRIPTIONS": ["#y흡수: 체력을 #b", " 잃습니다. NL -------- NL 죽을수 없고 [#ee4200]격노의[] [#ee4200]형상[] 으로 진입할 수 없습니다. NL 이 #y형상 을 벗어나면, #y흡수 합니다."]
+  },
+  "theVacant:FuryForm": {
+    "NAME": "[#ee4200]격노의[] [#ee4200]형상[]",
+    "DESCRIPTIONS": ["#y흡수: #y활력 을 #b", " 얻습니다. NL -------- NL 내 턴 시작시, #y흡수 합니다."]
+  },
+  "theVacant:SolemnForm": {
+    "NAME": "[#66eeee]엄숙의[] [#66eeee]형상[]",
+    "DESCRIPTIONS": ["#y흡수: #y절제 를 #b", " 얻습니다. NL -------- NL 이 #y형상 에 진입하면, #y흡수 합니다."]
+  },
+  "theVacant:VoidForm": {
+    "NAME": "[#ee82ee]공허의[] [#ee82ee]형상[]",
+    "DESCRIPTIONS": ["#y흡수: 공허 를 #b", " 얻습니다. NL -------- NL 이 #y형상 에 진입하면, #y흡수 합니다. NL 보유한 공허 1당, 획득 #y방어도와 피해량이 1 증가합니다."]
+  },
+  "theVacant:SoulPower": {
+    "NAME": "[#66eeee]영혼[]",
+    "DESCRIPTIONS": ["전투 종료시, 회복 #b", "."]
+  },
+  "theVacant:ReapPower": {
+    "NAME": "수확",
+    "DESCRIPTIONS": ["이 대상을 공격할 때마다, 체력을 #b", " 회복합니다. 다음 턴 시작시 이 효과가 제거됩니다."]
+  },
+  "theVacant:DoubleNextAttackPower": {
+    "NAME": "공격 카드 2 번 사용",
+    "DESCRIPTIONS": ["다음에 사용하는 공격 카드가 2 번 사용됩니다.", "다음에 사용하는 공격 카드 #b", " 장이 2 번 사용됩니다."]
+  },
+  "theVacant:WhenDarknessComesPower": {
+    "NAME": "어둠이 강림한다",
+    "DESCRIPTIONS": ["파멸 의 받는 피해량 증가 효과가 추가로 "," 증가합니다."]
+  }
+}

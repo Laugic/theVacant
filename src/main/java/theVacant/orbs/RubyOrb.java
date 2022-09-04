@@ -18,7 +18,7 @@ public class RubyOrb extends AbstractGemOrb
     public static final String ORB_ID = VacantMod.makeID(RubyOrb.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = false;
+    private static boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = true;
 
     public RubyOrb(int size)
     {
@@ -32,14 +32,14 @@ public class RubyOrb extends AbstractGemOrb
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), 0.1f));
         chipSound();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new VigorPower(AbstractDungeon.player, amount), amount));
+                new VigorPower(AbstractDungeon.player, amount * 3), amount * 3));
     }
 
     @Override
     public void updateDescription()
     {
         applyFocus();
-        description = DESCRIPTIONS[0] + passiveAmount + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

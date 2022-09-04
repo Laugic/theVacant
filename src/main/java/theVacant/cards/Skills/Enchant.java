@@ -24,11 +24,12 @@ public class Enchant extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Enchant()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        exhaust = true;
     }
 
     @Override
@@ -43,7 +44,7 @@ public class Enchant extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeBaseCost(0);
             upgradedCost = true;
             initializeDescription();
         }

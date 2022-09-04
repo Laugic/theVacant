@@ -42,11 +42,14 @@ public class TemperancePower extends AbstractPower implements CloneablePowerInte
         this.source = source;
 
         type = PowerType.BUFF;
+        if(this.amount < 0)
+            type = PowerType.DEBUFF;
         isTurnBased = true;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
+        this.canGoNegative = true;
         updateDescription();
     }
 
@@ -56,7 +59,7 @@ public class TemperancePower extends AbstractPower implements CloneablePowerInte
         if (card.baseBlock >= 0)
         {
             flash();
-            addToTop(new ReducePowerAction(this.owner, this.owner, this.ID, this.amount));
+            addToTop(new ReducePowerAction(owner, owner, ID, amount));
         }
     }
 
@@ -65,39 +68,56 @@ public class TemperancePower extends AbstractPower implements CloneablePowerInte
     {
         if(blockAmount < 1)
             return blockAmount;
-        return blockAmount + amount;
+        return Math.max(blockAmount + amount, 0);
     }
 
     @Override
     public void stackPower(int stackAmount)
     {
-        this.fontScale = 8.0F;
-        this.amount += stackAmount;
-        if (this.amount == 0)
-            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        if (this.amount >= 999)
-            this.amount = 999;
-        if (this.amount <= -999)
-            this.amount = -999;
+        fontScale = 8.0F;
+        amount += stackAmount;
+        if (amount == 0)
+            addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
+        if (amount >= 999)
+            amount = 999;
+        if (amount <= -999)
+            amount = -999;
+        if(amount < 0)
+            type = PowerType.DEBUFF;
+        else
+            type = PowerType.BUFF;
     }
 
     @Override
     public void reducePower(int reduceAmount)
     {
-        this.fontScale = 8.0F;
-        this.amount -= reduceAmount;
-        if (this.amount <= 0)
-            addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID));
-        if (this.amount >= 999)
-            this.amount = 999;
-        if (this.amount <= -999)
-            this.amount = -999;
+        fontScale = 8.0F;
+        amount -= reduceAmount;
+        if (amount == 0)
+            addToTop(new RemoveSpecificPowerAction(owner, owner, ID));
+        if (amount >= 999)
+            amount = 999;
+        if (amount <= -999)
+            amount = -999;
+        if(amount < 0)
+            type = PowerType.DEBUFF;
+        else
+            type = PowerType.BUFF;
     }
 
     @Override
     public void updateDescription()
     {
-        this.description = DESCRIPTIONS[0];
+        if(amount >=0)
+        {
+            description = DESCRIPTIONS[0];
+            type = PowerType.BUFF;
+        }
+        else
+        {
+            description = DESCRIPTIONS[1];
+            type = PowerType.DEBUFF;
+        }
     }
 
     @Override

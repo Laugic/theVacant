@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.powers.DarknessPower;
 import theVacant.powers.DoomPower;
 import theVacant.powers.ShroudPower;
 
@@ -32,14 +31,14 @@ public class EmbraceDarkness extends AbstractDynamicCard {
 
     private static ArrayList<TooltipInfo> Tooltip;
 
-    private static final int COST = 2;
-    private static final int UPGRADE_MAGIC_NUM = 3;
-    private static final int DOOM_AMOUNT = 2, SECONDARY_MAGIC_AMOUNT = 2, UPGRADED_SECONDARY_MAGIC = 3;
+    private static final int COST = 1;
+    private static final int UPGRADE_MAGIC_NUM = 2;
+    private static final int DOOM_AMOUNT = 2, UPGRADED_DOOM_AMOUNT = 3;
 
     public EmbraceDarkness()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 5;
+        magicNumber = baseMagicNumber = 4;
         exhaust = true;
     }
 
@@ -48,13 +47,10 @@ public class EmbraceDarkness extends AbstractDynamicCard {
     {
         addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
         //addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT), upgraded ? UPGRADED_VOID_AMOUNT : VOID_AMOUNT));
-        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT), upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT));
-        addToBot(new ApplyPowerAction(player, player, new DarknessPower(player, player, upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT), upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT));
+        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, upgraded ? UPGRADED_DOOM_AMOUNT : DOOM_AMOUNT), upgraded ? UPGRADED_DOOM_AMOUNT : DOOM_AMOUNT));
+
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-        {
-            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, player, upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT), upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
-            addToBot(new ApplyPowerAction(mo, player, new DarknessPower(mo, player, upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT), upgraded ? UPGRADED_SECONDARY_MAGIC : SECONDARY_MAGIC_AMOUNT, true));
-        }
+            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, player, upgraded ? UPGRADED_DOOM_AMOUNT : DOOM_AMOUNT), upgraded ? UPGRADED_DOOM_AMOUNT : DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));
     }
 /*
     @Override

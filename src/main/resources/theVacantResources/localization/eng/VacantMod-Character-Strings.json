@@ -7,7 +7,8 @@
     "TEXT": [
       "A lost soul, bound to an artifact, looks to free itself from its curse. NL Finds strength in emptiness.",
       "NL You MILL the heart.",
-      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~empty~ ~one,~ ~let~ ~the~ ~warmth~ ~of~ ~the~ ~Spire~ ~fill~ ~you.\"~"
+      "Navigating an unlit street, you come across several hooded figures in the midst of some dark ritual. As you approach, they turn to you in eerie unison. The tallest among them bares fanged teeth and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~empty~ ~one,~ ~let~ ~the~ ~warmth~ ~of~ ~the~ ~Spire~ ~fill~ ~you.\"~",
+      "#p~EMPTINESS~ NL NL Finally you find yourself in the center of the ancient ruins. The cornerstone. The #y~Altar~ #y~Room~ . NL NL Resting in the center of the #yAltar, you see it. Sitting there, unassuming. #p@THE@ #p@GOBLET@ seems to be calling you. NL NL As you approach, you notice strange #pRunes and #pTalismans scattering the floor. And on a closer look- #rblood is spilled #r~all~ #r~over~ #r~the~ #r~room~ . NL NL But #p@THE@ #p@GOBLET@ is right there-"
     ]
   }
 }

@@ -2,6 +2,7 @@ package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -33,19 +34,20 @@ public class OpalFracture extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 14;
+    private static final int DAMAGE = 7;
 
     public OpalFracture()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
+        block = baseBlock = 7;
         magicNumber = baseMagicNumber = 2;
-        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new GainBlockAction(player, block));
         addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new MineGemAction(new OpalOrb(magicNumber)));
         //addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
@@ -58,10 +60,9 @@ public class OpalFracture extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(6);
-            upgradedDamage = true;
+            upgradeDamage(2);
+            upgradeBlock(2);
             upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

@@ -33,7 +33,7 @@ public class Gloom extends AbstractDynamicCard
     public Gloom()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 6;
+        magicNumber = baseMagicNumber = 4;
     }
 
     @Override
@@ -48,7 +48,7 @@ public class Gloom extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(2);
             upgradedMagicNumber = true;
             initializeDescription();
         }

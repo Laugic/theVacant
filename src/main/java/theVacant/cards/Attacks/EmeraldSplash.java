@@ -43,8 +43,8 @@ public class EmeraldSplash extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
-    private static final int DAMAGE = 10;
+    private static final int COST = 0;
+    private static final int DAMAGE = 4;
 
 
     public EmeraldSplash()
@@ -53,7 +53,6 @@ public class EmeraldSplash extends AbstractDynamicCard {
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 2;
         isMultiDamage = true;
-        exhaust = true;
     }
 
     @Override
@@ -76,7 +75,7 @@ public class EmeraldSplash extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(3);
             upgradedDamage = true;
             initializeDescription();
         }

@@ -2,6 +2,7 @@ package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,7 +26,7 @@ public class GraveDigger extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DAMAGE = 1;
 
     public GraveDigger()
@@ -47,8 +48,6 @@ public class GraveDigger extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
-            upgradedCost = true;
             isUnnate = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
@@ -88,7 +87,7 @@ public class GraveDigger extends AbstractDynamicCard {
 
     private void getDesc()
     {
-        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        rawDescription = (upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 

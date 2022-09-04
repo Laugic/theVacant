@@ -10,6 +10,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.AquamarinePower;
+import theVacant.powers.PickaxePower;
 import theVacant.powers.ReflectionPower;
 
 import static theVacant.VacantMod.makeCardPath;
@@ -33,13 +34,13 @@ public class Reflection extends AbstractDynamicCard
     public Reflection()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ReflectionPower(player, player, magicNumber), magicNumber - 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new PickaxePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -50,6 +51,7 @@ public class Reflection extends AbstractDynamicCard
             upgradeName();
             upgradeMagicNumber(1);
             upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

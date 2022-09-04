@@ -106,7 +106,7 @@ public class EchoModifier extends AbstractCardModifier
 
 
     private void AddEchoKeyword(AbstractCard card)
-    {
+    {/*
         if(!card.keywords.toString().contains(KeywordManager.ECHO_ID))
         {
             switch (card.type)
@@ -124,7 +124,7 @@ public class EchoModifier extends AbstractCardModifier
                     card.keywords.add(KeywordManager.ECHO_ID);
                     break;
             }
-        }
+        }*/
     }
 
     public static void Enhance(AbstractCard card, int num)

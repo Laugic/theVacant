@@ -1,0 +1,81 @@
+{
+  "theVacant:VacantBossEnergyRelic": {
+    "NAME": "플레이스 홀더 에너지 유물",
+    "FLAVOR": "올ㅋ",
+    "DESCRIPTIONS": [
+      " #b1 [E] 를 얻습니다 ."
+    ]
+  },
+  "theVacant:VacantStarterRelic": {
+    "NAME": "저주받은 보석",
+    "FLAVOR": "당신의 영혼을 담고 있는 저주 받은 함정입니다.",
+    "DESCRIPTIONS": [
+      "매 전투 시작시 #ythevacant:건강 하다면, 최대 체력을 #b2 잃습니다. #ythevacant:부상 상태라면, 최대 체력을 #b4 얻습니다. 이 효과로 최대 체력을 #b50 이상 증가시킬수 없습니다."
+    ]
+  },
+  "theVacant:Deathbell": {
+    "NAME": "임종을 알리는 종",
+    "FLAVOR": "이 향기가 공포감을 불러일으키는군요.",
+    "DESCRIPTIONS": [
+      "전투 시작시, #ythevacant:부상 상태라면, #y임시_체력 을 10 얻습니다."
+    ]
+  },
+  "theVacant:BoundSoul": {
+    "NAME": "구속 당한 영혼",
+    "FLAVOR": "죽음이 다가올 때, 당신을 통제하는 유물의 지배력이 약해지고 힘이 점점 커지는 것을 느낄 수 있습니다.",
+    "DESCRIPTIONS": [
+      "내 턴 시작시, #ythevacant:부상 상태라면, [E] 를 얻습니다."
+    ]
+  },
+  "theVacant:LocketRelic": {
+    "NAME": "로켓 조각",
+    "FLAVOR": "목숨을 잃었던 순간을 상기시켜 줍니다. 한 조각 뿐이더라도요.",
+    "DESCRIPTIONS": [
+      "카드가 #ythevacant:리바운드 되면, #y방어도를 #b4 얻습니다."
+    ]
+  },
+  "theVacant:TombstoneRelic": {
+    "NAME": "묘비석",
+    "FLAVOR": "우리들 모두가 결국 무덤 속으로 들어가듯이, 모든 카드도 결국 버린 카드 더미로 들어갑니다.",
+    "DESCRIPTIONS": [
+      "전투 시작시, 첫 턴에 카드를 뽑은 후, 뽑을 카드 더미의 모든 카드를 #ythevacant:제분 합니다."
+    ]
+  },
+  "theVacant:CrystalBallRelic": {
+    "NAME": "조각난 수정구",
+    "FLAVOR": "때때로 세계로 새어나가는 마법은, 그 마법이 발견되지 않았던 시절보다 더 강력해집니다.",
+    "DESCRIPTIONS": [
+      "#y소멸된 카드가 2턴 후 뽑을 카드 더미로 되돌아옵니다."
+    ]
+  },
+  "theVacant:RagRelic": {
+    "NAME": "광택의 붕대",
+    "FLAVOR": "반짝이는 보석들이 더 강력하죠. 누구나 알고 있는 사실 아닌가요?",
+    "DESCRIPTIONS": [
+      "내 턴 시작시 더 이상 #ythevacant:보석 의 스택이 감소하지 않습니다."
+    ]
+  },
+  "theVacant:BrassGoblet": {
+    "NAME": "황동 고블릿",
+    "FLAVOR": "암흑의 힘을 가진 고대의 유물입니다.",
+    "DESCRIPTIONS": [
+      "전투 시작시, #pthevacant:공허 를 #b",
+      " 얻습니다"
+    ]
+  },
+  "theVacant:OverflowingGobletRelic": {
+    "NAME": "과충전 고블릿",
+    "FLAVOR": "암흑의 힘으로 넘쳐흐르고 있는 고대의 유물입니다.",
+    "DESCRIPTIONS": [
+      "#y황동 #y고블릿 을 대체합니다. 전투 시작시, #y인공물 을 #b",
+      " 얻습니다."
+    ]
+  },
+  "theVacant:BoundSoulOld": {
+    "NAME": "구속 당한 영혼 구판",
+    "FLAVOR": "영원히 이 유물에 묶인 신세입니다.",
+    "DESCRIPTIONS": [
+      "[#66eeee]엄숙의[] [#66eeee]형상[] 으로 진입합니다. 턴 시작시, 체력이 50% 이하라면, NL [#ee4200]격노의[] [#ee4200]형상[] 으로 진입합니다. NL 뽑을 카드 더미에 카드가 하나도 없을시 [#ee82ee]공허의[] [#ee82ee]형상[] 으로 진입합니다."
+    ]
+  }
+}

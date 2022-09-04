@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.actions.DrawFromBottom;
+import theVacant.actions.ReturnAction;
 import theVacant.actions.ShuffleDiscardToBottomOfDrawAction;
 import theVacant.actions.SpelunkAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -31,16 +32,20 @@ public class Unearth extends AbstractDynamicCard
     public Unearth()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 3;
+        rebound = true;
+        isUnnate = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        if(player.drawPile.size() == 0)
-            AbstractDungeon.actionManager.addToBottom(new ShuffleDiscardToBottomOfDrawAction());
-        AbstractDungeon.actionManager.addToBottom(new DrawFromBottom(magicNumber));
-        addToBot(new SpelunkAction(upgraded?4:3));
+//        if(player.drawPile.size() == 0)
+//            AbstractDungeon.actionManager.addToBottom(new ShuffleDiscardToBottomOfDrawAction());
+//        AbstractDungeon.actionManager.addToBottom(new DrawFromBottom(magicNumber));
+//        addToBot(new SpelunkAction(upgraded?4:3));
+
+        AbstractDungeon.actionManager.addToBottom(new ReturnAction(magicNumber));
     }
 
     @Override
@@ -51,7 +56,6 @@ public class Unearth extends AbstractDynamicCard
             upgradeName();
             upgradeMagicNumber(1);
             upgradedMagicNumber = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ReturnAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -35,7 +36,6 @@ public class Thoughtseize extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
         damage = baseDamage = DAMAGE;
-        exhaust = true;
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Thoughtseize extends AbstractDynamicCard {
     {
         AbstractDungeon.actionManager.addToBottom( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if(player.discardPile.size() > 0)
-            AbstractDungeon.actionManager.addToBottom(new DiscardPileToHandAction(magicNumber));
+            AbstractDungeon.actionManager.addToBottom(new ReturnAction(magicNumber));
     }
 
     @Override

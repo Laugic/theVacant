@@ -62,28 +62,6 @@ public class AmethystModifier extends AbstractCardModifier
     }
 
     @Override
-    public float modifyBlock(float block, AbstractCard card)
-    {
-        if(CheckDrawEmpty() && block > 0)
-        {
-            card.glowColor = Color.PURPLE;
-            return block + amount;
-        }
-        return block;
-    }
-
-    @Override
-    public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target)
-    {
-        if(CheckDrawEmpty() && damage > 0)
-        {
-            card.glowColor = Color.PURPLE;
-            return damage + amount;
-        }
-        return damage;
-    }
-
-    @Override
     public String identifier(AbstractCard card)
     {
         return ID;

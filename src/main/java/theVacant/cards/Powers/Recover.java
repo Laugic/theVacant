@@ -30,6 +30,7 @@ public class Recover extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 10;
         tags.add(AbstractCard.CardTags.HEALING);
+        checkWounded = true;
     }
 
     @Override

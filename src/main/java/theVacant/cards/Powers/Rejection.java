@@ -34,15 +34,14 @@ public class Rejection extends AbstractDynamicCard
     public Rejection()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 6;
+        magicNumber = baseMagicNumber = 5;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, magicNumber), magicNumber));
-        if(!upgraded)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new FrailPower(player, 2, false), 2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new FrailPower(player, 2, false), 2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new AntifactPower(player, player, 2), 2));
     }
 
@@ -52,9 +51,8 @@ public class Rejection extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeMagicNumber(2);
             upgradedMagicNumber = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

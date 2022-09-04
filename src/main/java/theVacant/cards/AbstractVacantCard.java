@@ -1,11 +1,14 @@
 package theVacant.cards;
 
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.powers.BurdenBreakPower;
 import theVacant.relics.Deathbell;
@@ -22,6 +25,7 @@ public abstract class AbstractVacantCard extends CustomCard
     public boolean displayWill;
     public boolean hasUpgradeDesc;
     public boolean prime;
+    public boolean checkWounded;
     private CardStrings cardStrings = null;
     private static final CardStrings cardStringsAbstract = CardCrawlGame.languagePack.getCardStrings(VacantMod.makeID(AbstractVacantCard.class.getSimpleName()));
 
@@ -46,6 +50,7 @@ public abstract class AbstractVacantCard extends CustomCard
         rebound = false;
         postMillAction = false;
         getBonusMillToMagic = false;
+        checkWounded = false;
         displayFracturedTooltip = false;
         bonusMillAmount = 0;
         displayWill = false;
@@ -60,112 +65,28 @@ public abstract class AbstractVacantCard extends CustomCard
     }
 
     @Override
-    public void use(AbstractPlayer player, AbstractMonster monster)
-    {
-        if(this.prime)
-            Prime();
-    }
-
-    public void Prime()
-    {
-        this.prime = false;
-    }
-
-    @Override
-    public void applyPowers()
-    {
-        GetBonusMill();
-        /*if(this.displayWill)
-            GetWillTooltip();*/
-        super.applyPowers();
-    }
-    @Override
-    public void atTurnStart()
-    {
-        GetBonusMill();
-        applyPowers();
-        initializeDescription();
-        super.atTurnStart();
-    }
-
-    @Override
-    public void calculateCardDamage(AbstractMonster monster)
-    {
-        GetBonusMill();
-        applyPowers();
-        initializeDescription();
-        super.calculateCardDamage(monster);
-    }
-
-    public void GetBonusMill()
-    {
-        bonusMillAmount = 0;
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
+    public void triggerOnGlowCheck() {
+        if(checkWounded)
         {
-//            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
-//                bonusMillAmount += 2;
-            //if(player.hasPower(BurdenBreakPower.POWER_ID))
-            //    bonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
-        }
-        if(getBonusMillToMagic)
-        {
-            magicNumber = baseMagicNumber;
-            magicNumber += bonusMillAmount;
-            if(magicNumber != baseMagicNumber)
-                isMagicNumberModified = true;
+            if(getWounded())
+                glowColor = Color.PURPLE;
+            else
+                glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR;
         }
     }
 
-    public static int GetBonusMillAmount()
+    public static boolean getWounded()
     {
-        /*int getBonusMillAmount = 0;
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
+        if(AbstractDungeon.player != null)
         {
-            if(player.hasRelic(Deathbell.ID) && player.currentHealth <= player.maxHealth / 2)
-                getBonusMillAmount += 2;
-            if(player.hasPower(BurdenBreakPower.POWER_ID))
-                getBonusMillAmount += player.getPower(BurdenBreakPower.POWER_ID).amount;
-        }*/
-        return 0;
-    }
-
-    public int GetWill()
-    {
-        /*AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && player.hasPower(WillPower.POWER_ID))
-                return ((player.getPower(WillPower.POWER_ID)).amount);*/
-        return 0;
-    }
-
-    private void GetWillTooltip()
-    {
-        /*
-        int count = GetWill();
-        this.rawDescription = (this.upgraded && this.hasUpgradeDesc)?this.cardStrings.UPGRADE_DESCRIPTION:this.cardStrings.DESCRIPTION;
-        this.rawDescription += cardStringsAbstract.EXTENDED_DESCRIPTION[0] + count + cardStringsAbstract.EXTENDED_DESCRIPTION[1];
-        initializeDescription();*/
-    }
-
-    @Override
-    public void onMoveToDiscard()
-    {
-        /*
-        if(this.displayWill)
-            this.rawDescription = (this.upgraded && this.hasUpgradeDesc)?this.cardStrings.UPGRADE_DESCRIPTION:this.cardStrings.DESCRIPTION;
-        initializeDescription();*/
-    }
-
-    public void PreRelease()
-    {
-        /*if(AbstractDungeon.player instanceof TheVacant)
-            ((TheVacant)AbstractDungeon.player).releasesThisCombat++;*/
-    }
-
-    public void PostRelease()
-    {
-        /*if(GetWill() > 0)
-            addToTop(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, WillPower.POWER_ID, 1));*/
+            int numDebuffs = 0;
+            for (AbstractPower power: AbstractDungeon.player.powers) {
+                if(power.type == AbstractPower.PowerType.DEBUFF)
+                    numDebuffs++;
+            }
+            if(AbstractDungeon.player.isBloodied || numDebuffs >= 2)
+                return true;
+        }
+        return false;
     }
 }

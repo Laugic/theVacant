@@ -6,10 +6,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.CleanseSoulPower;
+import theVacant.powers.TemperancePower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -32,12 +34,14 @@ public class CleanseSoul extends AbstractDynamicCard
 
     public CleanseSoul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = 4;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CleanseSoulPower(player, player, 1), 1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CleanseSoulPower(player, player, -1)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -47,6 +51,7 @@ public class CleanseSoul extends AbstractDynamicCard
         {
             upgradeName();
             this.isInnate = true;
+            upgradeMagicNumber(1);
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

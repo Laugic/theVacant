@@ -1,6 +1,6 @@
 {
   "theVacant:GloomPower": {
-    "NAME": "Gloom",
+    "NAME": "Void Form",
     "DESCRIPTIONS": ["At the start of your turn after you draw, #yMill #b", " cards."]
   },
   "theVacant:ImmaterializePower": {
@@ -17,15 +17,15 @@
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
-    "DESCRIPTIONS": ["Powers #yRebound. Whenever a card #yRebounds, it costs 0 that turn until played."]
+    "DESCRIPTIONS": ["Cards that cost less than #b", " #yRicochet."]
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
     "DESCRIPTIONS": ["Whenever a card #yExhausts, gain #b", " #pVoid."]
   },
   "theVacant:PickaxePower": {
-    "NAME": "Got Our Pickaxe",
-    "DESCRIPTIONS": ["At the start of your turn, #yChip your next #yGem ", " time.", " times."]
+    "NAME": "Cracked Reflection",
+    "DESCRIPTIONS": ["Whenever you #yMine a #yGem, #yChip it.", "Whenever you #yMine a #yGem, #yChip it #b", " times."]
   },
   "theVacant:AquamarinePower": {
     "NAME": "Aquamarine",
@@ -37,11 +37,15 @@
   },
   "theVacant:RequiemPower": {
     "NAME": "Requiem",
-    "DESCRIPTIONS": ["Whenever you gain a buff or a debuff, double it. NL (Does not stack.)"]
+    "DESCRIPTIONS": ["Multiply buffs and debuffs gained by #b", "."]
   },
   "theVacant:RecoverPower": {
     "NAME": "Recover",
-    "DESCRIPTIONS": ["At the end of battle, if you are #yWounded, heal #b", " HP."]
+    "DESCRIPTIONS": ["At the end of battle, if you are #yHollow, heal #b", " HP."]
+  },
+  "theVacant:PolishPower": {
+    "NAME": "Polishing",
+    "DESCRIPTIONS": ["At the end of your turn, increase the size of your next #yGem.", "At the end of your turn, increase the size of your next #b", " #yGems."]
   },
   "theVacant:VoidPower": {
     "NAME": "Void",
@@ -63,7 +67,7 @@
   },
   "theVacant:BurdenBreakPower": {
     "NAME": "Burden Break",
-    "DESCRIPTIONS": ["Whenever you take damage, gain #b", " #yVigor."]
+    "DESCRIPTIONS": ["Whenever you take damage or gain a debuff, gain #b", " #yVigor."]
   },
   "theVacant:ShroudPower": {
     "NAME": "Shroud",
@@ -76,6 +80,14 @@
   "theVacant:DoomPower": {
     "NAME": "Doom",
     "DESCRIPTIONS": ["Take #b", " additional damage."]
+  },
+  "theVacant:DoomNextTurnPower": {
+    "NAME": "Doom Next Turn",
+    "DESCRIPTIONS": ["Next turn, gain #b", " #yDoom."]
+  },
+  "theVacant:RemoveDoomPower": {
+    "NAME": "Lose Doom Next Turn",
+    "DESCRIPTIONS": ["Next turn, lose #b", " #yDoom."]
   },
   "theVacant:AbyssPower": {
     "NAME": "The Abyss",
@@ -103,7 +115,7 @@
   },
   "theVacant:HollowRune": {
     "NAME": "Hollow",
-    "DESCRIPTIONS": ["#yRelease: If you are #yHealthy, gain #b"," #yDexterity. If you are #yWounded, gain #b", " #yStrength."]
+    "DESCRIPTIONS": ["#yRelease: If you are #yHealthy, gain #b"," #yDexterity. If you are #yHollow, gain #b", " #yStrength."]
   },
   "theVacant:WardRune": {
     "NAME": "Ward",
@@ -111,7 +123,7 @@
   },
   "theVacant:ForgeSoulPower": {
     "NAME": "Forge Soul",
-    "DESCRIPTIONS": ["Whenever you #yMill a card, upgrade it for the rest of combat."]
+    "DESCRIPTIONS": ["Whenever you #yMill a card, upgrade it for the rest of combat.", "Whenever you #yMill a card, upgrade it #b", " times for the rest of combat."]
   },
   "theVacant:SolidSoulPower": {
     "NAME": "Solid Soul",
@@ -123,11 +135,15 @@
   },
   "theVacant:TemperancePower": {
     "NAME": "Temperance",
-    "DESCRIPTIONS": ["The next time you #yBlock, gain additional #yBlock."]
+    "DESCRIPTIONS": [
+      "The next time you #yBlock, gain additional #yBlock.",
+      "The next time you #yBlock, gain less #yBlock."
+
+    ]
   },
   "theVacant:WaitInWrathPower": {
     "NAME": "Wait in Wrath",
-    "DESCRIPTIONS": ["At the start of your turn, if you are #yWounded, gain "," #yVigor. If you are #yHealthy, gain "," #yTemperance."]
+    "DESCRIPTIONS": ["At the start of your turn, if you are #yHollow, gain "," #yVigor. If you are #yHealthy, gain "," #yTemperance."]
   },
   "theVacant:VacantForm": {
     "NAME": "[#ee82ee]Vacant[] [#ee82ee]Form[]",

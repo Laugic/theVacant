@@ -1,3 +1,65 @@
+0.23.0
+Added Polish - 1 Cost Gain 8 Block. Increase the size of ALL gems by 1. [Exhaust.]
+Added Partake - 0 Cost Gain 8(10) Block. Lose 4 Temperance.
+Added Doomed - 1 Cost Deal 14(18) damage. Gain 2 Doom this turn.
+Added Desperation - 1(0) Cost Choose a card. Add a copy to your hand. Hollow: It costs 0 this turn.
+Added Voidstone - 1 Cost Voidbound. Gain 6 Block twice. Choose a card to become Voidbound. Exhaust.
+Added Reach Through - 1(0) Cost At the start of your turn, Polish your next 2 Gems. Gain 2 Antifact.
+
+Buffed Fortify's base Block to 12
+Buffed Frantic Blow to 14(17) Damage
+Buffed Cower to 7(9) Block
+Buffed Dig to 8(10) Block
+Buffed Reaper Strike- Deal 15(20) damage and apply 2(3) Reap to ALL enemies. Exhaust.
+Buffed Burden Break- Whenever you take damage or gain a debuff, gain 3(4) Vigor
+Buffed Cleanse Soul- (Innate) Gain 4(5) Temperance. Whenever you Mill a Status or Curse, Exhaust it.
+Buffed Into the Abyss to give Doom Next Turn
+Buffed Void Form- 3 Cost Gain 6(8) Void. At the start of your turn, Mill 6(8).
+
+Tweaked Enchant- 1(0) Cost but now Exhausts.
+Tweaked Emerald Splash- 0 Cost Deal 4(7) damage to ALL enemies. Mine a size 2 Emerald.
+Tweaked Embrace Darkness- no longer applies Darkness to everyone
+Tweaked Ruby Rage- Now only gives size 2(3) Rubies, but Rubies always give 3 Vigor
+Tweaked Embrace Darkness- 1 Cost Gain 4(6) Shroud. Apply 2(3) Doom to EVERYONE. Exhaust.
+Tweaked Diamond is Unbreakable- Mine X(+1) size 1 Diamonds. Exhaust.
+Reworked Back in the Mine - Deal 12(17) damage to ALL enemies and Mine a random size 1 Gem for each enemy hit.
+Reworked Reflection (Renamed Cracked Reflection)- 2 Cost Whenever you Mine a Gem, Chip it (2 times).
+Reworked Cursed Blast+ - Upgrades to Voidbound instead of +4D
+Reworked Opal Fracture- Gain 7(9) Block. Deal 7(9) damage. Mine a size 2(3) Opal.
+Reworked Steal Soul- Deal 20(25) damage. Remove(Steal) any Artifact and Strength. Apply 3 Antifact. Exhaust.
+Reworked Treasure to no longer give Block, but upgrade to 0 Cost
+Reworked Aw Man - Gain 2(1) Frail. Chip ALL your Gems.
+Reworked Unearth - 1 Cost Unnate. Ricochet. Return 3(4) cards.
+
+
+Nerfed Rejection to give 5(7) strength and not lose Frail on upgrade
+Nerfed Gloom - Gain 4(6) Shroud.
+
+Removed Sound of Silence
+Removed Grave Digger
+Removed Shatter
+Removed Opal Shine
+Removed Fortification
+Removed Fiend Frost
+Removed Got Our Pickaxe
+
+Return now targets the top card of your discard pile
+Thoughtseize no longer Exhausts
+Onyx Blaster no longer Exhausts
+Battle Scars no longer Exhausts
+
+Renamed Wounded to Hollow
+Hollow now triggers if you have at least 2 unique debuffs as well
+Hollow cards will Glow Purple if you are Hollow
+Renamed Rebound to Ricochet
+Gems give consistent effects instead of basing them on Size (3 Vigor, 3 Temperance, or Mill 3)
+Requiem now stacks
+Forge Soul now stacks
+
+Fixed bug with Grave Digger not displaying damage when upgraded
+Fixed bug with Polishing Rag that made it still have its old effect
+Deleted a bunch of old files
+-----
 0.22.0
 Polishing Rag changed to increase Gem size by 1 when Mined
 Polishing Rag moved to Boss Relic
@@ -13,7 +75,7 @@ Fiend Frost now properly triggers On Exhaust effects for each card in the discar
 Arted Reflection
 Arted Hex
 Resized Relic Art
-----
+-----
 0.21.1
 Fixed bug with Soul Barrage
 Slightly buffed Spinshield

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ChipOrbAction;
 import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -47,6 +48,8 @@ public class ShatterAmethyst extends AbstractDynamicCard
 
         AmethystOrb orb = new AmethystOrb(magicNumber);
         addToBot(new MineGemAction(orb, true));
+        if(upgraded)
+            addToBot(new ChipOrbAction(orb, 1));
 //        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidPower(player, player, 1), 1));
 //        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber));
     }
@@ -70,6 +73,7 @@ public class ShatterAmethyst extends AbstractDynamicCard
             upgradeName();
             upgradeMagicNumber(2);
             upgradedMagicNumber = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -39,7 +39,7 @@ public class BoundSoul extends CustomRelic
     public void atTurnStart()
     {
         AbstractPlayer player = AbstractDungeon.player;
-        if(player.isBloodied)
+        if(AbstractVacantCard.getWounded())
         {
             flash();
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));

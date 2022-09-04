@@ -2,49 +2,49 @@
   "theVacant:RubyOrb": {
     "NAME": "Ruby",
     "DESCRIPTION": [
-      "At the start of your turn, gain #b", " #yVigor and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain #b3 #yVigor and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:AmethystOrb": {
     "NAME": "Amethyst",
     "DESCRIPTION": [
-      "At the start of your turn, #yMill ", " and lose 1 size. Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, #yMill #b3 and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:SapphireOrb": {
     "NAME": "Sapphire",
     "DESCRIPTION": [
-      "At the start of your turn, gain #b", " #yTemperance and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain #b3 #yTemperance and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:OnyxOrb": {
     "NAME": "Onyx",
     "DESCRIPTION": [
-      "At the start of your turn, apply 1 #yDoom to ALL enemies and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, apply #b1 #yDoom to ALL enemies and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:TopazOrb": {
     "NAME": "Topaz",
     "DESCRIPTION": [
-      "At the start of your turn, gain 1 Artifact and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain #b1 Artifact and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:DiamondOrb": {
     "NAME": "Diamond",
     "DESCRIPTION": [
-      "At the start of your turn, lose 1 size. Whenever you would take damage, lose 1 size and prevent it. Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, lose 1 size. Whenever you would take damage, lose #b1 size and prevent it. NL  Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:EmeraldOrb": {
     "NAME": "Emerald",
     "DESCRIPTION": [
-      "At the start of your turn, draw a card and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, draw #b1 card and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:OpalOrb": {
     "NAME": "Opal",
     "DESCRIPTION": [
-      "At the start of your turn, gain [E] and lose 1 size. NL Once size reaches 0, remove this orb and its slot."
+      "At the start of your turn, gain [E] and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   }
 }

@@ -1,10 +1,10 @@
 [
   {
-    "PROPER_NAME": "Wounded",
+    "PROPER_NAME": "Hollow",
     "NAMES": [
-      "wounded"
+      "hollow"
     ],
-    "DESCRIPTION": "#yWounded effects trigger if you are at or below #b50% of your max health."
+    "DESCRIPTION": "#yHollow effects trigger if you are at or below #b50% of your max health, OR if you have at least #b2 unique debuffs."
   },
   {
     "PROPER_NAME": "Unnate",
@@ -59,10 +59,10 @@
     "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile."
   },
   {
-    "PROPER_NAME": "Rebound",
+    "PROPER_NAME": "Ricochet",
     "NAMES": [
-      "rebound",
-      "rebounds"
+      "ricochet",
+      "ricochets"
     ],
     "DESCRIPTION": "If this card would be #yMilled, add it to your hand instead of the discard pile."
   },
@@ -74,6 +74,13 @@
     "DESCRIPTION": "Creatures take more damage for each #yDoom they have."
   },
   {
+    "PROPER_NAME": "Polish",
+    "NAMES": [
+      "polish"
+    ],
+    "DESCRIPTION": "Increase the size of a #yGem."
+  },
+  {
     "PROPER_NAME": "[#ee82ee]Void[]",
     "NAMES": [
       "void"
@@ -81,11 +88,18 @@
     "DESCRIPTION": "When your draw pile is empty, deal more damage and gain more #yBlock."
   },
   {
+    "PROPER_NAME": "[#ee82ee]Voidbound[]",
+    "NAMES": [
+      "voidbound"
+    ],
+    "DESCRIPTION": "[#ee82ee]Void[] affects this card regardless of if your draw pile is empty."
+  },
+  {
     "PROPER_NAME": "Shroud",
     "NAMES": [
       "shroud"
     ],
-    "DESCRIPTION": "Halve incoming damage. Reduced by 1 at the start of your turn, and whenever you play an attack."
+    "DESCRIPTION": "Halve incoming damage. Reduced by #b1 at the start of your turn, and whenever you play an attack."
   },
   {
     "PROPER_NAME": "Gem",
@@ -108,7 +122,7 @@
     "NAMES": [
       "return"
     ],
-    "DESCRIPTION": "Move a number of cards from your discard pile to your hand."
+    "DESCRIPTION": "Move the top playable card from your discard pile to your hand."
   },
   {
     "PROPER_NAME": "[#C687EE]Materialize[]",
@@ -130,21 +144,21 @@
       "ruby",
       "rubies"
     ],
-    "DESCRIPTION": "#yGem: Gain #yVigor. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain #b3 #yVigor. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Topaz",
     "NAMES": [
       "topaz"
     ],
-    "DESCRIPTION": "#yGem: Gain #yArtifact. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain #b1 #yArtifact. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Amethyst",
     "NAMES": [
       "amethyst"
     ],
-    "DESCRIPTION": "#yGem: #yMill. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: #yMill #b3. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Opal",
@@ -158,28 +172,29 @@
     "NAMES": [
       "sapphire"
     ],
-    "DESCRIPTION": "#yGem: Gain #yTemperance. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain #b3 #yTemperance. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Diamond",
     "NAMES": [
-      "diamond"
+      "diamond",
+      "diamonds"
     ],
-    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose 1 size. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose #b1 size. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Onyx",
     "NAMES": [
       "onyx"
     ],
-    "DESCRIPTION": "#yGem: Apply #yDoom to ALL enemies. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Apply #b1 #yDoom to ALL enemies. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Emerald",
     "NAMES": [
       "emerald"
     ],
-    "DESCRIPTION": "#yGem: Draw a card. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Draw #b1 card. NL Loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Temperance",

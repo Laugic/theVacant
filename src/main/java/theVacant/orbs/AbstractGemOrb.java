@@ -15,10 +15,13 @@ import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
+import theVacant.actions.IncreaseOrbSizeAction;
+import theVacant.actions.PolishGemAction;
 import theVacant.actions.ReduceOrbSizeAction;
 import theVacant.powers.ReflectionPower;
 import theVacant.relics.RagRelic;
 import theVacant.vfx.ChipVFX;
+import theVacant.vfx.PolishVFX;
 
 public abstract class AbstractGemOrb extends CustomOrb
 {
@@ -33,8 +36,9 @@ public abstract class AbstractGemOrb extends CustomOrb
 
     public AbstractGemOrb(String ID, String name, int size, boolean turnStart, boolean oneSize, String path)
     {
-        super(ID, name, size + getBonusSize(), size + getBonusSize(), "", "", path);
+        super(ID, name, size, size, "", "", path);
 
+        checkPolish(this);
         turnStartOrb = turnStart;
         oneSizeEffect = oneSize;
         updateDescription();
@@ -43,12 +47,11 @@ public abstract class AbstractGemOrb extends CustomOrb
         channelAnimTimer = 0.5f;
     }
 
-    private static int getBonusSize() {
+    private static void checkPolish(AbstractGemOrb orb) {
         if(AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(RagRelic.ID)) {
             AbstractDungeon.player.getRelic(RagRelic.ID).flash();
-            return 1;
+            AbstractDungeon.actionManager.addToBottom(new PolishGemAction( orb, 1));
         }
-        return 0;
     }
 
 
@@ -73,8 +76,7 @@ public abstract class AbstractGemOrb extends CustomOrb
     {
         if(turnStartOrb)
             triggerPassive(oneSizeEffect ? 1 : passiveAmount);
-        if(!AbstractDungeon.player.hasRelic(RagRelic.ID))
-            AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this));
+        AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this));
         updateDescription();
     }
 
@@ -83,6 +85,12 @@ public abstract class AbstractGemOrb extends CustomOrb
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ChipVFX(this, this.hb.cX, this.hb.cY), ChipVFX.DURATION/2F));
         triggerPassive(getAmountFromChip(chips));
         AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this, chips));
+    }
+
+    public void onPolish(int amount)
+    {
+        AbstractDungeon.actionManager.addToBottom(new VFXAction(new PolishVFX(this, this.hb.cX, this.hb.cY), ChipVFX.DURATION/2F));
+        AbstractDungeon.actionManager.addToBottom(new IncreaseOrbSizeAction(this, amount));
     }
 
     public int getAmountFromChip(int amount)
@@ -119,6 +127,13 @@ public abstract class AbstractGemOrb extends CustomOrb
         evokeAmount = baseEvokeAmount -= Math.min(amount, baseEvokeAmount);
         if(passiveAmount <= 0 || evokeAmount <= 0)
             removeSpecificGem(this);
+        updateDescription();
+    }
+
+    public void increaseSize(int amount)
+    {
+        passiveAmount = basePassiveAmount += Math.max(amount, 0);
+        evokeAmount = baseEvokeAmount += Math.max(amount, 0);
         updateDescription();
     }
 
@@ -165,7 +180,7 @@ public abstract class AbstractGemOrb extends CustomOrb
         hb.render(sb);
     }
 
-    protected static void chipSound()
+    public static void chipSound()
     {
         Random rand = new Random();
         int chip = rand.random(4);

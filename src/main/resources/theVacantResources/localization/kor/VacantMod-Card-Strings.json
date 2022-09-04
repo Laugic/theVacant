@@ -1,0 +1,664 @@
+{
+  "theVacant:AbstractVacantCard": {
+    "NAME": "더미용 허무의 영혼 카드",
+    "DESCRIPTION": "헬로",
+    "EXTENDED_DESCRIPTION": [
+      " NL (현재 의지를 ",
+      " 보유하고 있습니다)"
+    ]
+  },
+  "theVacant:VacantStarterStrike": {
+    "NAME": "타격",
+    "DESCRIPTION": "피해를 !D! 줍니다."
+  },
+  "theVacant:LashOut": {
+    "NAME": "후려갈기기",
+    "DESCRIPTION": "잃은 체력과 동일한 피해를 줍니다. NL 소멸.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (피해를 !D! 줍니다)"
+    ]
+  },
+  "theVacant:FireCrystal": {
+    "NAME": "화염 수정",
+    "DESCRIPTION": "보유한 [#ee82ee]공허[] 1당, 적 전체에게 피해를 !D! 줍니다. NL 소멸."
+  },
+  "theVacant:GraveDigger": {
+    "NAME": "무덤 도둘꾼",
+    "DESCRIPTION": "thevacant:리바운드 . NL 버린 카드 더미에 있는 카드 수 만큼의 피해를 줍니다.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드 . thevacant:후천성 . NL 버린 카드 더미에 있는 카드 수 만큼의 피해를 줍니다.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (피해를 !D! 줍니다)"
+    ]
+  },
+  "theVacant:Vengeance": {
+    "NAME": "복수",
+    "DESCRIPTION": "thevacant:후천성. NL 이번 전투에서 체력을 잃은 횟수만큼 피해를 !D! 줍니다.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (적에게 ",
+      " 번 공격합니다.)",
+      " 번 공격합니다.)"
+    ]
+  },
+  "theVacant:Frenzy": {
+    "NAME": "광분",
+    "DESCRIPTION": "피해를 !D! 줍니다. 버린 카드 더미에 있는 카드 1장당, 피해량이 1 증가합니다. NL 소멸.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (피해를 ",
+      " 줄 수 있습니다.)"
+    ]
+  },
+  "theVacant:Snowball": {
+    "NAME": "스노우볼",
+    "DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. NL 이 카드가 thevacant:제분 되면, 이번 전투동안 이 카드의 피해량이 2배로 증가합니다.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. NL thevacant:후천성. thevacant:육중. NL 피해를 !D! 줍니다. NL 이 카드가 thevacant:제분 되면, 이번 전투동안 이 카드의 피해량이 2배로 증가합니다.."
+  },
+  "theVacant:EyePoke": {
+    "NAME": "눈 찌르기",
+    "DESCRIPTION": "!D! 피해를 2 번 줍니다. NL 약화를 !M! 부여합니다."
+  },
+  "theVacant:FranticBlow": {
+    "NAME": "광분의 일격",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL thevacant:부상 : 다시 피해를 !D! 줍니다."
+  },
+  "theVacant:Fling": {
+    "NAME": "팽겨치기",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 !M! 장 thevacant:제분 합니다."
+  },
+  "theVacant:Jab": {
+    "NAME": "펀치",
+    "DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. NL 이 카드를 뽑을 카드 더미에 넣습니다."
+  },
+  "theVacant:SealBreak": {
+    "NAME": "봉인 파괴",
+    "DESCRIPTION": "thevacant:해방 : 피해를 !D! 줍니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:해방 : 피해를 !D! 줍니다."
+  },
+  "theVacant:Crunch": {
+    "NAME": "땅 찍기",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 보유한 [#ee82ee]공허[] 하나당 취약을 부여합니다.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. NL 보유한 [#ee82ee]공허[] 하나당 취약을 부여합니다."
+  },
+  "theVacant:Slash": {
+    "NAME": "참격",
+    "DESCRIPTION": "thevacant:해방 : 피해를 !D! 줍니다."
+  },
+  "theVacant:GraveWave": {
+    "NAME": "망자의 파동",
+    "OLD_DESCRIPTION": "피해를 !D! 줍니다. NL 이 카드가 thevacant:제분 되면, 방어도를 !B! 얻습니다.",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL thevacant:부상 : NL 약화와 취약을 2 부여합니다."
+  },
+  "theVacant:Whip": {
+    "NAME": "채찍",
+    "DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. NL 약화를 !M! 부여합니다."
+  },
+  "theVacant:SurpriseAttack": {
+    "NAME": "기습 공격",
+    "DESCRIPTION": "thevacant:후천성. thevacant:리바운드. NL 피해를 !D! 줍니다. NL 소멸."
+  },
+  "theVacant:OnyxBlaster": {
+    "NAME": "오닉스 광선",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL !M! 스택의 thevacant:오닉스 를 1개 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:ShriekingBlast": {
+    "NAME": "끔찍한 비명",
+    "DESCRIPTION": "적 전체에게 !D! 피해를 !M! 번 줍니다."
+  },
+  "theVacant:Thoughtseize": {
+    "NAME": "지식의 강탈",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 !M! 장 thevacant:복귀 시킵니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL 카드를 !M! 장 thevacant:복귀 시킵니다. NL 소멸."
+  },
+  "theVacant:ReaperBlast": {
+    "NAME": "수확의 낫",
+    "DESCRIPTION": "모두 에게 thevacant:수확 !M! , 취약 !M! , 약화 !M! 를 부여합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "모두 에게 thevacant:수확 !M! , 취약 !M! , 약화 !M! 를 부여합니다.  NL 소멸."
+  },
+  "theVacant:EmeraldSplash": {
+    "NAME": "에메랄드 스플래쉬",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL !M! 스택의 thevacant:에메랄드 를 1개 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:Threaten": {
+    "NAME": "위협",
+    "DESCRIPTION": " !D! 피해를 NL !M! 번 줍니다. NL 소멸."
+  },
+  "theVacant:Reconnect": {
+    "NAME": "재연결",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 방어도를 !B! 얻습니다. NL 인공물을 1 얻습니다. NL 소멸."
+  },
+  "theVacant:OnyxShatter": {
+    "NAME": "오닉스 파쇄자",
+    "DESCRIPTION": "[#ee82ee]허무의[] [#ee82ee]형상[] 으로 진입합니다. NL 모두 에게 피해를 !D! 주고 파멸 을 !M! 부여합니다."
+  },
+  "theVacant:BackInTheMine": {
+    "NAME": "광산 복귀",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL thevacant:보석 을 하나 선택하여 !M! 스택의 보석을 thevacant:채광 합니다."
+  },
+  "theVacant:Throttle": {
+    "NAME": "목 꺾기",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 방어도를 !B! 얻습니다. NL 손상을 !M! 얻습니다."
+  },
+  "theVacant:BrassMagnet": {
+    "NAME": "황동 자석",
+    "DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. 이 카드를 뽑으면, 이 카드를 버립니다."
+  },
+  "theVacant:FiendFrost": {
+    "NAME": "서리 악령",
+    "DESCRIPTION": "thevacant:리바운드. NL 버린 카드 더미의 카드를 전부 소멸시킵니다. 소멸시킨 카드 1장당, 방어도를 !B! 얻습니다. 소멸."
+  },
+  "theVacant:Yeet": {
+    "NAME": "올ㅋ",
+    "DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. NL 이 카드를 thevacant:제분 한다면, 무작위 적에게 피해를 !D! 줍니다."
+  },
+  "theVacant:DimensionTear": {
+    "NAME": "차원 파쇄",
+    "DESCRIPTION": "!D! 피해를 3 번 줍니다. NL 소멸 카드 더미에 있는 카드를 손으로 가져옵니다. NL 소멸."
+  },
+  "theVacant:BurdenBreak": {
+    "NAME": "눈에는 눈",
+    "DESCRIPTION": "적에게 피해를 받아 체력을 잃을때마다, 활력 을 !M! 얻습니다."
+  },
+  "theVacant:FinalCountdown": {
+    "NAME": "종말의 카운트다운",
+    "DESCRIPTION": "이번 전투에서 thevacant:해방 을 발동한 횟수만큼, 이 카드의 비용이 [E] 감소합니다. NL 적 전체에게 피해를 !D! 줍니다."
+  },
+  "theVacant:AwMan": {
+    "NAME": "오 이런...",
+    "DESCRIPTION": "피해를 !M! 받습니다. NL 보유한 모든 thevacant:보석 을 thevacant:연공 합니다.",
+    "UPGRADE_DESCRIPTION": "모두 에게 피해를 !M! 줍니다.  NL 보유한 모든 thevacant:보석 을 thevacant:연공 합니다."
+  },
+  "theVacant:Requiem": {
+    "NAME": "레퀴엠",
+    "DESCRIPTION": "이로운 효과 또는 해로운 효과를 받을 때마다, NL 그 효과를 NL 2배로 늘려 받습니다."
+  },
+  "theVacant:Showdown": {
+    "NAME": "쇼다운",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 다음에 사용하는 공격 카드가 2 번 사용됩니다. 모두 에게 thevacant:파멸 을 !M! 부여합니다."
+  },
+  "theVacant:SoulBash": {
+    "NAME": "영혼 강타",
+    "DESCRIPTION": "thevacant:리바운드. NL 피해를 !D! 줍니다. NL 활력 을 !M! 얻습니다."
+  },
+  "theVacant:SoulBashOld": {
+    "NAME": "영혼 강타 구판",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL  !M!  NL (이 효과는 현재 thevacant:형상 에 따라 달라집니다)",
+    "UPGRADE_DESCRIPTION":  "피해를 !D! 줍니다. NL !M! ",
+    "EXTENDED_DESCRIPTION": [
+      " 약화를 부여합니다.",
+      " 취약을 부여합니다.",
+      " thevacant:파멸 을 부여합니다.",
+      " thevacant:수확 을 부여합니다."
+    ]
+  },
+  "theVacant:ReaperStrike": {
+    "NAME": "수확 타격",
+    "DESCRIPTION": "적 전체에게 피해를 !D! 주고 NL thevacant:수확 을 !M! NL 부여합니다. NL 소멸."
+  },
+  "theVacant:SkullBash": {
+    "NAME": "머리 강타",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 취약을 !M! 부여합니다. NL 소멸."
+  },
+  "theVacant:DeathSpiral": {
+    "NAME": "죽음의 나선",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 공격 카드를 thevacant:발굴 합니다. NL 그 카드를 thevacant:인챈트 하고 [#ee82ee]공허반응[] 을 부여합니다.",
+    "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL 공격 카드를 thevacant:발굴 합니다. NL 그 카드를 thevacant:인챈트 하고 [#ee82ee]공허반응[] 을 부여합니다. NL 이번 턴 동안 그 카드의 비용이 0이 됩니다."
+  },
+  "theVacant:Pickaxe": {
+    "NAME": "곡괭이",
+    "DESCRIPTION": "!D! 피해를 2 번 줍니다. NL 가장 오른쪽에 있는 thevacant:보석 을 thevacant:연공 합니다."
+  },
+  "theVacant:Carve": {
+    "NAME": "조각",
+    "DESCRIPTION": "!D! 피해를 !M! 번 줍니다."
+  },
+  "theVacant:LichStrike": {
+    "NAME": "거머리 타격",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 그만큼 피해를 받고, 피해를 준 만큼 체력을 회복합니다. NL 소멸."
+  },
+  "theVacant:OpalFracture": {
+    "NAME": "오팔 조각",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL !M! 스택의 thevacant:오팔 을 1개 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:DarkStrike": {
+    "NAME": "어둠의 타격",
+    "DESCRIPTION": " !D! 피해를 NL !M! 번 줍니다. NL thevacant:파멸 을 !M! 부여합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": " !D! 피해를 NL !M! 번 줍니다. NL thevacant:파멸 을 !M! 부여합니다."
+  },
+  "theVacant:CursedBlast": {
+    "NAME": "저주 광선",
+    "DESCRIPTION": "thevacant:후천성. NL 적 전체에게 피해를 !D! 줍니다. [#ee82ee]공허[]를 !M! 얻습니다."
+  },
+  "theVacant:PitOfDespair": {
+    "NAME": "절망의 구덩이",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL thevacant:파멸 을 !M! 부여합니다."
+  },
+  "theVacant:SoulBarrage": {
+    "NAME": "영혼 폭격수",
+    "DESCRIPTION": "!D! 피해를 !M! 번 줍니다. 강화 횟수에 제한이 없습니다."
+  },
+  "theVacant:SoundOfSilence": {
+    "NAME": "침묵의 소리",
+    "DESCRIPTION": "thevacant:후천성. NL 피해를 !D! 줍니다. NL thevacant:그림자 를 !M! 부여합니다. NL 소멸."
+  },
+  "theVacant:TopazFrenzy": {
+    "NAME": "광란의 토파즈",
+    "DESCRIPTION": "!D! 피해를 3 번 줍니다. NL !M! 스택의 thevacant:토파즈 를 1개 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:StealSoul": {
+    "NAME": "영혼 강탈",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL thevacant:부상: 막히지 않은 피해 만큼 임시_체력 을 얻습니다."
+  },
+  "theVacant:Banish": {
+    "NAME": "배니싱",
+    "DESCRIPTION": "휘발성. NL 피해를 !D! 줍니다. NL 카드를 2장 소멸시킵니다. NL 버린 카드 더미에 공허 2장을 넣습니다."
+  },
+  "theVacant:SapphireStrike": {
+    "NAME": "사파이어 타격",
+    "DESCRIPTION": "피해를 !D! 줍니다. !M! 스택의 thevacant:사파이어 를 1개 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:TearFate": {
+    "NAME": "운명의 눈물",
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 다음에 바뀌는 형상을 !M! 번 무효화 합니다."
+  },
+  "theVacant:VacantStarterDefend": {
+    "NAME": "수비",
+    "DESCRIPTION": "방어도를 !B! 얻습니다."
+  },
+  "theVacant:EssenceOfBismuth": {
+    "NAME": "비스무트의 정수",
+    "DESCRIPTION": "thevacant:후천성. NL 모든 적이 보유한 해로운 효과를 NL 2배로 늘립니다. NL 소멸."
+  },
+  "theVacant:Enchant": {
+    "NAME": "인챈트",
+    "DESCRIPTION": "가장 오른쪽에 있는 thevacant:보석 을 제거합니다. NL 이번 전투동안, 이 효과로 제거한 thevacant:보석 의 효과를 가진 카드를 얻습니다."
+  },
+  "theVacant:BecomeEmpty": {
+    "NAME": "허무가 되리라",
+    "DESCRIPTION": "thevacant:흡수 !M!. NL [#ee82ee]허무의[] [#ee82ee]형상[] 으로 진입합니다. NL 소멸."
+  },
+  "theVacant:Crystallize": {
+    "NAME": "수정화",
+    "DESCRIPTION": "thevacant:리바운드. NL 무작위 기본 수정 1개를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. NL 강화된 무작위 기본 수정 1개를 얻습니다."
+  },
+  "theVacant:DiamondIsUnbreakable": {
+    "NAME": "다이아몬드는 부서지지 않는다",
+    "DESCRIPTION": "X 스택의 thevacant:다이아몬드 를 1개 thevacant:채광 합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "X+1 스택의 thevacant:다이아몬드 를 1개 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:ShatterAmethyst": {
+    "NAME": "자수정 파쇄자",
+    "DESCRIPTION": "thevacant:리바운드. NL !M! 스택의 thevacant:자수정 을 1개 thevacant:채광 하고 thevacant:연공 합니다."
+  },
+  "theVacant:EmptyShield": {
+    "NAME": "허무의 방패",
+    "DESCRIPTION": "잃은 체력만큼 방어도를 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. NL 잃은 체력만큼 방어도를 얻습니다. NL 소멸.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (방어도를 ",
+      " 얻습니다)"
+    ]
+  },
+  "theVacant:HealingSalve": {
+    "NAME": "치유의 연고",
+    "DESCRIPTION": "휘발성. NL 이 카드를 뽑으면, 이 카드를 1장 복사하여 얻습니다. 이 카드가 소멸되면, 체력을 !M! 회복합니다."
+  },
+  "theVacant:Dig": {
+    "NAME": "땅 파기",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 카드를 !M! 장 thevacant:제분 합니다."
+  },
+  "theVacant:Cower": {
+    "NAME": "겁쟁이의 웅크리기",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:부상: 방어도를 !B! 얻습니다."
+  },
+  "theVacant:Return": {
+    "NAME": "복귀",
+    "DESCRIPTION": "버린 카드 더미에 있는 카드를 !M! 장 선택하여 손으로 가져옵니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "버린 카드 더미에 있는 카드를 !M! 장 선택하여 손으로 가져옵니다. NL 소멸."
+  },
+  "theVacant:OnSecondThought": {
+    "NAME": "다시 한 번 생각해보기",
+    "DESCRIPTION": "thevacant:리바운드. NL 카드를 !M! 장 thevacant:복귀 시킵니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. NL 카드를 !M! 장 thevacant:복귀 시킵니다. NL 소멸."
+  },
+  "theVacant:Fortify": {
+    "NAME": "요새화",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:부상: 다음 번에 NL 체력을 잃는 것을 NL 막아줍니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:부상: 다음 번에 체력을 잃는 것을 NL 막아줍니다."
+  },
+  "theVacant:Sneeze": {
+    "NAME": "재채기",
+    "DESCRIPTION": "보존. NL 카드를 !M! 장 thevacant:제분 합니다. 보존될 때마다, 이 카드의 thevacant:제분 수량이 2 증가합니다. 소멸.",
+    "UPGRADE_DESCRIPTION": "선천성. 보존. NL 카드를 !M! 장 thevacant:제분 합니다. 이 카드의 thevacant:제분 수량이 2 증가합니다. 소멸."
+
+  },
+  "theVacant:DoubleTeam": {
+    "NAME": "더블로 간다",
+    "DESCRIPTION": " !B! 방어도를 2 번 얻습니다."
+  },
+  "theVacant:Ward": {
+    "NAME": "와드",
+    "DESCRIPTION": "thevacant:해방 : 방어도를 !B! 얻습니다."
+  },
+  "theVacant:BattleScars": {
+    "NAME": "전투 흉터",
+    "DESCRIPTION": "활력 을 4 얻습니다. NL thevacant:부상: 힘을 !M! 얻습니다. 소멸.",
+    "UPGRADE_DESCRIPTION": "활력 을 [#00FF33]6[] 얻습니다. NL thevacant:부상: 힘을 !M! 얻습니다. 소멸."
+  },
+  "theVacant:Hex": {
+    "NAME": "주술",
+    "DESCRIPTION": "thevacant:파멸 을 !M! 부여합니다. NL 소멸."
+  },
+  "theVacant:Spinshield": {
+    "NAME": "회전 방패",
+    "DESCRIPTION": "!B! 방어도를 !M! 번 얻습니다."
+  },
+  "theVacant:Prevent": {
+    "NAME": "무효화",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:부상 상태라면, 버퍼 를 !M! 얻습니다. NL 소멸."
+  },
+  "theVacant:ShutAway": {
+    "NAME": "꺼져버려!",
+    "DESCRIPTION": "선천성. NL 카드를 !M! 장 thevacant:제분 합니다. NL 소멸."
+  },
+  "theVacant:Accumulate": {
+    "NAME": "계산 가속",
+    "DESCRIPTION": "thevacant:해방 : 카드를 1 장 뽑습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:해방 : 카드를 1 장 뽑습니다."
+  },
+  "theVacant:Revenge": {
+    "NAME": "복수",
+    "DESCRIPTION": "thevacant:해방: 가시를 1 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:해방: 가시를 1 얻습니다. NL 소멸."
+  },
+  "theVacant:Memoria": {
+    "NAME": "기억",
+    "DESCRIPTION": "thevacant:리바운드. NL 이번 턴 동안, 소멸 효과가 있는 카드를 사용하면, 그 카드를 2 번 사용합니다.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. NL 이번 턴 동안, 소멸 효과가 있는 카드 2장을 사용하면, 그 카드를 2 번 사용합니다."
+  },
+  "theVacant:Exorcise": {
+    "NAME": "엑소시스트",
+    "DESCRIPTION": "나에게 부여된 모든 해로운 효과를 제거합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "나에게 부여된 모든 해로운 효과를 제거하고, 제거한 효과를 적들에게 부여합니다. NL 소멸."
+  },
+  "theVacant:HolyWater": {
+    "NAME": "성수",
+    "DESCRIPTION": "임시_체력 을 !M! 얻고 thevacant:절제 를 8 얻습니다. NL 소멸."
+  },
+  "theVacant:EmbraceDarkness": {
+    "NAME": "그림자의 포옹",
+    "DESCRIPTION": "thevacant:장막 을 !M! 얻습니다. NL 모두 에게 thevacant:파멸 과  NL thevacant:그림자 를 2 부여합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:장막 을 !M! 얻습니다. NL 모두 에게 thevacant:파멸 과 NL thevacant:그림자 를 [#00FF33]3[] 부여합니다. NL 소멸."
+  },
+  "theVacant:Unearth": {
+    "NAME": "땅굴 파내기",
+    "DESCRIPTION": "뽑을 카드 더미 맨 밑의 카드 !M! 장을 뽑습니다. 3개의 thevacant:보석 중 하나를 선택하여 thevacant:채광 합니다.",
+    "UPGRADE_DESCRIPTION": "뽑을 카드 더미 맨 밑의 카드 !M! 장을 뽑습니다. 4개의 thevacant:보석 중 하나를 선택하여 thevacant:채광 합니다."
+  },
+  "theVacant:TheAnvil": {
+    "NAME": "모루",
+    "DESCRIPTION": "사용불가. thevacant:후천성. thevacant:육중. 이 카드가 thevacant:제분 되면, 적 전체에게 피해를 !M! 줍니다.",
+    "UPGRADE_DESCRIPTION": "이 카드는 #r너무 #r무거워! 도저히 사용할 수가 없어!"
+  },
+  "theVacant:Expand": {
+    "NAME": "확장",
+    "DESCRIPTION": "체력을 !M! 잃습니다. NL 버린 카드 더미에 있는 카드 1장당, 임시_체력을 1 얻습니다. 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:리바운드. 체력을 !M! 잃습니다. NL 버린 카드 더미에 있는 카드 1장당, 임시_체력을 1 얻습니다. 소멸."
+  },
+  "theVacant:Corporeate": {
+    "NAME": "자본 적출",
+    "DESCRIPTION": "카드를 !M! 장  thevacant:제분 합니다. NL 이 효과로 thevacant:제분 한 카드 1장당, 방어도를 NL 1 얻습니다. NL 카드를 1 장 thevacant:복귀 시킵니다."
+  },
+  "theVacant:RubyRage": {
+    "NAME": "격노의 루비",
+    "DESCRIPTION": "!M! 스택의 thevacant:루비 를 2개 thevacant:채광 합니다.",
+    "UPGRADE_DESCRIPTION": "!M! 스택의 thevacant:루비 를 2개 thevacant:채광 합니다."
+  },
+  "theVacant:Treasure": {
+    "NAME": "보물",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL !M! 스택의 thevacant:에메랄드 1개와 !M! 스택의 thevacant:오팔 1개를 thevacant:채광 합니다."
+  },
+  "theVacant:Soothe": {
+    "NAME": "진정하기",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:절제 를 !M! 얻습니다."
+  },
+  "theVacant:Necromancy": {
+    "NAME": "강령술",
+    "DESCRIPTION": "카드를 2 장 소멸시킵니다. NL 카드를 1 장 thevacant:인챈트 합니다. NL 소멸."
+  },
+  "theVacant:Think": {
+    "NAME": "생각",
+    "DESCRIPTION": "thevacant:해방 : 카드를 !M! 장 thevacant:제분 합니다. NL 소멸."
+  },
+  "theVacant:FromNothing": {
+    "NAME": "무에서 창조를",
+    "DESCRIPTION": "선천성. NL 뽑을 카드 더미에 있는 모든 카드를 thevacant:제분 합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "선천성. NL 뽑을 카드 더미에 있는 모든 카드를 thevacant:제분 합니다. NL 소멸."
+  },
+  "theVacant:Freedom": {
+    "NAME": "자유",
+    "DESCRIPTION": "thevacant:의지 를 2배로 늘립니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "thevacant:의지 를 3배로 늘립니다. NL 소멸."
+  },
+  "theVacant:BreakFree": {
+    "NAME": "자유의 욕망",
+    "DESCRIPTION": "체력을 3 잃습니다. thevacant:의지 를 !M! 얻습니다. NL 소멸."
+  },
+  "theVacant:Willful": {
+    "NAME": "행복해!",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:의지 를 !M! 얻습니다."
+  },
+  "theVacant:Ascend": {
+    "NAME": "승천",
+    "DESCRIPTION": "thevacant:해방 : 체력을 !M! 회복합니다. NL 소멸."
+  },
+  "theVacant:Spelunk": {
+    "NAME": "동굴 탐험",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL !M! 개의 thevacant:보석 중 하나를 선택하여 thevacant:채광 합니다."
+  },
+  "theVacant:OpalShine": {
+    "NAME": "광택의 오팔",
+    "DESCRIPTION": " !M! 스택의 thevacant:오팔 1개를 thevacant:채광 합니다. NL 소멸."
+  },
+  "theVacant:Partake": {
+    "NAME": "마시기",
+    "DESCRIPTION": "체력을 6 잃습니다. NL thevacant:고블릿 의 효과 만큼 [#ee82ee]공허[] 와 인공물 을 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "체력을 6 잃습니다. NL thevacant:고블릿 의 효과 만큼 [#ee82ee]공허[] 와 인공물 을 얻습니다.",
+    "EXTENDED_DESCRIPTION": [
+      "체력을 6 잃습니다 NL  !M! [#ee82ee]공허[] 와 NL !M! 인공물 을 얻습니다. NL 소멸.",
+      "체력을 6 잃습니다 NL  !M! [#ee82ee]공허[] 와 NL !M! 인공물 을 얻습니다."
+    ]
+  },
+  "theVacant:Solace": {
+    "NAME": "위안",
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 버린 카드 더미에 있는 카드를 뽑을 카드 더미 맨 밑에 넣습니다."
+  },
+  "theVacant:GildedPickaxe": {
+    "NAME": "도금 곡괭이",
+    "DESCRIPTION": "!D! 피해를 2 번 줍니다. 보유한 모든 thevacant:보석 을 thevacant:연공 합니다."
+  },
+  "theVacant:Snap": {
+    "NAME": "싸대기",
+    "DESCRIPTION": "!D! 피해를 2 번 줍니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "!D! 피해를 2 번 줍니다. NL 카드를 1 장 뽑습니다. NL 소멸."
+  },
+  "theVacant:Crackle": {
+    "NAME": "딱딱이",
+    "DESCRIPTION": "!B! 방어도를 2 번 얻습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "!B! 방어도를 2 번 얻습니다. NL 카드를 1 장 뽑습니다. NL 소멸."
+  },
+  "theVacant:Pop": {
+    "NAME": "퍼어엉",
+    "DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 소멸."
+  },
+  "theVacant:Exhumation": {
+    "NAME": "시체 발굴",
+    "DESCRIPTION": "카드를 X 장 소멸시킵니다. 다음 턴에 카드를 X 장 발굴합니다. 소멸.",
+    "UPGRADE_DESCRIPTION": "카드를 X+1 장 소멸시킵니다. 다음 턴에 카드를 X+1 장 발굴합니다. 소멸."
+  },
+  "theVacant:TimeSkip": {
+    "NAME": "시간 삭제",
+    "DESCRIPTION": "손에 있는 모든 카드의 비용이 0이 되고 소멸이 부여됩니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "카드를 !M! 장 뽑습니다. NL 손에 있는 모든 카드의 비용이 0이 되고 소멸이 부여됩니다. NL 소멸."
+  },
+  "theVacant:CallSpirits": {
+    "NAME": "정령 호출",
+    "DESCRIPTION": "*퍼어엉 !M! 장을 뽑을 카드 더미에 넣습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "*퍼어엉+ !M! 장을 뽑을 카드 더미에 넣습니다. NL 소멸."
+  },
+  "theVacant:TwistFate": {
+    "NAME": "꼬인 운명",
+    "DESCRIPTION": "활력 을 !M! 얻고 thevacant:절제 를 !M! 얻습니다."
+  },
+  "theVacant:MindBreak": {
+    "NAME": "정신 붕괴",
+    "DESCRIPTION": "손패의 카드를 전부 버립니다. NL 뽑을 카드 더미의 모든 카드를 thevacant:제분 합니다. NL 카드를 1 장 뽑습니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "손패의 카드를 전부 버립니다. NL 뽑을 카드 더미의 모든 카드를 thevacant:제분 합니다. NL 카드를 2 장 뽑습니다. NL 소멸."
+  },
+  "theVacant:Voidstone": {
+    "NAME": "공허석",
+    "DESCRIPTION": "카드를 thevacant:인핸스 하여 [#ee82ee]공허반응[] 상태로 만듭니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "카드를 thevacant:인핸스 하여 [#ee82ee]공허반응[] 상태로 만듭니다."
+  },
+  "theVacant:Shatter": {
+    "NAME": "산산조각",
+    "DESCRIPTION": "보유한 모든 보석 의 스택이 전부 소모될 때까지 연공 합니다. 소멸."
+  },
+  "theVacant:Gloom": {
+    "NAME": "우울",
+    "DESCRIPTION": "thevacant:장막 을 !M! 얻습니다."
+  },
+  "theVacant:DarkReflex": {
+    "NAME": "어둠의 반사 신경",
+    "DESCRIPTION": "카드를 thevacant:제분 할때마다, 처음 제분 되는 !M! 장의 카드가 손으로 돌아옵니다."
+  },
+  "theVacant:Immaterialize": {
+    "NAME": "비물질화",
+    "DESCRIPTION": "다음에 사용하는 소멸 효과가 있는 카드 !M! 장이 2 턴 후 다시 뽑을 카드 더미로 돌아옵니다."
+  },
+  "theVacant:GotOurPickaxe": {
+    "NAME": "곡괭이를 들어올리며",
+    "DESCRIPTION": "내 턴 시작시, 가장 오른쪽에 있는 thevacant:보석 을 thevacant:연공 합니다.",
+    "UPGRADE_DESCRIPTION": "내 턴 시작시, thevacant:보석 을 !M! 번 thevacant:연공 합니다."
+  },
+  "theVacant:CleanseSoul": {
+    "NAME": "영혼 정화",
+    "DESCRIPTION": "상태이상 이나 저주 카드를 thevacant:제분 할 때마다, 그 카드를 소멸시킵니다.",
+    "UPGRADE_DESCRIPTION": "선천성. NL 상태이상 이나 저주 카드를 thevacant:제분 할 때마다, 그 카드를 소멸시킵니다."
+  },
+  "theVacant:Willpower": {
+    "NAME": "의지의 힘",
+    "DESCRIPTION": "thevacant:의지 를 !M! 얻습니다."
+  },
+  "theVacant:Anguish": {
+    "NAME": "비통함",
+    "DESCRIPTION": "thevacant:부상 상태라면, 힘을 !M! 얻습니다. thevacant:건강 상태라면, 민첩을 !M! 얻습니다."
+  },
+  "theVacant:Recover": {
+    "NAME": "재복구",
+    "DESCRIPTION": "전투 종료시, NL thevacant:부상 상태였다면, NL 체력을 !M! 회복합니다."
+  },
+  "theVacant:IronWill": {
+    "NAME": "강철의 의지",
+    "DESCRIPTION": "턴 종료시, 이번 전투에서 잃은 체력 횟수당 방어도를 얻습니다."
+  },
+  "theVacant:Husk": {
+    "NAME": "겉껍질",
+    "DESCRIPTION": "내 턴 시작시, 활력 과 절제 를 X+1 얻습니다.",
+    "UPGRADE_DESCRIPTION": "내 턴 시작시, 활력 과 절제 를 2*(X+1) 얻습니다."
+  },
+  "theVacant:EmptyForm": {
+    "NAME": "허무의 형상",
+    "DESCRIPTION": "휘발성. NL 소멸 효과가 있는 카드가 1번 더 사용됩니다.",
+    "UPGRADE_DESCRIPTION": "소멸 효과가 있는 카드가 1번 더 사용됩니다."
+  },
+  "theVacant:Acceptance": {
+    "NAME": "수용",
+    "DESCRIPTION": "인공물 을 !M! 얻습니다."
+  },
+  "theVacant:Rejection": {
+    "NAME": "거부",
+    "DESCRIPTION": "힘을 !M! 얻습니다. 손상과 thevacant:독공물 을 2 얻습니다.",
+    "UPGRADE_DESCRIPTION": "힘을 !M! 얻습니다. NL thevacant:독공물 을 2 얻습니다."
+  },
+  "theVacant:RunicThoughts": {
+    "NAME": "사고의 룬",
+    "DESCRIPTION": "모든 파워 카드에 thevacant:리바운드 효과를 부여합니다. NL 카드가 thevacant:리바운드 되면, 이번 턴 동안 그 카드의 비용이 0이 됩니다.",
+    "UPGRADE_DESCRIPTION":"thevacant:리바운드. NL 모든 파워 카드에 thevacant:리바운드 효과를 부여합니다. NL 카드가 thevacant:리바운드 되면, 이번 턴 동안 그 카드의 비용이 0이 됩니다."
+  },
+  "theVacant:ShatterSoul": {
+    "NAME": "조각난 영혼",
+    "DESCRIPTION": "불가침 을 1 얻습니다. NL 진노 합니다. NL thevacant:의지 를 !M! 얻습니다."
+  },
+  "theVacant:VoidEmbrace": {
+    "NAME": "공허의 포옹",
+    "DESCRIPTION": "thevacant:후천성. NL 소멸 효과가 있는 카드를 사용할 때마다, [#ee82ee]공허[] 를 !M! 얻습니다. ",
+    "UPGRADE_DESCRIPTION": "선천성. NL 소멸 효과가 있는 카드를 사용할 때마다, [#ee82ee]공허[] 를 !M! 얻습니다."
+  },
+  "theVacant:GreaterMind": {
+    "NAME": "자라나는 지식",
+    "DESCRIPTION": "비용이 1 이상인 파워 카드를 사용할 때마다, 무작위 파워 카드를 얻습니다.",
+    "UPGRADE_DESCRIPTION": "선천성. NL 비용이 1 이상인 파워 카드를 사용할 때마다, 무작위 파워 카드를 얻습니다."
+  },
+  "theVacant:IntoTheAbyss": {
+    "NAME": "심연 속으로",
+    "DESCRIPTION": "thevacant:파멸 을 !M! 얻습니다. NL 내 턴 시작시, 적 전체에게 thevacant:파멸 을 !M! 부여합니다."
+  },
+  "theVacant:StoreSoul": {
+    "NAME": "영혼 저장",
+    "DESCRIPTION": "체력을 !M! 잃습니다. NL 고블릿 을 소유하고 있다면, 이 효과가 영구적으로 1 증가합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "고블릿 을 소유하고 있다면, 이 효과가 영구적으로 1 증가합니다. NL 소멸."
+  },
+  "theVacant:Reflection": {
+    "NAME": "반향",
+    "DESCRIPTION": "thevacant:보석 을 thevacant:연공 할 때마다, 연공한 보석의 효과를 !M! 번 발동합니다."
+  },
+  "theVacant:ForgeSoul": {
+    "NAME": "대장장이 영혼",
+    "DESCRIPTION": "선천성. NL 카드를 thevacant:제분 할 때마다, 이번 전투 동안 제분한 카드들을 강화합니다.",
+    "UPGRADE_DESCRIPTION": "선천성. NL 카드를 thevacant:제분 할 때마다, 이번 전투 동안 제분한 카드들을 강화합니다."
+  },
+  "theVacant:VoidForm": {
+    "NAME": "공허의 형상",
+    "DESCRIPTION": "[#ee82ee]공허[] 를 !M! 얻습니다. NL !M! 스택의 thevacant:자수정 을 1개 thevacant:채광 합니다."
+  },
+  "theVacant:WaitInWrath": {
+    "NAME": "참아야 하느니라",
+    "DESCRIPTION": "내 턴 시작시, thevacant:부상 상태라면 활력 을 !M! 얻습니다. thevacant:건강 상태라면, thevacant:절제 를 !M! 얻습니다."
+  },
+  "theVacant:RubyOption": {
+    "NAME": "루비",
+    "DESCRIPTION": "!M! 스택. NL 내 턴 시작시, 활력 을 !M! 얻고 스택이 1 감소합니다."
+  },
+  "theVacant:SapphireOption": {
+    "NAME": "사파이어",
+    "DESCRIPTION": "!M! 스택. NL 내 턴 시작시, thevacant:절제 를 !M! 얻고 스택이 1 감소합니다."
+  },
+  "theVacant:OpalOption": {
+    "NAME": "오팔",
+    "DESCRIPTION": "!M! 스택. NL 내 턴 시작시, [E] 를 얻고 스택이 1 감소합니다."
+  },
+  "theVacant:EmeraldOption": {
+    "NAME": "에메랄드",
+    "DESCRIPTION": "!M! 스택. NL 내 턴 시작시, 카드를 1 장 뽑고 스택이 1 감소합니다."
+  },
+  "theVacant:OnyxOption": {
+    "NAME": "오닉스",
+    "DESCRIPTION": "!M! 스택. NL 내 턴 시작시, 적 전체에게 thevacant:파멸 을 1 부여하고 스택이 1 감소합니다."
+  },
+  "theVacant:DiamondOption": {
+    "NAME": "다이아몬드",
+    "DESCRIPTION": "!M! 스택. NL 다음 번에 피해를 받으면, 그 피해를 무효화하고 스택이 1 감소합니다. 내 턴 시작시, 스택이 1 감소합니다."
+  },
+  "theVacant:AmethystOption": {
+    "NAME": "자수정",
+    "DESCRIPTION": "!M! 스택. 내 턴 시작시, 카드를 !M! 장 thevacant:제분 하고 스택이 1 감소합니다."
+  },
+  "theVacant:TopazOption": {
+    "NAME": "토파즈",
+    "DESCRIPTION": "!M! 스택. NL 내 턴 시작시, 인공물 을 1 얻고 스택이 1 감소합니다."
+  },
+  "theVacant:WhenDarknessComes": {
+    "NAME": "어둠이 강림한다",
+    "DESCRIPTION": "모두 에게 thevacant:파멸 을 2 부여합니다. NL 적에게 부여된 thevacant:파멸 의 받는 피해량 증가 효과가 추가로 !M! 더 증가합니다."
+  }
+}

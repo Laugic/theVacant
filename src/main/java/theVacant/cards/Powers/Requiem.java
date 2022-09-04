@@ -38,7 +38,7 @@ public class Requiem extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RequiemPower(player, player, 0), 0));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RequiemPower(player, player, 2), 1));
     }
 
     @Override

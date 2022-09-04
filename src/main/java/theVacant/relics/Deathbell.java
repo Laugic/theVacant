@@ -42,7 +42,7 @@ public class Deathbell extends CustomRelic
         flash();
 
         AbstractPlayer player = AbstractDungeon.player;
-        if(player.isBloodied)
+        if(AbstractVacantCard.getWounded())
         {
             addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             addToBot(new AddTemporaryHPAction(player, player, TempHP));

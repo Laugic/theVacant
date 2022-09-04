@@ -33,13 +33,13 @@ public class RunicThoughts extends AbstractDynamicCard
     public RunicThoughts()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        if(!player.hasPower(RunicThoughtsPower.POWER_ID))
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RunicThoughtsPower(player, player, 1), 0));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RunicThoughtsPower(player, player, magicNumber), magicNumber));
     }
 
     @Override
