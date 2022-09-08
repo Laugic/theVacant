@@ -7,6 +7,7 @@ import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnPlayerDeathPower;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.util.TextureLoader;
 
-public class RequiemPower extends AbstractPower implements CloneablePowerInterface, BetterOnApplyPowerPower
+public class RequiemPower extends AbstractPower implements CloneablePowerInterface, BetterOnApplyPowerPower, OnReceivePowerPower
 {
     public AbstractCreature source;
 
@@ -54,7 +55,7 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
     {
-        if(power.amount > 0 && target == owner && (power.type == PowerType.BUFF || power.type == PowerType.DEBUFF))
+        if(power.amount != 0 && target == owner && (power.type == PowerType.BUFF || power.type == PowerType.DEBUFF))
         {
             flash();
             power.amount *= amount;
@@ -82,4 +83,16 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         return true;
     }
 
+    @Override
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if(power.amount != 0 && target == owner && source != owner && (power.type == PowerType.BUFF || power.type == PowerType.DEBUFF))
+        {
+            flash();
+            power.amount *= amount;
+            power.updateDescription();
+        }
+        for (AbstractCard card: AbstractDungeon.player.hand.group)
+            card.applyPowers();
+        return true;
+    }
 }

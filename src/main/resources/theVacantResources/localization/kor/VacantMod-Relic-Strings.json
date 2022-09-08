@@ -10,28 +10,28 @@
     "NAME": "저주받은 보석",
     "FLAVOR": "당신의 영혼을 담고 있는 저주 받은 함정입니다.",
     "DESCRIPTIONS": [
-      "매 전투 시작시 #ythevacant:건강 하다면, 최대 체력을 #b2 잃습니다. #ythevacant:부상 상태라면, 최대 체력을 #b4 얻습니다. 이 효과로 최대 체력을 #b50 이상 증가시킬수 없습니다."
+      "매 전투 시작시 #ythevacant:건강 하다면, 최대 체력을 #b2 잃습니다. #ythevacant:껍데기 상태라면, 최대 체력을 #b4 얻습니다. 이 효과로 최대 체력을 #b50 이상 증가시킬수 없습니다."
     ]
   },
   "theVacant:Deathbell": {
     "NAME": "임종을 알리는 종",
     "FLAVOR": "이 향기가 공포감을 불러일으키는군요.",
     "DESCRIPTIONS": [
-      "전투 시작시, #ythevacant:부상 상태라면, #y임시_체력 을 10 얻습니다."
+      "전투 시작시, #ythevacant:껍데기 상태라면, #y임시_체력 을 10 얻습니다."
     ]
   },
   "theVacant:BoundSoul": {
     "NAME": "구속 당한 영혼",
     "FLAVOR": "죽음이 다가올 때, 당신을 통제하는 유물의 지배력이 약해지고 힘이 점점 커지는 것을 느낄 수 있습니다.",
     "DESCRIPTIONS": [
-      "내 턴 시작시, #ythevacant:부상 상태라면, [E] 를 얻습니다."
+      "내 턴 시작시, #ythevacant:껍데기 상태라면, [E] 를 얻습니다."
     ]
   },
   "theVacant:LocketRelic": {
     "NAME": "로켓 조각",
     "FLAVOR": "목숨을 잃었던 순간을 상기시켜 줍니다. 한 조각 뿐이더라도요.",
     "DESCRIPTIONS": [
-      "카드가 #ythevacant:리바운드 되면, #y방어도를 #b4 얻습니다."
+      "카드가 #ythevacant:리코셰 되면, #y방어도를 #b4 얻습니다."
     ]
   },
   "theVacant:TombstoneRelic": {

@@ -77,7 +77,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target)
     {
-        if(!CheckDrawEmpty() && damage > 0)
+        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK))
         {
             int voidAmount = 0;
 
@@ -95,7 +95,7 @@ public class VoidboundModifier extends AbstractCardModifier
     {
         if(this.amount > 0)
         {
-            rawDescription = "[#ee82ee]Voidbound[]. NL " + rawDescription;
+            rawDescription = BaseMod.getKeywordTitle(KeywordManager.VOIDBOUND_ID) + ". NL " + rawDescription;
             if(AbstractDungeon.player != null)
             {
                 if(AbstractDungeon.player.hasPower(VoidPower.POWER_ID))

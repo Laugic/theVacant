@@ -1,3 +1,11 @@
+0.23.1
+Voidbound now affects attacks that deal 0 base damage
+Fixed some typos/missing stuff in 0.23.0 changelog
+Fixed Requiem not doubling debuffs from enemies
+Fixed Materialize sometimes appearing on cards after they come out of the Exhaust pile
+Updated Korean translation
+Modifiers now use keyword manager so they can be properly translated
+---
 0.23.0
 Added Polish - 1 Cost Gain 8 Block. Increase the size of ALL gems by 1. [Exhaust.]
 Added Partake - 0 Cost Gain 8(10) Block. Lose 4 Temperance.
@@ -26,10 +34,11 @@ Reworked Back in the Mine - Deal 12(17) damage to ALL enemies and Mine a random 
 Reworked Reflection (Renamed Cracked Reflection)- 2 Cost Whenever you Mine a Gem, Chip it (2 times).
 Reworked Cursed Blast+ - Upgrades to Voidbound instead of +4D
 Reworked Opal Fracture- Gain 7(9) Block. Deal 7(9) damage. Mine a size 2(3) Opal.
-Reworked Steal Soul- Deal 20(25) damage. Remove(Steal) any Artifact and Strength. Apply 3 Antifact. Exhaust.
+Reworked Steal Soul- Deal 20(25) damage. Remove(Steal) any Artifact and Strength. Exhaust.
 Reworked Treasure to no longer give Block, but upgrade to 0 Cost
 Reworked Aw Man - Gain 2(1) Frail. Chip ALL your Gems.
 Reworked Unearth - 1 Cost Unnate. Ricochet. Return 3(4) cards.
+Reworked Runic Thoughts - 1(0) Cost (Ricochet.) Cards that cost less than 1 Ricochet.
 
 
 Nerfed Rejection to give 5(7) strength and not lose Frail on upgrade

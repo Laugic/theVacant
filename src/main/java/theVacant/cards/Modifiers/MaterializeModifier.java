@@ -62,7 +62,7 @@ public class MaterializeModifier extends AbstractCardModifier
     {
         if(amount <= 0)
             return rawDescription;
-        rawDescription += " [#C687EE]Materialize[] " + amount + ".";
+        rawDescription += " " + BaseMod.getKeywordTitle(KeywordManager.MATERIALIZE_ID) + " " + amount + ".";
         if(!card.rawDescription.toLowerCase().contains(BaseMod.getKeywordProper(KeywordManager.MATERIALIZE_ID).toLowerCase()))
             card.keywords.add(0, KeywordManager.MATERIALIZE_ID);
         return rawDescription;
