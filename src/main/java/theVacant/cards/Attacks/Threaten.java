@@ -43,7 +43,7 @@ public class Threaten extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         Random random = new Random();
-        if(random.nextInt(100) != 0)
+        if(random.nextInt(250) != 0)
             AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:ora"));
         else
             AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:ora2"));

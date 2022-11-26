@@ -97,7 +97,7 @@
   },
   "theVacant:SurpriseAttack": {
     "NAME": "기습 공격",
-    "DESCRIPTION": "thevacant:후천성. thevacant:리코셰. NL 피해를 !D! 줍니다. NL 소멸."
+    "DESCRIPTION": "thevacant:후천성. NL 피해를 !D! 줍니다. NL 소멸."
   },
   "theVacant:OnyxBlaster": {
     "NAME": "오닉스 광선",
@@ -135,7 +135,7 @@
   },
   "theVacant:BackInTheMine": {
     "NAME": "광산 복귀",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 이 카드로 공격한 적 하나당, 무작위 1 스택의 thevacant:보석 1개를 thevacant:채광 합니다."
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. 현재 보유한 thevacant:보석 1개당, 이 카드의 비용이 1 감소합니다."
   },
   "theVacant:Throttle": {
     "NAME": "목 꺾기",
@@ -171,7 +171,7 @@
   },
   "theVacant:AwMan": {
     "NAME": "오 이런...",
-    "DESCRIPTION": "손상 을 !M! 받습니다. NL 보유한 모든 thevacant:보석 을 thevacant:연공 합니다.",
+    "DESCRIPTION": "손상 을 2 받습니다. NL !M! 스택의 thevacant:루비 와 !M! 스택의 thevacant:오닉스 를 1개 thevacant:채광 합니다.",
     "UPGRADE_DESCRIPTION": "모두 에게 취약을 !M! 부여합니다.  NL 보유한 모든 thevacant:보석 을 thevacant:연공 합니다."
   },
   "theVacant:Requiem": {
@@ -253,8 +253,8 @@
   },
   "theVacant:StealSoul": {
     "NAME": "영혼 강탈",
-    "DESCRIPTION": "피해를 !D! 줍니다. NL 대상의 힘과 인공물을 전부 제거합니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL 대상의 힘과 인공물을 전부 훔쳐 자신의 것으로 만듭니다. NL 소멸."
+    "DESCRIPTION": "피해를 !D! 줍니다. NL 대상의 힘과 인공물을 전부 훔쳐 자신의 것으로 만듭니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "피해를 !D! 줍니다. NL 대상의 힘과 인공물을 전부 훔쳐 자신의 것으로 만듭니다. NL thevacant:독공물 을 !M! 부여합니다. NL 소멸."
   },
   "theVacant:Banish": {
     "NAME": "배니싱",
@@ -308,8 +308,8 @@
   },
   "theVacant:DiamondIsUnbreakable": {
     "NAME": "다이아몬드는 부서지지 않는다",
-    "DESCRIPTION": "X 스택의 thevacant:다이아몬드 를 1개 thevacant:채광 합니다. NL 소멸.",
-    "UPGRADE_DESCRIPTION": "X+1 스택의 thevacant:다이아몬드 를 1개 thevacant:채광 합니다. NL 소멸."
+    "DESCRIPTION": "1 스택의 thevacant:다이아몬드 를 X 개 thevacant:채광 합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "1 스택의 thevacant:다이아몬드 를 X+1 개 thevacant:채광 합니다. NL 소멸."
   },
   "theVacant:ShatterAmethyst": {
     "NAME": "자수정 파쇄",
@@ -333,8 +333,12 @@
     "NAME": "땅 파기",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL 카드를 !M! 장 thevacant:제분 합니다."
   },
+  "theVacant:WearTheGoblet": {
+    "NAME": "고블릿 착용",
+    "DESCRIPTION": "thevacant:리코셰. NL 방어도를 !B! 얻습니다. NL 이 카드를 thevacant:제분 하면, 이번 턴 동안 이 카드의 비용이 0 이 됩니다."
+  },
   "theVacant:Cower": {
-    "NAME": "겁쟁이의 웅크리기",
+    "NAME": "겁쟁이의 웅크림",
     "DESCRIPTION": "방어도를 !B! 얻습니다. NL thevacant:껍데기 : 방어도를 !B! 얻습니다."
   },
   "theVacant:Return": {

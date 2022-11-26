@@ -49,11 +49,8 @@ public class BrassGoblet extends CustomRelic
     public void atBattleStart()
     {
         flash();
-        setDescriptionWithCard();
         AbstractPlayer player = AbstractDungeon.player;
-        player.addPower(new VoidPower(player, player, counter));
-        //AbstractDungeon.actionManager.addToBottom(new VacantMillAction(counter + AbstractVacantCard.GetBonusMillAmount()));
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VoidPower(player, player, VOID_AMOUNT), VOID_AMOUNT));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(player, player, new VoidPower(player, player, counter), counter));
     }
 
     public void IncreaseVoid(int amount)

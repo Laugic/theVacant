@@ -1,23 +1,21 @@
 package theVacant.cards.Attacks;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
-import com.megacrit.cardcrawl.actions.unique.RegenAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
-import theVacant.cards.Modifiers.EchoModifier;
-import theVacant.cards.Modifiers.SoulforgedModifier;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.OpalOrb;
+import theVacant.vfx.HorizontalThrowVFX;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -48,6 +46,7 @@ public class OpalFracture extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new GainBlockAction(player, block));
+        addToBot(new VFXAction(new HorizontalThrowVFX(monster.hb.cX, monster.hb.cY, Color.CYAN)));
         addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new MineGemAction(new OpalOrb(magicNumber)));
         //addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));

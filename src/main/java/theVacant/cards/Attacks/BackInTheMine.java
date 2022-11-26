@@ -9,12 +9,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import theVacant.VacantMod;
 import theVacant.actions.ChipOrbAction;
 import theVacant.actions.MineGemAction;
 import theVacant.actions.SpelunkAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.AbstractGemOrb;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -29,8 +31,8 @@ public class BackInTheMine extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
-    private static final int DAMAGE = 12;
+    private static final int COST = 3;
+    private static final int DAMAGE = 13;
 
     public BackInTheMine()
     {
@@ -39,15 +41,35 @@ public class BackInTheMine extends AbstractDynamicCard {
         isMultiDamage = true;
     }
 
+    @Override
+    public void triggerWhenDrawn() {
+        super.triggerWhenDrawn();
+        applyPowers();
+    }
+
+    @Override
+    public void atTurnStart() {
+        resetAttributes();
+        applyPowers();
+    }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.FIRE));
-        for (AbstractMonster mon : (AbstractDungeon.getMonsters()).monsters) {
-            if (!mon.isDeadOrEscaped())
-                addToBot(new MineGemAction(null, 1));
+    }
+
+    @Override
+    public void applyPowers(){
+        super.applyPowers();
+        int numGems = 0;
+        for (AbstractOrb orb: AbstractDungeon.player.orbs) {
+            if(orb instanceof AbstractGemOrb)
+                numGems++;
         }
+        int newCost = Math.max(COST - numGems, 0);
+        if(costForTurn > newCost)
+            setCostForTurn(newCost);
     }
 
     @Override
@@ -56,7 +78,7 @@ public class BackInTheMine extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(4);
             initializeDescription();
         }
     }

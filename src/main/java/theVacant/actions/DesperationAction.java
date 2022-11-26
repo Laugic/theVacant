@@ -56,7 +56,7 @@ public class DesperationAction extends AbstractGameAction
                 AbstractCard newCard = c.makeStatEquivalentCopy();
 
                 if(upgraded)
-                    newCard.costForTurn = 0;
+                    newCard.setCostForTurn(0);
 
                 AbstractDungeon.effectList.add(new ShowCardAndAddToHandEffect(newCard));
             }

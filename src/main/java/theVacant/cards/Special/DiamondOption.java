@@ -38,8 +38,8 @@ import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.OnyxOrb;
 import theVacant.orbs.OpalOrb;
-
-public class DiamondOption  extends AbstractDynamicCard
+/*
+public class DiamondOption extends GemOption
 {
     public static final String ID = VacantMod.makeID(DiamondOption.class.getSimpleName());
     public static final String IMG = makeCardPath("DiamondOption.png");
@@ -50,17 +50,21 @@ public class DiamondOption  extends AbstractDynamicCard
     private static final AbstractCard.CardType TYPE = CardType.SKILL;
     public static final AbstractCard.CardColor COLOR = AbstractCard.CardColor.COLORLESS;
 
-    private static final int COST = -2;
+    public static final int SMALL_SIZE = 2, BIG_SIZE = 3;
 
     public DiamondOption()
     {
-        this(3);
+        super(ID, IMG, TYPE, COLOR, RARITY, TARGET);
     }
 
-    public DiamondOption(int size)
-    {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = size;
+    @Override
+    public int GetSmallSize(){
+        return SMALL_SIZE;
+    }
+
+    @Override
+    public int GetBigSize(){
+        return BIG_SIZE;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)
@@ -86,3 +90,4 @@ public class DiamondOption  extends AbstractDynamicCard
         }
     }
 }
+*/

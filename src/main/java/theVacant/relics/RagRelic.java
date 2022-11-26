@@ -13,9 +13,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theVacant.VacantMod;
+import theVacant.actions.DelayedTombstoneAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractVacantCard;
 import theVacant.powers.DoomPower;
+import theVacant.powers.PolishPower;
 import theVacant.powers.ShroudPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.TextureLoader;
@@ -31,7 +33,13 @@ public class RagRelic extends CustomRelic
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("rag_relic.png"));
 
     public RagRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+    }
+
+    @Override
+    public void atBattleStart()
+    {
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PolishPower(AbstractDungeon.player, AbstractDungeon.player, 3)));
     }
 
     @Override

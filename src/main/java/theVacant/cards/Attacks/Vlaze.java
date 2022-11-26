@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
+import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.MaterializeModifier;
@@ -24,6 +25,7 @@ import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.characters.TheVacant;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
+import theVacant.vfx.HorizontalThrowVFX;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,8 +61,10 @@ public class Vlaze extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new VFXAction(new HorizontalThrowVFX(monster.hb.cX, monster.hb.cY, Color.MAGENTA)));
         addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
 
+        addToBot(new VFXAction(player, new VerticalAuraEffect(new Color(1, 0, 1, .5f), monster.hb.cX, monster.hb.cY), 0.25F));
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
     }
 

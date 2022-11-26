@@ -41,7 +41,7 @@ public class GildedPickaxe extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         for(int i = 0; i < 2; i++)
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
 
         if(player.orbs.size() > 0)
         {

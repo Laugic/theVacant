@@ -36,8 +36,8 @@ import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.OnyxOrb;
-
-public class OnyxOption  extends AbstractDynamicCard
+/*
+public class OnyxOption extends GemOption
 {
     public static final String ID = VacantMod.makeID(OnyxOption.class.getSimpleName());
     public static final String IMG = makeCardPath("OnyxBlaster.png");
@@ -48,17 +48,21 @@ public class OnyxOption  extends AbstractDynamicCard
     private static final AbstractCard.CardType TYPE = AbstractCard.CardType.ATTACK;
     public static final AbstractCard.CardColor COLOR = AbstractCard.CardColor.COLORLESS;
 
-    private static final int COST = -2;
+    public static final int SMALL_SIZE = 2, BIG_SIZE = 4;
 
     public OnyxOption()
     {
-        this(3);
+        super(ID, IMG, TYPE, COLOR, RARITY, TARGET);
     }
 
-    public OnyxOption(int size)
-    {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = size;
+    @Override
+    public int GetSmallSize(){
+        return SMALL_SIZE;
+    }
+
+    @Override
+    public int GetBigSize(){
+        return BIG_SIZE;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m)
@@ -84,3 +88,4 @@ public class OnyxOption  extends AbstractDynamicCard
         }
     }
 }
+*/

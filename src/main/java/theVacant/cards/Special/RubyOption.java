@@ -36,51 +36,56 @@ import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.OnyxOrb;
-
-public class RubyOption  extends AbstractDynamicCard
-{
-    public static final String ID = VacantMod.makeID(RubyOption.class.getSimpleName());
-    public static final String IMG = makeCardPath("Enrage.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.SPECIAL;
-    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.NONE;
-    private static final AbstractCard.CardType TYPE = CardType.SKILL;
-    public static final AbstractCard.CardColor COLOR = AbstractCard.CardColor.COLORLESS;
-
-    private static final int COST = -2;
-
-    public RubyOption()
-    {
-        this(3);
-    }
-
-    public RubyOption(int size)
-    {
-        super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = size;
-    }
-
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
-        onChoseThisOption();
-    }
-
-    @Override
-    public void onChoseThisOption()
-    {
-        addToTop(new MineGemAction(new RubyOrb(magicNumber)));
-    }
-
-    @Override
-    public void upgrade()
-    {
-        if (!upgraded)
-        {
-            upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
-            initializeDescription();
-        }
-    }
-}
+//
+//public class RubyOption extends GemOption
+//{
+//    public static final String ID = VacantMod.makeID(RubyOption.class.getSimpleName());
+//    public static final String IMG = makeCardPath("Enrage.png");
+//    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+//
+//    private static final AbstractCard.CardRarity RARITY = AbstractCard.CardRarity.SPECIAL;
+//    private static final AbstractCard.CardTarget TARGET = AbstractCard.CardTarget.NONE;
+//    private static final AbstractCard.CardType TYPE = CardType.SKILL;
+//    public static final AbstractCard.CardColor COLOR = AbstractCard.CardColor.COLORLESS;
+//
+//
+//    public static final int SMALL_SIZE = 3, BIG_SIZE = 5;
+//
+//    public RubyOption()
+//    {
+//        super(ID, IMG, TYPE, COLOR, RARITY, TARGET);
+//    }
+//
+//    @Override
+//    public int GetSmallSize(){
+//        return SMALL_SIZE;
+//    }
+//
+//    @Override
+//    public int GetBigSize(){
+//        return BIG_SIZE;
+//    }
+//
+//    public void use(AbstractPlayer p, AbstractMonster m)
+//    {
+//        onChoseThisOption();
+//    }
+//
+//    @Override
+//    public void onChoseThisOption()
+//    {
+//        addToTop(new MineGemAction(new RubyOrb(magicNumber)));
+//    }
+//
+//    @Override
+//    public void upgrade()
+//    {
+//        if (!upgraded)
+//        {
+//            upgradeName();
+//            upgradeMagicNumber(1);
+//            upgradedMagicNumber = true;
+//            initializeDescription();
+//        }
+//    }
+//}

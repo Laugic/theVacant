@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import theVacant.util.TextureLoader;
 
 public class ReapVFX extends AbstractGameEffect {
-    private static final Texture TEXTURE = TextureLoader.getTexture("theVacantResources/images/vfx/DeathSickle.png"); //Change me to change the image used
+    private static final Texture TEXTURE = TextureLoader.getTexture("theVacantResources/images/vfx/ReaperScythe.png"); //Change me to change the image used
     private static final Texture BACKGROUND = TextureLoader.getTexture("theVacantResources/images/vfx/blackBack.jpg"); //Change me to change the background fade
     public static final float DURATION = 0.75f; //Duration of the action, can lengthen or shorten as you wish. All interpolations are relative to this, so changing this is safe
     private static final float HALF_DUR = DURATION/2F;
@@ -22,20 +22,27 @@ public class ReapVFX extends AbstractGameEffect {
     private final TextureAtlas.AtlasRegion img;
     private float x, y;
     private float t;
+    private boolean showScythe;
 
-    public ReapVFX() {
+    public ReapVFX(boolean scythe)
+    {
         super();
         this.renderBehind = false; //Render over the card
         img = new TextureAtlas.AtlasRegion(TEXTURE, 0, 0, TEXTURE.getWidth(), TEXTURE.getHeight()); //Load the image
-        sx = Settings.WIDTH/3F - img.getRegionWidth()/2F * Settings.scale; // x coord scythe spawns at and swings back to
-        sy = Settings.HEIGHT/2F - img.getRegionHeight()/2F * Settings.scale; // y coord scythe spawns at and swings back to
-        tx = Settings.WIDTH*3/5F - img.getRegionWidth()/2F * Settings.scale; // x coord scythe pauses at
-        ty = Settings.HEIGHT*3/5F - img.getRegionHeight()/2F * Settings.scale; // y coord scythe pauses at
+        sx = Settings.WIDTH/3F;// - img.getRegionWidth()/2F * Settings.scale; // x coord scythe spawns at and swings back to
+        sy = Settings.HEIGHT/2F;// - img.getRegionHeight()/2F * Settings.scale; // y coord scythe spawns at and swings back to
+        tx = Settings.WIDTH*3/5F;// - img.getRegionWidth()/2F * Settings.scale; // x coord scythe pauses at
+        ty = Settings.HEIGHT*3/5F;// - img.getRegionHeight()/2F * Settings.scale; // y coord scythe pauses at
         sa = -20; //Angle scythe spawns at
         ta = 60; //Angle scythe pauses at
         ea = -150; //Angle scythe swings to
         duration = startingDuration = DURATION;
         color = new Color(1.0F, 1.0F, 1.0F, 0.0F); //Start invisible and not null
+        showScythe = scythe;
+    }
+
+    public ReapVFX() {
+        this(true);
     }
 
     @Override
@@ -57,7 +64,7 @@ public class ReapVFX extends AbstractGameEffect {
             x = Interpolation.pow5Out.apply(sx, tx, t/HALF_DUR);
             y = Interpolation.pow5Out.apply(sy, ty, t/HALF_DUR);
             rotation = Interpolation.pow5Out.apply(sa, ta, t/HALF_DUR);
-            scale = Interpolation.smooth.apply(Settings.scale*5F, Settings.scale*10F, t/HALF_DUR);
+            scale = Interpolation.smooth.apply(Settings.scale*.75F, Settings.scale*1.5F, t/HALF_DUR);
         }
         //Reduce duration and end action if duration is 0
         duration -= Gdx.graphics.getDeltaTime();

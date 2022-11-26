@@ -216,7 +216,7 @@ public class VacantMillAction  extends AbstractGameAction
             if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
                 return true;
 */
-            if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.cost < player.getPower(RunicThoughtsPower.POWER_ID).amount && card.cost != -2)
+            if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.cost <= player.getPower(RunicThoughtsPower.POWER_ID).amount && card.cost != -2)
                 return true;
         }
         return false;

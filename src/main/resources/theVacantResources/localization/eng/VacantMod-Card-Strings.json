@@ -57,7 +57,7 @@
     "UPGRADE_DESCRIPTION": "thevacant:Ricochet. NL thevacant:Unnate. thevacant:Heavy. NL Deal !D! damage. NL When this card is thevacant:Milled, double its damage this combat."
   },
   "theVacant:EyePoke": {
-    "NAME": "Eye Poke",
+    "NAME": "Eye \"Poke\"",
     "DESCRIPTION": "Deal !D! damage 2 times. NL Apply !M! Weak."
   },
   "theVacant:FranticBlow": {
@@ -97,7 +97,7 @@
   },
   "theVacant:SurpriseAttack": {
     "NAME": "Surprise Attack",
-    "DESCRIPTION": "thevacant:Unnate. thevacant:Ricochet. NL Deal !D! damage. NL Exhaust."
+    "DESCRIPTION": "thevacant:Unnate. NL Deal !D! damage. NL Exhaust."
   },
   "theVacant:OnyxBlaster": {
     "NAME": "Onyx Blaster",
@@ -135,7 +135,7 @@
   },
   "theVacant:BackInTheMine": {
     "NAME": "Back in the Mine",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. thevacant:Mine a random size 1 thevacant:Gem for each enemy hit."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Costs 1 less this turn for each thevacant:Gem you have."
   },
   "theVacant:Throttle": {
     "NAME": "Throttle",
@@ -171,7 +171,7 @@
   },
   "theVacant:AwMan": {
     "NAME": "Aw Man",
-    "DESCRIPTION": "Gain !M! Frail. NL thevacant:Chip ALL your thevacant:Gems.",
+    "DESCRIPTION": "Gain 2 Frail. NL thevacant:Mine a size !M! thevacant:Ruby and a size !M! thevacant:Onyx.",
     "UPGRADE_DESCRIPTION": "Apply !M! Vulnerable to EVERYONE.  NL thevacant:Chip ALL your thevacant:Gems."
   },
   "theVacant:Requiem": {
@@ -253,8 +253,8 @@
   },
   "theVacant:StealSoul": {
     "NAME": "Steal Soul",
-    "DESCRIPTION": "Deal !D! damage. NL Remove Artifact and Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Steal Artifact and Strength. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Steal the enemy's Artifact and Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Steal the enemy's Artifact and Strength. NL Apply !M! thevacant:Antifact. NL Exhaust."
   },
   "theVacant:Banish": {
     "NAME": "Banish",
@@ -290,7 +290,7 @@
   },
   "theVacant:Enchant": {
     "NAME": "Enchant",
-    "DESCRIPTION": "Lose your next thevacant:Gem. NL Give the thevacant:Gem's ability to a card in your hand for the rest of combat. NL Exhaust.",
+    "DESCRIPTION": "Lose your next thevacant:Gem. NL Give the thevacant:Gem's ability to a card in your hand for the rest of combat.",
     "EXTENDED_DESCRIPTION": [
       " with ",
       " (",
@@ -332,6 +332,10 @@
   "theVacant:Dig": {
     "NAME": "Dig",
     "DESCRIPTION": "Gain !B! Block. NL thevacant:Mill !M!."
+  },
+  "theVacant:WearTheGoblet": {
+    "NAME": "Wear the Goblet",
+    "DESCRIPTION": "thevacant:Ricochet. NL Gain !B! Block. NL When you thevacant:Mill this card, it costs 0 this turn."
   },
   "theVacant:Cower": {
     "NAME": "Cower",
@@ -441,7 +445,8 @@
   },
   "theVacant:Treasure": {
     "NAME": "Treasure",
-    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Emerald and a size !M! thevacant:Opal."
+    "DESCRIPTION": "thevacant:Mine a size !M! thevacant:Emerald and a size !M! thevacant:Opal. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "thevacant:Mine a size !M! thevacant:Emerald and a size !M! thevacant:Opal."
   },
   "theVacant:Soothe": {
     "NAME": "Soothe",
@@ -479,7 +484,7 @@
   },
   "theVacant:Spelunk": {
     "NAME": "Spelunk",
-    "DESCRIPTION": "Gain !B! Block. NL Choose a thevacant:Gem to thevacant:Mine out of !M!."
+    "DESCRIPTION": "Gain !B! Block. NL When thevacant:Milled or played, thevacant:Mine a size !M! thevacant:Sapphire."
   },
   "theVacant:OpalShine": {
     "NAME": "Opal Shine",
@@ -611,8 +616,8 @@
   },
   "theVacant:RunicThoughts": {
     "NAME": "Runic Thoughts",
-    "DESCRIPTION": "Cards that cost less than !M! thevacant:Ricochet.",
-    "UPGRADE_DESCRIPTION":"thevacant:Ricochet. NL Cards that cost less than !M! thevacant:Ricochet."
+    "DESCRIPTION": "Cards that cost !M! or less thevacant:Ricochet.",
+    "UPGRADE_DESCRIPTION":"thevacant:Ricochet. NL Cards that cost !M! or less thevacant:Ricochet."
   },
   "theVacant:ShatterSoul": {
     "NAME": "Shatter Soul",
@@ -655,37 +660,44 @@
     "NAME": "Wait in Wrath",
     "DESCRIPTION": "At the start of your turn, if you are thevacant:Hollow, gain !M! Vigor. If you are thevacant:Healthy, gain !M! thevacant:Temperance."
   },
+  "theVacant:GemOption": {
+    "NAME": "Gem",
+    "DESCRIPTION": "It's a Gem!",
+    "EXTENDED_DESCRIPTION": [
+      "Big "
+    ]
+  },
   "theVacant:RubyOption": {
     "NAME": "Ruby",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, gain 3 Vigor and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Ruby."
   },
   "theVacant:SapphireOption": {
     "NAME": "Sapphire",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, gain 3 thevacant:Temperance and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Sapphire."
   },
   "theVacant:OpalOption": {
     "NAME": "Opal",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, gain [E] and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Opal."
   },
   "theVacant:EmeraldOption": {
     "NAME": "Emerald",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, draw a card and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Emerald."
   },
   "theVacant:OnyxOption": {
     "NAME": "Onyx",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, apply 1 thevacant:Doom to ALL enemies and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Onyx."
   },
   "theVacant:DiamondOption": {
     "NAME": "Diamond",
-    "DESCRIPTION": "Size !M!. NL Prevent the next time you would take damage and lose 1 size. At the start of your turn, lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Diamond."
   },
   "theVacant:AmethystOption": {
     "NAME": "Amethyst",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, thevacant:Mill 3 and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Amethyst."
   },
   "theVacant:TopazOption": {
     "NAME": "Topaz",
-    "DESCRIPTION": "Size !M!. NL At the start of your turn, gain 1 Artifact and lose 1 size."
+    "DESCRIPTION": "Size !M! thevacant:Topaz."
   },
   "theVacant:KeywordManager": {
     "NAME": "KeywordManager",

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.actions.BetterExhaustPileToHandAction;
+import theVacant.actions.DimensionTearAction;
 import theVacant.actions.UnfadePilesAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -31,7 +32,7 @@ public class DimensionTear extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 4;
     private static ArrayList<TooltipInfo> Tooltip;
 
     public DimensionTear()
@@ -46,10 +47,11 @@ public class DimensionTear extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         //addToBot( new EnhanceInPileAction(player.exhaustPile, 9999, MaterializeModifier.ID, magicNumber));
-        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        addToBot(new BetterExhaustPileToHandAction(99999,false));
+//        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+//        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+//        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        addToBot(new DimensionTearAction(this, monster, player, damage, 3));
+//        addToBot(new BetterExhaustPileToHandAction(99999,false));
         //addToBot(new UnfadePilesAction());
         //addToBot(new ExhumeAndEnhanceAction(player.exhaustPile.size() + 2));
         //addToBot(new ExhaustDiscardAction(-1));

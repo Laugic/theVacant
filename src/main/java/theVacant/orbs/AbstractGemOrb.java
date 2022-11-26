@@ -38,7 +38,6 @@ public abstract class AbstractGemOrb extends CustomOrb
     {
         super(ID, name, size, size, "", "", path);
 
-        checkPolish(this);
         turnStartOrb = turnStart;
         oneSizeEffect = oneSize;
         updateDescription();
@@ -46,14 +45,6 @@ public abstract class AbstractGemOrb extends CustomOrb
         angle = MathUtils.random(360.0f); // More Animation-related Numbers
         channelAnimTimer = 0.5f;
     }
-
-    private static void checkPolish(AbstractGemOrb orb) {
-        if(AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(RagRelic.ID)) {
-            AbstractDungeon.player.getRelic(RagRelic.ID).flash();
-            AbstractDungeon.actionManager.addToBottom(new PolishGemAction( orb, 1));
-        }
-    }
-
 
     @Override //if you want to ignore Focus
     public void applyFocus()
@@ -65,11 +56,7 @@ public abstract class AbstractGemOrb extends CustomOrb
     @Override
     public void onEvoke()
     {
-        onChip(passiveAmount);
-        //evokeGem();
-        //ReduceSize(baseEvokeAmount);
-        //AbstractDungeon.actionManager.addToBottom(new DecreaseMaxOrbAction(1));
-        //RemoveSpecificGem(player.orbs.indexOf(this));
+        triggerPassive(passiveAmount);
     }
 
     public void onStartOfTurnPostDraw()

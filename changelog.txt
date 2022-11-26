@@ -1,3 +1,33 @@
+1.0.0
+Changed card art to be the Goblet
+Added art for all cards with remaining temporary art
+
+Added Wear the Goblet- 2 Cost Common Skill. Ricochet. Gain 12(16) Block. When you Mill this card, it costs 0 this turn.
+
+Buffed Steal Soul to always Steal Artifact and Strength, and upgrade to apply 2 Antifact.
+Buffed Tombstone Relic to trigger the effect of the Goblet a second time, and moved it back to Boss rarity
+Buffed Immaterialize to the next 4(6) cards
+
+Tweaked Surprise Attack to no longer Ricochet, but deal 15(19) damage
+Tweaked Dark Strike's upgrade to reduce cost to 3 instead of removing Exhaust
+Tweaked Treasure to be 0 Cost but Exhaust unupgraded, but removes Exhaust on upgrade
+Re-tweaked Enchant to be 2(1) and no longer Exhaust again
+Reworked Aw Man- Gain 2 Frail. Mine a size 2(3) Onyx and a size 2(3) Ruby.
+Reworked Back in the Mine- 3 Cost Deal 13(17) damage to ALL enemies. Costs 1 less for each Gem you have.
+Reworked Spelunk to: Gain 10(12) Block. When Milled or played, Mine a size 3(4) Sapphire.
+Reworked Mining Potion to: Mine a size 2 Ruby and a size 2 Sapphire
+
+Nerfed Voidstone to gain 3 Block twice
+Nerfed Reaper Strike to 12(16) damage
+
+Removed Expand
+Changed Starter Event card from Shatter Amethyst(bug) to Corporeate
+Fixed that Steal Soul didn't Exhaust
+Fixed Tombstone's interaction with Bag of Preparation
+Overflowing Goblet now only appears if you have The Goblet
+Removed Spelunking mechanic.
+Added lots of VFX and SFX!
+-----
 0.23.1
 Voidbound now affects attacks that deal 0 base damage
 Fixed some typos/missing stuff in 0.23.0 changelog

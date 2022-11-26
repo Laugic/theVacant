@@ -9,10 +9,12 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.actions.SpelunkAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Special.*;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.SapphireOrb;
 
 import java.util.ArrayList;
 
@@ -30,20 +32,28 @@ public class Spelunk extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
 
     public Spelunk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = 10;
         magicNumber = baseMagicNumber = 3;
+        postMillAction = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
         addToBot(new GainBlockAction(player, block));
-        addToBot(new SpelunkAction(magicNumber));
+        //addToBot(new SpelunkAction(magicNumber));
+        addToBot(new MineGemAction(new SapphireOrb(magicNumber)));
+    }
+
+    @Override
+    public void PostMillAction()
+    {
+        addToBot(new MineGemAction(new SapphireOrb(magicNumber)));
     }
 
     @Override
@@ -52,7 +62,7 @@ public class Spelunk extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(4);
+            upgradeBlock(2);
             upgradedBlock = true;
             upgradeMagicNumber(1);
             upgradedMagicNumber = true;

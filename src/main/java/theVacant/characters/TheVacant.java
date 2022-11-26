@@ -227,7 +227,7 @@ public class TheVacant extends CustomPlayer
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new ShatterAmethyst();
+        return new Corporeate();
     }
 
     @Override

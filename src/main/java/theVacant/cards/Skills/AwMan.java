@@ -22,9 +22,12 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
 import theVacant.VacantMod;
 import theVacant.actions.ChipOrbAction;
+import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.AbstractGemOrb;
+import theVacant.orbs.OnyxOrb;
+import theVacant.orbs.RubyOrb;
 
 import java.util.Iterator;
 
@@ -42,46 +45,24 @@ public class AwMan extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0;
+    private static final int COST = 0, FRAIL = 2;
 
     public AwMan()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
-        /*
-        if(upgraded)
-        {
-            addToBot(new DamageAction(player, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
 
-            //addToBot(new DamageAllEnemiesAction(player, multiDamage, DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(player, DamageInfo.createDamageMatrix(magicNumber, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
-        }
-        else
-            addToBot(new DamageAction(player, new DamageInfo(player, magicNumber, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
-
-        if(upgraded)
-        {
-            for (AbstractMonster m: AbstractDungeon.getMonsters().monsters) {
-                addToBot(new ApplyPowerAction(m, player, new VulnerablePower(m, magicNumber, false), 1));
-            }
-        }*/
         addToBot(new VFXAction(new ExplosionSmallEffect(player.hb.cX, player.hb.cY), 0.1F));
-        addToBot(new ApplyPowerAction(player, player, new FrailPower(player, magicNumber, false), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new FrailPower(player, FRAIL, false), FRAIL));
 
-        if(player.orbs.size() > 0)
-        {
-            for (AbstractOrb gem : player.orbs)
-            {
-                if(gem instanceof AbstractGemOrb)
-                    addToBot(new ChipOrbAction(gem, 1));
-            }
-        }
+        addToBot(new MineGemAction(new RubyOrb(magicNumber)));
+        addToBot(new MineGemAction(new OnyxOrb(magicNumber)));
     }
 
     @Override
@@ -90,46 +71,8 @@ public class AwMan extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(-1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
-    }
-
-    private int GetCardDamage()
-    {
-        AbstractPlayer player = AbstractDungeon.player;
-        float tmp = (float)baseMagicNumber;// 3232
-        Iterator dmgIterator = player.relics.iterator();// 3235
-
-        while(dmgIterator.hasNext()) {
-            AbstractRelic r = (AbstractRelic)dmgIterator.next();
-            tmp = r.atDamageModify(tmp, this);// 3236
-            if (baseMagicNumber != (int)tmp) {// 3237
-                this.isMagicNumberModified = true;// 3238
-            }
-        }
-
-        AbstractPower p;
-        for(dmgIterator = player.powers.iterator(); dmgIterator.hasNext(); tmp = p.atDamageGive(tmp, this.damageTypeForTurn, this)) {// 3244 3245
-            p = (AbstractPower)dmgIterator.next();
-        }
-
-        tmp = player.stance.atDamageGive(tmp, this.damageTypeForTurn, this);// 3249
-        if (baseMagicNumber != (int)tmp) {// 3250
-            this.isMagicNumberModified = true;// 3251
-        }
-
-        for(dmgIterator = player.powers.iterator(); dmgIterator.hasNext(); tmp = p.atDamageFinalGive(tmp, this.damageTypeForTurn, this)) {// 3260 3261
-            p = (AbstractPower)dmgIterator.next();
-        }
-
-        if (tmp < 0.0F) {// 3270
-            tmp = 0.0F;// 3271
-        }
-
-        if (baseMagicNumber != MathUtils.floor(tmp))
-            isMagicNumberModified = true;
-
-        return MathUtils.floor(tmp);
     }
 }

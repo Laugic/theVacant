@@ -1,13 +1,18 @@
 package theVacant.cards.Attacks;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -39,9 +44,12 @@ public class LashOut extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(
-                new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn),
-                        AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        if(player.isBloodied)
+            addToBot(new VFXAction(player, new BorderFlashEffect(new Color(0.35F, 0.0F, 0.0F, 1.0F)), 0.3F, true));
+        addToBot(new VFXAction(new HemokinesisEffect(player.hb.cX, player.hb.cY, monster.hb.cX, monster.hb.cY), (float)player.currentHealth/(float)player.maxHealth));
+        addToBot(new WaitAction(.1f));
+        addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn),
+                player.isBloodied?AbstractGameAction.AttackEffect.BLUNT_HEAVY:AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     @Override

@@ -10,7 +10,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.GdxRuntimeException;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
-import com.evacipated.cardcrawl.mod.stslib.StSLib;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 
@@ -42,6 +41,7 @@ import theVacant.potions.SwipePotion;
 import theVacant.relics.*;
 import theVacant.util.TextureLoader;
 import theVacant.variables.*;
+import theVacant.vfx.ParticleManager;
 
 
 @SpireInitializer
@@ -80,16 +80,32 @@ public class VacantMod implements
     public static final Color INVIS_POTION_HYBRID = CardHelper.getColor(20, 150, 150);
     public static final Color INVIS_POTION_SPOTS = new Color(0, 0, 0, 0);
 
-    private static final String ATTACK_VACANT = "theVacantResources/images/512/bg_attack.png";
-    private static final String SKILL_VACANT = "theVacantResources/images/512/bg_skill.png";
-    private static final String POWER_VACANT = "theVacantResources/images/512/bg_power.png";
+//    private static final String ATTACK_VACANT = "theVacantResources/images/512/bg_attack.png";
+//    private static final String SKILL_VACANT = "theVacantResources/images/512/bg_skill.png";
+//    private static final String POWER_VACANT = "theVacantResources/images/512/bg_power.png";
+
+//    private static final String ATTACK_VACANT = "theVacantResources/images/512/brassCard.png";
+//    private static final String SKILL_VACANT = "theVacantResources/images/512/brassCard.png";
+//    private static final String POWER_VACANT = "theVacantResources/images/512/brassCard.png";
+
+    private static final String ATTACK_VACANT = "theVacantResources/images/512/gobletCard.png";
+    private static final String SKILL_VACANT = "theVacantResources/images/512/gobletCard.png";
+    private static final String POWER_VACANT = "theVacantResources/images/512/gobletCard.png";
 
     private static final String ENERGY_ORB_VACANT = "theVacantResources/images/512/card_default_gray_orb.png";
     private static final String CARD_ENERGY_ORB = "theVacantResources/images/512/card_small_orb.png";
 
-    private static final String ATTACK_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_attack.png";
-    private static final String SKILL_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_skill.png";
-    private static final String POWER_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_power.png";
+//    private static final String ATTACK_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_attack.png";
+//    private static final String SKILL_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_skill.png";
+//    private static final String POWER_VACANT_PORTRAIT = "theVacantResources/images/1024/bg_power.png";
+
+//    private static final String ATTACK_VACANT_PORTRAIT = "theVacantResources/images/1024/brassCard.png";
+//    private static final String SKILL_VACANT_PORTRAIT = "theVacantResources/images/1024/brassCard.png";
+//    private static final String POWER_VACANT_PORTRAIT = "theVacantResources/images/1024/brassCard.png";
+
+    private static final String ATTACK_VACANT_PORTRAIT = "theVacantResources/images/1024/gobletCard.png";
+    private static final String SKILL_VACANT_PORTRAIT = "theVacantResources/images/1024/gobletCard.png";
+    private static final String POWER_VACANT_PORTRAIT = "theVacantResources/images/1024/gobletCard.png";
     private static final String ENERGY_ORB_VACANT_PORTRAIT = "theVacantResources/images/1024/card_default_gray_orb.png";
 
     private static final String THE_VACANT_BUTTON = "theVacantResources/images/charSelect/TheVacantButton.png";
@@ -107,7 +123,7 @@ public class VacantMod implements
 
     public static List<String> IMMUNE_POWERS = new ArrayList<String>();
 
-
+    public static final ParticleManager particleManager = new ParticleManager();
 
     public static void initialize()
     {
@@ -249,14 +265,14 @@ public class VacantMod implements
 
         //Options
         int gemSize = 3;
-        BaseMod.addCard(new AmethystOption(gemSize));
-        BaseMod.addCard(new DiamondOption(gemSize));
-        BaseMod.addCard(new EmeraldOption(gemSize));
-        BaseMod.addCard(new OnyxOption(gemSize));
-        BaseMod.addCard(new OpalOption(gemSize));
-        BaseMod.addCard(new RubyOption(gemSize));
-        BaseMod.addCard(new SapphireOption(gemSize));
-        BaseMod.addCard(new TopazOption(gemSize));
+//        BaseMod.addCard(new AmethystOption());
+//        BaseMod.addCard(new DiamondOption());
+//        BaseMod.addCard(new EmeraldOption());
+//        BaseMod.addCard(new OnyxOption());
+//        BaseMod.addCard(new OpalOption());
+//        BaseMod.addCard(new RubyOption());
+//        BaseMod.addCard(new SapphireOption());
+//        BaseMod.addCard(new TopazOption());
 
 
 
@@ -306,7 +322,6 @@ public class VacantMod implements
         BaseMod.addCard(new RubyRage());
         BaseMod.addCard(new Treasure());
         BaseMod.addCard(new Enchant());
-        BaseMod.addCard(new Expand());
         BaseMod.addCard(new Hex());
         BaseMod.addCard(new SoulBarrage());
         BaseMod.addCard(new Sneeze());
@@ -324,6 +339,7 @@ public class VacantMod implements
         BaseMod.addCard(new Partake());
         BaseMod.addCard(new Desperation());
         BaseMod.addCard(new Voidstone());
+        BaseMod.addCard(new WearTheGoblet());
 
         //Powers
         BaseMod.addCard(new Acceptance());
@@ -397,7 +413,6 @@ public class VacantMod implements
         UnlockTracker.unlockCard(RubyRage.ID);
         UnlockTracker.unlockCard(Treasure.ID);
         UnlockTracker.unlockCard(Enchant.ID);
-        UnlockTracker.unlockCard(Expand.ID);
         UnlockTracker.unlockCard(Hex.ID);
         UnlockTracker.unlockCard(SoulBarrage.ID);
         UnlockTracker.unlockCard(Sneeze.ID);
@@ -415,6 +430,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Partake.ID);
         UnlockTracker.unlockCard(Desperation.ID);
         UnlockTracker.unlockCard(Voidstone.ID);
+        UnlockTracker.unlockCard(WearTheGoblet.ID);
 
         //Powers
         UnlockTracker.unlockCard(Acceptance.ID);
@@ -437,14 +453,14 @@ public class VacantMod implements
 
 
         //Options
-        UnlockTracker.unlockCard(AmethystOption.ID);
-        UnlockTracker.unlockCard(DiamondOption.ID);
-        UnlockTracker.unlockCard(EmeraldOption.ID);
-        UnlockTracker.unlockCard(OnyxOption.ID);
-        UnlockTracker.unlockCard(OpalOption.ID);
-        UnlockTracker.unlockCard(RubyOption.ID);
-        UnlockTracker.unlockCard(SapphireOption.ID);
-        UnlockTracker.unlockCard(TopazOption.ID);
+//        UnlockTracker.unlockCard(AmethystOption.ID);
+//        UnlockTracker.unlockCard(DiamondOption.ID);
+//        UnlockTracker.unlockCard(EmeraldOption.ID);
+//        UnlockTracker.unlockCard(OnyxOption.ID);
+//        UnlockTracker.unlockCard(OpalOption.ID);
+//        UnlockTracker.unlockCard(RubyOption.ID);
+//        UnlockTracker.unlockCard(SapphireOption.ID);
+//        UnlockTracker.unlockCard(TopazOption.ID);
 
         logger.info("Making sure the cards are unlocked.");
 /*
@@ -559,6 +575,7 @@ public class VacantMod implements
     public void receiveAddAudio()
     {
         BaseMod.addAudio("theVacant:awman",  getModID() + "Resources/audio/awman.ogg");
+        BaseMod.addAudio("theVacant:doom",  getModID() + "Resources/audio/Doom.wav");
         BaseMod.addAudio("theVacant:ora",  getModID() + "Resources/audio/ora.ogg");
         BaseMod.addAudio("theVacant:ora2",  getModID() + "Resources/audio/ora2.ogg");
         BaseMod.addAudio("theVacant:kingCrimson",  getModID() + "Resources/audio/kingCrimson.ogg");
@@ -570,6 +587,8 @@ public class VacantMod implements
         BaseMod.addAudio("theVacant:gem4",  getModID() + "Resources/audio/AmethystBreak4.mp3");
         BaseMod.addAudio("theVacant:gemSpawn",  getModID() + "Resources/audio/AmethystClusterPlace2.mp3");
         BaseMod.addAudio("theVacant:gemSpawn2",  getModID() + "Resources/audio/AmethystClusterPlace4.mp3");
+        BaseMod.addAudio("theVacant:sneezeSmall1",  getModID() + "Resources/audio/Sneeze_Small_1.wav");
+        BaseMod.addAudio("theVacant:sneezeBig1",  getModID() + "Resources/audio/Sneeze_Big_1.wav");
     }
 
     public static String getModID()

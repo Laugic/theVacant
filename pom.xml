@@ -3,7 +3,7 @@
 
     <groupId>theVacant</groupId>
     <artifactId>theVacant</artifactId>
-    <version>v0.22.0</version>
+    <version>v1.0.0</version>
     <packaging>jar</packaging>
     <name>The Vacant</name>
     <description>A lost soul, bound to an artifact, is doomed to climb the Spire.</description>

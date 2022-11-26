@@ -1,6 +1,7 @@
 package theVacant.cards.Attacks;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -12,6 +13,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.combat.FlyingOrbEffect;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import theVacant.VacantMod;
 import theVacant.actions.TempHPGainFromDamageAction;
@@ -39,7 +42,8 @@ public class StealSoul extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
+        exhaust = true;
     }
 
     @Override
@@ -52,8 +56,10 @@ public class StealSoul extends AbstractDynamicCard
         {
             int artNum = monster.getPower(ArtifactPower.POWER_ID).amount;
             addToBot(new RemoveSpecificPowerAction(monster, player, monster.getPower(ArtifactPower.POWER_ID)));
-            if(upgraded)
-                addToBot(new ApplyPowerAction(player, player, new ArtifactPower(player, artNum)));
+            for (int j = 0; j < 5; j++)
+                addToBot(new VFXAction(new FlyingOrbEffect(monster.hb.cX, monster.hb.cY)));
+            addToBot(new VFXAction(player, new InflameEffect(player), 1.0F));
+            addToBot(new ApplyPowerAction(player, player, new ArtifactPower(player, artNum)));
         }
         if(monster.hasPower(StrengthPower.POWER_ID))
         {
@@ -61,11 +67,14 @@ public class StealSoul extends AbstractDynamicCard
             if(strNum > 0)
             {
                 addToBot(new RemoveSpecificPowerAction(monster, player, monster.getPower(StrengthPower.POWER_ID)));
-                if(upgraded)
-                    addToBot(new ApplyPowerAction(player, player, new StrengthPower(player, strNum)));
+                for (int j = 0; j < 5; j++)
+                    addToBot(new VFXAction(new FlyingOrbEffect(monster.hb.cX, monster.hb.cY)));
+                addToBot(new VFXAction(player, new InflameEffect(player), 1.0F));
+                addToBot(new ApplyPowerAction(player, player, new StrengthPower(player, strNum)));
             }
         }
-//        addToBot(new ApplyPowerAction(monster, player, new AntifactPower(monster, player, magicNumber), magicNumber));
+        if(upgraded)
+            addToBot(new ApplyPowerAction(monster, player, new AntifactPower(monster, player, magicNumber), magicNumber));
         /*
         if(getWounded())
             addToBot( new TempHPGainFromDamageAction(player, monster, damage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));

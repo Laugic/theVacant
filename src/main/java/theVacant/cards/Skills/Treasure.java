@@ -4,8 +4,10 @@ import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.ShineSparkleEffect;
 import theVacant.VacantMod;
 import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -30,7 +32,7 @@ public class Treasure extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
 
     private static ArrayList<TooltipInfo> ExtraTooltip;
 
@@ -38,6 +40,7 @@ public class Treasure extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
+        exhaust = true;
     }
 
     @Override
@@ -45,6 +48,8 @@ public class Treasure extends AbstractDynamicCard
     {
         addToBot(new MineGemAction(new EmeraldOrb(magicNumber)));
         addToBot(new MineGemAction(new OpalOrb(magicNumber)));
+        for(int i = 0; i < 20; ++i)
+            AbstractDungeon.effectsQueue.add(new ShineSparkleEffect(player.hb.x + (float)Math.random() * player.hb.width, player.hb.y + (float)Math.random() * player.hb.height));
     }
 
     @Override
@@ -53,7 +58,8 @@ public class Treasure extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -1,15 +1,20 @@
 package theVacant.cards.Skills;
 
 import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
+import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -40,9 +45,13 @@ public class BattleScars extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new VFXAction(player, new InflameEffect(player), .5F));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new VigorPower(player, magicNumber * 2), magicNumber * 2));
         if(getWounded())
+        {
+            addToBot(new VFXAction(player, new VerticalAuraEffect(new Color(1, 0, 0, .5f), player.hb.cX, player.hb.cY), 0.25F));
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, magicNumber), magicNumber));
+        }
     }
 
     @Override

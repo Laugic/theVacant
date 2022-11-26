@@ -9,8 +9,11 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.actions.SpelunkAction;
 import theVacant.actions.VacantMillAction;
+import theVacant.orbs.RubyOrb;
+import theVacant.orbs.SapphireOrb;
 
 public class MiningPotion extends AbstractPotion
 {
@@ -39,8 +42,9 @@ public class MiningPotion extends AbstractPotion
             description = potionStrings.DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:gem"), BaseMod.getKeywordDescription("thevacant:gem")));
         tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:mine"), BaseMod.getKeywordDescription("thevacant:mine")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:ruby"), BaseMod.getKeywordDescription("thevacant:ruby")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:sapphire"), BaseMod.getKeywordDescription("thevacant:sapphire")));
     }
 
     @Override
@@ -49,7 +53,10 @@ public class MiningPotion extends AbstractPotion
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
         {
             for(int i = 0; i < potency; ++i)
-                AbstractDungeon.actionManager.addToBottom(new SpelunkAction(3));
+            {
+                addToBot(new MineGemAction(new RubyOrb(2)));
+                addToBot(new MineGemAction(new SapphireOrb(2)));
+            }
         }
     }
 

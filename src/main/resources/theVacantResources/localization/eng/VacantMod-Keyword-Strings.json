@@ -33,7 +33,7 @@
       "mine",
       "mined"
     ],
-    "DESCRIPTION": "Create an orb slot and fill it with a #yGem."
+    "DESCRIPTION": "Create an orb slot and fill it with a #yGem, which loses size at the start of your turn."
   },
   {
     "PROPER_NAME": "Darkness",
@@ -144,35 +144,35 @@
       "ruby",
       "rubies"
     ],
-    "DESCRIPTION": "#yGem: Gain #b3 #yVigor. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain #b3 #yVigor."
   },
   {
     "PROPER_NAME": "Topaz",
     "NAMES": [
       "topaz"
     ],
-    "DESCRIPTION": "#yGem: Gain #b1 #yArtifact. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain #b1 #yArtifact."
   },
   {
     "PROPER_NAME": "Amethyst",
     "NAMES": [
       "amethyst"
     ],
-    "DESCRIPTION": "#yGem: #yMill #b3. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: #yMill #b3."
   },
   {
     "PROPER_NAME": "Opal",
     "NAMES": [
       "opal"
     ],
-    "DESCRIPTION": "#yGem: Gain [E] NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain [E]"
   },
   {
     "PROPER_NAME": "Sapphire",
     "NAMES": [
       "sapphire"
     ],
-    "DESCRIPTION": "#yGem: Gain #b3 #yTemperance. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Gain #b3 #yTemperance."
   },
   {
     "PROPER_NAME": "Diamond",
@@ -180,21 +180,21 @@
       "diamond",
       "diamonds"
     ],
-    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose #b1 size. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose #b1 size."
   },
   {
     "PROPER_NAME": "Onyx",
     "NAMES": [
       "onyx"
     ],
-    "DESCRIPTION": "#yGem: Apply #b1 #yDoom to ALL enemies. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Apply #b1 #yDoom to ALL enemies."
   },
   {
     "PROPER_NAME": "Emerald",
     "NAMES": [
       "emerald"
     ],
-    "DESCRIPTION": "#yGem: Draw #b1 card. NL Loses size at the start of your turn."
+    "DESCRIPTION": "#yGem: Draw #b1 card."
   },
   {
     "PROPER_NAME": "Temperance",

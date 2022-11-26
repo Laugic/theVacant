@@ -45,7 +45,7 @@ public class OverflowingGobletRelic extends CustomRelic
     {
         flash();
         AbstractPlayer player = AbstractDungeon.player;
-        player.addPower(new ArtifactPower(player, counter));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(player, player, new ArtifactPower(player, counter), counter));
     }
 
     @Override
@@ -66,6 +66,11 @@ public class OverflowingGobletRelic extends CustomRelic
         else
             super.obtain();
         updateDescription();
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return AbstractDungeon.player.hasRelic(BrassGoblet.ID);
     }
 
     public void updateDescription()

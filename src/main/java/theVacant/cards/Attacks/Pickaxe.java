@@ -50,7 +50,7 @@ public class Pickaxe extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         for(int i = 0; i < magicNumber; i++)
-            addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         addToBot(new ChipOrbAction(1));
     }
 

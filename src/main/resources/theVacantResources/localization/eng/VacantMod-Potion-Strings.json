@@ -10,8 +10,8 @@
         "theVacant:MiningPotion":{
                 "NAME": "Mining Potion",
                 "DESCRIPTIONS": [
-                        "Choose 1 of 3 random #yGems to #yMine.",
-                        "Choose 1 of 3 random #yGems to #yMine twice."
+                        "#yMine a size 2 #yRuby and a size 2 #ySapphire.",
+                        "#yMine 2 size 2 #yRubies and a size 2 #ySapphires."
                 ]
         }
 }

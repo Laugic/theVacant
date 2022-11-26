@@ -4,11 +4,15 @@ import basemod.BaseMod;
 import basemod.helpers.BaseModCardTags;
 import basemod.helpers.CardTags;
 import basemod.helpers.TooltipInfo;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
+import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
@@ -52,6 +56,8 @@ public class VoidForm extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new VFXAction(player, new BorderFlashEffect(new Color(.5f, 0, .5f, .5f)), 0.2F, true));
+        addToBot(new VFXAction(player, new VerticalAuraEffect(new Color(.5f, 0, .5f, .5f), player.hb.cX, player.hb.cY), 0.25F));
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
         addToBot(new ApplyPowerAction(player, player, new GloomPower(player, player, magicNumber), magicNumber));
 //        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, 1), 1));

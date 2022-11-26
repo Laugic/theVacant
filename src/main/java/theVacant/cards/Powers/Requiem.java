@@ -1,5 +1,7 @@
 package theVacant.cards.Powers;
 
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +12,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.RequiemPower;
+import theVacant.vfx.HorizontalThrowVFX;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -38,6 +41,7 @@ public class Requiem extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        addToBot(new VFXAction(new HorizontalThrowVFX(player.hb.cX, player.hb.cY, Color.GOLD)));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RequiemPower(player, player, 2), 1));
     }
 

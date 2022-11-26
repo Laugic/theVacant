@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theVacant.VacantMod;
+import theVacant.actions.DelayedTombstoneAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractVacantCard;
 import theVacant.powers.GreaterMindUpgradedPower;
@@ -33,15 +34,18 @@ public class TombstoneRelic extends CustomRelic
 
     public TombstoneRelic()
     {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
     }
 
     @Override
     public void atBattleStart()
     {
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(9999));
-        grayscale = true;
+        AbstractDungeon.actionManager.addToBottom(new DelayedTombstoneAction(9999));
+    }
+
+    @Override
+    public boolean canSpawn() {
+        return (AbstractDungeon.player.hasRelic(BrassGoblet.ID) || AbstractDungeon.player.hasRelic(OverflowingGobletRelic.ID));
     }
 
     @Override

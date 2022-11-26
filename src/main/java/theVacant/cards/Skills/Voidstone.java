@@ -38,7 +38,7 @@ public class Voidstone extends AbstractDynamicCard {
     public Voidstone()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 6;
+        block = baseBlock = 3;
         this.exhaust = true;
         VoidboundModifier.Enhance(this, 1);
     }

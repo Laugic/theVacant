@@ -16,37 +16,54 @@ import java.util.ArrayList;
 
 public class SpelunkAction extends AbstractGameAction
 {
+    ArrayList<AbstractCard> gemChoices = new ArrayList<>();
+//    RubyOption rubyOption;
+//    SapphireOption sapphireOption;
+//    AmethystOption amethystOption;
+//    EmeraldOption emeraldOption;
+//    OpalOption opalOption;
+//    OnyxOption onyxOption;
+//    TopazOption topazOption;
+//    DiamondOption diamondOption;
+
     public SpelunkAction(int numOptions)
     {
         this.amount = numOptions;
+//        rubyOption = new RubyOption();
+//        sapphireOption = new SapphireOption();
+//        amethystOption= new AmethystOption();
+//        emeraldOption = new EmeraldOption();
+//        opalOption = new OpalOption();
+//        onyxOption = new OnyxOption();
+//        topazOption = new TopazOption();
+//        diamondOption = new DiamondOption();
     }
 
     public void update()
     {
-        ArrayList<AbstractCard> gemChoices = new ArrayList<>();
-        for (int i = 0; i < amount; ++i)
-            gemChoices.add(MineNewGem());
-        addToBot(new ChooseOneAction(gemChoices));
+//        for (int i = 0; i < amount; ++i)
+//            gemChoices.add(MineNewGem());
+//        addToBot(new ChooseOneAction(gemChoices));
         isDone = true;
     }
 
-    private AbstractDynamicCard MineNewGem()
-    {
-        int rand = AbstractDungeon.cardRandomRng.random(46);
-        if(rand < 10)
-            return new RubyOption(AbstractDungeon.miscRng.random(3,6));
-        if(rand < 20)
-            return new SapphireOption(AbstractDungeon.miscRng.random(3,6));
-        if(rand < 25)
-            return new OpalOption(AbstractDungeon.miscRng.random(2,3));
-        if(rand < 30)
-            return new EmeraldOption(AbstractDungeon.miscRng.random(2,3));
-        if(rand < 35)
-            return new OnyxOption(AbstractDungeon.miscRng.random(2,3));
-        if(rand < 40)
-            return new AmethystOption(AbstractDungeon.miscRng.random(3, 6));
-        if(rand < 45)
-            return new TopazOption(AbstractDungeon.miscRng.random(2, 3));
-        return new DiamondOption(AbstractDungeon.miscRng.random(1,3));
-    }
+//    private AbstractDynamicCard MineNewGem()
+//    {
+//        int rand = AbstractDungeon.cardRandomRng.random(20);
+//        if(rand < 4 && !gemChoices.contains(rubyOption))
+//            return rubyOption;
+//        if(rand < 8 && !gemChoices.contains(sapphireOption))
+//            return sapphireOption;
+//        if(rand < 12 && !gemChoices.contains(amethystOption))
+//            return amethystOption;
+//        if(rand < 14 && !gemChoices.contains(emeraldOption))
+//            return emeraldOption;
+//        if(rand < 16 && !gemChoices.contains(onyxOption))
+//            return onyxOption;
+//        if(rand < 18 && !gemChoices.contains(opalOption))
+//            return opalOption;
+//        if(rand < 19 && !gemChoices.contains(topazOption))
+//            return topazOption;
+//        return diamondOption;
+//    }
 }

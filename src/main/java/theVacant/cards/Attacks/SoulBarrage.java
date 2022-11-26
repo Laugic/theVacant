@@ -1,5 +1,6 @@
 package theVacant.cards.Attacks;
 
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.SoulBarrageAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 
@@ -42,8 +44,9 @@ public class SoulBarrage extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        for(int i = 0; i < magicNumber; i++)
-            addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+//        for(int i = 0; i < magicNumber; i++)
+//            addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new SoulBarrageAction(magicNumber, monster, new DamageInfo(player, damage, damageTypeForTurn), Color.CYAN));
     }
 
     @Override

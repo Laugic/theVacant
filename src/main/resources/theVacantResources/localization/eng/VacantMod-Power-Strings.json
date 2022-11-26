@@ -17,7 +17,7 @@
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
-    "DESCRIPTIONS": ["Cards that cost less than #b", " #yRicochet."]
+    "DESCRIPTIONS": ["Cards that cost #b", " or less #yRicochet."]
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",

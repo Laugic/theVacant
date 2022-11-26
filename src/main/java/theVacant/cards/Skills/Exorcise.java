@@ -1,29 +1,23 @@
 package theVacant.cards.Skills;
 
-import basemod.BaseMod;
-import basemod.helpers.TooltipInfo;
-import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
+import com.megacrit.cardcrawl.vfx.ShineSparkleEffect;
+import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import theVacant.VacantMod;
-import theVacant.actions.SyphonAction;
-import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.powers.VoidPower;
-import theVacant.util.KeywordManager;
-
-import java.util.ArrayList;
-import java.util.List;
+import theVacant.util.TextureLoader;
+import theVacant.vfx.ParticleEffect;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -42,6 +36,7 @@ public class Exorcise extends AbstractDynamicCard
 
 
     private static final int COST = 1;
+    private static Texture crossTexture =  TextureLoader.getTexture("theVacantResources/images/vfx/Cross.png");
 
     public Exorcise()
     {
@@ -52,13 +47,20 @@ public class Exorcise extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
+        boolean hadDebuff = false, inflictedDebuff = false;
         for(AbstractPower power: player.powers)
         {
             if(power.type.equals(AbstractPower.PowerType.DEBUFF))
             {
+                hadDebuff = true;
                 addToBot(new RemoveSpecificPowerAction(player, player, power));
                 if(upgraded && !VacantMod.IMMUNE_POWERS.contains(power.ID))
                 {
+                    if(!inflictedDebuff)
+                    {
+                        inflictedDebuff = true;
+                        AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal), 0.1F));
+                    }
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
                     {
                         power.owner = mo;
@@ -66,6 +68,16 @@ public class Exorcise extends AbstractDynamicCard
                     }
                 }
             }
+        }
+        if(hadDebuff)
+        {
+            for(int i = 0; i < 20; ++i)
+                AbstractDungeon.effectsQueue.add(new ShineSparkleEffect(player.hb.x + (float)Math.random() * player.hb.width, player.hb.y + (float)Math.random() * player.hb.height));
+
+            ParticleEffect cross = new ParticleEffect(player.hb.cX, player.hb.cY, crossTexture, 1, .5f, false, .3f);
+            cross.scaleMult = .5f;
+            cross.yVel = 60;
+            AbstractDungeon.effectsQueue.add(cross);
         }
     }
 
