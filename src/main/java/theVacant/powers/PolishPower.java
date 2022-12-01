@@ -49,7 +49,6 @@ public class PolishPower extends AbstractPower implements CloneablePowerInterfac
     @Override
     public void atEndOfTurn(boolean isPlayer)
     {
-        flash();
         int orbNum = 0;
         for (AbstractOrb orb: AbstractDungeon.player.orbs) {
             if(orb instanceof AbstractGemOrb && orbNum < amount)
@@ -58,6 +57,8 @@ public class PolishPower extends AbstractPower implements CloneablePowerInterfac
                 orbNum++;
             }
         }
+        if(orbNum > 0)
+            flash();
     }
 
     @Override

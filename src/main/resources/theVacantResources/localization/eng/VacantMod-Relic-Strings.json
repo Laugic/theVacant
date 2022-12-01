@@ -52,7 +52,7 @@
     "NAME": "Polishing Rag",
     "FLAVOR": "Shiny gems are more powerful, everyone knows this.",
     "DESCRIPTIONS": [
-      "At the end of your turn, increase the size of your next #b3 #ythevacant:Gems."
+      "At the end of your turn, increase the size of your #b3 rightmost #ythevacant:Gems."
     ]
   },
   "theVacant:BrassGoblet": {

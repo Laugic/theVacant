@@ -26,7 +26,11 @@ Fixed that Steal Soul didn't Exhaust
 Fixed Tombstone's interaction with Bag of Preparation
 Overflowing Goblet now only appears if you have The Goblet
 Removed Spelunking mechanic.
+Some slight wording changes
 Added lots of VFX and SFX!
+-
+1.0.1
+Updated Korean translation
 -----
 0.23.1
 Voidbound now affects attacks that deal 0 base damage

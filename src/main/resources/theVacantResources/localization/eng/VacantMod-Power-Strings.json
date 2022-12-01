@@ -45,7 +45,7 @@
   },
   "theVacant:PolishPower": {
     "NAME": "Polishing",
-    "DESCRIPTIONS": ["At the end of your turn, increase the size of your next #yGem.", "At the end of your turn, increase the size of your next #b", " #yGems."]
+    "DESCRIPTIONS": ["At the end of your turn, increase the size of your rightmost #yGem.", "At the end of your turn, increase the size of your rightmost #b", " #yGems."]
   },
   "theVacant:VoidPower": {
     "NAME": "Void",

@@ -119,7 +119,7 @@
   },
   "theVacant:EmeraldSplash": {
     "NAME": "에메랄드 스플래쉬",
-    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL !M! 스택의 thevacant:에메랄드 를 1개 thevacant:채광 합니다. NL 소멸."
+    "DESCRIPTION": "적 전체에게 피해를 !D! 줍니다. NL !M! 스택의 thevacant:에메랄드 를 1개 thevacant:채광 합니다."
   },
   "theVacant:Threaten": {
     "NAME": "위협",
@@ -262,7 +262,7 @@
   },
   "theVacant:SapphireStrike": {
     "NAME": "사파이어 타격",
-    "DESCRIPTION": "피해를 !D! 줍니다. !M! 스택의 thevacant:사파이어 를 1개 thevacant:채광 합니다. NL 소멸."
+    "DESCRIPTION": "피해를 !D! 줍니다. !M! 스택의 thevacant:사파이어 를 1개 thevacant:채광 합니다."
   },
   "theVacant:Doomed": {
     "NAME": "파멸 예고",
@@ -290,7 +290,7 @@
   },
   "theVacant:Enchant": {
     "NAME": "인챈트",
-    "DESCRIPTION": "가장 오른쪽에 있는 thevacant:보석 을 제거합니다. NL 이번 전투동안, 이 효과로 제거한 thevacant:보석 의 효과를 가진 카드를 얻습니다. NL 소멸.",
+    "DESCRIPTION": "가장 오른쪽에 있는 thevacant:보석 을 제거합니다. NL 이번 전투동안, 이 효과로 제거한 thevacant:보석 의 효과를 가진 카드를 얻습니다.",
     "EXTENDED_DESCRIPTION": [
       " with ",
       " (",
@@ -445,7 +445,8 @@
   },
   "theVacant:Treasure": {
     "NAME": "보물",
-    "DESCRIPTION": "!M! 스택의 thevacant:에메랄드 1개와 !M! 스택의 thevacant:오팔 1개를 thevacant:채광 합니다."
+    "DESCRIPTION": "!M! 스택의 thevacant:에메랄드 와 !M! 스택의 thevacant:오팔 을 thevacant:채광 합니다. NL 소멸.",
+    "UPGRADE_DESCRIPTION": "!M! 스택의 thevacant:에메랄드 와 !M! 스택의 thevacant:오팔 을 thevacant:채광 합니다."
   },
   "theVacant:Soothe": {
     "NAME": "진정하기",
@@ -483,7 +484,7 @@
   },
   "theVacant:Spelunk": {
     "NAME": "동굴 탐험",
-    "DESCRIPTION": "방어도를 !B! 얻습니다. NL !M! 개의 thevacant:보석 중 하나를 선택하여 thevacant:채광 합니다."
+    "DESCRIPTION": "방어도를 !B! 얻습니다. NL 이 카드가 thevacant:제분 되거나 사용되면, !M! 스택의 thevacant:사파이어 를 thevacant:채광 합니다."
   },
   "theVacant:OpalShine": {
     "NAME": "광택의 오팔",

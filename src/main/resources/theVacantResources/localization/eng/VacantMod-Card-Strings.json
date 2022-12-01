@@ -163,7 +163,7 @@
   },
   "theVacant:BurdenBreak": {
     "NAME": "Burden Break",
-    "DESCRIPTION": "Whenever you take damage or gain a debuff, gain !M! Vigor."
+    "DESCRIPTION": "Whenever you take unblocked damage or gain a debuff, gain !M! Vigor."
   },
   "theVacant:FinalCountdown": {
     "NAME": "Final Countdown",
