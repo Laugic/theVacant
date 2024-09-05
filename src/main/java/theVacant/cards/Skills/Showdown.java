@@ -58,7 +58,7 @@ public class Showdown extends AbstractDynamicCard
                 addToBot(new ApplyPowerAction(mo, player, new RemoveDoomPower(mo, player, magicNumber)));
         }
 
-        addToBot(new VacantMillAction(CardType.ATTACK));
+        addToBot(new VacantMillAction(CardType.ATTACK, this));
     }
 
     @Override

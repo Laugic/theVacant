@@ -31,7 +31,6 @@ public class VacantMillAction extends AbstractGameAction
     private int millNum;
     private int postReturnAmount = 0;
     private AbstractCard ignoredCard;
-    private AbstractCard returnIgnoredCard;
     private boolean gainTemperanceForMill = false;
     private AbstractCard.CardType millUntil = null, ricochetType = null;
 
@@ -90,14 +89,15 @@ public class VacantMillAction extends AbstractGameAction
         duration = startingDuration;
         gainTemperanceForMill = temperance;
         this.postReturnAmount = postReturnAmount;
-        returnIgnoredCard = returnToIgnore;
+        ignoredCard = returnToIgnore;
         actions = new ArrayList<>();
     }
 
-    public VacantMillAction(AbstractCard.CardType millUntil){
+    public VacantMillAction(AbstractCard.CardType millUntil, AbstractCard cardToIgnore){
         this.millUntil = millUntil;
         amount = 99;
         actions = new ArrayList<>();
+        ignoredCard = cardToIgnore;
     }
 
 
@@ -182,7 +182,7 @@ public class VacantMillAction extends AbstractGameAction
         }
         addToBot(new MillWaitAction());
         if(postReturnAmount + bonusReturn > 0)
-            addToTop(new ReturnAction(postReturnAmount + bonusReturn, returnIgnoredCard));
+            addToBot(new ReturnAction(postReturnAmount + bonusReturn, ignoredCard));
     }
 
     private void ProcessPostMill(AbstractCard card, boolean ricocheted)
