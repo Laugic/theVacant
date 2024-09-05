@@ -47,7 +47,7 @@ public class ReturnAction extends AbstractGameAction
                 if(card != null)
                 {
                     AbstractDungeon.player.discardPile.removeCard(card);
-                    addToBot(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand, AbstractDungeon.player.discardPile), Settings.ACTION_DUR_XFAST, true));
+                    addToTop(new VFXAction(AbstractDungeon.player, new ShowCardAndMillEffect(card, AbstractDungeon.player.hand, AbstractDungeon.player.discardPile), Settings.ACTION_DUR_XFAST, true));
                 }
                 amount--;
             }

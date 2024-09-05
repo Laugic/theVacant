@@ -21,6 +21,8 @@ import theVacant.powers.*;
 import theVacant.relics.LocketRelic;
 import theVacant.vfx.ShowCardAndMillEffect;
 
+import java.util.ArrayList;
+
 public class VacantMillAction extends AbstractGameAction
 {
     private float startingDuration;
@@ -32,6 +34,8 @@ public class VacantMillAction extends AbstractGameAction
     private AbstractCard returnIgnoredCard;
     private boolean gainTemperanceForMill = false;
     private AbstractCard.CardType millUntil = null, ricochetType = null;
+
+    private ArrayList<AbstractGameAction> actions;
 
     private final SFXAction waka = new SFXAction("theVacant:waka");
 
@@ -45,6 +49,7 @@ public class VacantMillAction extends AbstractGameAction
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
         ignoredCard = null;
+        actions = new ArrayList<>();
     }
 
     public VacantMillAction(int numCards, AbstractCard cardToIgnore)
@@ -57,6 +62,7 @@ public class VacantMillAction extends AbstractGameAction
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
         ignoredCard = cardToIgnore;
+        actions = new ArrayList<>();
     }
 
     public VacantMillAction(int numCards, AbstractCard.CardType ricochetType, AbstractCard cardToIgnore)
@@ -70,6 +76,7 @@ public class VacantMillAction extends AbstractGameAction
         duration = startingDuration;
         ignoredCard = cardToIgnore;
         this.ricochetType = ricochetType;
+        actions = new ArrayList<>();
     }
 
     public VacantMillAction(int numCards, boolean temperance, int postReturnAmount, AbstractCard returnToIgnore)
@@ -84,11 +91,13 @@ public class VacantMillAction extends AbstractGameAction
         gainTemperanceForMill = temperance;
         this.postReturnAmount = postReturnAmount;
         returnIgnoredCard = returnToIgnore;
+        actions = new ArrayList<>();
     }
 
     public VacantMillAction(AbstractCard.CardType millUntil){
         this.millUntil = millUntil;
         amount = 99;
+        actions = new ArrayList<>();
     }
 
 
@@ -171,25 +180,9 @@ public class VacantMillAction extends AbstractGameAction
             bonusReturn += AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
             AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
         }
+        addToBot(new MillWaitAction());
         if(postReturnAmount + bonusReturn > 0)
             addToTop(new ReturnAction(postReturnAmount + bonusReturn, returnIgnoredCard));
-    }
-
-    private void GetBonusVoid()
-    {
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && player.hasPower(VacancyRune.POWER_ID))
-            voidAmount += player.getPower(VacancyRune.POWER_ID).amount;
-    }
-
-    private void GainVoid()
-    {
-        AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && voidAmount > 0)
-        {
-            addToTop(new VFXAction(player, new InflameEffect(player), .1F));
-            player.addPower(new VoidPower(player, player, voidAmount));
-        }
     }
 
     private void ProcessPostMill(AbstractCard card, boolean ricocheted)
