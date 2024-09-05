@@ -27,14 +27,14 @@ public class Jab extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 5;
-    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int DAMAGE = 4;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public Jab()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        rebound = true;
+        ricochet = true;
         shuffleBackIntoDrawPile = true;
     }
 

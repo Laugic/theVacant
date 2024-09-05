@@ -82,7 +82,7 @@ public class ShroudPower extends AbstractPower implements CloneablePowerInterfac
             return damage * 0.5F;
         return damage;
     }
-
+/*
     @Override
     public int onAttacked(DamageInfo info, int damageAmount)
     {
@@ -93,7 +93,7 @@ public class ShroudPower extends AbstractPower implements CloneablePowerInterfac
             return damageAmount / 2;
         }
         return damageAmount;
-    }
+    }*/
 
     @Override
     public void updateDescription()

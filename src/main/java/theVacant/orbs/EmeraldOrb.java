@@ -22,6 +22,12 @@ public class EmeraldOrb extends AbstractGemOrb
     public EmeraldOrb(int size)
     {
         super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("EmeraldOrb.png"));
+        passiveAmount = evokeAmount = 1;
+    }
+
+    @Override
+    public int getAmount() {
+        return 1;
     }
 
     @Override

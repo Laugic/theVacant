@@ -46,9 +46,7 @@ public class EmptyShield extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(1);
-            upgradedCost = true;
-            rebound = true;
+            ricochet = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

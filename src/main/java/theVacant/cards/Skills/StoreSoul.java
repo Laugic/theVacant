@@ -1,15 +1,12 @@
 package theVacant.cards.Skills;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theVacant.VacantMod;
-import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.relics.BrassGoblet;
@@ -47,11 +44,11 @@ public class StoreSoul extends AbstractDynamicCard
         for (AbstractRelic relic : player.relics)
         {
             if(relic instanceof  BrassGoblet)
-                ((BrassGoblet)relic).IncreaseVoid(1);
+                ((BrassGoblet)relic).IncreaseCounter(1);
             if(relic instanceof OverflowingGobletRelic)
             {
                 relic.counter++;
-                ((OverflowingGobletRelic)relic).updateDescription();
+                ((OverflowingGobletRelic)relic).getUpdatedDescription();
             }
         }
     }

@@ -1,6 +1,6 @@
 package theVacant.cards.Skills;
 
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -10,6 +10,7 @@ import theVacant.VacantMod;
 import theVacant.actions.DesperationAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DesperationPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -30,13 +31,16 @@ public class Desperation extends AbstractDynamicCard
     public Desperation()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        checkWounded = true;
+        magicNumber = baseMagicNumber = 2;
+        ricochet = true;
+        exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new DesperationAction(getWounded()));
+        addToBot(new ApplyPowerAction(player, player, new DesperationPower(player, player, magicNumber), magicNumber));
+        //AbstractDungeon.actionManager.addToBottom(new DesperationAction(getHollow()));
     }
 
     @Override
@@ -45,7 +49,7 @@ public class Desperation extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

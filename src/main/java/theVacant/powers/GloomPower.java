@@ -3,16 +3,11 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
-import theVacant.actions.VacantMillAction;
-import theVacant.cards.AbstractVacantCard;
 import theVacant.util.TextureLoader;
 
 public class GloomPower extends AbstractPower implements CloneablePowerInterface
@@ -24,8 +19,10 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/void_form_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/void_form_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/gloom84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/gloom32.png");
+
+    public int powersThisTurn;
 
     public GloomPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
@@ -39,6 +36,8 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
         type = PowerType.BUFF;
         isTurnBased = false;
 
+        powersThisTurn = 0;
+
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
@@ -46,18 +45,17 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
     }
 
     @Override
-    public void atStartOfTurnPostDraw()
-    {
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
-        AbstractDungeon.player.hand.applyPowers();
-        updateDescription();
+    public void atStartOfTurn() {
+        powersThisTurn = 0;
     }
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if(amount == 1)
+            description = DESCRIPTIONS[0];
+        else
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
     @Override

@@ -38,8 +38,7 @@ public class ForgeSoul extends AbstractDynamicCard
     public ForgeSoul()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 1;
-        isInnate = true;
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
@@ -54,7 +53,7 @@ public class ForgeSoul extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

@@ -1,17 +1,29 @@
 package theVacant.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.random.Random;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
+import theVacant.VacantMod;
+import theVacant.cards.Skills.Memoria;
 import theVacant.cards.Special.*;
 import theVacant.orbs.*;
 import theVacant.powers.InvisibleGemOrbPower;
+import theVacant.powers.ReachThroughPower;
+import theVacant.relics.OnMineRelic;
 
 public class MineGemAction extends AbstractGameAction
 {
+    private UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(VacantMod.getModID() + ":MaxGems");
+
     private AbstractGemOrb gem;
     boolean chipOrb = false;
     int maxSize = -1;
@@ -47,10 +59,22 @@ public class MineGemAction extends AbstractGameAction
         if(maxSize > -1 && gem.passiveAmount > maxSize)
             gem.reduceSize(gem.passiveAmount - maxSize);
 
+        if(AbstractDungeon.player.orbs.size() >= 10)
+        {
+            isDone = true;
+            addToTop(new TalkAction(true, uiStrings.TEXT[0], 2, 2));
+            return;
+        }
+
         addToTop(new ChannelAction(gem, false));
 
         if(!AbstractDungeon.player.hasPower(InvisibleGemOrbPower.POWER_ID))
             AbstractDungeon.player.powers.add(new InvisibleGemOrbPower(AbstractDungeon.player, AbstractDungeon.player, 1));
+
+        if(AbstractDungeon.player.hasPower(ReachThroughPower.POWER_ID)){
+            for (int i = 0; i < AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID).amount; i++)
+                gem.triggerPassive(gem.getAmount());
+        }
 
         AbstractDungeon.player.increaseMaxOrbSlots(1, false);
         Random rand = new Random();
@@ -60,6 +84,12 @@ public class MineGemAction extends AbstractGameAction
             addToTop(new SFXAction("theVacant:gemSpawn2"));
         if(chipOrb)
             addToBot(new ChipOrbAction(gem, 1));
+
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
+            if(relic instanceof OnMineRelic)
+                ((OnMineRelic)relic).onMine(gem);
+        }
+
         isDone = true;
     }
 

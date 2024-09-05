@@ -73,7 +73,7 @@ public class Crunch extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            this.rebound = true;
+            this.ricochet = true;
             upgradeDamage(UPGRADE_PLUS_DMG);
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();

@@ -1,5 +1,7 @@
 package theVacant.cards.Skills;
 
+import basemod.helpers.CardModifierManager;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -16,18 +18,24 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.ArtifactPower;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.ExplosionSmallEffect;
+import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.actions.ChipOrbAction;
 import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Modifiers.RicochetMod;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.AbstractGemOrb;
 import theVacant.orbs.OnyxOrb;
 import theVacant.orbs.RubyOrb;
+import theVacant.patches.MultiPreviewFieldPatches;
+import theVacant.powers.DoomPower;
+import theVacant.powers.RemoveDoomPower;
 
 import java.util.Iterator;
 
@@ -59,10 +67,15 @@ public class AwMan extends AbstractDynamicCard
         AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:awman"));
 
         addToBot(new VFXAction(new ExplosionSmallEffect(player.hb.cX, player.hb.cY), 0.1F));
-        addToBot(new ApplyPowerAction(player, player, new FrailPower(player, FRAIL, false), FRAIL));
+        //addToBot(new ApplyPowerAction(player, player, new FrailPower(player, FRAIL, false), FRAIL));
+
+        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, 2)));
+        if(!player.hasPower(ArtifactPower.POWER_ID))
+            addToBot(new ApplyPowerAction(player, player, new RemoveDoomPower(player, player, 2)));
 
         addToBot(new MineGemAction(new RubyOrb(magicNumber)));
         addToBot(new MineGemAction(new OnyxOrb(magicNumber)));
+
     }
 
     @Override

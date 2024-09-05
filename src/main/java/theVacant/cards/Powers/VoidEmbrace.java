@@ -3,6 +3,9 @@ package theVacant.cards.Powers;
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -11,6 +14,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.VoidEmbracePower;
+import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
@@ -40,19 +44,20 @@ public class VoidEmbrace extends AbstractDynamicCard
     public VoidEmbrace()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 1;
-        isUnnate = true;
+        magicNumber = baseMagicNumber = 3;
+        cardsToPreview = new VoidCard();
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        //addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(player, player, new VoidEmbracePower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
+        addToBot(new MakeTempCardInDiscardAction(new VoidCard(), 1));
+        //addToBot(new ApplyPowerAction(player, player, new VoidEmbracePower(player, player, magicNumber), magicNumber));
     }
 
     @Override
-    public List<TooltipInfo> getCustomTooltips()
+    public List<TooltipInfo> getCustomTooltipsTop()
     {
         if(VoidTooltip == null)
         {
@@ -68,9 +73,7 @@ public class VoidEmbrace extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isUnnate = false;
-            isInnate = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

@@ -22,13 +22,13 @@ public class DelayedTombstoneAction extends AbstractGameAction
     public void update()
     {
         addToBot(new VacantMillAction(amount));
-
+/*
         if(AbstractDungeon.player.hasRelic(BrassGoblet.ID))
             AbstractDungeon.player.getRelic(BrassGoblet.ID).atBattleStart();
 
         if(AbstractDungeon.player.hasRelic(OverflowingGobletRelic.ID))
             AbstractDungeon.player.getRelic(OverflowingGobletRelic.ID).atBattleStart();
-
+*/
         if(AbstractDungeon.player.hasRelic(TombstoneRelic.ID)){
             AbstractDungeon.player.getRelic(TombstoneRelic.ID).flash();
             AbstractDungeon.player.getRelic(TombstoneRelic.ID).grayscale = true;

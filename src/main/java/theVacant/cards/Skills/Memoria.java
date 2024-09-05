@@ -3,10 +3,11 @@ package theVacant.cards.Skills;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.AddCopyOfLastExhaustedCardToHandAction;
+import theVacant.actions.PlayDiscardForFreeAndExhaustAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.powers.MemoriaPower;
@@ -18,7 +19,7 @@ public class Memoria extends AbstractDynamicCard
 
     public static final String ID = VacantMod.makeID(Memoria.class.getSimpleName());
     public static final String IMG = makeCardPath("Memoria.png");
-    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
+    public static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
@@ -31,15 +32,36 @@ public class Memoria extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
-        rebound = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new MemoriaPower(player, player, this.magicNumber), this.magicNumber));
+        //addToBot(new PlayDiscardForFreeAndExhaustAction(1));
+        addToBot(new ApplyPowerAction(player, player, new MemoriaPower(player, player, magicNumber), magicNumber));
     }
-
+/*
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if(getLastExhaustedCard() != null)
+            cardsToPreview = getLastExhaustedCard().makeStatEquivalentCopy();
+    }
+    */
+/*
+    public static AbstractCard getLastExhaustedCard(){
+        ArrayList<AbstractCard> exhaustedCards = new ArrayList<>();
+        for (AbstractCard card: AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if(AbstractDungeon.player.exhaustPile.contains(card))
+                exhaustedCards.add(card);
+        }
+        Collections.reverse(exhaustedCards);
+        if(exhaustedCards.size() > 0)
+            return exhaustedCards.get(0);
+        else
+            return null;
+    }
+*/
     @Override
     public void upgrade()
     {
@@ -47,8 +69,6 @@ public class Memoria extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(1);
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
-            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

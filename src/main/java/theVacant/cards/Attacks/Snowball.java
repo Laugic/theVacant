@@ -35,7 +35,7 @@ public class Snowball extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
         postMillAction = true;
-        rebound = true;
+        ricochet = true;
     }
 
 
@@ -44,7 +44,7 @@ public class Snowball extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = dmgMult;
         postMillAction = true;
-        rebound = true;
+        ricochet = true;
     }
 
     @Override

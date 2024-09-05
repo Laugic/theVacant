@@ -12,10 +12,7 @@ import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
 import theVacant.orbs.OnyxOrb;
-import theVacant.powers.AntifactPower;
-import theVacant.powers.GloomPower;
-import theVacant.powers.PolishPower;
-import theVacant.powers.VoidPower;
+import theVacant.powers.*;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
@@ -33,25 +30,25 @@ public class ReachThrough extends AbstractDynamicCard
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static ArrayList<TooltipInfo> Tooltip;
 
-    private static final int COST = 1, ANTIFACT = 2;
+    private static final int COST = 2, ANTIFACT = 2;
 
     public ReachThrough()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new ApplyPowerAction(player, player, new PolishPower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new ReachThroughPower(player, player, magicNumber), magicNumber));
         addToBot(new ApplyPowerAction(player, player, new AntifactPower(player, player, ANTIFACT), ANTIFACT));
     }
 
@@ -61,7 +58,7 @@ public class ReachThrough extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }

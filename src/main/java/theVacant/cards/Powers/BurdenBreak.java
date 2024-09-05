@@ -45,8 +45,7 @@ public class BurdenBreak extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

@@ -1,9 +1,12 @@
 package theVacant.actions;
 
 import basemod.BaseMod;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,12 +14,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Modifiers.RicochetMod;
+import theVacant.cards.Modifiers.SoulMod;
 import theVacant.characters.TheVacant;
 import theVacant.powers.*;
 import theVacant.relics.LocketRelic;
 import theVacant.vfx.ShowCardAndMillEffect;
 
-public class VacantMillAction  extends AbstractGameAction
+public class VacantMillAction extends AbstractGameAction
 {
     private float startingDuration;
     private int startAmount = 0;
@@ -25,7 +30,8 @@ public class VacantMillAction  extends AbstractGameAction
     private int postReturnAmount = 0;
     private AbstractCard ignoredCard;
     private AbstractCard returnIgnoredCard;
-    private boolean gainBlockForMill = false;
+    private boolean gainTemperanceForMill = false;
+    private AbstractCard.CardType millUntil = null, ricochetType = null;
 
     private final SFXAction waka = new SFXAction("theVacant:waka");
 
@@ -38,6 +44,7 @@ public class VacantMillAction  extends AbstractGameAction
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
+        ignoredCard = null;
     }
 
     public VacantMillAction(int numCards, AbstractCard cardToIgnore)
@@ -52,7 +59,7 @@ public class VacantMillAction  extends AbstractGameAction
         ignoredCard = cardToIgnore;
     }
 
-    public VacantMillAction(int numCards, boolean block, int postReturnAmount, AbstractCard returnToIgnore)
+    public VacantMillAction(int numCards, AbstractCard.CardType ricochetType, AbstractCard cardToIgnore)
     {
         amount = numCards;
         voidAmount = 0;
@@ -61,25 +68,40 @@ public class VacantMillAction  extends AbstractGameAction
         actionType = ActionType.CARD_MANIPULATION;
         startingDuration = Settings.ACTION_DUR_FAST;
         duration = startingDuration;
-        gainBlockForMill = block;
+        ignoredCard = cardToIgnore;
+        this.ricochetType = ricochetType;
+    }
+
+    public VacantMillAction(int numCards, boolean temperance, int postReturnAmount, AbstractCard returnToIgnore)
+    {
+        amount = numCards;
+        voidAmount = 0;
+        millNum = 0;
+        startAmount = amount;
+        actionType = ActionType.CARD_MANIPULATION;
+        startingDuration = Settings.ACTION_DUR_FAST;
+        duration = startingDuration;
+        gainTemperanceForMill = temperance;
         this.postReturnAmount = postReturnAmount;
         returnIgnoredCard = returnToIgnore;
     }
 
+    public VacantMillAction(AbstractCard.CardType millUntil){
+        this.millUntil = millUntil;
+        amount = 99;
+    }
+
+
     public void update()
     {
-        if(amount > 0)
+        PreMill();
+        while (amount > 0 && AbstractDungeon.player.drawPile.size() > 0)
         {
-            PreMill();
-            while (amount > 0)
-            {
-                if (AbstractDungeon.player.drawPile.size() > 0)
-                    ProcessMill();
-                amount--;
-            }
-            PostMill();
-            isDone = true;
+            ProcessMill();
+            amount--;
         }
+        PostMill();
+        isDone = true;
     }
 
     private void PreMill()
@@ -91,17 +113,19 @@ public class VacantMillAction  extends AbstractGameAction
     {
         AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
         millNum++;
-        if(card != null && (ignoredCard == null || (!card.equals(ignoredCard))))
-        {
-            CheckRebound(card);
-            return;
-        }
+        if(card != null && (!card.equals(ignoredCard)))
+            CheckRicochet(card);
     }
 
-    private void CheckRebound(AbstractCard card)
+    private void CheckRicochet(AbstractCard card)
     {
-        if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).rebound) || GetSpecialRebound(card))
-            Rebound(card);
+        if((card instanceof AbstractDynamicCard && ((AbstractDynamicCard)card).ricochet) || GetSpecialRicochet(card))
+            Ricochet(card);
+        else if(millUntil != null && card.type == millUntil)
+        {
+            Ricochet(card);
+            amount = 0;
+        }
         else
         {
             MoveToDiscard(card);
@@ -110,7 +134,7 @@ public class VacantMillAction  extends AbstractGameAction
         }
     }
 
-    private void Rebound(AbstractCard card)
+    private void Ricochet(AbstractCard card)
     {
         if(AbstractDungeon.player.hand.size() >= BaseMod.MAX_HAND_SIZE)
         {
@@ -140,10 +164,15 @@ public class VacantMillAction  extends AbstractGameAction
     private void PostMill()
     {
         AbstractDungeon.player.hand.applyPowers();
-        if(gainBlockForMill && millNum > 0)
-            addToBot(new GainBlockAction(AbstractDungeon.player, millNum));
-        if(postReturnAmount > 0)
-            addToBot(new ReturnAction(postReturnAmount, returnIgnoredCard));
+        if(gainTemperanceForMill && millNum > 0)
+            addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TemperancePower(AbstractDungeon.player, AbstractDungeon.player, millNum)));
+        int bonusReturn = 0;
+        if(AbstractDungeon.player.hasPower(RunicThoughtsPower.POWER_ID)){
+            bonusReturn += AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
+            AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
+        }
+        if(postReturnAmount + bonusReturn > 0)
+            addToTop(new ReturnAction(postReturnAmount + bonusReturn, returnIgnoredCard));
     }
 
     private void GetBonusVoid()
@@ -163,7 +192,7 @@ public class VacantMillAction  extends AbstractGameAction
         }
     }
 
-    private void ProcessPostMill(AbstractCard card, boolean rebounded)
+    private void ProcessPostMill(AbstractCard card, boolean ricocheted)
     {
         PostMillCard(card);
         PostMillVoidGain();
@@ -185,6 +214,7 @@ public class VacantMillAction  extends AbstractGameAction
                         if(!AbstractDungeon.actionManager.actions.contains(waka))
                             AbstractDungeon.actionManager.addToBottom(waka);
                         player.getPower(CleanseSoulPower.POWER_ID).flash();
+                        addToBot(new ApplyPowerAction(player, player, new TemperancePower(player, player, player.getPower(CleanseSoulPower.POWER_ID).amount), player.getPower(CleanseSoulPower.POWER_ID).amount));
                     }
                 }
             }
@@ -192,10 +222,11 @@ public class VacantMillAction  extends AbstractGameAction
                 addToBot(new GainBlockAction(player, player.getPower(AquamarinePower.POWER_ID).amount));
             if(player instanceof TheVacant)
                 ((TheVacant)player).millsThisTurn++;
-            if(player.hasPower(ForgeSoulPower.POWER_ID) && card.canUpgrade())
+            if(player.hasPower(ForgeSoulPower.POWER_ID) && (card.baseDamage >=0 || card.baseBlock >= 0))
             {
-                for(int i = 0; i < player.getPower(ForgeSoulPower.POWER_ID).amount && card.canUpgrade(); i++)
-                    card.upgrade();
+//                for(int i = 0; i < player.getPower(ForgeSoulPower.POWER_ID).amount && card.canUpgrade(); i++)
+//                    card.upgrade();
+                CardModifierManager.addModifier(card, new SoulMod(player.getPower(ForgeSoulPower.POWER_ID).amount));
             }
         }
     }
@@ -207,17 +238,26 @@ public class VacantMillAction  extends AbstractGameAction
 
 
 
-    private boolean GetSpecialRebound(AbstractCard card)
+    private boolean GetSpecialRicochet(AbstractCard card)
     {
         AbstractPlayer player = AbstractDungeon.player;
-        if(player != null)
-        {
-            /*
-            if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.type == AbstractCard.CardType.POWER)
-                return true;
-*/
-            if(player.hasPower(RunicThoughtsPower.POWER_ID) && card.cost <= player.getPower(RunicThoughtsPower.POWER_ID).amount && card.cost != -2)
-                return true;
+        if(player.hasPower(GloomPower.POWER_ID) &&  ((GloomPower)player.getPower(GloomPower.POWER_ID)).powersThisTurn < player.getPower(GloomPower.POWER_ID).amount && card.type == AbstractCard.CardType.POWER){
+            ((GloomPower)player.getPower(GloomPower.POWER_ID)).powersThisTurn++;
+            player.getPower(GloomPower.POWER_ID).flash();
+            return true;
+        }
+        if(CardModifierManager.hasModifier(card, RicochetMod.ID))
+            return true;
+        if(card.type == ricochetType)
+            return true;
+        if(AbstractDungeon.player.hasRelic(LocketRelic.ID) && (LocketRelic.numMilled < LocketRelic.MAX_RICOCHET)){
+
+            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, AbstractDungeon.player.getRelic(LocketRelic.ID)));
+            AbstractDungeon.player.getRelic(LocketRelic.ID).flash();
+            LocketRelic.numMilled++;
+            if(LocketRelic.numMilled >= LocketRelic.MAX_RICOCHET)
+                AbstractDungeon.player.getRelic(LocketRelic.ID).grayscale = true;
+            return true;
         }
         return false;
     }

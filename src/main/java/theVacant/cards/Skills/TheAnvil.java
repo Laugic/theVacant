@@ -29,8 +29,8 @@ public class TheAnvil extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = -2;
-    private static final int DAMAGE = 24;
-    private static final int UPGRADE_PLUS_DMG = 8;
+    private static final int DAMAGE = 18;
+    private static final int UPGRADE_PLUS_DMG = 7;
 
     public TheAnvil()
     {

@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
-import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
@@ -39,6 +38,7 @@ public class Gloom extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 4;
+        ricochet = true;
     }
 
     @Override
@@ -47,6 +47,7 @@ public class Gloom extends AbstractDynamicCard
         addToBot(new VFXAction(player, new VerticalAuraEffect(Color.BLACK, player.hb.cX, player.hb.cY), 0.2F));
         addToBot(new VFXAction(player, new BorderFlashEffect(new Color(.5f, 0, .5f, 1)), 0.2F, true));
         addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new GloomPower(player, player, 1), 1));
     }
 
     @Override
@@ -56,7 +57,6 @@ public class Gloom extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(2);
-            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

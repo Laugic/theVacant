@@ -25,14 +25,14 @@ public class WearTheGoblet extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int BLOCK = 12;
+    private static final int BLOCK = 10;
     private static final int UPGRADE_PLUS_BLOCK = 4;
 
     public WearTheGoblet()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         block = baseBlock = BLOCK;
-        rebound = true;
+        ricochet = true;
         postMillAction = true;
     }
 

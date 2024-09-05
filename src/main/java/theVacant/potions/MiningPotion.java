@@ -12,8 +12,7 @@ import theVacant.VacantMod;
 import theVacant.actions.MineGemAction;
 import theVacant.actions.SpelunkAction;
 import theVacant.actions.VacantMillAction;
-import theVacant.orbs.RubyOrb;
-import theVacant.orbs.SapphireOrb;
+import theVacant.orbs.*;
 
 public class MiningPotion extends AbstractPotion
 {
@@ -36,15 +35,13 @@ public class MiningPotion extends AbstractPotion
     public void initializeData()
     {
         potency = getPotency();
-        if (AbstractDungeon.player == null || !AbstractDungeon.player.hasRelic("SacredBark"))
-            description = potionStrings.DESCRIPTIONS[0];
-        else
-            description = potionStrings.DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
         tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:mine"), BaseMod.getKeywordDescription("thevacant:mine")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:ruby"), BaseMod.getKeywordDescription("thevacant:ruby")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:sapphire"), BaseMod.getKeywordDescription("thevacant:sapphire")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:emerald"), BaseMod.getKeywordDescription("thevacant:emerald")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:opal"), BaseMod.getKeywordDescription("thevacant:opal")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:chip"), BaseMod.getKeywordDescription("thevacant:chip")));
     }
 
     @Override
@@ -52,14 +49,34 @@ public class MiningPotion extends AbstractPotion
     {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)
         {
-            for(int i = 0; i < potency; ++i)
-            {
-                addToBot(new MineGemAction(new RubyOrb(2)));
-                addToBot(new MineGemAction(new SapphireOrb(2)));
-            }
+            addToBot(new MineGemAction(new EmeraldOrb(potency), true));
+            addToBot(new MineGemAction(new OpalOrb(potency), true));
+            /*for(int i = 0; i < potency; ++i)
+                MineRandomGem();*/
         }
     }
+/*
+    private void MineRandomGem() {
+        int gemRoll = AbstractDungeon.cardRandomRng.random(90);
+        if(gemRoll < 15)
+            addToBot(new MineGemAction(new RubyOrb(1), true));
+        else if(gemRoll < 30)
+            addToBot(new MineGemAction(new SapphireOrb(1), true));
+        else if(gemRoll < 45)
+            addToBot(new MineGemAction(new AmethystOrb(1), true));
+        else if(gemRoll < 55)
+            addToBot(new MineGemAction(new EmeraldOrb(1), true));
+        else if(gemRoll < 65)
+            addToBot(new MineGemAction(new OpalOrb(1), true));
+        else if(gemRoll < 75)
+            addToBot(new MineGemAction(new TopazOrb(1), true));
+        else if(gemRoll < 85)
+            addToBot(new MineGemAction(new OnyxOrb(1), true));
+        else
+            addToBot(new MineGemAction(new DiamondOrb(1), true));
 
+    }
+*/
     @Override
     public AbstractPotion makeCopy() {
         return new MiningPotion();
@@ -67,6 +84,6 @@ public class MiningPotion extends AbstractPotion
 
     @Override
     public int getPotency(final int potency) {
-        return 1;
+        return 2;
     }
 }

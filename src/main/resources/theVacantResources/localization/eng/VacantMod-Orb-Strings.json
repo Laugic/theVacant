@@ -26,13 +26,13 @@
   "theVacant:TopazOrb": {
     "NAME": "Topaz",
     "DESCRIPTION": [
-      "At the start of your turn, gain #b1 Artifact and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
+      "At the start of your turn, gain #b1 #yArtifact and lose #b1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:DiamondOrb": {
     "NAME": "Diamond",
     "DESCRIPTION": [
-      "At the start of your turn, lose 1 size. Whenever you would take damage, lose #b1 size and prevent it. NL  Once size reaches #b0, remove this orb and its slot."
+      "At the start of your turn, gain #b1 #yBreakdown and lose 1 size. NL Once size reaches #b0, remove this orb and its slot."
     ]
   },
   "theVacant:EmeraldOrb": {

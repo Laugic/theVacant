@@ -73,7 +73,7 @@ public class AntifactPower extends AbstractPower implements CloneablePowerInterf
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source)
     {
-        if(target == owner && power.type == PowerType.BUFF)
+        if(target == owner && power.type == PowerType.BUFF && !VacantMod.IMMUNE_POWERS.contains(power.ID))
         {
             //addToBot(new TextAboveCreatureAction(owner, ApplyPowerAction.TEXT[0]));
             CardCrawlGame.sound.play("NULLIFY_SFX");

@@ -4,7 +4,7 @@
     "NAMES": [
       "hollow"
     ],
-    "DESCRIPTION": "#yHollow effects trigger if you are at or below #b50% of your max health, OR if you have at least #b2 unique debuffs."
+    "DESCRIPTION": "#yHollow effects trigger if you are at or below #b50% of your max health, OR if you are debuffed."
   },
   {
     "PROPER_NAME": "Unnate",
@@ -26,6 +26,20 @@
       "heavy"
     ],
     "DESCRIPTION": "When your deck is reshuffled, move to the bottom of the draw pile."
+  },
+  {
+    "PROPER_NAME": "Dizzy",
+    "NAMES": [
+      "dizzy"
+    ],
+    "DESCRIPTION": "Next turn, draw an extra card, but the first 3 cards you draw are face down."
+  },
+  {
+    "PROPER_NAME": "Shard",
+    "NAMES": [
+      "shard"
+    ],
+    "DESCRIPTION": "Void affects ALL cards, regardless of if your draw pile is empty, for a number of turns. If you end your turn with an empty draw pile, #yShard doesn't count down."
   },
   {
     "PROPER_NAME": "Mine",
@@ -74,6 +88,20 @@
     "DESCRIPTION": "Creatures take more damage for each #yDoom they have."
   },
   {
+    "PROPER_NAME": "Rift",
+    "NAMES": [
+      "rift"
+    ],
+    "DESCRIPTION": "Temporarily removes your debuffs for a number of turns. They still count towards your number of debuffs."
+  },
+  {
+    "PROPER_NAME": "Syphon",
+    "NAMES": [
+      "syphon"
+    ],
+    "DESCRIPTION": "Remove this power from the target and gain it yourself. If they do not have enough, they gain negative amounts."
+  },
+  {
     "PROPER_NAME": "Polish",
     "NAMES": [
       "polish"
@@ -99,7 +127,7 @@
     "NAMES": [
       "shroud"
     ],
-    "DESCRIPTION": "Halve incoming damage. Reduced by #b1 at the start of your turn, and whenever you play an attack."
+    "DESCRIPTION": "Halve incoming attack damage. Reduced by #b1 at the start of your turn, and whenever you play an Attack."
   },
   {
     "PROPER_NAME": "Gem",
@@ -123,6 +151,13 @@
       "return"
     ],
     "DESCRIPTION": "Move the top playable card from your discard pile to your hand."
+  },
+  {
+    "PROPER_NAME": "Exhume",
+    "NAMES": [
+      "exhume"
+    ],
+    "DESCRIPTION": "Put a card from your #yExhaust pile into your hand."
   },
   {
     "PROPER_NAME": "[#C687EE]Materialize[]",
@@ -180,7 +215,14 @@
       "diamond",
       "diamonds"
     ],
-    "DESCRIPTION": "#yGem: Prevent the next time you would take damage and lose #b1 size."
+    "DESCRIPTION": "#yGem: Gain #b1 #yBreakdown, which prevents the next time you would lose HP this turn."
+  },
+  {
+    "PROPER_NAME": "Breakdown",
+    "NAMES": [
+      "breakdown"
+    ],
+    "DESCRIPTION": "Prevents the next time you would lose HP this turn."
   },
   {
     "PROPER_NAME": "Onyx",

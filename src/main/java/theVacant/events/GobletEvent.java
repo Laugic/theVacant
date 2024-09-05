@@ -1,23 +1,13 @@
 package theVacant.events;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.colorless.Apotheosis;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import theVacant.VacantMod;
 import theVacant.relics.BrassGoblet;
 import theVacant.relics.OverflowingGobletRelic;
-import theVacant.util.TextureLoader;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -56,9 +46,16 @@ public class GobletEvent extends AbstractImageEvent {
                     case 0:
                         AbstractDungeon.player.damage(new DamageInfo(null, LOSE_HP * (++BUTTON_PRESSES)));
                         if(AbstractDungeon.player.hasRelic(BrassGoblet.ID))
+                        {
                             AbstractDungeon.player.getRelic(BrassGoblet.ID).counter++;
+                            ((BrassGoblet)AbstractDungeon.player.getRelic(BrassGoblet.ID)).getUpdatedDescription();
+                        }
                         if(AbstractDungeon.player.hasRelic(OverflowingGobletRelic.ID))
+                        {
                             AbstractDungeon.player.getRelic(OverflowingGobletRelic.ID).counter++;
+                            ((OverflowingGobletRelic)AbstractDungeon.player.getRelic(OverflowingGobletRelic.ID)).getUpdatedDescription();
+                        }
+
                         CardCrawlGame.sound.play("ATTACK_POISON");
                         imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         imageEventText.updateDialogOption(0, OPTIONS[0] + LOSE_HP * (BUTTON_PRESSES + 1) + OPTIONS[1]);

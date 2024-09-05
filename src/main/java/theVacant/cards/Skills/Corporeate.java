@@ -1,5 +1,7 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,6 +13,7 @@ import theVacant.actions.ReturnAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.TemperancePower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -40,7 +43,13 @@ public class Corporeate extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, true, 1, this));
-        //AbstractDungeon.actionManager.addToBottom(new ReturnAction(1));
+//        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+//            @Override
+//            public void update() {
+//                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber)));
+//                isDone = true;
+//            }
+//        });
     }
 
     @Override
@@ -49,7 +58,7 @@ public class Corporeate extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(3);
+            upgradeMagicNumber(2);
             upgradedMagicNumber = true;
             initializeDescription();
         }

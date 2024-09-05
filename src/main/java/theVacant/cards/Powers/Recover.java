@@ -28,9 +28,9 @@ public class Recover extends AbstractDynamicCard
     public Recover()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 10;
+        magicNumber = baseMagicNumber = 8;
         tags.add(AbstractCard.CardTags.HEALING);
-        checkWounded = true;
+        checkHollow = true;
     }
 
     @Override

@@ -1,17 +1,22 @@
 {
         "theVacant:SwipePotion":{
-                "NAME": "Swipe Potion",
-                "DESCRIPTIONS": ["#yMill ", " cards."]
+                "NAME": "Abyss in a Bottle",
+                "DESCRIPTIONS": ["#yMill #b", ". Gain #b", " #pVoid."]
         },
         "theVacant:InvisibilityPotion":{
-                "NAME": "Invisibility Potion",
-                "DESCRIPTIONS": ["Gain ", " #yShroud."]
+                "NAME": "Flask of Invisibility",
+                "DESCRIPTIONS": ["Gain #b", " #yShroud. #yBlock is not removed at the start of your next #b", " turns."]
         },
         "theVacant:MiningPotion":{
-                "NAME": "Mining Potion",
+                "NAME": "Sparkling Tonic",
                 "DESCRIPTIONS": [
-                        "#yMine a size 2 #yRuby and a size 2 #ySapphire.",
-                        "#yMine 2 size 2 #yRubies and a size 2 #ySapphires."
+                        "#yMine a size #b", " #yEmerald and #yOpal and #yChip them."
+                ]
+        },
+        "theVacant:ScramblePotion":{
+                "NAME": "Scramble Potion",
+                "DESCRIPTIONS": [
+                        "Draw until your hand is full. Each card drawn has a #b1 in #b", " chance to be drawn face down."
                 ]
         }
 }

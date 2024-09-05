@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theVacant.VacantMod;
 import theVacant.actions.DelayedTombstoneAction;
@@ -45,7 +46,25 @@ public class TombstoneRelic extends CustomRelic
 
     @Override
     public boolean canSpawn() {
-        return (AbstractDungeon.player.hasRelic(BrassGoblet.ID) || AbstractDungeon.player.hasRelic(OverflowingGobletRelic.ID));
+        for (AbstractRelic relic: AbstractDungeon.player.relics) {
+            if(relic instanceof GobletRelic)
+                return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void obtain() {
+        super.obtain();
+        for (AbstractRelic relic: AbstractDungeon.player.relics) {
+            if(relic instanceof GobletRelic)
+                ((GobletRelic)relic).IncreaseCounter(2);
+        }
+    }
+
+    @Override
+    public void onVictory() {
+        grayscale = false;
     }
 
     @Override

@@ -59,8 +59,8 @@ public class OpalFracture extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
-            upgradeBlock(2);
+            upgradeDamage(1);
+            upgradeBlock(1);
             upgradeMagicNumber(1);
             initializeDescription();
         }

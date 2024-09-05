@@ -36,7 +36,7 @@ public class Crystallize extends AbstractDynamicCard
     public Crystallize()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        rebound = true;
+        ricochet = true;
     }
 
     @Override

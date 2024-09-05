@@ -55,16 +55,16 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type)
     {
-        if (CheckDrawEmpty() && type == DamageInfo.DamageType.NORMAL)
-            return damage + amount * (1 + (AbstractDungeon.player.hasPower(VoidFormPower.POWER_ID)?AbstractDungeon.player.getPower(VoidFormPower.POWER_ID).amount:0));
+        if ((CheckDrawEmpty() || owner.hasPower(ShardPower.POWER_ID)) && type == DamageInfo.DamageType.NORMAL)
+            return damage + amount;
         return damage;
     }
 
     @Override
     public float modifyBlock(float blockAmount)
     {
-        if (CheckDrawEmpty() && blockAmount > 0.0F)
-            return blockAmount + amount * (1 + (AbstractDungeon.player.hasPower(VoidFormPower.POWER_ID)?AbstractDungeon.player.getPower(VoidFormPower.POWER_ID).amount:0));
+        if ((CheckDrawEmpty() || owner.hasPower(ShardPower.POWER_ID)) && blockAmount > 0.0F)
+            return blockAmount + amount;
         return blockAmount;
     }
 

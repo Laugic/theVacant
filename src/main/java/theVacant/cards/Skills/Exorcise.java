@@ -54,7 +54,7 @@ public class Exorcise extends AbstractDynamicCard
             {
                 hadDebuff = true;
                 addToBot(new RemoveSpecificPowerAction(player, player, power));
-                if(upgraded && !VacantMod.IMMUNE_POWERS.contains(power.ID))
+                if(!VacantMod.IMMUNE_POWERS.contains(power.ID))
                 {
                     if(!inflictedDebuff)
                     {
@@ -87,6 +87,7 @@ public class Exorcise extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
+            selfRetain = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +14,7 @@ import theVacant.actions.BecomeVoidboundAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.characters.TheVacant;
+import theVacant.powers.ShardPower;
 import theVacant.util.KeywordManager;
 
 import java.util.ArrayList;
@@ -31,15 +33,15 @@ public class Voidstone extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static ArrayList<TooltipInfo> VoidboundTooltip;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public Voidstone()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 3;
-        this.exhaust = true;
+        block = baseBlock = 2;
+        magicNumber = baseMagicNumber = 3;
+        exhaust = true;
         VoidboundModifier.Enhance(this, 1);
     }
 
@@ -48,19 +50,10 @@ public class Voidstone extends AbstractDynamicCard {
     {
         addToBot(new GainBlockAction(player, block));
         addToBot(new GainBlockAction(player, block));
-        AbstractDungeon.actionManager.addToBottom(new BecomeVoidboundAction(upgraded));
+        //AbstractDungeon.actionManager.addToBottom(new BecomeVoidboundAction(upgraded));
+        addToBot(new ApplyPowerAction(player, player, new ShardPower(player, player, magicNumber), magicNumber));
     }
 
-    @Override
-    public List<TooltipInfo> getCustomTooltips()
-    {
-        if(VoidboundTooltip == null)
-        {
-            VoidboundTooltip = new ArrayList<>();
-            VoidboundTooltip.add(new TooltipInfo(BaseMod.getKeywordProper(KeywordManager.VOIDBOUND_ID), BaseMod.getKeywordDescription(KeywordManager.VOIDBOUND_ID)));
-        }
-        return VoidboundTooltip;
-    }
 
     @Override
     public void upgrade()
@@ -68,7 +61,7 @@ public class Voidstone extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBlock(3);
             initializeDescription();
         }
     }

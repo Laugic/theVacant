@@ -3,25 +3,16 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.mod.stslib.StSLib;
-import com.evacipated.cardcrawl.mod.stslib.patches.NeutralPowertypePatch;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.BetterOnApplyPowerPower;
-import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnPlayerDeathPower;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
 import theVacant.util.TextureLoader;
 
-public class RequiemPower extends AbstractPower implements CloneablePowerInterface, BetterOnApplyPowerPower, OnReceivePowerPower
+public class RequiemPower extends AbstractPower implements CloneablePowerInterface//, OnReceivePowerPower, BetterOnApplyPowerPower
 {
     public AbstractCreature source;
 
@@ -42,7 +33,7 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         this.amount = amount;
         this.source = source;
 
-        type = NeutralPowertypePatch.NEUTRAL;
+        type = PowerType.DEBUFF;
         isTurnBased = false;
 
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
@@ -51,24 +42,46 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         updateDescription();
     }
 
+//    @Override
+//    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
+//    {
+//        if(power.amount > 0 && target == owner && power.type == PowerType.DEBUFF)
+//        {
+//            flash();
+//            power.amount += amount;
+//            power.updateDescription();
+//        }
+//    }
 
-    @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source)
-    {
-        if(power.amount != 0 && target == owner && (power.type == PowerType.BUFF || power.type == PowerType.DEBUFF))
+    /*
+        @Override
+        public boolean onReceivePower(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1)
         {
-            flash();
-            power.amount *= amount;
-            power.updateDescription();
+            return true;
         }
-        for (AbstractCard card: AbstractDungeon.player.hand.group)
-            card.applyPowers();
-    }
-
+        @Override
+        public int onReceivePowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount)
+        {
+            if(target != owner && source == owner && power.type == PowerType.DEBUFF)
+            {
+                flash();
+                if(power.amount > 0)
+                    power.amount += amount;
+                if(power.amount < 0)
+                    power.amount -= amount;
+                power.updateDescription();
+                return stackAmount + amount;
+            }
+            return stackAmount;
+        }
+    */
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        if(amount == 1)
+            description = DESCRIPTIONS[0];
+        else
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
     @Override
@@ -77,6 +90,7 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
         return new RequiemPower(owner, source, amount);
     }
 
+/*
     @Override
     public boolean betterOnApplyPower(AbstractPower abstractPower, AbstractCreature abstractCreature, AbstractCreature abstractCreature1)
     {
@@ -84,15 +98,18 @@ public class RequiemPower extends AbstractPower implements CloneablePowerInterfa
     }
 
     @Override
-    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if(power.amount != 0 && target == owner && source != owner && (power.type == PowerType.BUFF || power.type == PowerType.DEBUFF))
+    public int betterOnApplyPowerStacks(AbstractPower power, AbstractCreature target, AbstractCreature source, int stackAmount)
+    {
+        if(target != owner && power.type == PowerType.DEBUFF)
         {
             flash();
-            power.amount *= amount;
+            if(power.amount > 0)
+                power.amount += amount;
+            if(power.amount < 0)
+                power.amount -= amount;
             power.updateDescription();
+            return stackAmount + amount;
         }
-        for (AbstractCard card: AbstractDungeon.player.hand.group)
-            card.applyPowers();
-        return true;
-    }
+        return stackAmount;
+    }*/
 }

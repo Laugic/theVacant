@@ -40,7 +40,9 @@ public class Immaterialize extends AbstractDynamicCard
     public Immaterialize()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 4;
+        magicNumber = baseMagicNumber = 3;
+        isUnnate = true;
+        ricochet = true;
     }
 
     @Override
@@ -55,8 +57,7 @@ public class Immaterialize extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
-            upgradedMagicNumber = true;
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

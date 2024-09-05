@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -39,12 +40,11 @@ public class Partake extends AbstractDynamicCard
 
     private static ArrayList<TooltipInfo> Tooltip;
 
-    private static final int COST = 0, BLOCK = 8, UP_BLOCK = 2, LOSE_TEMPERANCE = 4;
+    private static final int COST = 0, BLOCK = 8, UP_BLOCK = 3, WEAK = 2;
 
     public Partake()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = LOSE_TEMPERANCE;
         block = baseBlock = BLOCK;
     }
 
@@ -52,7 +52,7 @@ public class Partake extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster m)
     {
         addToBot(new GainBlockAction(player, block));
-        addToBot(new ApplyPowerAction(player, player, new TemperancePower(player, player, -LOSE_TEMPERANCE), -LOSE_TEMPERANCE));
+        addToBot(new ApplyPowerAction(player, player, new WeakPower(player, WEAK, false), WEAK));
     }
 
 //    @Override

@@ -1,23 +1,42 @@
 {
-  "theVacant:GloomPower": {
+  "theVacant:VoidFormPower": {
     "NAME": "Void Form",
     "DESCRIPTIONS": ["At the start of your turn after you draw, #yMill #b", " cards."]
   },
   "theVacant:ImmaterializePower": {
     "NAME": "Immaterialize",
-    "DESCRIPTIONS": ["When you play a card that #yExhausts, reduce this by 1 and have that card return to your draw pile in 2 turns."]
+    "DESCRIPTIONS": ["Whenever a card #yRicochets, gain #b", " #yBlock."]
   },
   "theVacant:MemoriaPower": {
     "NAME": "Memoria",
-    "DESCRIPTIONS": ["The next #b", " card you play that #yExhausts plays twice. Removed at the end of your turn.", " cards you play that #yExhaust plays twice. Removed at the end of your turn."]
+    "DESCRIPTIONS": ["The next #b", " card you play this turn plays twice and #yExhausts.", " cards you play this turn play twice and #yExhaust."]
   },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
     "DESCRIPTIONS": ["The first #b", " card you play each turn costs 0."," cards you play each turn cost 0."]
   },
+  "theVacant:BreakdownPower": {
+    "NAME": "Breakdown",
+    "DESCRIPTIONS": ["The next time you would lose HP this turn, prevent it.",
+      "The next #b"," times you would lose HP this turn, prevent it."]
+  },
+  "theVacant:DesperationPower": {
+    "NAME": "Desperation",
+    "DESCRIPTIONS": ["The next card you play costs #b0 and #yExhausts.",
+      "The next #b"," cards you play cost #b0 and #yExhaust."]
+  },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
-    "DESCRIPTIONS": ["Cards that cost #b", " or less #yRicochet."]
+    "DESCRIPTIONS": ["After you #yMill, #yReturn #b", "."]
+  },
+  "theVacant:ReachThroughPower": {
+    "NAME": "Reach Through",
+    "DESCRIPTIONS": ["Whenever you #yMine a #yGem, trigger its effect.",
+      "Whenever you #yMine a #yGem, trigger its effect #b", " times."]
+  },
+  "theVacant:AcceptancePower": {
+    "NAME": "Acceptance",
+    "DESCRIPTIONS": ["Whenever you lose #yArtifact, draw #b", " card.", " cards."]
   },
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
@@ -37,7 +56,9 @@
   },
   "theVacant:RequiemPower": {
     "NAME": "Requiem",
-    "DESCRIPTIONS": ["Multiply buffs and debuffs gained by #b", "."]
+    "DESCRIPTIONS": [
+      "Whenever you lose HP or gain a debuff, this enemy does as well.",
+      "Whenever you lose HP or gain a debuff, this enemy does as well #b", " times."]
   },
   "theVacant:RecoverPower": {
     "NAME": "Recover",
@@ -75,7 +96,23 @@
   },
   "theVacant:CleanseSoulPower": {
     "NAME": "Cleanse Soul",
-    "DESCRIPTIONS": ["Whenever you #yMill a Status or Curse, #yExhaust it."]
+    "DESCRIPTIONS": ["Whenever you #yMill a Status or Curse, #yExhaust it and gain #b", " #yTemperance."]
+  },
+  "theVacant:CrackedReflectionPower": {
+    "NAME": "Cracked Reflection",
+    "DESCRIPTIONS": [
+      "At the start of your turn and whenever you gain a debuff, #yMine a random size 1 #yGem",
+      "At the start of your turn and whenever you gain a debuff, #yMine #b",
+      " random size 1 #yGems."
+    ]
+  },
+  "theVacant:GloomPower": {
+    "NAME": "Gloom",
+    "DESCRIPTIONS": [
+      "The first time you #yMill a Power each turn, #yRicochet it.",
+      "The first #b",
+      " times you #yMill a Power each turn, #yRicochet it."
+    ]
   },
   "theVacant:DoomPower": {
     "NAME": "Doom",
@@ -91,7 +128,15 @@
   },
   "theVacant:AbyssPower": {
     "NAME": "The Abyss",
-    "DESCRIPTIONS": ["At the start of your turn, apply #b", " #yDoom to ALL enemies."]
+    "DESCRIPTIONS": [
+      "Whenever you gain or apply a debuff, gain #b", " #yTemperance."
+    ]
+  },
+  "theVacant:ShardPower": {
+    "NAME": "Shard",
+    "DESCRIPTIONS": [
+      "#pVoid affects ALL your cards, regardless of if your draw pile is empty. Doesn't count down if you end your turn with an empty draw pile."
+    ]
   },
   "theVacant:DelayedExhumePower": {
     "NAME": "Fluxume",
@@ -113,6 +158,10 @@
     "NAME": "Vacancy",
     "DESCRIPTIONS": ["Whenever you #yMill, gain an additional #b", " #pVoid."]
   },
+  "theVacant:DizzyPower": {
+    "NAME": "Dizzy",
+    "DESCRIPTIONS": ["Next turn, draw an extra card, but the first 3 cards you draw are face down."]
+  },
   "theVacant:HollowRune": {
     "NAME": "Hollow",
     "DESCRIPTIONS": ["#yRelease: If you are #yHealthy, gain #b"," #yDexterity. If you are #yHollow, gain #b", " #yStrength."]
@@ -123,15 +172,13 @@
   },
   "theVacant:ForgeSoulPower": {
     "NAME": "Forge Soul",
-    "DESCRIPTIONS": ["Whenever you #yMill a card, upgrade it for the rest of combat.", "Whenever you #yMill a card, upgrade it #b", " times for the rest of combat."]
+    "DESCRIPTIONS": [
+      "Whenever you #yMill a card, increase its damage and #yBlock by #b",
+      " for the rest of combat."]
   },
   "theVacant:SolidSoulPower": {
     "NAME": "Solid Soul",
     "DESCRIPTIONS": ["Prevent the next #b "," time you would change #yForms.", " times you would change #yForms."]
-  },
-  "theVacant:VoidFormPower": {
-    "NAME": "Void Form",
-    "DESCRIPTIONS": ["When your draw pile is empty, gain #b"," more #yBlock and deal #b", " more damage for each [#ee82ee]Void[] you have."]
   },
   "theVacant:TemperancePower": {
     "NAME": "Temperance",
@@ -176,5 +223,14 @@
   "theVacant:WhenDarknessComesPower": {
     "NAME": "When Darkness Comes",
     "DESCRIPTIONS": ["Each #yDoom increases damage taken by "," more."]
+  },
+  "theVacant:RiftPower": {
+    "NAME": "Rift",
+    "DESCRIPTIONS": [
+      "Next turn, gain ",
+      "In #b",
+      " turns, gain ",
+      " and "
+    ]
   }
 }

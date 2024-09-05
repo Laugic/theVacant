@@ -27,6 +27,12 @@ public class OnyxOrb extends AbstractGemOrb
     public OnyxOrb(int size)
     {
         super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("OnyxOrb.png"));
+        passiveAmount = evokeAmount = 1;
+    }
+
+    @Override
+    public int getAmount() {
+        return 1;
     }
 
     @Override

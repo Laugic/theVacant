@@ -3,6 +3,7 @@ package theVacant.cards.Attacks;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,6 +13,7 @@ import theVacant.VacantMod;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DizzyPower;
 import theVacant.vfx.HorizontalThrowVFX;
 
 import static theVacant.VacantMod.makeCardPath;
@@ -27,14 +29,14 @@ public class Fling extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 9;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 10;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public Fling()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 4;
+        magicNumber = baseMagicNumber = 5;
         getBonusMillToMagic = true;
     }
 
@@ -43,7 +45,8 @@ public class Fling extends AbstractDynamicCard {
     {
         addToBot(new VFXAction(new HorizontalThrowVFX(monster.hb.cX, monster.hb.cY, Color.BLUE)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new DizzyPower(player, player, 1)));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, this));
     }
 
     @Override
@@ -53,6 +56,7 @@ public class Fling extends AbstractDynamicCard {
         {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

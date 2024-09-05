@@ -3,17 +3,13 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import theVacant.VacantMod;
-import theVacant.actions.EnhanceRandomInHandAction;
 import theVacant.actions.VacantMillAction;
-import theVacant.cards.Modifiers.SoulforgedModifier;
-import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.util.TextureLoader;
 
 public class VoidFormPower extends AbstractPower implements CloneablePowerInterface
@@ -45,18 +41,20 @@ public class VoidFormPower extends AbstractPower implements CloneablePowerInterf
 
         updateDescription();
     }
-/*
+
     @Override
     public void atStartOfTurnPostDraw()
     {
         flash();
-        AbstractDungeon.actionManager.addToBottom(new EnhanceRandomInHandAction(this.amount, VoidboundModifier.ID, 1));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
+        AbstractDungeon.player.hand.applyPowers();
+        updateDescription();
     }
-*/
+
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

@@ -5,6 +5,7 @@ import basemod.helpers.CardPowerTip;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,7 +26,7 @@ import theVacant.util.TextureLoader;
 import static theVacant.VacantMod.makeRelicOutlinePath;
 import static theVacant.VacantMod.makeRelicPath;
 
-public class OverflowingGobletRelic extends CustomRelic
+public class OverflowingGobletRelic extends CustomRelic implements GobletRelic
 {
 
     public static final String ID = VacantMod.makeID(OverflowingGobletRelic.class.getSimpleName());
@@ -37,15 +38,14 @@ public class OverflowingGobletRelic extends CustomRelic
     {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
         counter = 2;
-        updateDescription();
+        getUpdatedDescription();
     }
 
     @Override
     public void atBattleStart()
     {
         flash();
-        AbstractPlayer player = AbstractDungeon.player;
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(player, player, new ArtifactPower(player, counter), counter));
+        AtBattleStart();
     }
 
     @Override
@@ -65,7 +65,7 @@ public class OverflowingGobletRelic extends CustomRelic
         }
         else
             super.obtain();
-        updateDescription();
+        getUpdatedDescription();
     }
 
     @Override
@@ -73,18 +73,28 @@ public class OverflowingGobletRelic extends CustomRelic
         return AbstractDungeon.player.hasRelic(BrassGoblet.ID);
     }
 
-    public void updateDescription()
-    {
-        description = getUpdatedDescription();
-        tips.clear();
-        tips.add(new PowerTip(name, description));
-        initializeTips();
-    }
-
     @Override
     public String getUpdatedDescription()
     {
-        return DESCRIPTIONS[0] + counter + DESCRIPTIONS[1];
+        description = DESCRIPTIONS[0] + counter + DESCRIPTIONS[1] + counter + DESCRIPTIONS[2];
+        tips.clear();
+        tips.add(new PowerTip(name, description));
+        initializeTips();
+        return description;
     }
 
+    @Override
+    public void IncreaseCounter(int amount)
+    {
+        counter += amount;
+        getUpdatedDescription();
+    }
+
+    @Override
+    public void AtBattleStart() {
+        AbstractPlayer player = AbstractDungeon.player;
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new DrawCardAction(counter));
+        addToBot(new ApplyPowerAction(player, player, new ArtifactPower(player, counter), counter));
+    }
 }

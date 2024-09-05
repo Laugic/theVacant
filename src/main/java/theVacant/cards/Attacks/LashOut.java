@@ -3,7 +3,9 @@ package theVacant.cards.Attacks;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,6 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
 import theVacant.VacantMod;
@@ -31,13 +34,14 @@ public class LashOut extends AbstractDynamicCard
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int DAMAGE = 0;
 
     public LashOut()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        magicNumber = baseMagicNumber = 4;
         exhaust = true;
     }
 
@@ -50,6 +54,9 @@ public class LashOut extends AbstractDynamicCard
         addToBot(new WaitAction(.1f));
         addToBot(new DamageAction(monster, new DamageInfo(player, this.damage, damageTypeForTurn),
                 player.isBloodied?AbstractGameAction.AttackEffect.BLUNT_HEAVY:AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+
+        addToBot(new LoseHPAction(player, player, magicNumber));
+        //addToBot(new ApplyPowerAction(player, player, new WeakPower(player, magicNumber, false), magicNumber));
     }
 
     @Override
@@ -58,7 +65,8 @@ public class LashOut extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(-1);
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
@@ -76,13 +84,6 @@ public class LashOut extends AbstractDynamicCard
         getDesc();
         super.atTurnStart();
     }
-    /*@Override
-    public void calculateCardDamage(AbstractMonster monster)
-    {
-        getDamage();
-        getDesc();
-        super.calculateCardDamage(monster);
-    }*/
 
     private void getDamage()
     {
@@ -91,18 +92,20 @@ public class LashOut extends AbstractDynamicCard
             this.baseDamage = player.maxHealth - player.currentHealth;
         else
             this.baseDamage = 0;
+        if(upgraded)
+            baseDamage += 3;
     }
 
     private void getDesc()
     {
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+        rawDescription = (upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard()
     {
-        this.rawDescription = cardStrings.DESCRIPTION;
+        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
         initializeDescription();
     }
 }

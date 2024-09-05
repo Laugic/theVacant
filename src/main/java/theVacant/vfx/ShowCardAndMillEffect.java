@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import theVacant.cards.Powers.Immaterialize;
+import theVacant.powers.ImmaterializePower;
 import theVacant.powers.RunicThoughtsPower;
 import theVacant.relics.LocketRelic;
 
@@ -82,6 +84,7 @@ public class ShowCardAndMillEffect extends AbstractGameEffect {
                 }
                 else
                 {
+                    //AbstractDungeon.player.drawPile.getTopCard().moveToDiscardPile();
                     AbstractDungeon.player.hand.addToTop(card);
                     AbstractDungeon.player.hand.refreshHandLayout();
                     AbstractDungeon.player.hand.applyPowers();
@@ -100,10 +103,10 @@ public class ShowCardAndMillEffect extends AbstractGameEffect {
     private void PostRebound(AbstractCard card)
     {
         AbstractPlayer player = AbstractDungeon.player;
-        if(player != null && player.hasRelic(LocketRelic.ID))
+        if(player != null && player.hasPower(ImmaterializePower.POWER_ID))
         {
-            player.getRelic(LocketRelic.ID).flash();
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, LocketRelic.BLOCK_AMOUNT));
+            player.getPower(ImmaterializePower.POWER_ID).flash();
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player.getPower(ImmaterializePower.POWER_ID).amount));
         }
     }
 

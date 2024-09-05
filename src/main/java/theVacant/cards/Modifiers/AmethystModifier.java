@@ -45,7 +45,7 @@ public class AmethystModifier extends AbstractCardModifier
     public String modifyDescription(String rawDescription, AbstractCard card)
     {
         if(this.amount > 0)
-            rawDescription += " NL Mill " + amount + " .";
+            rawDescription += " NL thevacant:Mill " + amount + " .";
         return rawDescription;
     }
 

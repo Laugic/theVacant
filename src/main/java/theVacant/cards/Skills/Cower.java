@@ -1,8 +1,8 @@
 package theVacant.cards.Skills;
 
-import com.badlogic.gdx.graphics.Color;
+import basemod.devcommands.draw.Draw;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -24,22 +24,47 @@ public class Cower extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int BLOCK = 7;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK = 3;
+    private static final int UPGRADE_PLUS_BLOCK = 1;
 
     public Cower()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.block = this.baseBlock = BLOCK;
-        checkWounded = true;
+        block = baseBlock = BLOCK;
+        magicNumber = baseMagicNumber = 2;
+        checkHollow = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
-        if(getWounded())
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
+        applyPowers();
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
+        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
+    }
+
+    @Override
+    public void triggerWhenDrawn() {
+        applyPowers();
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        applyPowers();
+    }
+
+    @Override
+    public void applyPowers() {
+        int realBaseBlock = baseBlock;
+
+        if(getHollow())
+            baseBlock = realBaseBlock + magicNumber;
+
+        block = baseBlock;
+        super.applyPowers();
+        baseBlock = realBaseBlock;
+        isBlockModified = block != baseBlock;
     }
 
     @Override
@@ -49,6 +74,7 @@ public class Cower extends AbstractDynamicCard
         {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

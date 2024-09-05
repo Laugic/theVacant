@@ -23,6 +23,12 @@ public class SapphireOrb extends AbstractGemOrb
     public SapphireOrb(int size)
     {
         super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("SapphireOrb.png"));
+        passiveAmount = evokeAmount = 3;
+    }
+
+    @Override
+    public int getAmount() {
+        return 3;
     }
 
     @Override
@@ -32,7 +38,7 @@ public class SapphireOrb extends AbstractGemOrb
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
         chipSound();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new TemperancePower(AbstractDungeon.player, AbstractDungeon.player, amount * 3), amount * 3));
+                new TemperancePower(AbstractDungeon.player, AbstractDungeon.player, amount), amount));
     }
 
     @Override

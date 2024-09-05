@@ -23,6 +23,12 @@ public class RubyOrb extends AbstractGemOrb
     public RubyOrb(int size)
     {
         super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("RubyOrb.png"));
+        passiveAmount = evokeAmount = 3;
+    }
+
+    @Override
+    public int getAmount() {
+        return 3;
     }
 
     @Override
@@ -32,7 +38,7 @@ public class RubyOrb extends AbstractGemOrb
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.PLASMA), 0.1f));
         chipSound();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player,
-                new VigorPower(AbstractDungeon.player, amount * 3), amount * 3));
+                new VigorPower(AbstractDungeon.player, amount), amount));
     }
 
     @Override

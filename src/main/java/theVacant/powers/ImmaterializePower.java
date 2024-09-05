@@ -49,22 +49,9 @@ public class ImmaterializePower extends AbstractPower implements CloneablePowerI
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action)
-    {
-        if(action.exhaustCard && !card.purgeOnUse)
-        {
-            MaterializeModifier.Enhance(card, 2);
-            amount--;
-            updateDescription();
-            if(amount <= 0)
-                addToBot(new RemoveSpecificPowerAction(owner, owner, this));
-        }
-    }
-
-    @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

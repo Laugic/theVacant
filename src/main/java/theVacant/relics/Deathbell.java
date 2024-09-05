@@ -4,20 +4,13 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theVacant.VacantMod;
-import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractVacantCard;
-import theVacant.powers.DoomPower;
-import theVacant.powers.ShroudPower;
-import theVacant.powers.VoidPower;
 import theVacant.util.TextureLoader;
 import static theVacant.VacantMod.makeRelicOutlinePath;
 import static theVacant.VacantMod.makeRelicPath;
@@ -35,21 +28,16 @@ public class Deathbell extends CustomRelic
     public Deathbell() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
-    
-    @Override
-    public void atBattleStart()
-    {
-        flash();
 
-        AbstractPlayer player = AbstractDungeon.player;
-        if(AbstractVacantCard.getWounded())
-        {
-            addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            addToBot(new AddTemporaryHPAction(player, player, TempHP));
+    @Override
+    public void onPlayerEndTurn() {
+        if(!grayscale){
+            flash();
+            if(AbstractVacantCard.getHollow()){
+                addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                addToBot(new AddTemporaryHPAction(AbstractDungeon.player, AbstractDungeon.player, TempHP));
+            }
             grayscale = true;
-            /*player.addPower(new ShroudPower(player, player, 2));
-            for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-                addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, mo, DOOM_AMOUNT), DOOM_AMOUNT, true, AbstractGameAction.AttackEffect.NONE));*/
         }
     }
 
@@ -58,7 +46,12 @@ public class Deathbell extends CustomRelic
     {
         grayscale = false;
     }
-    
+
+    @Override
+    public void onVictory() {
+        grayscale = false;
+    }
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

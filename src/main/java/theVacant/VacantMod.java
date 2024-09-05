@@ -30,14 +30,16 @@ import theVacant.cards.Attacks.*;
 import theVacant.cards.Powers.*;
 import theVacant.cards.Skills.*;
 import theVacant.cards.Attacks.GildedPickaxe;
-import theVacant.cards.Special.*;
 import theVacant.characters.TheVacant;
 
 import com.badlogic.gdx.graphics.Color;
+import theVacant.events.CavernEvent;
 import theVacant.events.GobletEvent;
 import theVacant.potions.InvisibilityPotion;
 import theVacant.potions.MiningPotion;
+import theVacant.potions.ScramblePotion;
 import theVacant.potions.SwipePotion;
+import theVacant.powers.DizzyPower;
 import theVacant.relics.*;
 import theVacant.util.TextureLoader;
 import theVacant.variables.*;
@@ -55,7 +57,7 @@ public class VacantMod implements
         AddAudioSubscriber
 {
     public static final Logger logger = LogManager.getLogger(VacantMod.class.getName());
-    private static String modID = "theVacant";
+    public static String modID = "theVacant";
 
     public static Properties theVacantDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
@@ -75,6 +77,10 @@ public class VacantMod implements
     public static final Color MINE_POTION_LIQUID = CardHelper.getColor(50, 50, 150);
     public static final Color MINE_POTION_HYBRID = CardHelper.getColor(100, 100, 200);
     public static final Color MINE_POTION_SPOTS = CardHelper.getColor(0, 250, 250);
+
+    public static final Color SCRAMBLE_POTION_LIQUID = CardHelper.getColor(150, 150, 150);
+    public static final Color SCRAMBLE_POTION_HYBRID = CardHelper.getColor(150, 100, 50);
+    public static final Color SCRAMBLE_POTION_SPOTS = CardHelper.getColor(250, 250, 200);
 
     public static final Color INVIS_POTION_LIQUID = CardHelper.getColor(50, 200, 200);
     public static final Color INVIS_POTION_HYBRID = CardHelper.getColor(20, 150, 150);
@@ -134,6 +140,8 @@ public class VacantMod implements
         IMMUNE_POWERS.add(HexPower.POWER_ID);
         IMMUNE_POWERS.add(GainStrengthPower.POWER_ID);
         IMMUNE_POWERS.add(ConfusionPower.POWER_ID);
+        IMMUNE_POWERS.add(BackAttackPower.POWER_ID);
+        IMMUNE_POWERS.add(DrawReductionPower.POWER_ID);
         logger.info("========================= /Mod Successfully Vacanted (The Vacant Initialized)/ =========================");
     }
 
@@ -206,7 +214,13 @@ public class VacantMod implements
         //BaseMod.addEvent(IdentityCrisisEvent.ID, IdentityCrisisEvent.class, TheCity.ID);
         BaseMod.addEvent(new AddEventParams.Builder(GobletEvent.ID, GobletEvent.class).eventType(EventUtils.EventType.NORMAL).spawnCondition(() ->
                 (AbstractDungeon.player.hasRelic(BrassGoblet.ID) || AbstractDungeon.player.hasRelic((OverflowingGobletRelic.ID))) &&
-                        AbstractDungeon.player instanceof TheVacant).create());
+                        AbstractDungeon.player instanceof TheVacant && AbstractDungeon.actNum == 1).create());
+
+        BaseMod.addEvent(new AddEventParams.Builder(CavernEvent.ID, CavernEvent.class).eventType(EventUtils.EventType.NORMAL).spawnCondition(() ->
+                AbstractDungeon.player instanceof TheVacant && AbstractDungeon.actNum == 2).create());
+
+
+        IMMUNE_POWERS.add(DizzyPower.POWER_ID);
         logger.info("Done loading badge Image and mod options");
     }
 
@@ -215,6 +229,7 @@ public class VacantMod implements
         logger.info("Beginning to edit potions");
         BaseMod.addPotion(SwipePotion.class, SWIPE_POTION_LIQUID, SWIPE_POTION_HYBRID, SWIPE_POTION_SPOTS, SwipePotion.POTION_ID, TheVacant.Enums.THE_VACANT);
         BaseMod.addPotion(MiningPotion.class, MINE_POTION_LIQUID, MINE_POTION_HYBRID, MINE_POTION_SPOTS, MiningPotion.POTION_ID, TheVacant.Enums.THE_VACANT);
+        BaseMod.addPotion(ScramblePotion.class, SCRAMBLE_POTION_LIQUID, SCRAMBLE_POTION_HYBRID, SCRAMBLE_POTION_SPOTS, ScramblePotion.POTION_ID, TheVacant.Enums.THE_VACANT);
         BaseMod.addPotion(InvisibilityPotion.class, INVIS_POTION_LIQUID, INVIS_POTION_HYBRID, INVIS_POTION_SPOTS, InvisibilityPotion.POTION_ID, TheVacant.Enums.THE_VACANT);
         logger.info("Done editing potions");
     }
@@ -226,17 +241,28 @@ public class VacantMod implements
         BaseMod.addRelicToCustomPool(new BrassGoblet(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new OverflowingGobletRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new Deathbell(), TheVacant.Enums.COLOR_GOLD);
+        //BaseMod.addRelicToCustomPool(new AmethystRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new BoundSoul(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new LocketRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new CrystalBallRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new RagRelic(), TheVacant.Enums.COLOR_GOLD);
         BaseMod.addRelicToCustomPool(new TombstoneRelic(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new SilkTouch(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new Holly(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new EnshroudedBrassGoblet(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new EnshroudedOverflowingGobletRelic(), TheVacant.Enums.COLOR_GOLD);
+        BaseMod.addRelicToCustomPool(new ShroudRelic(), TheVacant.Enums.COLOR_GOLD);
 
         UnlockTracker.markRelicAsSeen(CrystalBallRelic.ID);
         UnlockTracker.markRelicAsSeen(RagRelic.ID);
         UnlockTracker.markRelicAsSeen(TombstoneRelic.ID);
         UnlockTracker.markRelicAsSeen(LocketRelic.ID);
-        UnlockTracker.markRelicAsSeen(Deathbell.ID);
+        //UnlockTracker.markRelicAsSeen(AmethystRelic.ID);
+        UnlockTracker.markRelicAsSeen(SilkTouch.ID);
+        UnlockTracker.markRelicAsSeen(Holly.ID);
+        UnlockTracker.markRelicAsSeen(BoundSoul.ID);
+        //UnlockTracker.markRelicAsSeen(EnshroudedBrassGoblet.ID);
+        //UnlockTracker.markRelicAsSeen(EnshroudedOverflowingGobletRelic.ID);
         logger.info("Done adding relics!");
     }
 
@@ -301,7 +327,7 @@ public class VacantMod implements
         BaseMod.addCard(new FranticBlow());
         BaseMod.addCard(new ReaperStrike());
         BaseMod.addCard(new Pickaxe());
-        BaseMod.addCard(new SurpriseAttack());
+        BaseMod.addCard(new FromTheDepths());
         BaseMod.addCard(new Thoughtseize());
         BaseMod.addCard(new Threaten());
         BaseMod.addCard(new DarkStrike());
@@ -315,6 +341,7 @@ public class VacantMod implements
         //Skills
         BaseMod.addCard(new VacantStarterDefend());
         BaseMod.addCard(new Cower());
+        BaseMod.addCard(new Rift());
         BaseMod.addCard(new Dig());
         BaseMod.addCard(new Spinshield());
         BaseMod.addCard(new BattleScars());
@@ -330,7 +357,7 @@ public class VacantMod implements
         BaseMod.addCard(new Memoria());
         BaseMod.addCard(new FromNothing());
         BaseMod.addCard(new TheAnvil());
-        BaseMod.addCard(new TimeSkip());
+        //BaseMod.addCard(new TimeSkip());
         BaseMod.addCard(new AwMan());
         BaseMod.addCard(new ReaperBlast());
         BaseMod.addCard(new Spelunk());
@@ -355,10 +382,11 @@ public class VacantMod implements
         BaseMod.addCard(new Rejection());
         BaseMod.addCard(new VoidForm());
         BaseMod.addCard(new RunicThoughts());
-        BaseMod.addCard(new Reflection());
+        BaseMod.addCard(new CrackedReflection());
         BaseMod.addCard(new ReachThrough());
 
         //Temp Cards
+        BaseMod.addCard(new WailOfTheShroud());
         /*
         BaseMod.addCard(new Snap());
         BaseMod.addCard(new Crackle());
@@ -391,7 +419,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(FranticBlow.ID);
         UnlockTracker.unlockCard(ReaperStrike.ID);
         UnlockTracker.unlockCard(Pickaxe.ID);
-        UnlockTracker.unlockCard(SurpriseAttack.ID);
+        UnlockTracker.unlockCard(FromTheDepths.ID);
         UnlockTracker.unlockCard(Thoughtseize.ID);
         UnlockTracker.unlockCard(Threaten.ID);
         UnlockTracker.unlockCard(DarkStrike.ID);
@@ -406,6 +434,7 @@ public class VacantMod implements
         //Skills
         UnlockTracker.unlockCard(VacantStarterDefend.ID);
         UnlockTracker.unlockCard(Cower.ID);
+        UnlockTracker.unlockCard(Rift.ID);
         UnlockTracker.unlockCard(Dig.ID);
         UnlockTracker.unlockCard(Spinshield.ID);
         UnlockTracker.unlockCard(BattleScars.ID);
@@ -421,7 +450,7 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Memoria.ID);
         UnlockTracker.unlockCard(FromNothing.ID);
         UnlockTracker.unlockCard(TheAnvil.ID);
-        UnlockTracker.unlockCard(TimeSkip.ID);
+        //UnlockTracker.unlockCard(TimeSkip.ID);
         UnlockTracker.unlockCard(AwMan.ID);
         UnlockTracker.unlockCard(ReaperBlast.ID);
         UnlockTracker.unlockCard(Spelunk.ID);
@@ -446,12 +475,11 @@ public class VacantMod implements
         UnlockTracker.unlockCard(Rejection.ID);
         UnlockTracker.unlockCard(VoidForm.ID);
         UnlockTracker.unlockCard(RunicThoughts.ID);
-        UnlockTracker.unlockCard(Reflection.ID);
+        UnlockTracker.unlockCard(CrackedReflection.ID);
         UnlockTracker.unlockCard(ReachThrough.ID);
         //Powers
 
-
-
+        //UnlockTracker.unlockCard(WailOfTheShroud.ID);
         //Options
 //        UnlockTracker.unlockCard(AmethystOption.ID);
 //        UnlockTracker.unlockCard(DiamondOption.ID);
@@ -525,6 +553,9 @@ public class VacantMod implements
 
         BaseMod.loadCustomStringsFile(PotionStrings.class,
                 getModID() + "Resources/localization/" + langKey + "/VacantMod-Potion-Strings.json");
+
+        BaseMod.loadCustomStringsFile(UIStrings.class,
+                getModID() + "Resources/localization/" + langKey + "/VacantMod-UI-Strings.json");
     }
 
     @Override

@@ -43,8 +43,7 @@ public class Polish extends AbstractDynamicCard
     public Polish()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 8;
-        exhaust = true;
+        block = baseBlock = 5;
     }
 
     @Override
@@ -66,8 +65,7 @@ public class Polish extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBlock(3);
             initializeDescription();
         }
     }

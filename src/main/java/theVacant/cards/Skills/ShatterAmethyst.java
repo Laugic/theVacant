@@ -36,8 +36,8 @@ public class ShatterAmethyst extends AbstractDynamicCard
     public ShatterAmethyst()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 5;
-        rebound = true;
+        magicNumber = baseMagicNumber = 4;
+        ricochet = true;
     }
 
     @Override
@@ -72,7 +72,6 @@ public class ShatterAmethyst extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(2);
-            upgradedMagicNumber = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

@@ -32,7 +32,7 @@ public class BackInTheMine extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 3;
-    private static final int DAMAGE = 13;
+    private static final int DAMAGE = 15;
 
     public BackInTheMine()
     {
@@ -78,7 +78,7 @@ public class BackInTheMine extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(4);
+            upgradeDamage(3);
             initializeDescription();
         }
     }

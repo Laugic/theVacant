@@ -14,7 +14,7 @@ public class PlayDiamondIsUnbreakableAction extends AbstractGameAction
 {
     private boolean freeToPlayOnce = false;
 
-    private boolean upgraded = false;
+    //private boolean upgraded = false;
     private int energyOnUse = -1;
     private int bonusEnergy = 0;
 
@@ -25,6 +25,7 @@ public class PlayDiamondIsUnbreakableAction extends AbstractGameAction
         this.duration = Settings.ACTION_DUR_XFAST;
         this.actionType = AbstractGameAction.ActionType.SPECIAL;
         this.energyOnUse = energyOnUse;
+        //this.upgraded = upgraded;
     }
 
     public void update()
@@ -41,8 +42,8 @@ public class PlayDiamondIsUnbreakableAction extends AbstractGameAction
         energyUsed += this.bonusEnergy;
         if (energyUsed > 0)
         {
-            for(int i = 0; i < energyUsed && i < 11; i++)
-                addToBot(new MineGemAction(new DiamondOrb(1)));
+            //for(int i = 0; i < energyUsed && i < 11; i++)
+                addToBot(new MineGemAction(new DiamondOrb(energyUsed)));
             if (!this.freeToPlayOnce)
                 player.energy.use(EnergyPanel.totalCount);
         }

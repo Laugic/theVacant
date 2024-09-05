@@ -15,14 +15,21 @@
   },
   "theVacant:Deathbell": {
     "NAME": "Deathbell",
-    "FLAVOR": "The scent invokes a feeling of dread.",
+    "FLAVOR": "This flower is said to ward off ill times and death.",
     "DESCRIPTIONS": [
-      "At the start of each combat, if you are #ythevacant:Hollow, gain 10 #yTemporary_HP."
+      "At the end of your first turn, if you are #ythevacant:Hollow, gain #b10 #yTemporary_HP."
+    ]
+  },
+  "theVacant:ShroudRelic": {
+    "NAME": "Shroud Fragment",
+    "FLAVOR": "An unnatural darkness surrounds you.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b3 #ythevacant:Shroud."
     ]
   },
   "theVacant:BoundSoul": {
-    "NAME": "Bound Soul",
-    "FLAVOR": "As death closes in, the artifact's hold on you weakens, and you feel your power grow.",
+    "NAME": "Unbound Soul",
+    "FLAVOR": "As death closes in, the Goblet's hold on you weakens, and you feel your power grow.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn if you are #ythevacant:Hollow."
     ]
@@ -31,21 +38,35 @@
     "NAME": "Locket Piece",
     "FLAVOR": "A reminder of a life lost. Or at least, a piece of one.",
     "DESCRIPTIONS": [
-      "After a card #ythevacant:Ricochets, gain #b4 #yBlock."
+      "#ythevacant:Ricochet the first 2 cards you #ythevacant:Mill each combat."
     ]
   },
   "theVacant:TombstoneRelic": {
     "NAME": "Tombstone",
     "FLAVOR": "Just as we all go to the grave eventually, all cards go to the discard pile eventually.",
     "DESCRIPTIONS": [
-      "At the start of combat, after you draw, #ythevacant:Mill your draw pile and trigger #yThe #yGoblet's ability again."
+      "At the start of combat, after you draw, #ythevacant:Mill your draw pile. Upon pickup, increase the power of your #yGoblet by #b2."
     ]
   },
   "theVacant:CrystalBallRelic": {
     "NAME": "Cracked Crystal Ball",
     "FLAVOR": "Sometimes magic leaking into the world is more powerful than when it is contained.",
     "DESCRIPTIONS": [
-      "#yExhausted cards return to your draw pile after 2 turns."
+      "The first time you play a card each turn, add a copy to your hand with #yEthereal and #yExhaust."
+    ]
+  },
+  "theVacant:Holly": {
+    "NAME": "Holly",
+    "FLAVOR": "Borrowed from a steampunky snowman.",
+    "DESCRIPTIONS": [
+      "Whenever you gain a debuff, reduce its amount by #b1 to a minimum of #b1."
+    ]
+  },
+  "theVacant:SilkTouch": {
+    "NAME": "Silk Touch",
+    "FLAVOR": "Swinging from side to side, side-side to side.",
+    "DESCRIPTIONS": [
+      "The first time you #ythevacant:Mine a #ythevacant:Gem each turn, trigger its effect without reducing its size."
     ]
   },
   "theVacant:RagRelic": {
@@ -63,12 +84,28 @@
       " #pthevacant:Void."
     ]
   },
+  "theVacant:EnshroudedBrassGoblet": {
+    "NAME": "Enshrouded Goblet",
+    "FLAVOR": "Darkness engulfs you.",
+    "DESCRIPTIONS": [
+      "At the start of combat, gain #b",
+      " #pthevacant:Void and #b", " #ythevacant:Shroud."
+    ]
+  },
   "theVacant:OverflowingGobletRelic": {
     "NAME": "Overflowing Goblet",
     "FLAVOR": "An ancient artifact, now overflowing with dark power.",
     "DESCRIPTIONS": [
-      "Replaces #yBrass #yGoblet. At the start of combat, gain #b",
+      "Replaces #yBrass #yGoblet. At the start of combat, draw #b", " cards and gain #b",
       " #yArtifact."
+    ]
+  },
+  "theVacant:EnshroudedOverflowingGobletRelic": {
+    "NAME": "Overshrouded Goblet",
+    "FLAVOR": "Darkness overflows.",
+    "DESCRIPTIONS": [
+      "Replaces #pEnshrouded #pGoblet. At the start of combat, gain #b",
+      " #pthevacant:Void, #yArtifact, and #ythevacant:Shroud, and draw #b", " cards."
     ]
   },
   "theVacant:BoundSoulOld": {

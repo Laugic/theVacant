@@ -14,6 +14,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import theVacant.powers.ShardPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
@@ -44,7 +45,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public void onInitialApplication(AbstractCard card)
     {
-        card.glowColor = Color.PURPLE;
+        card.glowColor = Color.PURPLE.cpy();
         if(!card.keywords.toString().contains(KeywordManager.VOIDBOUND_ID))
             card.keywords.add(KeywordManager.VOIDBOUND_ID);
     }
@@ -61,7 +62,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyBlock(float block, AbstractCard card)
     {
-        if(!CheckDrawEmpty() && block > 0)
+        if(!CheckDrawEmpty() && block > 0 && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID))
         {
             int voidAmount = 0;
 
@@ -77,7 +78,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target)
     {
-        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK))
+        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK) && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID))
         {
             int voidAmount = 0;
 
@@ -99,7 +100,7 @@ public class VoidboundModifier extends AbstractCardModifier
             if(AbstractDungeon.player != null)
             {
                 if(AbstractDungeon.player.hasPower(VoidPower.POWER_ID))
-                    card.glowColor = Color.PURPLE;
+                    card.glowColor = Color.PURPLE.cpy();
             }
             if(!card.rawDescription.toLowerCase().contains(BaseMod.getKeywordProper(KeywordManager.VOIDBOUND_ID).toLowerCase()))
                 card.keywords.add(0, KeywordManager.VOIDBOUND_ID);
@@ -126,7 +127,7 @@ public class VoidboundModifier extends AbstractCardModifier
         else
         {
             addModifier(card, new VoidboundModifier(amount));
-            card.glowColor = Color.PURPLE;
+            card.glowColor = Color.PURPLE.cpy();
         }
     }
 

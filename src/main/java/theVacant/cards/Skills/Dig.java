@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.ReturnAction;
 import theVacant.actions.VacantMillAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
@@ -28,23 +29,23 @@ public class Dig extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int BLOCK = 8;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK = 7;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     public Dig()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
-        this.block = this.baseBlock = BLOCK;
-        this.getBonusMillToMagic = true;
+        magicNumber = baseMagicNumber = 3;
+        block = baseBlock = BLOCK;
+        getBonusMillToMagic = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster m)
     {
         addToBot(new VFXAction(new DigVFX(), DigVFX.DURATION*3/4F));
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(this.magicNumber));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, this.block));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, false, 1, this));
     }
 
     @Override
@@ -54,9 +55,7 @@ public class Dig extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(2);
-            upgradedMagicNumber = true;
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradedBlock = true;
             initializeDescription();
         }
     }

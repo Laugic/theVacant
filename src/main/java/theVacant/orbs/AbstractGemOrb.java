@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theVacant.actions.IncreaseOrbSizeAction;
 import theVacant.actions.PolishGemAction;
 import theVacant.actions.ReduceOrbSizeAction;
+import theVacant.powers.ReachThroughPower;
 import theVacant.powers.ReflectionPower;
 import theVacant.relics.RagRelic;
 import theVacant.vfx.ChipVFX;
@@ -46,6 +47,8 @@ public abstract class AbstractGemOrb extends CustomOrb
         channelAnimTimer = 0.5f;
     }
 
+    public abstract int getAmount();
+
     @Override //if you want to ignore Focus
     public void applyFocus()
     {
@@ -56,13 +59,13 @@ public abstract class AbstractGemOrb extends CustomOrb
     @Override
     public void onEvoke()
     {
-        triggerPassive(passiveAmount);
+        triggerPassive(getAmount() * passiveAmount);
     }
 
     public void onStartOfTurnPostDraw()
     {
         if(turnStartOrb)
-            triggerPassive(oneSizeEffect ? 1 : passiveAmount);
+            triggerPassive(getAmount());
         AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this));
         updateDescription();
     }
@@ -98,7 +101,7 @@ public abstract class AbstractGemOrb extends CustomOrb
                 tempSize--;
             }
         }
-        return chipTotal;
+        return chipTotal * getAmount();
     }
 
     public abstract void triggerPassive(int amount);

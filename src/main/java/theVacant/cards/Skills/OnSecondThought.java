@@ -31,7 +31,7 @@ public class OnSecondThought extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 1;
         exhaust = true;
-        this.rebound = true;
+        this.ricochet = true;
     }
 
     @Override

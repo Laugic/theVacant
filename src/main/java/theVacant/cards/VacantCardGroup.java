@@ -1,21 +1,14 @@
 package theVacant.cards;
 
 import basemod.ReflectionHacks;
-import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.utility.TextAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import theVacant.powers.AntifactPower;
-import theVacant.powers.RequiemPower;
+import theVacant.powers.OLD_RequiemPower;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -103,14 +96,14 @@ public class VacantCardGroup
 //            }
 
             //Requiem
-            if(_instance.target.hasPower(RequiemPower.POWER_ID))
+            if(_instance.target.hasPower(OLD_RequiemPower.POWER_ID))
             {
                 if(_instance.amount > 0 && (power.type == AbstractPower.PowerType.BUFF || power.type == AbstractPower.PowerType.DEBUFF))
                     _instance.amount *= 2;
 
                 power.updateDescription();
 
-                _instance.target.getPower(RequiemPower.POWER_ID).flash();
+                _instance.target.getPower(OLD_RequiemPower.POWER_ID).flash();
 
                 for (AbstractCard card: AbstractDungeon.player.hand.group)
                     card.applyPowers();

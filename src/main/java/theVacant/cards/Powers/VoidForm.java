@@ -2,7 +2,6 @@ package theVacant.cards.Powers;
 
 import basemod.BaseMod;
 import basemod.helpers.BaseModCardTags;
-import basemod.helpers.CardTags;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -14,11 +13,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import theVacant.VacantMod;
-import theVacant.actions.MineGemAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
-import theVacant.orbs.AmethystOrb;
-import theVacant.powers.GloomPower;
+import theVacant.powers.VoidFormPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
 
@@ -49,7 +46,7 @@ public class VoidForm extends AbstractDynamicCard
     public VoidForm()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 6;
+        magicNumber = baseMagicNumber = 5;
         tags.add(BaseModCardTags.FORM);
     }
 
@@ -59,7 +56,7 @@ public class VoidForm extends AbstractDynamicCard
         addToBot(new VFXAction(player, new BorderFlashEffect(new Color(.5f, 0, .5f, .5f)), 0.2F, true));
         addToBot(new VFXAction(player, new VerticalAuraEffect(new Color(.5f, 0, .5f, .5f), player.hb.cX, player.hb.cY), 0.25F));
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(player, player, new GloomPower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, magicNumber), magicNumber));
 //        addToBot(new ApplyPowerAction(player, player, new VoidFormPower(player, player, 1), 1));
         //addToBot(new SwitchFormAction(BoundSoul.VOID_FORM));
     }
@@ -81,8 +78,7 @@ public class VoidForm extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
-            upgradedMagicNumber = true;
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

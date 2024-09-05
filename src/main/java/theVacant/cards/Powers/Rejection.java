@@ -41,7 +41,7 @@ public class Rejection extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster m)
     {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new FrailPower(player, 2, false), 2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new WeakPower(player, 2, false), 2));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new AntifactPower(player, player, 2), 2));
     }
 

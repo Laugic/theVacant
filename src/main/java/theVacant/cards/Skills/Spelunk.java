@@ -37,8 +37,8 @@ public class Spelunk extends AbstractDynamicCard
     public Spelunk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 10;
-        magicNumber = baseMagicNumber = 3;
+        block = baseBlock = 8;
+        magicNumber = baseMagicNumber = 2;
         postMillAction = true;
     }
 
@@ -63,9 +63,7 @@ public class Spelunk extends AbstractDynamicCard
         {
             upgradeName();
             upgradeBlock(2);
-            upgradedBlock = true;
             upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
             initializeDescription();
         }
     }

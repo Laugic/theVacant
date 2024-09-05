@@ -34,14 +34,14 @@ public class CleanseSoul extends AbstractDynamicCard
 
     public CleanseSoul() {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 4;
+        magicNumber = baseMagicNumber = 3;
+        ricochet = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CleanseSoulPower(player, player, -1)));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new TemperancePower(player, player, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CleanseSoulPower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -50,9 +50,7 @@ public class CleanseSoul extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            this.isInnate = true;
-            upgradeMagicNumber(1);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(2);
             initializeDescription();
         }
     }

@@ -29,14 +29,14 @@ public class BrassMagnet extends AbstractDynamicCard {
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 14;
-    private static final int UPGRADE_PLUS_DMG = 4;
+    private static final int DAMAGE = 11;
+    private static final int UPGRADE_PLUS_DMG = 3;
 
     public BrassMagnet()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = DAMAGE;
-        this.rebound = true;
+        this.ricochet = true;
     }
 
     @Override

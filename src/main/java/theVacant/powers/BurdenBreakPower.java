@@ -3,6 +3,7 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.util.TextureLoader;
 
-public class BurdenBreakPower extends AbstractPower implements CloneablePowerInterface
+public class BurdenBreakPower extends AbstractPower implements CloneablePowerInterface, OnReceivePowerPower
 {
     public AbstractCreature source;
 
@@ -45,7 +46,7 @@ public class BurdenBreakPower extends AbstractPower implements CloneablePowerInt
 
         updateDescription();
     }
-
+/*
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && target == owner && !target.hasPower("Artifact")) {
@@ -53,7 +54,7 @@ public class BurdenBreakPower extends AbstractPower implements CloneablePowerInt
             addToTop(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount), amount));
         }
     }
-
+*/
     @Override
     public int onLoseHp(int damageAmount)
     {
@@ -76,5 +77,14 @@ public class BurdenBreakPower extends AbstractPower implements CloneablePowerInt
     public AbstractPower makeCopy()
     {
         return new BurdenBreakPower(owner, source, amount);
+    }
+
+    @Override
+    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && target == owner && !target.hasPower("Artifact")) {
+            flash();
+            addToTop(new ApplyPowerAction(owner, owner, new VigorPower(owner, amount), amount));
+        }
+        return true;
     }
 }

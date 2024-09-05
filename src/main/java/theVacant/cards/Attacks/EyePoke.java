@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
@@ -24,7 +25,7 @@ public class EyePoke extends AbstractDynamicCard {
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final int DAMAGE = 2;
 
     public EyePoke()
@@ -37,8 +38,8 @@ public class EyePoke extends AbstractDynamicCard {
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        for(int i = 0; i < 2; i++)
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        //addToBot(new ApplyPowerAction(monster, player, new VulnerablePower(monster, 1, false), 1));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, player, new WeakPower(monster, magicNumber, false), magicNumber));
     }
 
@@ -48,8 +49,8 @@ public class EyePoke extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
-            upgradedCost = true;
+            upgradeDamage(2);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,6 +11,7 @@ import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.EchoModifier;
 import theVacant.characters.TheVacant;
+import theVacant.powers.DizzyPower;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -26,7 +28,7 @@ public class Spinshield extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 6;
     private static final int UPGRADE_PLUS_BLOCK = 2;
 
     public Spinshield()
@@ -41,6 +43,8 @@ public class Spinshield extends AbstractDynamicCard
     {
         for(int i = 0; i < magicNumber; i++)
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(player, player, block));
+
+        addToBot(new ApplyPowerAction(player, player, new DizzyPower(player, player, 1)));
     }
 
     @Override
@@ -50,7 +54,6 @@ public class Spinshield extends AbstractDynamicCard
         {
             upgradeName();
             upgradeBlock(UPGRADE_PLUS_BLOCK);
-            upgradedBlock = true;
             initializeDescription();
         }
     }

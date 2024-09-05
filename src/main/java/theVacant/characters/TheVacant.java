@@ -2,21 +2,26 @@ package theVacant.characters;
 
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.*;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.localization.KeywordStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -30,9 +35,14 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.badlogic.gdx.graphics.Color;
+import theVacant.powers.InvisibleDebuffTracker;
 import theVacant.relics.*;
+import theVacant.util.TextureLoader;
+import theVacant.vfx.HollowParticle;
+import theVacant.vfx.SparkleParticle;
 
 import static theVacant.VacantMod.*;
+import static theVacant.cards.AbstractVacantCard.getHollow;
 
 public class TheVacant extends CustomPlayer
 {
@@ -50,7 +60,7 @@ public class TheVacant extends CustomPlayer
 
     public static final int ENERGY_PER_TURN = 3;
     public static final int STARTING_HP = 80;
-    public static final int MAX_HP = 80;
+    public static final int MAX_HP = 74;
     public static final int STARTING_GOLD = 99;
     public static final int CARD_DRAW = 5;
     public static final int ORB_SLOTS = 0;
@@ -65,6 +75,14 @@ public class TheVacant extends CustomPlayer
     private static final KeywordStrings keyStrings = CardCrawlGame.languagePack.getKeywordString(ID);
     private static final String[] NAMES = characterStrings.NAMES;
     private static final String[] TEXT = characterStrings.TEXT;
+    private static final Texture hollowTexture = TextureLoader.getTexture("theVacantResources/images/vfx/hollow.png");
+    public static int counter = 0;
+    public static float rotation = 0, alpha = 0;
+    final int w = hollowTexture.getWidth();
+    final int h = hollowTexture.getHeight();
+    final int w2 = hollowTexture.getWidth();
+    final int h2 = hollowTexture.getHeight();
+
     public static List<String> crystalCards = Arrays.asList(ShatterAmethyst.ID, FireCrystal.ID, FireCrystal.ID);
 
     public static final String[] orbTextures = {
@@ -96,7 +114,7 @@ public class TheVacant extends CustomPlayer
                 THE_VACANT_SHOULDER_1,
                 THE_VACANT_SHOULDER_2,
                 THE_VACANT_CORPSE,
-                getLoadout(), 20.0F, -10.0F, 220.0F, 290.0F, new EnergyManager(ENERGY_PER_TURN));
+                getLoadout(), 20.0F, -10.0F, 220.0F, 220.0F, new EnergyManager(ENERGY_PER_TURN));
 
 
         loadAnimation(
@@ -121,25 +139,63 @@ public class TheVacant extends CustomPlayer
                 STARTING_HP, MAX_HP, ORB_SLOTS, STARTING_GOLD, CARD_DRAW, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
-/*
+
     @Override
-    public void renderPowerTips(SpriteBatch sb)
-    {
-        ArrayList<PowerTip> tips = new ArrayList();
-        if(this.will > 0)
-        {
-            tips.add(new PowerTip(BaseMod.getKeywordTitle("thevacant:will"), BaseMod.getKeywordDescription("thevacant:will") + (this.will)));
+    public void update() {
+        super.update();
+        counter++;
+        if(MathUtils.randomBoolean())
+            counter++;
+        final float dt = Gdx.graphics.getDeltaTime();
+        rotation += 2 * dt;
+        if(getHollow() && (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT)){
+            alpha += dt;
+            if(counter % 25 == 0)
+                AbstractDungeon.effectsQueue.add(new HollowParticle(this));
+            if(counter % 70 == 0)
+                AbstractDungeon.effectsQueue.add(new SparkleParticle(this));
         }
-        if (!tips.isEmpty())
-        {
-            if (this.hb.cX + this.hb.width / 2.0F < TIP_X_THRESHOLD)
-                TipHelper.queuePowerTips(this.hb.cX + this.hb.width / 2.0F + TIP_OFFSET_R_X, this.hb.cY + TipHelper.calculateAdditionalOffset(tips, this.hb.cY), tips);
-            else
-                TipHelper.queuePowerTips(this.hb.cX - this.hb.width / 2.0F + TIP_OFFSET_L_X, this.hb.cY + TipHelper.calculateAdditionalOffset(tips, this.hb.cY), tips);
-        }
-        super.renderPowerTips(sb);
+        else
+            alpha -= dt;
+        alpha = Math.max(alpha, 0);
+        alpha = Math.min(1, alpha);
     }
-*/
+
+    @Override
+    public void render(SpriteBatch sb) {
+        sb.setColor(Color.WHITE);
+        sb.setColor(sb.getColor().r, sb.getColor().g, sb.getColor().b, alpha);
+        sb.draw(hollowTexture, hb.cX - w2 / 2f, hb.cY - h2 / 2f,
+                w / 2f, h / 2f,
+                w2, h2,
+                1.75f * Settings.scale, 1.75f * Settings.scale,
+                rotation,
+                0, 0,
+                w2, h2,
+                false, false);
+        sb.setColor(Color.WHITE);
+        super.render(sb);
+    }
+
+    /*
+            @Override
+            public void renderPowerTips(SpriteBatch sb)
+            {
+                ArrayList<PowerTip> tips = new ArrayList();
+                if(this.will > 0)
+                {
+                    tips.add(new PowerTip(BaseMod.getKeywordTitle("thevacant:will"), BaseMod.getKeywordDescription("thevacant:will") + (this.will)));
+                }
+                if (!tips.isEmpty())
+                {
+                    if (this.hb.cX + this.hb.width / 2.0F < TIP_X_THRESHOLD)
+                        TipHelper.queuePowerTips(this.hb.cX + this.hb.width / 2.0F + TIP_OFFSET_R_X, this.hb.cY + TipHelper.calculateAdditionalOffset(tips, this.hb.cY), tips);
+                    else
+                        TipHelper.queuePowerTips(this.hb.cX - this.hb.width / 2.0F + TIP_OFFSET_L_X, this.hb.cY + TipHelper.calculateAdditionalOffset(tips, this.hb.cY), tips);
+                }
+                super.renderPowerTips(sb);
+            }
+        */
     @Override
     public ArrayList<String> getStartingDeck()
     {
@@ -155,8 +211,8 @@ public class TheVacant extends CustomPlayer
         startDeck.add(VacantStarterDefend.ID);
         startDeck.add(VacantStarterDefend.ID);
 
-        startDeck.add(SoulBash.ID);
         startDeck.add(Corporeate.ID);
+        startDeck.add(SoulBash.ID);
 
 //        Testing
         return startDeck;
@@ -185,6 +241,7 @@ public class TheVacant extends CustomPlayer
     {
         millsThisTurn = 0;
         releasesThisCombat = 0;
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new InvisibleDebuffTracker(AbstractDungeon.player, AbstractDungeon.player, 1)));
         super.applyStartOfCombatLogic();
     }
 
@@ -263,6 +320,7 @@ public class TheVacant extends CustomPlayer
     public Texture getCutsceneBg() {
         return ImageMaster.loadImage("theVacantResources/images/scenes/goldBG.png");// 307
     }
+
 
     @Override
     public List<CutscenePanel> getCutscenePanels() {

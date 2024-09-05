@@ -46,12 +46,14 @@ public class MemoriaPower extends AbstractPower implements CloneablePowerInterfa
 
         updateDescription();
     }
+
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action)
     {
-        if(action.exhaustCard && !card.purgeOnUse && this.amount > 0)
+        if(!card.purgeOnUse && amount > 0)//action.exhaustCard
         {
             flash();
+            action.exhaustCard = true;
             AbstractMonster monster = null;
             if (action.target != null)
                 monster = (AbstractMonster)action.target;
@@ -65,10 +67,10 @@ public class MemoriaPower extends AbstractPower implements CloneablePowerInterfa
                 tmp.calculateCardDamage(monster);
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.addCardQueueItem(new CardQueueItem(tmp, monster, card.energyOnUse, true, true), true);
-            this.amount--;
+            amount--;
         }
-        if (this.amount == 0)
-            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.POWER_ID));
+        if (amount <= 0)
+            addToTop(new RemoveSpecificPowerAction(owner, owner, this));
         updateDescription();
     }
 
@@ -76,22 +78,16 @@ public class MemoriaPower extends AbstractPower implements CloneablePowerInterfa
     @Override
     public void atStartOfTurn()
     {
-        reducePower(amount);
-        if(amount <= 0)
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
+        addToBot(new RemoveSpecificPowerAction(owner, owner, this));
     }
 
     @Override
     public void updateDescription()
     {
-        if (this.amount == 1)
-        {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        }
-        else if (this.amount > 1)
-        {
-            description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
-        }
+        if (amount == 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        else if (amount > 1)
+            description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[2];
     }
 
     @Override

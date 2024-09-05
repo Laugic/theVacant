@@ -48,8 +48,7 @@ public class RunicThoughts extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            rebound = true;
-            upgradeBaseCost(0);
+            isInnate = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

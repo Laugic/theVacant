@@ -32,7 +32,7 @@ public class DimensionTear extends AbstractDynamicCard
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 2;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 3;
     private static ArrayList<TooltipInfo> Tooltip;
 
     public DimensionTear()
@@ -74,8 +74,7 @@ public class DimensionTear extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
-            upgradedDamage = true;
+            upgradeBaseCost(1);
             initializeDescription();
         }
     }

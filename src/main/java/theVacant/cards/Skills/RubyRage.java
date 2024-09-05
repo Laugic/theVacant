@@ -37,14 +37,15 @@ public class RubyRage extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
+        checkHollow = true;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new VFXAction(player, new InflameEffect(player), .5F));
-        addToBot(new MineGemAction(new RubyOrb(magicNumber)));
-        addToBot(new MineGemAction(new RubyOrb(magicNumber)));
+        addToBot(new MineGemAction(new RubyOrb(magicNumber), getHollow()));
+        addToBot(new MineGemAction(new RubyOrb(magicNumber), getHollow()));
 //        int vigorAmount = player.discardPile.size();
 //        if(vigorAmount > 0)
 //            addToBot(new ApplyPowerAction(player, player, new VigorPower(player, vigorAmount), vigorAmount));

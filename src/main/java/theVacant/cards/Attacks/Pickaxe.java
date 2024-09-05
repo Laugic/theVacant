@@ -43,15 +43,16 @@ public class Pickaxe extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        for(int i = 0; i < magicNumber; i++)
-            addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        addToBot(new ChipOrbAction(1));
+        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        addToBot( new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+        addToBot(new ChipOrbAction(magicNumber));
     }
 
     @Override
@@ -60,8 +61,8 @@ public class Pickaxe extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
-            upgradedDamage = true;
+            upgradeDamage(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

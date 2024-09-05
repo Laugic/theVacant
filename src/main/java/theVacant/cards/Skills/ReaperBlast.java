@@ -41,7 +41,6 @@ public class ReaperBlast extends AbstractDynamicCard
     public ReaperBlast()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
         exhaust = true;
         tags.add(CardTags.HEALING);
     }
@@ -49,14 +48,14 @@ public class ReaperBlast extends AbstractDynamicCard
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new ApplyPowerAction(player, player, new ReapPower(player, player, magicNumber), magicNumber, true));
-        addToBot(new ApplyPowerAction(player, player, new VulnerablePower(player, magicNumber, false), magicNumber, true));
-        addToBot(new ApplyPowerAction(player, player, new WeakPower(player, magicNumber, false), magicNumber, true));
+        addToBot(new ApplyPowerAction(player, player, new ReapPower(player, player, upgraded?2:1), upgraded?2:1, true));
+        addToBot(new ApplyPowerAction(player, player, new WeakPower(player, upgraded?3:2, false), upgraded?3:2, true));
+        addToBot(new ApplyPowerAction(player, player, new VulnerablePower(player, upgraded?4:3, false), upgraded?4:3, true));
         for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
         {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new ReapPower(mo, mo, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new WeakPower(mo, magicNumber, false), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new ReapPower(mo, mo, upgraded?2:1), upgraded?2:1, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new WeakPower(mo, upgraded?3:2, false), upgraded?3:2, true, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(mo, player, new VulnerablePower(mo, upgraded?4:3, false), upgraded?4:3, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
 /*
@@ -77,8 +76,6 @@ public class ReaperBlast extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

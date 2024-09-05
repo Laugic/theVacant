@@ -31,7 +31,7 @@ public class Sneeze extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 0, STARTMILL = 5, UPGRADE = 3;
+    private static final int COST = 0, STARTMILL = 4, UPGRADE = 1;
     private int retainBonus = 0;
     public Sneeze()
     {
@@ -64,7 +64,7 @@ public class Sneeze extends AbstractDynamicCard
             AbstractDungeon.actionManager.addToBottom(new SFXAction("theVacant:sneezeSmall1"));
         }
 
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, this));
         magicNumber = baseMagicNumber;
     }
 

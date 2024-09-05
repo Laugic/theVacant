@@ -1,7 +1,6 @@
 package theVacant.orbs;
 
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -11,7 +10,6 @@ import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import theVacant.VacantMod;
 import theVacant.actions.UpdateCardsInHandAction;
 import theVacant.actions.VacantMillAction;
-import theVacant.powers.GloomPower;
 
 import static theVacant.VacantMod.makeOrbPath;
 
@@ -25,6 +23,12 @@ public class AmethystOrb extends AbstractGemOrb
     public AmethystOrb(int size)
     {
         super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("AmethystOrb.png"));
+        passiveAmount = evokeAmount = 3;
+    }
+
+    @Override
+    public int getAmount() {
+        return 3;
     }
 
     @Override
@@ -34,7 +38,7 @@ public class AmethystOrb extends AbstractGemOrb
                 new VFXAction(new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.DARK), 0.1f));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("CARD_OBTAIN"));
         chipSound();
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount * 3));
+        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount));
         AbstractDungeon.actionManager.addToBottom(new UpdateCardsInHandAction());
     }
 

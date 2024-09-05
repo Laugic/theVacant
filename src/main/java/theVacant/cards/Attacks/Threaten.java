@@ -35,7 +35,7 @@ public class Threaten extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
-        this.magicNumber = this.baseMagicNumber = 5;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.exhaust = true;
     }
 

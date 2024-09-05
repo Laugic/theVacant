@@ -37,7 +37,7 @@ public class Yeet extends AbstractDynamicCard
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = DAMAGE;
-        this.rebound = true;
+        this.ricochet = true;
         this.postMillAction = true;
     }
 

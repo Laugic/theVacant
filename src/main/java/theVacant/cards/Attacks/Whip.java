@@ -33,7 +33,7 @@ public class Whip extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 1;
-        rebound = true;
+        ricochet = true;
     }
 
     @Override

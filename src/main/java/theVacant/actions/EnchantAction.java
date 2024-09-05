@@ -12,8 +12,6 @@ import theVacant.cards.Modifiers.*;
 import theVacant.cards.Skills.Enchant;
 import theVacant.orbs.*;
 
-import static com.megacrit.cardcrawl.characters.AbstractPlayer.uiStrings;
-
 public class EnchantAction extends AbstractGameAction
 {
 
@@ -21,8 +19,8 @@ public class EnchantAction extends AbstractGameAction
 
     AbstractPlayer player;
     AbstractGemOrb nextOrb;
-
-    public EnchantAction()
+    boolean upgraded;
+    public EnchantAction(boolean upgraded)
     {
         this.actionType = ActionType.CARD_MANIPULATION;
 
@@ -30,6 +28,7 @@ public class EnchantAction extends AbstractGameAction
         duration = startDuration;
         player = AbstractDungeon.player;
         nextOrb= getFirstGem();
+        this.upgraded = upgraded;
     }
 
     public void update()
@@ -42,7 +41,9 @@ public class EnchantAction extends AbstractGameAction
                 this.isDone = true;
                 return;
             }
-            addToTop(new ReduceOrbSizeAction(nextOrb, nextOrb.passiveAmount));
+            if(!upgraded)
+                addToTop(new ReduceOrbSizeAction(nextOrb, nextOrb.passiveAmount));
+
             if (player.hand.size() == 0)
             {
                 this.isDone = true;

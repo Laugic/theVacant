@@ -18,11 +18,17 @@ public class TopazOrb extends AbstractGemOrb
     public static final String ORB_ID = VacantMod.makeID(TopazOrb.class.getSimpleName());
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
     public static final String[] DESCRIPTIONS = orbString.DESCRIPTION;
-    private static boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = true;
+    private static final boolean TURN_START_ORB = true, ONE_SIZE_EFFECT = true;
 
     public TopazOrb(int size)
     {
         super(ORB_ID, orbString.NAME, size, TURN_START_ORB, ONE_SIZE_EFFECT, makeOrbPath("TopazOrb.png"));
+        passiveAmount = evokeAmount = 1;
+    }
+
+    @Override
+    public int getAmount() {
+        return 1;
     }
 
     @Override

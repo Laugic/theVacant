@@ -32,5 +32,47 @@
       "[Leave]",
       "[Climb on]"
     ]
+  },
+  "theVacant:CavernEvent": {
+    "NAME": "Familiar Cavern",
+    "DESCRIPTIONS": [
+      "This cavern seems familiar, like you've been here before. Is the #ySpire playing tricks on you, or is really where you found that #p~Artifact~ ?",
+      "Yes, a fork in the cave. This is just like before- but how is it here? What is this madness? What is this #y~Spire~ ? You venture on, following your footsteps from before.",
+      "Scraping through the dim cavern, you bump into all kinds of spikes in the walls. The depths are unnaturally thick. No, this isn't right. A #p~Shroud~ of darkness penetrates the air. You make it to what should have been the #yTemple, but is now a dark antichamber. An Altar with a #b~Dark~ #b~Chalice~ atop it stands in the middle of the room. Beckoning. It gives off a familiar feeling, which sickens you.",
+      "You reach into the #bChalice. Its power seeps into your #pSoul. Memories flash through your mind- From how long ago? Travelling through ancient ruins, studying ancient artifacts. You see the grand underground #yTemple in the distance. Surely it contains priceless treasure- A surge of pain rushes through you. You feel as though a fragment of the dark #p~Shroud~ that filled the cavern has fused itself into you. What have you done?",
+      "No, this place will not take hold of you again. Not like last time. You #rrampage through, breaking everything you can, and find some #yGold within the many urns that were strewn about the room. The temptation was resisted, and you are free to climb again.",
+      "The air grows suddenly thicker. You can hear what sounds like a wailing scream piercing the silence. It's getting louder and louder as the darkness deepens. You have to get out of here.",
+      "You leave a part of yourself behind. An eerie silence fills the room. You feel like you're being watched, and judged for what you have done. NL NL ...It's time to leave.",
+      "You feel a deep sense of calm wash over you. The darkness parts and the cavern brightens. The #bChalice seems to have accepted your offering. It may be a good idea to leave before it starts wanting more.",
+      "A #ybright #ylight beams out from the #bChalice. You sense the #bChalice is greatly satisfied with your offering, but also... that is #r~greedy~ for more.",
+      "The #ybeam glows a golden yellow with your additional sacrifice. The #bChalice is calling you to give it more, but is ready to #yreward you for what you have given thus far.",
+      "The #ylight shines even brighter. The room is completely lit and the darkness is nowhere to be seen. But the #bChalice's #r~greed~ has been growing with every offering. It seems that #yGold isn't what it wants anymore...",
+      "The #ybeam turns a vibrant purple as it melds with your #pSoul. You can feel that it is both taking parts of you for itself and giving you part of its #p~Power~ . As the light grows brighter and brighter, you feel more of yourself being drawn into the #bChalice. Until in a final flash of light, you are suddenly out of the cavern- perhaps not as whole as you once were, but with something to show for it.",
+      "The #ylight slowly dims until it fades off with one final flash. You feel as though your #pSoul is refreshed. In the #bChalice's place, you find a #ytrinket on the Altar, and take it with you back out to continue your journey. As you leave, you feel a sense of disappointment in the air, almost as if the cavern itself sighed at your... ~lack~ ~of~ ~ambition~ .",
+      "You're not chancing what happened in there last time again."
+    ],
+    "OPTIONS": [
+      "[Continue your climb] Exit.",
+      "[Turn Back]",
+      "[Explore] #rLose #r",
+      " #rHP. Travel deeper.",
+      "[Keep Delving] #rLose #r",
+      "[Embrace the Shroud] #rLose #r",
+      " #rHP. #gReach #ginto #gthe #gChalice.",
+      "[Smash the place] #gGain #g50-100 #gGold.",
+      "[Leave something behind] Give the #bChalice a card?",
+      "[Get out of there] #gHeal #g20 #gHP.",
+      "[Wait and see] #gHeal #g20 #gHP #gand #ggain #ga #grandom #gCommon #grelic.",
+      "[Give it more] #rLose #r30 #rGold - Feed the Chalice",
+      "[That's enough] #gHeal #g25 #gHP #gand #ggain #ga #grandom #gUncommon #grelic.",
+      "[Maybe a bit more...] #rLose #r30 #rGold - Feed the Chalice",
+      "[Oh no] #rLose #r",
+      " #rHP #r- #rFeed #rthe #rChalice.",
+      "[Get out while you still can] Exit.",
+      "[What have you done?] Gain a random Rare relic. The #pGoblet is different...",
+      "[Locked] Requires 30 Gold.",
+      "[Locked] Requires The Goblet.",
+      "Give the Chalice a card."
+    ]
   }
 }

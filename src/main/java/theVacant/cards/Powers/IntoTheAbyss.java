@@ -31,19 +31,17 @@ public class IntoTheAbyss extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 2, DOOM = 2;
+    private static final int COST = 1;
 
     public IntoTheAbyss()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        //AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DoomNextTurnPower(player, player, magicNumber), magicNumber));
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new AbyssPower(player, player, magicNumber), magicNumber));
     }
 
@@ -53,8 +51,7 @@ public class IntoTheAbyss extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
-            upgradedMagicNumber = true;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

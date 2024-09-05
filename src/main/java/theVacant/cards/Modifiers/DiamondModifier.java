@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.BufferPower;
+import theVacant.powers.BreakdownPower;
 
 import java.util.ArrayList;
 
@@ -35,14 +36,14 @@ public class DiamondModifier extends AbstractCardModifier
     {
         AbstractPlayer player = AbstractDungeon.player;
         if (this.amount > 0 && player != null)
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BufferPower(player, amount), amount));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new BreakdownPower(player, player, amount), amount));
     }
 
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card)
     {
         if(this.amount > 0)
-            rawDescription += " NL Gain " + amount + " Buffer.";
+            rawDescription += " NL Gain " + amount + " thevacant:Breakdown.";
         return rawDescription;
     }
 
