@@ -59,7 +59,8 @@ public abstract class AbstractGemOrb extends CustomOrb
     @Override
     public void onEvoke()
     {
-        triggerPassive(getAmount() * passiveAmount);
+        AbstractDungeon.actionManager.addToTop(new VFXAction(new ChipVFX(this, this.hb.cX, this.hb.cY), ChipVFX.DURATION/6F));
+        triggerPassive(getAmount());
     }
 
     public void onStartOfTurnPostDraw()

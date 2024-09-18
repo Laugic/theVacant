@@ -3,7 +3,9 @@ package theVacant.actions;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.defect.AnimateOrbAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
+import com.megacrit.cardcrawl.actions.defect.EvokeOrbAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -58,25 +60,29 @@ public class MineGemAction extends AbstractGameAction
         
         if(maxSize > -1 && gem.passiveAmount > maxSize)
             gem.reduceSize(gem.passiveAmount - maxSize);
-
+/*
         if(AbstractDungeon.player.orbs.size() >= 10)
         {
             isDone = true;
             addToTop(new TalkAction(true, uiStrings.TEXT[0], 2, 2));
             return;
         }
-
-        addToTop(new ChannelAction(gem, false));
+*/
+        addToTop(new ChannelAction(gem, true));
 
         if(!AbstractDungeon.player.hasPower(InvisibleGemOrbPower.POWER_ID))
             AbstractDungeon.player.powers.add(new InvisibleGemOrbPower(AbstractDungeon.player, AbstractDungeon.player, 1));
 
-        if(AbstractDungeon.player.hasPower(ReachThroughPower.POWER_ID)){
-            for (int i = 0; i < AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID).amount; i++)
-                gem.triggerPassive(gem.getAmount());
-        }
 
-        AbstractDungeon.player.increaseMaxOrbSlots(1, false);
+        ReachThroughPower reachThrough = (ReachThroughPower) AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID);
+
+        if(reachThrough != null && reachThrough.gemsThisTurn < reachThrough.amount) {
+            gem.triggerPassive(gem.getAmount());
+            reachThrough.gemsThisTurn++;
+            reachThrough.flash();
+        }
+        if (AbstractDungeon.player.maxOrbs < 10)
+            AbstractDungeon.player.increaseMaxOrbSlots(1, false);
         Random rand = new Random();
         if(rand.randomBoolean())
             addToTop(new SFXAction("theVacant:gemSpawn"));

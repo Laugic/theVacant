@@ -36,13 +36,12 @@ public class IntoTheAbyss extends AbstractDynamicCard
     public IntoTheAbyss()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new AbyssPower(player, player, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new AbyssPower(player, player, 1), 1));
     }
 
     @Override

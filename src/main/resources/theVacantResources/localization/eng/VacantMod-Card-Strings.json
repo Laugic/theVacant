@@ -150,7 +150,7 @@
   },
   "theVacant:ReachThrough": {
     "NAME": "Reach Through",
-    "DESCRIPTION": "Whenever you thevacant:Mine a thevacant:Gem, trigger its effect. NL Gain 2 thevacant:Antifact."
+    "DESCRIPTION": "The first !M! times you thevacant:Mine a thevacant:Gem each turn, trigger its effect. NL Gain 3 thevacant:Antifact."
   },
   "theVacant:BurdenBreak": {
     "NAME": "Burden Break",
@@ -283,7 +283,7 @@
   "theVacant:EssenceOfBismuth": {
     "NAME": "Essence Of Bismuth",
     "DESCRIPTION": "thevacant:Unnate. NL Double debuffs NL on ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "thevacant:Unnate. thevacant:Heavy. NL Double debuffs NL on ALL enemies."
+    "UPGRADE_DESCRIPTION": "thevacant:Unnate. NL Triple debuffs NL on ALL enemies. NL Exhaust."
   },
   "theVacant:Desperation": {
     "NAME": "Desperation",
@@ -642,7 +642,7 @@
   },
   "theVacant:IntoTheAbyss": {
     "NAME": "Into the Abyss",
-    "DESCRIPTION": "Whenever you gain or apply a debuff, gain !M! thevacant:Temperance."
+    "DESCRIPTION": "Whenever you gain or apply a debuff, gain an equal amount of thevacant:Temperance."
   },
   "theVacant:StoreSoul": {
     "NAME": "Store Soul",
@@ -651,8 +651,8 @@
   },
   "theVacant:CrackedReflection": {
     "NAME": "Cracked Reflection",
-    "DESCRIPTION": "thevacant:Unnate. NL At the start of your turn and whenever you gain a debuff, thevacant:Mine a random size 1 thevacant:Gem.",
-    "UPGRADE_DESCRIPTION": "At the start of your turn and whenever you gain a debuff, thevacant:Mine a random size 1 thevacant:Gem."
+    "DESCRIPTION": "thevacant:Unnate. NL At the end of your turn and whenever you gain a debuff, thevacant:Mine a size 1 copy of a random thevacant:Gem you have.",
+    "UPGRADE_DESCRIPTION": "thevacant:Unnate. thevacant:Ricochet. NL At the end of your turn and whenever you gain a debuff, thevacant:Mine a size 1 copy of a random thevacant:Gem you have."
   },
   "theVacant:ForgeSoul": {
     "NAME": "Forge Soul",

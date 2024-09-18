@@ -31,8 +31,8 @@
   },
   "theVacant:ReachThroughPower": {
     "NAME": "Reach Through",
-    "DESCRIPTIONS": ["Whenever you #yMine a #yGem, trigger its effect.",
-      "Whenever you #yMine a #yGem, trigger its effect #b", " times."]
+    "DESCRIPTIONS": ["The first #b",
+      " times you #yMine a #yGem each turn, trigger its effect."]
   },
   "theVacant:AcceptancePower": {
     "NAME": "Acceptance",
@@ -41,10 +41,6 @@
   "theVacant:VoidEmbracePower": {
     "NAME": "Void Embrace",
     "DESCRIPTIONS": ["Whenever a card #yExhausts, gain #b", " #pVoid."]
-  },
-  "theVacant:PickaxePower": {
-    "NAME": "Cracked Reflection",
-    "DESCRIPTIONS": ["Whenever you #yMine a #yGem, #yChip it.", "Whenever you #yMine a #yGem, #yChip it #b", " times."]
   },
   "theVacant:AquamarinePower": {
     "NAME": "Aquamarine",
@@ -101,9 +97,9 @@
   "theVacant:CrackedReflectionPower": {
     "NAME": "Cracked Reflection",
     "DESCRIPTIONS": [
-      "At the start of your turn and whenever you gain a debuff, #yMine a random size 1 #yGem",
-      "At the start of your turn and whenever you gain a debuff, #yMine #b",
-      " random size 1 #yGems."
+      "At the end of your turn and whenever you gain a debuff, #yMine a size 1 copy of a random #yGem you have.",
+      "At the end of your turn and whenever you gain a debuff, #yMine #b",
+      " size 1 copies of random #yGems you have."
     ]
   },
   "theVacant:GloomPower": {
@@ -129,7 +125,8 @@
   "theVacant:AbyssPower": {
     "NAME": "The Abyss",
     "DESCRIPTIONS": [
-      "Whenever you gain or apply a debuff, gain #b", " #yTemperance."
+      "Whenever you gain or apply a debuff, gain an equal amount of #yTemperance.",
+      "Whenever you gain or apply a debuff, gain #b", " times the amount of #yTemperance."
     ]
   },
   "theVacant:ShardPower": {

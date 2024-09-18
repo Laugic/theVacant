@@ -37,12 +37,12 @@ public class ReachThrough extends AbstractDynamicCard
 
     private static ArrayList<TooltipInfo> Tooltip;
 
-    private static final int COST = 2, ANTIFACT = 2;
+    private static final int COST = 1, ANTIFACT = 3;
 
     public ReachThrough()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 1;
+        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class ReachThrough extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(1);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

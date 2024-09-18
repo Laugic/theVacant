@@ -27,6 +27,8 @@ public class ReachThroughPower extends AbstractPower implements CloneablePowerIn
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/embrace_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/embrace_power32.png");
 
+    public int gemsThisTurn;
+
     public ReachThroughPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
         name = NAME;
@@ -42,15 +44,18 @@ public class ReachThroughPower extends AbstractPower implements CloneablePowerIn
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
+        gemsThisTurn = 0;
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        gemsThisTurn = 0;
     }
 
     @Override
     public void updateDescription()
     {
-        if(amount == 1)
-            description = DESCRIPTIONS[0];
-        else
-            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
     }
 
     @Override

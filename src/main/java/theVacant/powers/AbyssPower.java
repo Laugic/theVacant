@@ -70,7 +70,7 @@ public class AbyssPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        description=(amount==1?DESCRIPTIONS[0]:(DESCRIPTIONS[1] + amount + DESCRIPTIONS[2]));
     }
 
     @Override
@@ -81,18 +81,18 @@ public class AbyssPower extends AbstractPower implements CloneablePowerInterface
 
     @Override
     public boolean betterOnApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature abstractCreature1) {
-        if(power.type == PowerType.DEBUFF && !target.hasPower(ArtifactPower.POWER_ID) && !alreadyHit.contains(power)){
+        if(power.type == PowerType.DEBUFF && !target.hasPower(ArtifactPower.POWER_ID) && !alreadyHit.contains(power) && !power.ID.equals("Shackled")){
             alreadyHit.add(power);
-            addToTop(new ApplyPowerAction(owner, owner, new TemperancePower(owner, owner, amount),amount));
+            addToTop(new ApplyPowerAction(owner, owner, new TemperancePower(owner, owner, Math.abs(power.amount) * amount),Math.abs(power.amount) * amount));
         }
         return true;
     }
 
     @Override
     public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature abstractCreature1) {
-        if(power.type == PowerType.DEBUFF && !target.hasPower(ArtifactPower.POWER_ID) && !alreadyHit.contains(power)){
+        if(power.type == PowerType.DEBUFF && !target.hasPower(ArtifactPower.POWER_ID) && !alreadyHit.contains(power) && !power.ID.equals("Shackled")){
             alreadyHit.add(power);
-            addToTop(new ApplyPowerAction(owner, owner, new TemperancePower(owner, owner, amount),amount));
+            addToTop(new ApplyPowerAction(owner, owner, new TemperancePower(owner, owner, Math.abs(power.amount) * amount),Math.abs(power.amount) * amount));
         }
         return true;
     }

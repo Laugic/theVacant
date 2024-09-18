@@ -48,7 +48,7 @@ public class CrackedReflection extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isUnnate = false;
+            ricochet = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

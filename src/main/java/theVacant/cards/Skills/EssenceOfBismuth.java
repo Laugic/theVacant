@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import basemod.BaseMod;
 import basemod.helpers.TooltipInfo;
+import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -60,7 +61,18 @@ public class EssenceOfBismuth extends AbstractDynamicCard
             {
                 if(power.type == AbstractPower.PowerType.DEBUFF && !VacantMod.IMMUNE_POWERS.contains(power.ID))
                 {
-                    addToBot(new ApplyPowerAction(mo, player, power));
+                    if(power instanceof CloneablePowerInterface)
+                    {
+                        AbstractPower newPow = ((CloneablePowerInterface) power).makeCopy();
+                        if(upgraded)
+                            newPow.amount *= 2;
+                        addToBot(new ApplyPowerAction(mo, player, newPow));
+                    }
+                    else{
+                        addToBot(new ApplyPowerAction(mo, player, power));
+                        if(upgraded)
+                            addToBot(new ApplyPowerAction(mo, player, power));
+                    }
                 }
             }
         }
@@ -72,8 +84,6 @@ public class EssenceOfBismuth extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isHeavy = true;
-            exhaust = false;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

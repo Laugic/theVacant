@@ -49,8 +49,7 @@ public class EyePoke extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
-            upgradeMagicNumber(1);
+            upgradeDamage(3);
             initializeDescription();
         }
     }
