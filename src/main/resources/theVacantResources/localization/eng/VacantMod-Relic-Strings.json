@@ -43,9 +43,9 @@
   },
   "theVacant:TombstoneRelic": {
     "NAME": "Tombstone",
-    "FLAVOR": "Just as we all go to the grave eventually, all cards go to the discard pile eventually.",
+    "FLAVOR": "To an early grave. For your cards at least.",
     "DESCRIPTIONS": [
-      "At the start of combat, after you draw, #ythevacant:Mill your draw pile. Upon pickup, increase the power of your #yGoblet by #b2."
+      "At the start of combat, after you draw, #ythevacant:Mill your draw pile."
     ]
   },
   "theVacant:CrystalBallRelic": {
@@ -73,7 +73,7 @@
     "NAME": "Polishing Rag",
     "FLAVOR": "Shiny gems are more powerful, everyone knows this.",
     "DESCRIPTIONS": [
-      "At the end of your turn, increase the size of your #b3 rightmost #ythevacant:Gems."
+      "Whenever you #ythevacant:Mine a #ythevacant:Gem, increase its size by #b1."
     ]
   },
   "theVacant:BrassGoblet": {

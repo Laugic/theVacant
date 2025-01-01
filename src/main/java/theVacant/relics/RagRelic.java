@@ -36,11 +36,11 @@ public class RagRelic extends CustomRelic
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
     }
 
-    @Override
-    public void atBattleStart()
-    {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PolishPower(AbstractDungeon.player, AbstractDungeon.player, 3)));
-    }
+//    @Override
+//    public void atBattleStart()
+//    {
+//        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PolishPower(AbstractDungeon.player, AbstractDungeon.player, 3)));
+//    }
 
     @Override
     public String getUpdatedDescription() {

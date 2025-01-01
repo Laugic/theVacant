@@ -41,17 +41,22 @@ public class SoulBarrageAction extends AbstractGameAction {
             target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
         if(target == null || target.isDeadOrEscaped() || target.isDying){
             isDone = true;
+            finish();
             return;
         }
         if (card != null) {
             card.calculateCardDamage((AbstractMonster)target);
             info = new DamageInfo(AbstractDungeon.player, card.damage, card.damageTypeForTurn);
         }
-        for (int i = 0; i < amount; i++) {
-                addToTop(new DamageAction(target, info, true));
-                if (target.hb != null)
-                    addToTop(new VFXAction(new HorizontalThrowVFX(this.target.hb.cX, this.target.hb.cY, color)));
-        }
+        addToTop(new DamageAction(target, info, true));
+        if (target.hb != null)
+            addToTop(new VFXAction(new HorizontalThrowVFX(this.target.hb.cX, this.target.hb.cY, color)));
         isDone = true;
+        finish();
+    }
+
+    private void finish() {
+        if(amount > 1)
+            addToTop(new SoulBarrageAction(amount - 1, target, info, color));
     }
 }

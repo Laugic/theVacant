@@ -56,7 +56,7 @@ public class SoulBarrage extends AbstractDynamicCard {
         }
 
         for (int i = 0; i < effect; i++)
-            addToBot(new SoulBarrageAction(1, AbstractDungeon.getRandomMonster(), new DamageInfo(player, damage, damageTypeForTurn), Color.CYAN));
+            addToBot(new SoulBarrageAction(1, null, new DamageInfo(player, damage, damageTypeForTurn), Color.CYAN));
 
         if (!freeToPlayOnce)
             player.energy.use(EnergyPanel.totalCount);

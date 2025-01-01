@@ -33,7 +33,6 @@ public class CrackedReflection extends AbstractDynamicCard
     public CrackedReflection()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        isUnnate = true;
     }
 
     @Override
@@ -48,8 +47,7 @@ public class CrackedReflection extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            ricochet = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

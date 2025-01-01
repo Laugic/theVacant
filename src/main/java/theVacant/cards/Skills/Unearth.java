@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -7,9 +8,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
+import theVacant.actions.MineGemAction;
 import theVacant.actions.ReturnAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.SapphireOrb;
 
 import static theVacant.VacantMod.makeCardPath;
 
@@ -25,13 +28,31 @@ public class Unearth extends AbstractDynamicCard
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = -2;
 
     public Unearth()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = 2;
         isUnnate = true;
+        postMillAction = true;
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return false;
+    }
+
+    @Override
+    public void PostMillAction()
+    {
+        addToBot(new AbstractGameAction() {
+            @Override
+            public void update() {
+                addToBot(new BetterDiscardPileToHandAction(magicNumber));
+                isDone = true;
+            }
+        });
     }
 
     @Override
@@ -43,7 +64,7 @@ public class Unearth extends AbstractDynamicCard
 //        addToBot(new SpelunkAction(upgraded?4:3));
 
         //AbstractDungeon.actionManager.addToBottom(new ReturnAction(magicNumber));
-        addToBot(new BetterDiscardPileToHandAction(magicNumber));
+
     }
 
     @Override
@@ -52,7 +73,7 @@ public class Unearth extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            ricochet = true;
+            isHeavy = true;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }

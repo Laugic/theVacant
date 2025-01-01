@@ -21,6 +21,7 @@ import theVacant.orbs.*;
 import theVacant.powers.InvisibleGemOrbPower;
 import theVacant.powers.ReachThroughPower;
 import theVacant.relics.OnMineRelic;
+import theVacant.relics.RagRelic;
 
 public class MineGemAction extends AbstractGameAction
 {
@@ -60,6 +61,11 @@ public class MineGemAction extends AbstractGameAction
         
         if(maxSize > -1 && gem.passiveAmount > maxSize)
             gem.reduceSize(gem.passiveAmount - maxSize);
+
+        if(AbstractDungeon.player.hasRelic(RagRelic.ID)){
+            gem.increaseSize(1);
+            AbstractDungeon.player.getRelic(RagRelic.ID).flash();
+        }
 /*
         if(AbstractDungeon.player.orbs.size() >= 10)
         {
@@ -76,10 +82,9 @@ public class MineGemAction extends AbstractGameAction
 
         ReachThroughPower reachThrough = (ReachThroughPower) AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID);
 
-        if(reachThrough != null && reachThrough.gemsThisTurn < reachThrough.amount) {
+        if(reachThrough != null && AbstractDungeon.player.maxOrbs < reachThrough.amount) {
             gem.triggerPassive(gem.getAmount());
-            reachThrough.gemsThisTurn++;
-            reachThrough.flash();
+            AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID).flash();
         }
         if (AbstractDungeon.player.maxOrbs < 10)
             AbstractDungeon.player.increaseMaxOrbSlots(1, false);

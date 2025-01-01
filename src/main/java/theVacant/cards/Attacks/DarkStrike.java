@@ -47,9 +47,8 @@ public class DarkStrike extends AbstractDynamicCard
         magicNumber = baseMagicNumber = InvisibleDebuffTracker.numDebuffs + 1;
         if(magicNumber > 0)
             addToBot(new VFXAction(player, new BorderFlashEffect(Color.PURPLE), 0.3F, true));
-        for (int i = 0; i < magicNumber; i++) {
-            addToBot(new SoulBarrageAction(1, AbstractDungeon.getRandomMonster(), new DamageInfo(player, damage, damageTypeForTurn), Color.PURPLE));
-        }
+        for (int i = 0; i < magicNumber; i++)
+            addToBot(new SoulBarrageAction(1, null, new DamageInfo(player, damage, damageTypeForTurn), Color.PURPLE));
     }
 
     @Override

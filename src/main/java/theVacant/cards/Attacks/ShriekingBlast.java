@@ -36,7 +36,8 @@ public class ShriekingBlast extends AbstractDynamicCard
     public ShriekingBlast()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        damage = baseDamage = DAMAGE;
+        damage = baseDamage = 2;
+        VoidboundModifier.Enhance(this, 1);
         magicNumber = baseMagicNumber = 2;
         isMultiDamage = true;
     }
@@ -60,7 +61,7 @@ public class ShriekingBlast extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            VoidboundModifier.Enhance(this, 1);
+            upgradeDamage(2);
             initializeDescription();
         }
     }

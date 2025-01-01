@@ -22,11 +22,12 @@ import java.util.ArrayList;
 
 import static basemod.helpers.CardModifierManager.addModifier;
 import static basemod.helpers.CardModifierManager.getModifiers;
+import static theVacant.cards.AbstractVacantCard.getHollow;
 
 public class VoidboundModifier extends AbstractCardModifier
 {
     private int amount;
-    private boolean initialPlay;
+    public boolean initialPlay, checkHollow = false;
     private int counter;
     public static String ID = "VacantVoidboundModifier";
 
@@ -35,6 +36,14 @@ public class VoidboundModifier extends AbstractCardModifier
         this.amount = amount;
         this.initialPlay = false;
         this.counter = 0;
+        checkHollow = false;
+    }
+
+    public VoidboundModifier(int amount, boolean checkHollow){
+        this.amount = amount;
+        this.initialPlay = false;
+        this.counter = 0;
+        this.checkHollow = checkHollow;
     }
 
     public void Increase(int num)
@@ -62,7 +71,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyBlock(float block, AbstractCard card)
     {
-        if(!CheckDrawEmpty() && block > 0 && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID))
+        if(!CheckDrawEmpty() && block > 0 && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID) && (!checkHollow || getHollow()))
         {
             int voidAmount = 0;
 
@@ -78,7 +87,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target)
     {
-        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK) && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID))
+        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK) && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID) && (!checkHollow || getHollow()))
         {
             int voidAmount = 0;
 
@@ -94,7 +103,7 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public String modifyDescription(String rawDescription, AbstractCard card)
     {
-        if(this.amount > 0)
+        if(this.amount > 0 && !checkHollow)
         {
             rawDescription = BaseMod.getKeywordTitle(KeywordManager.VOIDBOUND_ID) + ". NL " + rawDescription;
             if(AbstractDungeon.player != null)
@@ -122,11 +131,32 @@ public class VoidboundModifier extends AbstractCardModifier
         if(voidbound.size() > 0 && voidbound.get(0) instanceof VoidboundModifier)
         {
             VoidboundModifier voidmod = (VoidboundModifier)voidbound.get(0);
+            voidmod.setCheckHollow(false);
             voidmod.Increase(amount);
+            card.applyPowers();
         }
         else
         {
             addModifier(card, new VoidboundModifier(amount));
+            card.glowColor = Color.PURPLE.cpy();
+        }
+    }
+
+    public void setCheckHollow(boolean value){
+        checkHollow = value;
+    }
+
+    public static void Enhance(AbstractCard card, int amount, boolean checkHollow)
+    {
+        ArrayList<AbstractCardModifier> voidbound = getModifiers(card, ID);
+        if(voidbound.size() > 0 && voidbound.get(0) instanceof VoidboundModifier)
+        {
+            VoidboundModifier voidmod = (VoidboundModifier)voidbound.get(0);
+            voidmod.Increase(amount);
+        }
+        else
+        {
+            addModifier(card, new VoidboundModifier(amount,checkHollow));
             card.glowColor = Color.PURPLE.cpy();
         }
     }
@@ -140,6 +170,6 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public AbstractCardModifier makeCopy()
     {
-        return new VoidboundModifier(amount);
+        return new VoidboundModifier(amount, checkHollow);
     }
 }

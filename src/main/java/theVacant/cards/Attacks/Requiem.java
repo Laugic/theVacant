@@ -58,9 +58,7 @@ public class Requiem extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeDamage(5);
             initializeDescription();
         }
     }

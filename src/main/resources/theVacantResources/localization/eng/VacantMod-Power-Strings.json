@@ -11,6 +11,10 @@
     "NAME": "Memoria",
     "DESCRIPTIONS": ["The next #b", " card you play this turn plays twice and #yExhausts.", " cards you play this turn play twice and #yExhaust."]
   },
+  "theVacant:DoublePlayPower": {
+    "NAME": "Double Play",
+    "DESCRIPTIONS": ["The next #b", " card you play plays twice.", " cards you play play twice."]
+  },
   "theVacant:EmptyFormPower": {
     "NAME": "Empty Form",
     "DESCRIPTIONS": ["The first #b", " card you play each turn costs 0."," cards you play each turn cost 0."]
@@ -27,12 +31,16 @@
   },
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
-    "DESCRIPTIONS": ["After you #yMill, #yReturn #b", "."]
+    "DESCRIPTIONS": [
+      "If #yMilling empties your draw pile, your next card is played twice.",
+      "If #yMilling empties your draw pile, your next #b", " cards are played twice."
+    ]
   },
   "theVacant:ReachThroughPower": {
     "NAME": "Reach Through",
-    "DESCRIPTIONS": ["The first #b",
-      " times you #yMine a #yGem each turn, trigger its effect."]
+    "DESCRIPTIONS": [
+      "Whenever you #yMine a #yGem into your first #b", " slots, trigger its effect."
+    ]
   },
   "theVacant:AcceptancePower": {
     "NAME": "Acceptance",
@@ -97,9 +105,9 @@
   "theVacant:CrackedReflectionPower": {
     "NAME": "Cracked Reflection",
     "DESCRIPTIONS": [
-      "At the end of your turn and whenever you gain a debuff, #yMine a size 1 copy of a random #yGem you have.",
-      "At the end of your turn and whenever you gain a debuff, #yMine #b",
-      " size 1 copies of random #yGems you have."
+      "Whenever you gain a debuff during your turn, #yChip your next #yGem.",
+      "Whenever you gain a debuff during your turn, #yChip your next #yGem #b",
+      " times."
     ]
   },
   "theVacant:GloomPower": {

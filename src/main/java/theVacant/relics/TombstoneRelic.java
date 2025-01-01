@@ -42,25 +42,17 @@ public class TombstoneRelic extends CustomRelic
     public void atBattleStart()
     {
         AbstractDungeon.actionManager.addToBottom(new DelayedTombstoneAction(9999));
+        flash();
     }
 
-    @Override
-    public boolean canSpawn() {
-        for (AbstractRelic relic: AbstractDungeon.player.relics) {
-            if(relic instanceof GobletRelic)
-                return true;
-        }
-        return false;
-    }
-
-    @Override
-    public void obtain() {
-        super.obtain();
-        for (AbstractRelic relic: AbstractDungeon.player.relics) {
-            if(relic instanceof GobletRelic)
-                ((GobletRelic)relic).IncreaseCounter(2);
-        }
-    }
+//    @Override
+//    public void obtain() {
+//        super.obtain();
+//        for (AbstractRelic relic: AbstractDungeon.player.relics) {
+//            if(relic instanceof GobletRelic)
+//                ((GobletRelic)relic).IncreaseCounter(2);
+//        }
+//    }
 
     @Override
     public void onVictory() {

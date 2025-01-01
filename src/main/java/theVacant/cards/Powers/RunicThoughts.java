@@ -28,7 +28,7 @@ public class RunicThoughts extends AbstractDynamicCard
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
-    private static final int COST = 1;
+    private static final int COST = 2;
 
     public RunicThoughts()
     {
@@ -48,8 +48,7 @@ public class RunicThoughts extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            isInnate = true;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

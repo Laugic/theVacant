@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.DuplicationPower;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.RicochetMod;
@@ -115,7 +116,13 @@ public class VacantMillAction extends AbstractGameAction
 
     private void PreMill()
     {
-
+        if(amount > AbstractDungeon.player.drawPile.size() && AbstractDungeon.player.drawPile.size() > 0){
+            if(AbstractDungeon.player.hasPower(RunicThoughtsPower.POWER_ID)){
+                int runic = AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
+                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DoublePlayPower(AbstractDungeon.player, AbstractDungeon.player, runic)));
+                AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
+            }
+        }
     }
 
     private void ProcessMill()
@@ -176,10 +183,10 @@ public class VacantMillAction extends AbstractGameAction
         if(gainTemperanceForMill && millNum > 0)
             addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TemperancePower(AbstractDungeon.player, AbstractDungeon.player, millNum)));
         int bonusReturn = 0;
-        if(AbstractDungeon.player.hasPower(RunicThoughtsPower.POWER_ID)){
-            bonusReturn += AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
-            AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
-        }
+//        if(AbstractDungeon.player.hasPower(RunicThoughtsPower.POWER_ID)){
+//            bonusReturn += AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
+//            AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
+//        }
         addToBot(new MillWaitAction());
         if(postReturnAmount + bonusReturn > 0)
             addToBot(new ReturnAction(postReturnAmount + bonusReturn, ignoredCard));

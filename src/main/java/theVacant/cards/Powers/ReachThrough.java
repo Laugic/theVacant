@@ -37,7 +37,7 @@ public class ReachThrough extends AbstractDynamicCard
 
     private static ArrayList<TooltipInfo> Tooltip;
 
-    private static final int COST = 1, ANTIFACT = 3;
+    private static final int COST = 1, ANTIFACT = 2;
 
     public ReachThrough()
     {

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import theVacant.VacantMod;
 import theVacant.cards.AbstractDynamicCard;
+import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.characters.TheVacant;
 
 import java.util.ArrayList;
@@ -57,7 +58,8 @@ public class FranticBlow extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeDamage(2);
+            VoidboundModifier.Enhance(this, 1);
             initializeDescription();
         }
     }

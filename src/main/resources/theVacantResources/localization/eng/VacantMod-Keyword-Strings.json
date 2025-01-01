@@ -68,7 +68,8 @@
     "PROPER_NAME": "Mill",
     "NAMES": [
       "mill",
-      "milled"
+      "milled",
+      "milling"
     ],
     "DESCRIPTION": "Move an amount of cards from the top of your draw pile to your discard pile."
   },

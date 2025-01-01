@@ -2,8 +2,10 @@ package theVacant.cards.Skills;
 
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.status.Slimed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,9 +40,10 @@ public class Sneeze extends AbstractDynamicCard
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = STARTMILL;
         selfRetain = true;
-        exhaust = true;
+//        exhaust = true;
         getBonusMillToMagic = true;
         retainBonus = 0;
+        cardsToPreview = new Slimed();
     }
 
     @Override
@@ -65,7 +68,8 @@ public class Sneeze extends AbstractDynamicCard
         }
 
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, this));
-        magicNumber = baseMagicNumber;
+
+        addToBot(new MakeTempCardInHandAction(new Slimed()));
     }
 
     @Override
