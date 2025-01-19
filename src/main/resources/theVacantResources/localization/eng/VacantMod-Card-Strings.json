@@ -150,7 +150,7 @@
   },
   "theVacant:ReachThrough": {
     "NAME": "Reach Through",
-    "DESCRIPTION": "Whenever you thevacant:Mine a thevacant:Gem into your first !M! slots, trigger its effect. NL Gain 2 thevacant:Antifact."
+    "DESCRIPTION": "Whenever you thevacant:Mine a thevacant:Gem, trigger its effect. NL Gain 2 thevacant:Antifact."
   },
   "theVacant:BurdenBreak": {
     "NAME": "Burden Break",

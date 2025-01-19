@@ -82,8 +82,9 @@ public class MineGemAction extends AbstractGameAction
 
         ReachThroughPower reachThrough = (ReachThroughPower) AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID);
 
-        if(reachThrough != null && AbstractDungeon.player.maxOrbs < reachThrough.amount) {
-            gem.triggerPassive(gem.getAmount());
+        if(reachThrough != null) {
+            for (int i = 0; i < reachThrough.amount; i++)
+                gem.triggerPassive(gem.getAmount());
             AbstractDungeon.player.getPower(ReachThroughPower.POWER_ID).flash();
         }
         if (AbstractDungeon.player.maxOrbs < 10)

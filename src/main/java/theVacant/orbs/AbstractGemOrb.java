@@ -74,7 +74,9 @@ public abstract class AbstractGemOrb extends CustomOrb
     public void onChip(int chips)
     {
         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ChipVFX(this, this.hb.cX, this.hb.cY), ChipVFX.DURATION/2F));
-        triggerPassive(getAmountFromChip(chips));
+//        triggerPassive(getAmountFromChip(chips));
+        for (int i = 0; i < chips; i++)
+            triggerPassive(getAmount());
         AbstractDungeon.actionManager.addToBottom(new ReduceOrbSizeAction(this, chips));
     }
 

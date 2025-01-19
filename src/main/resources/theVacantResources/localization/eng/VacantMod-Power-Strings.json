@@ -39,7 +39,8 @@
   "theVacant:ReachThroughPower": {
     "NAME": "Reach Through",
     "DESCRIPTIONS": [
-      "Whenever you #yMine a #yGem into your first #b", " slots, trigger its effect."
+      "Whenever you #yMine a #yGem, trigger its effect.",
+      "Whenever you #yMine a #yGem, trigger its effect #b", " times."
     ]
   },
   "theVacant:AcceptancePower": {

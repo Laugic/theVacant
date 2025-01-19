@@ -37,18 +37,17 @@ public class ReachThrough extends AbstractDynamicCard
 
     private static ArrayList<TooltipInfo> Tooltip;
 
-    private static final int COST = 1, ANTIFACT = 2;
+    private static final int COST = 3, ANTIFACT = 2;
 
     public ReachThrough()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new ApplyPowerAction(player, player, new ReachThroughPower(player, player, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(player, player, new ReachThroughPower(player, player, 1), 1));
         addToBot(new ApplyPowerAction(player, player, new AntifactPower(player, player, ANTIFACT), ANTIFACT));
     }
 
@@ -58,7 +57,7 @@ public class ReachThrough extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(2);
             initializeDescription();
         }
     }
