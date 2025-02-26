@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import theVacant.VacantMod;
 import theVacant.actions.ChipOrbAction;
 import theVacant.actions.MineGemAction;
+import theVacant.actions.ReturnAction;
 import theVacant.orbs.*;
 import theVacant.util.TextureLoader;
 
@@ -23,7 +24,7 @@ import java.util.ArrayList;
 
 import static theVacant.cards.AbstractVacantCard.getHollow;
 
-public class CrackedReflectionPower extends AbstractPower implements CloneablePowerInterface, OnReceivePowerPower
+public class CrackedReflectionPower extends AbstractPower implements CloneablePowerInterface, OnGemExpirePower
 {
     public AbstractCreature source;
 
@@ -34,6 +35,8 @@ public class CrackedReflectionPower extends AbstractPower implements CloneablePo
 
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/reflection84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/reflection32.png");
+
+    boolean thisTurn = false;
 
     public CrackedReflectionPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
@@ -51,9 +54,15 @@ public class CrackedReflectionPower extends AbstractPower implements CloneablePo
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
+        thisTurn = false;
     }
 
-//    @Override
+    @Override
+    public void atStartOfTurn() {
+        thisTurn = false;
+    }
+
+    //    @Override
 //    public void atEndOfTurn(boolean isPlayer) {
 //        for (int i = 0; i < amount; i++){
 //            AbstractGemOrb gem = MineRandomGem();
@@ -64,21 +73,21 @@ public class CrackedReflectionPower extends AbstractPower implements CloneablePo
 //            flash();
 //    }
 
-    @Override
-    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && target == owner && !target.hasPower("Artifact") &&
-                !AbstractDungeon.actionManager.turnHasEnded) {
-//            for (int i = 0; i < amount; i++){
-//                AbstractGemOrb gem = MineRandomGem();
-//                if(gem != null)
-//                    addToTop(new MineGemAction(gem));
-//            }
-            addToTop(new ChipOrbAction(amount));
-            if(AbstractDungeon.player.orbs.size() > 0)
-                flash();
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onReceivePower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+//        if (power.type == AbstractPower.PowerType.DEBUFF && !power.ID.equals("Shackled") && target == owner && !target.hasPower("Artifact") &&
+//                !AbstractDungeon.actionManager.turnHasEnded) {
+////            for (int i = 0; i < amount; i++){
+////                AbstractGemOrb gem = MineRandomGem();
+////                if(gem != null)
+////                    addToTop(new MineGemAction(gem));
+////            }
+//            addToTop(new ChipOrbAction(amount));
+//            if(AbstractDungeon.player.orbs.size() > 0)
+//                flash();
+//        }
+//        return true;
+//    }
 
 //    private AbstractGemOrb MineRandomGem() {
 //        if(AbstractDungeon.player.orbs.size() == 0)
@@ -144,5 +153,17 @@ public class CrackedReflectionPower extends AbstractPower implements CloneablePo
     public AbstractPower makeCopy()
     {
         return new CrackedReflectionPower(owner, source, amount);
+    }
+
+    @Override
+    public void OnGemExpire(AbstractGemOrb gem) {
+//        if(AbstractDungeon.player.cardInUse != null)
+//            addToTop(new ReturnAction(amount, AbstractDungeon.player.cardInUse));
+//        else
+        if(!thisTurn){
+            thisTurn = true;
+            addToTop(new ReturnAction(amount));
+            flash();
+        }
     }
 }

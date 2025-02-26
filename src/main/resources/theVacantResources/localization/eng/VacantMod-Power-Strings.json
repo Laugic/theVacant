@@ -32,8 +32,8 @@
   "theVacant:RunicThoughtsPower": {
     "NAME": "Runic",
     "DESCRIPTIONS": [
-      "If #yMilling empties your draw pile, your next card is played twice.",
-      "If #yMilling empties your draw pile, your next #b", " cards are played twice."
+      "The first card you discard with #yMill each turn costs 1 less and #yRicochets.",
+      "The first #b"," cards you discard with #yMill each turn cost 1 less and #yRicochet."
     ]
   },
   "theVacant:ReachThroughPower": {
@@ -106,9 +106,8 @@
   "theVacant:CrackedReflectionPower": {
     "NAME": "Cracked Reflection",
     "DESCRIPTIONS": [
-      "Whenever you gain a debuff during your turn, #yChip your next #yGem.",
-      "Whenever you gain a debuff during your turn, #yChip your next #yGem #b",
-      " times."
+      "The first time a #yGem expires each turn, #yReturn 1 card.",
+      "The first time a #yGem expires each turn, #yReturn #b"," cards."
     ]
   },
   "theVacant:GloomPower": {
@@ -141,7 +140,8 @@
   "theVacant:ShardPower": {
     "NAME": "Shard",
     "DESCRIPTIONS": [
-      "#pVoid affects ALL your cards, regardless of if your draw pile is empty. Doesn't count down if you end your turn with an empty draw pile."
+      "The first card you play each turn is #pVoidbound.",
+      "The first "," cards you play each turn are #pVoidbound."
     ]
   },
   "theVacant:DelayedExhumePower": {

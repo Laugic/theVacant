@@ -33,12 +33,13 @@ public class CrackedReflection extends AbstractDynamicCard
     public CrackedReflection()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new CrackedReflectionPower(player, player, 1), 1));
+        addToBot(new ApplyPowerAction(player, player, new CrackedReflectionPower(player, player, magicNumber), magicNumber));
     }
 
     @Override
@@ -47,7 +48,7 @@ public class CrackedReflection extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBaseCost(0);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

@@ -41,7 +41,7 @@ public class EmbraceDarkness extends AbstractDynamicCard {
     public EmbraceDarkness()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         checkHollow = true;
     }
 
@@ -49,11 +49,11 @@ public class EmbraceDarkness extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new VFXAction(player, new BorderFlashEffect(Color.PURPLE), 0.25F, true));
-        addToBot(new VacantMillAction(magicNumber, CardType.SKILL, this));
+        addToBot(new VacantMillAction(CardType.SKILL, this));
 
         if(getHollow()){
             addToBot(new VFXAction(player, new VerticalAuraEffect(Color.BLACK, player.hb.cX, player.hb.cY), 0.15F));
-            addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, 2), 2));
+            addToBot(new ApplyPowerAction(player, player, new ShroudPower(player, player, magicNumber), magicNumber));
         }
     }
     
@@ -63,7 +63,7 @@ public class EmbraceDarkness extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

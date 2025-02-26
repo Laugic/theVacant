@@ -43,7 +43,6 @@ public class Sneeze extends AbstractDynamicCard
 //        exhaust = true;
         getBonusMillToMagic = true;
         retainBonus = 0;
-        cardsToPreview = new Slimed();
     }
 
     @Override
@@ -69,7 +68,7 @@ public class Sneeze extends AbstractDynamicCard
 
         AbstractDungeon.actionManager.addToBottom(new VacantMillAction(magicNumber, this));
 
-        addToBot(new MakeTempCardInHandAction(new Slimed()));
+        //retainBonus = 0;
     }
 
     @Override

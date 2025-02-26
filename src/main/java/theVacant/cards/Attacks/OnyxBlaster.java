@@ -46,7 +46,7 @@ public class OnyxBlaster extends AbstractDynamicCard
     {
         addToBot(new VFXAction(new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal)));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new MineGemAction(new OnyxOrb(magicNumber)));
+        addToBot(new MineGemAction(new OnyxOrb(magicNumber), true));
     }
 
     @Override

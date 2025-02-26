@@ -53,7 +53,7 @@ public class SapphireStrike extends AbstractDynamicCard {
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 2;
         tags.add(CardTags.STRIKE);
     }
 
@@ -61,7 +61,7 @@ public class SapphireStrike extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new DamageAction(monster, new DamageInfo(player, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        addToBot(new MineGemAction(new SapphireOrb(magicNumber)));
+        addToBot(new MineGemAction(new SapphireOrb(magicNumber), true));
     }
 
     @Override

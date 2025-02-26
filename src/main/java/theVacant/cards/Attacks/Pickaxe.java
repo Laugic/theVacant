@@ -61,7 +61,7 @@ public class Pickaxe extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(1);
+            upgradeDamage(2);
             upgradeMagicNumber(1);
             initializeDescription();
         }

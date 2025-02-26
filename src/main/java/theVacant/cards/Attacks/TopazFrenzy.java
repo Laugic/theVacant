@@ -38,7 +38,6 @@ public class TopazFrenzy extends AbstractDynamicCard {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = 0;
         magicNumber = baseMagicNumber = 1;
-        exhaust = true;
     }
 
     @Override
@@ -54,8 +53,7 @@ public class TopazFrenzy extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            exhaust = false;
-            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }
@@ -81,14 +79,14 @@ public class TopazFrenzy extends AbstractDynamicCard {
 
     private void getDesc()
     {
-        rawDescription = (upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[0];
+        rawDescription = (cardStrings.DESCRIPTION) + cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
     @Override
     public void onMoveToDiscard()
     {
-        rawDescription = upgraded?cardStrings.UPGRADE_DESCRIPTION:cardStrings.DESCRIPTION;
+        rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
 }

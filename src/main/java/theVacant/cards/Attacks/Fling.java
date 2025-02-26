@@ -30,13 +30,13 @@ public class Fling extends AbstractDynamicCard {
 
     private static final int COST = 1;
     private static final int DAMAGE = 10;
-    private static final int UPGRADE_PLUS_DMG = 3;
+    private static final int UPGRADE_PLUS_DMG = 2;
 
     public Fling()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
         damage = baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = 5;
+        magicNumber = baseMagicNumber = 4;
         getBonusMillToMagic = true;
     }
 

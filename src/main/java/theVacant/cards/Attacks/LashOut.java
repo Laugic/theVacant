@@ -66,6 +66,7 @@ public class LashOut extends AbstractDynamicCard
         {
             upgradeName();
             upgradeMagicNumber(-1);
+            exhaust = false;
             rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
@@ -92,8 +93,8 @@ public class LashOut extends AbstractDynamicCard
             this.baseDamage = player.maxHealth - player.currentHealth;
         else
             this.baseDamage = 0;
-        if(upgraded)
-            baseDamage += 3;
+//        if(upgraded)
+//            baseDamage += 3;
     }
 
     private void getDesc()

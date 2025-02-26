@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
@@ -25,6 +26,7 @@ import theVacant.actions.CurseAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.cards.Modifiers.VoidboundModifier;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.AbstractGemOrb;
 import theVacant.powers.DoomPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
@@ -42,7 +44,7 @@ public class CursedBlast extends AbstractDynamicCard
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
@@ -58,6 +60,7 @@ public class CursedBlast extends AbstractDynamicCard
         damage = baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = 2;
         isUnnate = true;
+        isMultiDamage = true;
     }
 
     @Override
@@ -66,9 +69,27 @@ public class CursedBlast extends AbstractDynamicCard
         addToBot(new VFXAction(player, new BorderFlashEffect(Color.PURPLE), 0.3F, true));
         AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
         AbstractDungeon.actionManager.addToBottom(new VFXAction(player, new MindblastEffect(player.dialogX, player.dialogY, player.flipHorizontal), 0.1F));
-        //addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        addToBot(new DamageAction(monster, new DamageInfo(player, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new DamageAllEnemiesAction(player, multiDamage, damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+//        addToBot(new DamageAction(monster, new DamageInfo(player, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, magicNumber), magicNumber));
+//        int numGems = 0;
+//        if(upgraded){
+//            for (AbstractOrb orb: player.orbs) {
+//                if(orb instanceof AbstractGemOrb)
+//                    numGems++;
+//            }
+//        } else
+//        {
+//            List<String> orbTypes = new ArrayList<>();
+//            for (AbstractOrb orb: player.orbs) {
+//                if(orb instanceof AbstractGemOrb && !orbTypes.contains(orb.ID)){
+//                    numGems++;
+//                    orbTypes.add(orb.ID);
+//                }
+//            }
+//        }
+//        if(numGems > 0)
+//            addToBot(new ApplyPowerAction(player, player, new VoidPower(player, player, numGems), numGems));
     }
 
     @Override
@@ -89,8 +110,9 @@ public class CursedBlast extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(UPGRADE_PLUS_DMG);
-            VoidboundModifier.Enhance(this, 1);
+            upgradeDamage(1);
+            upgradeMagicNumber(1);
+//            VoidboundModifier.Enhance(this, 1);
             initializeDescription();
         }
     }

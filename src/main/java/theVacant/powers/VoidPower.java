@@ -3,6 +3,8 @@ package theVacant.powers;
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -25,6 +27,8 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/void_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/void_power32.png");
 
+    int cardsThisTurn = 0;
+
     public VoidPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
         name = NAME;
@@ -42,20 +46,17 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
 
         updateDescription();
     }
-/*
+
     @Override
-    public void atStartOfTurnPostDraw()
-    {
-        flash();
-        AbstractDungeon.actionManager.addToBottom(new VacantMillAction(amount + AbstractVacantCard.GetBonusMillAmount()));
-        AbstractDungeon.player.hand.applyPowers();
-        updateDescription();
+    public void atStartOfTurn() {
+        cardsThisTurn = 0;
     }
-*/
+
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type)
     {
-        if ((CheckDrawEmpty() || owner.hasPower(ShardPower.POWER_ID)) && type == DamageInfo.DamageType.NORMAL)
+        if ((CheckDrawEmpty() || (owner.hasPower(ShardPower.POWER_ID) && cardsThisTurn < owner.getPower(ShardPower.POWER_ID).amount))
+                && type == DamageInfo.DamageType.NORMAL)
             return damage + amount;
         return damage;
     }
@@ -63,7 +64,8 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public float modifyBlock(float blockAmount)
     {
-        if ((CheckDrawEmpty() || owner.hasPower(ShardPower.POWER_ID)) && blockAmount > 0.0F)
+        if ((CheckDrawEmpty() || (owner.hasPower(ShardPower.POWER_ID) && cardsThisTurn < owner.getPower(ShardPower.POWER_ID).amount))
+                && blockAmount > 0.0F)
             return blockAmount + amount;
         return blockAmount;
     }
@@ -74,6 +76,12 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
                && !AbstractDungeon.isScreenUp && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT)
             return true;
         return false;
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        if(!card.purgeOnUse)
+            cardsThisTurn++;
     }
 
     @Override

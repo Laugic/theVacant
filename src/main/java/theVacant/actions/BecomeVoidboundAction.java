@@ -8,10 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToHandEffect;
 import theVacant.cards.Modifiers.VoidboundModifier;
-import theVacant.cards.Skills.Desperation;
-import theVacant.cards.Skills.Voidstone;
+import theVacant.cards.Powers.Voidstone;
 
 public class BecomeVoidboundAction extends AbstractGameAction
 {

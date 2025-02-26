@@ -1,6 +1,7 @@
 package theVacant.cards.Skills;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,7 +20,7 @@ public class WearTheGoblet extends AbstractDynamicCard
     public static final String IMG = makeCardPath("WearTheGoblet.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
@@ -45,8 +46,9 @@ public class WearTheGoblet extends AbstractDynamicCard
     @Override
     public void PostMillAction()
     {
-        costForTurn = 0;
-        isCostModifiedForTurn = true;
+//        costForTurn = 0;
+//        isCostModifiedForTurn = true;
+        addToBot(new GainEnergyAction(2));
     }
 
     @Override

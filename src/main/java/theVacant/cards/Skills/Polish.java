@@ -2,6 +2,7 @@ package theVacant.cards.Skills;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import theVacant.VacantMod;
 import theVacant.actions.ChipOrbAction;
@@ -43,13 +45,12 @@ public class Polish extends AbstractDynamicCard
     public Polish()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 5;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
-        addToBot(new GainBlockAction(player, block));
         if(player.orbs.size() > 0)
         {
             for (AbstractOrb gem : player.orbs)
@@ -58,6 +59,7 @@ public class Polish extends AbstractDynamicCard
                     addToBot(new PolishGemAction((AbstractGemOrb) gem, 1));
             }
         }
+        addToBot(new ApplyPowerAction(player, player, new BlurPower(player, magicNumber), magicNumber));
     }
     @Override
     public void upgrade()
@@ -65,7 +67,7 @@ public class Polish extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(3);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

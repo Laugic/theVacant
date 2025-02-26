@@ -43,20 +43,22 @@ public class ShardPower extends AbstractPower implements CloneablePowerInterface
         updateDescription();
     }
 
-
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-
-        if(AbstractDungeon.player.drawPile.size() != 0)
-            reducePower(1);
-        if(amount <= 0)
-            addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
-    }
+//    @Override
+//    public void atEndOfTurn(boolean isPlayer) {
+//
+//        if(AbstractDungeon.player.drawPile.size() != 0)
+//            reducePower(1);
+//        if(amount <= 0)
+//            addToBot(new RemoveSpecificPowerAction(owner, owner, this.ID));
+//    }
 
     @Override
     public void updateDescription()
     {
-        description = DESCRIPTIONS[0];
+        if(amount == 1)
+            description = DESCRIPTIONS[0];
+        else
+            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 
     @Override

@@ -44,8 +44,8 @@ public class RubyRage extends AbstractDynamicCard
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new VFXAction(player, new InflameEffect(player), .5F));
-        addToBot(new MineGemAction(new RubyOrb(magicNumber), getHollow()));
-        addToBot(new MineGemAction(new RubyOrb(magicNumber), getHollow()));
+        for (int i = 0; i < magicNumber; i++)
+            addToBot(new MineGemAction(new RubyOrb(2), getHollow()));
 //        int vigorAmount = player.discardPile.size();
 //        if(vigorAmount > 0)
 //            addToBot(new ApplyPowerAction(player, player, new VigorPower(player, vigorAmount), vigorAmount));

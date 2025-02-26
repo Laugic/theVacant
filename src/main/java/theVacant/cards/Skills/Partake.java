@@ -5,6 +5,7 @@ import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.actions.unique.DiscardPileToTopOfDeckAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -53,6 +54,7 @@ public class Partake extends AbstractDynamicCard
     {
         addToBot(new GainBlockAction(player, block));
         addToBot(new ApplyPowerAction(player, player, new WeakPower(player, WEAK, false), WEAK));
+        addToBot(new DiscardPileToTopOfDeckAction(player));
     }
 
 //    @Override

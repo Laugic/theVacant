@@ -116,13 +116,13 @@ public class VacantMillAction extends AbstractGameAction
 
     private void PreMill()
     {
-        if(amount > AbstractDungeon.player.drawPile.size() && AbstractDungeon.player.drawPile.size() > 0){
-            if(AbstractDungeon.player.hasPower(RunicThoughtsPower.POWER_ID)){
-                int runic = AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
-                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DoublePlayPower(AbstractDungeon.player, AbstractDungeon.player, runic)));
-                AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
-            }
-        }
+//        if(amount > AbstractDungeon.player.drawPile.size() && AbstractDungeon.player.drawPile.size() > 0){
+//            if(AbstractDungeon.player.hasPower(RunicThoughtsPower.POWER_ID)){
+//                int runic = AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).amount;
+//                addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DoublePlayPower(AbstractDungeon.player, AbstractDungeon.player, runic)));
+//                AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID).flash();
+//            }
+//        }
     }
 
     private void ProcessMill()
@@ -258,6 +258,16 @@ public class VacantMillAction extends AbstractGameAction
             if(LocketRelic.numMilled >= LocketRelic.MAX_RICOCHET)
                 AbstractDungeon.player.getRelic(LocketRelic.ID).grayscale = true;
             return true;
+        }
+        RunicThoughtsPower runic = (RunicThoughtsPower) AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID);
+        if(runic != null){
+            if(runic.millThisTurn < runic.amount){
+                if(card.costForTurn > 0)
+                    card.setCostForTurn(card.costForTurn - 1);
+                runic.millThisTurn++;
+                runic.flash();
+                return true;
+            }
         }
         return false;
     }

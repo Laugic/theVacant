@@ -53,7 +53,9 @@ public class Spinshield extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeBlock(1);
+            selfRetain = true;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

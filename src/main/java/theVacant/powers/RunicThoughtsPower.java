@@ -24,6 +24,8 @@ public class RunicThoughtsPower extends AbstractPower implements CloneablePowerI
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/runic_power84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/runic_power32.png");
 
+    public int millThisTurn = 0;
+
     public RunicThoughtsPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
         name = NAME;
@@ -41,6 +43,12 @@ public class RunicThoughtsPower extends AbstractPower implements CloneablePowerI
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
         updateDescription();
+        millThisTurn = 0;
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        millThisTurn = 0;
     }
 
     @Override

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
@@ -25,6 +26,7 @@ import theVacant.actions.MineGemAction;
 import theVacant.actions.SoulBarrageAction;
 import theVacant.cards.AbstractDynamicCard;
 import theVacant.characters.TheVacant;
+import theVacant.orbs.AbstractGemOrb;
 import theVacant.orbs.EmeraldOrb;
 import theVacant.orbs.OnyxOrb;
 import theVacant.powers.DoomPower;
@@ -42,12 +44,12 @@ public class EmeraldSplash extends AbstractDynamicCard {
     public static final String IMG = makeCardPath("EmeraldSplash.png");
 
     private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
 
     private static final int COST = 1;
-    private static final int DAMAGE = 5;
+    private static final int DAMAGE = 3;
 
 
     public EmeraldSplash()
@@ -61,10 +63,18 @@ public class EmeraldSplash extends AbstractDynamicCard {
     public void use(AbstractPlayer player, AbstractMonster monster)
     {
         addToBot(new VFXAction(new BorderLongFlashEffect(Color.GREEN)));
-        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
-        addToBot(new SoulBarrageAction(1, monster, new DamageInfo(player, damage, damageTypeForTurn), Color.GREEN));
-        addToBot(new SoulBarrageAction(Color.GREEN, this));
         addToBot(new MineGemAction(new EmeraldOrb(magicNumber)));
+        addToBot(new VFXAction(new DieDieDieEffect(), 0.7F));
+        int numOrbs = 1;
+        for (AbstractOrb orb: player.orbs) {
+            if(orb instanceof AbstractGemOrb)
+                numOrbs++;
+        }
+        if(numOrbs > 10)
+            numOrbs = 10;
+//        addToBot(new SoulBarrageAction(1, monster, new DamageInfo(player, damage, damageTypeForTurn), Color.GREEN));
+        for (int i = 0; i < numOrbs; i++)
+            addToBot(new SoulBarrageAction(Color.GREEN, this));
     }
 
     @Override
@@ -73,7 +83,7 @@ public class EmeraldSplash extends AbstractDynamicCard {
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(1);
             upgradeMagicNumber(1);
             initializeDescription();
         }

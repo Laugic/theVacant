@@ -1,5 +1,6 @@
 package theVacant.cards.Skills;
 
+import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -63,8 +64,17 @@ public class Exorcise extends AbstractDynamicCard
                     }
                     for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters)
                     {
-                        power.owner = mo;
-                        addToBot(new ApplyPowerAction(mo, player, power));
+                        if(power instanceof CloneablePowerInterface) {
+                            AbstractPower newPower = ((CloneablePowerInterface) power).makeCopy();
+                            newPower.owner = mo;
+                            addToBot(new ApplyPowerAction(mo, player, newPower));
+                        }
+                        else
+                        {
+                            AbstractPower newPower = power;
+                            newPower.owner = mo;
+                            addToBot(new ApplyPowerAction(mo, player, newPower));
+                        }
                     }
                 }
             }

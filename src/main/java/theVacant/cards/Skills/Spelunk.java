@@ -27,7 +27,7 @@ public class Spelunk extends AbstractDynamicCard
     public static final String IMG = makeCardPath("Spelunk.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.SELF;
     private static final CardType TYPE = CardType.SKILL;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
@@ -37,9 +37,10 @@ public class Spelunk extends AbstractDynamicCard
     public Spelunk()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        block = baseBlock = 8;
-        magicNumber = baseMagicNumber = 2;
+        block = baseBlock = 6;
+        magicNumber = baseMagicNumber = 1;
         postMillAction = true;
+        ricochet = true;
     }
 
     @Override
@@ -62,8 +63,7 @@ public class Spelunk extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeBlock(2);
-            upgradeMagicNumber(1);
+            upgradeBlock(3);
             initializeDescription();
         }
     }

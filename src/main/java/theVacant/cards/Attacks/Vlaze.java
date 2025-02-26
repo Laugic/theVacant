@@ -40,7 +40,7 @@ public class Vlaze extends AbstractDynamicCard
     public static final String IMG = makeCardPath("Vlaze.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
     private static final CardType TYPE = CardType.ATTACK;
     public static final CardColor COLOR = TheVacant.Enums.COLOR_GOLD;
@@ -48,7 +48,7 @@ public class Vlaze extends AbstractDynamicCard
     private static ArrayList<TooltipInfo> Tooltip;
 
     private static final int COST = 0;
-    private static final int DAMAGE = 4;
+    private static final int DAMAGE = 6;
 
     public Vlaze()
     {
@@ -89,8 +89,8 @@ public class Vlaze extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeDamage(2);
-            upgradeMagicNumber(1);
+            exhaust = false;
+            rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -12,12 +12,14 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.DarkOrbPassiveEffect;
 import theVacant.actions.IncreaseOrbSizeAction;
 import theVacant.actions.PolishGemAction;
 import theVacant.actions.ReduceOrbSizeAction;
+import theVacant.powers.OnGemExpirePower;
 import theVacant.powers.ReachThroughPower;
 import theVacant.powers.ReflectionPower;
 import theVacant.relics.RagRelic;
@@ -142,6 +144,10 @@ public abstract class AbstractGemOrb extends CustomOrb
                 player.maxOrbs = 0;
             for(int i = 0; i < player.orbs.size(); ++i)
                 (player.orbs.get(i)).setSlot(i, player.maxOrbs);
+        }
+        for (AbstractPower p: AbstractDungeon.player.powers) {
+            if(p instanceof OnGemExpirePower)
+                ((OnGemExpirePower) p).OnGemExpire(this);
         }
     }
 
