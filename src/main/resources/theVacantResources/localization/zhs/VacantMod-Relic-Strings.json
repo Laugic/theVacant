@@ -1,0 +1,118 @@
+{
+  "theVacant:VacantBossEnergyRelic": {
+    "NAME": "占位能量遗物",
+    "FLAVOR": "嗖~",
+    "DESCRIPTIONS": [
+      "获得 #b1 [E] 。"
+    ]
+  },
+  "theVacant:VacantStarterRelic": {
+    "NAME": "悲惨宝石",
+    "FLAVOR": "一个诅咒的陷阱，囚禁着你的灵魂。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，如果你处于 #ythevacant:Healthy 状态，失去 #b2 点最大生命值。如果你处于 #ythevacant:残躯 状态，获得 #b4 点最大生命值。通过这种方式，你的最大生命值不会低于 #b50 。"
+    ]
+  },
+  "theVacant:Deathbell": {
+    "NAME": "丧钟花",
+    "FLAVOR": "据说这种花能驱邪避祸，抵御死亡。",
+    "DESCRIPTIONS": [
+      "在你的第一回合结束时，如果你处于 #ythevacant:残躯 状态，获得 #b10 点 #y临时生命值 。"
+    ]
+  },
+  "theVacant:ShroudRelic": {
+    "NAME": "暗影碎片",
+    "FLAVOR": "一股奇异的黑暗笼罩着你。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，获得 #b3 点 #ythevacant:隐蔽 。"
+    ]
+  },
+  "theVacant:BoundSoul": {
+    "NAME": "解脱之魂",
+    "FLAVOR": "随着死亡的临近，圣杯对你的束缚逐渐减弱，你能感受到自己的力量在增长。",
+    "DESCRIPTIONS": [
+      "如果你处于 #ythevacant:残躯 状态，在你的回合开始时获得 [E] 。"
+    ]
+  },
+  "theVacant:LocketRelic": {
+    "NAME": "怀表碎片",
+    "FLAVOR": "一个逝去生命的纪念。或者说，只是其中的一部分。",
+    "DESCRIPTIONS": [
+      "每场战斗中，你 #ythevacant:消蚀 的前两张卡牌会 #ythevacant:回响 。"
+    ]
+  },
+  "theVacant:TombstoneRelic": {
+    "NAME": "墓碑",
+    "FLAVOR": "早早入土为安。至少你的卡牌是这样。",
+    "DESCRIPTIONS": [
+      "战斗开始时，在你抽牌后， #ythevacant:消蚀 你的抽牌堆。"
+    ]
+  },
+  "theVacant:CrystalBallRelic": {
+    "NAME": "破碎的水晶球",
+    "FLAVOR": "有时候，泄漏到世间的魔法比被封印时更强大。",
+    "DESCRIPTIONS": [
+      "每回合你第一次打出一张卡牌时，将一张复制牌加入你的手牌，该复制牌带有 #y虚无 和 #y消耗 效果。"
+    ]
+  },
+  "theVacant:Holly": {
+    "NAME": "冬青",
+    "FLAVOR": "从一个蒸汽朋克风格的雪人那里借来的。",
+    "DESCRIPTIONS": [
+      "每当你获得一个负面效果时，将其数值减少 #b1 ，最低减少到 #b1 。"
+    ]
+  },
+  "theVacant:SilkTouch": {
+    "NAME": "丝质触感",
+    "FLAVOR": "左右摇摆，左右左右摇摆。",
+    "DESCRIPTIONS": [
+      "每回合你第一次 #ythevacant:开采 一个 #ythevacant:宝石 时，触发其效果且不会减小其大小。"
+    ]
+  },
+  "theVacant:RagRelic": {
+    "NAME": "抛光布",
+    "FLAVOR": "大家都知道，闪亮的宝石更强大。",
+    "DESCRIPTIONS": [
+      "每当你 #ythevacant:开采 一个 #ythevacant:宝石 时，将其大小增加 #b1 。"
+    ]
+  },
+  "theVacant:BrassGoblet": {
+    "NAME": "黄铜圣杯",
+    "FLAVOR": "一个蕴含着黑暗力量的古老神器。",
+    "DESCRIPTIONS": [
+      "战斗开始时，获得 #b",
+      " #pthevacant:虚空 。"
+    ]
+  },
+  "theVacant:EnshroudedBrassGoblet": {
+    "NAME": "暗影笼罩的圣杯",
+    "FLAVOR": "黑暗将你吞噬。",
+    "DESCRIPTIONS": [
+      "战斗开始时，获得 #b",
+      " #pthevacant:虚空 和 #b", " #ythevacant:隐蔽 。"
+    ]
+  },
+  "theVacant:OverflowingGobletRelic": {
+    "NAME": "溢满的圣杯",
+    "FLAVOR": "一个古老的神器，现在已经充满了黑暗的力量。",
+    "DESCRIPTIONS": [
+      "替换 #y黄铜圣杯 。战斗开始时，抽取 #b", " 张卡牌并获得 #b",
+      " #y人工制品 。"
+    ]
+  },
+  "theVacant:EnshroudedOverflowingGobletRelic": {
+    "NAME": "暗影四溢的圣杯",
+    "FLAVOR": "黑暗四溢。",
+    "DESCRIPTIONS": [
+      "替换 #p暗影笼罩的圣杯 。战斗开始时，获得 #b",
+      " #pthevacant:虚空 、 #yArtifact 和 #ythevacant:隐蔽 ，并抽取 #b", " 张卡牌。"
+    ]
+  },
+  "theVacant:BoundSoulOld": {
+    "NAME": "古老的束缚之魂",
+    "FLAVOR": "永远与一件神器相连。",
+    "DESCRIPTIONS": [
+      "如果你当前生命值高于一半，在回合开始时进入 [#66eeee]庄严[] [#66eeee]形态[] 。 NL 当你受到伤害时，进入 [#ee4200]狂暴[]  [#ee4200]形态[] 。 NL 当你的抽牌堆中没有卡牌时，进入 [#ee82ee]虚空[] [#ee82ee]形态[] 。"
+    ]
+  }
+}

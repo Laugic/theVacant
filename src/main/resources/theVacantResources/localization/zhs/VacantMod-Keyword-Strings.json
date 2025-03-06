@@ -1,0 +1,249 @@
+[
+  {
+    "PROPER_NAME": "残躯",
+    "NAMES": [
+      "残躯"
+    ],
+    "DESCRIPTION": "当生命值≤最大值的 #b50% 或 受到减益时， #y残躯 效果触发。"
+  },
+  {
+    "PROPER_NAME": "未觉醒",
+    "NAMES": [
+      "未觉醒"
+    ],
+    "DESCRIPTION": "每场战斗开始时位于抽牌堆底部。"
+  },
+  {
+    "PROPER_NAME": "反作用力",
+    "NAMES": [
+      "反作用力"
+    ],
+    "DESCRIPTION": "抵消下一次获得的增益效果。"
+  },
+  {
+    "PROPER_NAME": "沉重",
+    "NAMES": [
+      "沉重"
+    ],
+    "DESCRIPTION": "牌库洗牌时移至抽牌堆底部。"
+  },
+  {
+    "PROPER_NAME": "昏乱",
+    "NAMES": [
+      "昏乱"
+    ],
+    "DESCRIPTION": "下一回合，你可以额外抽一张牌，但你抽取的前三张牌将面朝下。"
+  },
+  {
+    "PROPER_NAME": "碎片",
+    "NAMES": [
+      "碎片"
+    ],
+    "DESCRIPTION": "在若干回合内，无论抽牌堆是否为空，虚空效果都将会影响所有牌。如果回合结束时抽牌堆为空，则不减少 #y碎片 回合计数。"
+  },
+  {
+    "PROPER_NAME": "开采",
+    "NAMES": [
+      "开采",
+      "已开采"
+    ],
+    "DESCRIPTION": "创造一个宝珠槽位，并在其中放入一颗 #y宝石 ，该宝石会在你的回合开始时缩小。"
+  },
+  {
+    "PROPER_NAME": "黑暗",
+    "NAMES": [
+      "黑暗"
+    ],
+    "DESCRIPTION": "目标被给予减益时，其效果量增加。"
+  },
+  {
+    "PROPER_NAME": "凿刻",
+    "NAMES": [
+      "凿刻",
+      "正在凿刻"
+    ],
+    "DESCRIPTION": "触发效果并缩小一颗 #y宝石 的尺寸。"
+  },
+  {
+    "PROPER_NAME": "消蚀",
+    "NAMES": [
+      "消蚀",
+      "已消蚀",
+      "正在消蚀"
+    ],
+    "DESCRIPTION": "将抽牌堆顶端的若干卡牌移至弃牌堆。"
+  },
+  {
+    "PROPER_NAME": "回响",
+    "NAMES": [
+      "回响",
+      "回响效果"
+    ],
+    "DESCRIPTION": "这张牌将要被 #y消蚀 时，加入手牌而非弃牌堆。"
+  },
+  {
+    "PROPER_NAME": "厄运",
+    "NAMES": [
+      "厄运"
+    ],
+    "DESCRIPTION": "每一层 #y厄运 效果都使目标受到伤害增加。"
+  },
+  {
+    "PROPER_NAME": "裂隙",
+    "NAMES": [
+      "裂隙"
+    ],
+    "DESCRIPTION": "暂时移除减益效果若干回合（仍计入减益总数）。"
+  },
+  {
+    "PROPER_NAME": "虹吸",
+    "NAMES": [
+      "虹吸"
+    ],
+    "DESCRIPTION": "夺取目标的此增益，若其层数不足则转为负值。"
+  },
+  {
+    "PROPER_NAME": "抛光",
+    "NAMES": [
+      "抛光"
+    ],
+    "DESCRIPTION": "提升 #y宝石 尺寸。"
+  },
+  {
+    "PROPER_NAME": "[#ee82ee]虚空[]",
+    "NAMES": [
+      "虚空"
+    ],
+    "DESCRIPTION": "抽牌堆空时，伤害与 #y格挡 提升。"
+  },
+  {
+    "PROPER_NAME": "[#ee82ee]虚空之缚[]",
+    "NAMES": [
+      "虚空之缚"
+    ],
+    "DESCRIPTION": "[#ee82ee]虚空[] 效果始终生效，无视抽牌堆状态。"
+  },
+  {
+    "PROPER_NAME": "隐蔽",
+    "NAMES": [
+      "隐蔽"
+    ],
+    "DESCRIPTION": "受到攻击伤害减半。回合开始时减少 #b1 层，打出攻击牌时也会减少。"
+  },
+  {
+    "PROPER_NAME": "宝石",
+    "NAMES": [
+      "宝石",
+      "宝石们",
+      "宝石的"
+    ],
+    "DESCRIPTION": " #y宝石 是 #y能量球 ，它的尺寸会在你的回合开始时缩小。"
+  },
+  {
+    "PROPER_NAME": "全体",
+    "NAMES": [
+      "全体"
+    ],
+    "DESCRIPTION": "包含所有敌人与你自身。"
+  },
+  {
+    "PROPER_NAME": "返手",
+    "NAMES": [
+      "返手"
+    ],
+    "DESCRIPTION": "将弃牌堆顶端的可用卡牌移入手牌。"
+  },
+  {
+    "PROPER_NAME": "掘出",
+    "NAMES": [
+      "掘出"
+    ],
+    "DESCRIPTION": "从 #y消耗 堆将卡牌置入手牌。"
+  },
+  {
+    "PROPER_NAME": "[#C687EE]具现[]",
+    "NAMES": [
+      "具现"
+    ],
+    "DESCRIPTION": "若本卡被 #y消耗 ，回合结束时失去1层 [#C687EE]具现[] 。当层数归零时，移至抽牌堆顶端。"
+  },
+  {
+    "PROPER_NAME": "汲取",
+    "NAMES": [
+      "汲取"
+    ],
+    "DESCRIPTION": "攻击此目标时恢复生命值，效果持续至下回合开始。"
+  },
+  {
+    "PROPER_NAME": "红宝石",
+    "NAMES": [
+      "红宝石",
+      "红宝石们"
+    ],
+    "DESCRIPTION": " #y宝石 ：获得 #b3 点 #y活力 。"
+  },
+  {
+    "PROPER_NAME": "黄玉",
+    "NAMES": [
+      "黄玉"
+    ],
+    "DESCRIPTION": " #y宝石 ：获得 #b1 点 #y人工制品 。"
+  },
+  {
+    "PROPER_NAME": "紫水晶",
+    "NAMES": [
+      "紫水晶"
+    ],
+    "DESCRIPTION": " #y宝石 ： #y消蚀 #b3 张。"
+  },
+  {
+    "PROPER_NAME": "蛋白石",
+    "NAMES": [
+      "蛋白石"
+    ],
+    "DESCRIPTION": " #y宝石 ：获得 [E] "
+  },
+  {
+    "PROPER_NAME": "蓝宝石",
+    "NAMES": [
+      "蓝宝石"
+    ],
+    "DESCRIPTION": " #y宝石 ：获得 #b3 点 #y节制 。"
+  },
+  {
+    "PROPER_NAME": "钻石",
+    "NAMES": [
+      "钻石",
+      "钻石们"
+    ],
+    "DESCRIPTION": " #y宝石 ：获得 #b1 点 #y瓦解 （本回合防止下一次生命流失）。"
+  },
+  {
+    "PROPER_NAME": "瓦解",
+    "NAMES": [
+      "瓦解"
+    ],
+    "DESCRIPTION": "防止你在本回合内下次受到伤害。"
+  },
+  {
+    "PROPER_NAME": "黑玛瑙",
+    "NAMES": [
+      "黑玛瑙"
+    ],
+    "DESCRIPTION": " #y宝石 ：给予所有敌人 #b1 层 #y厄运 。"
+  },
+  {
+    "PROPER_NAME": "翡翠",
+    "NAMES": [
+      "翡翠"
+    ],
+    "DESCRIPTION": " #y宝石 ：抽取 #b1 张牌。"
+  },
+  {
+    "PROPER_NAME": "节制",
+    "NAMES": [
+      "节制"
+    ],
+    "DESCRIPTION": "下次获得 #y格挡 时获得额外数值。"
+  }
+]

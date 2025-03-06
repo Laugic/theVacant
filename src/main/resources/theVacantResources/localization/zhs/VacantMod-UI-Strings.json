@@ -1,52 +1,52 @@
 {
   "theVacant:Enhance": {
     "TEXT": [
-      "Enhance"
+      "强化"
     ]
   },
   "theVacant:MaxGems": {
     "TEXT": [
-      "I can't hold any more Gems!"
+      "我不能再持有更多宝石了！"
     ]
   },
-  "theVacant:shroud": {
+    "theVacant:shroud": {
     "TEXT": [
-      "thevacant:shroud"
+      "thevacant:节制"
     ]
   },
   "theVacant:mine": {
     "TEXT": [
-      "thevacant:mine"
+      "thevacant:开采"
     ]
   },
   "theVacant:opal": {
     "TEXT": [
-      "thevacant:opal"
+      "thevacant:蛋白石"
     ]
   },
   "theVacant:emerald": {
     "TEXT": [
-      "thevacant:emerald"
+      "thevacant:翡翠"
     ]
   },
   "theVacant:chip": {
     "TEXT": [
-      "thevacant:chip"
+      "thevacant:凿刻"
     ]
   },
   "theVacant:mill": {
     "TEXT": [
-      "thevacant:mill"
+      "thevacant:消蚀"
     ]
   },
   "theVacant:void": {
     "TEXT": [
-      "thevacant:void"
+      "thevacant:虚空"
     ]
   },
   "theVacant:voidboundContext": {
     "TEXT": [
-      "."
+      " 。"
     ]
   }
 }

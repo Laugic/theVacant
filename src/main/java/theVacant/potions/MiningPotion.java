@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import theVacant.VacantMod;
@@ -18,6 +19,10 @@ public class MiningPotion extends AbstractPotion
 {
     public static final String POTION_ID = VacantMod.makeID(MiningPotion.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
+    private static final UIStrings mine = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("mine"));
+    private static final UIStrings emerald = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("emerald"));
+    private static final UIStrings opal = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("opal"));
+    private static final UIStrings chip = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("chip"));
 
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
@@ -38,10 +43,10 @@ public class MiningPotion extends AbstractPotion
         description = DESCRIPTIONS[0] + potency + DESCRIPTIONS[1];
         tips.clear();
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:mine"), BaseMod.getKeywordDescription("thevacant:mine")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:emerald"), BaseMod.getKeywordDescription("thevacant:emerald")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:opal"), BaseMod.getKeywordDescription("thevacant:opal")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:chip"), BaseMod.getKeywordDescription("thevacant:chip")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(mine.TEXT[0]), BaseMod.getKeywordDescription(mine.TEXT[0])));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(emerald.TEXT[0]), BaseMod.getKeywordDescription(emerald.TEXT[0])));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(opal.TEXT[0]), BaseMod.getKeywordDescription(opal.TEXT[0])));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(chip.TEXT[0]), BaseMod.getKeywordDescription(chip.TEXT[0])));
     }
 
     @Override

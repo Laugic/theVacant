@@ -1,0 +1,50 @@
+{
+  "theVacant:RubyOrb": {
+    "NAME": "红宝石",
+    "DESCRIPTION": [
+      "在你的回合开始时，获得 #b3 #y活力 并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:AmethystOrb": {
+    "NAME": "紫水晶",
+    "DESCRIPTION": [
+      "在你的回合开始时， #y消蚀 #b3 并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:SapphireOrb": {
+    "NAME": "蓝宝石",
+    "DESCRIPTION": [
+      "在你的回合开始时，获得 #b3 层 #y节制 并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:OnyxOrb": {
+    "NAME": "黑玛瑙",
+    "DESCRIPTION": [
+      "在你的回合开始时，对所有敌人给予 #b1 层 #y厄运 并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:TopazOrb": {
+    "NAME": "黄水晶",
+    "DESCRIPTION": [
+      "在你的回合开始时，获得 #b1 #y人工制品  并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:DiamondOrb": {
+    "NAME": "钻石",
+    "DESCRIPTION": [
+      "在你的回合开始时，获得 #b1 层 #y瓦解 并失去 1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:EmeraldOrb": {
+    "NAME": "翡翠",
+    "DESCRIPTION": [
+      "在你的回合开始时，抽取 #b1 张卡牌 并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  },
+  "theVacant:OpalOrb": {
+    "NAME": "蛋白石",
+    "DESCRIPTION": [
+      "在你的回合开始时，获得 [E] 并失去 #b1 尺寸。 NL 一旦尺寸达到 #b0 ，移除这个宝石及其插槽。"
+    ]
+  }
+}

@@ -561,27 +561,12 @@ public class VacantMod implements
     @Override
     public void receiveEditKeywords()
     {
-        loadKeywords("eng");
-        if (Settings.language != Settings.GameLanguage.ENG)
-        {
-            try
-            {
-                loadKeywords(Settings.language.toString().toLowerCase());
-            }
-            catch (GdxRuntimeException er)
-            {
-                System.out.println("Vacant: Adding keywords error: Language not found, defaulted to eng.");
-            }
-        }
-    }
-
-    private void loadKeywords(String langKey)
-    {
-        if (!Gdx.files.internal(getModID() + "Resources/localization/" + langKey + "/").exists())
-            return;
+        String lang = Settings.language.toString().toLowerCase();
+        if (!Gdx.files.internal(getModID() + "Resources/localization/" + lang + "/").exists())
+            lang = "eng";
         Gson gson = new Gson();
 
-        String json = GetLocString(langKey, "VacantMod-Keyword-Strings.json");
+        String json = GetLocString(lang, "VacantMod-Keyword-Strings.json");
         com.evacipated.cardcrawl.mod.stslib.Keyword[] keywords = gson.fromJson(json, com.evacipated.cardcrawl.mod.stslib.Keyword[].class);
 
         if (keywords != null)
@@ -592,6 +577,11 @@ public class VacantMod implements
                 logger.info("Keyword added: " + keyword.PROPER_NAME);
             }
         }
+    }
+
+    private void loadKeywords(String langKey)
+    {
+
     }
 
 

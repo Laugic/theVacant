@@ -10,10 +10,13 @@ import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import theVacant.VacantMod;
 import theVacant.powers.ShardPower;
 import theVacant.powers.VoidPower;
 import theVacant.util.KeywordManager;
@@ -30,6 +33,7 @@ public class VoidboundModifier extends AbstractCardModifier
     public boolean initialPlay, checkHollow = false;
     private int counter;
     public static String ID = "VacantVoidboundModifier";
+    private static final UIStrings context = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("voidboundContext"));
 
     public VoidboundModifier(int amount)
     {
@@ -105,7 +109,7 @@ public class VoidboundModifier extends AbstractCardModifier
     {
         if(this.amount > 0 && !checkHollow)
         {
-            rawDescription = BaseMod.getKeywordTitle(KeywordManager.VOIDBOUND_ID) + ". NL " + rawDescription;
+            rawDescription = BaseMod.getKeywordTitle(KeywordManager.VOIDBOUND_ID) + context.TEXT[0] + " NL " + rawDescription;
             if(AbstractDungeon.player != null)
             {
                 if(AbstractDungeon.player.hasPower(VoidPower.POWER_ID))

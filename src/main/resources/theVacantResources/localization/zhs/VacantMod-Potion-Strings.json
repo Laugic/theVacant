@@ -1,0 +1,22 @@
+{
+        "theVacant:SwipePotion":{
+                "NAME": "深渊入瓶",
+                "DESCRIPTIONS": ["#y消蚀 #b", " 。 获得 #b", " #p虚空 。"]
+        },
+        "theVacant:InvisibilityPotion":{
+                "NAME": "隐身药瓶",
+                "DESCRIPTIONS": ["获得 #b", " #y节制 。 #y格挡 在你下一个 #b", " 回合开始时不会消失。"]
+        },
+        "theVacant:MiningPotion":{
+                "NAME": "闪耀补剂",
+                "DESCRIPTIONS": [
+                        "#y挖掘 出一个 #b", " #y翡翠 和 #y蛋白石 ，然后将它们 #y凿刻 。"
+                ]
+        },
+        "theVacant:ScramblePotion":{
+                "NAME": "混乱药水",
+                "DESCRIPTIONS": [
+                        "持续抽牌直到手牌满。每张抽到的牌有 #b1 / #b", " 的概率会被面朝下抽取。"
+                ]
+        }
+}

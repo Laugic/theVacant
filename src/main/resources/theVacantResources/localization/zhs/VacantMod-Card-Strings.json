@@ -1,0 +1,721 @@
+{
+  "theVacant:AbstractVacantCard": {
+    "NAME": "抽象空白卡牌",
+    "DESCRIPTION": "你好呀",
+    "EXTENDED_DESCRIPTION": [
+      " NL (你有 ",
+      " 将会)"
+    ]
+  },
+  "theVacant:VacantStarterStrike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "theVacant:LashOut": {
+    "NAME": "猛烈攻击",
+    "DESCRIPTION": "造成等同于你缺失生命值的伤害。 NL 失去 !M! 点生命值。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成等同于你缺失生命值的伤害。 NL 失去 !M! 点生命值。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (造成 !D! 点伤害)"
+    ]
+  },
+  "theVacant:FireCrystal": {
+    "NAME": "火焰水晶",
+    "DESCRIPTION": "对于你拥有的每层 [#ee82ee]虚空[] ，对所有敌人造成 !D! 点伤害。 NL 消耗 。"
+  },
+  "theVacant:Vlaze": {
+    "NAME": "火焰",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层 [#ee82ee]虚空[] 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层 [#ee82ee]虚空[] 。"
+  },
+  "theVacant:Vengeance": {
+    "NAME": "复仇",
+    "DESCRIPTION": "thevacant:未觉醒 。 NL 本次战斗中，你每失去一次生命值，就造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (你被击中 ",
+      " 次)",
+      " 次)"
+    ]
+  },
+  "theVacant:Frenzy": {
+    "NAME": "狂暴",
+    "DESCRIPTION": "对于你弃牌堆中的每张卡牌，造成 !D! 点伤害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (你将造成 ",
+      " 点伤害)"
+    ]
+  },
+  "theVacant:Snowball": {
+    "NAME": "雪球",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 当这张卡牌被 thevacant:消蚀  时，本次战斗中其伤害翻倍。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 。 NL thevacant:未觉醒 。 thevacant:沉重 。 NL 造成 !D! 点伤害。 NL 当这张卡牌被 thevacant:消蚀  时，本次战斗中其伤害翻倍。"
+  },
+  "theVacant:EyePoke": {
+    "NAME": "戳眼睛",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。"
+  },
+  "theVacant:FranticBlow": {
+    "NAME": "疯狂打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thevacant:残躯 : 获得等同于未被格挡的伤害值的 格挡 。"
+  },
+  "theVacant:Fling": {
+    "NAME": "投掷",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 1 层 thevacant:昏乱 。 NL thevacant:消蚀  !M! 。"
+  },
+  "theVacant:Jab": {
+    "NAME": "戳刺",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 将这张卡牌洗入你的抽牌堆。"
+  },
+  "theVacant:SealBreak": {
+    "NAME": "破封",
+    "DESCRIPTION": "释放 : 造成 !D! 点伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "释放 : 造成 !D! 点伤害。"
+  },
+  "theVacant:Crunch": {
+    "NAME": "粉碎",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每拥有一层 [#ee82ee]虚空[] ，给予一层 脆弱 。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 你每拥有一层 [#ee82ee]虚空[] ，给予一层 脆弱 。"
+  },
+  "theVacant:Slash": {
+    "NAME": "斩击",
+    "DESCRIPTION": "释放 : 造成 !D! 点伤害。"
+  },
+  "theVacant:GraveWave": {
+    "NAME": "坟墓浪潮",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将你弃牌堆中的一张卡牌放入你的手牌。"
+  },
+  "theVacant:Whip": {
+    "NAME": "鞭打",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。"
+  },
+  "theVacant:FromTheDepths": {
+    "NAME": "来自深渊",
+    "DESCRIPTION": "thevacant:未觉醒 。 NL 造成 !D! 点伤害2次。 NL thevacant:开采 你下一个 thevacant:宝石 的复制品。"
+  },
+  "theVacant:OnyxBlaster": {
+    "NAME": "黑玛瑙爆破者",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:黑玛瑙  并 thevacant:凿刻 它。"
+  },
+  "theVacant:ShriekingBlast": {
+    "NAME": "尖啸爆破",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害 !M! 次。"
+  },
+  "theVacant:Thoughtseize": {
+    "NAME": "思维窃取",
+    "DESCRIPTION": "{@@}thevacant:回响 。 NL 造成 !D! 点伤害。 NL thevacant:返手  !M! 张卡牌{!M!|>1= 们}。"
+  },
+  "theVacant:ReaperBlast": {
+    "NAME": "死神爆破",
+    "DESCRIPTION": "给予所有敌人 1 层 thevacant:汲取 、2 层 虚弱 和 3 层 脆弱 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "给予所有敌人 [#7FFF00]2[] 层 thevacant:汲取 、[#7FFF00]3[] 层 虚弱 和 [#7FFF00]4[] 层 脆弱 。 NL 消耗 。"
+  },
+  "theVacant:EmeraldSplash": {
+    "NAME": "翡翠飞溅",
+    "DESCRIPTION": "thevacant:开采 一个尺寸为 !M! 的 thevacant:翡翠 。 NL 你每拥有一个 thevacant:宝石 ，对一个随机敌人造成 !D! 点伤害。"
+  },
+  "theVacant:Threaten": {
+    "NAME": "威胁",
+    "DESCRIPTION": "造成 !D! 点伤害 !M! 次。 NL 消耗 。"
+  },
+  "theVacant:Reconnect": {
+    "NAME": "重新连接",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点格挡。 NL 获得 1 层 人工制品 。 NL 消耗 。"
+  },
+  "theVacant:OnyxShatter": {
+    "NAME": "黑玛瑙粉碎",
+    "DESCRIPTION": "进入 [#ee82ee]虚空[] [#ee82ee]形态[]。 NL 对给予所有敌人造成 !D! 点伤害并给予 !M! 层厄运。"
+  },
+  "theVacant:BackInTheMine": {
+    "NAME": "回到矿井",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 你拥有的每个 thevacant:宝石 可使此卡牌费用减少 1。"
+  },
+  "theVacant:Throttle": {
+    "NAME": "节流",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 获得 !M! 层 脆弱 。"
+  },
+  "theVacant:BrassMagnet": {
+    "NAME": "黄铜磁铁",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 当你抽到这张卡牌时，丢弃它。"
+  },
+  "theVacant:FiendFrost": {
+    "NAME": "恶魔寒霜",
+    "DESCRIPTION": "thevacant:回响 。 NL 消耗 你的弃牌堆。每消耗 一张卡牌，获得 !B! 点 格挡 。 消耗 。"
+  },
+  "theVacant:Yeet": {
+    "NAME": "扔",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 每当你 thevacant:消蚀  这张卡牌时，对一个随机敌人造成 !D! 点伤害。"
+  },
+  "theVacant:DimensionTear": {
+    "NAME": "次元撕裂",
+    "DESCRIPTION": "造成 !D! 点伤害3次。 NL 将你的消耗 牌堆加入你的手牌。 NL 消耗 。"
+  },
+  "theVacant:ReachThrough": {
+    "NAME": "穿透",
+    "DESCRIPTION": "每当你 thevacant:开采 一个 thevacant:宝石  时，触发其效果。 NL 获得 2 层 thevacant:反作用力 。"
+  },
+  "theVacant:BurdenBreak": {
+    "NAME": "负担解脱",
+    "DESCRIPTION": "每当你受到未被格挡的伤害或获得一个减益效果时， NL 获得 !M! 层 活力 。"
+  },
+  "theVacant:FinalCountdown": {
+    "NAME": "最终倒计时",
+    "DESCRIPTION": "本次战斗中，你每 释放 一次，此卡牌费用减少 1 [E] 。 NL 对所有敌人造成 !D! 点伤害。"
+  },
+  "theVacant:AwMan": {
+    "NAME": "哎呀",
+    "DESCRIPTION": "本回合获得 2 层 thevacant:厄运  。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:红宝石  和一个尺寸为 !M! 的 thevacant:黑玛瑙 。"
+  },
+  "theVacant:Requiem": {
+    "NAME": "安魂曲",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当你失去生命值或获得一个减益效果时，敌人也会如此。 NL 消耗 。"
+  },
+  "theVacant:Showdown": {
+    "NAME": "对决",
+    "DESCRIPTION": "本回合给予给予所有敌人 !M! 层 thevacant:厄运  。 NL thevacant:消蚀  直到你丢弃一张攻击牌，然后 thevacant:回响  它。"
+  },
+  "theVacant:SoulBash": {
+    "NAME": "灵魂猛击",
+    "DESCRIPTION": "thevacant:回响 。 NL 造成 !D! 点伤害。 NL 获得 !M! 层 活力 。"
+  },
+  "theVacant:SoulBashOld": {
+    "NAME": "灵魂猛击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 ??? NL (根据你的 状态 给予不同效果)",
+    "UPGRADE_DESCRIPTION":  "造成 !D! 点伤害。 NL 给予 !M! ",
+    "EXTENDED_DESCRIPTION": [
+      " 虚弱 。",
+      " 脆弱 。",
+      " thevacant:厄运  。",
+      " thevacant:汲取 。"
+    ]
+  },
+  "theVacant:ReaperStrike": {
+    "NAME": "死神打击",
+    "DESCRIPTION": "给予目标 !M! 层 thevacant:汲取  并且 NL 对所有敌人造成 !D! 点伤害。 消耗 。"
+  },
+  "theVacant:SkullBash": {
+    "NAME": "头骨猛击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 脆弱 。 NL 消耗 。"
+  },
+  "theVacant:WailOfTheShroud": {
+    "NAME": "裹尸布的哀号",
+    "DESCRIPTION": "获得 !M! 层 thevacant:隐蔽 。 NL 失去 4 点生命值。 NL 消耗 。"
+  },
+  "theVacant:DeathSpiral": {
+    "NAME": "死亡螺旋",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thevacant:掘出 一张攻击牌。 NL 用 [#ee82ee]虚空之缚[] 强化它。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL thevacant:掘出 一张攻击牌。 NL 用 [#ee82ee]虚空之缚[] 强化它。 NL 本回合此牌费用为 0。"
+  },
+  "theVacant:Pickaxe": {
+    "NAME": "镐",
+    "DESCRIPTION": "{@@}造成 !D! 点伤害2次。 NL thevacant:凿刻 你的下一个 thevacant:宝石 {!M!|>1= !M! 次}。"
+  },
+  "theVacant:Carve": {
+    "NAME": "雕刻",
+    "DESCRIPTION": "造成 !D! 点伤害，!M! 次。"
+  },
+  "theVacant:LichStrike": {
+    "NAME": "巫妖打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 承受等量伤害，然后恢复等量生命值。 NL 消耗 。"
+  },
+  "theVacant:OpalFracture": {
+    "NAME": "蛋白石凿刻",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:蛋白石 。"
+  },
+  "theVacant:Rift": {
+    "NAME": "裂隙",
+    "DESCRIPTION": "thevacant:回响 。 NL 获得 !B! 点 格挡 。 NL 使你手牌中的一张卡牌成为 [#ee82ee]虚空之缚[] 。"
+  },
+  "theVacant:DarkStrike": {
+    "NAME": "黑暗打击",
+    "DESCRIPTION": "对一个随机敌人造成 !D! 点伤害。本次战斗中，你每获得一个减益效果就重复一次。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (!M! 次。)"
+    ]
+  },
+  "theVacant:CursedBlast": {
+    "NAME": "诅咒爆破",
+    "DESCRIPTION": "thevacant:未觉醒 。 NL 对所有敌人造成 !D! 点伤害。 NL 获得 !M! 层 [#ee82ee]虚空[] 。"
+  },
+  "theVacant:PitOfDespair": {
+    "NAME": "绝望深渊",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 thevacant:厄运  。"
+  },
+  "theVacant:SoulBarrage": {
+    "NAME": "灵魂弹幕",
+    "DESCRIPTION": "对随机一名敌人造成 !D! 点伤害 X 次。 NL thevacant:残躯 : X + !M! 。"
+  },
+  "theVacant:SoundOfSilence": {
+    "NAME": "寂静之声",
+    "DESCRIPTION": "thevacant:未觉醒 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 thevacant:黑暗 。 NL 消耗 。"
+  },
+  "theVacant:TopazFrenzy": {
+    "NAME": "黄玉狂潮",
+    "DESCRIPTION": "造成等同于你的格挡值的伤害。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:黄玉 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (造成 !D! 点伤害)"
+    ]
+  },
+  "theVacant:StealSoul": {
+    "NAME": "夺魂",
+    "DESCRIPTION": "{@@}造成 !D! 点伤害。 NL thevacant:虹吸  X{!M!|>0=+!M!} 层 人工制品 和 力量 。 NL 消耗 。"
+  },
+  "theVacant:Banish": {
+    "NAME": "放逐",
+    "DESCRIPTION": " 虚无 。 NL 造成 !D! 点伤害。 NL 消耗  2 张牌。 NL 往弃牌堆中添加 2 个虚空。"
+  },
+  "theVacant:SapphireStrike": {
+    "NAME": "蓝宝石冲击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:蓝宝石  并 thevacant:凿刻 它。"
+  },
+  "theVacant:Doomed": {
+    "NAME": "厄运降临",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 本回合给予所有人 2 层 thevacant:厄运 。"
+  },
+  "theVacant:TearFate": {
+    "NAME": "撕裂命运",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 阻止接下来 !M! 次你将要进行的变形。"
+  },
+  "theVacant:VacantStarterDefend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "theVacant:EssenceOfBismuth": {
+    "NAME": "铋之精华",
+    "DESCRIPTION": "thevacant:未觉醒 。 NL 使所有敌人的减益效果翻倍。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thevacant:未觉醒 。 NL 使所有敌人的减益效果变为三倍。 NL 消耗 。"
+  },
+  "theVacant:Desperation": {
+    "NAME": "绝望",
+    "DESCRIPTION": "thevacant:回响 。 NL 你接下来打出的 !M! 张牌费用为 0 且 消耗 。 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "复制。"
+    ]
+  },
+  "theVacant:Enchant": {
+    "NAME": "附魔",
+    "DESCRIPTION": "失去你下一个 thevacant:宝石 。 NL 在本回合剩余时间内，将 thevacant:宝石 的能力赋予你手牌中的一张牌。",
+    "UPGRADE_DESCRIPTION": "在本回合剩余时间内，将你下一个 thevacant:宝石 的能力赋予你手牌中的一张牌。",
+    "EXTENDED_DESCRIPTION": [
+      " 与 ",
+      " (",
+      ")"
+    ]
+  },
+  "theVacant:BecomeEmpty": {
+    "NAME": "化为虚无",
+    "DESCRIPTION": "thevacant:虹吸  !M!。 NL 进入 [#ee82ee]虚空[] [#ee82ee]形态[]。 NL 消耗 。"
+  },
+  "theVacant:Crystallize": {
+    "NAME": "结晶",
+    "DESCRIPTION": "thevacant:回响 . NL 往手牌中添加一张随机的基础水晶牌。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 . NL 往手牌中添加一张随机的升级后的基础水晶牌。"
+  },
+  "theVacant:DiamondIsUnbreakable": {
+    "NAME": "坚不可摧的钻石",
+    "DESCRIPTION": "thevacant:开采 一个尺寸为 X 的 thevacant:钻石 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thevacant:开采 一个尺寸为 X+1 的 thevacant:钻石 。 NL 消耗 。"
+  },
+  "theVacant:ShatterAmethyst": {
+    "NAME": "粉碎紫水晶",
+    "DESCRIPTION": "thevacant:回响 。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:紫水晶  并 thevacant:凿刻 它。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 。 NL thevacant:开采 一个尺寸为 !M! 的 thevacant:紫水晶  并 thevacant:凿刻  它两次。"
+  },
+  "theVacant:EmptyShield": {
+    "NAME": "空虚护盾",
+    "DESCRIPTION": "获得等同于你缺失生命值的格挡。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 。 NL 获得等同于你缺失生命值的 格挡 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (获得 ",
+      " 格挡 )"
+    ]
+  },
+  "theVacant:HealingSalve": {
+    "NAME": "治愈药膏",
+    "DESCRIPTION": " 虚无 。 NL 当你抽到这张牌时，往手牌中添加一张它的复制牌。当这张牌消耗 时，恢复 !M! 点生命值。"
+  },
+  "theVacant:Dig": {
+    "NAME": "挖掘",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thevacant:消蚀  !M! 。 NL thevacant:返手  1 张牌。"
+  },
+  "theVacant:WearTheGoblet": {
+    "NAME": "戴上圣杯",
+    "DESCRIPTION": "thevacant:回响 。 NL 获得 !B! 点 格挡 。 NL 当你 thevacant:消蚀  这张牌时，获得 [E] [E] 。"
+  },
+  "theVacant:Cower": {
+    "NAME": "畏缩",
+    "DESCRIPTION": "获得 !B! 点 格挡2次。 NL thevacant:残躯 : [#ee82ee]虚空之缚[] 。"
+  },
+  "theVacant:Return": {
+    "NAME": "回手",
+    "DESCRIPTION": "将 !M! 张牌从弃牌堆中放回手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将 !M! 张牌从弃牌堆中放回手牌。 NL 消耗 。"
+  },
+  "theVacant:OnSecondThought": {
+    "NAME": "三思",
+    "DESCRIPTION": "thevacant:回响 . NL thevacant:返手  !M! 张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 . NL thevacant:返手  !M! 张牌。 NL 消耗 。"
+  },
+  "theVacant:Fortify": {
+    "NAME": "黑暗加固",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL thevacant:残躯 : 获得 !M! 层 thevacant:隐蔽 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。 NL thevacant:残躯 : 阻止下一次你将要受到的伤害。"
+  },
+  "theVacant:Sneeze": {
+    "NAME": "打喷嚏",
+    "DESCRIPTION": " 保留 。 NL thevacant:消蚀  !M! 。当保留时，这张牌的 thevacant:消蚀 数值增加 2。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 保留 。 NL thevacant:消蚀 !M! 。当保留时，这张牌的 thevacant:消蚀 数值增加 2。"
+  },
+  "theVacant:DoubleTeam": {
+    "NAME": "分身",
+    "DESCRIPTION": "获得 !B! 点 格挡 ，共两次。"
+  },
+  "theVacant:Ward": {
+    "NAME": "守护",
+    "DESCRIPTION": "释放: 获得 !B! 点 格挡 。"
+  },
+  "theVacant:BattleScars": {
+    "NAME": "战斗伤痕",
+    "DESCRIPTION": "获得 !M! 点 活力 。 NL thevacant:残躯 : 获得 !M! 层 thevacant:节制  。"
+  },
+  "theVacant:Hex": {
+    "NAME": "诅咒",
+    "DESCRIPTION": "给予目标 !M! 层 thevacant:厄运  。 NL thevacant:残躯 : 目标本回合失去 !M! 点 力量 。"
+  },
+  "theVacant:Spinshield": {
+    "NAME": "旋转护盾",
+    "DESCRIPTION": "获得 !B! 点 格挡 !M! 次。 NL 获得 1 层 thevacant:昏乱 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得 !M! 次 !B! 点 格挡 。 NL 获得 1 层 thevacant:昏乱 。"
+  },
+  "theVacant:Prevent": {
+    "NAME": "防护",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果你处于 thevacant:残躯  状态，获得 !M! 点 护盾 。 NL 消耗 。"
+  },
+  "theVacant:ShutAway": {
+    "NAME": "封印",
+    "DESCRIPTION": " 固有 。 NL thevacant:消蚀  !M!。 NL 消耗 。"
+  },
+  "theVacant:Accumulate": {
+    "NAME": "积聚",
+    "DESCRIPTION": "释放: 抽 1 张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "释放: 抽 1 张牌。"
+  },
+  "theVacant:Revenge": {
+    "NAME": "复仇",
+    "DESCRIPTION": "释放: 获得 1 点 荆棘 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "释放: 获得 1 点 荆棘 。 NL 消耗 。"
+  },
+  "theVacant:Memoria": {
+    "NAME": "记忆",
+    "DESCRIPTION": "{@@} 本回合，你接下来的 {!M!|1=一张牌会|@=!M! 张牌会} 被打出两次且 {!M!|1=消耗 |@=消耗 } 。",
+    "EXTENDED_DESCRIPTION": [
+      "免费打出。"
+    ]
+  },
+  "theVacant:Exorcise": {
+    "NAME": "驱魔",
+    "DESCRIPTION": "移除你身上的所有减益效果，并将它们给予所有敌人。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 移除你身上的所有减益效果，并将它们给予所有敌人。 NL 消耗 。"
+  },
+  "theVacant:HolyWater": {
+    "NAME": "圣水",
+    "DESCRIPTION": "获得 !M! 点 临时生命值 和 8 层 thevacant:节制  。 NL 消耗 。"
+  },
+  "theVacant:EmbraceDarkness": {
+    "NAME": "陷入黑暗",
+    "DESCRIPTION": "thevacant:消蚀  直到你丢弃一张技能牌，然后 thevacant:回响  它。 NL thevacant:残躯 : 获得 !M! 层 thevacant:隐蔽 。"
+  },
+  "theVacant:Unearth": {
+    "NAME": "发掘",
+    "DESCRIPTION": " 不能被打出 。 NL thevacant:未觉醒 。 NL thevacant:消蚀 这张牌时，将 !M! 张牌从弃牌堆中放回手牌。",
+    "UPGRADE_DESCRIPTION": " 不能被打出 。 NL thevacant:未觉醒 。 thevacant:沉重 。 NL thevacant:消蚀 这张牌时，将 !M! 张牌从弃牌堆中放回手牌。"
+  },
+  "theVacant:TheAnvil": {
+    "NAME": "铁砧",
+    "DESCRIPTION": " 不能被打出 。 thevacant:未觉醒 。 thevacant:沉重 。当这张牌被 thevacant:消蚀 时，对所有敌人造成 !M! 点伤害。",
+    "UPGRADE_DESCRIPTION": "它太 #r沉重 了， 不能被打出 ！"
+  },
+  "theVacant:Expand": {
+    "NAME": "扩张",
+    "DESCRIPTION": "失去 !M! 点生命值。 NL 获得等同于你弃牌堆中牌数量的临时生命值。 消耗 。",
+    "UPGRADE_DESCRIPTION": "thevacant:回响 。失去 !M! 点生命值。 NL 获得等同于你弃牌堆中牌数量的临时生命值。 消耗 。"
+  },
+  "theVacant:Corporeate": {
+    "NAME": "具现",
+    "DESCRIPTION": "thevacant:消蚀 !M! 张牌。 NL 每消蚀一张牌，获得一张 thevacant:节制 。 NL thevacant:返手 1 张牌。"
+  },
+  "theVacant:RubyRage": {
+    "NAME": "红宝石之怒",
+    "DESCRIPTION": "thevacant:开采 2 颗尺寸为 !M! 的 thevacant:红宝石 。 NL thevacant:残躯 ： thevacant:凿刻  它们。",
+    "UPGRADE_DESCRIPTION": "thevacant:开采 2 颗尺寸为 !M! 的 thevacant:红宝石 。 NL thevacant:残躯 ： thevacant:凿刻  它们。"
+  },
+  "theVacant:Treasure": {
+    "NAME": "宝藏",
+    "DESCRIPTION": "thevacant:开采 一颗尺寸为 !M! 的 thevacant:翡翠 和一颗尺寸为 !M! 的 thevacant:蛋白石 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "thevacant:开采 一颗尺寸为 !M! 的 thevacant:翡翠 和一颗尺寸为 !M! 的 thevacant:蛋白石 。"
+  },
+  "theVacant:Soothe": {
+    "NAME": "安抚",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 获得 !M! 层 thevacant:节制 。"
+  },
+  "theVacant:Necromancy": {
+    "NAME": "死灵术",
+    "DESCRIPTION": "消耗  2 张牌。 NL thevacant:掘出 1 张牌。 NL 消耗 。"
+  },
+  "theVacant:Think": {
+    "NAME": "思考",
+    "DESCRIPTION": "thevacant:释放：thevacant:消蚀 !M! 张牌。 NL 消耗 。"
+  },
+  "theVacant:FromNothing": {
+    "NAME": "无中生有",
+    "DESCRIPTION": "{@@}给予你抽牌堆中 !M! 张牌 thevacant:回响 效果。 NL thevacant:消蚀 你的抽牌堆。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "{@@} thevacant:回响 。 NL 给予你抽牌堆中 !M! 张牌 thevacant:回响 效果。 NL  thevacant:消蚀 你的抽牌堆。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " thevacant:回响 。 NL "
+    ]
+  },
+  "theVacant:Freedom": {
+    "NAME": "自由",
+    "DESCRIPTION": "使你的thevacant:意志翻倍。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "使你的thevacant:意志变为三倍。 NL 消耗 。"
+  },
+  "theVacant:BreakFree": {
+    "NAME": "挣脱",
+    "DESCRIPTION": "失去 3 点生命值。获得 !M! 层 thevacant:意志 。 NL 消耗 。"
+  },
+  "theVacant:Willful": {
+    "NAME": "坚定",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 获得 !M! 层 thevacant:意志 。"
+  },
+  "theVacant:Ascend": {
+    "NAME": "升华",
+    "DESCRIPTION": "thevacant:释放：恢复 !M! 点生命值。 NL 消耗 。"
+  },
+  "theVacant:Spelunk": {
+    "NAME": "探险",
+    "DESCRIPTION": "thevacant:回响 。 NL 获得 !B! 点 格挡 。 NL 打出或 thevacant:消蚀 这张牌时， thevacant:开采 一颗尺寸为 !M! 的 thevacant:蓝宝石 。"
+  },
+  "theVacant:OpalShine": {
+    "NAME": "蛋白石光辉",
+    "DESCRIPTION": "thevacant:开采  一颗尺寸为 !M! 的 thevacant:蛋白石 。 NL 消耗 。"
+  },
+  "theVacant:Partake": {
+    "NAME": "分享",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 2 层 虚弱 。 NL 将你弃牌堆中的一张牌置于抽牌堆顶部。"
+  },
+  "theVacant:Solace": {
+    "NAME": "慰藉",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 将你的弃牌堆洗入抽牌堆底部。"
+  },
+  "theVacant:GildedPickaxe": {
+    "NAME": "镀金镐",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL thevacant:凿刻 你所有的 thevacant:宝石 。"
+  },
+  "theVacant:Snap": {
+    "NAME": "爆裂",
+    "DESCRIPTION": "造成 !D! 点伤害2次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害2次。 NL 抽取 1 张牌。 NL 消耗 。"
+  },
+  "theVacant:Crackle": {
+    "NAME": "火花",
+    "DESCRIPTION": "获得 !B! 点 格挡 2次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 2次。 NL 抽取 1 张牌。 NL 消耗 。"
+  },
+  "theVacant:Pop": {
+    "NAME": "弹出",
+    "DESCRIPTION": "抽取 !M! 张牌。 NL 消耗 。"
+  },
+  "theVacant:Exhumation": {
+    "NAME": "掘出",
+    "DESCRIPTION": "消耗  X 张牌。下一回合，掘出 X 张牌。 消耗 。",
+    "UPGRADE_DESCRIPTION": "消耗  X + 1 张牌。下一回合，掘出 X + 1 张牌。 消耗 。"
+  },
+  "theVacant:TimeSkip": {
+    "NAME": "时间跳跃",
+    "DESCRIPTION": "你手中的所有牌费用变为 0 并消耗 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "抽取 !M! 张牌。 NL 你手中的所有牌费用变为 0 并消耗 。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "丢弃。"
+    ]
+  },
+  "theVacant:CallSpirits": {
+    "NAME": "召唤灵体",
+    "DESCRIPTION": "将 !M! 张 *弹出 牌洗入你的抽牌堆。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将 !M! 张 *弹出+ 牌洗入你的抽牌堆。 NL 消耗 。"
+  },
+  "theVacant:TwistFate": {
+    "NAME": "扭转命运",
+    "DESCRIPTION": "获得 !M! 点 活力 和 !M! 层 thevacant:节制 。"
+  },
+  "theVacant:MindBreak": {
+    "NAME": "精神崩溃",
+    "DESCRIPTION": "丢弃你手中的所有牌。 NL thevacant:消蚀 你的抽牌堆。 NL 抽取 1 张牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "丢弃你手中的所有牌。 NL thevacant:消蚀 你的抽牌堆。 NL 抽取 2 张牌。 NL 消耗 。"
+  },
+  "theVacant:Voidstone": {
+    "NAME": "虚空石",
+    "DESCRIPTION": "获得 !M! 层 [#ee82ee]虚空[]。 NL 你每回合打出的第一张牌将获得 [#ee82ee]虚空之缚[] 效果。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 获得 !M! 层 [#ee82ee]虚空[] 。 NL 你每回合打出的第一张牌将获得 [#ee82ee]虚空之缚[] 效果。",
+    "EXTENDED_DESCRIPTION": [
+      "变为 [#ee82ee]虚空之缚[] 。"
+    ]
+  },
+  "theVacant:Polish": {
+    "NAME": "抛光",
+    "DESCRIPTION": "{@@}将你所有的 thevacant:宝石 的尺寸增加 1。在下 {!M!|1 = 回合开始时， 格挡 不会被移除。|@=!M! 个回合开始时， 格挡 不会被移除。}"
+  },
+  "theVacant:Shatter": {
+    "NAME": "粉碎",
+    "DESCRIPTION": "粉碎你所有的宝石，直到它们消失。 消耗 。"
+  },
+  "theVacant:Gloom": {
+    "NAME": "阴霾",
+    "DESCRIPTION": "thevacant:回响 。 NL 获得 !M! 层 thevacant:隐蔽 。 NL 你每回合第一次 thevacant:消蚀 一张能力牌时，使其 thevacant:回响 。"
+  },
+  "theVacant:DarkReflex": {
+    "NAME": "黑暗反射",
+    "DESCRIPTION": "每当你 thevacant:消蚀 牌时，将前 !M! 张牌加入你的手牌，而不是弃牌堆。"
+  },
+  "theVacant:Immaterialize": {
+    "NAME": "虚化",
+    "DESCRIPTION": "thevacant:未觉醒 。 thevacant:回响 。 NL 每当有一张牌 thevacant:回响 时，获得 !M! 点 格挡 。"
+  },
+  "theVacant:GotOurPickaxe": {
+    "NAME": "拿到我们的镐",
+    "DESCRIPTION": "每当你 thevacant:开采  一颗 thevacant:宝石 时，thevacant:凿刻 它。",
+    "UPGRADE_DESCRIPTION": "每当你 thevacant:开采  一颗 thevacant:宝石 时，thevacant:凿刻 它 !M! 次。"
+  },
+  "theVacant:CleanseSoul": {
+    "NAME": "净魂",
+    "DESCRIPTION": "thevacant:回响 。 NL 每当你 thevacant:消蚀 一张状态牌或诅咒牌时， 消耗 它并获得 !M! 层 thevacant:节制 。"
+  },
+  "theVacant:Willpower": {
+    "NAME": "意志力",
+    "DESCRIPTION": "获得 !M! 点 意志 。"
+  },
+  "theVacant:Anguish": {
+    "NAME": "痛苦",
+    "DESCRIPTION": "如果你处于 thevacant:残躯 状态，获得 !M! 点 力量 。如果你处于 健康 状态 ，获得 !M! 点 敏捷 。"
+  },
+  "theVacant:Recover": {
+    "NAME": "恢复",
+    "DESCRIPTION": "在战斗结束时， NL 如果你处于 thevacant:残躯 状态 ， NL 恢复 !M! 点生命值。"
+  },
+  "theVacant:IronWill": {
+    "NAME": "钢铁意志",
+    "DESCRIPTION": "在你的回合结束时，获得等同于本战斗中你失去生命值次数的 格挡 。"
+  },
+  "theVacant:Husk": {
+    "NAME": "躯壳",
+    "DESCRIPTION": "在你的回合开始时，获得 X+1 点精力和 thevacant:节制  。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，获得 2*(X+1) 点精力和 thevacant:节制  。"
+  },
+  "theVacant:EmptyForm": {
+    "NAME": "空之形态",
+    "DESCRIPTION": " 虚无 。  NL 消耗 的 NL 卡牌会额外使用一次。",
+    "UPGRADE_DESCRIPTION": "消耗 的卡牌会额外使用一次。"
+  },
+  "theVacant:Acceptance": {
+    "NAME": "接纳",
+    "DESCRIPTION": "获得 !M! 层 人工制品 。  NL 每当你失去一层 人工制品 时，抽一张牌。"
+  },
+  "theVacant:Rejection": {
+    "NAME": "排斥",
+    "DESCRIPTION": "获得 !M! 点 力量 ，2 层 thevacant:昏乱  和 2 层 thevacant:反作用力 。"
+  },
+  "theVacant:RunicThoughts": {
+    "NAME": "符文思绪",
+    "DESCRIPTION": "你每回合用 thevacant:消蚀  丢弃的第一张牌耗能减少 1 点，并且 thevacant:回响 。",
+    "UPGRADE_DESCRIPTION": "固有。  NL 你每回合用 thevacant:消蚀  丢弃的第一张牌耗能减少 1 点，并且 thevacant:回响 。"
+  },
+  "theVacant:ShatterSoul": {
+    "NAME": "碎魂",
+    "DESCRIPTION": "获得 1 点 无形 。  NL 进入愤怒状态。  NL 获得 !M! 个 意志 。"
+  },
+  "theVacant:VoidEmbrace": {
+    "NAME": "虚空拥抱",
+    "DESCRIPTION": "获得 !M! 层 [#ee82ee]虚空[] 。  NL 在你的弃牌堆中添加一个 *虚空 。"
+  },
+  "theVacant:GreaterMind": {
+    "NAME": "伟大心智",
+    "DESCRIPTION": "每当你使用一张消耗 1 点或更多的 力量 牌时，随机添加一张 力量 牌到你的手牌中。",
+    "UPGRADE_DESCRIPTION": " 固有 。  NL 每当你使用一张消耗 1 点或更多的 力量 牌时，随机添加一张 力量 牌到你的手牌中。"
+  },
+  "theVacant:IntoTheAbyss": {
+    "NAME": "堕入深渊",
+    "DESCRIPTION": "每当你获得或给予一个负面效果时，获得等量的 thevacant:节制  。"
+  },
+  "theVacant:StoreSoul": {
+    "NAME": "存魂",
+    "DESCRIPTION": "失去 !M! 点生命值。  NL 如果你有圣杯，永久将其 力量 提升 1 点。  NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "如果你有圣杯，永久将其 力量 提升 1 点。  NL 消耗 。"
+  },
+  "theVacant:CrackedReflection": {
+    "NAME": "破碎倒影",
+    "DESCRIPTION": "{@@}每回合 thevacant:宝石 首次失效时， thevacant:返手 !M! 张牌"
+  },
+  "theVacant:ForgeSoul": {
+    "NAME": "铸魂",
+    "DESCRIPTION": "每当你用 thevacant:消蚀 丢弃一张牌时，在本回合剩余时间内将其伤害和格挡提升 !M! 点。"
+  },
+  "theVacant:VoidForm": {
+    "NAME": "虚空形态",
+    "DESCRIPTION": "获得 !M! 层 [#ee82ee]虚空[] 。  NL 在你的回合开始时， thevacant:消蚀  !M! 。"
+  },
+  "theVacant:WaitInWrath": {
+    "NAME": "在愤怒中等待",
+    "DESCRIPTION": "在你的回合开始时，如果你是 thevacant:残躯 ，获得 !M! 点 活力 。如果你是 健康 状态，获得 !M! 层 thevacant:节制  。"
+  },
+  "theVacant:GemOption": {
+    "NAME": "宝石",
+    "DESCRIPTION": "这是一颗宝石！",
+    "EXTENDED_DESCRIPTION": [
+      "大的 "
+    ]
+  },
+  "theVacant:RubyOption": {
+    "NAME": "红宝石",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:红宝石 。"
+  },
+  "theVacant:SapphireOption": {
+    "NAME": "蓝宝石",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:蓝宝石 。"
+  },
+  "theVacant:OpalOption": {
+    "NAME": "蛋白石",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:蛋白石 。"
+  },
+  "theVacant:EmeraldOption": {
+    "NAME": "翡翠",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:翡翠 。"
+  },
+  "theVacant:OnyxOption": {
+    "NAME": "黑玛瑙",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:黑玛瑙 。"
+  },
+  "theVacant:DiamondOption": {
+    "NAME": "钻石",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:钻石 。"
+  },
+  "theVacant:AmethystOption": {
+    "NAME": "紫水晶",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:紫水晶 。"
+  },
+  "theVacant:TopazOption": {
+    "NAME": "黄水晶",
+    "DESCRIPTION": "尺寸 !M! 的 thevacant:黄玉 。"
+  },
+  "theVacant:KeywordManager": {
+    "NAME": "关键词管理器",
+    "DESCRIPTION": "存储在其他地方添加的用于翻译的关键词。",
+    "EXTENDED_DESCRIPTION": [
+      "thevacant:虚空",
+      "thevacant:虚空之缚",
+      "thevacant:具现"
+    ]
+  },
+  "theVacant:WhenDarknessComes": {
+    "NAME": "当黑暗降临",
+    "DESCRIPTION": "给予所有敌人 2 层 thevacant:厄运 。  NL 每层 thevacant:厄运 使敌人受到的伤害额外增加 !M! 点。"
+  }
+}

@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.helpers.GameDictionary;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -23,6 +24,8 @@ public class SwipePotion extends AbstractPotion
 {
     public static final String POTION_ID = VacantMod.makeID(SwipePotion.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
+    private static final UIStrings mill = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("mill"));
+    private static final UIStrings Void = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("void"));
 
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
@@ -35,8 +38,8 @@ public class SwipePotion extends AbstractPotion
         isThrown = false;
         labOutlineColor = VacantMod.VACANT_COLOR;
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:mill"), BaseMod.getKeywordDescription("thevacant:mill")));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:void"), BaseMod.getKeywordDescription("thevacant:void")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(mill.TEXT[0]), BaseMod.getKeywordDescription(mill.TEXT[0])));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(Void.TEXT[0]), BaseMod.getKeywordDescription(Void.TEXT[0])));
     }
 
     @Override

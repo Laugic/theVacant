@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.powers.BlurPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -18,6 +19,7 @@ public class InvisibilityPotion extends AbstractPotion
 {
     public static final String POTION_ID = VacantMod.makeID(InvisibilityPotion.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
+    private static final UIStrings shroud = CardCrawlGame.languagePack.getUIString(VacantMod.makeID("shroud"));
 
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
@@ -30,7 +32,7 @@ public class InvisibilityPotion extends AbstractPotion
         isThrown = false;
         labOutlineColor = VacantMod.VACANT_COLOR;
         tips.add(new PowerTip(name, description));
-        tips.add(new PowerTip(BaseMod.getKeywordProper("thevacant:shroud"), BaseMod.getKeywordDescription("thevacant:shroud")));
+        tips.add(new PowerTip(BaseMod.getKeywordProper(shroud.TEXT[0]), BaseMod.getKeywordDescription(shroud.TEXT[0])));
     }
 
     @Override
