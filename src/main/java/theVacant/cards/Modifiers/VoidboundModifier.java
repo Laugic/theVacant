@@ -75,7 +75,9 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyBlock(float block, AbstractCard card)
     {
-        if(!CheckDrawEmpty() && block > 0 && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID) && (!checkHollow || getHollow()))
+        if(AbstractDungeon.player.hasPower(VoidPower.POWER_ID) && ((VoidPower)AbstractDungeon.player.getPower(VoidPower.POWER_ID)).getShardVoidbound())
+            return block;
+        if(!CheckDrawEmpty() && block > 0  && (!checkHollow || getHollow()))
         {
             int voidAmount = 0;
 
@@ -91,7 +93,9 @@ public class VoidboundModifier extends AbstractCardModifier
     @Override
     public float modifyDamage(float damage, DamageInfo.DamageType type, AbstractCard card, AbstractMonster target)
     {
-        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK) && !AbstractDungeon.player.hasPower(ShardPower.POWER_ID) && (!checkHollow || getHollow()))
+        if(AbstractDungeon.player.hasPower(VoidPower.POWER_ID) && ((VoidPower)AbstractDungeon.player.getPower(VoidPower.POWER_ID)).getShardVoidbound())
+            return damage;
+        if(!CheckDrawEmpty() && (damage > 0 || card.type == AbstractCard.CardType.ATTACK) && (!checkHollow || getHollow()))
         {
             int voidAmount = 0;
 

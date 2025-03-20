@@ -44,7 +44,7 @@ public class VoidEmbrace extends AbstractDynamicCard
     public VoidEmbrace()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 3;
+        magicNumber = baseMagicNumber = 4;
         cardsToPreview = new VoidCard();
     }
 

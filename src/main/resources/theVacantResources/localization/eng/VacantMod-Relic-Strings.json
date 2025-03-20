@@ -45,7 +45,7 @@
     "NAME": "Tombstone",
     "FLAVOR": "To an early grave. For your cards at least.",
     "DESCRIPTIONS": [
-      "At the start of combat, after you draw, #ythevacant:Mill your draw pile."
+      "At the start of combat, #ythevacant:Mill #b10 cards. Whenever you shuffle your draw pile, gain [E] ."
     ]
   },
   "theVacant:CrystalBallRelic": {

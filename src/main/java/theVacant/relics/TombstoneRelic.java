@@ -5,6 +5,7 @@ import basemod.helpers.CardPowerTip;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -41,10 +42,15 @@ public class TombstoneRelic extends CustomRelic
     @Override
     public void atBattleStart()
     {
-        AbstractDungeon.actionManager.addToBottom(new DelayedTombstoneAction(9999));
+        AbstractDungeon.actionManager.addToBottom(new DelayedTombstoneAction(10));
         flash();
     }
 
+    public void onShuffle() {
+        flash();
+        addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        addToBot(new GainEnergyAction(1));
+    }
 //    @Override
 //    public void obtain() {
 //        super.obtain();
@@ -54,16 +60,16 @@ public class TombstoneRelic extends CustomRelic
 //        }
 //    }
 
-    @Override
-    public void onVictory() {
-        grayscale = false;
-    }
+//    @Override
+//    public void onVictory() {
+//        grayscale = false;
+//    }
 
-    @Override
-    public void justEnteredRoom(AbstractRoom room)
-    {
-        grayscale = false;
-    }
+//    @Override
+//    public void justEnteredRoom(AbstractRoom room)
+//    {
+//        grayscale = false;
+//    }
 
     @Override
     public String getUpdatedDescription()

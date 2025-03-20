@@ -49,7 +49,7 @@ public class Desperation extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(1);
+            upgradeBaseCost(0);
             initializeDescription();
         }
     }

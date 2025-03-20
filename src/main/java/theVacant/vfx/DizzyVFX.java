@@ -140,7 +140,10 @@ public class DizzyVFX  extends AbstractGameEffect {
             this.isDone = true;
         }*/
 
-        if(AbstractDungeon.getMonsters().areMonstersDead() || AbstractDungeon.getMonsters().areMonstersBasicallyDead() || AbstractDungeon.getMonsters().haveMonstersEscaped())
+        if(AbstractDungeon.getMonsters().areMonstersDead()
+                || AbstractDungeon.getMonsters().areMonstersBasicallyDead()
+                || AbstractDungeon.getMonsters().haveMonstersEscaped()
+                || AbstractDungeon.player.endTurnQueued)
             isDone = true;
     }
 }

@@ -172,7 +172,7 @@
   },
   "theVacant:Showdown": {
     "NAME": "Showdown",
-    "DESCRIPTION": "Apply !M! thevacant:Doom to EVERYONE this turn. NL thevacant:Mill until you discard an Attack, then thevacant:Ricochet it."
+    "DESCRIPTION": "{@@}Apply 2 thevacant:Doom to EVERYONE this turn. NL thevacant:Mill until you discard {!M!|1=an Attack|@=!M! Attacks}, then thevacant:Ricochet {!M!|1=it|@=them}."
   },
   "theVacant:SoulBash": {
     "NAME": "Soul Bash",
@@ -446,7 +446,7 @@
   },
   "theVacant:RubyRage": {
     "NAME": "Ruby Rage",
-    "DESCRIPTION": "thevacant:Mine 2 size !M! thevacant:Rubies. NL thevacant:Hollow: thevacant:Chip them.",
+    "DESCRIPTION": "thevacant:Mine !M! size 2 thevacant:Rubies. NL thevacant:Hollow: thevacant:Chip them.",
     "UPGRADE_DESCRIPTION": "thevacant:Mine 2 size !M! thevacant:Rubies. NL thevacant:Hollow: thevacant:Chip them."
   },
   "theVacant:Treasure": {
@@ -570,7 +570,7 @@
   },
   "theVacant:Gloom": {
     "NAME": "Gloom",
-    "DESCRIPTION": "thevacant:Ricochet. NL Gain !M! thevacant:Shroud. NL The first time you thevacant:Mill a Power each turn, thevacant:Ricochet it."
+    "DESCRIPTION": "thevacant:Ricochet. NL Gain !M! thevacant:Shroud. NL Whenever you thevacant:Mill a Power, thevacant:Ricochet it."
   },
   "theVacant:DarkReflex": {
     "NAME": "Dark Reflex",
@@ -652,7 +652,7 @@
   },
   "theVacant:CrackedReflection": {
     "NAME": "Cracked Reflection",
-    "DESCRIPTION": "{@@}The first time a thevacant:Gem expires each turn, thevacant:Return !M! card{!M!|>1=s}."
+    "DESCRIPTION": "{@@}The first time you thevacant:Mine a thevacant:Gem each turn, thevacant:Mine a size 1 copy and thevacant:Chip it."
   },
   "theVacant:ForgeSoul": {
     "NAME": "Forge Soul",

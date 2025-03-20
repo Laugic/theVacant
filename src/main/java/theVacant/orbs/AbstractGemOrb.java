@@ -132,6 +132,13 @@ public abstract class AbstractGemOrb extends CustomOrb
         updateDescription();
     }
 
+    public void setSize(int amount)
+    {
+        passiveAmount = basePassiveAmount = Math.max(amount, 0);
+        evokeAmount = baseEvokeAmount = Math.max(amount, 0);
+        updateDescription();
+    }
+
     public void removeSpecificGem(AbstractOrb orb)
     {
         AbstractPlayer player = AbstractDungeon.player;

@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 import static theVacant.cards.AbstractVacantCard.getHollow;
 
-public class CrackedReflectionPower extends AbstractPower implements CloneablePowerInterface, OnGemExpirePower
+public class CrackedReflectionPower extends AbstractPower implements CloneablePowerInterface
 {
     public AbstractCreature source;
 
@@ -155,15 +155,15 @@ public class CrackedReflectionPower extends AbstractPower implements CloneablePo
         return new CrackedReflectionPower(owner, source, amount);
     }
 
-    @Override
-    public void OnGemExpire(AbstractGemOrb gem) {
-//        if(AbstractDungeon.player.cardInUse != null)
-//            addToTop(new ReturnAction(amount, AbstractDungeon.player.cardInUse));
-//        else
-        if(!thisTurn){
-            thisTurn = true;
-            addToTop(new ReturnAction(amount));
-            flash();
-        }
-    }
+//    @Override
+//    public void OnGemExpire(AbstractGemOrb gem) {
+////        if(AbstractDungeon.player.cardInUse != null)
+////            addToTop(new ReturnAction(amount, AbstractDungeon.player.cardInUse));
+////        else
+//        if(!thisTurn){
+//            thisTurn = true;
+//            addToTop(new ReturnAction(amount));
+//            flash();
+//        }
+//    }
 }

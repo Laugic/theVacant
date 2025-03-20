@@ -52,10 +52,14 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
         cardsThisTurn = 0;
     }
 
+    public boolean getShardVoidbound(){
+        return owner.hasPower(ShardPower.POWER_ID) && cardsThisTurn < owner.getPower(ShardPower.POWER_ID).amount;
+    }
+
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type)
     {
-        if ((CheckDrawEmpty() || (owner.hasPower(ShardPower.POWER_ID) && cardsThisTurn < owner.getPower(ShardPower.POWER_ID).amount))
+        if ((CheckDrawEmpty() || getShardVoidbound())
                 && type == DamageInfo.DamageType.NORMAL)
             return damage + amount;
         return damage;
@@ -64,7 +68,7 @@ public class VoidPower extends AbstractPower implements CloneablePowerInterface
     @Override
     public float modifyBlock(float blockAmount)
     {
-        if ((CheckDrawEmpty() || (owner.hasPower(ShardPower.POWER_ID) && cardsThisTurn < owner.getPower(ShardPower.POWER_ID).amount))
+        if ((CheckDrawEmpty() || getShardVoidbound())
                 && blockAmount > 0.0F)
             return blockAmount + amount;
         return blockAmount;

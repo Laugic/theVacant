@@ -38,7 +38,7 @@ public class Showdown extends AbstractDynamicCard
     public Showdown()
     {
         super(ID, IMG, COST, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = 2;
+        magicNumber = baseMagicNumber = 1;
     }
 
     @Override
@@ -46,19 +46,19 @@ public class Showdown extends AbstractDynamicCard
     {
         AbstractDungeon.effectList.add(new AdrenalineEffect());
 
-        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, magicNumber)));
+        addToBot(new ApplyPowerAction(player, player, new DoomPower(player, player, 2)));
         if(!player.hasPower(ArtifactPower.POWER_ID))
-            addToBot(new ApplyPowerAction(player, player, new RemoveDoomPower(player, player, magicNumber)));
+            addToBot(new ApplyPowerAction(player, player, new RemoveDoomPower(player, player, 2)));
 
         for (AbstractMonster mo: AbstractDungeon.getMonsters().monsters) {
             if(mo.isDeadOrEscaped())
                 continue;
-            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, player, magicNumber), magicNumber, true, AbstractGameAction.AttackEffect.NONE));
+            addToBot(new ApplyPowerAction(mo, player, new DoomPower(mo, player, 2), 2, true, AbstractGameAction.AttackEffect.NONE));
             if(!mo.hasPower(ArtifactPower.POWER_ID))
-                addToBot(new ApplyPowerAction(mo, player, new RemoveDoomPower(mo, player, magicNumber)));
+                addToBot(new ApplyPowerAction(mo, player, new RemoveDoomPower(mo, player, 2)));
         }
 
-        addToBot(new VacantMillAction(CardType.ATTACK, this));
+        addToBot(new VacantMillAction(CardType.ATTACK, this, magicNumber));
     }
 
     @Override
@@ -67,7 +67,7 @@ public class Showdown extends AbstractDynamicCard
         if (!upgraded)
         {
             upgradeName();
-            upgradeMagicNumber(2);
+            upgradeMagicNumber(1);
             initializeDescription();
         }
     }

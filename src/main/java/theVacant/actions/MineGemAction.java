@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
@@ -18,6 +19,7 @@ import theVacant.VacantMod;
 import theVacant.cards.Skills.Memoria;
 import theVacant.cards.Special.*;
 import theVacant.orbs.*;
+import theVacant.powers.CrackedReflectionPower;
 import theVacant.powers.InvisibleGemOrbPower;
 import theVacant.powers.ReachThroughPower;
 import theVacant.relics.OnMineRelic;
@@ -30,6 +32,7 @@ public class MineGemAction extends AbstractGameAction
     private AbstractGemOrb gem;
     boolean chipOrb = false;
     int maxSize = -1;
+    public boolean isFromCrackedReflection = false;
 
     public MineGemAction(AbstractGemOrb newOrbType, boolean chip)
     {
@@ -74,6 +77,24 @@ public class MineGemAction extends AbstractGameAction
             return;
         }
 */
+
+
+        if(!isFromCrackedReflection && AbstractDungeon.player.hasPower(CrackedReflectionPower.POWER_ID))
+        {
+            int gemsThisTurn = 0;
+            for (AbstractOrb orb: AbstractDungeon.actionManager.orbsChanneledThisTurn) {
+                if (orb instanceof AbstractGemOrb)
+                    gemsThisTurn++;
+            }
+            if(gemsThisTurn < AbstractDungeon.player.getPower(CrackedReflectionPower.POWER_ID).amount)
+            {
+                AbstractGemOrb newGem = (AbstractGemOrb) gem.makeCopy();
+                newGem.setSize(1);
+                addToBot(new MineGemAction(newGem, true));
+                AbstractDungeon.player.getPower(CrackedReflectionPower.POWER_ID).flash();
+            }
+        }
+
         addToTop(new ChannelAction(gem, true));
 
         if(!AbstractDungeon.player.hasPower(InvisibleGemOrbPower.POWER_ID))

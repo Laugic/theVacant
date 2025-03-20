@@ -106,16 +106,14 @@
   "theVacant:CrackedReflectionPower": {
     "NAME": "Cracked Reflection",
     "DESCRIPTIONS": [
-      "The first time a #yGem expires each turn, #yReturn 1 card.",
-      "The first time a #yGem expires each turn, #yReturn #b"," cards."
+      "The first time you #yMine a #yGem each turn, #yMine a size 1 copy and #yChip it.",
+      "The first #b", " times you #yMine a #yGem each turn, #yMine a size 1 copy and #yChip it."
     ]
   },
   "theVacant:GloomPower": {
     "NAME": "Gloom",
     "DESCRIPTIONS": [
-      "The first time you #yMill a Power each turn, #yRicochet it.",
-      "The first #b",
-      " times you #yMill a Power each turn, #yRicochet it."
+      "Whenever you #yMill a Power, #yRicochet it."
     ]
   },
   "theVacant:DoomPower": {

@@ -32,6 +32,7 @@ public class VacantMillAction extends AbstractGameAction
     private int millNum;
     private int postReturnAmount = 0;
     private AbstractCard ignoredCard;
+    private int numType = 0, typesRicocheted = 0;
     private boolean gainTemperanceForMill = false;
     private AbstractCard.CardType millUntil = null, ricochetType = null;
 
@@ -95,10 +96,16 @@ public class VacantMillAction extends AbstractGameAction
     }
 
     public VacantMillAction(AbstractCard.CardType millUntil, AbstractCard cardToIgnore){
+        this(millUntil, cardToIgnore, 1);
+    }
+
+    public VacantMillAction(AbstractCard.CardType millUntil, AbstractCard cardToIgnore, int numType){
         this.millUntil = millUntil;
-        amount = 99;
+        amount = 999;
         actions = new ArrayList<>();
         ignoredCard = cardToIgnore;
+        this.numType = numType;
+        typesRicocheted = 0;
     }
 
 
@@ -140,7 +147,9 @@ public class VacantMillAction extends AbstractGameAction
         else if(millUntil != null && card.type == millUntil)
         {
             Ricochet(card);
-            amount = 0;
+            typesRicocheted++;
+            if(typesRicocheted >= numType)
+                amount = 0;
         }
         else
         {
@@ -241,9 +250,8 @@ public class VacantMillAction extends AbstractGameAction
     private boolean GetSpecialRicochet(AbstractCard card)
     {
         AbstractPlayer player = AbstractDungeon.player;
-        if(player.hasPower(GloomPower.POWER_ID) &&  ((GloomPower)player.getPower(GloomPower.POWER_ID)).powersThisTurn < player.getPower(GloomPower.POWER_ID).amount && card.type == AbstractCard.CardType.POWER){
-            ((GloomPower)player.getPower(GloomPower.POWER_ID)).powersThisTurn++;
-            player.getPower(GloomPower.POWER_ID).flash();
+        if(player.hasPower(GloomPower.POWER_ID) && card.type == AbstractCard.CardType.POWER){
+            AbstractDungeon.player.getPower(GloomPower.POWER_ID).flash();
             return true;
         }
         if(CardModifierManager.hasModifier(card, RicochetMod.ID))
@@ -261,6 +269,8 @@ public class VacantMillAction extends AbstractGameAction
         }
         RunicThoughtsPower runic = (RunicThoughtsPower) AbstractDungeon.player.getPower(RunicThoughtsPower.POWER_ID);
         if(runic != null){
+            if(card.type == AbstractCard.CardType.STATUS && AbstractDungeon.player.hasPower(CleanseSoulPower.POWER_ID))
+                return false;
             if(runic.millThisTurn < runic.amount){
                 if(card.costForTurn > 0)
                     card.setCostForTurn(card.costForTurn - 1);

@@ -22,8 +22,6 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
     private static final Texture tex84 = TextureLoader.getTexture("theVacantResources/images/powers/gloom84.png");
     private static final Texture tex32 = TextureLoader.getTexture("theVacantResources/images/powers/gloom32.png");
 
-    public int powersThisTurn;
-
     public GloomPower(final AbstractCreature owner, final AbstractCreature source, final int amount)
     {
         name = NAME;
@@ -36,8 +34,6 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        powersThisTurn = 0;
-
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
@@ -45,17 +41,9 @@ public class GloomPower extends AbstractPower implements CloneablePowerInterface
     }
 
     @Override
-    public void atStartOfTurn() {
-        powersThisTurn = 0;
-    }
-
-    @Override
     public void updateDescription()
     {
-        if(amount == 1)
-            description = DESCRIPTIONS[0];
-        else
-            description = DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
+        description = DESCRIPTIONS[0];
     }
 
     @Override

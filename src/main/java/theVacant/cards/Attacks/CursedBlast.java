@@ -111,8 +111,7 @@ public class CursedBlast extends AbstractDynamicCard
         {
             upgradeName();
             upgradeDamage(1);
-            upgradeMagicNumber(1);
-//            VoidboundModifier.Enhance(this, 1);
+            VoidboundModifier.Enhance(this, 1);
             initializeDescription();
         }
     }
